@@ -10,3 +10,7 @@ _SaffronPokecenterGentlemanText::
 	cont "why it attracted"
 	cont "TEAM ROCKET!"
 	done
+
+_SaffronPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

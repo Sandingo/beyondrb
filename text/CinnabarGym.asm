@@ -210,3 +210,58 @@ _CinnabarGymGymGuideBeatBlaineText::
 	text "<PLAYER>! You beat"
 	line "that fire brand!"
 	done
+
+; Rematch Dialoge, Placeholder
+_CinnabarGymRematchPreBattle1Text::
+	text "The volcano seems"
+	line "quite active"
+	cont "today!"
+	
+	para "That means my fire"
+	line "#MON will be"
+	cont "in top shape!"
+	
+	para "Let's get to it,"
+	line "hah!"
+	done
+
+_CinnabarGymPreRematchBattle2Text::
+	text "Better have that"
+	line "BURN HEAL ready!"
+	done
+
+_CinnabarGymRematchRefusedText::
+	text "...Well what am I"
+	line "going to do now?"
+	done
+
+_CinnabarGymRematchDefeatedText::
+	text "Hah!"
+	line "Burned down to"
+	cont "cinders!"
+	prompt
+
+_CinnabarGymRematchVictoryText::
+	text "Ahaha!"
+	line "Not even ashes"
+	cont "remain!"
+	prompt
+
+_CinnabarGymRematchPostBattleText::
+	text "Challengers have"
+	line "been coming to my"
+	cont "gym in waves"
+	cont "since you became"
+	cont "the champion!"
+
+	para "More fun for me,"
+	line "I gotta make sure"
+	cont "I'm the one next"
+	cont "in line to take"
+	cont "the title!"
+
+	para "You already have"
+	line "the VOLCANOBADGE,"
+	cont "so have this"
+	cont "instead!"
+	done

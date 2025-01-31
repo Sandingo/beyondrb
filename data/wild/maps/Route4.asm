@@ -8,7 +8,7 @@ IF DEF(_RED)
 	db  8, SPEAROW
 	db 10, EKANS
 	db 12, RATTATA
-	db 12, SPEAROW
+	db 12, MANKEY
 	db  8, EKANS
 	db 12, EKANS
 ENDC
@@ -17,11 +17,21 @@ IF DEF(_BLUE)
 	db  8, SPEAROW
 	db 10, SANDSHREW
 	db 12, RATTATA
-	db 12, SPEAROW
+	db 12, MANKEY
 	db  8, SANDSHREW
 	db 12, SANDSHREW
 ENDC
 	end_grass_wildmons
 
-	def_water_wildmons 0 ; encounter rate
+	def_water_wildmons 5 ; encounter rate
+	db  5, MAGIKARP
+	db 10, MAGIKARP
+	db 15, MAGIKARP
+	db 20, MAGIKARP
+	db 10, MAGIKARP
+	db 15, MAGIKARP
+	db 20, MAGIKARP
+	db 30, GOLDEEN
+	db 35, GOLDEEN
+	db 40, SEAKING
 	end_water_wildmons

@@ -87,6 +87,7 @@ Route24_TextPointers:
 	dw_const Route24CooltrainerF2Text, TEXT_ROUTE24_COOLTRAINER_F2
 	dw_const Route24Youngster2Text,    TEXT_ROUTE24_YOUNGSTER2
 	dw_const PickUpItemText,           TEXT_ROUTE24_TM_THUNDER_WAVE
+	dw_const Route24CharmanderGuyText, TEXT_ROUTE24_CHARMANDER_GUY
 
 Route24TrainerHeaders:
 	def_trainers 2
@@ -279,4 +280,54 @@ Route24Youngster2EndBattleText:
 
 Route24Youngster2AfterBattleText:
 	text_far _Route24Youngster2AfterBattleText
+	text_end
+
+Route24CharmanderGuyText:
+; Charmander Gift
+	text_asm
+	CheckEvent EVENT_GOT_CHARMANDER
+	jr nz, .got_charmander
+	ld hl, .give_charmander
+.give_charmander
+	ld hl, .HaveThisPokemonText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .decline_charmander
+	lb bc, CHARMANDER, 10
+	call GivePokemon
+	jr nc, .done
+	ld a, [wSimulatedJoypadStatesEnd]
+	and a
+	call z, WaitForTextScrollButtonPress
+	call EnableAutoTextBoxDrawing
+	ld hl, .CharmanderDescriptionText
+	call PrintText
+	SetEvent EVENT_GOT_CHARMANDER
+	jr .done
+.decline_charmander
+	ld hl, .DeclineMonText
+	call PrintText
+	jr .done
+.got_charmander
+	ld hl, .GotCharmanderText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+.HaveThisPokemonText
+	text_far _Route24CharmanderGuyHaveThisPokemonText
+	text_end
+
+.DeclineMonText
+	text_far _Route24CharmanderGuyDeclineText
+	text_end
+
+.CharmanderDescriptionText
+	text_far _Route24CharmanderGuyCharmanderDescriptionText
+	text_end
+
+.GotCharmanderText
+	text_far _Route24CharmanderGuyGotText
 	text_end

@@ -21,6 +21,8 @@ HallOfFameNoopScript:
 	ret
 
 HallOfFameResetEventsAndSaveScript:
+	ld a, 1
+	ld [wGameStage], a
 	call Delay3
 	ld a, [wLetterPrintingDelayFlags]
 	push af
@@ -42,6 +44,7 @@ HallOfFameResetEventsAndSaveScript:
 	ld [wLancesRoomCurScript], a
 	ld [wHallOfFameCurScript], a
 	; Elite 4 events
+	ResetEventRange REMATCHES_START, REMATCHES_END, 1
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
 	xor a
 	ld [wHallOfFameCurScript], a
@@ -96,11 +99,24 @@ HallOfFameOakCongratulationsScript:
 	call DisplayTextID
 	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
-	ld a, HS_CERULEAN_CAVE_GUY
-	ld [wMissableObjectIndex], a
-	predef HideObject
+	jp .PostgameNPCLocations
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a
+	ret
+
+.PostgameNPCLocations
+	ld a, HS_CERULEAN_CAVE_GUY ; Mewtwo is available
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_ROUTE_22_SILVERGUARD_1 ; Allow access to Mt. Silver
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_ROUTE_22_SILVERGUARD_2
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_CELADONMART4F_CLERK2 ; Allow rare evolution items to be sold
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ret
 
 HallOfFame_TextPointers:

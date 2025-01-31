@@ -143,3 +143,55 @@ _VermilionGymGymGuideBeatLTSurgeText::
 	text "Whew! That match"
 	line "was electric!"
 	done
+
+; Rematch Dialoge, Placeholder
+_VermilionGymRematchPreBattle1Text::
+	text "Fancy seeing you"
+	line "back in my gym,"
+	cont "champ!"
+	
+	para "I can feel the"
+	line "electricity here"
+	cont "flaring up!"
+
+	para "So how's about it?"
+	line "Wanna have a"
+	cont "rematch?"
+	done
+
+_VermilionGymPreRematchBattle2Text::
+	text "OK! Show me some"
+	line "sparks!"
+	done
+
+_VermilionGymRematchRefusedText::
+	text "Oh no! How"
+	line "disappointing!"
+	done
+
+_VermilionGymRematchDefeatedText::
+	text "Now"
+	line "that's a shocker!"
+	prompt
+
+_VermilionGymRematchVictoryText::
+	text "Come"
+	line "on! You gotta"
+	cont "have more than"
+	line "this!"
+	prompt
+
+_VermilionGymRematchPostBattleText::
+	text "You are strong!"
+	line "You're the victor!"
+
+	para "I'm not gonna lose"
+	line "next time, I'll"
+	cont "train hard to"
+	cont "become number" 
+	cont "one!"
+
+	para "Take this, you"
+	line "might be familiar"
+	cont "with this trick!"
+	done

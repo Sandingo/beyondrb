@@ -133,3 +133,105 @@ _SilphCo10FPorygonText::
 	text "The monitor has"
 	line "#MON on it!"
 	done
+
+_SilphCo11ArcherText::
+	text "You...!"
+	
+	para "So you're fool"
+	line "enough to"
+	cont "continue getting"
+	cont "in our way, is"
+	cont "that it?"
+	
+	para "Luckily, we have"
+	line "contingencies for"
+	cont "insubordination."
+	
+	para "This is what"
+	line "SILPH and ROCKETS"
+	cont "engineering can"
+	cont "achieve!"
+	
+	para "Come, OHMEGA!"
+	done
+	
+_SilphCo11OhmegaText::
+	text "OHMEGA: Gyagogo!"
+	done
+
+_SilphCo11DefeatedOhmegaText::
+	text "Impossible!"
+	line "You bested"
+	cont "our OHMEGA!?"
+	done
+	
+_SilphCo11CaughtOhmegaText::
+	text "This is"
+	line "unbelievable!"
+	
+	para "You CAUGHT our"
+	line  "most prized"
+	cont "invention!?"
+	done
+
+_SilphCo11ArcherPreBattle::
+	text "I can't let you"
+	line "get to the BOSS,"
+	cont "no matter what!"
+	done
+
+_SilphCo11ArcherAfterBattle::
+	text "So it wasn't just a"
+	line "stroke of luck"
+	cont "that you beat"
+	cont "me last time."
+	
+	para "I understand now."
+	line "We'll have to be"
+	cont "more careful"
+	cont "about you in"
+	cont "the future..."
+	done
+
+_SilphCo11FArcherDefeatedText::
+	text "Gah!"
+	line "...again!?"
+	prompt
+
+_SilphCo11FArcherVictoryText::
+	text "That's"
+	line "far enough!"
+	prompt
+
+
+_SilphCo11FArcherBattleText::
+	text "You...!"
+	
+	para "So you're fool"
+	line "enough to"
+	cont "continue getting"
+	cont "in our way, is"
+	cont "that it?"
+	
+	para "I can't let you"
+	line "get to the BOSS,"
+	cont "no matter what!"
+	done
+
+_SilphCo11FArcherEndBattleText::
+	text "Gah!"
+	line "...again!?"
+	prompt
+
+_SilphCo11FArcherAfterBattleText::
+	text "So it wasn't just a"
+	line "stroke of luck"
+	cont "that you beat"
+	cont "me last time."
+	
+	para "I understand now."
+	line "We'll have to be"
+	cont "more careful"
+	cont "about you in"
+	cont "the future..."
+	done

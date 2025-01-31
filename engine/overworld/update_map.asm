@@ -3,6 +3,33 @@
 ; b = Y
 ; c = X
 ReplaceTileBlock:
+	call FindTileBlock
+	ld a, [wNewTileBlockID]
+	ld [hl], a
+	ld a, [wCurrentTileBlockMapViewPointer]
+	ld c, a
+	ld a, [wCurrentTileBlockMapViewPointer + 1]
+	ld b, a
+	call CompareHLWithBC
+	ret c ; return if the replaced tile block is below the map view in memory
+	push hl
+	ld l, e
+	ld h, $0
+	ld e, $6
+	ld d, h
+	add hl, hl
+	add hl, hl
+	add hl, de
+	add hl, bc
+	pop bc
+	call CompareHLWithBC
+	ret c ; return if the replaced tile block is above the map view in memory
+
+; loads the current tile block into in [wNewTileBlockID]
+; b = Y
+; c = X
+; ret = hl = the ID of the currently loaded tile
+FindTileBlock:
 	call GetPredefRegisters
 	ld hl, wOverworldMap
 	ld a, [wCurMapWidth]
@@ -25,26 +52,7 @@ ReplaceTileBlock:
 	jr nz, .addWidthYTimesLoop
 .addX
 	add hl, bc ; add X
-	ld a, [wNewTileBlockID]
-	ld [hl], a
-	ld a, [wCurrentTileBlockMapViewPointer]
-	ld c, a
-	ld a, [wCurrentTileBlockMapViewPointer + 1]
-	ld b, a
-	call CompareHLWithBC
-	ret c ; return if the replaced tile block is below the map view in memory
-	push hl
-	ld l, e
-	ld h, $0
-	ld e, $6
-	ld d, h
-	add hl, hl
-	add hl, hl
-	add hl, de
-	add hl, bc
-	pop bc
-	call CompareHLWithBC
-	ret c ; return if the replaced tile block is above the map view in memory
+	ret
 
 RedrawMapView:
 	ld a, [wIsInBattle]

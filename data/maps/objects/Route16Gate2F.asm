@@ -1,6 +1,7 @@
 	object_const_def
 	const_export ROUTE16GATE2F_LITTLE_BOY
 	const_export ROUTE16GATE2F_LITTLE_GIRL
+	const_export ROUTE16GATE2F_AIDE
 
 Route16Gate2F_Object:
 	db $a ; border block
@@ -15,5 +16,6 @@ Route16Gate2F_Object:
 	def_object_events
 	object_event  4,  2, SPRITE_LITTLE_BOY, STAY, NONE, TEXT_ROUTE16GATE2F_LITTLE_BOY
 	object_event  2,  5, SPRITE_LITTLE_GIRL, WALK, LEFT_RIGHT, TEXT_ROUTE16GATE2F_LITTLE_GIRL
+	object_event  1,  7, SPRITE_SCIENTIST, STAY, RIGHT, TEXT_ROUTE16GATE2F_AIDE
 
 	def_warps_to ROUTE_16_GATE_2F

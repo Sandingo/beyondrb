@@ -23,3 +23,7 @@ _IndigoPlateauLobbyCooltrainerFText::
 	cont "next trainer!"
 	cont "Good luck!"
 	done
+
+_IndigoPlateauLobbyChanseyText::
+	text "CHANSEY: Chance!"
+	done

@@ -76,7 +76,7 @@
 	const DEFENSE_DOWN_SIDE_EFFECT   ; $45
 	const SPEED_DOWN_SIDE_EFFECT     ; $46
 	const SPECIAL_DOWN_SIDE_EFFECT   ; $47
-	const_skip                       ; $48
+	const ACCURACY_DOWN_SIDE_EFFECT                       ; $48
 	const_skip                       ; $49
 	const_skip                       ; $4A
 	const_skip                       ; $4B

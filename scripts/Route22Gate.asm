@@ -57,6 +57,11 @@ Route22GateNoopScript:
 Route22Gate_TextPointers:
 	def_text_pointers
 	dw_const Route22GateGuardText, TEXT_ROUTE22GATE_GUARD
+	dw_const Route22GateSilverGuardText, TEXT_ROUTE22GATE_SILVERGUARD
+
+Route22GateSilverGuardText:
+	text_far _Route22GateSilverGuardText
+	text_end
 
 Route22GateGuardText:
 	text_asm

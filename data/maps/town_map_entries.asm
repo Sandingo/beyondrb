@@ -44,6 +44,9 @@ ExternalMapEntries:
 	external_map  0,  6, Route23Name
 	external_map 10,  1, Route24Name
 	external_map 11,  0, Route25Name
+	external_map  0,  9, Route28Name
+	external_map  0,  9, Route28Name ; Mt Silver Front
+	external_map 11,  0, Route25Name ; Bill's Garden
 	assert_table_length FIRST_INDOOR_MAP
 
 
@@ -116,4 +119,10 @@ InternalMapEntries:
 	internal_map ROCK_TUNNEL_B1F,               14,  3, RockTunnelName
 	internal_map SILPH_CO_ELEVATOR,             10,  5, SilphCoName
 	internal_map AGATHAS_ROOM,                   0,  2, PokemonLeagueName
+	internal_map MT_MOON_SQUARE,                 6,  2, MountMoonName
+	internal_map MT_MOON_HOUSE,                 6,  2, MountMoonName
+	internal_map MT_SILVER_F1,					0,  9, Route28Name
+	internal_map MT_SILVER_F2,					0,  9, Route28Name
+	internal_map MT_SILVER_SUMMIT,				0,  9, Route28Name
+	internal_map MT_SILVER_POKECENTER,		    0,  9, Route28Name
 	db -1 ; end

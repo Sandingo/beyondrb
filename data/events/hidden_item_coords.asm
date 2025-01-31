@@ -14,6 +14,7 @@ HiddenItemCoords:
 	hidden_item SS_ANNE_B1F_ROOMS,              3,   1
 	hidden_item ROUTE_10,                       9,  17
 	hidden_item ROUTE_10,                      16,  53
+	hidden_item GAME_CORNER,				   19,  15
 	hidden_item ROCKET_HIDEOUT_B1F,            21,  15
 	hidden_item ROCKET_HIDEOUT_B3F,            27,  17
 	hidden_item ROCKET_HIDEOUT_B4F,            25,   1
@@ -59,5 +60,8 @@ HiddenItemCoords:
 	hidden_item VERMILION_CITY,                14,  11
 	hidden_item CERULEAN_CITY,                 15,   8
 	hidden_item ROUTE_4,                       40,   3
+	hidden_item MT_MOON_SQUARE, 			   24,   3
+	hidden_item MT_SILVER_F1,                  16,  22
+	hidden_item MT_SILVER_F1,                  17,  13
 	assert_max_table_length MAX_HIDDEN_ITEMS
 	db -1 ; end

@@ -79,7 +79,7 @@ _SSAnneB1FRoomsSailor5EndBattleText::
 	prompt
 
 _SSAnneB1FRoomsSailor5AfterBattleText::
-	text "Jellyfish some-"
+	text "TENTACOOL some-"
 	line "times drift into"
 	cont "the ship."
 	done

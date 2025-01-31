@@ -4,7 +4,7 @@ IF DEF(_RED)
 	db 31, SLOWPOKE
 	db 31, SEEL
 	db 33, SLOWPOKE
-	db 33, SEEL
+	db 33, BLASTYKE
 	db 29, HORSEA
 	db 31, SHELLDER
 	db 31, HORSEA
@@ -15,7 +15,7 @@ IF DEF(_BLUE)
 	db 31, PSYDUCK
 	db 31, SEEL
 	db 33, PSYDUCK
-	db 33, SEEL
+	db 33, BLASTYKE
 	db 29, KRABBY
 	db 31, STARYU
 	db 31, KRABBY

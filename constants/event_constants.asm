@@ -28,7 +28,8 @@
 	const_skip 14
 	const EVENT_OAK_GOT_PARCEL
 	const EVENT_GOT_OAKS_PARCEL
-	const_skip 22
+	const EVENT_BEAT_KYLE
+	const_skip 21
 	const EVENT_GOT_TM27
 	const EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_0
@@ -58,7 +59,8 @@
 	const_skip 18
 	const EVENT_BEAT_CERULEAN_GYM_TRAINER_0
 	const EVENT_BEAT_CERULEAN_GYM_TRAINER_1
-	const_skip 2
+	const EVENT_GOT_BULBASAUR
+	const_skip 1
 	const EVENT_GOT_TM11
 	const EVENT_BEAT_MISTY
 	const EVENT_GOT_BICYCLE
@@ -99,9 +101,10 @@
 
 ; Vermilion City events
 	const_next $150
-	const_skip
+	const EVENT_GOT_SQUIRTLE
 	const EVENT_GOT_BIKE_VOUCHER
-	const_skip 4
+	const EVENT_BEAT_MINA
+	const_skip 3
 	const EVENT_SEEL_FAN_BOAST
 	const EVENT_PIKACHU_FAN_BOAST
 	const_skip 8
@@ -203,7 +206,8 @@
 	const EVENT_BEAT_FIGHTING_DOJO_TRAINER_3
 	const EVENT_GOT_HITMONLEE
 	const EVENT_GOT_HITMONCHAN
-	const_skip 8
+	const EVENT_GOT_HITMONTOP
+	const_skip 7
 	const EVENT_GOT_TM46
 	const EVENT_BEAT_SABRINA
 	const EVENT_BEAT_SAFFRON_GYM_TRAINER_0
@@ -220,7 +224,9 @@
 
 ; Route 1 events
 	const_next $3C0
+	const_skip 2
 	const EVENT_GOT_POTION_SAMPLE
+	const EVENT_BEAT_ROUTE_1_TRAINER_0
 
 ; Route 2 events
 	const_next $3D8
@@ -384,7 +390,7 @@
 
 ; Route 16 events
 	const_next $4C0
-	const_skip
+	const EVENT_GOT_AMULET_COIN
 	const EVENT_BEAT_ROUTE_16_TRAINER_0
 	const EVENT_BEAT_ROUTE_16_TRAINER_1
 	const EVENT_BEAT_ROUTE_16_TRAINER_2
@@ -501,7 +507,7 @@
 	const EVENT_BEAT_ROUTE_24_TRAINER_3
 	const EVENT_BEAT_ROUTE_24_TRAINER_4
 	const EVENT_BEAT_ROUTE_24_TRAINER_5
-	const_skip
+	const EVENT_GOT_CHARMANDER
 	const EVENT_NUGGET_REWARD_AVAILABLE
 
 ; Route 25 events
@@ -554,7 +560,8 @@
 	const_skip 4
 	const EVENT_BEAT_SS_ANNE_5_TRAINER_0
 	const EVENT_BEAT_SS_ANNE_5_TRAINER_1
-	const_skip 26
+	const_skip 25
+	const EVENT_BEAT_MEW
 	const EVENT_GOT_HM01
 	const EVENT_RUBBED_CAPTAINS_BACK
 	const EVENT_SS_ANNE_LEFT
@@ -601,7 +608,7 @@
 	const EVENT_677 ; ???
 	const_skip 7
 	const EVENT_67F ; ???
-	const_skip
+	const EVENT_BEAT_ROCKET_HIDEOUT_4_ARCHER
 	const EVENT_BEAT_ROCKET_HIDEOUT_2_TRAINER_0
 	const_skip 15
 	const EVENT_BEAT_ROCKET_HIDEOUT_3_TRAINER_0
@@ -643,7 +650,8 @@
 	const EVENT_BEAT_SILPH_CO_5F_TRAINER_1
 	const EVENT_BEAT_SILPH_CO_5F_TRAINER_2
 	const EVENT_BEAT_SILPH_CO_5F_TRAINER_3
-	const_skip 2
+	const EVENT_BEAT_SILPH_CO_5F_HITECHJACK
+	const_skip 1
 	const EVENT_SILPH_CO_5_UNLOCKED_DOOR1
 	const EVENT_SILPH_CO_5_UNLOCKED_DOOR2
 	const EVENT_SILPH_CO_5_UNLOCKED_DOOR3
@@ -688,9 +696,10 @@
 	const EVENT_BEAT_SILPH_CO_11F_TRAINER_1
 	const_skip 2
 	const EVENT_SILPH_CO_11_UNLOCKED_DOOR
-	const_skip 4
+	const_skip 3
+	const EVENT_SILPH_CO_11_BEAT_ARCHER ; Unused
 	const EVENT_GOT_MASTER_BALL
-	const_skip
+	const EVENT_SILPH_CO_11_OHMEGA ; Unused
 	const EVENT_BEAT_SILPH_CO_GIOVANNI
 
 ; Pokémon Mansion events
@@ -749,7 +758,7 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 
 ; Rock Tunnel events
 	const_next $9B0
-	const_skip
+	const EVENT_GOT_EVERSTONE
 	const EVENT_BEAT_ROCK_TUNNEL_2_TRAINER_0
 	const EVENT_BEAT_ROCK_TUNNEL_2_TRAINER_1
 	const EVENT_BEAT_ROCK_TUNNEL_2_TRAINER_2
@@ -772,6 +781,21 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 	const_skip 8
 	const EVENT_BEAT_ARTICUNO
 
+; Custom Events
+	const_next $9E0
+	const_skip 3
+	const EVENT_BEAT_OAK
+	DEF REMATCHES_START EQU const_value
+	const EVENT_BEAT_MINA_REMATCH
+	const EVENT_BEAT_BROCK_REMATCH
+	const EVENT_BEAT_MISTY_REMATCH
+	const EVENT_BEAT_LTSURGE_REMATCH
+	const EVENT_BEAT_ERIKA_REMATCH
+	const EVENT_BEAT_KOGA_REMATCH
+	const EVENT_BEAT_BLAINE_REMATCH
+	const EVENT_BEAT_SABRINA_REMATCH
+	const EVENT_MTMOONSQUARE_MOON_STONE
+	DEF REMATCHES_END EQU const_value - 1
 ; End of events
 	const_next $A00
 DEF NUM_EVENTS EQU const_value

@@ -134,7 +134,7 @@ _FuchsiaGymRocker5BattleText::
 
 	para "Ninja have a long"
 	line "history of using"
-	cont "animals!"
+	cont "#MON!"
 	done
 
 _FuchsiaGymRocker5EndBattleText::
@@ -191,4 +191,62 @@ _FuchsiaGymGymGuideBeatKogaText::
 	text "It's amazing how"
 	line "ninja can terrify"
 	cont "even now!"
+	done
+
+; Rematch Dialoge, Placeholder
+_FuchsiaGymRematchPreBattle1Text::
+	text "If it isn't the"
+	line "child. It seems"
+	cont "we are fated to"
+	cont "meet once again."
+	
+	para "You have come at"
+	line "an opporotune"
+	cont "time."
+	
+	para "I was just"
+	line "thinking that I"
+	cont "should test my"
+	cont "new techniques."
+	done
+
+_FuchsiaGymPreRematchBattle2Text::
+	text "This time you will"
+	line "face utter defeat!"
+	done
+
+_FuchsiaGymRematchRefusedText::
+	text "Ah... Then I have"
+	line "time to further"
+	cont "hone my skills."
+	done
+
+_FuchsiaGymRematchDefeatedText::
+	text "If I am"
+	line "not strong enough"
+	cont "even now..."
+	prompt
+
+_FuchsiaGymRematchVictoryText::
+	text "Fwa-"
+	line "hahahaha!"
+	prompt
+
+_FuchsiaGymRematchPostBattleText::
+	text "With trainers like"
+	line "you and <RIVAL>,"
+	cont "the league must"
+	cont "be a formidable"
+	cont "place!"
+
+	para "Truly this is"
+	line "something to be"
+	cont "proud of. As it"
+	cont "just so happens,"
+	cont "I plan on joining"
+	cont "the ELITE FOUR"
+	cont "myself..."
+
+	para "This TM should"
+	line "serve you well."
 	done

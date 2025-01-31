@@ -46,4 +46,6 @@ TownMapOrder:
 	db VICTORY_ROAD_3F
 	db INDIGO_PLATEAU
 	db POWER_PLANT
+	db ROUTE_28
+;	db MT_SILVER
 TownMapOrderEnd:

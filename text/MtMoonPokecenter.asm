@@ -46,3 +46,7 @@ _MtMoonPokecenterMagikarpSalesmanNoRefundsText::
 _MtMoonPokecenterClipboardText::
 	text_start
 	done
+
+_MtMoonPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

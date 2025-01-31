@@ -337,11 +337,12 @@ StartMenu_Item::
 	call PlaceUnfilledArrowMenuCursor
 	xor a
 	ld [wMenuItemToSwap], a
-	ld a, [wCurItem]
-	cp BICYCLE
-	jp z, .useOrTossItem
-.notBicycle1
-	ld a, USE_TOSS_MENU_TEMPLATE
+;	ld a, [wCurItem]
+;	cp BICYCLE
+;	jp z, .useOrTossItem
+;.notBicycle1
+;	ld a, USE_TOSS_MENU_TEMPLATE
+	ld a, USE_INFO_TOSS_MENU_TEMPLATE
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
 	ld hl, wTopMenuItemY
@@ -352,7 +353,8 @@ StartMenu_Item::
 	xor a
 	ld [hli], a ; current menu item ID
 	inc hl
-	inc a ; a = 1
+;	inc a ; a = 1
+	ld a, 2
 	ld [hli], a ; max menu item ID
 	ld a, A_BUTTON | B_BUTTON
 	ld [hli], a ; menu watched keys
@@ -368,20 +370,27 @@ StartMenu_Item::
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	call CopyToStringBuffer
+	ld a, [wCurrentMenuItem]
+	cp a, 2
+	jr z, .tossItem
+	cp a, 1
+	jp z, .infoItem
 	ld a, [wCurItem]
 	cp BICYCLE
-	jr nz, .notBicycle2
+	jr nz, .notBicycle
 	ld a, [wStatusFlags6]
 	bit BIT_ALWAYS_ON_BIKE, a
 	jr z, .useItem_closeMenu
 	ld hl, CannotGetOffHereText
 	call PrintText
 	jp ItemMenuLoop
-.notBicycle2
-	ld a, [wCurrentMenuItem]
-	and a
-	jr nz, .tossItem
+;.notBicycle2
+;	ld a, [wCurrentMenuItem]
+;	and a
+;	jr nz, .tossItem
 ; use item
+.notBicycle
+	xor a
 	ld [wPseudoItemID], a ; a must be 0 due to above conditional jump
 	ld a, [wCurItem]
 	cp HM01
@@ -437,6 +446,9 @@ StartMenu_Item::
 	call TossItem
 .tossZeroItems
 	jp ItemMenuLoop
+.infoItem
+	farcall DisplayItemDescription
+	jp ItemMenuLoop
 
 CannotUseItemsHereText:
 	text_far _CannotUseItemsHereText
@@ -478,6 +490,12 @@ StartMenu_TrainerInfo::
 DrawTrainerInfo:
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $01
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreBoy
+	ld de, GreenPicFront
+	lb bc, BANK(GreenPicFront), $01
+.AreBoy
 	predef DisplayPicCenteredOrUpperRight
 	call DisableLCD
 	hlcoord 0, 2
@@ -663,7 +681,7 @@ SwitchPartyMon::
 	call SwitchPartyMon_ClearGfx
 	ld a, [wCurrentMenuItem]
 	call SwitchPartyMon_ClearGfx
-	jp RedrawPartyMenu_
+	jp RedrawPartyMenu_ReloadSprites
 
 SwitchPartyMon_ClearGfx:
 	push af

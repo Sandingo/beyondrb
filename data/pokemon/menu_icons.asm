@@ -151,4 +151,71 @@ MonPartyData:
 	nybble ICON_SNAKE     ; Dragonite
 	nybble ICON_MON       ; Mewtwo
 	nybble ICON_MON       ; Mew
+	nybble ICON_MON       ; Crobat
+	nybble ICON_GRASS     ; Gelania
+	nybble ICON_MON       ; Annihilape
+	nybble ICON_MON       ; Electivire
+	nybble ICON_MON       ; Magmortar
+	nybble ICON_MON       ; Steelix
+	nybble ICON_MON       ; Guardia
+	nybble ICON_MON       ; Bellossom
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
 	end_nybble_array NUM_POKEMON

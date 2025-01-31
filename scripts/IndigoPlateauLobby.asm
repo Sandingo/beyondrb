@@ -21,6 +21,8 @@ IndigoPlateauLobby_TextPointers:
 	dw_const IndigoPlateauLobbyCooltrainerFText,     TEXT_INDIGOPLATEAULOBBY_COOLTRAINER_F
 	dw_const IndigoPlateauLobbyClerkText,            TEXT_INDIGOPLATEAULOBBY_CLERK
 	dw_const IndigoPlateauLobbyLinkReceptionistText, TEXT_INDIGOPLATEAULOBBY_LINK_RECEPTIONIST
+	dw_const MoveRelearnerText1,                     TEXT_INDIGOPLATEAULOBBY_RELEARNER
+	dw_const IndigoPlateauLobbyChanseyText,          TEXT_INDIGOPLATEAULOBBY_CHANSEY
 
 IndigoPlateauLobbyNurseText:
 	script_pokecenter_nurse
@@ -35,3 +37,19 @@ IndigoPlateauLobbyCooltrainerFText:
 
 IndigoPlateauLobbyLinkReceptionistText:
 	script_cable_club_receptionist
+
+IndigoPlateauLobbyClerkText:
+	script_mart ULTRA_BALL, GREAT_BALL, FULL_RESTORE, MAX_POTION, FULL_HEAL, REVIVE, MAX_REPEL
+	
+IndigoPlateauLobbyChanseyText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, CHANSEY
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _IndigoPlateauLobbyChanseyText
+	text_end

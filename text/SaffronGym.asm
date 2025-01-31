@@ -134,8 +134,8 @@ _SaffronGymYoungster1EndBattleText::
 
 _SaffronGymYoungster1AfterBattleText::
 	text "Psychic #MON"
-	line "fear only ghosts"
-	cont "and bugs!"
+	line "fear only the"
+	cont "dark and bugs!"
 	done
 
 _SaffronGymChanneler2BattleText::
@@ -236,4 +236,69 @@ _SaffronGymYoungster4AfterBattleText::
 	text "That's right! I"
 	line "used telepathy to"
 	cont "read your mind!"
+	done
+
+; Rematch Dialoge, Placeholder
+_SaffronGymRematchPreBattle1Text::
+	text "I foresaw that you"
+	line "would return."
+	
+	para "But I intention-"
+	line "-ally didn't look"
+	cont "to see who would"
+	cont "win out in our"
+	cont "next battle."
+
+	para "Let us find out"
+	line "together!"
+	done
+
+_SaffronGymPreRematchBattle2Text::
+	text "I won't be relying"
+	line "on psychic power"
+	cont "alone this time."
+	
+	para "May my true"
+	line "strength come"
+	cont "forth!"
+	done
+
+_SaffronGymRematchRefusedText::
+	text "Could my reading"
+	line "have been"
+	cont "wrong...?"
+	done
+
+_SaffronGymRematchDefeatedText::
+	text "I won't"
+	line "meet another"
+	cont "trainer like you"
+	cont "for another 3"
+	cont "years."
+	prompt
+
+_SaffronGymRematchVictoryText::
+	text "I could"
+	line "have never"
+	cont "forseen this!"
+	prompt
+
+_SaffronGymRematchPostBattleText::
+	text "At first, I was"
+	line "at a loss when"
+	cont "I lost to you." 
+
+	para "That feeling is"
+	line "gone now, and"
+	cont "has been replaced"
+	cont "with a desire to"
+	cont "grow free and"
+	cont "become stronger."
+	
+	para "Just as you do."
+
+	para "Allow this to"
+	line "predict your"
+	cont "victories in the" 
+	cont "future."
 	done

@@ -4,7 +4,7 @@ IF DEF(_RED)
 	db  4, WEEDLE
 	db  5, KAKUNA
 	db  3, WEEDLE
-	db  5, WEEDLE
+	db  5, KOKANA
 	db  4, KAKUNA
 	db  6, KAKUNA
 	db  4, METAPOD
@@ -14,7 +14,7 @@ IF DEF(_BLUE)
 	db  4, CATERPIE
 	db  5, METAPOD
 	db  3, CATERPIE
-	db  5, CATERPIE
+	db  5, KOKANA
 	db  4, METAPOD
 	db  6, METAPOD
 	db  4, KAKUNA

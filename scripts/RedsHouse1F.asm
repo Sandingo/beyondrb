@@ -4,6 +4,7 @@ RedsHouse1F_Script:
 RedsHouse1F_TextPointers:
 	def_text_pointers
 	dw_const RedsHouse1FMomText, TEXT_REDSHOUSE1F_MOM
+	dw_const RedsHouse1FMrMimeText,		   TEXT_REDSHOUSE1F_MR_MIME
 	dw_const RedsHouse1FTVText,  TEXT_REDSHOUSE1F_TV
 
 RedsHouse1FMomText:
@@ -67,4 +68,17 @@ RedsHouse1FTVText:
 
 .WrongSideText:
 	text_far _RedsHouse1FTVWrongSideText
+	text_end
+
+RedsHouse1FMrMimeText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, MR_MIME
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+RedsHouse1FMrMimeText.Text:
+	text_far _RedsHouse1FMrMimeText
 	text_end

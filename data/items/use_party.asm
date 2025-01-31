@@ -1,6 +1,10 @@
 ; items which bring up the party menu when used
 UsableItems_PartyMenu:
 	db MOON_STONE
+	db SUN_STONE
+	db ICE_STONE
+	db METAL_COAT
+	db NUGGET
 	db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL
@@ -36,4 +40,5 @@ UsableItems_PartyMenu:
 	db MAX_ETHER
 	db ELIXER
 	db MAX_ELIXER
+	db PEWTERCRUNCH
 	db -1 ; end

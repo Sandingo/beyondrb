@@ -165,6 +165,26 @@ MoveSoundTable:
 	db SFX_BATTLE_26,          $f0, $ff ; SUPER_FANG
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SLASH
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
+	db SFX_BATTLE_0D,          $00, $40 ; RAGE FIST
+	db SFX_BATTLE_1E,          $00, $80 ; CRUNCH
+	db SFX_BATTLE_22,          $00, $80 ; IRON TAIL
+	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; METAL CLAW
+	db SFX_BATTLE_26,          $00, $80 ; VOLT TACKLE
+	db SFX_BATTLE_36,          $f0, $20 ; UPPERCUT
+	db SFX_BATTLE_0E,          $00, $a0 ; EXTREMESPEED
+	db SFX_BATTLE_26,          $01, $60 ; VITAL_THROW
+	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; STONE_AXE
+	db SFX_BATTLE_36,          $00, $80 ; ROCK_WRECKER
+	db SFX_BATTLE_25,          $00, $10 ; FEINT_ATTACK
+	db SFX_BATTLE_0B,          $01, $80 ; DBL_IRON_BASH
+	db SFX_BATTLE_14,          $01, $e0 ; STAR_FREEZE
+	db SFX_BATTLE_1C,          $00, $ff ; INK_SPRAY
+	db SFX_FAINT_FALL,         $ff, $04 ; BAIBAI_PUNCH
+	db SFX_BATTLE_12,          $00, $c0 ; POWDER_SNOW
+	db SFX_BATTLE_2B,          $f0, $60 ; BONE RUSH
+	db SFX_SUPER_EFFECTIVE,    $f0, $ff ; CROSS CUTTER
+	db SFX_BATTLE_2B,          $1f, $60 ; FAIRY_WIND
+	db SFX_BATTLE_36,          $00, $80 ; MOONBLAST
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

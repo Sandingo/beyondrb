@@ -8,12 +8,94 @@ PewterPokecenter_TextPointers:
 	dw_const PewterPokecenterGentlemanText,        TEXT_PEWTERPOKECENTER_GENTLEMAN
 	dw_const PewterPokecenterJigglypuffText,       TEXT_PEWTERPOKECENTER_JIGGLYPUFF
 	dw_const PewterPokecenterLinkReceptionistText, TEXT_PEWTERPOKECENTER_LINK_RECEPTIONIST
+	dw_const PewterPokecenterChanseyText,		   TEXT_PEWTERPOKECENTER_CHANSEY
+	dw_const PewterPokecenterCrunchiesGuyText,     TEXT_PEWTERPOKECENTER_CRUNCHIES_GUY
 
 PewterPokecenterNurseText:
 	script_pokecenter_nurse
 
 PewterPokecenterGentlemanText:
 	text_far _PewterPokecenterGentlemanText
+	text_end
+	
+PewterPokecenterCrunchiesGuyText:
+	text_asm
+	ld hl, PewterPokecenterCrunchiesSellingText
+	call PrintText
+	ld a, MONEY_BOX
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, .exit
+	xor a
+	;charge 500 money
+	ld [hMoney], a	
+	ld [hMoney + 2], a	
+	ld a, $5
+	ld [hMoney + 1], a  
+	call HasEnoughMoney
+	jr nc, .enoughMoney
+	; not enough money
+	ld hl, PewterPokecenterCrunchiesNoMoneyText
+	call PrintText
+	jp TextScriptEnd
+.enoughMoney
+	lb bc, PEWTERCRUNCH, 1
+	call GiveItem
+	jr nc, .BagFull
+	xor a
+	ld [wPriceTemp], a
+	ld [wPriceTemp + 2], a	
+	ld a, $5
+	ld [wPriceTemp + 1], a	
+	ld hl, wPriceTemp + 2
+	ld de, wPlayerMoney + 2
+	ld c, $3
+	predef SubBCDPredef
+	ld hl, PewterPokecenterCrunchiesBoughtText
+	call PrintText
+	call WaitForTextScrollButtonPress
+	ld hl, PewterPokecenterCrunchiesGotText
+	call PrintText
+	ld a, MONEY_BOX
+	ld [wTextBoxID], a
+	jp DisplayTextBoxID
+	jp .end
+.BagFull
+	ld hl, PewterPokecenterCrunchiesNoRoomText
+	jp PrintText
+	jp .end
+.exit
+	ld hl, PewterPokecenterCrunchiesNevermindText
+	call PrintText
+.end
+	jp TextScriptEnd
+
+PewterPokecenterCrunchiesSellingText:
+	text_far _PewterPokecenterCrunchiesSellingText
+	text_end
+
+PewterPokecenterCrunchiesNoMoneyText:
+	text_far _PewterPokecenterCrunchiesNoMoneyText
+	text_end
+
+PewterPokecenterCrunchiesBoughtText:
+	text_far _PewterPokecenterCrunchiesBoughtText
+	text_end
+
+PewterPokecenterCrunchiesGotText:
+	text_far _PewterPokecenterCrunchiesGotText
+	sound_get_item_1
+	text_end
+
+PewterPokecenterCrunchiesNoRoomText:
+	text_far _PewterPokecenterCrunchiesNoRoomText
+	text_end
+
+PewterPokecenterCrunchiesNevermindText:
+	text_far _PewterPokecenterCrunchiesNevermindText
 	text_end
 
 PewterPokecenterJigglypuffText:
@@ -85,3 +167,16 @@ PewterPokecenterJigglypuffText:
 
 PewterPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
+
+PewterPokecenterChanseyText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, CHANSEY
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _PewterPokecenterChanseyText
+	text_end

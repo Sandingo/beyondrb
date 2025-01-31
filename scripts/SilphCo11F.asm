@@ -278,14 +278,16 @@ SilphCo11F_TextPointers:
 	dw_const SilphCo11FSilphPresidentText,            TEXT_SILPHCO11F_SILPH_PRESIDENT
 	dw_const SilphCo11FBeautyText,                    TEXT_SILPHCO11F_BEAUTY
 	dw_const SilphCo11FGiovanniText,                  TEXT_SILPHCO11F_GIOVANNI
-	dw_const SilphCo11FRocket1Text,                   TEXT_SILPHCO11F_ROCKET1
+	dw_const SilphCo11FArcherText,          TEXT_SILPHCO11F_ARCHER
 	dw_const SilphCo11FRocket2Text,                   TEXT_SILPHCO11F_ROCKET2
+	dw_const PickUpItemText,                 	  TEXT_SILPHCO11F_ELECTIRIZER
 	dw_const SilphCo11FGiovanniYouRuinedOurPlansText, TEXT_SILPHCO11F_GIOVANNI_YOU_RUINED_OUR_PLANS
+
 
 SilphCo11TrainerHeaders:
 	def_trainers 4
 SilphCo11TrainerHeader0:
-	trainer EVENT_BEAT_SILPH_CO_11F_TRAINER_0, 4, SilphCo11FRocket1BattleText, SilphCo11FRocket1EndBattleText, SilphCo11FRocket1AfterBattleText
+	trainer EVENT_BEAT_SILPH_CO_11F_TRAINER_0, 4, SilphCo11FArcherBattleText, SilphCo11FArcherEndBattleText, SilphCo11FArcherAfterBattleText
 SilphCo11TrainerHeader1:
 	trainer EVENT_BEAT_SILPH_CO_11F_TRAINER_1, 3, SilphCo11FRocket2BattleText, SilphCo11FRocket2EndBattleText, SilphCo11FRocket2AfterBattleText
 	db -1 ; end
@@ -346,22 +348,22 @@ SilphCo11FGiovanniYouRuinedOurPlansText:
 	text_far _SilphCo11FGiovanniYouRuinedOurPlansText
 	text_end
 
-SilphCo11FRocket1Text:
+SilphCo11FArcherText:
 	text_asm
 	ld hl, SilphCo11TrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
 
-SilphCo11FRocket1BattleText:
-	text_far _SilphCo11FRocket1BattleText
+SilphCo11FArcherBattleText:
+	text_far _SilphCo11FArcherBattleText
 	text_end
 
-SilphCo11FRocket1EndBattleText:
-	text_far _SilphCo11FRocket1EndBattleText
+SilphCo11FArcherEndBattleText:
+	text_far _SilphCo11FArcherEndBattleText
 	text_end
 
-SilphCo11FRocket1AfterBattleText:
-	text_far _SilphCo11FRocket1AfterBattleText
+SilphCo11FArcherAfterBattleText:
+	text_far _SilphCo11FArcherAfterBattleText
 	text_end
 
 SilphCo11FRocket2Text:

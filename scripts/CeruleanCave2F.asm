@@ -6,3 +6,5 @@ CeruleanCave2F_TextPointers:
 	dw_const PickUpItemText, TEXT_CERULEANCAVE2F_PP_UP
 	dw_const PickUpItemText, TEXT_CERULEANCAVE2F_ULTRA_BALL
 	dw_const PickUpItemText, TEXT_CERULEANCAVE2F_FULL_RESTORE
+	dw_const PickUpItemText, TEXT_CERULEANCAVE2F_HELIX_FOSSIL
+	dw_const PickUpItemText, TEXT_CERULEANCAVE2F_DOME_FOSSIL

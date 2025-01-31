@@ -8,6 +8,7 @@ CinnabarPokecenter_TextPointers:
 	dw_const CinnabarPokecenterCooltrainerFText,     TEXT_CINNABARPOKECENTER_COOLTRAINER_F
 	dw_const CinnabarPokecenterGentlemanText,        TEXT_CINNABARPOKECENTER_GENTLEMAN
 	dw_const CinnabarPokecenterLinkReceptionistText, TEXT_CINNABARPOKECENTER_LINK_RECEPTIONIST
+	dw_const CinnabarPokecenterChanseyText,		     TEXT_CINNABARPOKECENTER_CHANSEY
 
 CinnabarPokecenterNurseText:
 	script_pokecenter_nurse
@@ -22,3 +23,16 @@ CinnabarPokecenterGentlemanText:
 
 CinnabarPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
+
+CinnabarPokecenterChanseyText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, CHANSEY
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _CinnabarPokecenterChanseyText
+	text_end

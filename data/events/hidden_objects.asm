@@ -60,9 +60,6 @@ HiddenObjectMaps:
 	db UNUSED_MAP_6F
 	db BILLS_HOUSE
 	db VIRIDIAN_CITY
-	db SAFARI_ZONE_WEST_REST_HOUSE
-	db SAFARI_ZONE_EAST_REST_HOUSE
-	db SAFARI_ZONE_NORTH_REST_HOUSE
 	db ROUTE_15_GATE_2F
 	db MR_FUJIS_HOUSE
 	db CELADON_MANSION_ROOF_HOUSE
@@ -84,6 +81,9 @@ HiddenObjectMaps:
 	db VERMILION_CITY
 	db CERULEAN_CITY
 	db ROUTE_4
+	db MT_MOON_SQUARE
+	db MT_SILVER_POKECENTER
+	db MT_SILVER_F1
 	db -1 ; end
 
 HiddenObjectPointers:
@@ -149,9 +149,6 @@ HiddenObjectPointers:
 	dw Unused6FHiddenObjects
 	dw BillsHouseHiddenObjects
 	dw ViridianCityHiddenObjects
-	dw SafariZoneRestHouse2HiddenObjects
-	dw SafariZoneRestHouse3HiddenObjects
-	dw SafariZoneRestHouse4HiddenObjects
 	dw Route15GateUpstairsHiddenObjects
 	dw LavenderHouse1HiddenObjects
 	dw CeladonMansion5HiddenObjects
@@ -173,6 +170,9 @@ HiddenObjectPointers:
 	dw VermilionCityHiddenObjects
 	dw CeruleanCityHiddenObjects
 	dw Route4HiddenObjects
+	dw MtMoonSquareHiddenObjects
+	dw MtSilverPokecenterHiddenObjects
+	dw MtSilverF1HiddenObjects
 
 MACRO hidden_object
 	db \2 ; y coord
@@ -365,6 +365,7 @@ GameCornerHiddenObjects:
 	hidden_object 11,  7, COIN+40, HiddenCoins
 	hidden_object 15,  8, COIN+100, HiddenCoins
 	hidden_object 12, 15, COIN+10, HiddenCoins
+	hidden_object 19, 15, BOTTLE_CAP, HiddenItems
 	db -1 ; end
 
 CeladonHotelHiddenObjects:
@@ -561,21 +562,6 @@ ViridianCityHiddenObjects:
 	hidden_object 14,  4, POTION, HiddenItems
 	db -1 ; end
 
-SafariZoneRestHouse2HiddenObjects:
-	hidden_object  0,  4, SPRITE_FACING_LEFT, PrintBenchGuyText
-	hidden_object 13,  3, SPRITE_FACING_UP, OpenPokemonCenterPC
-	db -1 ; end
-
-SafariZoneRestHouse3HiddenObjects:
-	hidden_object  0,  4, SPRITE_FACING_LEFT, PrintBenchGuyText
-	hidden_object 13,  3, SPRITE_FACING_UP, OpenPokemonCenterPC
-	db -1 ; end
-
-SafariZoneRestHouse4HiddenObjects:
-	hidden_object  0,  4, SPRITE_FACING_LEFT, PrintBenchGuyText
-	hidden_object 13,  3, SPRITE_FACING_UP, OpenPokemonCenterPC
-	db -1 ; end
-
 Route15GateUpstairsHiddenObjects:
 	hidden_object  1,  2, SPRITE_FACING_UP, Route15GateLeftBinoculars
 	db -1 ; end
@@ -665,4 +651,17 @@ CeruleanCityHiddenObjects:
 
 Route4HiddenObjects:
 	hidden_object 40,  3, GREAT_BALL, HiddenItems
+	db -1 ; end
+
+MtMoonSquareHiddenObjects:
+	hidden_object 24,  3, REVIVE, HiddenItems
+	db -1 ; end
+
+MtSilverPokecenterHiddenObjects:
+	hidden_object 13,  3, SPRITE_FACING_UP, OpenPokemonCenterPC
+	db -1 ; end
+
+MtSilverF1HiddenObjects:
+	hidden_object 16,  22, DIRE_HIT, HiddenItems
+	hidden_object 17,  13, ULTRA_BALL, HiddenItems
 	db -1 ; end

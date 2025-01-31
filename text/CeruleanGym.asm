@@ -131,3 +131,62 @@ _CeruleanGymGymGuideBeatMistyText::
 	line "we make a pretty"
 	cont "darn good team!"
 	done
+
+; Rematch Dialoge, Placeholder
+_CeruleanGymRematchPreBattle1Text::
+	text "So here you are..."
+	line "Don't make me" 
+	cont "wait!"
+	
+	para "I've heard a lot"
+	line "of good things"
+	cont "about you since"
+	cont "our last battle."
+
+	para "Let me test how"
+	line "good you are!"
+	done
+
+_CeruleanGymPreRematchBattle2Text::
+	text "I'll show you just"
+	line "how much stronger"
+	cont "the water-type"
+	cont "can be!"
+	done
+
+_CeruleanGymRematchRefusedText::
+	text "Aw... That makes"
+	line "me sad..."
+	done
+
+_CeruleanGymRematchDefeatedText::
+	text "Wow! You"
+	line "are getting"
+	cont "stronger by the"
+	cont "battle!"
+	prompt
+
+_CeruleanGymRematchVictoryText::
+	text "See!"
+	line "This is the water-"
+	cont "type toughness"
+	cont "I was talking"
+	cont "about!"
+	prompt
+
+_CeruleanGymRematchPostBattleText::
+	text "My pride and joy"
+    line "are my water-type"
+	cont "#MON, but they"
+	cont "were no match for"
+	cont "yours."
+	
+	para "Thank you for"
+	line "teaching me the"
+	cont "world is a really"
+	cont "big place."
+
+	para "Have this to"
+	line "remember our"
+	cont "battle together."
+	done

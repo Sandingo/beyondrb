@@ -1,11 +1,29 @@
 Route1_Script:
-	jp EnableAutoTextBoxDrawing
+	call EnableAutoTextBoxDrawing
+	ld hl, Route1TrainerHeaders
+	ld de, Route1_ScriptPointers
+	ld a, [wRoute1CurScript]
+	call ExecuteCurMapScriptInTable
+	ld [wRoute1CurScript], a
+	ret
 
+Route1_ScriptPointers:
+	dw CheckFightingMapTrainers
+	dw DisplayEnemyTrainerTextAndStartBattle
+	dw EndTrainerBattle
+	
 Route1_TextPointers:
 	def_text_pointers
 	dw_const Route1Youngster1Text, TEXT_ROUTE1_YOUNGSTER1
 	dw_const Route1Youngster2Text, TEXT_ROUTE1_YOUNGSTER2
+	dw_const Route1Youngster3Text, TEXT_ROUTE1_YOUNGSTER3
 	dw_const Route1SignText,       TEXT_ROUTE1_SIGN
+
+Route1TrainerHeaders:
+	def_trainers 3
+Route1TrainerHeader0:
+	trainer EVENT_BEAT_ROUTE_1_TRAINER_0, 2, Route1BattleText1, Route1EndBattleText1, Route1AfterBattleText1
+	db -1 ; end
 
 Route1Youngster1Text:
 	text_asm
@@ -50,4 +68,22 @@ Route1Youngster2Text:
 
 Route1SignText:
 	text_far _Route1SignText
+	text_end
+
+Route1Youngster3Text:
+	text_asm
+	ld hl, Route1TrainerHeader0
+	call TalkToTrainer
+	jp TextScriptEnd
+
+Route1BattleText1:
+	text_far _Route1BattleText1
+	text_end
+
+Route1EndBattleText1:
+	text_far _Route1EndBattleText1
+	text_end
+
+Route1AfterBattleText1:
+	text_far _Route1AfterBattleText1
 	text_end

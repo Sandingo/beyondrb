@@ -6,6 +6,7 @@ CeladonMart4F_TextPointers:
 	dw_const CeladonMart4FClerkText,            TEXT_CELADONMART4F_CLERK
 	dw_const CeladonMart4FSuperNerdText,        TEXT_CELADONMART4F_SUPER_NERD
 	dw_const CeladonMart4FYoungsterText,        TEXT_CELADONMART4F_YOUNGSTER
+	dw_const CeladonMart4FClerk2Text,           TEXT_CELADONMART4F_CLERK2
 	dw_const CeladonMart4FCurrentFloorSignText, TEXT_CELADONMART4F_CURRENT_FLOOR_SIGN
 
 CeladonMart4FSuperNerdText:
@@ -19,3 +20,9 @@ CeladonMart4FYoungsterText:
 CeladonMart4FCurrentFloorSignText:
 	text_far _CeladonMart4FCurrentFloorSignText
 	text_end
+
+CeladonMart4FClerkText:
+	script_mart POKE_DOLL, FIRE_STONE, THUNDER_STONE, WATER_STONE, LEAF_STONE, SUN_STONE, ICE_STONE
+
+CeladonMart4FClerk2Text:
+	script_mart METAL_COAT, PROTECTOR, MAGMARIZER, ELECTIRIZER

@@ -6,7 +6,12 @@ TradeMons:
 	; from the Japanese Blue trades, which used species that evolve.
 	; Japanese Red and Green used TRADE_DIALOGSET_CASUAL, and had
 	; the same species as English Red and Blue.
-	db NIDORINO,   NIDORINA,  TRADE_DIALOGSET_CASUAL,    "TERRY@@@@@@"
+IF DEF(_RED)
+	db SCYTHER,    PINSIR,   TRADE_DIALOGSET_CASUAL,     "PLUCKY@@@@@"
+ENDC
+IF DEF(_BLUE)
+	db PINSIR,     SCYTHER,   TRADE_DIALOGSET_CASUAL,    "STRYKE@@@@@"
+ENDC
 	db ABRA,       MR_MIME,   TRADE_DIALOGSET_CASUAL,    "MARCEL@@@@@"
 	db BUTTERFREE, BEEDRILL,  TRADE_DIALOGSET_HAPPY,     "CHIKUCHIKU@" ; unused
 	db PONYTA,     SEEL,      TRADE_DIALOGSET_CASUAL,    "SAILOR@@@@@"
@@ -15,5 +20,11 @@ TradeMons:
 	db POLIWHIRL,  JYNX,      TRADE_DIALOGSET_EVOLUTION, "LOLA@@@@@@@"
 	db RAICHU,     ELECTRODE, TRADE_DIALOGSET_EVOLUTION, "DORIS@@@@@@"
 	db VENONAT,    TANGELA,   TRADE_DIALOGSET_HAPPY,     "CRINKLES@@@"
-	db NIDORAN_M,  NIDORAN_F, TRADE_DIALOGSET_HAPPY,     "SPOT@@@@@@@"
+IF DEF(_RED)
+	db ODDISH,     BELLSPROUT,TRADE_DIALOGSET_HAPPY,     "SPROUTS@@@@"
+ENDC
+IF DEF(_BLUE)
+	db BELLSPROUT, ODDISH,    TRADE_DIALOGSET_HAPPY,     "DOTTY@@@@@@"
+ENDC
+	db NO_MON,     NO_MON, 	  TRADE_DIALOGSET_SELF,   	 "Unseen@@@@@"
 	assert_table_length NUM_NPC_TRADES

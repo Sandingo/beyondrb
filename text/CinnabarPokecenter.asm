@@ -19,3 +19,7 @@ _CinnabarPokecenterGentlemanText::
 	para "I think it's"
 	line "worth a try!"
 	done
+
+_CinnabarPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

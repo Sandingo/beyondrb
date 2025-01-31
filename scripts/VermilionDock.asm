@@ -1,9 +1,8 @@
 VermilionDock_Script:
-	call EnableAutoTextBoxDrawing
 	CheckEventHL EVENT_STARTED_WALKING_OUT_OF_DOCK
 	jr nz, .walking_out_of_dock
 	CheckEventReuseHL EVENT_GOT_HM01
-	ret z
+	jr z, .default
 	ld a, [wDestinationWarpID]
 	cp $1
 	ret nz
@@ -28,13 +27,18 @@ VermilionDock_Script:
 	ret
 .walking_out_of_dock
 	CheckEventAfterBranchReuseHL EVENT_WALKED_OUT_OF_DOCK, EVENT_STARTED_WALKING_OUT_OF_DOCK
-	ret nz
+	jr nz, .default
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
 	ret nz
 	ld [wJoyIgnore], a
 	SetEventReuseHL EVENT_WALKED_OUT_OF_DOCK
 	ret
+.default
+	call EnableAutoTextBoxDrawing
+	ld hl, VermilionDock_ScriptPointers
+	ld a, [wVermilionDockCurScript]
+	jp CallFunctionInTable
 
 VermilionDockSSAnneLeavesScript:
 	SetEventForceReuseHL EVENT_SS_ANNE_LEFT
@@ -206,12 +210,92 @@ VermilionDock_EraseSSAnne:
 	call PlaySound
 	ld c, 120
 	call DelayFrames
+	ld a, HS_VERMILION_MINA
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ret
+
+VermilionDockDefaultScript:
+	ret
+
+VermilionDock_ScriptPointers:
+	def_script_pointers
+	dw_const VermilionDockDefaultScript, 	SCRIPT_VERMILIONDOCK_DEFAULT
+	dw_const MewPostBattleScript, SCRIPT_VERMILIONDOCK_MEW_POST_BATTLE
+
+VermilionDockResetScript:
+	xor a
+	ld [wJoyIgnore], a
+	ld [wVermilionDockCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+MewPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, VermilionDockResetScript
+	ld a, [wBattleResult]
+	cp $2
+	jr z, .caught
+	ld a, TEXT_MEW_DISSAPEARED
+	ldh [hTextID], a
+	call DisplayTextID
+.caught
+	SetEvent EVENT_BEAT_MEW
+	call Delay3
+	ld [wVermilionDockCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 VermilionDock_TextPointers:
 	def_text_pointers
 	dw_const VermilionDockUnusedText, TEXT_VERMILIONDOCK_UNUSED
+	dw_const VermilionTruck1, TEXT_VERMILIONDOCK_TRUCK
+	dw_const MewDissapeared, TEXT_MEW_DISSAPEARED
 
 VermilionDockUnusedText:
 	text_far _VermilionDockUnusedText
+	text_end
+
+VermilionTruck1:
+	text_asm
+	CheckEvent EVENT_BEAT_MEW
+	jr nz, .alreadyBattled
+	ld hl, VermilionDockMewText
+	call PrintText
+	ld a, MEW
+	ld [wCurOpponent], a
+	ld a, 30
+	ld [wCurEnemyLevel], a
+	xor a
+	ld [wIsTrainerBattle], a
+	ld a, SCRIPT_VERMILIONDOCK_MEW_POST_BATTLE
+	ld [wVermilionDockCurScript], a
+	ld [wCurMapScript], a
+	jr .end
+.alreadyBattled
+	ld hl, VermilionDockNothingText
+	call PrintText
+.end
+	jp TextScriptEnd
+
+VermilionDockMewText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, MEW
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _VermilionDockMewText
+	text_end
+
+VermilionDockNothingText:
+	text_far _VermilionDockNothingText
+	text_end
+
+MewDissapeared:
+	text_far _VermilionDockMewDissapeared
 	text_end

@@ -67,6 +67,26 @@ SpriteSheetPointerTable:
 	overworld_sprite BrunoSprite, 12            ; SPRITE_BRUNO
 	overworld_sprite LoreleiSprite, 12          ; SPRITE_LORELEI
 	overworld_sprite SeelSprite, 12             ; SPRITE_SEEL
+	overworld_sprite PoliwrathSprite, 12	    ; SPRITE_POLIWRATH
+	overworld_sprite ArticunoSprite, 12			; SPRITE_ARTICUNO
+	overworld_sprite ZapdosSprite, 12			; SPRITE_ZAPDOS
+	overworld_sprite MoltresSprite, 12			; SPRITE_MOLTRES
+	overworld_sprite ChanseySprite, 12          ; SPRITE_CHANSEY
+	overworld_sprite OfficerJennySprite, 12     ; SPRITE_OFFICER_JENNY
+	overworld_sprite JigglypuffSprite, 12       ; SPRITE_JIGGLYPUFF
+	overworld_sprite OhmegaSprite, 12			; SPRITE_OHMEGA
+	overworld_sprite MrMimeSprite,	12        ; SPRITE_MR_MIME
+	overworld_sprite BrockSprite,	12        ; SPRITE_BROCK
+	overworld_sprite ErikaSprite,	12        ; SPRITE_ERIKA
+	overworld_sprite SabrinaSprite,	12        ; SPRITE_SABRINA
+	overworld_sprite MewtwoSprite, 12         ; SPRITE_MEWTWO
+	overworld_sprite SpearowSprite, 12         ; SPRITE_SPEAROW
+	overworld_sprite FearowSprite, 12
+	overworld_sprite PikachuSprite, 12         ; SPRITE_PIKACHU
+	overworld_sprite PidgeySprite, 12
+	overworld_sprite MistySprite, 12
+	overworld_sprite SurgeSprite, 12
+	overworld_sprite BillSprite, 12
 	overworld_sprite PokeBallSprite, 4          ; SPRITE_POKE_BALL
 	overworld_sprite FossilSprite, 4            ; SPRITE_FOSSIL
 	overworld_sprite BoulderSprite, 4           ; SPRITE_BOULDER
@@ -79,4 +99,5 @@ SpriteSheetPointerTable:
 	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_UNUSED_GAMBLER_ASLEEP_1
 	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_UNUSED_GAMBLER_ASLEEP_2
 	overworld_sprite GamblerAsleepSprite, 4     ; SPRITE_GAMBLER_ASLEEP
+	overworld_sprite SlowbroSprite, 4			; SPRITE_SLOWBRO
 	assert_table_length NUM_SPRITES

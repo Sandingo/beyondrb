@@ -65,11 +65,36 @@ SilphCo5F_SetUnlockedSilphCoDoorsScript:
 	SetEventAfterBranchReuseHL EVENT_SILPH_CO_5_UNLOCKED_DOOR3, EVENT_SILPH_CO_5_UNLOCKED_DOOR1
 	ret
 
+ResetScripts:
+	xor a
+	ld [wJoyIgnore], a
+	ld [wSilphCo5FCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+JackDispenseCardKey:
+ld a, [wIsInBattle]
+	cp $ff
+	jp z, ResetScripts
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	ld a, TEXT_SILPHCO5F_HITECHJACK_OUTRO
+	ldh [hTextID], a
+	call DisplayTextID
+	ld a, HS_SILPH_CO_5F_ITEM_4	; Show Card Key
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	SetEvent EVENT_BEAT_SILPH_CO_5F_HITECHJACK
+	jp ResetScripts
+.done
+	
+
 SilphCo5F_ScriptPointers:
 	def_script_pointers
 	dw_const CheckFightingMapTrainers,              SCRIPT_SILPHCO5F_DEFAULT
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_SILPHCO5F_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_SILPHCO5F_END_BATTLE
+	dw_const JackDispenseCardKey,					SCRIPT_SILPHCO5F_JACK_DISPENSE
 
 SilphCo5F_TextPointers:
 	def_text_pointers
@@ -78,12 +103,15 @@ SilphCo5F_TextPointers:
 	dw_const SilphCo5FScientistText,      TEXT_SILPHCO5F_SCIENTIST
 	dw_const SilphCo5FRockerText,         TEXT_SILPHCO5F_ROCKER
 	dw_const SilphCo5FRocket2Text,        TEXT_SILPHCO5F_ROCKET2
+	dw_const SilphCo5FHiTechJackText,     TEXT_SILPHCO5F_HITECHJACK
 	dw_const PickUpItemText,              TEXT_SILPHCO5F_TM_TAKE_DOWN
 	dw_const PickUpItemText,              TEXT_SILPHCO5F_PROTEIN
+	dw_const PickUpItemText,              TEXT_SILPHCO5F_NUGGET
 	dw_const PickUpItemText,              TEXT_SILPHCO5F_CARD_KEY
 	dw_const SilphCo5FPokemonReport1Text, TEXT_SILPHCO5F_POKEMON_REPORT1
 	dw_const SilphCo5FPokemonReport2Text, TEXT_SILPHCO5F_POKEMON_REPORT2
 	dw_const SilphCo5FPokemonReport3Text, TEXT_SILPHCO5F_POKEMON_REPORT3
+	dw_const SilphCo5FHiTechJackOutroText, TEXT_SILPHCO5F_HITECHJACK_OUTRO
 
 SilphCo5TrainerHeaders:
 	def_trainers 2
@@ -96,6 +124,57 @@ SilphCo5TrainerHeader2:
 SilphCo5TrainerHeader3:
 	trainer EVENT_BEAT_SILPH_CO_5F_TRAINER_3, 3, SilphCo5FRocket2BattleText, SilphCo5FRocket2EndBattleText, SilphCo5FRocket2AfterBattleText
 	db -1 ; end
+
+SilphCo5FHiTechJackText:
+	text_asm
+	CheckEvent EVENT_BEAT_SILPH_CO_5F_HITECHJACK
+	jp nz, .already_fought
+	ld hl, .HiTechJackIntro
+	call PrintText
+;	call WaitForTextScrollButtonPress
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, .JackDefeatedText
+	ld de, .JackVictoryText
+	call SaveEndBattleTextPointers
+	ld [wIsTrainerBattle], a; Battle Start!
+	ld a, OPP_HITECH_JACK
+	ld [wCurOpponent], a
+	ld a, 1
+	ld [wTrainerNo], a
+	xor a
+	ldh [hJoyHeld], a
+	ld a, SCRIPT_SILPHCO5F_JACK_DISPENSE
+	ld [wSilphCo5FCurScript], a
+	ld [wCurMapScript], a
+	jr .done
+.already_fought
+	ld hl, .JackAfterText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+.HiTechJackIntro:
+	text_far _SilphCo5FSilphHiTechJackIntroText
+	text_end
+
+.JackDefeatedText
+	text_far _SilphCo5FHiTechJackDefeatedText
+	text_end
+	
+.JackVictoryText
+	text_far _SilphCo5FHiTechJackVictoryText
+	text_end
+
+.JackAfterText
+	text_far _SilphCo5FSilphHiTechJackAfterTalkText
+	text_end
+
+SilphCo5FHiTechJackOutroText:
+	text_far _SilphCo5FSilphHiTechJackOutroText
+	sound_get_item_1
+	text_end
 
 SilphCo5FSilphWorkerMText:
 	text_asm

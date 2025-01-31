@@ -55,6 +55,9 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_23,                      10, 72 ; $22
 	map_const ROUTE_24,                      10, 18 ; $23
 	map_const ROUTE_25,                      30,  9 ; $24
+	map_const ROUTE_28,						 20,  9
+	map_const MT_SILVER_FRONT,				 19, 18
+	map_const BILLS_GARDEN,					  7, 12
 DEF FIRST_INDOOR_MAP EQU const_value
 	map_const REDS_HOUSE_1F,                  4,  4 ; $25
 	map_const REDS_HOUSE_2F,                  4,  4 ; $26
@@ -196,7 +199,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const INDIGO_PLATEAU_LOBBY,           8,  6 ; $AE
 	map_const COPYCATS_HOUSE_1F,              4,  4 ; $AF
 	map_const COPYCATS_HOUSE_2F,              4,  4 ; $B0
-	map_const FIGHTING_DOJO,                  5,  6 ; $B1
+	map_const FIGHTING_DOJO,                  6,  6 ; $B1
 	map_const SAFFRON_GYM,                   10,  9 ; $B2
 	map_const SAFFRON_PIDGEY_HOUSE,           4,  4 ; $B3
 	map_const SAFFRON_MART,                   4,  4 ; $B4
@@ -261,12 +264,17 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const TRADE_CENTER,                   5,  4 ; $EF
 	map_const COLOSSEUM,                      5,  4 ; $F0
 	map_const UNUSED_MAP_F1,                  0,  0 ; $F1
-	map_const UNUSED_MAP_F2,                  0,  0 ; $F2
-	map_const UNUSED_MAP_F3,                  0,  0 ; $F3
-	map_const UNUSED_MAP_F4,                  0,  0 ; $F4
 	map_const LORELEIS_ROOM,                  5,  6 ; $F5
 	map_const BRUNOS_ROOM,                    5,  6 ; $F6
 	map_const AGATHAS_ROOM,                   5,  6 ; $F7
+	map_const MT_MOON_SQUARE,				 15,  9
+	map_const MT_MOON_HOUSE,				  4,  4
+	map_const MT_SILVER_F1,					 10, 17
+	map_const MT_SILVER_F2,					 13, 18
+	map_const MT_SILVER_MELTAN_ROOM,          7,  2
+	map_const MT_SILVER_SUMMIT,				 13, 18
+	map_const MT_SILVER_POKECENTER,           7,  4
+	map_const ROUTE_28_HOUSE,                 4,  4
 DEF NUM_MAPS EQU const_value
 
 ; Indoor maps, such as houses, use this as the Map ID in their exit warps

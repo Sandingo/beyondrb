@@ -17,3 +17,7 @@ _VermilionPokecenterSailorText::
 	cont "fainted while we"
 	cont "were walking!"
 	done
+
+_VermilionPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

@@ -37,12 +37,111 @@ RocketHideoutB4FSetDefaultScript:
 	ld [wCurMapScript], a
 	ret
 
+RocketHideoutArcherEvent:
+IF DEF(_DEBUG)
+	call DebugPressedOrHeldB
+	ret nz
+ENDC
+	jp nz, CheckFightingMapTrainers
+	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_4_ARCHER
+	ret nz
+	ld hl, RocketHideoutCoords
+	call ArePlayerCoordsInArray
+	jp nc, CheckFightingMapTrainers
+	xor a
+	ldh [hJoyHeld], a
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	ld a, [wXCoord]
+	cp 25; is the player standing on the right side of the door
+	jr z, .playerOnRightSideOfDoor
+	ld a, ROCKETHIDEOUTB4F_ARCHER
+	ldh [hSpriteIndex], a
+	ld a, SPRITESTATEDATA2_MAPX
+	ldh [hSpriteDataOffset], a
+	call GetPointerWithinSpriteStateData2
+	ld [hl], 28
+.playerOnRightSideOfDoor
+	ld de, RocketHideoutMovement
+	ld a, ROCKETHIDEOUTB4F_ARCHER
+	ldh [hSpriteIndex], a
+	call MoveSprite
+	ld a, SCRIPT_ROCKETHIDEOUT_ARCHER_BATTLE
+	ld [wRocketHideoutB4FCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+RocketHideoutCoords:
+	dbmapcoord 24,  10
+	dbmapcoord 25,  10
+	db -1 ; end
+
+RocketHideoutMovement:
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db -1 ; end
+
+RocketHideoutB4FFightArcherScript:
+	ld a, [wStatusFlags5]
+	bit BIT_SCRIPTED_NPC_MOVEMENT, a
+	ret nz
+	xor a
+	ld [wJoyIgnore], a
+	ld a, TEXT_ROCKETHIDEOUTB4F_ARCHER
+	ldh [hTextID], a
+	call DisplayTextID
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, RocketHideoutArcherDefeatedText
+	ld de, RocketHideoutArcherVictoryText
+	call SaveEndBattleTextPointers
+	ld a, OPP_ARCHER
+	ld [wCurOpponent], a
+	ld a, $1
+.done
+	ld [wTrainerNo], a
+	ld a, 1
+	ld [wIsTrainerBattle], a
+	xor a
+	ldh [hJoyHeld], a
+	ld hl, wCurrentMapScriptFlags
+	set BIT_CUR_MAP_LOADED_1, [hl]
+	ld a, SCRIPT_ROCKETHIDEOUT_ARCHER_DEFEAT
+	ld [wRocketHideoutB4FCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+RocketHideoutB4FDefeatArcherScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, RocketHideoutB4FSetDefaultScript
+	call UpdateSprites
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	SetEvent EVENT_BEAT_ROCKET_HIDEOUT_4_ARCHER
+	ld a, TEXT_ROCKETHIDEOUTB4F_ARCHER
+	ldh [hTextID], a
+	call DisplayTextID
+	xor a
+	ld [wJoyIgnore], a
+	ld hl, wCurrentMapScriptFlags
+	set BIT_CUR_MAP_LOADED_1, [hl]
+	ld a, SCRIPT_ROCKETHIDEOUTB4F_DEFAULT
+	ld [wRocketHideoutB4FCurScript], a
+	ld [wCurMapScript], a
+	ret
+
 RocketHideoutB4F_ScriptPointers:
 	def_script_pointers
-	dw_const CheckFightingMapTrainers,              SCRIPT_ROCKETHIDEOUTB4F_DEFAULT
+;	dw_const CheckFightingMapTrainers,              SCRIPT_ROCKETHIDEOUTB4F_DEFAULT
+	dw_const RocketHideoutArcherEvent,			 SCRIPT_ROCKETHIDEOUTB4F_DEFAULT ; SCRIPT_ROCKETHIDEOUTB4F_ARCHER_EVENT
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_ROCKETHIDEOUTB4F_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_ROCKETHIDEOUTB4F_END_BATTLE
 	dw_const RocketHideoutB4FBeatGiovanniScript,    SCRIPT_ROCKETHIDEOUTB4F_BEAT_GIOVANNI
+	dw_const RocketHideoutB4FFightArcherScript,	SCRIPT_ROCKETHIDEOUT_ARCHER_BATTLE
+	dw_const RocketHideoutB4FDefeatArcherScript, SCRIPT_ROCKETHIDEOUT_ARCHER_DEFEAT
 
 RocketHideoutB4FBeatGiovanniScript:
 	ld a, [wIsInBattle]
@@ -57,6 +156,9 @@ RocketHideoutB4FBeatGiovanniScript:
 	call DisplayTextID
 	call GBFadeOutToBlack
 	ld a, HS_ROCKET_HIDEOUT_B4F_GIOVANNI
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_ROCKET_HIDEOUT_B4F_ARCHER
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	ld a, HS_ROCKET_HIDEOUT_B4F_ITEM_4
@@ -79,6 +181,7 @@ RocketHideoutB4F_TextPointers:
 	dw_const RocketHideoutB4FRocket1Text,                 TEXT_ROCKETHIDEOUTB4F_ROCKET1
 	dw_const RocketHideoutB4FRocket2Text,                 TEXT_ROCKETHIDEOUTB4F_ROCKET2
 	dw_const RocketHideoutB4FRocket3Text,                 TEXT_ROCKETHIDEOUTB4F_ROCKET3
+	dw_const RocketHideoutB4FArcherText,			         TEXT_ROCKETHIDEOUTB4F_ARCHER
 	dw_const PickUpItemText,                              TEXT_ROCKETHIDEOUTB4F_HP_UP
 	dw_const PickUpItemText,                              TEXT_ROCKETHIDEOUTB4F_TM_RAZOR_WIND
 	dw_const PickUpItemText,                              TEXT_ROCKETHIDEOUTB4F_IRON
@@ -134,6 +237,37 @@ RocketHideoutB4FGiovanniText:
 
 RocketHideoutB4FGiovanniHopeWeMeetAgainText:
 	text_far _RocketHideoutB4FGiovanniHopeWeMeetAgainText
+	text_end
+	
+RocketHideoutB4FArcherText:
+	text_asm
+	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_4_ARCHER
+	; do pre-battle text
+	jr z, .PreBattle
+	; or talk about bill
+	ld hl, RocketHideoutB4FArcherAfterText
+	call PrintText
+	jr .end
+.PreBattle
+	ld hl, .PreBattleText
+	call PrintText
+.end
+	jp TextScriptEnd
+
+.PreBattleText:
+	text_far _RocketHideoutB4FArcherIntroText
+	text_end
+
+RocketHideoutArcherDefeatedText:
+	text_far _RocketHideoutArcherDefeatedText
+	text_end
+
+RocketHideoutArcherVictoryText:
+	text_far _RocketHideoutArcherDefeatedText
+	text_end
+
+RocketHideoutB4FArcherAfterText:
+	text_far _RocketHideoutB4FArcherAfterText
 	text_end
 
 RocketHideoutB4FRocket1Text:

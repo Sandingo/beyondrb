@@ -154,20 +154,26 @@ _PPRestoredText::
 	prompt
 
 _BootedUpTMText::
-	text "Booted up a TM!"
-	prompt
-
-_BootedUpHMText::
-	text "Booted up an HM!"
-	prompt
-
-_TeachMachineMoveText::
-	text "It contained"
+	text "Booted up TM"
 	line "@"
 	text_ram wStringBuffer
 	text "!"
+	prompt
 
-	para "Teach @"
+_BootedUpHMText::
+	text "Booted up HM"
+	line "@"
+	text_ram wStringBuffer
+	text "!"
+	prompt
+	prompt
+
+_TeachMachineMoveText::
+;	text "It contained"
+;	line "@"
+;	text_ram wStringBuffer
+;	text "!"
+	text "Teach @"
 	text_ram wStringBuffer
 	text_start
 	line "to a #MON?"

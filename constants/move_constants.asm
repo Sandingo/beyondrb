@@ -170,7 +170,27 @@
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
-	const STRUGGLE     ; a5
+	const RAGE_FIST	   ; a5
+	const CRUNCH
+	const IRON_TAIL
+	const METAL_CLAW
+	const VOLT_TACKLE
+	const UPPERCUT
+	const EXTREMESPEED
+	const VITAL_THROW
+	const STONE_AXE
+	const ROCK_WRECKER
+	const FEINT_ATTACK
+	const DBL_IRON_BASH
+	const STAR_FREEZE
+	const INK_SPRAY
+	const BAIBAI_PUNCH
+	const POWDER_SNOW
+	const BONE_RUSH
+	const CROSS_CUTTER
+	const FAIRY_WIND
+	const MOONBLAST
+	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.

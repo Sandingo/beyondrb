@@ -144,3 +144,63 @@ _PewterGymGuidePostBattleText::
 	line "You're #MON"
 	cont "champ material!"
 	done
+
+_PewterGymRematchPreBattle1Text::
+	text "Since our last"
+	line "battle, my"
+	
+	para "#MON have"
+	line "grown!"
+
+	para "ROCK-hard will"
+	line "meets peak skill"
+	cont "today!"
+
+	para "Ready for the"
+	line "rematch of a"
+	cont "lifetime?"
+	done
+
+_PewterGymPreRematchBattle2Text::
+	text "Stones sharpen!"
+	line "Let's battle!"
+	done
+
+_PewterGymRematchRefusedText::
+	text "Maybe some other"
+	line "time."
+	done
+
+_PewterGymRematchDefeatedText::
+	text "I knew"
+	line "you were strong,"
+	cont "but this..."
+	prompt
+
+_PewterGymRematchVictoryText::
+	text "The best"
+	line "offense is a"
+	cont "good defense!"
+
+	para "That's my way of"
+	line "doing things!"
+	prompt
+
+_PewterGymRematchPostBattleText::
+	text "Incredible!"
+
+	para "Your strength"
+	line "is unmatched!"
+
+	para "True to your"
+	line "title, CHAMPION."
+
+	para "Continue to lead"
+	line "#MON with"
+	cont "honor and"
+	cont "courage!"
+
+	para "Here, consider"
+	line "using this in the"
+	cont "next battle."
+	done

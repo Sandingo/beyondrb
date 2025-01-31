@@ -11,3 +11,19 @@ _RockTunnelPokecenterFisherText::
 	text "I sold a useless"
 	line "NUGGET for ¥5000!"
 	done
+
+_RockTunnelPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done
+
+_RockTunnelPokecenterOaksAideEverstone::
+	text "As long as the"
+	line "EVERSTONE is in"
+	cont "your bag, #MON"
+	cont "will not evolve"
+	cont "via level up."
+	
+	para "If you don't want"
+	line "this effect, put"
+	cont "it in your PC!"
+	done

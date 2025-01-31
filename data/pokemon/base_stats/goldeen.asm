@@ -17,7 +17,8 @@
 	tmhm TOXIC,        HORN_DRILL,   TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         MIMIC,        \
 	     DOUBLE_TEAM,  BIDE,         SWIFT,        SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   SURF
+	     SUBSTITUTE,   SURF,		 THUNDERBOLT
 	; end
 
-	db 0 ; padding
+	db BANK(GoldeenPicFront)
+	assert BANK(GoldeenPicFront) == BANK(GoldeenPicBack)

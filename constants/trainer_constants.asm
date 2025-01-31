@@ -62,4 +62,8 @@ ENDM
 	trainer_const CHANNELER      ; $2D
 	trainer_const AGATHA         ; $2E
 	trainer_const LANCE          ; $2F
+	trainer_const MINA
+	trainer_const HITECH_JACK
+	trainer_const ARCHER
+	trainer_const KYLE
 DEF NUM_TRAINERS EQU const_value - 1

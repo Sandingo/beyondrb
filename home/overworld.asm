@@ -283,7 +283,22 @@ OverworldLoopLessDelay::
 	bit BIT_LEDGE_OR_FISHING, a
 	jr nz, .normalPlayerSpriteAdvancement
 	call DoBikeSpeedup
-.normalPlayerSpriteAdvancement
+	call DoBikeSpeedup
+	call DoBikeSpeedup
+	jr .notRunning
+ .normalPlayerSpriteAdvancement
+	; surf at 2x walking speed
+	ld a, [wWalkBikeSurfState]
+	cp $02
+	jr z, .surfFaster
+	; Holding B makes you run at 2x walking speed
+	ld a, [hJoyHeld]
+	and B_BUTTON
+	jr z, .notRunning
+.surfFaster
+	call DoBikeSpeedup
+.notRunning
+	;original .normalPlayerSpriteAdvancement continues here
 	call AdvancePlayerSprite
 	ld a, [wWalkCounter]
 	and a
@@ -1977,7 +1992,14 @@ RunMapScript::
 
 LoadWalkingPlayerSpriteGraphics::
 	ld de, RedSprite
-	ld hl, vNPCSprites
+;	ld hl, vNPCSprites
+;	jr LoadPlayerSpriteGraphicsCommon
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreGuy1
+	ld de, GreenSprite
+.AreGuy1
+	ld hl,vNPCSprites
 	jr LoadPlayerSpriteGraphicsCommon
 
 LoadSurfingPlayerSpriteGraphics::
@@ -1987,6 +2009,11 @@ LoadSurfingPlayerSpriteGraphics::
 
 LoadBikePlayerSpriteGraphics::
 	ld de, RedBikeSprite
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreGuy2
+	ld de, GreenBikeSprite
+.AreGuy2
 	ld hl, vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon::
@@ -2314,6 +2341,7 @@ LoadMapData::
 	call LoadMapHeader
 	farcall InitMapSprites ; load tile pattern data for sprites
 	call LoadTileBlockMap
+	call RemoveSSAnne
 	call LoadTilesetTilePatternData
 	call LoadCurrentMapView
 ; copy current map view to VRAM
@@ -2354,6 +2382,46 @@ LoadMapData::
 	pop af
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
+	ret
+
+ShipTileSwapArray:
+; first byte = The Y coordinate of the block
+; second byte = The X coordinate of the block
+; third byte = Block to replace
+	db 1, 5, $01
+	db 1, 6, $0D
+	db 1, 7, $17
+	db 1, 8, $01
+	db 2, 5, $0D
+	db 2, 6, $0D
+	db 2, 7, $0D
+	db 2, 8, $0D
+	db $FF ; list terminator
+
+RemoveSSAnne:
+	ld a, [wCurMap]
+	cp VERMILION_DOCK
+	ret nz
+	CheckEvent EVENT_SS_ANNE_LEFT
+	ret z
+	ld de, ShipTileSwapArray
+.loop
+	ld a, [de]
+	cp $ff
+	jr z, .done
+	ld b, a
+	inc de
+	ld a, [de]
+	ld c, a
+	inc de
+	push de
+	predef FindTileBlock
+	pop de
+	ld a, [de]
+	inc de
+	ld [hl], a
+	jr .loop
+.done
 	ret
 
 ; function to switch to the ROM bank that a map is stored in

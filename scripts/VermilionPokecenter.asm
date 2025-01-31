@@ -8,6 +8,7 @@ VermilionPokecenter_TextPointers:
 	dw_const VermilionPokecenterFishingGuruText,      TEXT_VERMILIONPOKECENTER_FISHING_GURU
 	dw_const VermilionPokecenterSailorText,           TEXT_VERMILIONPOKECENTER_SAILOR
 	dw_const VermilionPokecenterLinkReceptionistText, TEXT_VERMILIONPOKECENTER_LINK_RECEPTIONIST
+	dw_const VermilionPokecenterChanseyText,		  TEXT_VERMILIONPOKECENTER_CHANSEY
 
 VermilionPokecenterNurseText:
 	script_pokecenter_nurse
@@ -22,3 +23,16 @@ VermilionPokecenterSailorText:
 
 VermilionPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
+
+VermilionPokecenterChanseyText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, CHANSEY
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _VermilionPokecenterChanseyText
+	text_end

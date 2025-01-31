@@ -87,3 +87,45 @@ PrintStartMenuItem:
 	ld de, SCREEN_WIDTH * 2
 	add hl, de
 	ret
+
+; prints a short blurb about the
+; current selection, just like in GSC
+DrawMenuAccount::
+; prepare the background
+	hlcoord 0, 13
+	lb bc, 5, 10
+	call ClearScreenArea
+
+; determine which table to use
+	ld a, [wStatusFlags4]
+	bit BIT_LINK_CONNECTED, a
+; use the table replacing "SAVE" with "RESET"
+	ld de, StartMenuDescriptionTable.LinkTable
+	jr nz, .check_pokedex
+; use regular table if we're not in link mode
+	ld de, StartMenuDescriptionTable
+
+.check_pokedex
+	CheckEvent EVENT_GOT_POKEDEX
+	ld a, [wCurrentMenuItem]
+	jr nz, .got_table
+; shift one index forwards to reflect the fact that
+; we haven't gotten a dex yet
+	inc a
+
+.got_table
+; select the correct pointer to the entry, and then load
+; the entry into the DE register for use as a parameter for PlaceString
+	add a
+	ld l, a
+	ld h, 0
+	add hl, de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+
+; finally, display the string.
+	hlcoord 0, 14
+	jp PlaceString
+
+INCLUDE "data/start_menu_descriptions.asm"

@@ -8,6 +8,7 @@ ViridianPokecenter_TextPointers:
 	dw_const ViridianPokecenterGentlemanText,        TEXT_VIRIDIANPOKECENTER_GENTLEMAN
 	dw_const ViridianPokecenterCooltrainerMText,     TEXT_VIRIDIANPOKECENTER_COOLTRAINER_M
 	dw_const ViridianPokecenterLinkReceptionistText, TEXT_VIRIDIANPOKECENTER_LINK_RECEPTIONIST
+	dw_const ViridianPokecenterChanseyText,			 TEXT_VIRIDIANPOKECENTER_CHANSEY
 
 ViridianPokecenterNurseText:
 	script_pokecenter_nurse
@@ -22,3 +23,16 @@ ViridianPokecenterCooltrainerMText:
 
 ViridianPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
+
+ViridianPokecenterChanseyText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, CHANSEY
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _ViridianPokecenterChanseyText
+	text_end

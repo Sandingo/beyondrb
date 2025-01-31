@@ -218,3 +218,57 @@ _CeladonGymAfterBattleText8::
 	para "Wait 'til next"
 	line "time!"
 	done
+
+; Rematch Dialoge, Placeholder
+_CeladonGymRematchPreBattle1Text::
+	text "Oh, if it isn't"
+	line "the champion."
+	
+	para "I do hope things"
+	line "have been going"
+	cont "well for you"
+	cont "since our last"
+	cont "encounter."
+
+	para "I take it you've"
+	line "come for a battle?"
+	done
+
+_CeladonGymPreRematchBattle2Text::
+	text "But of course."
+	line "I graciously"
+	cont "accept."
+	done
+
+_CeladonGymRematchRefusedText::
+	text "Then I'll return"
+	line "to my afternoon"
+	cont "nap."
+	
+	para "Zzzz..."
+	done
+
+_CeladonGymRematchDefeatedText::
+	text "Oh!"
+	line "It appears it"
+	cont "is my loss..."
+	prompt
+
+_CeladonGymRematchVictoryText::
+	text "I"
+	line "was afraid I"
+	cont "would doze off..."
+	prompt
+
+_CeladonGymRematchPostBattleText::
+	text "Simply marvelous."
+
+	para "That effort was"
+	line "worthy of at"
+	cont "least 10"
+	cont "RAINBOWBADGES."
+
+	para "Consider this a"
+	line "token in its"
+	cont "place."
+	done

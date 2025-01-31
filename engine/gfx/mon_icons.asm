@@ -55,19 +55,20 @@ GetAnimationSpeed:
 	ld bc, $10
 	ld a, [wCurrentMenuItem]
 	call AddNTimes
-	ld c, ICONOFFSET
-	ld a, [hl]
-	cp ICON_BALL << 2
-	jr z, .editCoords
-	cp ICON_HELIX << 2
-	jr nz, .editTileIDS
+;	ld c, ICONOFFSET
+;	ld a, [hl]
+;	cp ICON_BALL << 2
+;	jr z, .editCoords
+;	cp ICON_HELIX << 2
+;	jr nz, .editTileIDS
 ; ICON_BALL and ICON_HELIX only shake up and down
-.editCoords
-	dec hl
-	dec hl ; dec hl to the OAM y coord
-	ld c, $1 ; amount to increase the y coord by
+;.editCoords
+;	dec hl
+;	dec hl ; dec hl to the OAM y coord
+;	ld c, $1 ; amount to increase the y coord by
 ; otherwise, load a second sprite frame
-.editTileIDS
+;.editTileIDS
+	ld c, $2
 	ld b, $4
 	ld de, $4
 .loop
@@ -86,7 +87,7 @@ GetAnimationSpeed:
 ; that each frame lasts for green HP, yellow HP, and red HP in order.
 ; On the naming screen, the yellow HP speed is always used.
 PartyMonSpeeds:
-	db 5, 16, 32
+	db 10, 24, 32
 
 LoadMonPartySpriteGfx:
 ; Load mon party sprite tile patterns into VRAM during V-blank.
@@ -293,3 +294,167 @@ SnakeIconFrame2:     INCBIN "gfx/icons/snake.2bpp", INC_FRAME_2
 QuadrupedIconFrame2: INCBIN "gfx/icons/quadruped.2bpp", INC_FRAME_2
 
 TradeBubbleIconGFX:  INCBIN "gfx/trade/bubble.2bpp"
+
+PUSHS
+
+SECTION "Party Mon Sprites Routines", ROMX
+
+; load and place the party mon icon according to wMonPartySpriteSpecies
+LoadSinglePartyMonSprite:
+	; load into the start of VRAM
+	call DisableLCD
+	ld a, [wMonPartySpriteSpecies]
+	ld de, vSprites
+	call LoadPartyMonSprite
+	call EnableLCD
+
+	; place into the start of OAM
+	ld a, [hPartyMonIndex]
+	push af
+	xor a
+	ld [hPartyMonIndex], a
+	call PlacePartyMonSprite
+	pop af
+	ld [hPartyMonIndex], a
+	ret
+
+; load the party mon icon for all mon in the party
+LoadPartyMonSprites:
+	call DisableLCD
+	ld de, vSprites
+	ld hl, wPartySpecies
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .done
+	push hl
+	call LoadPartyMonSprite
+	pop hl
+	jr .loop
+.done
+	jp EnableLCD
+
+; copy the 8-tile icon for the mon in register a to de
+LoadPartyMonSprite:
+	push de
+
+	ld [wPokedexNum], a
+	predef IndexToPokedex
+
+	; hMultiplicand = pokedex number - 1
+	xor a
+	ld [hMultiplicand], a
+	ld [hMultiplicand + 1], a
+	ld a, [wPokedexNum]
+	dec a
+	ld [hMultiplicand + 2], a
+
+	; hMultiplier = icon size, in bytes
+	ld a, 8 tiles
+	ld [hMultiplier], a
+
+	call Multiply
+
+	; hl = icon offset
+	ld a, [hProduct + 2]
+	ld h, a
+	ld a, [hProduct + 3]
+	ld l, a
+
+	; if offset < $4000, use first icon bank
+	bit 6, h
+	set 6, h
+	ld a, BANK(PartyMonSprites)
+	jr z, .gotBank
+
+	; otherwise, use second icon bank
+	inc a
+
+.gotBank
+	ld bc, 8 tiles
+	pop de
+	jp FarCopyData
+
+; copy 1 full entry (16 bytes) from PartyMonOAM into wShadowOAM according to hPartyMonIndex
+; and backup wShadowOAM into wMonPartySpritesSavedOAM
+PlacePartyMonSprite:
+	push hl
+	push de
+	push bc
+
+	; bc = hPartyMonIndex * 16
+	ld a, [hPartyMonIndex]
+	add a
+	add a
+	add a
+	add a
+	ld c, a
+	ld b, 0
+
+	; de = destination address
+	ld hl, wShadowOAM
+	add hl, bc
+	ld d, h
+	ld e, l
+
+	; hl = source address
+	ld hl, PartyMonOAM
+	add hl, bc
+
+	ld bc, 4 * 4
+	call CopyData
+
+	; make backup
+	ld hl, wShadowOAM
+	ld de, wMonPartySpritesSavedOAM
+	ld bc, 4 * 4 * PARTY_LENGTH
+	call CopyData
+
+	pop bc
+	pop de
+	pop hl
+	ret
+
+PartyMonOAM:
+	db $10, $10, $00, $00
+	db $10, $18, $01, $00
+	db $18, $10, $04, $00
+	db $18, $18, $05, $00
+
+	db $20, $10, $08, $00
+	db $20, $18, $09, $00
+	db $28, $10, $0c, $00
+	db $28, $18, $0d, $00
+
+	db $30, $10, $10, $00
+	db $30, $18, $11, $00
+	db $38, $10, $14, $00
+	db $38, $18, $15, $00
+
+	db $40, $10, $18, $00
+	db $40, $18, $19, $00
+	db $48, $10, $1c, $00
+	db $48, $18, $1d, $00
+
+	db $50, $10, $20, $00
+	db $50, $18, $21, $00
+	db $58, $10, $24, $00
+	db $58, $18, $25, $00
+
+	db $60, $10, $28, $00
+	db $60, $18, $29, $00
+	db $68, $10, $2c, $00
+	db $68, $18, $2d, $00
+
+
+SECTION "Party Mon Sprites Gfx 1", ROMX
+
+PartyMonSprites:
+INCBIN "gfx/icons/party_mon_sprites.2bpp", $0, $4000
+
+
+SECTION "Party Mon Sprites Gfx 2", ROMX
+
+INCBIN "gfx/icons/party_mon_sprites.2bpp", $4000
+
+POPS

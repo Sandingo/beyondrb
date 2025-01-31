@@ -62,6 +62,26 @@
 	const SPRITE_BRUNO                   ; $3a
 	const SPRITE_LORELEI                 ; $3b
 	const SPRITE_SEEL                    ; $3c
+	const SPRITE_POLIWRATH
+	const SPRITE_ARTICUNO
+	const SPRITE_ZAPDOS
+	const SPRITE_MOLTRES
+	const SPRITE_CHANSEY
+	const SPRITE_OFFICER_JENNY
+	const SPRITE_JIGGLYPUFF
+	const SPRITE_OHMEGA
+	const SPRITE_MR_MIME
+	const SPRITE_BROCK
+	const SPRITE_ERIKA
+	const SPRITE_SABRINA
+	const SPRITE_MEWTWO
+	const SPRITE_SPEAROW
+	const SPRITE_FEAROW
+	const SPRITE_PIKACHU
+	const SPRITE_PIDGEY
+	const SPRITE_MISTY
+	const SPRITE_SURGE
+	const SPRITE_BILL
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e
@@ -75,4 +95,5 @@ DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_UNUSED_GAMBLER_ASLEEP_1 ; $46
 	const SPRITE_UNUSED_GAMBLER_ASLEEP_2 ; $47
 	const SPRITE_GAMBLER_ASLEEP          ; $48
+	const SPRITE_SLOWBRO
 DEF NUM_SPRITES EQU const_value - 1

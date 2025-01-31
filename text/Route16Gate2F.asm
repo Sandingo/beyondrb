@@ -24,3 +24,16 @@ _Route16Gate2FRightBinocularsText::
 	para "There's a long"
 	line "path over water!"
 	done
+
+_Route16Gate2FAmuletCoin::
+	text "The AMULET COIN"
+	line "doubles the prize"
+	cont "money from"
+	cont "trainer battles."
+	
+	para "If you for some"
+	line "reason don't need"
+	cont "the money, you"
+	cont "can store it in"
+	cont "your PC."
+	done

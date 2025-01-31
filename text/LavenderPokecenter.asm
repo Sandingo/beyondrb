@@ -10,3 +10,7 @@ _LavenderPokecenterLittleGirlText::
 	cont "to escape from"
 	cont "TEAM ROCKET!"
 	done
+
+_LavenderPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

@@ -83,7 +83,6 @@ DEF HOF_TEAM_CAPACITY EQU 50
 	const EVOLVE_ITEM  ; 2
 	const EVOLVE_TRADE ; 3
 
-
 ; wMonHGrowthRate values
 ; GrowthRateTable indexes (see data/growth_rates.asm)
 	const_def

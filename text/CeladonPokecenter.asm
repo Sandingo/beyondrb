@@ -10,3 +10,7 @@ _CeladonPokecenterBeautyText::
 	line "CYCLING ROAD from"
 	cont "FUCHSIA!"
 	done
+	
+_CeladonPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

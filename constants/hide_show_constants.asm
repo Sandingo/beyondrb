@@ -19,6 +19,8 @@ DEF SHOW EQU $15
 	const HS_CERULEAN_GUARD_1              ; 07
 	const HS_CERULEAN_CAVE_GUY             ; 08
 	const HS_CERULEAN_GUARD_2              ; 09
+	const HS_VERMILION_OFFICER_JENNY
+	const HS_VERMILION_MINA
 	const HS_SAFFRON_CITY_1                ; 0A
 	const HS_SAFFRON_CITY_2                ; 0B
 	const HS_SAFFRON_CITY_3                ; 0C
@@ -34,6 +36,7 @@ DEF SHOW EQU $15
 	const HS_SAFFRON_CITY_D                ; 16
 	const HS_SAFFRON_CITY_E                ; 17
 	const HS_SAFFRON_CITY_F                ; 18
+	const HS_ROUTE_1_YOUNGSTER
 	const HS_ROUTE_2_ITEM_1                ; 19 X
 	const HS_ROUTE_2_ITEM_2                ; 1A X
 	const HS_ROUTE_4_ITEM                  ; 1B X
@@ -47,7 +50,9 @@ DEF SHOW EQU $15
 	const HS_ROUTE_22_RIVAL_2              ; 23
 	const HS_NUGGET_BRIDGE_GUY             ; 24
 	const HS_ROUTE_24_ITEM                 ; 25 X
+	const HS_ROUTE_24_CHARMANDER_GUY
 	const HS_ROUTE_25_ITEM                 ; 26 X
+	const HS_ROUTE_28_ITEM
 	const HS_DAISY_SITTING                 ; 27
 	const HS_DAISY_WALKING                 ; 28
 	const HS_TOWN_MAP                      ; 29
@@ -60,7 +65,8 @@ DEF SHOW EQU $15
 	const HS_POKEDEX_2                     ; 30
 	const HS_OAKS_LAB_OAK_2                ; 31
 	const HS_VIRIDIAN_GYM_GIOVANNI         ; 32
-	const HS_VIRIDIAN_GYM_ITEM             ; 33 X
+	const HS_VIRIDIAN_GYM_ITEM_1             ; 33 X
+	const HS_VIRIDIAN_GYM_ITEM_2
 	const HS_OLD_AMBER                     ; 34
 	const HS_CERULEAN_CAVE_1F_ITEM_1       ; 35 X
 	const HS_CERULEAN_CAVE_1F_ITEM_2       ; 36 X
@@ -78,6 +84,7 @@ DEF SHOW EQU $15
 	const HS_POKEMON_TOWER_7F_ROCKET_3     ; 42 X
 	const HS_POKEMON_TOWER_7F_MR_FUJI      ; 43
 	const HS_MR_FUJIS_HOUSE_MR_FUJI        ; 44
+	const HS_CELADONMART4F_CLERK2
 	const HS_CELADON_MANSION_EEVEE_GIFT    ; 45
 	const HS_GAME_CORNER_ROCKET            ; 46
 	const HS_WARDENS_HOUSE_ITEM            ; 47 X
@@ -85,6 +92,7 @@ DEF SHOW EQU $15
 	const HS_POKEMON_MANSION_1F_ITEM_2     ; 49 X
 	const HS_FIGHTING_DOJO_GIFT_1          ; 4A
 	const HS_FIGHTING_DOJO_GIFT_2          ; 4B
+	const HS_FIGHTING_DOJO_GIFT_3
 	const HS_SILPH_CO_1F_RECEPTIONIST      ; 4C
 	const HS_VOLTORB_1                     ; 4D X
 	const HS_VOLTORB_2                     ; 4E X
@@ -100,6 +108,7 @@ DEF SHOW EQU $15
 	const HS_POWER_PLANT_ITEM_3            ; 58 X
 	const HS_POWER_PLANT_ITEM_4            ; 59 X
 	const HS_POWER_PLANT_ITEM_5            ; 5A X
+	const HS_POWER_PLANT_ITEM_6
 	const HS_MOLTRES                       ; 5B X
 	const HS_VICTORY_ROAD_2F_ITEM_1        ; 5C X
 	const HS_VICTORY_ROAD_2F_ITEM_2        ; 5D X
@@ -122,6 +131,7 @@ DEF SHOW EQU $15
 	const HS_MT_MOON_B2F_FOSSIL_2          ; 6E
 	const HS_MT_MOON_B2F_ITEM_1            ; 6F X
 	const HS_MT_MOON_B2F_ITEM_2            ; 70 X
+	const HS_CERULEANTRADEHOUSE_MELANIE
 	const HS_SS_ANNE_2F_RIVAL              ; 71
 	const HS_SS_ANNE_1F_ROOMS_ITEM         ; 72 X
 	const HS_SS_ANNE_2F_ROOMS_ITEM_1       ; 73 X
@@ -140,6 +150,7 @@ DEF SHOW EQU $15
 	const HS_ROCKET_HIDEOUT_B2F_ITEM_4     ; 80 X
 	const HS_ROCKET_HIDEOUT_B3F_ITEM_1     ; 81 X
 	const HS_ROCKET_HIDEOUT_B3F_ITEM_2     ; 82 X
+	const HS_ROCKET_HIDEOUT_B4F_ARCHER
 	const HS_ROCKET_HIDEOUT_B4F_GIOVANNI   ; 83
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_1     ; 84 X
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_2     ; 85 X
@@ -164,9 +175,11 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_5F_2                 ; 98
 	const HS_SILPH_CO_5F_3                 ; 99
 	const HS_SILPH_CO_5F_4                 ; 9A
+	const HS_SILPH_CO_5F_5
 	const HS_SILPH_CO_5F_ITEM_1            ; 9B X
 	const HS_SILPH_CO_5F_ITEM_2            ; 9C X
 	const HS_SILPH_CO_5F_ITEM_3            ; 9D X
+	const HS_SILPH_CO_5F_ITEM_4
 	const HS_SILPH_CO_6F_1                 ; 9E
 	const HS_SILPH_CO_6F_2                 ; 9F
 	const HS_SILPH_CO_6F_3                 ; A0
@@ -195,7 +208,10 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_11F_1                ; B7
 	const HS_SILPH_CO_11F_2                ; B8
 	const HS_SILPH_CO_11F_3                ; B9
-	const HS_UNUSED_MAP_F4_1               ; BA XXX sprite doesn't exist
+;const HS_SILPH_CO_11F_4
+;const HS_SILPH_CO_11F_OHMEGA
+	const HS_SILPH_CO_11F_ITEM_1
+;	const HS_UNUSED_MAP_F4_1               ; BA XXX sprite doesn't exist
 	const HS_POKEMON_MANSION_2F_ITEM       ; BB X
 	const HS_POKEMON_MANSION_3F_ITEM_1     ; BC X
 	const HS_POKEMON_MANSION_3F_ITEM_2     ; BD X
@@ -204,6 +220,7 @@ DEF SHOW EQU $15
 	const HS_POKEMON_MANSION_B1F_ITEM_3    ; C0 X
 	const HS_POKEMON_MANSION_B1F_ITEM_4    ; C1 X
 	const HS_POKEMON_MANSION_B1F_ITEM_5    ; C2 X
+	const HS_POKEMON_MANSION_B1F_ITEM_6
 	const HS_SAFARI_ZONE_EAST_ITEM_1       ; C3 X
 	const HS_SAFARI_ZONE_EAST_ITEM_2       ; C4 X
 	const HS_SAFARI_ZONE_EAST_ITEM_3       ; C5 X
@@ -218,9 +235,13 @@ DEF SHOW EQU $15
 	const HS_CERULEAN_CAVE_2F_ITEM_1       ; CE X
 	const HS_CERULEAN_CAVE_2F_ITEM_2       ; CF X
 	const HS_CERULEAN_CAVE_2F_ITEM_3       ; D0 X
+	const HS_CERULEAN_CAVE_2F_HELIX_FOSSIL
+	const HS_CERULEAN_CAVE_2F_DOME_FOSSIL
 	const HS_MEWTWO                        ; D1 X
 	const HS_CERULEAN_CAVE_B1F_ITEM_1      ; D2 X
 	const HS_CERULEAN_CAVE_B1F_ITEM_2      ; D3 X
+	const HS_ROUTE_22_SILVERGUARD_1
+	const HS_ROUTE_22_SILVERGUARD_2
 	const HS_VICTORY_ROAD_1F_ITEM_1        ; D4 X
 	const HS_VICTORY_ROAD_1F_ITEM_2        ; D5 X
 	const HS_CHAMPIONS_ROOM_OAK            ; D6
@@ -237,4 +258,13 @@ DEF SHOW EQU $15
 	const HS_SEAFOAM_ISLANDS_B4F_BOULDER_1 ; E1
 	const HS_SEAFOAM_ISLANDS_B4F_BOULDER_2 ; E2
 	const HS_ARTICUNO                      ; E3 X
+	const HS_MT_SILVER_F1_ITEM_1
+	const HS_MT_SILVER_F1_ITEM_2
+	const HS_MT_SILVER_F1_ITEM_3
+	const HS_MT_SILVER_F1_ITEM_4
+	const HS_MT_SILVER_F2_ITEM_1
+	const HS_MT_SILVER_F2_ITEM_2
+	const HS_MT_SILVER_F2_ITEM_3
+	const HS_MT_SILVER_F2_ITEM_4
+	const HS_MT_SILVER_MELTANROOM_ITEM_1
 DEF NUM_HS_OBJECTS EQU const_value

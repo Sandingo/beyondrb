@@ -308,7 +308,7 @@ MainInBattleLoop:
 	and a
 	ret nz ; return if pokedoll was used to escape from battle
 	ld a, [wBattleMonStatus]
-	and (1 << FRZ) | SLP_MASK
+	and (1 << FRZ) ;| SLP_MASK
 	jr nz, .selectEnemyMove ; if so, jump
 	ld a, [wPlayerBattleStatus1]
 	and (1 << STORING_ENERGY) | (1 << USING_TRAPPING_MOVE) ; check player is using Bide or using a multi-turn attack like wrap
@@ -367,28 +367,13 @@ MainInBattleLoop:
 .specialMoveNotUsed
 	callfar SwitchEnemyMon
 .noLinkBattle
-	ld a, [wPlayerSelectedMove]
-	cp QUICK_ATTACK
-	jr nz, .playerDidNotUseQuickAttack
-	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .compareSpeed  ; if both used Quick Attack
-	jp .playerMovesFirst ; if player used Quick Attack and enemy didn't
-.playerDidNotUseQuickAttack
-	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .enemyMovesFirst ; if enemy used Quick Attack and player didn't
-	ld a, [wPlayerSelectedMove]
-	cp COUNTER
-	jr nz, .playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
+	call HandleMovePriority
+	; c = player priority, e = enemy priority
+	ld a, c
+	cp e
 	jr z, .compareSpeed ; if both used Counter
-	jr .enemyMovesFirst ; if player used Counter and enemy didn't
-.playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
-	jr z, .playerMovesFirst ; if enemy used Counter and player didn't
+	jr c, .enemyMovesFirst
+	jr .playerMovesFirst
 .compareSpeed
 	ld de, wBattleMonSpeed ; player speed value
 	ld hl, wEnemyMonSpeed ; enemy speed value
@@ -466,6 +451,50 @@ MainInBattleLoop:
 	call DrawHUDsAndHPBars
 	call CheckNumAttacksLeft
 	jp MainInBattleLoop
+
+HandleMovePriority:
+; This subroutine modifies registers a, hl, bc, and de
+; The player's priority value will be stored in register c and 
+; the enemy's priority value will be stored in register e.
+; These values will be compared after the 'ret' instruction is called
+
+        ld a, [wPlayerSelectedMove]
+        ld b, a
+        ld hl, PriorityMovesList
+        ld c, 7           ; no priority is 7
+.playerPriorityMoveLoop
+        ld a, [hli]       ; load the move ID from priority list and 
+                          ; increment address to the priority value address
+        cp b              ; compare with move being used
+        jr z, .playerUsingPriorityMove
+        inc a             ; if at end of list: -1 + 1 = 0xFF + 0x01 = 0
+        jr z, .noPlayerPriorityMove
+        inc hl            ; increment address to the next move
+        jr .playerPriorityMoveLoop
+.playerUsingPriorityMove
+        ld c, [hl]        ; get new priority value 
+.noPlayerPriorityMove
+
+; Now check enemy priority 
+        ld a, [wEnemySelectedMove]
+        ld d, a
+        ld hl, PriorityMovesList
+        ld e, 7           ; no priority is 7
+.enemyPriorityMoveLoop
+        ld a, [hli]       ; load the move ID from priority list and 
+                          ; increment address to the priority value address
+        cp d              ; compare with move being used
+        jr z, .enemyUsingPriorityMove
+        inc a             ; if at end of list: -1  1 = 0xFF  0x01 = 0
+        jr z, .noEnemyPriorityMove
+        inc hl            ; increment address to the next move
+        jr .enemyPriorityMoveLoop
+.enemyUsingPriorityMove
+        ld e, [hl]        ; get new priority value 
+.noEnemyPriorityMove
+        ret
+
+INCLUDE "data/battle/priority_moves.asm"
 
 HandlePoisonBurnLeechSeed:
 	ld hl, wBattleMonHP
@@ -943,6 +972,12 @@ TrainerBattleVictory:
 ; win money
 	ld hl, MoneyForWinningText
 	call PrintText
+	
+	xor a
+	ld [wIsTrainerBattle], a
+	inc a
+	ld [wWasTrainerBattle], a
+	
 	ld de, wPlayerMoney + 2
 	ld hl, wAmountMoneyWon + 2
 	ld c, $3
@@ -1130,6 +1165,8 @@ ChooseNextMon:
 ; called when player is out of usable mons.
 ; prints appropriate lose message, sets carry flag if player blacked out (special case for initial rival fight)
 HandlePlayerBlackOut:
+	xor a
+	ld [wIsTrainerBattle], a
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr z, .notRival1Battle
@@ -1823,6 +1860,7 @@ DrawPlayerHUDAndHPBar:
 	hlcoord 10, 7
 	call CenterMonName
 	call PlaceString
+    callfar PrintEXPBar
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
 	ld bc, wBattleMonDVs - wBattleMonSpecies
@@ -1878,6 +1916,23 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	push hl
+	ld a, [wEnemyMonSpecies2]
+	ld [wPokedexNum], a
+	callfar IndexToPokedex
+	ld a, [wPokedexNum]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	hlcoord 1, 1
+	ld [hl], $72 ; replace this with your Poké Ball icon or other character
+.notOwned
+	pop hl
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
@@ -2851,7 +2906,7 @@ PrintMenuItem:
 	hlcoord 1, 10
 	ld de, DisabledText
 	call PlaceString
-	jr .moveDisabled
+	jp .moveDisabled
 .notDisabled
 	ld hl, wCurrentMenuItem
 	dec [hl]
@@ -2898,11 +2953,38 @@ PrintMenuItem:
 	call GetCurrentMove
 	hlcoord 2, 10
 	predef PrintMoveType
+; Move Damage Display from Extreme Yellow
+;==========================================
+	hlcoord 1, 11 ; new
+	ld a, [wPlayerMoveEffect]
+	cp OHKO_EFFECT
+	jr z, .OHKOMove
+	cp SPECIAL_DAMAGE_EFFECT
+	ld a, [wPlayerMovePower]
+	cp 1 ; this should cover all the SPECIAL_DAMAGE_EFFECT, AND COUNTER / MIRROR_COAT / GYRO_BALL
+	jr z, .specialDamage
+	hlcoord 1, 11
+	ld de, wPlayerMovePower ; testing
+	lb bc, 1, 3
+	call PrintNumber ; prints the c-digit, b-byte value at de
+	jr .afterDamagePrinting
+.OHKOMove
+	ld de, InfDamageText
+	call PlaceString
+	jr .afterDamagePrinting
+.specialDamage
+	hlcoord 3, 11
+	ld [hl], "?"
+.afterDamagePrinting
+; ==========================================================
 .moveDisabled
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
 	jp Delay3
 
+InfDamageText:
+	db "OHKO@"
+	
 DisabledText:
 	db "disabled!@"
 
@@ -3341,6 +3423,7 @@ CheckPlayerStatusConditions:
 .WakeUp
 	ld hl, WokeUpText
 	call PrintText
+	jr .FrozenCheck
 .sleepDone
 	xor a
 	ld [wPlayerUsedMove], a
@@ -3982,14 +4065,26 @@ CheckForDisobedience:
 	bit BIT_EARTHBADGE, [hl]
 	ld a, 101
 	jr nz, .next
+	bit BIT_VOLCANOBADGE, [hl]
+	ld a, 80
+	jr nz, .next
 	bit BIT_MARSHBADGE, [hl]
 	ld a, 70
+	jr nz, .next
+	bit BIT_SOULBADGE, [hl]
+	ld a, 60
 	jr nz, .next
 	bit BIT_RAINBOWBADGE, [hl]
 	ld a, 50
 	jr nz, .next
+	bit BIT_THUNDERBADGE, [hl]
+	ld a, 40
+	jr nz, .next
 	bit BIT_CASCADEBADGE, [hl]
 	ld a, 30
+	jr nz, .next
+	bit BIT_BOULDERBADGE, [hl]
+	ld a, 20
 	jr nz, .next
 	ld a, 10
 .next
@@ -4614,7 +4709,7 @@ CriticalHitTest:
 	call GetMonHeader
 	ld a, [wMonHBaseSpeed]
 	ld b, a
-	srl b                        ; (effective (base speed/2))
+;	srl b                        ; (effective (base speed/2))
 	ldh a, [hWhoseTurn]
 	and a
 	ld hl, wPlayerMovePower
@@ -4628,17 +4723,6 @@ CriticalHitTest:
 	ret z                        ; do nothing if zero
 	dec hl
 	ld c, [hl]                   ; read move id
-	ld a, [de]
-	bit GETTING_PUMPED, a        ; test for focus energy
-	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
-	                             ; resulting in 1/4 the usual crit chance
-	sla b                        ; (effective (base speed/2)*2)
-	jr nc, .noFocusEnergyUsed
-	ld b, $ff                    ; cap at 255/256
-	jr .noFocusEnergyUsed
-.focusEnergyUsed
-	srl b
-.noFocusEnergyUsed
 	ld hl, HighCriticalMoves     ; table of high critical hit moves
 .Loop
 	ld a, [hli]                  ; read move from move table
@@ -4646,17 +4730,48 @@ CriticalHitTest:
 	jr z, .HighCritical          ; if so, the move about to be used is a high critical hit ratio move
 	inc a                        ; move on to the next move, FF terminates loop
 	jr nz, .Loop                 ; check the next move in HighCriticalMoves
-	srl b                        ; /2 for regular move (effective (base speed / 2))
+	srl b                        ; /2 for regular move
 	jr .SkipHighCritical         ; continue as a normal move
 .HighCritical
 	sla b                        ; *2 for high critical hit moves
 	jr nc, .noCarry
 	ld b, $ff                    ; cap at 255/256
 .noCarry
-	sla b                        ; *4 for high critical move (effective (base speed/2)*8))
+	sla b                        ; *4 for high critical move
 	jr nc, .SkipHighCritical
 	ld b, $ff
 .SkipHighCritical
+	ld a, [de]
+	bit GETTING_PUMPED, a        ; test for focus energy
+	jr z, .noFocusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left, FIXED
+	                             ; resulting in 1/4 the usual crit chance
+	sla b                        ; (effective (base speed/2)) 
+	jr nc, .focusEnergyUsed
+	ld b, $ff                    ; cap at 255/256
+	jr .noFocusEnergyUsed
+.focusEnergyUsed
+	sla b
+	jr nc, .noFocusEnergyUsed
+	ld b, $ff                    ; cap at 255/256
+.noFocusEnergyUsed
+;	ld hl, HighCriticalMoves     ; table of high critical hit moves
+;.Loop
+;	ld a, [hli]                  ; read move from move table
+;	cp c                         ; does it match the move about to be used?
+;	jr z, .HighCritical          ; if so, the move about to be used is a high critical hit ratio move
+;	inc a                        ; move on to the next move, FF terminates loop
+;	jr nz, .Loop                 ; check the next move in HighCriticalMoves
+;	srl b                        ; /2 for regular move (effective (base speed / 2))
+;	jr .SkipHighCritical         ; continue as a normal move
+;.HighCritical
+;	sla b                        ; *2 for high critical hit moves
+;	jr nc, .noCarry
+;	ld b, $ff                    ; cap at 255/256
+;.noCarry
+;	sla b                        ; *4 for high critical move (effective (base speed/2)*8))
+;	jr nc, .SkipHighCritical
+;	ld b, $ff
+;.SkipHighCritical
 	call BattleRandom            ; generates a random value, in "a"
 	rlc a
 	rlc a
@@ -5275,6 +5390,21 @@ AdjustDamageForMoveType:
 	ld b, a
 	ld a, [hl] ; a = damage multiplier
 	ldh [hMultiplier], a
+	and a  ; cp NO_EFFECT
+	jr z, .gotMultiplier
+	cp NOT_VERY_EFFECTIVE
+	jr nz, .nothalf
+	ld a, [wDamageMultipliers]
+	and $7f
+	srl a
+	jr .gotMultiplier
+.nothalf
+	cp SUPER_EFFECTIVE
+	jr nz, .gotMultiplier
+	ld a, [wDamageMultipliers]
+	and $7f
+	sla a
+.gotMultiplier
 	add b
 	ld [wDamageMultipliers], a
 	xor a
@@ -5819,6 +5949,7 @@ CheckEnemyStatusConditions:
 .wokeUp
 	ld hl, WokeUpText
 	call PrintText
+	jr .checkIfFrozen
 .sleepDone
 	xor a
 	ld [wEnemyUsedMove], a
@@ -6327,14 +6458,30 @@ SwapPlayerAndEnemyLevels:
 LoadPlayerBackPic:
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
-	ld de, RedPicBack
-	jr nz, .next
-	ld de, OldManPicBack
-.next
+;	ld de, RedPicBack
+;	jr nz, .next
+;	ld de, OldManPicBack
+;.next
+;	ld a, BANK(RedPicBack)
+;	ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
+	ld de, OldManPicBack   ; Load the old man back sprite preemptively
+	ld a, BANK(RedPicBack) ; Default Red back sprite will be used as a means to load in the Old Man back sprite
+	jr z, .next
+	ld a, [wPlayerGender]
+	and a
+	jr z, .RedBack
+	ld de, GreenPicBack
+	ld a, BANK(GreenPicBack) ; Load female back sprite
+	jr .next
+.RedBack
+	ld de, RedPicBack ; Load default Red back sprite
 	ld a, BANK(RedPicBack)
-	ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
+.next
+	ASSERT BANK(GreenPicBack) == BANK(OldManPicBack) ; These two ASSERTs make sure to cover
+	ASSERT BANK(RedPicBack) == BANK(OldManPicBack)   ; both sprite cases
 	call UncompressSpriteFromDE
-	predef ScaleSpriteByTwo
+;predef ScaleSpriteByTwo
+	call LoadBackspriteUnzoomed
 	ld hl, wShadowOAM
 	xor a
 	ldh [hOAMTile], a ; initial tile number
@@ -6366,8 +6513,8 @@ LoadPlayerBackPic:
 	ld e, a
 	dec b
 	jr nz, .loop
-	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers
+;ld de, vBackPic
+;call InterlaceMergeSpriteBuffers
 	ld a, $a
 	ld [MBC1SRamEnable], a
 	xor a
@@ -6796,9 +6943,12 @@ InitBattleCommon:
 	push af
 	res BIT_TEXT_DELAY, [hl] ; no delay
 	callfar InitBattleVariables
+	ld a, [wIsTrainerBattle]
+	and a
+	jp z, InitWildBattle
 	ld a, [wEnemyMonSpecies2]
 	sub OPP_ID_OFFSET
-	jp c, InitWildBattle
+;	jp c, InitWildBattle
 	ld [wTrainerClass], a
 	call GetTrainerInformation
 	callfar ReadTrainer
@@ -6915,8 +7065,14 @@ _LoadTrainerPic:
 	ld d, a ; de contains pointer to trainer pic
 	ld a, [wLinkState]
 	and a
-	ld a, BANK("Pics 6") ; this is where all the trainer pics are (not counting Red's)
-	jr z, .loadSprite
+	jr nz, .useRed
+	ld a, [wTrainerClass]
+	cp PROF_OAK ; first trainer class in "Trainer Pics 2"
+	ld a, BANK("Trainer Pics 2")
+	jr nc, .loadSprite
+	ld a, BANK("Trainer Pics 1")
+	jr .loadSprite
+.useRed
 	ld a, BANK(RedPicFront)
 .loadSprite
 	call UncompressSpriteFromDE
@@ -7037,12 +7193,19 @@ LoadMonBackPic:
 	call ClearScreenArea
 	ld hl,  wMonHBackSprite - wMonHeader
 	call UncompressMonSprite
-	predef ScaleSpriteByTwo
-	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
+;predef ScaleSpriteByTwo
+;ld de, vBackPic
+;call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
+	call LoadBackspriteUnzoomed
 	ld hl, vSprites
 	ld de, vBackPic
 	ld c, (2 * SPRITEBUFFERSIZE) / 16 ; count of 16-byte chunks to be copied
 	ldh a, [hLoadedROMBank]
 	ld b, a
 	jp CopyVideoData
+	
+LoadBackspriteUnzoomed:
+	ld a, $66
+	ld de, vBackPic
+	push de
+	jp LoadUncompressedBackSprite

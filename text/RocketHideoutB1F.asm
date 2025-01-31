@@ -65,7 +65,7 @@ _RocketHideoutB1FRocket4AfterBattleText::
 
 _RocketHideoutB1FRocket5BattleText::
 	text "Are you lost, you"
-	line "little rat?"
+	line "little RATTATA?"
 	done
 
 _RocketHideoutB1FRocket5AfterBattleText::

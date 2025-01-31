@@ -49,7 +49,6 @@ ROMX $4
 	"Battle Engine 1"
 ROMX $5
 	"NPC Sprites 2"
-	"Battle Engine 2"
 ROMX $6
 	"Maps 1"
 	"Play Time"
@@ -70,19 +69,16 @@ ROMX $8
 	"Music 2"
 ROMX $9
 	"Pics 1"
-	"Battle Engine 3"
 ROMX $A
 	"Pics 2"
 	"Battle Engine 4"
 ROMX $B
 	"Pics 3"
-	"Battle Engine 5"
 ROMX $C
 	"Pics 4"
 	"Battle Engine 6"
 ROMX $D
 	"Pics 5"
-	"Slot Machines"
 ROMX $E
 	"Battle Engine 7"
 ROMX $F
@@ -99,7 +95,7 @@ ROMX $12
 	"Screen Effects"
 	"Maps 8"
 ROMX $13
-	"Pics 6"
+	"Trainer Pics 1"
 	"Maps 9"
 	"Predefs"
 ROMX $14
@@ -177,6 +173,18 @@ ROMX $2B
 	"Pokédex Text"
 ROMX $2C
 	"Move Names"
+ROMX $2D
+	"Battle Engine 2"
+	"Battle Engine 3"
+	"Battle Engine 5"
+	"Slot Machines"
+ROMX $30
+	org $4000
+	"Party Mon Sprites Gfx 1"
+ROMX $31
+	org $4000
+	"Party Mon Sprites Gfx 2"
+	"Party Mon Sprites Routines"
 WRAM0
 	"Audio RAM"
 	org $c100

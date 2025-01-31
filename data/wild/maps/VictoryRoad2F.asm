@@ -5,11 +5,11 @@ VictoryRoad2FWildMons:
 	db 26, ZUBAT
 	db 36, ONIX
 	db 39, ONIX
-	db 42, ONIX
+	db 42, GRAVELER
 	db 41, MACHOKE
 	db 40, GOLBAT
 	db 40, MAROWAK
-	db 43, GRAVELER
+	db 43, HITMONCHAN
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

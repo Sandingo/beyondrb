@@ -17,23 +17,23 @@ EvolveTradeMon:
 
 ; This was fixed in Yellow.
 
-	ld a, [wInGameTradeReceiveMonName]
+;	ld a, [wInGameTradeReceiveMonName]
 
-	; GRAVELER
-	cp "G"
-	jr z, .ok
+;	; GRAVELER
+;	cp "G"
+;	jr z, .ok
+;
+;	; "SPECTRE" (HAUNTER)
+;	cp "S"
+;	ret nz
+;	ld a, [wInGameTradeReceiveMonName + 1]
+;	cp "P"
+;	ret nz
 
-	; "SPECTRE" (HAUNTER)
-	cp "S"
-	ret nz
-	ld a, [wInGameTradeReceiveMonName + 1]
-	cp "P"
-	ret nz
-
-.ok
-	ld a, [wPartyCount]
-	dec a
-	ld [wWhichPokemon], a
+;.ok
+;	ld a, [wPartyCount]
+;	dec a
+;	ld [wWhichPokemon], a
 	ld a, $1
 	ld [wForceEvolution], a
 	ld a, LINK_STATE_TRADING

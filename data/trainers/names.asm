@@ -47,4 +47,8 @@ TrainerNames::
 	li "CHANNELER"
 	li "AGATHA"
 	li "LANCE"
+	li "MINA"
+	li "HI-TECH JACK"
+	li "ARCHER"
+	li "KYLE"
 	assert_list_length NUM_TRAINERS

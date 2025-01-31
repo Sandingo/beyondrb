@@ -1,12 +1,12 @@
 WildDataPointers:
 	table_width 2, WildDataPointers
 	dw NothingWildMons         ; PALLET_TOWN
-	dw NothingWildMons         ; VIRIDIAN_CITY
+	dw ViridianCityWildMons         ; VIRIDIAN_CITY
 	dw NothingWildMons         ; PEWTER_CITY
-	dw NothingWildMons         ; CERULEAN_CITY
+	dw CeruleanCityWildMons    ; CERULEAN_CITY
 	dw NothingWildMons         ; LAVENDER_TOWN
-	dw NothingWildMons         ; VERMILION_CITY
-	dw NothingWildMons         ; CELADON_CITY
+	dw VermilionCityWildMons         ; VERMILION_CITY
+	dw CeladonCityWildMons     ; CELADON_CITY
 	dw NothingWildMons         ; FUCHSIA_CITY
 	dw NothingWildMons         ; CINNABAR_ISLAND
 	dw NothingWildMons         ; INDIGO_PLATEAU
@@ -37,6 +37,9 @@ WildDataPointers:
 	dw Route23WildMons         ; ROUTE_23
 	dw Route24WildMons         ; ROUTE_24
 	dw Route25WildMons         ; ROUTE_25
+	dw Route28WildMons
+	dw MtSilverFrontWildMons
+	dw BillsGardenWildMons
 	dw NothingWildMons         ; REDS_HOUSE_1F
 	dw NothingWildMons
 	dw NothingWildMons
@@ -94,7 +97,7 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	dw NothingWildMons
+	dw VermilionDockWildMons
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -247,6 +250,11 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
+	dw MtSilverF1WildMons ; MtSilverF1
+	dw MtSilverF2WildMons ; MtSilverF2
+	dw MtSilverMeltanRoomWildMons ; Meltan Room
+	dw MtSilverSummitWildMons ; MtSilverSummit
+	dw NothingWildMons ; MtSilverPokecenter
 	dw NothingWildMons
 	assert_table_length NUM_MAPS
 	dw -1 ; end
@@ -321,3 +329,15 @@ INCLUDE "data/wild/maps/VictoryRoad2F.asm"
 INCLUDE "data/wild/maps/VictoryRoad3F.asm"
 INCLUDE "data/wild/maps/VictoryRoad1F.asm"
 INCLUDE "data/wild/maps/DiglettsCave.asm"
+INCLUDE "data/wild/maps/Route28.asm"
+INCLUDE "data/wild/maps/MtSilverFront.asm"
+INCLUDE "data/wild/maps/MtSilverF1.asm"
+INCLUDE "data/wild/maps/MtSilverF2.asm"
+INCLUDE "data/wild/maps/MtSilverMeltanRoom.asm"
+INCLUDE "data/wild/maps/MtSilverSummit.asm"
+INCLUDE "data/wild/maps/BillsGarden.asm"
+INCLUDE "data/wild/maps/CeruleanCity.asm"
+INCLUDE "data/wild/maps/CeladonCity.asm"
+INCLUDE "data/wild/maps/ViridianCity.asm"
+INCLUDE "data/wild/maps/VermilionCity.asm"
+INCLUDE "data/wild/maps/VermilionDock.asm"

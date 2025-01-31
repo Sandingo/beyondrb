@@ -8,6 +8,7 @@ CeruleanPokecenter_TextPointers:
 	dw_const CeruleanPokecenterSuperNerdText,        TEXT_CERULEANPOKECENTER_SUPER_NERD
 	dw_const CeruleanPokecenterGentlemanText,        TEXT_CERULEANPOKECENTER_GENTLEMAN
 	dw_const CeruleanPokecenterLinkReceptionistText, TEXT_CERULEANPOKECENTER_LINK_RECEPTIONIST
+	dw_const CeruleanPokecenterChanseyText,		     TEXT_CERULEANPOKECENTER_CHANSEY
 
 CeruleanPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
@@ -21,4 +22,17 @@ CeruleanPokecenterSuperNerdText:
 
 CeruleanPokecenterGentlemanText:
 	text_far _CeruleanPokecenterGentlemanText
+	text_end
+
+CeruleanPokecenterChanseyText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, CHANSEY
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _CeruleanPokecenterChanseyText
 	text_end

@@ -42,6 +42,9 @@ EndOfBattle:
 .evolution
 	xor a
 	ld [wForceEvolution], a
+	ld b, EVERSTONE
+	call IsItemInBag
+	jp nz, .resetVariables
 	predef EvolutionAfterBattle
 .resetVariables
 	xor a

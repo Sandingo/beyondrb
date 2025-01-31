@@ -23,8 +23,10 @@ SuperRodData:
 	dbw ROUTE_23,            .Group9
 	dbw ROUTE_24,            .Group3
 	dbw ROUTE_25,            .Group3
+	dbw ROUTE_28,			 .Group9
+	dbw MT_SILVER_FRONT,	 .Group6
 	dbw CERULEAN_GYM,        .Group3
-	dbw VERMILION_DOCK,      .Group4
+	dbw VERMILION_DOCK,      .Group8
 	dbw SEAFOAM_ISLANDS_B3F, .Group8
 	dbw SEAFOAM_ISLANDS_B4F, .Group8
 	dbw SAFARI_ZONE_EAST,    .Group6
@@ -34,6 +36,9 @@ SuperRodData:
 	dbw CERULEAN_CAVE_2F,    .Group9
 	dbw CERULEAN_CAVE_B1F,   .Group9
 	dbw CERULEAN_CAVE_1F,    .Group9
+	dbw MT_SILVER_F1,		 .Group6
+	dbw MT_SILVER_F2,		 .Group6
+	dbw BILLS_GARDEN,		 .Group11
 	db -1 ; end
 
 ; fishing groups
@@ -41,61 +46,69 @@ SuperRodData:
 
 .Group1:
 	db 2
-	db 15, TENTACOOL
-	db 15, POLIWAG
+	db 30, TENTACOOL
+	db 30, POLIWAG
 
 .Group2:
 	db 2
-	db 15, GOLDEEN
-	db 15, POLIWAG
+	db 30, GOLDEEN
+	db 30, POLIWAG
 
 .Group3:
 	db 3
-	db 15, PSYDUCK
-	db 15, GOLDEEN
-	db 15, KRABBY
+	db 30, PSYDUCK
+	db 30, GOLDEEN
+	db 30, KRABBY
 
 .Group4:
 	db 2
-	db 15, KRABBY
-	db 15, SHELLDER
+	db 30, KRABBY
+	db 30, SHELLDER
+	db 30, BLOTTLE
 
 .Group5:
 	db 2
-	db 23, POLIWHIRL
-	db 15, SLOWPOKE
+	db 32, POLIWHIRL
+	db 30, SLOWPOKE
 
 .Group6:
 	db 4
-	db 15, DRATINI
-	db 15, KRABBY
-	db 15, PSYDUCK
-	db 15, SLOWPOKE
+	db 30, DRATINI
+	db 30, KRABBY
+	db 30, PSYDUCK
+	db 30, SLOWPOKE
 
 .Group7:
 	db 4
-	db 5, TENTACOOL
-	db 15, KRABBY
-	db 15, GOLDEEN
-	db 15, MAGIKARP
+	db 25, TENTACOOL
+	db 30, KRABBY
+	db 30, GOLDEEN
+	db 30, MAGIKARP
 
 .Group8:
 	db 4
-	db 15, STARYU
-	db 15, HORSEA
-	db 15, SHELLDER
-	db 15, GOLDEEN
+	db 30, STARYU
+	db 30, HORSEA
+	db 30, SHELLDER
+	db 30, CHEEP
 
 .Group9:
 	db 4
-	db 23, SLOWBRO
-	db 23, SEAKING
-	db 23, KINGLER
-	db 23, SEADRA
+	db 32, SLOWBRO
+	db 32, SEAKING
+	db 32, KINGLER
+	db 32, SEADRA
 
 .Group10:
 	db 4
-	db 23, SEAKING
-	db 15, KRABBY
-	db 15, GOLDEEN
-	db 15, MAGIKARP
+	db 32, SEAKING
+	db 30, BLOTTLE
+	db 30, GOLDEEN
+	db 30, MAGIKARP
+
+.Group11:
+	db 4
+	db 30, SKIMPER
+	db 30, KRABBY
+	db 30, PSYDUCK
+	db 30, SLOWPOKE

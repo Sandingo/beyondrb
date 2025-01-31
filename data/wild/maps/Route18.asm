@@ -4,10 +4,10 @@ Route18WildMons:
 	db 22, SPEAROW
 	db 25, RATICATE
 	db 24, DODUO
-	db 25, FEAROW
+	db 25, DODUO
 	db 26, DODUO
-	db 28, DODUO
-	db 29, RATICATE
+	db 28, SLUGMA
+	db 29, SLUGMA
 	db 27, FEAROW
 	db 29, FEAROW
 	end_grass_wildmons

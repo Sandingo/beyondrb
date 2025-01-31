@@ -14,3 +14,7 @@ _ViridianPokecenterCooltrainerMText::
 	para "They don't charge"
 	line "any money either!"
 	done
+
+_ViridianPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

@@ -377,7 +377,15 @@ wSlotMachineSevenAndBarModeChance:: db
 	ds 2
 ; ROM back to return to when the player is done with the slot machine
 wSlotMachineSavedROMBank:: db
-	ds 166
+;	ds 166
+
+; Move Buffer stuff for Mateo's code
+wMoveBuffer::
+wRelearnableMoves::
+	ds 164
+; Try not to use this stack. 
+; A good amount of space is needed to store data for the move relearner.
+; If it's like, 2, it'll lag like crazy and show garbage from elsewhere.	
 wLuckySlotHiddenObjectIndex:: db
 
 NEXTU
@@ -893,7 +901,7 @@ wPayDayMoney:: ds 3
 
 NEXTU
 ; evolution data for one mon
-wEvoDataBuffer:: ds 4 * 3 + 1 ; enough for Eevee's three 4-byte evolutions and 0 terminator
+wEvoDataBuffer:: ds 4 * 8 + 1 ; Actual evolution size is stored in party_menu.asm
 
 NEXTU
 wBattleMenuCurrentPP:: db
@@ -1522,7 +1530,8 @@ wMonHBackSprite:: dw
 wMonHMoves:: ds NUM_MOVES
 wMonHGrowthRate:: db
 wMonHLearnset:: flag_array NUM_TMS + NUM_HMS
-	ds 1
+;ds 1
+wMonHPicBank:: db
 wMonHeaderEnd::
 
 ; saved at the start of a battle and then written back at the end of the battle
@@ -1686,7 +1695,9 @@ wPseudoItemID:: db
 
 wUnusedAlreadyOwnedFlag:: db
 
-	ds 2
+wIsTrainerBattle:: db
+
+wWasTrainerBattle:: db
 
 wEvoStoneItemID:: db
 
@@ -1811,7 +1822,7 @@ wWarpEntries:: ds 32 * 4 ; Y, X, warp ID, map ID
 ; if $ff, the player's coordinates are not updated when entering the map
 wDestinationWarpID:: db
 
-	ds 128
+;	ds 128
 
 ; number of signs in the current map (up to 16)
 wNumSigns:: db
@@ -1910,7 +1921,8 @@ wPalletTownCurScript:: db
 	ds 1
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
-	ds 2
+wRoute1CurScript:: db
+	ds 1
 wPewterCityCurScript:: db
 wRoute3CurScript:: db
 wRoute4CurScript:: db
@@ -1957,6 +1969,7 @@ wRoute18CurScript:: db
 wRoute20CurScript:: db
 wSSAnneB1FRoomsCurScript:: db
 wVermilionCityCurScript:: db
+wVermilionDockCurScript:: db
 wPokemonTower2FCurScript:: db
 wPokemonTower3FCurScript:: db
 wPokemonTower4FCurScript:: db
@@ -1967,7 +1980,6 @@ wRocketHideoutB1FCurScript:: db
 wRocketHideoutB2FCurScript:: db
 wRocketHideoutB3FCurScript:: db
 wRocketHideoutB4FCurScript:: db
-	ds 1
 wRoute6GateCurScript:: db
 wRoute8GateCurScript:: db
 	ds 1
@@ -2018,10 +2030,18 @@ wSeafoamIslandsB3FCurScript:: db
 wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
-	ds 78
+wMtSilverSummitCurScript:: db
+wViridianSchoolHouseCurScript:: db 
+	ds 76
 wGameProgressFlagsEnd::
 
-	ds 56
+	wPlayerGender::
+		; $00 = male
+		; $01 = female
+			ds 1
+	
+		; unused
+			ds 55
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 
@@ -2116,7 +2136,11 @@ wCardKeyDoorX:: db
 wFirstLockTrashCanIndex:: db
 wSecondLockTrashCanIndex:: db
 
-	ds 2
+	ds 1
+	
+wGameStage:: db
+	; $00 = before champion fight
+	; $01 = post game
 
 wEventFlags:: flag_array NUM_EVENTS
 
@@ -2228,6 +2252,12 @@ ENDR
 wBoxMonNicksEnd::
 
 wBoxDataEnd::
+
+wEXPBarPixelLength::  ds 1
+wEXPBarBaseEXP::      ds 3
+wEXPBarCurEXP::       ds 3
+wEXPBarNeededEXP::    ds 3
+wEXPBarKeepFullFlag:: ds 1
 
 
 SECTION "Stack", WRAM0

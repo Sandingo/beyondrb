@@ -49,7 +49,41 @@ _SilphCo5FPokemonReport3Text::
 	text "It's a #MON"
 	line "REPORT!"
 
-	para "4 #MON evolve"
+	para "9 #MON evolve"
 	line "only when traded"
 	cont "by link-cable."
 	done
+
+_SilphCo5FSilphHiTechJackIntroText::
+	text "INTRUDER ALERT!"
+	line "TARGET MATCHES"
+	cont "IMAGE IN DATABASE"
+	
+	para "PREPARE TO BE"
+	line "ELIMINATED."
+	done
+
+_SilphCo5FSilphHiTechJackOutroText::
+	text "SECURITY SYSTEM:"
+	line "FAILED"
+	
+	para "DISPENSING CARD"
+	line "KEY."
+	done
+
+_SilphCo5FSilphHiTechJackAfterTalkText::
+	text "AWAITING FURTHER"
+	line "INSTRUCTION FROM"
+	cont "ADMIN."
+	done 
+
+_SilphCo5FHiTechJackDefeatedText::
+	text "BZT!"
+	line "THIS WAS NOT"
+	cont "CALCULATED!"
+	prompt
+	
+_SilphCo5FHiTechJackVictoryText::
+	text "TARGET"
+	line "ELIMINATED!"
+	prompt

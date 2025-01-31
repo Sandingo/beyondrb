@@ -54,7 +54,7 @@ Moves:
 	move TWINEEDLE,    TWINEEDLE_EFFECT,            25, BUG,          100, 20
 	move PIN_MISSILE,  TWO_TO_FIVE_ATTACKS_EFFECT,  14, BUG,           85, 20
 	move LEER,         DEFENSE_DOWN1_EFFECT,         0, NORMAL,       100, 30
-	move BITE,         FLINCH_SIDE_EFFECT1,         60, NORMAL,       100, 25
+	move BITE,         FLINCH_SIDE_EFFECT1,         60, DARK, 	      100, 25
 	move GROWL,        ATTACK_DOWN1_EFFECT,          0, NORMAL,       100, 40
 	move ROAR,         SWITCH_AND_TELEPORT_EFFECT,   0, NORMAL,       100, 20
 	move SING,         SLEEP_EFFECT,                 0, NORMAL,        55, 15
@@ -175,5 +175,25 @@ Moves:
 	move SUPER_FANG,   SUPER_FANG_EFFECT,            1, NORMAL,        90, 10
 	move SLASH,        NO_ADDITIONAL_EFFECT,        70, NORMAL,       100, 20
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,       100, 10
-	move STRUGGLE,     RECOIL_EFFECT,               50, NORMAL,       100, 10
+	move RAGE_FIST,    RAGE_EFFECT,                 50, GHOST,        100, 10
+	move CRUNCH,       SPECIAL_DOWN_SIDE_EFFECT,    80, DARK, 		  100, 15
+	move IRON_TAIL,    DEFENSE_DOWN_SIDE_EFFECT,   100, STEEL,         75, 15
+	move METAL_CLAW,   NO_ADDITIONAL_EFFECT,        50, STEEL,         90, 35
+	move VOLT_TACKLE,  RECOIL_EFFECT,              120, ELECTRIC,     100, 15
+	move UPPERCUT,     FLINCH_SIDE_EFFECT1,         40, FIGHTING,     100, 15
+	move EXTREMESPEED, NO_ADDITIONAL_EFFECT,	    80, NORMAL,		  100,  5
+	move VITAL_THROW,  SWIFT_EFFECT,                70, FIGHTING,     100, 10
+	move STONE_AXE,    FLINCH_SIDE_EFFECT1,  	    65, ROCK,          90, 15
+	move ROCK_WRECKER, HYPER_BEAM_EFFECT,          150, ROCK,          90,  5
+	move FEINT_ATTACK, SWIFT_EFFECT,                60, DARK,         100, 20
+	move DBL_IRON_BASH,ATTACK_TWICE_EFFECT,         60, STEEL,        100,  5
+	move STAR_FREEZE,  PARALYZE_SIDE_EFFECT1,       85, ICE,          100, 10
+	move INK_SPRAY,    ACCURACY_DOWN_SIDE_EFFECT,       50, DARK,          90, 25
+	move BAIBAI_PUNCH, OHKO_EFFECT,                  1, NORMAL,        30,  5
+	move POWDER_SNOW,  FREEZE_SIDE_EFFECT1,         40, ICE,          100, 25
+	move BONE_RUSH,    TWO_TO_FIVE_ATTACKS_EFFECT,  25, GROUND,        80, 10
+	move CROSS_CUTTER, NO_ADDITIONAL_EFFECT,        50, BUG,     	  100, 20
+	move FAIRY_WIND,   NO_ADDITIONAL_EFFECT,        40, FAIRY,        100, 25
+	move MOONBLAST,    SPECIAL_DOWN_SIDE_EFFECT,    85, FAIRY,        100, 10
+	move STRUGGLE,     RECOIL_EFFECT,               50, BIRD,         100, 10
 	assert_table_length NUM_ATTACKS

@@ -72,3 +72,39 @@ _RocketHideoutB4FRocket2AfterBattleText::
 	text "Oh no! I dropped"
 	line "the LIFT KEY!"
 	done
+
+_RocketHideoutB4FArcherIntroText::
+	text "What is a child"
+	line "doing here?"
+	
+	para "How did you"
+	line "get past all of"
+	cont "our GRUNTS?"
+	
+	para "I am ARCHER, an"
+	line "Admin of TEAM"
+	cont "ROCKET."
+	
+	para "And I do not go"
+	line "easy on children!"
+	done
+
+_RocketHideoutArcherDefeatedText::
+	text "What"
+	line "a blunder!"
+	prompt
+
+_RocketHideoutArcherVictoryText::
+	text "That"
+	line "should teach you"
+	cont "your place!"
+	prompt
+
+_RocketHideoutB4FArcherAfterText::
+	text "F-forgive me,"
+	line "GIOVANNI."
+	
+	para "For me to be"
+	line "defeated by a"
+	cont "meer child..."
+	done

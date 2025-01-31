@@ -17,9 +17,9 @@ DebugNewGameParty: ; unreferenced except in _DEBUG
 	; "Tsunekazu Ishihara: Exeggutor is my favorite. That's because I was
 	; always using this character while I was debugging the program."
 	; From https://web.archive.org/web/20000607152840/http://pocket.ign.com/news/14973.html
-	db EXEGGUTOR, 90
+	db MEWTWO, 98
 IF DEF(_DEBUG)
-	db MEW, 5
+	db MEW, 80
 ELSE
 	db MEW, 20
 ENDC
@@ -47,7 +47,7 @@ IF DEF(_DEBUG)
 
 	call SetDebugNewGameParty
 
-	; Exeggutor gets four HM moves.
+	; Mewtwo gets four HM moves.
 	ld hl, wPartyMon1Moves
 	ld a, FLY
 	ld [hli], a
@@ -66,6 +66,15 @@ IF DEF(_DEBUG)
 	ld [hli], a
 	ld [hl], a
 
+
+	;Mew gets Mimic
+	ld hl, wPartyMon2Moves + 3
+	ld a, MIMIC
+	ld [hl], a
+	ld hl, wPartyMon3PP + 3
+	ld a, 15
+	ld [hl], a
+	
 	; Jolteon gets Thunderbolt.
 	ld hl, wPartyMon3Moves + 3
 	ld a, THUNDERBOLT
@@ -146,6 +155,7 @@ DebugItemsList:
 	db CARD_KEY, 1
 	db S_S_TICKET, 1
 	db LIFT_KEY, 1
+	db EVERSTONE, 1
 	db -1 ; end
 
 DebugUnusedList:

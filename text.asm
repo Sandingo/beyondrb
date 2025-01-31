@@ -262,8 +262,18 @@ INCLUDE "text/SaffronCity.asm"
 
 INCLUDE "data/text/text_6.asm"
 
-
 SECTION "Text 11", ROMX
+INCLUDE "text/move_relearner.asm"
+INCLUDE "text/move_deleter.asm"
+INCLUDE "text/MtMoonSquare.asm"
+INCLUDE "text/MtMoonHouse.asm"
+INCLUDE "text/Route28.asm"
+INCLUDE "text/MtSilverFront.asm"
+INCLUDE "text/BillsGarden.asm"
+INCLUDE "text/MtSilverSummit.asm"
+INCLUDE "text/MtSilverPokecenter.asm"
+INCLUDE "text/VermilionCity_2.asm"
+INCLUDE "text/Route28House.asm"
 
 INCLUDE "data/text/text_7.asm"
 
@@ -272,7 +282,16 @@ SECTION "Pokédex Text", ROMX
 
 INCLUDE "data/pokemon/dex_text.asm"
 
+SECTION "Pokédex Text 2", ROMX
+
+INCLUDE "data/pokemon/dex_text_2.asm"
+
 
 SECTION "Move Names", ROMX
 
 INCLUDE "data/moves/names.asm"
+
+
+SECTION "Item Descriptions", ROMX
+
+INCLUDE "data/text/item_descriptions.asm"

@@ -69,7 +69,7 @@ _NidokingDexEntry::
 	dex
 
 _SlowbroDexEntry::
-	text "The SHELLDER that"
+	text "The TURBANN that"
 	next "is latched onto"
 	next "SLOWPOKE's tail"
 
@@ -1506,4 +1506,204 @@ _VictreebelDexEntry::
 	page "although no one"
 	next "has ever returned"
 	next "from there"
+	dex
+
+_CrobatDexEntry::
+	text "As a result of its"
+	next "pursuit of faster,"
+	next "yet more silent"
+	
+	page "flight, a new set"
+	next "of wings grew on"
+	next "its hind legs"
+	dex
+	
+_GelaniaDexEntry::
+	text "Its self styled"
+	next "vines are a great"
+	next "source of pride"
+	
+	page "It will even style"
+	next "TANGELAs vines for"
+	next "them"
+	dex
+	
+_AnnihilapeDexEntry::
+	text "When its anger"
+	next "reaches a critical"
+	next "point, its power"
+	
+	page "is unfettered by"
+	next "the physical"
+	next "limit of its body"
+	dex
+
+_ElectivireDexEntry::
+	text "It pushes the tips"
+	next "of its two tails"
+	next "against its foe"
+	
+	page "It is capable"
+	next "of letting loose"
+	next "20,000 volts"
+	dex
+	
+_MagmortarDexEntry::
+	text "It blasts"
+	next "fireballs over"
+	next "3,600 degrees F"
+	
+	page "This #MON"
+	next "lives in"
+	next "volcanic craters"
+	dex
+
+_SteelixDexEntry::
+	text "Its body has been"
+	next "compressed deep"
+	next "under the ground"
+	
+	page "As a result, it"
+	next "is even harder"
+	next "than diamond"
+	dex
+
+_GuardiaDexEntry::
+	text "A caring #MON"
+	next "that adopts"
+	next "orphaned CUBONE"
+	
+	page "and raises them"
+	next "until they're"
+	next "ready to evolve"
+	dex
+
+_BellossomDexEntry::
+	text "BELLOSSOM gather"
+	next "at times and"
+	next "appear to dance"
+	
+	page "They say that"
+	next "the dance is to"
+	next "summon sunlight"
+	dex
+
+_EspeonDexEntry::
+	text "It uses the fine"
+	next "hair that covers"
+	next "its body to sense"
+	
+	page "air currents and"
+	next "predict it's"
+	next "enemy's actions"
+	dex
+
+_UmbreonDexEntry::
+	text "When agitated,"
+	next "this #MON"
+	next "protects itself"
+	
+	page "by spraying"
+	next "poisonous sweat"
+	next "from its pores"
+	dex
+
+_LeafeonDexEntry::
+	text "Just like a plant"
+	next "it uses"
+	next "photosynthesis"
+	
+	page "As a result, it is"
+	next "always enveloped"
+	next "in clean air"
+	dex
+
+_GlaceonDexEntry::
+	text "As a protective"
+	next "technique, it can"
+	next "completely freeze"
+	
+	page "its fur to make"
+	next "it stand like"
+	next "needles"
+	dex
+
+_MadameDexEntry::
+	text "A species that is"
+	next "rarely seen. It"
+	next "always holds a"
+	
+	page "spring onion,"
+	next "according to"
+	next "studies"
+	dex
+	
+ _BellignantDexEntry::
+	text "A plant #MON"
+	next "that's revered in"
+	next "another region"
+	
+	page "It can absorb"
+	next "useful nutrients"
+	next "found in soil"
+	dex
+ 	
+ _PolitoedDexEntry::
+	text "If POLIWAG and"
+	next "POLIWHIRL hear its"
+	next "echoing cry, they"
+	
+	page "respond by"
+	next "gathering from far"
+	next "and wide"
+	dex
+	
+ _HappiDexEntry::
+	text "Anyone who takes a"
+	next "bite out of HAPPI's"
+	next "egg will become"
+	
+	page "unfailingly caring"
+	next "and pleasant to"
+	next "everyone"
+	dex
+
+ _KingdraDexEntry::
+	text "It is said that it"
+	next "usually hides in"
+	next "underwater caves"
+	
+	page "It can create"
+	next "whirlpools by"
+	next "yawning"
+	dex
+
+ _RhyperiorDexEntry::
+	text "It puts rocks in"
+	next "holes in its palms"
+	next "and uses its arms"
+	
+	page "to shoot them."
+	next "GEODUDE are shot"
+	next "at rare times"
+	dex
+
+ _HoundourDexEntry::
+	text "It uses different"
+	next "kinds of cries for"
+	next "communicating with"
+	
+	page "others of its kind"
+	next "and for pursuing"
+	next "its prey"
+	dex
+
+ _HoundoomDexEntry::
+	text "If you are burned"
+	next "by the flames it"
+	next "shoots from its"
+	
+	page "mouth, the pain"
+	next "will never go"
+	next "away"
 	dex

@@ -382,6 +382,8 @@ OaksLabRivalStartBattleScript:
 	ret nz
 
 	; define which team rival uses, and fight it
+	ld a, 1
+	ld [wIsTrainerBattle], a
 	ld a, OPP_RIVAL1
 	ld [wCurOpponent], a
 	ld a, [wRivalStarter]
@@ -416,6 +418,8 @@ OaksLabRivalStartBattleScript:
 	ret
 
 OaksLabRivalEndBattleScript:
+    xor a
+    ld [wIsTrainerBattle], a
 	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
 	ld a, PLAYER_DIR_UP
@@ -585,6 +589,12 @@ OaksLabOakGivesPokedexScript:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	call OaksLabRivalFaceUpOakFaceDownScript
+	CheckAndSetEvent EVENT_GOT_POKEBALLS_FROM_OAK
+	lb bc, POKE_BALL, 5
+	call GiveItem
+	ld a, TEXT_OAKSLAB_OAK_GIVE_BALLS
+	ldh [hTextID], a
+	call DisplayTextID
 	ld a, TEXT_OAKSLAB_OAK_THAT_WAS_MY_DREAM
 	ldh [hTextID], a
 	call DisplayTextID
@@ -603,6 +613,9 @@ OaksLabOakGivesPokedexScript:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	ld a, HS_OLD_MAN
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ld a, HS_ROUTE_1_YOUNGSTER
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ld a, [wSavedNPCMovementDirections2Index]
@@ -749,6 +762,7 @@ OaksLab_TextPointers:
 	dw_const OaksLabOakGotPokedexText,            TEXT_OAKSLAB_OAK_GOT_POKEDEX
 	dw_const OaksLabOakThatWasMyDreamText,        TEXT_OAKSLAB_OAK_THAT_WAS_MY_DREAM
 	dw_const OaksLabRivalLeaveItAllToMeText,      TEXT_OAKSLAB_RIVAL_LEAVE_IT_ALL_TO_ME
+	dw_const OaksLabOakGivesBalls,					TEXT_OAKSLAB_OAK_GIVE_BALLS
 
 OaksLab_TextPointers2:
 	dw OaksLabRivalText
@@ -904,14 +918,23 @@ OaksLabMonChoiceMenu:
 	ld a, [wSpriteIndex]
 	cp OAKSLAB_CHARMANDER_POKE_BALL
 	jr nz, .not_charmander
+	ld a, HS_ROUTE_24_CHARMANDER_GUY ; Remove the Charmander Guy
+	ld [wMissableObjectIndex], a
+	predef HideObject
 	ld a, HS_STARTER_BALL_1
 	jr .continue
 .not_charmander
 	cp OAKSLAB_SQUIRTLE_POKE_BALL
 	jr nz, .not_squirtle
+	ld a, HS_VERMILION_OFFICER_JENNY ; Remove the Squirtle Guy
+	ld [wMissableObjectIndex], a
+	predef HideObject
 	ld a, HS_STARTER_BALL_2
 	jr .continue
 .not_squirtle
+	ld a, HS_CERULEANTRADEHOUSE_MELANIE ; Remove the Bulbasaur Guy
+	ld [wMissableObjectIndex], a
+	predef HideObject
 	ld a, HS_STARTER_BALL_3
 .continue
 	ld [wMissableObjectIndex], a
@@ -985,8 +1008,8 @@ OaksLabOak1Text:
 	ld b, POKE_BALL
 	call IsItemInBag
 	jr nz, .come_see_me_sometimes
-	CheckEvent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
-	jr nz, .give_poke_balls
+;	CheckEvent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
+;	jr nz, .give_poke_balls
 	CheckEvent EVENT_GOT_POKEDEX
 	jr nz, .mon_around_the_world
 	CheckEventReuseA EVENT_BATTLED_RIVAL_IN_OAKS_LAB
@@ -1019,14 +1042,6 @@ OaksLabOak1Text:
 	ld hl, .PokemonAroundTheWorldText
 	call PrintText
 	jr .done
-.give_poke_balls
-	CheckAndSetEvent EVENT_GOT_POKEBALLS_FROM_OAK
-	jr nz, .come_see_me_sometimes
-	lb bc, POKE_BALL, 5
-	call GiveItem
-	ld hl, .GivePokeballsText
-	call PrintText
-	jr .done
 .come_see_me_sometimes
 	ld hl, .ComeSeeMeSometimesText
 	call PrintText
@@ -1053,12 +1068,6 @@ OaksLabOak1Text:
 
 .PokemonAroundTheWorldText:
 	text_far _OaksLabOak1PokemonAroundTheWorldText
-	text_end
-
-.GivePokeballsText:
-	text_far _OaksLabOak1ReceivedPokeballsText
-	sound_get_key_item
-	text_far _OaksLabGivePokeballsExplanationText
 	text_end
 
 .ComeSeeMeSometimesText:
@@ -1211,6 +1220,12 @@ OaksLabOakMyInventionPokedexText:
 OaksLabOakGotPokedexText:
 	text_far _OaksLabOakGotPokedexText
 	sound_get_key_item
+	text_end
+
+OaksLabOakGivesBalls:
+	text_far _OaksLabOak1ReceivedPokeballsText
+	sound_get_key_item
+	text_far _OaksLabGivePokeballsExplanationText
 	text_end
 
 OaksLabOakThatWasMyDreamText:

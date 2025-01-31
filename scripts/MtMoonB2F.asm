@@ -253,6 +253,9 @@ MtMoonB2FDomeFossilText:
 	ld a, HS_MT_MOON_B2F_FOSSIL_1
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_CERULEAN_CAVE_2F_HELIX_FOSSIL ; Make Helix Fossil Available Later
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	SetEvent EVENT_GOT_DOME_FOSSIL
 	ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
 	ld [wMtMoonB2FCurScript], a
@@ -281,6 +284,9 @@ MtMoonB2FHelixFossilText:
 	ld a, HS_MT_MOON_B2F_FOSSIL_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_CERULEAN_CAVE_2F_DOME_FOSSIL ; Make Dome Fossil Available Later
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	SetEvent EVENT_GOT_HELIX_FOSSIL
 	ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
 	ld [wMtMoonB2FCurScript], a

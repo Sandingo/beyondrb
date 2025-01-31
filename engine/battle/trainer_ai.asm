@@ -360,6 +360,7 @@ BrockAI:
 	and a
 	ret z
 	jp AIUseFullHeal
+;jp AIUsePewterCrunch
 
 MistyAI:
 	cp 25 percent + 1
@@ -403,7 +404,7 @@ Rival2AI:
 	ld a, 5
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUsePotion
+	jp AIUseSuperPotion
 
 Rival3AI:
 	cp 13 percent - 1
@@ -615,6 +616,12 @@ SwitchEnemyMon:
 AIBattleWithdrawText:
 	text_far _AIBattleWithdrawText
 	text_end
+
+AIUsePewterCrunch:
+	call AIPlayRestoringSFX
+	call AICureStatus
+	ld a, PEWTERCRUNCH
+	jp AIPrintItemUse
 
 AIUseFullHeal:
 	call AIPlayRestoringSFX

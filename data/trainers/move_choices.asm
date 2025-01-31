@@ -41,7 +41,7 @@ TrainerClassMoveChoiceModifications:
 	move_choices 1       ; ROCKET
 	move_choices 1, 3    ; COOLTRAINER_M
 	move_choices 1, 3    ; COOLTRAINER_F
-	move_choices 1       ; BRUNO
+	move_choices 1, 3    ; BRUNO
 	move_choices 1       ; BROCK
 	move_choices 1, 3    ; MISTY
 	move_choices 1, 3    ; LT_SURGE
@@ -54,6 +54,10 @@ TrainerClassMoveChoiceModifications:
 	move_choices 1, 3    ; RIVAL3
 	move_choices 1, 2, 3 ; LORELEI
 	move_choices 1       ; CHANNELER
-	move_choices 1       ; AGATHA
+	move_choices 1, 3    ; AGATHA
 	move_choices 1, 3    ; LANCE
+	move_choices 1, 3    ; MINA
+	move_choices 1, 2, 3 ; HITECH JACK
+	move_choices 1       ; ARCHER
+	move_choices 1, 3    ; KYLE
 	assert_list_length NUM_TRAINERS

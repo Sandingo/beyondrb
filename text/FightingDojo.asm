@@ -124,6 +124,12 @@ _FightingDojoHitmonchanPokeBallText::
 	cont "HITMONCHAN?"
 	done
 
+_FightingDojoHitmontopPokeBallText::
+	text "You want the"
+	line "handstanding"
+	cont "HITMONTOP?"
+	done
+
 _FightingDojoBetterNotGetGreedyText::
 	text "Better not get"
 	line "greedy..."

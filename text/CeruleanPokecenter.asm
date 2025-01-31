@@ -22,3 +22,7 @@ _CeruleanPokecenterGentlemanText::
 	line "to boast about"
 	cont "their #MON?"
 	done
+
+_CeruleanPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

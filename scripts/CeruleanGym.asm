@@ -46,6 +46,9 @@ CeruleanGymMistyPostBattleScript:
 CeruleanGymReceiveTM11:
 	ld a, TEXT_CERULEANGYM_MISTY_CASCADE_BADGE_INFO
 	ldh [hTextID], a
+	ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, MistyRematchPostBattle
 	call DisplayTextID
 	SetEvent EVENT_BEAT_MISTY
 	lb bc, TM_BUBBLEBEAM, 1
@@ -71,6 +74,25 @@ CeruleanGymReceiveTM11:
 
 	jp CeruleanGymResetScripts
 
+MistyRematchPostBattle:
+	SetEvent EVENT_BEAT_MISTY_REMATCH
+	ld a, TEXT_CERULEANGYM_REMATCH_POST_BATTLE
+	ldh [hTextID], a
+	call DisplayTextID
+	lb bc, TM_BUBBLEBEAM, 1
+	call GiveItem
+	jr nc, .BagFull
+	ld a, TEXT_CERULEANGYM_RECIEVED_TM11_SHORT
+	ldh [hTextID], a
+	call DisplayTextID	
+	jr .done
+.BagFull
+	ld a, TEXT_CERULEANGYM_MISTY_TM11_NO_ROOM
+	ldh [hTextID], a
+	call DisplayTextID
+.done
+	jp CeruleanGymResetScripts
+
 CeruleanGym_TextPointers:
 	def_text_pointers
 	dw_const CeruleanGymMistyText,                 TEXT_CERULEANGYM_MISTY
@@ -80,6 +102,8 @@ CeruleanGym_TextPointers:
 	dw_const CeruleanGymMistyCascadeBadgeInfoText, TEXT_CERULEANGYM_MISTY_CASCADE_BADGE_INFO
 	dw_const CeruleanGymMistyReceivedTM11Text,     TEXT_CERULEANGYM_MISTY_RECEIVED_TM11
 	dw_const CeruleanGymMistyTM11NoRoomText,       TEXT_CERULEANGYM_MISTY_TM11_NO_ROOM
+	dw_const CeruleanGymReceivedTM11ShortText,     TEXT_CERULEANGYM_RECIEVED_TM11_SHORT
+	dw_const CeruleanGymRematchPostBattleText,     TEXT_CERULEANGYM_REMATCH_POST_BATTLE
 
 CeruleanGymTrainerHeaders:
 	def_trainers 2
@@ -97,11 +121,14 @@ CeruleanGymMistyText:
 	jr nz, .afterBeat
 	call z, CeruleanGymReceiveTM11
 	call DisableWaitingAfterTextDisplay
-	jr .done
+	jp .done
 .afterBeat
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .MistyRematch
 	ld hl, .TM11ExplanationText
 	call PrintText
-	jr .done
+	jp .done
 .beforeBeat
 	ld hl, .PreBattleText
 	call PrintText
@@ -118,6 +145,45 @@ CeruleanGymMistyText:
 	ld a, $2
 	ld [wGymLeaderNo], a
 	xor a
+	ldh [hJoyHeld], a
+	jr .endBattle
+.MistyRematch
+	CheckEvent EVENT_BEAT_MISTY_REMATCH
+	jr nz, .already_fought
+	ld hl, .PreBattleRematch1Text
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleRematch2Text
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, CeruleanGymRematchDefeatedText
+	ld de, CeruleanGymRematchVictoryText
+	call SaveEndBattleTextPointers
+	ld a, 1
+	ld [wIsTrainerBattle], a
+	ld a, OPP_MISTY
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld a, $4 ; new script
+	ld [wCeruleanGymCurScript], a
+	ld [wCurMapScript], a
+	jr .endBattle
+.already_fought
+	ld hl, .TM11ExplanationText
+	call PrintText
+	jr .done
+.refused
+	ld hl, .PreBattleRematchRefusedText
+	call PrintText
+	jr .done
+.endBattle
 	ldh [hJoyHeld], a
 	ld a, SCRIPT_CERULEANGYM_MISTY_POST_BATTLE
 	ld [wCeruleanGymCurScript], a
@@ -206,4 +272,34 @@ CeruleanGymGymGuideText:
 
 .BeatMistyText:
 	text_far _CeruleanGymGymGuideBeatMistyText
+	text_end
+
+CeruleanGymMistyText.PreBattleRematch1Text
+	text_far _CeruleanGymRematchPreBattle1Text
+	text_end
+
+CeruleanGymMistyText.PreBattleRematch2Text
+	text_far _CeruleanGymPreRematchBattle2Text
+	text_end
+
+CeruleanGymMistyText.PreBattleRematchRefusedText
+	text_far _CeruleanGymRematchRefusedText
+	text_end
+	
+CeruleanGymRematchVictoryText:
+	text_far _CeruleanGymRematchVictoryText
+	text_end
+
+CeruleanGymMistyText.CeruleanGymRematchDefeatedText:
+CeruleanGymRematchDefeatedText:
+	text_far _CeruleanGymRematchDefeatedText
+	text_end
+
+CeruleanGymRematchPostBattleText:
+	text_far _CeruleanGymRematchPostBattleText
+	text_end
+
+CeruleanGymReceivedTM11ShortText:
+	text_far _CeruleanGymMistyReceivedTM11Text
+	sound_get_item_1
 	text_end

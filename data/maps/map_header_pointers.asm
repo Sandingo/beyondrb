@@ -38,6 +38,9 @@ MapHeaderPointers::
 	dw Route23_h
 	dw Route24_h
 	dw Route25_h
+	dw Route28_h
+	dw MtSilverFront_h
+	dw BillsGarden_h
 	dw RedsHouse1F_h
 	dw RedsHouse2F_h
 	dw BluesHouse_h
@@ -243,10 +246,15 @@ MapHeaderPointers::
 	dw TradeCenter_h
 	dw Colosseum_h
 	dw SilphCo2F_h ; UNUSED_MAP_F1
-	dw SilphCo2F_h ; UNUSED_MAP_F2
-	dw SilphCo2F_h ; UNUSED_MAP_F3
-	dw SilphCo2F_h ; UNUSED_MAP_F4
 	dw LoreleisRoom_h
 	dw BrunosRoom_h
 	dw AgathasRoom_h
+	dw MtMoonSquare_h
+	dw MtMoonHouse_h
+	dw MtSilverF1_h
+	dw MtSilverF2_h
+	dw MtSilverMeltanRoom_h
+	dw MtSilverSummit_h
+	dw MtSilverPokecenter_h
+	dw Route28House_h
 	assert_table_length NUM_MAPS

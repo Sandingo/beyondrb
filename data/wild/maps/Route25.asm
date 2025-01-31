@@ -3,7 +3,7 @@ Route25WildMons:
 IF DEF(_RED)
 	db  8, WEEDLE
 	db  9, KAKUNA
-	db 13, PIDGEY
+	db 13, BALOONDA
 	db 12, ODDISH
 	db 13, ODDISH
 	db 12, ABRA
@@ -15,7 +15,7 @@ ENDC
 IF DEF(_BLUE)
 	db  8, CATERPIE
 	db  9, METAPOD
-	db 13, PIDGEY
+	db 13, BALOONDA
 	db 12, BELLSPROUT
 	db 13, BELLSPROUT
 	db 12, ABRA
@@ -26,5 +26,15 @@ IF DEF(_BLUE)
 ENDC
 	end_grass_wildmons
 
-	def_water_wildmons 0 ; encounter rate
+	def_water_wildmons 5 ; encounter rate
+	db  5, MAGIKARP
+	db 10, MAGIKARP
+	db 15, MAGIKARP
+	db 20, MAGIKARP
+	db 10, MAGIKARP
+	db 15, SLOWPOKE
+	db 20, SLOWPOKE
+	db 30, GOLDEEN
+	db 35, GOLDEEN
+	db 40, SEAKING
 	end_water_wildmons

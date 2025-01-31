@@ -18,3 +18,7 @@ _FuchsiaPokecenterCooltrainerFText::
 	cont "The HQ governs"
 	cont "all trainers."
 	done
+
+_FuchsiaPokecenterChanseyText::
+	text "CHANSEY: Chance!"
+	done

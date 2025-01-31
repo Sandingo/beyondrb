@@ -48,3 +48,20 @@ _Route1SignText::
 	line "PALLET TOWN -"
 	cont "VIRIDIAN CITY"
 	done
+
+_Route1BattleText1::
+	text "Do you know what"
+	line "happens when"
+	cont "trainers eyes"
+	cont "meet?"
+	done
+
+_Route1EndBattleText1::
+	text "You're"
+	line "really strong!"
+	prompt
+
+_Route1AfterBattleText1::
+	text "I'll train hard"
+	line "so I can beat you!"
+	done

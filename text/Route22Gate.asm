@@ -20,3 +20,9 @@ _Route22GateGuardGoRightAheadText::
 	line "BOULDERBADGE!"
 	cont "Go right ahead!@"
 	text_end
+
+_Route22GateSilverGuardText::
+	text "Only the champion"
+	line "is allowed beyond"
+	cont "this point.@"
+	text_end
