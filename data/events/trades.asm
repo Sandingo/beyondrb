@@ -1,6 +1,6 @@
 TradeMons:
 ; entries correspond to TRADE_FOR_* constants
-	table_width 3 + NAME_LENGTH
+	table_width 3 + NAME_LENGTH, TradeMons
 	; give mon, get mon, dialog id, nickname
 	; The two instances of TRADE_DIALOGSET_EVOLUTION are a leftover
 	; from the Japanese Blue trades, which used species that evolve.

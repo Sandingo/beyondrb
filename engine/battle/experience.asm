@@ -2,6 +2,9 @@ GainExperience:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
+	ld a, [wCurMap]
+	cp SILPH_FACILITY
+	ret z
 	;call DivideExpDataByNumMonsGainingExp
 	ld a, [wBoostExpByExpAll] ;load in a if the EXP All is being used
 	ld hl, WithExpAllText ; this is preparing the text to show

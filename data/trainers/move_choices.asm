@@ -8,7 +8,7 @@ ENDM
 
 ; move choice modification methods that are applied for each trainer class
 TrainerClassMoveChoiceModifications:
-	list_start
+	list_start TrainerClassMoveChoiceModifications
 	move_choices         ; YOUNGSTER
 	move_choices 1       ; BUG CATCHER
 	move_choices 1       ; LASS

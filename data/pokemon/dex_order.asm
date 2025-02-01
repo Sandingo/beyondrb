@@ -1,5 +1,5 @@
 PokedexOrder:
-	table_width 1
+	table_width 1, PokedexOrder
 	db DEX_RHYDON
 	db DEX_KANGASKHAN
 	db DEX_NIDORAN_M

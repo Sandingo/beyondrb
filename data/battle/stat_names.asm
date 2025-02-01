@@ -1,7 +1,7 @@
 ; Stats that vitamins can raise or lower
 
 VitaminStats:
-	list_start
+	list_start VitaminStats
 	li "HEALTH"
 	li "ATTACK"
 	li "DEFENSE"

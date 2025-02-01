@@ -111,7 +111,7 @@ NextChar::
 	inc de
 	jp PlaceNextChar
 
-NullChar::
+NullChar:: ; unused
 	ld b, h
 	ld c, l
 	pop hl

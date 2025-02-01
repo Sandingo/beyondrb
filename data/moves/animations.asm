@@ -1,5 +1,5 @@
 AttackAnimationPointers:
-	table_width 2
+	table_width 2, AttackAnimationPointers
 	dw PoundAnim
 	dw KarateChopAnim
 	dw DoubleSlapAnim

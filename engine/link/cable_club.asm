@@ -57,8 +57,8 @@ CableClub_DoBattleOrTradeAgain:
 	ld [hli], a
 	dec b
 	jr nz, .zeroPlayerDataPatchListLoop
-	ld hl, wLinkEnemyTrainerName
-	ld bc, wTrainerHeaderPtr - wLinkEnemyTrainerName
+	ld hl, wGrassRate
+	ld bc, wTrainerHeaderPtr - wGrassRate
 .zeroEnemyPartyLoop
 	xor a
 	ld [hli], a
@@ -818,7 +818,7 @@ TradeCenter_Trade:
 	ld a, [wPartyCount]
 	dec a
 	ld [wWhichPokemon], a
-	ld a, TRUE
+	ld a, $1
 	ld [wForceEvolution], a
 	ld a, [wTradingWhichEnemyMon]
 	ld hl, wEnemyPartySpecies

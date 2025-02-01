@@ -314,7 +314,7 @@ SilphCo7FSilphWorkerM1Text:
 	lb bc, LAPRAS, 30
 	call GivePokemon
 	jr nc, .done
-	ld a, [wAddedToParty]
+	ld a, [wSimulatedJoypadStatesEnd]
 	and a
 	call z, WaitForTextScrollButtonPress
 	call EnableAutoTextBoxDrawing

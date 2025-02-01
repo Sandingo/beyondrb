@@ -969,6 +969,9 @@ TrainerBattleVictory:
 	ld c, 40
 	call DelayFrames
 	call PrintEndBattleText
+	ld a, [wCurMap]
+	cp SILPH_FACILITY
+	ret z
 ; win money
 	ld hl, MoneyForWinningText
 	call PrintText
@@ -2070,7 +2073,6 @@ DisplayBattleMenu::
 	call DisplayTextBoxID
  ; handle menu input if it's not the old man tutorial
 	ld a, [wBattleType]
-	ASSERT BATTLE_TYPE_OLD_MAN == 1
 	dec a
 	jp nz, .handleBattleMenuInput
 ; the following happens for the old man tutorial
@@ -4543,7 +4545,7 @@ CalculateDamage:
 ; Multi-hit attacks may or may not have 0 bp.
 	cp TWO_TO_FIVE_ATTACKS_EFFECT
 	jr z, .skipbp
-	cp EFFECT_1E
+	cp $1e
 	jr z, .skipbp
 
 ; Calculate OHKO damage based on remaining HP.
@@ -5272,7 +5274,7 @@ MetronomePickMove:
 	and a
 	jr z, .pickMoveLoop
 	cp STRUGGLE
-	ASSERT NUM_ATTACKS == STRUGGLE ; random numbers greater than STRUGGLE are not moves
+	assert NUM_ATTACKS == STRUGGLE ; random numbers greater than STRUGGLE are not moves
 	jr nc, .pickMoveLoop
 	cp METRONOME
 	jr z, .pickMoveLoop
@@ -6902,7 +6904,7 @@ HandleExplodingAnimation:
 	ret nz
 	ld a, ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT
 	ld [wAnimationType], a
-	ASSERT ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT == MEGA_PUNCH
+	assert ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT == MEGA_PUNCH
 	; ld a, MEGA_PUNCH
 ; fallthrough
 PlayMoveAnimation:

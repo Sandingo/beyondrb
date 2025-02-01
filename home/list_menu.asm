@@ -129,7 +129,7 @@ DisplayListMenuIDLoop::
 	and a ; PCPOKEMONLISTMENU?
 	jr z, .pokemonList
 ; if it's an item menu
-	ASSERT wCurListMenuItem == wCurItem
+	assert wCurListMenuItem == wCurItem
 	push hl
 	call GetItemPrice
 	pop hl
@@ -152,7 +152,7 @@ DisplayListMenuIDLoop::
 	call GetName
 	jr .storeChosenEntry
 .pokemonList
-	ASSERT wCurListMenuItem == wCurPartySpecies
+	assert wCurListMenuItem == wCurPartySpecies
 	ld hl, wPartyCount
 	ld a, [wListPointer]
 	cp l ; is it a list of party pokemon or box pokemon?

@@ -50,7 +50,7 @@ _Route8CooltrainerF1BattleText::
 	line "I collect them!"
 	done
 
-_Route8CooltrainerF1EndBattleText::
+_Route8CooltrainerF21EndBattleText::
 	text "Why? Why??"
 	prompt
 

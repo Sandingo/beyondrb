@@ -642,7 +642,7 @@ AICureStatus:
 	res BADLY_POISONED, [hl]
 	ret
 
-AIUseXAccuracy: ; unreferenced
+AIUseXAccuracy: ; unused
 	call AIPlayRestoringSFX
 	ld hl, wEnemyBattleStatus2
 	set USING_X_ACCURACY, [hl]
@@ -656,7 +656,7 @@ AIUseGuardSpec:
 	ld a, GUARD_SPEC
 	jp AIPrintItemUse
 
-AIUseDireHit: ; unreferenced
+AIUseDireHit: ; unused
 	call AIPlayRestoringSFX
 	ld hl, wEnemyBattleStatus2
 	set GETTING_PUMPED, [hl]

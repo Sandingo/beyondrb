@@ -281,7 +281,7 @@ RocketHideoutB2F_TextPointers:
 RocketHideout2TrainerHeaders:
 	def_trainers
 RocketHideout2TrainerHeader0:
-	trainer EVENT_BEAT_ROCKET_HIDEOUT_2_TRAINER_0, 4, RocketHideoutB2FRocketBattleText, RocketHideoutB2FRocketEndBattleText, RocketHideoutB2FRocketAfterBattleText
+	trainer EVENT_BEAT_ROCKET_HIDEOUT_2_TRAINER_0, 4, RocketHideoutB1FRocketBattleText, RocketHideoutB1FRocketEndBattleText, RocketHideoutB1FRocketAfterBattleText
 	db -1 ; end
 
 RocketHideoutB2FRocketText:
@@ -290,14 +290,14 @@ RocketHideoutB2FRocketText:
 	call TalkToTrainer
 	jp TextScriptEnd
 
-RocketHideoutB2FRocketBattleText:
-	text_far _RocketHideoutB2FRocketBattleText
+RocketHideoutB1FRocketBattleText:
+	text_far _RocketHideoutB1FRocketBattleText
 	text_end
 
-RocketHideoutB2FRocketEndBattleText:
-	text_far _RocketHideoutB2FRocketEndBattleText
+RocketHideoutB1FRocketEndBattleText:
+	text_far _RocketHideoutB1FRocketEndBattleText
 	text_end
 
-RocketHideoutB2FRocketAfterBattleText:
-	text_far _RocketHideoutB2FRocketAfterBattleText
+RocketHideoutB1FRocketAfterBattleText:
+	text_far _RocketHideoutB1FRocketAfterBattleText
 	text_end

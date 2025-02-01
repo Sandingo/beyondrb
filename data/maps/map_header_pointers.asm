@@ -1,6 +1,6 @@
 ; see also MapHeaderBanks
 MapHeaderPointers::
-	table_width 2
+	table_width 2, MapHeaderPointers
 	dw PalletTown_h
 	dw ViridianCity_h
 	dw PewterCity_h
@@ -109,7 +109,6 @@ MapHeaderPointers::
 	dw SSAnne1FRooms_h
 	dw SSAnne2FRooms_h
 	dw SSAnneB1FRooms_h
-	dw LancesRoom_h ; UNUSED_MAP_69
 	dw LancesRoom_h ; UNUSED_MAP_6A
 	dw LancesRoom_h ; UNUSED_MAP_6B
 	dw VictoryRoad1F_h
@@ -257,4 +256,5 @@ MapHeaderPointers::
 	dw MtSilverSummit_h
 	dw MtSilverPokecenter_h
 	dw Route28House_h
+	dw SilphFacility_h
 	assert_table_length NUM_MAPS

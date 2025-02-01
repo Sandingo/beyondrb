@@ -1,5 +1,5 @@
 WildDataPointers:
-	table_width 2
+	table_width 2, WildDataPointers
 	dw NothingWildMons         ; PALLET_TOWN
 	dw ViridianCityWildMons         ; VIRIDIAN_CITY
 	dw NothingWildMons         ; PEWTER_CITY
@@ -7,8 +7,8 @@ WildDataPointers:
 	dw NothingWildMons         ; LAVENDER_TOWN
 	dw VermilionCityWildMons         ; VERMILION_CITY
 	dw CeladonCityWildMons     ; CELADON_CITY
-	dw NothingWildMons         ; FUCHSIA_CITY
-	dw NothingWildMons         ; CINNABAR_ISLAND
+	dw ViridianCityWildMons         ; FUCHSIA_CITY
+	dw SeaRoutesWildMons         ; CINNABAR_ISLAND
 	dw NothingWildMons         ; INDIGO_PLATEAU
 	dw NothingWildMons         ; SAFFRON_CITY
 	dw NothingWildMons         ; unused
@@ -98,7 +98,6 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw VermilionDockWildMons
-	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -255,6 +254,7 @@ WildDataPointers:
 	dw MtSilverMeltanRoomWildMons ; Meltan Room
 	dw MtSilverSummitWildMons ; MtSilverSummit
 	dw NothingWildMons ; MtSilverPokecenter
+	dw NothingWildMons
 	dw NothingWildMons
 	assert_table_length NUM_MAPS
 	dw -1 ; end

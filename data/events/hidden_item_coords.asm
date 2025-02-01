@@ -3,7 +3,7 @@ MACRO hidden_item
 ENDM
 
 HiddenItemCoords:
-	table_width 3
+	table_width 3, HiddenItemCoords
 	; map id, x, y
 	hidden_item VIRIDIAN_FOREST,                1,  18
 	hidden_item VIRIDIAN_FOREST,               16,  42

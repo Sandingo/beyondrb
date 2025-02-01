@@ -97,8 +97,8 @@ TrainerWalkUpToPlayer::
 	swap a
 	dec a
 	ld c, a             ; bc = steps yet to go to reach player
-	xor a ; NPC_MOVEMENT_DOWN
-	ld b, a
+	xor a
+	ld b, a           ; a = direction to go to
 	jr .writeWalkScript
 .facingUp
 	ld a, [wTrainerScreenY]
@@ -111,7 +111,7 @@ TrainerWalkUpToPlayer::
 	dec a
 	ld c, a             ; bc = steps yet to go to reach player
 	ld b, $0
-	ld a, NPC_MOVEMENT_UP
+	ld a, $40           ; a = direction to go to
 	jr .writeWalkScript
 .facingRight
 	ld a, [wTrainerScreenX]
@@ -124,7 +124,7 @@ TrainerWalkUpToPlayer::
 	dec a
 	ld c, a             ; bc = steps yet to go to reach player
 	ld b, $0
-	ld a, NPC_MOVEMENT_RIGHT
+	ld a, $c0           ; a = direction to go to
 	jr .writeWalkScript
 .facingLeft
 	ld a, [wTrainerScreenX]
@@ -137,7 +137,7 @@ TrainerWalkUpToPlayer::
 	dec a
 	ld c, a             ; bc = steps yet to go to reach player
 	ld b, $0
-	ld a, NPC_MOVEMENT_LEFT
+	ld a, $80           ; a = direction to go to
 .writeWalkScript
 	ld hl, wNPCMovementDirections2
 	ld de, wNPCMovementDirections2

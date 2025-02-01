@@ -2,7 +2,7 @@
 
 MapHSPointers:
 ; entries correspond to map ids
-	table_width 2
+	table_width 2, MapHSPointers
 	dw PalletTownHS
 	dw ViridianCityHS
 	dw PewterCityHS
@@ -111,7 +111,6 @@ MapHSPointers:
 	dw SSAnne1FRoomsHS
 	dw SSAnne2FRoomsHS
 	dw SSAnneB1FRoomsHS
-	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw VictoryRoad1FHS
@@ -262,6 +261,7 @@ MapHSPointers:
 	dw NoHS ; Mt Silver Summit
 	dw NoHS ; Mt Silver Pokecenter
 	dw NoHS ; Route 28 House
+	dw NoHS
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -270,7 +270,7 @@ NoHS:
 
 MissableObjects:
 ; entries correspond to HS_* constants (see constants/hide_show_constants)
-	table_width 3
+	table_width 3, MissableObjects
 ; format: map id, object id, HIDE/SHOW
 
 PalletTownHS:

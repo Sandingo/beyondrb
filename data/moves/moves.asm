@@ -5,12 +5,12 @@ MACRO move
 	db \4 ; type
 	db \5 percent ; accuracy
 	db \6 ; pp
-	ASSERT \6 <= 40, "PP must be 40 or less"
+	assert \6 <= 40, "PP must be 40 or less"
 ENDM
 
 Moves:
 ; Characteristics of each move.
-	table_width MOVE_LENGTH
+	table_width MOVE_LENGTH, Moves
 	move POUND,        NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35
 	move KARATE_CHOP,  NO_ADDITIONAL_EFFECT,        50, NORMAL,       100, 25
 	move DOUBLESLAP,   TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,        85, 10

@@ -1,5 +1,5 @@
 MonsterPalettes:
-	table_width 1
+	table_width 1, MonsterPalettes
 	db PAL_MEWMON    ; MISSINGNO
 	db PAL_GREENMON  ; BULBASAUR
 	db PAL_GREENMON  ; IVYSAUR

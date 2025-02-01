@@ -94,10 +94,8 @@ Evolution_PartyMonLoop: ; loop over party mons
 	jr .doEvolution
 .checkItemEvo
 	ld a, [hli]
-	; Bug: Wild encounters can cause stone evolutions without
-	; having any stones available. This was fixed in Yellow.
 	ld b, a ; evolution item
-	ld a, [wCurItem] ; same as [wCurPartySpecies]
+	ld a, [wCurItem]
 	cp b ; was the evolution item in this entry used?
 	jp nz, .nextEvoEntry1 ; if not, go to the next evolution entry
 .checkLevel
@@ -262,7 +260,7 @@ Evolution_PartyMonLoop: ; loop over party mons
 RenameEvolvedMon:
 ; Renames the mon to its new, evolved form's standard name unless it had a
 ; nickname, in which case the nickname is kept.
-	ASSERT wCurSpecies == wNameListIndex ; save+restore wCurSpecies while using wNameListIndex
+	assert wCurSpecies == wNameListIndex ; save+restore wCurSpecies while using wNameListIndex
 	ld a, [wCurSpecies]
 	push af
 	ld a, [wMonHIndex]

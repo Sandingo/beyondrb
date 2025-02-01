@@ -127,7 +127,6 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const SS_ANNE_1F_ROOMS,              12,  8 ; $66
 	map_const SS_ANNE_2F_ROOMS,              12,  8 ; $67
 	map_const SS_ANNE_B1F_ROOMS,             12,  8 ; $68
-	map_const UNUSED_MAP_69,                  0,  0 ; $69
 	map_const UNUSED_MAP_6A,                  0,  0 ; $6A
 	map_const UNUSED_MAP_6B,                  0,  0 ; $6B
 	map_const VICTORY_ROAD_1F,               10,  9 ; $6C
@@ -275,6 +274,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const MT_SILVER_SUMMIT,				 13, 18
 	map_const MT_SILVER_POKECENTER,           7,  4
 	map_const ROUTE_28_HOUSE,                 4,  4
+	map_const SILPH_FACILITY,				     4, 4
 DEF NUM_MAPS EQU const_value
 
 ; Indoor maps, such as houses, use this as the Map ID in their exit warps

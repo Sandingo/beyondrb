@@ -1,5 +1,5 @@
 SubanimationPointers:
-	table_width 2
+	table_width 2, SubanimationPointers
 	dw Subanim_0Star
 	dw Subanim_0StarTwice
 	dw Subanim_0StarThrice

@@ -1,5 +1,5 @@
 MapSongBanks::
-	table_width 2
+	table_width 2, MapSongBanks
 	db MUSIC_PALLET_TOWN, BANK(Music_PalletTown) ; PALLET_TOWN
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; VIRIDIAN_CITY
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; PEWTER_CITY
@@ -108,7 +108,6 @@ MapSongBanks::
 	db MUSIC_SS_ANNE, BANK(Music_SSAnne) ; SS_ANNE_1F_ROOMS
 	db MUSIC_SS_ANNE, BANK(Music_SSAnne) ; SS_ANNE_2F_ROOMS
 	db MUSIC_SS_ANNE, BANK(Music_SSAnne) ; SS_ANNE_B1F_ROOMS
-	db MUSIC_DUNGEON2, BANK(Music_Dungeon2) ; UNUSED_MAP_69
 	db MUSIC_DUNGEON2, BANK(Music_Dungeon2) ; UNUSED_MAP_6A
 	db MUSIC_SS_ANNE, BANK(Music_SSAnne) ; UNUSED_MAP_6B
 	db MUSIC_DUNGEON3, BANK(Music_Dungeon3) ; VICTORY_ROAD_1F
@@ -256,4 +255,5 @@ MapSongBanks::
 	db MUSIC_INDIGO_PLATEAU, BANK(Music_IndigoPlateau) ; MT SILVER summit
 	db MUSIC_POKECENTER, BANK(Music_Pokecenter) ; MT SILVER Pokecenter
 	db MUSIC_ROUTES2, BANK(Music_Routes2) ; ROUTE_28_HOUSE
+	db MUSIC_INDIGO_PLATEAU, BANK(Music_IndigoPlateau) ; Silph Facility
 	assert_table_length NUM_MAPS

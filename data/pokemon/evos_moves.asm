@@ -9,7 +9,7 @@
 ; - db 0 ; no more level-up moves
 
 EvosMovesPointerTable:
-	table_width 2
+	table_width 2, EvosMovesPointerTable
 	dw RhydonEvosMoves
 	dw KangaskhanEvosMoves
 	dw NidoranMEvosMoves

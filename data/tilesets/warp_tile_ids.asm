@@ -1,5 +1,5 @@
 WarpTileIDPointers:
-	table_width 2
+	table_width 2, WarpTileIDPointers
 	dw .OverworldWarpTileIDs
 	dw .RedsHouse1WarpTileIDs
 	dw .MartWarpTileIDs

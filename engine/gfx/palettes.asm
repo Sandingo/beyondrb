@@ -396,11 +396,11 @@ LoadSGB:
 	ret nc
 	ld a, 1
 	ld [wOnSGB], a
-	ld a, [wOnCGB]
+	ld a, [wGBC]
 	and a
-	jr z, .notCGB
+	jr z, .notGBC
 	ret
-.notCGB
+.notGBC
 	di
 	call PrepareSuperNintendoVRAMTransfer
 	ei
@@ -563,21 +563,21 @@ Wait7000:
 	ret
 
 SendSGBPackets:
-	ld a, [wOnCGB]
+	ld a, [wGBC]
 	and a
-	jr z, .notCGB
+	jr z, .notGBC
 	push de
-	call InitCGBPalettes
+	call InitGBCPalettes
 	pop hl
 	call EmptyFunc3
 	ret
-.notCGB
+.notGBC
 	push de
 	call SendSGBPacket
 	pop hl
 	jp SendSGBPacket
 
-InitCGBPalettes:
+InitGBCPalettes:
 	ld a, $80 ; index 0 with auto-increment
 	ldh [rBGPI], a
 	inc hl

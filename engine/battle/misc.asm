@@ -120,3 +120,170 @@ GetMonSpecies:
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 	ret
+
+
+; Script from Extreme Yellow, thanks a lot!
+RandomizeTeamForBattleFacilityTrainer::
+	ld de, wBattleFacilityMonNumber1
+	ld a, [wBattleFacilityWhichMonIsRandomized]
+	inc a
+	ld [wBattleFacilityWhichMonIsRandomized], a
+	dec a
+	cp 5
+	jr nc, .continue ; we don't need to move the address next if we are treating already the 6th mon
+.storeMonAddressLoop
+	dec a
+	cp $FF
+	jr z, .continue
+	inc de
+	jr .storeMonAddressLoop
+.continue
+; depending on winning streak and which mon number, choose normal list or Megas' one
+.RNGLoop
+	ld hl, FullyEvolvedMons
+; generate a random number between 0 and len(FullyEvolvedMons)-1, i.e. 0 and 83 included
+	call Random
+	cp 104
+	jr nc, .RNGLoop
+; a contains a valid number, now we need to access the a-th element of the list we decided about earlier
+.uglyLoop
+	dec a
+	cp $FF
+	jr z, .doneUglyLoop
+	inc hl
+	jr .uglyLoop
+.doneUglyLoop
+; finally, we need to check if the mon we just generated is the same as any of the previously generated ones
+	ld a, [wBattleFacilityMonNumber1]
+	cp [hl] ; hl points to the mon we are trying to generate
+	jr z, .RNGLoop
+	ld a, [wBattleFacilityMonNumber2]
+	cp [hl] ; hl points to the mon we are trying to generate
+	jr z, .RNGLoop
+	ld a, [wBattleFacilityMonNumber3]
+	cp [hl] ; hl points to the mon we are trying to generate
+	jr z, .RNGLoop
+	ld a, [wBattleFacilityMonNumber4]
+	cp [hl] ; hl points to the mon we are trying to generate
+	jr z, .RNGLoop
+	ld a, [wBattleFacilityMonNumber5]
+	cp [hl] ; hl points to the mon we are trying to generate
+	jr z, .RNGLoop
+	jr .doneOffset
+.doneOffset
+	ld a, [hl]
+	ld [wCurPartySpecies], a
+	ld b, a
+	ld a, [wBattleFacilityWhichMonIsRandomized]
+	cp 6
+	ret z ; if we're treating the 6th mon, we don't save anything in the non-existing wBattleFacilityMonNumber6, otherwise we mess up stuff
+	ld a, b
+	ld [de], a ; saves Mon in wBattleFacilityMonNumberN
+	ret
+FullyEvolvedMons: ; 0-103
+	; weaks
+	db BUTTERFREE
+	db BEEDRILL
+	db CLEFABLE
+	db WIGGLYTUFF
+	db PARASECT
+	db VENOMOTH
+	db GOLDUCK
+	db DEWGONG
+	db MUK
+	db HYPNO
+	db KINGLER
+	db ELECTRODE
+	db WEEZING
+	db SEAKING
+	db ANIMON
+	db MADAME
+	db BALOONDA
+	db MAGCARGO
+	db TURBANN
+	db STACKTUS
+	db HOUNDOOM
+	db CROCKY
+	; average
+	db PIDGEOT
+	db RATICATE
+	db FEAROW
+	db ARBOK
+	db SANDSLASH
+	db NINETALES
+	db CROBAT
+	db VILEPLUME
+	db BELLOSSOM
+	db ARCANINE
+	db POLIWRATH
+	db POLITOED
+	db GOLEM
+	db RAPIDASH
+	db DODRIO
+	db HITMONLEE
+	db HITMONCHAN
+	db HITMONTOP
+	db LICKILORD
+	db KANGASKHAN
+	db MR_MIME
+	db OMASTAR
+	db KABUTOPS
+	db VICTREEBEL
+	db TENTACRUEL
+	db SLOWKING
+	db CLOYSTER
+	db GELANIA
+	db KLEAVOR
+	db ELECTIVIRE
+	db MAGMORTAR
+	db AERODACTYL
+	db PENDRAKEN
+	db POLIWEALTH
+	db HONCHKROW
+	db TRAMPEL
+	db JAGG
+	db GOROTORA
+	db BELLIGNANT
+	db GYAOON
+	; strong
+	db GUARDIA
+	db VENUSAUR
+	db CHARIZARD
+	db BLASTOISE
+	db TOTARTLE
+	db NIDOQUEEN
+	db NIDOKING
+	db DUGTRIO
+	db PERSIAN
+	db ANNIHILAPE
+	db ALAKAZAM
+	db SLOWBRO
+	db MAGNEZONE
+	db GENGAR
+	db STEELIX
+	db EXEGGUTOR
+	db RHYPERIOR
+	db HAPPI
+	db KINGDRA
+	db STARMIE
+	db SCIZOR
+	db PLUX
+	db JYNX
+	db TAUROS
+	db GYARADOS
+	db LAPRAS
+	db SNORLAX
+	db DRAGONITE
+	db VAPOREON
+	db JOLTEON
+	db FLAREON
+	db ESPEON
+	db LEAFEON
+	db GLACEON
+	db SYLVEON
+	db PORYGON2
+	db MACHAMP
+	db OHMEGA
+	db CRYITHAN
+	db GOROCHU
+	db -1

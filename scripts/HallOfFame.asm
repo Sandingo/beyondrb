@@ -33,9 +33,9 @@ HallOfFameResetEventsAndSaveScript:
 	ld [wLetterPrintingDelayFlags], a
 	ld hl, wStatusFlags7
 	res BIT_NO_MAP_MUSIC, [hl]
-	ASSERT wStatusFlags7 + 1 == wElite4Flags
+	assert wStatusFlags7 + 1 == wElite4Flags
 	inc hl
-	set BIT_UNUSED_BEAT_ELITE_4, [hl] ; unused
+	set BIT_UNUSED_BEAT_ELITE_4, [hl] ; debug, unused?
 	xor a ; SCRIPT_*_DEFAULT
 	ld hl, wLoreleisRoomCurScript
 	ld [hli], a ; wLoreleisRoomCurScript
@@ -99,11 +99,6 @@ HallOfFameOakCongratulationsScript:
 	call DisplayTextID
 	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
-	jp .PostgameNPCLocations
-	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
-	ld [wHallOfFameCurScript], a
-	ret
-
 .PostgameNPCLocations
 	ld a, HS_CERULEAN_CAVE_GUY ; Mewtwo is available
 	ld [wMissableObjectIndex], a
@@ -117,6 +112,9 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_CELADONMART4F_CLERK2 ; Allow rare evolution items to be sold
 	ld [wMissableObjectIndex], a
 	predef ShowObject
+; End of Post Game Location checks
+	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
+	ld [wHallOfFameCurScript], a
 	ret
 
 HallOfFame_TextPointers:

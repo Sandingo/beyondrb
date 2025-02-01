@@ -1,5 +1,5 @@
 TrainerDataPointers:
-	table_width 2
+	table_width 2, TrainerDataPointers
 	dw YoungsterData
 	dw BugCatcherData
 	dw LassData
@@ -762,7 +762,8 @@ MinaData:
 	
 HitechJackData:
 	db $FF, 35, PORYGON, 36, MAGNETON, 37, ELECTRODE, 0 
-
+	db $FF, 50, DITTO, 50, DITTO, 50, DITTO, 50, DITTO, 0 ; Placeholder team for the battle facility
+	
 ArcherData:
 ; Rocket Hideout
 	db $FF, 24,HOUNDOUR, 25,KOFFING, 28,GOLBAT, 0

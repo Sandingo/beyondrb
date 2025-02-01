@@ -403,7 +403,7 @@ CheckForBoulderCollisionWithSprites:
 	ld a, [hli]
 	ld b, a
 	ldh a, [hPlayerFacing]
-	ASSERT BIT_FACING_DOWN == 0
+	assert BIT_FACING_DOWN == 0
 	rrca
 	jr c, .pushingDown
 ; pushing up

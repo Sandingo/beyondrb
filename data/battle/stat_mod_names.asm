@@ -2,7 +2,7 @@
 ; The relevant move effect IDs correspond to the stats
 
 StatModTextStrings:
-	list_start
+	list_start StatModTextStrings
 	li "ATTACK"
 	li "DEFENSE"
 	li "SPEED"

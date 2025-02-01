@@ -1276,3 +1276,8 @@ INCLUDE "data/maps/headers/Route28House.asm"
 INCLUDE "scripts/Route28House.asm"
 INCLUDE "data/maps/objects/Route28House.asm"
 Route28House_Blocks: INCBIN "maps/Route28House.blk"
+
+INCLUDE "data/maps/headers/SilphFacility.asm"
+INCLUDE "scripts/SilphFacility.asm"
+INCLUDE "data/maps/objects/SilphFacility.asm"
+SilphFacility_Blocks: INCBIN "maps/SilphFacility.blk"

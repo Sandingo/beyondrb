@@ -32,7 +32,7 @@ RocketHideoutElevatorStoreWarpEntriesScript:
 	ret
 
 RocketHideoutElevatorScript:
-	ld hl, RocketHideoutElevatorFloors
+	ld hl, RocketHideoutElavatorFloors
 	call LoadItemList
 	ld hl, RocketHideoutElevatorWarpMaps
 	ld de, wElevatorWarpMaps
@@ -40,7 +40,7 @@ RocketHideoutElevatorScript:
 	call CopyData
 	ret
 
-RocketHideoutElevatorFloors:
+RocketHideoutElavatorFloors:
 	db 3 ; #
 	db FLOOR_B1F
 	db FLOOR_B2F

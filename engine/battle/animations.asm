@@ -1743,7 +1743,8 @@ AnimationMinimizeMon:
 
 MinimizedMonSprite:
 ; 8x5 partial tile graphic
-pusho b.X ; . = 0, X = 1
+pusho
+opt b.X ; . = 0, X = 1
 	db %...XX...
 	db %..XXXX..
 	db %.XXXXXX.
@@ -1935,7 +1936,7 @@ AnimationSubstitute:
 ; Changes the pokemon's sprite to the mini sprite
 	ld hl, wTempPic
 	xor a
-	ld bc, 7 * 7 tiles
+	ld bc, $310
 	call FillMemory
 	ldh a, [hWhoseTurn]
 	and a
@@ -2120,7 +2121,7 @@ GetMonSpriteTileMapPointerFromRowCount:
 	ldh a, [hWhoseTurn]
 	and a
 	jr nz, .enemyTurn
-	ld a, 5 * SCREEN_WIDTH + 1
+	ld a, 20 * 5 + 1
 	jr .next
 .enemyTurn
 	ld a, 12
@@ -2133,7 +2134,7 @@ GetMonSpriteTileMapPointerFromRowCount:
 	sub b
 	and a
 	jr z, .done
-	ld de, SCREEN_WIDTH
+	ld de, 20
 .loop
 	add hl, de
 	dec a
@@ -2187,8 +2188,8 @@ AnimCopyRowRight:
 	jr nz, AnimCopyRowRight
 	ret
 
-; only used by the unreferenced PlayIntroMoveSound
-GetIntroMoveSound:
+; get the sound of the move id in b
+GetMoveSoundB:
 	ld a, b
 	call GetMoveSound
 	ld b, a
@@ -2294,7 +2295,7 @@ CopyTileIDs:
 	dec c
 	jr nz, .columnLoop
 	pop hl
-	ld bc, SCREEN_WIDTH
+	ld bc, 20
 	add hl, bc
 	pop bc
 	dec b

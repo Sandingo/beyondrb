@@ -364,6 +364,9 @@ VermilionCityMinaText:
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, .decline_battle
+	ld c, BANK(Music_MeetFemaleTrainer)
+	ld a, MUSIC_MEET_FEMALE_TRAINER
+	call PlayMusic
 	ld hl, .MinaAccept
 	call PrintText
 	call Delay3
@@ -393,6 +396,9 @@ VermilionCityMinaText:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .decline_battle
+	ld c, BANK(Music_MeetFemaleTrainer)
+	ld a, MUSIC_MEET_FEMALE_TRAINER
+	call PlayMusic
 	ld hl, .MinaAccept
 	call PrintText
 	call Delay3

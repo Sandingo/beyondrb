@@ -1,6 +1,6 @@
 ; see also MapHeaderPointers
 MapHeaderBanks::
-	table_width 1
+	table_width 1, MapHeaderBanks
 	db BANK(PalletTown_h)
 	db BANK(ViridianCity_h)
 	db BANK(PewterCity_h)
@@ -109,7 +109,6 @@ MapHeaderBanks::
 	db BANK(SSAnne1FRooms_h)
 	db BANK(SSAnne2FRooms_h)
 	db BANK(SSAnneB1FRooms_h)
-	db $1D ; UNUSED_MAP_69
 	db $1D ; UNUSED_MAP_6A
 	db $1D ; UNUSED_MAP_6B
 	db BANK(VictoryRoad1F_h)
@@ -257,4 +256,5 @@ MapHeaderBanks::
 	db BANK(MtSilverSummit_h)
 	db BANK(MtSilverPokecenter_h)
 	db BANK(Route28House_h)
+	db BANK(SilphFacility_h)
 	assert_table_length NUM_MAPS

@@ -1,7 +1,7 @@
 ; this function is used to display sign messages, sprite dialog, etc.
 ; INPUT: [hSpriteIndex] = sprite ID or [hTextID] = text ID
 DisplayTextID::
-	ASSERT hSpriteIndex == hTextID ; these are at the same memory location
+	assert hSpriteIndex == hTextID ; these are at the same memory location
 	ldh a, [hLoadedROMBank]
 	push af
 	farcall DisplayTextIDInit ; initialization
