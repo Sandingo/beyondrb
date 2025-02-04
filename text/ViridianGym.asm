@@ -264,7 +264,7 @@ _ViridianGymGuidePostgameText::
 _ViridianGymKyleText::
 	text "Did you remember"
 	line "me? Did you miss"
-	line "me?"
+	cont "me?"
 	
 	para "Even if you don't,"
 	line "I have been"

@@ -345,6 +345,11 @@ _AmuletCoinDescription::
 	next "trainer battles."
 	prompt
 
+_OrangeTicketDescription::
+	text "A ticket for the"
+	next "ORANGE ISLANDS."
+	prompt
+
 _HM01Description::
 	text "Cuts using claws,"
 	next "scythes, etc."

@@ -14,6 +14,11 @@ _VermilionGymLTSurgeThunderBadgeInfoText::
 	text "The THUNDERBADGE"
 	line "cranks up your"
 	cont "#MON's SPEED!"
+	
+	para "#MON up to"
+	line "up to L40 will"
+	cont "serve you in"
+	cont "combat!"
 
 	para "It also lets your"
 	line "#MON FLY any"

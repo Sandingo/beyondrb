@@ -10,6 +10,7 @@ DEF SHOW EQU $15
 
 	const_def
 	const HS_PALLET_TOWN_OAK               ; 00
+	const HS_PALLET_TOWN_SCIENTIST
 	const HS_LYING_OLD_MAN                 ; 01
 	const HS_OLD_MAN                       ; 02
 	const HS_MUSEUM_GUY                    ; 03
@@ -269,4 +270,5 @@ DEF SHOW EQU $15
 	const HS_MT_SILVER_F2_ITEM_3
 	const HS_MT_SILVER_F2_ITEM_4
 	const HS_MT_SILVER_MELTANROOM_ITEM_1
+	const HS_MT_SILVER_SUMMIT_OAK
 DEF NUM_HS_OBJECTS EQU const_value

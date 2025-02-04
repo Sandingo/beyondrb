@@ -92,6 +92,7 @@ ItemPrices::
 	bcd3 500   ; PEWTERCRUNCH
 	bcd3 0	   ; EVERSTONE
 	bcd3 0     ; AMULET_COIN
+	bcd3 0     ; ORANGE_TICKET
 	assert_table_length NUM_ITEMS
 	bcd3 0     ; FLOOR_B2F
 	bcd3 0     ; FLOOR_B1F

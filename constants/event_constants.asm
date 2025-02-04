@@ -783,8 +783,9 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 
 ; Custom Events
 	const_next $9E0
-	const_skip 3
+	const_skip 2
 	const EVENT_BEAT_OAK
+	const EVENT_GOT_ORANGE_TICKET
 	DEF REMATCHES_START EQU const_value
 	const EVENT_BEAT_MINA_REMATCH
 	const EVENT_BEAT_BROCK_REMATCH

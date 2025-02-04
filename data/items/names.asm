@@ -92,6 +92,7 @@ ItemNames::
 	li "PEWTERCRUNCH"
 	li "EVERSTONE"
 	li "AMULET COIN"
+	li "ORNG TICKET"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

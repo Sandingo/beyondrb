@@ -99,6 +99,9 @@ HallOfFameOakCongratulationsScript:
 	call DisplayTextID
 	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
+	ld a, [wGameStage] ; Check if player has already beaten the game
+	and a
+	jr nz, .skipPostGameNPCPlacements
 .PostgameNPCLocations
 	ld a, HS_CERULEAN_CAVE_GUY ; Mewtwo is available
 	ld [wMissableObjectIndex], a
@@ -121,6 +124,10 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_VIRIDIAN_GYM_KYLE ; Kyle becomes the new Viridian Gym Leader
 	ld [wMissableObjectIndex], a
 	predef ShowObject	
+	ld a, HS_PALLET_TOWN_SCIENTIST ; Block Oak's Lab to start the Mt. Silver quest
+	ld [wMissableObjectIndex], a
+	predef ShowObject	
+.skipPostGameNPCPlacements
 ; End of Post Game Location checks
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a

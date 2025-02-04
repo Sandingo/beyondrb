@@ -54,3 +54,23 @@ _PalletTownPlayersHouseSignText::
 _PalletTownRivalsHouseSignText::
 	text "<RIVAL>'s house "
 	done
+
+_PalletTownScientistText::
+	text "Ah, hello,"
+	line "<PLAYER>!"
+	
+	para "If you're looking"
+	line "for PROF. OAK,"
+	cont "he's currently out"
+	cont "on a field study."
+	
+	para "He said something"
+	line "about a mountain"
+	cont "range west of the"
+	cont "KANTO region."
+	
+	para "If you want to"
+	line "find him, might"
+	cont "be best to start"
+	cont "looking there."
+	done

@@ -258,7 +258,7 @@ MapHSPointers:
 	dw MtSilverF1HS
 	dw MtSilverF2HS
 	dw MtSilverMeltanRoomHS ; MtSilverMeltanRoom
-	dw NoHS ; Mt Silver Summit
+	dw MtSilverSummitHS ; Mt Silver Summit
 	dw NoHS ; Mt Silver Pokecenter
 	dw NoHS ; Route 28 House
 	dw NoHS
@@ -275,6 +275,7 @@ MissableObjects:
 
 PalletTownHS:
 	db PALLET_TOWN, PALLETTOWN_OAK, HIDE
+	db PALLET_TOWN, PALLETTOWN_SCIENTIST, HIDE
 ViridianCityHS:
 	db VIRIDIAN_CITY, VIRIDIANCITY_OLD_MAN_SLEEPY, SHOW
 	db VIRIDIAN_CITY, VIRIDIANCITY_OLD_MAN,        HIDE
@@ -617,5 +618,7 @@ MtSilverF2HS:
 	db MT_SILVER_F2, MTSILVERF2_CALCIUM, SHOW
 MtSilverMeltanRoomHS:
 	db MT_SILVER_MELTAN_ROOM, MTSILVERMELTANROOM_CANDYJAR, SHOW
+MtSilverSummitHS:
+	db MT_SILVER_SUMMIT, MTSILVERSUMMIT_OAK, SHOW
 	db $FF, $01, SHOW ; end
 	assert_table_length NUM_HS_OBJECTS + 1

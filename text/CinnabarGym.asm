@@ -37,6 +37,11 @@ _CinnabarGymBlaineVolcanoBadgeInfoText::
 	line "heightens the"
 	cont "SPECIAL abilities"
 	cont "of your #MON!"
+	
+	para "Not only that,"
+	line "#MON under L80"
+	cont "will listen to"
+	cont "your command!"
 
 	para "Here, you can"
 	line "have this too!"

@@ -92,4 +92,5 @@ KeyItemFlags:
 	dbit FALSE ; PEWTERCRUNCH
 	dbit TRUE ; EVERSTONE
 	dbit TRUE ; AMULET_COIN
+	dbit TRUE ; ORANGE_TICKET
 	end_bit_array NUM_ITEMS

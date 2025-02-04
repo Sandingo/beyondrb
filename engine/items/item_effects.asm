@@ -109,6 +109,7 @@ ItemUsePtrTable:
 	dw ItemUseMedicine   ; PEWTERCRUNCH
 	dw UnusableItem      ; EVERSTONE
 	dw UnusableItem      ; AMULET_COIN
+	dw UnusableItem      ; ORANGE_TICKET
 
 ItemUseBall:
 
