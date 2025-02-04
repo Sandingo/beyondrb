@@ -23,7 +23,6 @@ ld a, [wIsInBattle]
 	ld a, TEXT_SILPHFACILITY_STREAK_CONT
 	ldh [hTextID], a
 	call DisplayTextID
-	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, .decline
@@ -80,6 +79,7 @@ SilphFacilityScientistText:
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, .decline
+	predef HealParty
 	ld hl, .SilphBattleAccept
 	call PrintText
 	call Delay3
@@ -133,6 +133,15 @@ SilphFacilityJack:
 
 
 SilphFacilityStreakContText:
+	text_asm
+	predef HealParty
+	ld hl, .text
+	call PrintText
+	call YesNoChoice
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	jp TextScriptEnd
+
+.text
 	text_far _SilphFacilityScientistContinueStreakText
 	text_end
 

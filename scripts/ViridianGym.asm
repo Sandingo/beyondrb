@@ -29,6 +29,7 @@ ViridianGym_ScriptPointers:
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_VIRIDIANGYM_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_VIRIDIANGYM_END_BATTLE
 	dw_const ViridianGymGiovanniPostBattle,         SCRIPT_VIRIDIANGYM_GIOVANNI_POST_BATTLE
+	dw_const ViridianGymKylePostBattle,				SCRIPT_VIRIDIANGYM_KYLE_POST_BATTLE
 	dw_const ViridianGymPlayerSpinningScript,       SCRIPT_VIRIDIANGYM_PLAYER_SPINNING
 
 ViridianGymDefaultScript:
@@ -166,6 +167,31 @@ ViridianGymReceiveTM27:
 	predef ShowObject
 	SetEvents EVENT_2ND_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 	jp ViridianGymResetScripts
+	
+
+ViridianGymKylePostBattle:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, ViridianGymResetScripts
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	ld a, TEXT_VIRIDIANGYM_KYLE_BEATEN
+	ldh [hTextID], a
+	call DisplayTextID
+	SetEvent EVENT_BEAT_KYLE_REMATCH
+	lb bc, TM_FISSURE, 1
+	call GiveItem
+	jr nc, .bag_full
+	ld a, TEXT_VIRIDIANGYM_GIOVANNI_RECEIVED_TM27_ALT
+	ldh [hTextID], a
+	call DisplayTextID
+	jr .done
+.bag_full
+	ld a, TEXT_VIRIDIANGYM_GIOVANNI_TM27_NO_ROOM
+	ldh [hTextID], a
+	call DisplayTextID
+.done
+	jp ViridianGymResetScripts
 
 ViridianGym_TextPointers:
 	def_text_pointers
@@ -179,11 +205,14 @@ ViridianGym_TextPointers:
 	dw_const ViridianGymRocker2Text,                TEXT_VIRIDIANGYM_ROCKER2
 	dw_const ViridianGymCooltrainerM3Text,          TEXT_VIRIDIANGYM_COOLTRAINER_M3
 	dw_const ViridianGymGymGuideText,               TEXT_VIRIDIANGYM_GYM_GUIDE
+	dw_const ViridianGymKyleText,						TEXT_VIRIDIANGYM_KYLE
 	dw_const PickUpItemText,                        TEXT_VIRIDIANGYM_REVIVE
 	dw_const PickUpItemText,                        TEXT_VIRIDIANGYM_PROTECTOR
 	dw_const ViridianGymGiovanniEarthBadgeInfoText, TEXT_VIRIDIANGYM_GIOVANNI_EARTH_BADGE_INFO
 	dw_const ViridianGymGiovanniReceivedTM27Text,   TEXT_VIRIDIANGYM_GIOVANNI_RECEIVED_TM27
 	dw_const ViridianGymGiovanniTM27NoRoomText,     TEXT_VIRIDIANGYM_GIOVANNI_TM27_NO_ROOM
+	dw_const ViridianGymKyleDefeated,				TEXT_VIRIDIANGYM_KYLE_BEATEN
+	dw_const ViridianGymGiovanniReceivedTM27Text2, TEXT_VIRIDIANGYM_GIOVANNI_RECEIVED_TM27_ALT
 
 ViridianGymTrainerHeaders:
 	def_trainers 2
@@ -423,6 +452,9 @@ ViridianGymCooltrainerM3AfterBattleText:
 
 ViridianGymGymGuideText:
 	text_asm
+	ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .postGame
 	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
 	jr nz, .afterBeat
 	ld hl, ViridianGymGuidePreBattleText
@@ -430,6 +462,10 @@ ViridianGymGymGuideText:
 	jr .done
 .afterBeat
 	ld hl, ViridianGymGuidePostBattleText
+	call PrintText
+	jr .done
+.postGame
+	ld hl, ViridianGymGuidePostgameText
 	call PrintText
 .done
 	jp TextScriptEnd
@@ -440,4 +476,85 @@ ViridianGymGuidePreBattleText:
 
 ViridianGymGuidePostBattleText:
 	text_far _ViridianGymGuidePostBattleText
+	text_end
+	
+ViridianGymGuidePostgameText:
+	text_far _ViridianGymGuidePostgameText
+	text_end
+
+ViridianGymKyleText:
+	text_asm
+	CheckEvent EVENT_BEAT_KYLE_REMATCH
+	jr nz, .already_fought
+	ld hl, .PreBattleRematch1Text
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleRematch2Text
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, ViridianGymRematchDefeatedText
+	ld de, ViridianGymRematchVictoryText
+	call SaveEndBattleTextPointers
+	ld a, 1
+	ld [wIsTrainerBattle], a
+	ld a, OPP_KYLE
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld a, $4 ; new script
+	ld [wViridianGymCurScript], a
+	ld [wCurMapScript], a
+	jr .endBattle
+.already_fought
+	ld hl, ViridianGymKylePostMatchText
+	call PrintText
+	jr .done
+.refused
+	ld hl, .PreBattleRematchRefusedText
+	call PrintText
+	jr .done
+.endBattle
+	ld a, SCRIPT_VIRIDIANGYM_KYLE_POST_BATTLE
+	ld [wViridianGymCurScript], a
+	ld [wCurMapScript], a
+.done
+	jp TextScriptEnd
+
+.PreBattleRematch1Text:
+	text_far _ViridianGymKyleText
+	text_end
+
+.PreBattleRematch2Text:
+	text_far _ViridianGymKyleAcceptText
+	text_end
+
+.PreBattleRematchRefusedText:
+	text_far _ViridianGymKyleRefuseText
+	text_end
+
+ViridianGymRematchDefeatedText:
+	text_far _ViridianGymRematchDefeatedText
+	text_end
+
+ViridianGymRematchVictoryText:
+	text_far _ViridianGymRematchVictoryText
+	text_end
+
+ViridianGymKyleDefeated:
+	text_far _ViridianGymKyleDefeated
+	text_end
+
+ViridianGymKylePostMatchText:
+	text_far _ViridianGymKylePostMatchText
+	text_end
+
+ViridianGymGiovanniReceivedTM27Text2:
+	text_far _ViridianGymGiovanniReceivedTM27Text
+	sound_get_item_1
 	text_end

@@ -112,6 +112,15 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_CELADONMART4F_CLERK2 ; Allow rare evolution items to be sold
 	ld [wMissableObjectIndex], a
 	predef ShowObject
+	ld a, HS_VIRIDIAN_GYM_GIOVANNI ; Make sure Giovanni is gone, even if the player didn't interact with him again.
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_VIRIDIAN_SCHOOL_KYLE
+	ld [wMissableObjectIndex], a
+	predef HideObject	
+	ld a, HS_VIRIDIAN_GYM_KYLE ; Kyle becomes the new Viridian Gym Leader
+	ld [wMissableObjectIndex], a
+	predef ShowObject	
 ; End of Post Game Location checks
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a

@@ -238,3 +238,102 @@ _ViridianGymGuidePostBattleText::
 	line "GIOVANNI was the"
 	cont "GYM LEADER here?"
 	done
+
+_ViridianGymGuidePostgameText::
+	text "How's it going,"
+	line "champ?"
+	
+	para "The VIRIDIAN GYM"
+	line "had a bit of a"
+	cont "vacancy after"
+	cont "GIOVANNI left to"
+	cont "who knows where."
+	
+	para "Thankfully, we"
+	line "have a new GYM"
+	cont "LEADER in his"
+	cont "place!"
+	
+	para "That said, we"
+	line "haven't had the"
+	cont "time to change"
+	cont "out the GYAOON"
+	cont "statues..."
+	done
+
+_ViridianGymKyleText::
+	text "Did you remember"
+	line "me? Did you miss"
+	line "me?"
+	
+	para "Even if you don't,"
+	line "I have been"
+	cont "keeping up with"
+	cont "your exploits,"
+	cont "champion!"
+	
+	para "In case it jogs"
+	line "your memory, the"
+	cont "name's KYLE, and"
+	cont "I've gotten my"
+	cont "rightful place as"
+	cont "a GYM LEADER!"
+	
+	para "How about we see"
+	line "if I can take the"
+	cont "champ title next?"
+	done
+
+_ViridianGymKyleRefuseText::
+	text "I'll be here then!"
+	
+	para "Let me know if you"
+	line "change your mind."
+	done
+
+_ViridianGymKyleAcceptText::
+	text "Time to see how"
+	line "I stack up!"
+	done
+
+_ViridianGymRematchDefeatedText::
+	text "So"
+	line "that's the power"
+	cont "of a champion!"
+	prompt
+
+_ViridianGymRematchVictoryText::
+	text "Looks"
+	line "like a new position"
+	cont "opened up!"
+	prompt
+
+_ViridianGymKyleDefeated::
+	text "You really are"
+	line "the real deal."
+	
+	para "I'll keep training!"
+	line "I'll keep aiming"
+	cont "higher!"
+	
+	para "Until then, here,"
+	line "the GYM LEADER"
+	cont "before me left a"
+	cont "lot of these"
+	cont "lying around."
+	
+	para "I think you'd make"
+	line "better use of it"
+	cont "than me."
+	done
+	
+_ViridianGymKylePostMatchText::
+	text "I'm more of a"
+	line "coverage kind of"
+	cont "guy these days."
+	
+	para "Risky strategies"
+	line "like OHKO moves"
+	cont "just don't suit"
+	cont "me anymore."
+	done

@@ -64,7 +64,9 @@ DEF SHOW EQU $15
 	const HS_POKEDEX_1                     ; 2F
 	const HS_POKEDEX_2                     ; 30
 	const HS_OAKS_LAB_OAK_2                ; 31
+	const HS_VIRIDIAN_SCHOOL_KYLE
 	const HS_VIRIDIAN_GYM_GIOVANNI         ; 32
+	const HS_VIRIDIAN_GYM_KYLE
 	const HS_VIRIDIAN_GYM_ITEM_1             ; 33 X
 	const HS_VIRIDIAN_GYM_ITEM_2
 	const HS_OLD_AMBER                     ; 34

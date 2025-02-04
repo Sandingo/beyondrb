@@ -35,13 +35,13 @@ _SilphFacilityScientistContAcceptText::
 	cont "begin..."
 	
 	para "Now!"
-	done
+	prompt
 
 _SilphFacilityScientistContDeclineText::
 	text "Very well, thank"
 	line "you very much"
 	cont "for your time!"
-	done
+	prompt
 
 _JackVictoryText::
 	text "DATA"
