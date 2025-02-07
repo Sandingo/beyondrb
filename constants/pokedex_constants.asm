@@ -161,6 +161,7 @@
 	const DEX_HORSEA     ; 116
 	const DEX_SEADRA     ; 117
 	const DEX_KINGDRA
+	const DEX_QUADRAGON
 	const DEX_GOLDEEN    ; 118
 	const DEX_SEAKING    ; 119
 	const DEX_CHEEP
@@ -184,6 +185,7 @@
 	const DEX_TAUROS     ; 128
 	const DEX_CROCKY
 	const DEX_MAGIKARP   ; 129
+	const DEX_SKULKRAKEN
 	const DEX_GYARADOS   ; 130
 	const DEX_LAPRAS     ; 131
 	const DEX_TRAMPEL

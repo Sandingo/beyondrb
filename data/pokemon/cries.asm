@@ -227,4 +227,6 @@ CryData::
 	mon_cry SFX_CRY_05, $00, $08 ; Slugma
 	mon_cry SFX_CRY_07, $EF, $80 ; Magcargo
 	mon_cry SFX_CRY_1A, $88, $FF ; Sylveon
+	mon_cry SFX_CRY_0F, $3C, $40 ; Quadragon
+	mon_cry SFX_CRY_17, $00, $FF ; Skulkraken
 	assert_table_length NUM_POKEMON_INDEXES

@@ -150,3 +150,4 @@ SeafoamIslandsB3F_TextPointers:
 	dw_const BoulderText, TEXT_SEAFOAMISLANDSB3F_BOULDER4
 	dw_const BoulderText, TEXT_SEAFOAMISLANDSB3F_BOULDER5
 	dw_const BoulderText, TEXT_SEAFOAMISLANDSB3F_BOULDER6
+	dw_const PickUpItemText,           TEXT_SEAFOAMISLANDSB3F_DRAGON_SCALE

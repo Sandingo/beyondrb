@@ -5,6 +5,7 @@ UsableItems_PartyMenu:
 	db ICE_STONE
 	db METAL_COAT
 	db NUGGET
+	db DRAGON_SCALE
 	db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL

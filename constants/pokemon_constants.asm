@@ -228,6 +228,8 @@
 	const SLUGMA
 	const MAGCARGO
 	const SYLVEON
+	const QUADRAGON
+	const SKULKRAKEN
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

@@ -102,6 +102,7 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const EVERSTONE
 	const AMULET_COIN
 	const ORANGE_TICKET
+	const DRAGON_SCALE
 DEF NUM_ITEMS EQU const_value - 1
 
 ; elevator floors use item IDs

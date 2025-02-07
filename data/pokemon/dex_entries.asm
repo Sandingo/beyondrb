@@ -221,6 +221,8 @@ PokedexEntryPointers:
 	dw SlugmaDexEntry
 	dw MagcargoDexEntry
 	dw SylveonDexEntry
+	dw QuadragonDexEntry
+	dw SkulkrakenDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1759,4 +1761,18 @@ SylveonDexEntry:
 	db 3,3
 	dw 518
 	text_far _SylveonDexEntry
+	text_end
+
+QuadragonDexEntry:
+	db "DRAGON@"
+	db 5,3
+	dw 1505
+	text_far _QuadragonDexEntry
+	text_end
+
+SkulkrakenDexEntry:
+	db "FEARSOME@"
+	db 20,8
+	dw 3050
+	text_far _SkulkrakenDexEntry
 	text_end

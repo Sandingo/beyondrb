@@ -221,4 +221,6 @@ MonsterNames::
 	db "SLUGMA@@@@"
 	db "MAGCARGO@@"
 	db "SYLVEON@@@"
+	db "QUADRAGON@"
+	db "SKULKRAKEN"
 	assert_table_length NUM_POKEMON_INDEXES

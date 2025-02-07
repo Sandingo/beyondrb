@@ -93,6 +93,7 @@ ItemNames::
 	li "EVERSTONE"
 	li "AMULET COIN"
 	li "ORNG TICKET"
+	li "DRAGON SCALE"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

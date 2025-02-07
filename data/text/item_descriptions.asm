@@ -40,6 +40,7 @@ _ProtectorDescription::
 _ElectirizerDescription::
 _MagmarizerDescription::
 _CandyJarDescription::
+_DragonScaleDescription::
 	text "Evolves certain"
 	next "kinds of #MON."
 	prompt

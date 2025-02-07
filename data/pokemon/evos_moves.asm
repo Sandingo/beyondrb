@@ -231,6 +231,8 @@ EvosMovesPointerTable:
 	dw SlugmaEvosMoves
 	dw MagcargoEvosMoves
 	dw SylveonEvosMoves
+	dw QuadragonEvosMoves
+	dw SkulkrakenEvosMoves
 	assert_table_length NUM_POKEMON_INDEXES
 
 RhydonEvosMoves:
@@ -1332,7 +1334,7 @@ HorseaEvosMoves:
 
 SeadraEvosMoves:
 ; Evolutions
-	db EVOLVE_TRADE, 1, KINGDRA
+	db EVOLVE_ITEM, DRAGON_SCALE, 1, KINGDRA
 	db 0
 ; Learnset
 	db 19, SMOKESCREEN
@@ -1805,7 +1807,8 @@ SnorlaxEvosMoves:
 
 MagikarpEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 20, GYARADOS
+	db EVOLVE_ITEM, DRAGON_SCALE, 1, GYARADOS
+	db EVOLVE_LEVEL, 20, SKULKRAKEN
 	db 0
 ; Learnset
 	db 15, TACKLE
@@ -2833,4 +2836,28 @@ SylveonEvosMoves:
 	db 44, REFLECT
 	db 48, PSYBEAM
 	db 54, MOONBLAST
+	db 0
+
+QuadragonEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 10, TAIL_WHIP
+	db 25, SLASH
+	db 28, WING_ATTACK
+	db 30, DRAGON_RAGE
+	db 36, DRAGON_RAGE
+	db 43, FLAMETHROWER
+	db 54, HYPER_BEAM
+	db 0
+
+SkulkrakenEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 20, BITE
+	db 25, CONSTRICT
+	db 30, SCREECH
+	db 40, HYDRO_PUMP
+	db 50, CRUNCH
 	db 0

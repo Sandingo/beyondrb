@@ -467,3 +467,23 @@ _SylveonDexEntry::
 	next "fights. It can"
 	next "stop any conflict"
 	dex
+
+_QuadragonDexEntry::
+	text "It is capable of"
+	next "breathing fire"
+	next "hot enough to melt"
+	
+	page "steel. Often found"
+	next "in caves guarding"
+	next "its treasures"
+	dex
+
+_SkulkrakenDexEntry::
+	text "Found deep in the"
+	next "depths of the sea,"
+	next "if prey were to"
+	
+	page "enter its domain,"
+	next "it will lunge out"
+	next "and eat it whole"
+	dex

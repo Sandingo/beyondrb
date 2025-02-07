@@ -197,6 +197,8 @@ ItemDescriptionPointers:
 	text_end
 	text_far _OrangeTicketDescription
 	text_end
+	text_far _DragonScaleDescription
+	text_end
 	text_far _HM01Description
 	text_end
 	text_far _HM02Description

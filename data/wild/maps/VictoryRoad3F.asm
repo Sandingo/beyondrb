@@ -8,7 +8,7 @@ VictoryRoad3FWildMons:
 	db 45, MACHOKE
 	db 43, GRAVELER
 	db 41, GOLBAT
-	db 42, MACHOKE
+	db 42, QUADRAGON
 	db 45, HITMONTOP
 	end_grass_wildmons
 
