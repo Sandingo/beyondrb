@@ -230,6 +230,7 @@
 	const SYLVEON
 	const QUADRAGON
 	const SKULKRAKEN
+	const NIDOREIGN
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

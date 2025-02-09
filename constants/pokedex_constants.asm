@@ -42,6 +42,7 @@
 	const DEX_NIDORAN_M  ; 32
 	const DEX_NIDORINO   ; 33
 	const DEX_NIDOKING   ; 34
+	const DEX_NIDOREIGN
 	const DEX_CLEFAIRY   ; 35
 	const DEX_CLEFABLE   ; 36
 	const DEX_VULPIX     ; 37

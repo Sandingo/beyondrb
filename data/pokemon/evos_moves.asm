@@ -233,6 +233,7 @@ EvosMovesPointerTable:
 	dw SylveonEvosMoves
 	dw QuadragonEvosMoves
 	dw SkulkrakenEvosMoves
+	dw NidoreignEvosMoves
 	assert_table_length NUM_POKEMON_INDEXES
 
 RhydonEvosMoves:
@@ -2192,6 +2193,7 @@ RaticateEvosMoves:
 NidorinoEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, MOON_STONE, 1, NIDOKING
+	db EVOLVE_ITEM, SUN_STONE, 1, NIDOREIGN
 	db 0
 ; Learnset
 	db 8, HORN_ATTACK
@@ -2205,6 +2207,7 @@ NidorinoEvosMoves:
 NidorinaEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, MOON_STONE, 1, NIDOQUEEN
+	db EVOLVE_ITEM, SUN_STONE, 1, NIDOREIGN
 	db 0
 ; Learnset
 	db 8, SCRATCH
@@ -2860,4 +2863,15 @@ SkulkrakenEvosMoves:
 	db 30, SCREECH
 	db 40, HYDRO_PUMP
 	db 50, CRUNCH
+	db 0
+
+NidoreignEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 10, SCRATCH
+	db 14, HORN_ATTACK
+	db 16, POISON_STING
+	db 32, BODY_SLAM
+	db 40, THRASH
 	db 0

@@ -223,4 +223,5 @@ PokedexOrder:
 	db DEX_SYLVEON
 	db DEX_QUADRAGON
 	db DEX_SKULKRAKEN
+	db DEX_NIDOREIGN
 	assert_table_length NUM_POKEMON_INDEXES

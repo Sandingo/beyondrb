@@ -487,3 +487,13 @@ _SkulkrakenDexEntry::
 	next "it will lunge out"
 	next "and eat it whole"
 	dex
+
+_NidoreignDexEntry::
+	text "A NIDORAN form"
+	next "that exhibits no"
+	next "dimorphic traits."
+	
+	page "Its giant spines"
+	next "can be used to"
+	next "make MAX REVIVES"
+	dex

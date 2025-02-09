@@ -223,6 +223,7 @@ PokedexEntryPointers:
 	dw SylveonDexEntry
 	dw QuadragonDexEntry
 	dw SkulkrakenDexEntry
+	dw NidoreignDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1775,4 +1776,11 @@ SkulkrakenDexEntry:
 	db 20,8
 	dw 3050
 	text_far _SkulkrakenDexEntry
+	text_end
+
+NidoreignDexEntry:
+	db "DRILL@"
+	db 4,2
+	dw 1532
+	text_far _NidoreignDexEntry
 	text_end
