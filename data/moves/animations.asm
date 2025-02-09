@@ -184,6 +184,10 @@ AttackAnimationPointers:
 	dw CrossCutterAnim
 	dw FairyWindAnim
 	dw MoonblastAnim
+	dw TripleKickAnim
+	dw IcicleSpearAnim
+	dw FeatherDanceAnim
+	dw MachPunchAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -372,6 +376,12 @@ DoubleKickAnim:
 	battle_anim DOUBLE_KICK, SUBANIM_0_STAR_TWICE, 0, 8
 	db -1 ; end
 
+TripleKickAnim:
+	battle_anim DOUBLE_KICK, SUBANIM_0_STAR_TWICE, 0, 8
+	battle_anim DOUBLE_KICK, SUBANIM_0_STAR_TWICE, 0, 8
+	battle_anim DOUBLE_KICK, SUBANIM_0_STAR_TWICE, 0, 8
+	db -1 ; end 
+
 MegaKickAnim:
 	battle_anim MEGA_KICK, SUBANIM_1_STAR_BIG_MOVING, 1, 6
 	db -1 ; end
@@ -468,6 +478,7 @@ TwineedleAnim:
 	battle_anim TWINEEDLE, SUBANIM_0_STAR_TWICE, 0, 5
 	db -1 ; end
 
+IcicleSpearAnim:
 PinMissileAnim:
 	battle_anim PIN_MISSILE, SUBANIM_0_STAR_TWICE, 0, 3
 	db -1 ; end
@@ -1182,6 +1193,18 @@ SubstituteAnim:
 	battle_anim NO_MOVE, SUBANIM_0_BALL_POOF, 0, 8
 	battle_anim NO_MOVE, SE_SUBSTITUTE_MON
 	db -1 ; end
+	
+FeatherDanceAnim:
+	battle_anim PETAL_DANCE, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SUBANIM_1_TORNADO, 1, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+MachPunchAnim:
+	battle_anim LOW_KICK, SE_SLIDE_MON_OFF
+	battle_anim POUND, SUBANIM_0_STAR_TWICE, 0, 8
+	battle_anim NO_MOVE, SE_SHOW_MON_PIC
+	db -1 ; end
 
 BallTossAnim:
 	battle_anim NO_MOVE, SUBANIM_0_BALL_TOSS_HIGH, 0, 3
@@ -1318,3 +1341,4 @@ ThrowRockAnim:
 ThrowBaitAnim:
 	battle_anim BARRAGE, SUBANIM_0_SAFARI_BAIT, 0, 3
 	db -1 ; end
+

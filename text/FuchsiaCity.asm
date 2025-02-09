@@ -76,19 +76,19 @@ _FuchsiaCityVoltorbSignText::
 	prompt
 
 _FuchsiaCityKangaskhanSignText::
-	text "Name: KANGASKHAN"
+	text "Name: GYAOON"
 
-	para "A maternal #MON"
-	line "that raises its"
-	cont "young in a pouch"
-	cont "on its belly."
+	para "A rare #MON"
+	line "that acts as the"
+	cont "symbol of the"
+	cont "#MON LEAGUE."
 	prompt
 
 _FuchsiaCitySlowpokeSignText::
-	text "Name: SLOWPOKE"
+	text "Name: RHYDON"
 
-	para "Friendly and very"
-	line "slow moving."
+	para "Has a large horn"
+	line "made of stone."
 	prompt
 
 _FuchsiaCityLaprasSignText::

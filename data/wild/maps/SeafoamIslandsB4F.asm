@@ -25,5 +25,15 @@ ENDC
 	db 38, QUADRAGON
 	end_grass_wildmons
 
-	def_water_wildmons 0 ; encounter rate
+	def_water_wildmons 5 ; encounter rate
+	db 15, MAGIKARP
+	db 20, MAGIKARP
+	db 25, MAGIKARP
+	db 15, HORSEA
+	db 25, HORSEA
+	db 15, KRABBY
+	db 20, KRABBY
+	db 30, PSYDUCK
+	db 30, SLOWPOKE
+	db 35, GYARADOS
 	end_water_wildmons

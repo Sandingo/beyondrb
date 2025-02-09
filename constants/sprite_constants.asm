@@ -67,7 +67,6 @@
 	const SPRITE_ZAPDOS
 	const SPRITE_MOLTRES
 	const SPRITE_CHANSEY
-	const SPRITE_OFFICER_JENNY
 	const SPRITE_JIGGLYPUFF
 	const SPRITE_OHMEGA
 	const SPRITE_MR_MIME
@@ -82,6 +81,12 @@
 	const SPRITE_MISTY
 	const SPRITE_SURGE
 	const SPRITE_BILL
+	const SPRITE_LAPRAS
+	const SPRITE_MACHOP
+	const SPRITE_CUBONE
+	const SPRITE_PSYDUCK
+	const SPRITE_MEOWTH
+	const SPRITE_NIDORAN
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e

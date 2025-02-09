@@ -72,7 +72,6 @@ SpriteSheetPointerTable:
 	overworld_sprite ZapdosSprite, 12			; SPRITE_ZAPDOS
 	overworld_sprite MoltresSprite, 12			; SPRITE_MOLTRES
 	overworld_sprite ChanseySprite, 12          ; SPRITE_CHANSEY
-	overworld_sprite OfficerJennySprite, 12     ; SPRITE_OFFICER_JENNY
 	overworld_sprite JigglypuffSprite, 12       ; SPRITE_JIGGLYPUFF
 	overworld_sprite OhmegaSprite, 12			; SPRITE_OHMEGA
 	overworld_sprite MrMimeSprite,	12        ; SPRITE_MR_MIME
@@ -87,6 +86,12 @@ SpriteSheetPointerTable:
 	overworld_sprite MistySprite, 12
 	overworld_sprite SurgeSprite, 12
 	overworld_sprite BillSprite, 12
+	overworld_sprite LaprasSprite, 12
+	overworld_sprite MachopSprite, 12
+	overworld_sprite CuboneSprite, 12
+	overworld_sprite PsyduckSprite, 12
+	overworld_sprite MeowthSprite, 12
+	overworld_sprite NidoranSprite, 12
 	overworld_sprite PokeBallSprite, 4          ; SPRITE_POKE_BALL
 	overworld_sprite FossilSprite, 4            ; SPRITE_FOSSIL
 	overworld_sprite BoulderSprite, 4           ; SPRITE_BOULDER

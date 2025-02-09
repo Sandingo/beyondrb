@@ -181,7 +181,7 @@
 	const STONE_AXE
 	const ROCK_WRECKER
 	const FEINT_ATTACK
-	const DBL_IRON_BASH
+	const IRON_BASH
 	const STAR_FREEZE
 	const INK_SPRAY
 	const BAIBAI_PUNCH
@@ -190,6 +190,10 @@
 	const CROSS_CUTTER
 	const FAIRY_WIND
 	const MOONBLAST
+	const TRIPLE_KICK
+	const ICICLE_SPEAR
+	const FEATHERDANCE
+	const MACH_PUNCH
 	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 

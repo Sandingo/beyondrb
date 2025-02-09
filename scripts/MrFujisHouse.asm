@@ -63,7 +63,7 @@ MrFujisHousePsyduckText:
 MrFujisHouseNidorinoText:
 	text_far _MrFujisHouseNidorinoText
 	text_asm
-	ld a, NIDORINO
+	ld a, NIDORAN_M
 	call PlayCry
 	jp TextScriptEnd
 

@@ -184,5 +184,9 @@ MoveNames::
 	li "CROSS CUTTER"
 	li "FAIRY WIND"
 	li "MOONBLAST"
+	li "TRIPLE KICK"
+	li "ICICLE SPEAR"
+	li "FEATHERDANCE"
+	li "MACH PUNCH"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

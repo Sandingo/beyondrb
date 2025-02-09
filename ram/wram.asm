@@ -2039,7 +2039,7 @@ wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
 wMtSilverSummitCurScript:: db
 wViridianSchoolHouseCurScript:: db
-wSilphFacilityCurScript:: db 
+wSilphFacilityCurScript:: db
 	ds 75
 wGameProgressFlagsEnd::
 

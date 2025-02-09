@@ -32,7 +32,7 @@ CeladonMansion1FClefairyText:
 CeladonMansion1FNidoranFText:
 	text_far _CeladonMansion1FNidoranFText
 	text_asm
-	ld a, NIDORAN_F
+	ld a, NIDORAN_M
 	jp CeladonMansion1_PlayCryScript
 
 CeladonMansion1FManagersSuiteSignText:

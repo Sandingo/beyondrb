@@ -32,7 +32,7 @@ _MrFujisHousePsyduckText::
 	text_end
 
 _MrFujisHouseNidorinoText::
-	text "NIDORINO: Gaoo!@"
+	text "NIDORAN: Gaoo!@"
 	text_end
 
 _MrFujisHouseMrFujiIThinkThisMayHelpYourQuestText::

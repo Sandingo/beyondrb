@@ -31,7 +31,7 @@ _CinnabarLabMetronomeRoomScientist1TM35NoRoomText::
 
 _CinnabarLabMetronomeRoomScientist2Text::
 	text "EEVEE can evolve"
-	line "into 1 of 3 kinds"
+	line "into 1 of 8 kinds"
 	cont "of #MON."
 	done
 

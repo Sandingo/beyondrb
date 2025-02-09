@@ -96,7 +96,7 @@ FuchsiaCityKangaskhanSignText:
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, KANGASKHAN
+	ld a, GYAOON
 	call DisplayPokedex
 	jp TextScriptEnd
 
@@ -108,7 +108,7 @@ FuchsiaCitySlowpokeSignText:
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, SLOWPOKE
+	ld a, RHYDON
 	call DisplayPokedex
 	jp TextScriptEnd
 

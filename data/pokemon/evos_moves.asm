@@ -474,6 +474,7 @@ MewEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 1, HI_JUMP_KICK
 	db 10, TRANSFORM
 	db 20, MEGA_PUNCH
 	db 30, METRONOME
@@ -497,6 +498,7 @@ ShellderEvosMoves:
 	db EVOLVE_ITEM, WATER_STONE, 1, TURBANN
 	db 0
 ; Learnset
+	db 13, ICICLE_SPEAR
 	db 18, SUPERSONIC
 	db 23, CLAMP
 	db 30, AURORA_BEAM
@@ -666,6 +668,7 @@ PidgeyEvosMoves:
 	db 12, QUICK_ATTACK
 	db 19, WHIRLWIND
 	db 28, WING_ATTACK
+	db 33, FEATHERDANCE
 	db 36, AGILITY
 	db 44, MIRROR_MOVE
 	db 0
@@ -767,6 +770,7 @@ HitmonchanEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 32, MACH_PUNCH
 	db 33, FIRE_PUNCH
 	db 38, ICE_PUNCH
 	db 43, THUNDERPUNCH
@@ -1998,6 +2002,7 @@ PidgeottoEvosMoves:
 	db 12, QUICK_ATTACK
 	db 21, WHIRLWIND
 	db 31, WING_ATTACK
+	db 34, FEATHERDANCE
 	db 40, AGILITY
 	db 49, MIRROR_MOVE
 	db 0
@@ -2010,6 +2015,7 @@ PidgeotEvosMoves:
 	db 12, QUICK_ATTACK
 	db 21, WHIRLWIND
 	db 31, WING_ATTACK
+	db 34, FEATHERDANCE
 	db 44, AGILITY
 	db 54, MIRROR_MOVE
 	db 0
@@ -2587,7 +2593,7 @@ MelmetalEvosMoves:
 	db 27, THUNDERSHOCK
 	db 36, ACID_ARMOR
 	db 54, MEGA_PUNCH
-	db 63, DBL_IRON_BASH
+	db 63, IRON_BASH
 	db 72, HYPER_BEAM
 	db 0
 	
@@ -2629,11 +2635,11 @@ HitmontopEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 16, FOCUS_ENERGY
 	db 33, QUICK_ATTACK
 	db 38, COUNTER
 	db 43, AGILITY
-	db 48, JUMP_KICK
-	db 53, DOUBLE_KICK
+	db 49, TRIPLE_KICK
 	db 0
 
 BaloondaEvosMoves:

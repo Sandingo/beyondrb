@@ -176,7 +176,7 @@ MoveSoundTable:
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; STONE_AXE
 	db SFX_BATTLE_36,          $00, $80 ; ROCK_WRECKER
 	db SFX_BATTLE_25,          $00, $10 ; FEINT_ATTACK
-	db SFX_BATTLE_0B,          $01, $80 ; DBL_IRON_BASH
+	db SFX_BATTLE_0B,          $01, $80 ; IRON_BASH
 	db SFX_BATTLE_14,          $01, $e0 ; STAR_FREEZE
 	db SFX_BATTLE_1C,          $00, $ff ; INK_SPRAY
 	db SFX_FAINT_FALL,         $ff, $04 ; BAIBAI_PUNCH
@@ -185,6 +185,10 @@ MoveSoundTable:
 	db SFX_SUPER_EFFECTIVE,    $f0, $ff ; CROSS CUTTER
 	db SFX_BATTLE_2B,          $1f, $60 ; FAIRY_WIND
 	db SFX_BATTLE_36,          $00, $80 ; MOONBLAST
+	db SFX_BATTLE_17,          $f0, $40 ; TRIPLE_KICK
+	db SFX_BATTLE_0D,          $20, $80 ; ICICLE_SPEAR
+	db SFX_BATTLE_13,          $14, $c0 ; FEATHERDANCE
+	db SFX_BATTLE_0D,          $00, $40 ; MACH_PUNCH
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80
