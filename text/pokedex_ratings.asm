@@ -56,7 +56,7 @@ _DexRatingText_Own50To59::
 	done
 
 _DexRatingText_Own60To69::
-	text "Ho! This is geting"
+	text "Ho! This is getting"
 	line "even better!"
 	done
 

@@ -474,7 +474,6 @@ MewEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 1, HI_JUMP_KICK
 	db 10, TRANSFORM
 	db 20, MEGA_PUNCH
 	db 30, METRONOME

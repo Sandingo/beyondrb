@@ -13,6 +13,7 @@ HiddenObjectMaps:
 	db CERULEAN_POKECENTER
 	db CERULEAN_GYM
 	db CERULEAN_MART
+	db DAYCARE
 	db LAVENDER_POKECENTER
 	db VERMILION_POKECENTER
 	db VERMILION_GYM
@@ -102,6 +103,7 @@ HiddenObjectPointers:
 	dw CeruleanPokecenterHiddenObjects
 	dw CeruleanGymHiddenObjects
 	dw CeruleanMartHiddenObjects
+	dw DaycareHiddenObjects
 	dw LavenderPokecenterHiddenObjects
 	dw VermilionPokecenterHiddenObjects
 	dw VermilionGymHiddenObjects
@@ -268,6 +270,10 @@ CeruleanGymHiddenObjects:
 	db -1 ; end
 
 CeruleanMartHiddenObjects:
+	db -1 ; end
+
+DaycareHiddenObjects:
+	hidden_object 7,  1, SPRITE_FACING_UP, OpenPokemonCenterPC
 	db -1 ; end
 
 LavenderPokecenterHiddenObjects:
