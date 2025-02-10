@@ -1,25 +1,40 @@
-# Pokémon Red and Blue [![Build Status][ci-badge]][ci]
+# Pokémon Beyond Red and Blue [![Build Status][ci-badge]][ci]
 
-This is a disassembly of Pokémon Red and Blue.
+A romhack of Pokémon Red and Blue that includes various features from each iteration of Kanto, along with unused beta content found in the Gigaleaks.
+Features:
+- Beta versions of the Steel/Dark/Fairy types!
+- Evolutions from beta builds and future generations, as well as the inclusion of Kanto-exclusive 'mons from GSC (Houndour/Murkrow/Slugma)
+- Added NPCs and trades to help with version exclusive or once per save Pokémon.
+- Tradeback NPC in Celadon.
+- FRLG Oak's Aide rewards! (Everstone + Amulet Coin)
+- Move Deleter + Relearner in Fuchsia and Indigo Plateau respectively.
+- References to hoaxes like Bill's Garden and the Mew under the truck.
+- Tougher Boss trainer learnsets from Yellow version.
+- Gym Leader post-game rematches.
+- Modern Exp. All sharing formula (Still requires 50 Pokémon caught to get)
+- Hyper Training!
 
-It builds the following ROMs:
+The goal is to include as many beta features as possible, and some new Kanto-related ones, without changing the feel of Generation 1.
+Pokémon are only type changed to their modern vanilla counterparts, however regional variants/regional fakes/gimmick forms/paradox forms etc. are NOT included.
 
-- Pokemon Red (UE) [S][!].gb `sha1: ea9bcae617fdf159b045185467ae58b2e4a48b9a`
-- Pokemon Blue (UE) [S][!].gb `sha1: d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`
-- BLUEMONS.GB (debug build) `sha1: 5b1456177671b79b263c614ea0e7cc9ac542e9c4`
-- dmgapae0.e69.patch `sha1: 0fb5f743696adfe1dbb2e062111f08f9bc5a293a`
-- dmgapee0.e68.patch `sha1: ed4be94dc29c64271942c87f2157bca9ca1019c7`
+Moves from later generations are only included if they fill out a new type, or act as a signature move for a Pokémon. Otherwise, no major changes have been made to individual species.
 
-To set up the repository, see [**INSTALL.md**](INSTALL.md).
-
-
-## See also
+## Credits where it's due!
+- [**Helix Chamber**](https://helixchamber.com) - For documenting a ton of beta RBY content and some custom sprites/designs relating to it.
+- [**The Cutting Room Floor**](https://tcrf.net/The_Cutting_Room_Floor/) - For documenting all of the Spaceworld demos.
+- [**Pokered**](https://github.com/pret/pokered) and their Discord for the dissassembly and help figuring out how to navigate it!
+#### Code referenced from:
+- [**RainbowMetalPigeon**](https://github.com/RainbowMetalPigeon/ExtremeYellow)'s **Extreme Yellow**
+- [**Vortyne**](https://github.com/Vortyne/pureRGB)'s **PureRGB**
+- [**Jojobear13**](https://github.com/jojobear13/shinpokered)'s **Shin Pokémon Red**
+- [**David Volovskiy**](https://gitlab.com/devolov/rpp_v3_fork)'s **Pokémon Red++**
+#### And anyone involved in the making of any of these resources, thank you so much!
+  
+## Pokered references
 
 - [**Wiki**][wiki] (includes [tutorials][tutorials])
 - [**Symbols**][symbols]
 - [**Tools**][tools]
-
-You can find us on [Discord (pret, #pokered)](https://discord.gg/d5dubZ3).
 
 For other pret projects, see [pret.github.io](https://pret.github.io/).
 
