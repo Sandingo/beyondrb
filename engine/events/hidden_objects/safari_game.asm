@@ -11,6 +11,23 @@ IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
+; Ugly code to make Rest Houses not take away from your steps counter
+	ld a, [wCurMap]
+	cp SAFARI_ZONE_CENTER_REST_HOUSE
+	ret z ;In a rest house!
+	ld a, [wCurMap]
+	cp SAFARI_ZONE_SECRET_HOUSE
+	ret z ;In a rest house!
+	ld a, [wCurMap]
+	cp SAFARI_ZONE_WEST_REST_HOUSE
+	ret z ;In a rest house!
+	ld a, [wCurMap]
+	cp SAFARI_ZONE_EAST_REST_HOUSE
+	ret z ;In a rest house!
+	ld a, [wCurMap]
+	cp SAFARI_ZONE_NORTH_REST_HOUSE
+	ret z ;In a rest house!
+; end of ugly code!!
 	ld a, [wSafariSteps]
 	ld b, a
 	ld a, [wSafariSteps + 1]

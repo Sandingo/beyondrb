@@ -26,6 +26,7 @@ _SafariZoneWestTrainerTipsText::
 	done
 
 _SafariZoneWestSignText::
-	text "AREA 3"
+	text "WEST AREA"
 	line "EAST: CENTER AREA"
+	cont "NORTH: NORTH AREA"
 	done
