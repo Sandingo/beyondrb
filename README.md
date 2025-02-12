@@ -19,6 +19,9 @@ Pokémon are only type changed to their modern vanilla counterparts, however reg
 
 Moves from later generations are only included if they fill out a new type, or act as a signature move for a Pokémon. Otherwise, no major changes have been made to individual species.
 
+[**Google Sheets**](https://docs.google.com/spreadsheets/d/1M3bosRwThGeiIzk041AlRherJHYMNcCBpjoqek_yNrA/edit?usp=sharing) containing as much documentation as possible is also available! Base Stats, learnsets, type chart, etc.
+
+
 ## Credits where it's due!
 - [**Helix Chamber**](https://helixchamber.com) - For documenting a ton of beta RBY content and some custom sprites/designs relating to it.
 - [**The Cutting Room Floor**](https://tcrf.net/The_Cutting_Room_Floor/) - For documenting all of the Spaceworld demos.
