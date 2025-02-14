@@ -230,4 +230,6 @@ CryData::
 	mon_cry SFX_CRY_0F, $3C, $40 ; Quadragon
 	mon_cry SFX_CRY_17, $00, $FF ; Skulkraken
 	mon_cry SFX_CRY_01, $00, $80 ; Nidoreign
+	mon_cry SFX_CRY_00, $E0, $C0 ; Nagahiss
+	mon_cry SFX_CRY_07, $EE, $80 ; Doomsday
 	assert_table_length NUM_POKEMON_INDEXES

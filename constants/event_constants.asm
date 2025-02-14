@@ -96,8 +96,9 @@
 	const EVENT_BEAT_POKEMONTOWER_7_TRAINER_2
 	const_skip 3
 	const EVENT_RESCUED_MR_FUJI_2
-	const_skip 16
+	const_skip 15
 	const EVENT_GOT_POKE_FLUTE
+	const EVENT_BEAT_DOOMSDAY
 
 ; Vermilion City events
 	const_next $150

@@ -224,4 +224,6 @@ MonsterNames::
 	db "QUADRAGON@"
 	db "SKULKRAKEN"
 	db "NIDOREIGN@"
+	db "NAGAHISS@@"
+	db "DOOMSDAY@@"
 	assert_table_length NUM_POKEMON_INDEXES

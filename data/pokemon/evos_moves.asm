@@ -234,6 +234,8 @@ EvosMovesPointerTable:
 	dw QuadragonEvosMoves
 	dw SkulkrakenEvosMoves
 	dw NidoreignEvosMoves
+	dw NagahissEvosMoves
+	dw DoomsdayEvosMoves
 	assert_table_length NUM_POKEMON_INDEXES
 
 RhydonEvosMoves:
@@ -2853,7 +2855,6 @@ QuadragonEvosMoves:
 	db 10, TAIL_WHIP
 	db 25, SLASH
 	db 28, WING_ATTACK
-	db 30, DRAGON_RAGE
 	db 36, DRAGON_RAGE
 	db 43, FLAMETHROWER
 	db 54, HYPER_BEAM
@@ -2879,4 +2880,28 @@ NidoreignEvosMoves:
 	db 16, POISON_STING
 	db 32, BODY_SLAM
 	db 40, THRASH
+	db 0
+
+NagahissEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 10, LEER
+	db 14, BITE
+	db 16, POISON_STING
+	db 25, HORN_ATTACK
+	db 32, SCREECH
+	db 40, SLUDGE
+	db 48, THRASH
+	db 0
+	
+DoomsdayEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 81, CONFUSE_RAY
+	db 83, RECOVER
+	db 86, CRUNCH
+	db 93, AMNESIA
+	db 96, GUILLOTINE
 	db 0

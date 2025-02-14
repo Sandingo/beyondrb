@@ -231,6 +231,8 @@
 	const QUADRAGON
 	const SKULKRAKEN
 	const NIDOREIGN
+	const NAGAHISS
+	const DOOMSDAY
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

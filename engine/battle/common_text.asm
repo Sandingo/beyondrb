@@ -29,6 +29,8 @@ PrintBeginningBattleText:
 	call PrintText
 	jr .done
 .pokemonTower
+	callfar IsGhostBattle
+	jr nz, .notPokemonTower ; To check for Doomsday
 	ld b, SILPH_SCOPE
 	call IsItemInBag
 	ld a, [wEnemyMonSpecies2]

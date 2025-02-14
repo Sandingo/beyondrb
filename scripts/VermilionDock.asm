@@ -263,6 +263,9 @@ VermilionTruck1:
 	jr nz, .alreadyBattled
 	ld hl, VermilionDockMewText
 	call PrintText
+	ld c, BANK(Music_MeetFemaleTrainer)
+	ld a, MUSIC_MEET_FEMALE_TRAINER
+	call PlayMusic
 	ld a, MEW
 	ld [wCurOpponent], a
 	ld a, 30

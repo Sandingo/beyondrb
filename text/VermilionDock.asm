@@ -3,7 +3,7 @@ _VermilionDockUnusedText::
 	done
 
 _VermilionDockMewText::
-	text "MEW: Mew!"
+	text "Mew!"
 	done
 	
 _VermilionDockNothingText::

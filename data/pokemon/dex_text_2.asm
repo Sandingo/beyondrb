@@ -497,3 +497,23 @@ _NidoreignDexEntry::
 	next "can be used to"
 	next "make MAX REVIVES"
 	dex
+
+_NagahissDexEntry::
+	text "A rather violent"
+	next "#MON. If it"
+	next "clamps on down"
+	
+	page "on its prey, it"
+	next "thrashes wildly,"
+	next "releasing venom"
+	dex
+
+_DoomsdayDexEntry::
+	text "Some say it's only"
+	next "a dream, others"
+	next "say its a lonely"
+	
+	page "soul that walks"
+	next "the Earth to"
+	next "avenge its death"
+	dex

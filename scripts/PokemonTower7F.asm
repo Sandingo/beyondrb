@@ -14,6 +14,26 @@ PokemonTower7FSetDefaultScript:
 	ld [wCurMapScript], a ; SCRIPT_POKEMONTOWER7F_DEFAULT
 	ret
 
+DoomsdayPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, PokemonTower7FSetDefaultScript
+	ld a, HS_POKEMON_TOWER_7F_DOOMSDAY
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, [wBattleResult]
+	cp $2
+	jr z, .caught
+	ld a, TEXT_DOOMSDAY_DISSAPEARED
+	ldh [hTextID], a
+	call DisplayTextID
+.caught
+	SetEvent EVENT_BEAT_DOOMSDAY
+	call Delay3
+	ld [wPokemonTower7FCurScript], a
+	ld [wCurMapScript], a
+	ret
+
 PokemonTower7F_ScriptPointers:
 	def_script_pointers
 	dw_const CheckFightingMapTrainers,              SCRIPT_POKEMONTOWER7F_DEFAULT
@@ -21,6 +41,7 @@ PokemonTower7F_ScriptPointers:
 	dw_const PokemonTower7FEndBattleScript,         SCRIPT_POKEMONTOWER7F_END_BATTLE
 	dw_const PokemonTower7FHideNPCScript,           SCRIPT_POKEMONTOWER7F_HIDE_NPC
 	dw_const PokemonTower7FWarpToMrFujiHouseScript, SCRIPT_POKEMONTOWER7F_WARP_TO_MR_FUJI_HOUSE
+	dw_const DoomsdayPostBattleScript,				SCRIPT_DOOMSDAY_POST_BATTLE
 
 PokemonTower7FEndBattleScript:
 	ld hl, wMiscFlags
@@ -193,6 +214,8 @@ PokemonTower7F_TextPointers:
 	dw_const PokemonTower7FRocket2Text, TEXT_POKEMONTOWER7F_ROCKET2
 	dw_const PokemonTower7FRocket3Text, TEXT_POKEMONTOWER7F_ROCKET3
 	dw_const PokemonTower7FMrFujiText,  TEXT_POKEMONTOWER7F_MR_FUJI
+	dw_const DoomsdayEvent,				TEXT_POKEMONTOWER7F_DOOMSDAY
+	dw_const DoomsdayDissapeared,		TEXT_DOOMSDAY_DISSAPEARED
 
 PokemonTower7TrainerHeaders:
 	def_trainers
@@ -280,4 +303,41 @@ PokemonTower7FRocket3EndBattleText:
 
 PokemonTower7FRocket3AfterBattleText:
 	text_far _PokemonTower7FRocket3AfterBattleText
+	text_end
+
+DoomsdayEvent:
+	text_asm
+	ld hl, PokemonTowerDoomsdayText
+	call PrintText
+	ld c, BANK(Music_MeetEvilTrainer)
+	ld a, MUSIC_MEET_EVIL_TRAINER
+	call PlayMusic
+	ld a, DOOMSDAY
+	ld [wCurOpponent], a
+	ld a, 80
+	ld [wCurEnemyLevel], a
+	xor a
+	ld [wIsTrainerBattle], a
+	ld a, SCRIPT_DOOMSDAY_POST_BATTLE
+	ld [wPokemonTower7FCurScript], a
+	ld [wCurMapScript], a
+	jr .end
+.end
+	jp TextScriptEnd
+
+PokemonTowerDoomsdayText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	ld a, DOOMSDAY
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+.Text:
+	text_far _PokemonTower7FDoomsdayBattleText
+	text_end
+
+DoomsdayDissapeared:
+	text_far _PokemonTower7FDoomsdayDissapearedText
 	text_end

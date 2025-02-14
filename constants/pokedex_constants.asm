@@ -122,6 +122,7 @@
 	const DEX_GASTLY     ; 92
 	const DEX_HAUNTER    ; 93
 	const DEX_GENGAR     ; 94
+	const DEX_NAGAHISS
 	const DEX_ONIX       ; 95
 	const DEX_STEELIX
 	const DEX_DROWZEE    ; 96
@@ -225,5 +226,6 @@
 	const DEX_MEW        ; 151
 	const DEX_MELTAN
 	const DEX_MELMETAL
+	const DEX_DOOMSDAY
 
 DEF NUM_POKEMON EQU const_value - 1

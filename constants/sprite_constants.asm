@@ -87,6 +87,7 @@
 	const SPRITE_PSYDUCK
 	const SPRITE_MEOWTH
 	const SPRITE_NIDORAN
+	const SPRITE_DOOMSDAY
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e

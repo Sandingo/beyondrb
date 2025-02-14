@@ -224,6 +224,8 @@ PokedexEntryPointers:
 	dw QuadragonDexEntry
 	dw SkulkrakenDexEntry
 	dw NidoreignDexEntry
+	dw NagahissDexEntry
+	dw DoomsdayDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1783,4 +1785,18 @@ NidoreignDexEntry:
 	db 4,2
 	dw 1532
 	text_far _NidoreignDexEntry
+	text_end
+
+NagahissDexEntry:
+	db "SERPENT@"
+	db 9,8
+	dw 1210
+	text_far _NagahissDexEntry
+	text_end
+
+DoomsdayDexEntry:
+	db "GHOST@"
+	db 91,4
+	dw 1
+	text_far _DoomsdayDexEntry
 	text_end

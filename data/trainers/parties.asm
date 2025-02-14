@@ -252,7 +252,7 @@ HikerData:
 	db 19, ONIX, GRAVELER, 0
 ; Rock Tunnel B1F
 	db 21, GEODUDE, GEODUDE, GRAVELER, 0
-	db 25, GEODUDE, 0
+	db 25, NAGAHISS, 0
 ; Route 9/Rock Tunnel B1F
 	db 20, MACHOP, ONIX, 0
 ; Rock Tunnel 1F
@@ -438,7 +438,7 @@ JugglerData:
 
 TamerData:
 ; Fuchsia Gym
-	db 34, SANDSLASH, ARBOK, 0
+	db 34, EKANS, NAGAHISS, 0
 	db 33, ARBOK, SANDSLASH, ARBOK, 0
 ; Viridian Gym
 	db 43, RHYHORN, 0
@@ -575,7 +575,7 @@ RocketData:
 ; Pokémon Tower 7F
 	db 25, ZUBAT, ZUBAT, GOLBAT, 0
 	db 26, KOFFING, DROWZEE, 0
-	db 23, ZUBAT, RATTATA, RATICATE, ZUBAT, 0
+	db 23, ZUBAT, RATTATA, RATICATE, GOLBAT, 0
 ; Unused
 	db 26, DROWZEE, KOFFING, 0
 ; Silph Co. 2F

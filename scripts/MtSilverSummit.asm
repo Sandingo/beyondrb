@@ -40,6 +40,9 @@ MtSilverSummitGiveOrangeTicketScript:
 	ld a, HS_PALLET_TOWN_SCIENTIST
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_POKEMON_TOWER_7F_DOOMSDAY
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack

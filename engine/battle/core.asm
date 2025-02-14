@@ -3390,6 +3390,9 @@ IsGhostBattle:
 	ld a, [wIsInBattle]
 	dec a
 	ret nz
+	ld a, [wCurOpponent]
+	cp DOOMSDAY ; Make exceptions for Doomsday
+	jr z, .next
 	ld a, [wCurMap]
 	cp POKEMON_TOWER_1F
 	jr c, .next

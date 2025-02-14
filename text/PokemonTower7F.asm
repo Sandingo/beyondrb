@@ -76,3 +76,12 @@ _PokemonTower7FRocket3AfterBattleText::
 	text "You're not getting"
 	line "away with this!"
 	done
+
+_PokemonTower7FDoomsdayBattleText::
+	text "DOOOOOM!!"
+	done
+
+_PokemonTower7FDoomsdayDissapearedText::
+	text "DOOMSDAY"
+	line "dissapeared..."
+	done
