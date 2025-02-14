@@ -699,13 +699,13 @@ _PikachuDexEntry::
 	dex
 
 _RaichuDexEntry::
-	text "Its long tail"
-	next "serves as a"
-	next "ground to protect"
+	text "Its electric"
+	next "charges can reach"
+	next "100,000 volts."
 
-	page "itself from its"
-	next "own high voltage"
-	next "power"
+	page "Careless contact"
+	next "can cause even a"
+	next "TRAMPEL to faint"
 	dex
 
 _DratiniDexEntry::

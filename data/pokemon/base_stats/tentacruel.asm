@@ -17,7 +17,8 @@
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         \
 	     MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     SKULL_BASH,   REST,         SUBSTITUTE,   CUT,          SURF
+	     SKULL_BASH,   REST,         SUBSTITUTE,   CUT,          SURF,         \
+	     DAZZLINGLEAM
 	; end
 
 	db BANK(TentacruelPicFront)

@@ -19,7 +19,8 @@
 	     HYPER_BEAM,   RAGE,         DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
 	     MIMIC,        DOUBLE_TEAM,  STRENGTH,     BIDE,         FIRE_BLAST,   \
 	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE, SUBSTITUTE,   \
-	     SURF,         CUT,			 MEGA_PUNCH,   MEGA_KICK,    WHIRLWIND     \
+	     SURF,         CUT,			 MEGA_PUNCH,   MEGA_KICK,    WHIRLWIND,     \
+		 FLAMETHROWER, STEEL_WING
 	; end
 
 	db BANK(QuadragonPicFront)

@@ -61,6 +61,7 @@ HiddenItemCoords:
 	hidden_item CERULEAN_CITY,                 15,   8
 	hidden_item ROUTE_4,                       40,   3
 	hidden_item MT_MOON_SQUARE, 			   24,   3
+	hidden_item ROUTE_28,					   26,   3
 	hidden_item MT_SILVER_F1,                  16,  22
 	hidden_item MT_SILVER_F1,                  17,  13
 	assert_max_table_length MAX_HIDDEN_ITEMS

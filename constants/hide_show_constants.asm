@@ -45,6 +45,7 @@ DEF SHOW EQU $15
 	const HS_ROUTE_12_SNORLAX              ; 1D
 	const HS_ROUTE_12_ITEM_1               ; 1E X
 	const HS_ROUTE_12_ITEM_2               ; 1F X
+	const HS_ROUTE_12_ITEM_3
 	const HS_ROUTE_15_ITEM                 ; 20 X
 	const HS_ROUTE_16_SNORLAX              ; 21
 	const HS_ROUTE_22_RIVAL_1              ; 22
@@ -98,6 +99,7 @@ DEF SHOW EQU $15
 	const HS_FIGHTING_DOJO_GIFT_2          ; 4B
 	const HS_FIGHTING_DOJO_GIFT_3
 	const HS_SILPH_CO_1F_RECEPTIONIST      ; 4C
+	const HS_ROCK_TUNNEL_1F_ITEM_1
 	const HS_VOLTORB_1                     ; 4D X
 	const HS_VOLTORB_2                     ; 4E X
 	const HS_VOLTORB_3                     ; 4F X
@@ -209,6 +211,7 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_10F_ITEM_1           ; B4 X
 	const HS_SILPH_CO_10F_ITEM_2           ; B5 X
 	const HS_SILPH_CO_10F_ITEM_3           ; B6 X
+	const HS_SILPH_CO_10F_ITEM_4
 	const HS_SILPH_CO_11F_1                ; B7
 	const HS_SILPH_CO_11F_2                ; B8
 	const HS_SILPH_CO_11F_3                ; B9

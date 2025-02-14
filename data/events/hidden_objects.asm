@@ -83,6 +83,7 @@ HiddenObjectMaps:
 	db CERULEAN_CITY
 	db ROUTE_4
 	db MT_MOON_SQUARE
+	db ROUTE_28
 	db MT_SILVER_POKECENTER
 	db MT_SILVER_F1
 	db -1 ; end
@@ -173,6 +174,7 @@ HiddenObjectPointers:
 	dw CeruleanCityHiddenObjects
 	dw Route4HiddenObjects
 	dw MtMoonSquareHiddenObjects
+	dw Route28HiddenObjects
 	dw MtSilverPokecenterHiddenObjects
 	dw MtSilverF1HiddenObjects
 
@@ -661,6 +663,10 @@ Route4HiddenObjects:
 
 MtMoonSquareHiddenObjects:
 	hidden_object 24,  3, REVIVE, HiddenItems
+	db -1 ; end
+
+Route28HiddenObjects:
+	hidden_object 26,  3, RARE_CANDY, HiddenItems
 	db -1 ; end
 
 MtSilverPokecenterHiddenObjects:

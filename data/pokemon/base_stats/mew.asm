@@ -25,7 +25,7 @@
 	     SOFTBOILED,   DREAM_EATER,  SKY_ATTACK,   REST,         THUNDER_WAVE, \
 	     PSYWAVE,      EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE,   \
 	     CUT,          FLY,          SURF,         STRENGTH,     FLASH,        \
-	     UNUSED
+	     FLAMETHROWER, STEEL_WING,	 DAZZLINGLEAM
 	; end
 
 	db BANK(MewPicFront)

@@ -17,7 +17,7 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  REFLECT,   \
 	     DREAM_EATER,   PSYCHIC_M,     TELEPORT,     HYPER_BEAM,   RAGE,         \
 	     MIMIC,        DOUBLE_TEAM,  PSYWAVE,      BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	     SKULL_BASH,   REST,         SUBSTITUTE,   DAZZLINGLEAM
 	; end
 
 	db BANK(SylveonPicFront)

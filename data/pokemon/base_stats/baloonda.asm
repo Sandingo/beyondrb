@@ -19,7 +19,7 @@
 	     RAZOR_WIND,   WHIRLWIND,    METRONOME,    RAGE,         SWIFT,    \
 	     THUNDERBOLT,  EXPLOSION,    FLASH,    TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   SKULL_BASH,   \
-	     REST,         THUNDER_WAVE
+	     REST,         THUNDER_WAVE, DAZZLINGLEAM, FLAMETHROWER
 	; end
 
 	db BANK(BaloondaPicFront)

@@ -17,7 +17,7 @@
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
 	     RAGE,         MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   CUT,			 EARTHQUAKE,   \
-		 FISSURE,	   DIG,			 ROCK_SLIDE
+		 FISSURE,	   DIG,			 ROCK_SLIDE,   STEEL_WING
 	; end
 
 	db BANK(KleavorPicFront)

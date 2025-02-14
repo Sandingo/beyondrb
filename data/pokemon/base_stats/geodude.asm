@@ -18,7 +18,7 @@
 	     SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         EARTHQUAKE,   \
 	     FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     METRONOME,    SELFDESTRUCT, FIRE_BLAST,   REST,         EXPLOSION,    \
-	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
+	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH,	FLAMETHROWER
 	; end
 
 	db BANK(GeodudePicFront)

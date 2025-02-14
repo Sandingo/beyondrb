@@ -21,7 +21,7 @@
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
 	     EGG_BOMB,     FIRE_BLAST,   SKULL_BASH,   SOFTBOILED,   REST,         \
 	     THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   STRENGTH,     \
-	     FLASH
+	     FLASH,	       FLAMETHROWER, DAZZLINGLEAM
 	; end
 
 	db BANK(ChanseyPicFront)

@@ -1,5 +1,5 @@
 	object_const_def
-	const_export ROUTE28_RARE_CANDY
+	const_export ROUTE28_TM_STEEL_WING
 
 Route28_Object:
 	db $2c ; border block
@@ -12,6 +12,6 @@ Route28_Object:
 	bg_event 31,  5, TEXT_ROUTE28_SIGN
 
 	def_object_events
-	object_event 25,  3, SPRITE_POKE_BALL, STAY, NONE, TEXT_ROUTE28_RARE_CANDY, RARE_CANDY
+	object_event 21,  4, SPRITE_POKE_BALL, STAY, NONE, TEXT_ROUTE28_TM_STEEL_WING, TM_STEEL_WING
 
 	def_warps_to ROUTE_28

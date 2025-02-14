@@ -626,6 +626,21 @@ _TM50Description::
 	next "1/4 user's max HP."
 	prompt
 
+_TM51Description::
+	text "A powerful FIRE"
+	next "attack. May burn."
+	prompt
+
+_TM52Description::
+	text "Strikes with steel"
+	next "wings."
+	prompt
+
+_TM53Description::
+	text "User emits a"
+	next "flash of light."
+	prompt
+
 _UnusedItemDescription::
 	text "?"
 	prompt

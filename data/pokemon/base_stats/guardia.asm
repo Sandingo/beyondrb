@@ -19,7 +19,7 @@
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         SUBSTITUTE,   \
-	     STRENGTH,	   EGG_BOMB,	 SWORDS_DANCE
+	     STRENGTH,	   EGG_BOMB,	 SWORDS_DANCE,	FLAMETHROWER
 	; end
 
 	db BANK(GuardiaPicFront)

@@ -48,6 +48,7 @@ SilphCo10F_TextPointers:
 	dw_const PickUpItemText,             TEXT_SILPHCO10F_TM_EARTHQUAKE
 	dw_const PickUpItemText,             TEXT_SILPHCO10F_RARE_CANDY
 	dw_const PickUpItemText,             TEXT_SILPHCO10F_CARBOS
+	dw_const PickUpItemText,			 TEXT_SILPHCO10F_TM_FLAMETHROWER
 
 SilphCo10TrainerHeaders:
 	def_trainers

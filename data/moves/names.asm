@@ -188,5 +188,7 @@ MoveNames::
 	li "ICICLE SPEAR"
 	li "FEATHERDANCE"
 	li "MACH PUNCH"
+	li "STEEL WING"
+	li "DAZZLINGLEAM"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

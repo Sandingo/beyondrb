@@ -3,7 +3,7 @@ Route28_Script:
 
 Route28_TextPointers:
 	def_text_pointers
-	dw_const PickUpItemText,	   TEXT_ROUTE28_RARE_CANDY
+	dw_const PickUpItemText,	   TEXT_ROUTE28_TM_STEEL_WING
 	dw_const Route28SignText,      TEXT_ROUTE28_SIGN
 
 Route28SignText:

@@ -188,6 +188,8 @@ AttackAnimationPointers:
 	dw IcicleSpearAnim
 	dw FeatherDanceAnim
 	dw MachPunchAnim
+	dw SteelWingAnim
+	dw DazzlinGleamAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -338,6 +340,7 @@ GustAnim:
 	battle_anim NO_MOVE, SUBANIM_0_STAR_THRICE, 0, 6
 	db -1 ; end
 
+SteelWingAnim:
 WingAttackAnim:
 	battle_anim WING_ATTACK, SUBANIM_1_STAR_BIG_MOVING, 1, 6
 	db -1 ; end
@@ -574,7 +577,7 @@ BlizzardAnim:
 	battle_anim HYDRO_PUMP, SUBANIM_0_ICE_FALL, 0, 4
 	db -1 ; end
 
-MoonblastAnim:
+DazzlinGleamAnim:
 PsyBeamAnim:
 	battle_anim PSYBEAM, SUBANIM_0_BEAM, 0, 3
 	battle_anim NO_MOVE, SE_FLASH_SCREEN_LONG
@@ -776,6 +779,7 @@ ConfusionAnim:
 	battle_anim CONFUSION, SE_FLASH_SCREEN_LONG
 	db -1 ; end
 
+MoonblastAnim:
 PsychicAnim:
 	battle_anim PSYCHIC_M, SE_FLASH_SCREEN_LONG
 	battle_anim NO_MOVE, SE_WAVY_SCREEN

@@ -17,7 +17,7 @@
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    PSYWAVE,      PSYCHIC_M,     RAGE,         MEGA_DRAIN,   \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   CUT,          SURF
+	     REST,         SUBSTITUTE,   CUT,          SURF,         DAZZLINGLEAM
 	; end
 
 	db BANK(BlottlePicFront)

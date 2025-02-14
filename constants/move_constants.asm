@@ -194,6 +194,8 @@
 	const ICICLE_SPEAR
 	const FEATHERDANCE
 	const MACH_PUNCH
+	const STEEL_WING
+	const DAZZLINGLEAM
 	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 

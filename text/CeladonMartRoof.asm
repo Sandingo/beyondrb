@@ -16,17 +16,12 @@ _CeladonMartRoofLittleGirlYayFreshWaterText::
 
 _CeladonMartRoofLittleGirlReceivedTM13Text::
 	text "<PLAYER> received"
-	line "@"
-	text_ram wStringBuffer
-	text "!@"
+	line "TM13!@"
 	text_end
 
 _CeladonMartRoofLittleGirlTM13ExplanationText::
 	text_start
-
-	para "@"
-	text_ram wStringBuffer
-	text " contains"
+	text "TM13 contains"
 	line "ICE BEAM!"
 
 	para "It can freeze the"
@@ -46,17 +41,13 @@ _CeladonMartRoofLittleGirlYaySodaPopText::
 
 _CeladonMartRoofLittleGirlReceivedTM48Text::
 	text "<PLAYER> received"
-	line "@"
-	text_ram wStringBuffer
-	text "!@"
+	line "TM48!@"
 	text_end
 
 _CeladonMartRoofLittleGirlTM48ExplanationText::
 	text_start
 
-	para "@"
-	text_ram wStringBuffer
-	text " contains"
+	para "TM48 contains"
 	line "ROCK SLIDE!"
 
 	para "It can spook the"

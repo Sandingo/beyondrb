@@ -189,6 +189,8 @@ MoveSoundTable:
 	db SFX_BATTLE_0D,          $20, $80 ; ICICLE_SPEAR
 	db SFX_BATTLE_13,          $14, $c0 ; FEATHERDANCE
 	db SFX_BATTLE_0D,          $00, $40 ; MACH_PUNCH
+	db SFX_BATTLE_0B,          $01, $80 ; STEEL_WING
+	db SFX_PSYBEAM,            $00, $80 ; DAZZLINGLEAM
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80
