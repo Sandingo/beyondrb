@@ -130,6 +130,9 @@ FuchsiaGymTrainerHeader5:
 
 FuchsiaGymKogaText:
 	text_asm
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .KogaRematch
 	CheckEvent EVENT_BEAT_KOGA
 	jr z, .beforeBeat
 	CheckEventReuseA EVENT_GOT_TM06
@@ -138,9 +141,6 @@ FuchsiaGymKogaText:
 	call DisableWaitingAfterTextDisplay
 	jp .done
 .afterBeat
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
-	jr nz, .KogaRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp .done

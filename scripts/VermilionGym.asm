@@ -137,6 +137,9 @@ VermilionGymTrainerHeader2:
 
 VermilionGymLTSurgeText:
 	text_asm
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .LTSurgeRematch
 	CheckEvent EVENT_BEAT_LT_SURGE
 	jr z, .before_beat
 	CheckEventReuseA EVENT_GOT_TM24
@@ -145,9 +148,6 @@ VermilionGymLTSurgeText:
 	call DisableWaitingAfterTextDisplay
 	jp .text_script_end
 .got_tm24_already
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
-	jr nz, .LTSurgeRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp .text_script_end

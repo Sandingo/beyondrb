@@ -242,6 +242,9 @@ CinnabarGymStartBattleScript:
 
 CinnabarGymBlaineText:
 	text_asm
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .BlaineRematch
 	CheckEvent EVENT_BEAT_BLAINE
 	jr z, .beforeBeat
 	CheckEventReuseA EVENT_GOT_TM38
@@ -250,9 +253,6 @@ CinnabarGymBlaineText:
 	call DisableWaitingAfterTextDisplay
 	jp TextScriptEnd
 .afterBeat
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
-	jr nz, .BlaineRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp TextScriptEnd

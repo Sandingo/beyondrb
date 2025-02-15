@@ -121,6 +121,9 @@ PewterGymTrainerHeader0:
 
 PewterGymBrockText:
 	text_asm
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .BrockRematch
 	CheckEvent EVENT_BEAT_BROCK
 	jr z, .beforeBeat
 	CheckEventReuseA EVENT_GOT_TM34
@@ -129,9 +132,6 @@ PewterGymBrockText:
 	call DisableWaitingAfterTextDisplay
 	jp .done
 .afterBeat
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
-	jr nz, .BrockRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp .done

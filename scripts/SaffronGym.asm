@@ -130,6 +130,9 @@ SaffronGymTrainerHeader6:
 
 SaffronGymSabrinaText:
 	text_asm
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .SabrinaRematch
 	CheckEvent EVENT_BEAT_SABRINA
 	jr z, .beforeBeat
 	CheckEventReuseA EVENT_GOT_TM46
@@ -138,9 +141,6 @@ SaffronGymSabrinaText:
 	call DisableWaitingAfterTextDisplay
 	jp .done
 .afterBeat
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
-	jr nz, .SabrinaRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp .done

@@ -115,6 +115,9 @@ CeruleanGymTrainerHeader1:
 
 CeruleanGymMistyText:
 	text_asm
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .MistyRematch
 	CheckEvent EVENT_BEAT_MISTY
 	jr z, .beforeBeat
 	CheckEventReuseA EVENT_GOT_TM11
@@ -123,9 +126,6 @@ CeruleanGymMistyText:
 	call DisableWaitingAfterTextDisplay
 	jp .done
 .afterBeat
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
-	jr nz, .MistyRematch
 	ld hl, .TM11ExplanationText
 	call PrintText
 	jp .done

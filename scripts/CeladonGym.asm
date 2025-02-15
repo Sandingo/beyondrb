@@ -129,6 +129,9 @@ CeladonGymTrainerHeader6:
 
 CeladonGymErikaText:
 	text_asm
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .ErikaRematch
 	CheckEvent EVENT_BEAT_ERIKA
 	jr z, .beforeBeat
 	CheckEventReuseA EVENT_GOT_TM21
@@ -137,9 +140,6 @@ CeladonGymErikaText:
 	call DisableWaitingAfterTextDisplay
 	jp .done
 .afterBeat
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
-	jr nz, .ErikaRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp .done

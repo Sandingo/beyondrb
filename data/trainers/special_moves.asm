@@ -21,6 +21,20 @@ SpecialTrainerMoves:
 	db KYLE, 1
 	db 2, 1, TAKE_DOWN
 	db 0
+	
+	db KYLE, 2 ; Post-Game Rematch
+	db 1, 1, AMNESIA
+	db 1, 2, ICE_BEAM
+	db 1, 3, THUNDERBOLT
+	db 3, 2, SOFTBOILED
+	db 3, 3, SEISMIC_TOSS
+	db 3, 4, FLAMETHROWER
+	db 4, 1, THUNDERBOLT
+	db 4, 3, BODY_SLAM
+	db 5, 1, SURF
+	db 5, 2, BODY_SLAM
+	db 5, 3, FIRE_BLAST
+	db 0
 
 	db MISTY, 1
 	db 2, 4, BUBBLEBEAM
@@ -82,6 +96,18 @@ SpecialTrainerMoves:
 	db 4, 3, PSYCHIC_M
 	db 4, 4, TOXIC
 	db 0
+	
+	db KOGA, 2  ; Post-Game Rematch
+	db 2, 1, TOXIC
+	db 2, 2, THUNDERBOLT
+	db 3, 2, FLAMETHROWER
+	db 3, 4, TOXIC
+	db 4, 1, TOXIC
+	db 4, 2, FLY
+	db 5, 1, DOUBLE_TEAM
+	db 5, 2, TOXIC
+	db 5, 3, MEGA_DRAIN
+	db 0
 
 	db BLAINE, 1
 	db 1, 1, FLAMETHROWER
@@ -90,13 +116,39 @@ SpecialTrainerMoves:
 	db 3, 2, FIRE_BLAST
 	db 3, 3, REFLECT
 	db 0
+	
+	db BLAINE, 2 ; Post-Game Rematch
+	db 1, 1, FLAMETHROWER
+	db 1, 2, DIG
+	db 1, 4, CONFUSE_RAY
+	db 2, 1, FLAMETHROWER
+	db 2, 3, DOUBLE_EDGE
+	db 3, 1, FLAMETHROWER
+	db 3, 2, DIG
+	db 3, 3, BITE
+	db 5, 2, PSYCHIC_M
+	db 5, 3, SEISMIC_TOSS
+	db 0
 
 	db SABRINA, 1
 	db 1, 1, FLASH
 	db 2, 4, PSYWAVE
 	db 3, 1, PSYWAVE
 	db 0
-
+	
+	db SABRINA, 2 ; Post-Game Rematch
+	db 1, 1, REFLECT
+	db 1, 2, PSYCHIC_M
+	db 1, 3, DAZZLINGLEAM
+	db 2, 1, DAZZLINGLEAM
+	db 2, 3, DOUBLE_TEAM
+	db 3, 1, SURF
+	db 3, 2, ICE_BEAM
+	db 4, 1, SEISMIC_TOSS
+	db 4, 2, TOXIC
+	db 5, 1, TRI_ATTACK
+	db 0
+	
 	db GIOVANNI, 3
 	db 1, 3, FISSURE
 	db 2, 2, DOUBLE_TEAM

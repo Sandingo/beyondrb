@@ -1637,6 +1637,8 @@ ItemUsePokeDoll:
 	ld a, [wIsInBattle]
 	dec a
 	jp nz, ItemUseNotTime
+	callfar IsGhostBattle ; This prevents the Marowak Glitch
+	jp z, PokedollGhostNotTime
 	ld a, $01
 	ld [wEscapedFromBattle], a
 	jp PrintItemUseTextAndRemoveItem
@@ -2311,6 +2313,10 @@ ItemUseNoEffect:
 	ld hl, ItemUseNoEffectText
 	jr ItemUseFailed
 
+PokedollGhostNotTime:
+	ld hl, PokedollGhostNotTimeText
+	jr ItemUseFailed
+	
 ItemUseNotTime:
 	ld hl, ItemUseNotTimeText
 	jr ItemUseFailed
@@ -2350,6 +2356,10 @@ ItemUseFailed:
 
 ItemUseNotTimeText:
 	text_far _ItemUseNotTimeText
+	text_end
+	
+PokedollGhostNotTimeText:
+	text_far _PokedollGhostNotTimeText
 	text_end
 
 ItemUseNotYoursToUseText:

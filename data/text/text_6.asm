@@ -199,6 +199,12 @@ _ItemUseNotTimeText::
 	cont "time to use that! "
 	prompt
 
+_PokedollGhostNotTimeText:: ; Funny easter egg for those who try the glitch.
+	text "It's no use!"
+	line "The GHOST is"
+	cont "disinterested!"
+	prompt
+
 _ItemUseNotYoursToUseText::
 	text "This isn't yours"
 	line "to use!"
