@@ -47,22 +47,33 @@ MrHyperText:
 	ld bc, NAME_LENGTH
 	call CopyData
 	
-	ld hl, MrHyperDone
-	call PrintText
-	
 	; DV increasing process.
 	; Thanks to Vimescarrot for giving me pointers on this!
 	ld a, [wWhichPokemon] ; Find the Pokemon's position in party.
 	ld hl, wPartyMon1DVs ; Load DVs into hl
+
 	ld bc, wPartyMon2 - wPartyMon1 ; This gets to the right slot for DVs
 	call AddNTimes ; Gets us there
+	; check if already maxed
+	ld b, h ; store beginning address
+	ld c, l
+	ld a, [hli] ; Attack + Defence
+	cp a, %11111111
+	jr nz, .train ; at least one stat isnt maxed
+	ld a, [hl] ; Speed + Special
+	cp a, %11111111
+	jr z, .alreadyTrained ; all stats were maxed
+.train
+	ld h, b ; restore address
+	ld l, c
 	ld a, %11111111 ; Load FFFF FFFF, perfect 15s
 	ld [hli], a ; Load 1111 to Attack + Defence
 	ld [hl], a ; Now load 1111 to Speed + Special
 	; And we're done!
 	
 	; Currently, this doesn't automatically change the stats. Vitamins don't either, so you could say it's consistent, but it's also inconvenient.
-	
+	ld hl, MrHyperDone
+	call PrintText
 	; Bottle Cap removal service
 	ld hl, BottleCapList ; Load a list of Bottle Cap items. This is the same code as the Saffron Guard.
 .loop
@@ -83,6 +94,10 @@ MrHyperText:
 	jr .done
 .refused
 	ld hl, MrHyperNo
+	call PrintText
+	jr .done
+.alreadyTrained
+	ld hl, MrHyperAlreadyTrained
 	call PrintText
 	jr .done
 .done
@@ -114,4 +129,8 @@ MrHyperNo:
 MrHyperDone:
 	sound_level_up
 	text_far _MrHyperDone
+	text_end
+
+MrHyperAlreadyTrained:
+	text_far _MrHyperAlreadyTrained
 	text_end

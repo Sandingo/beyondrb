@@ -40,3 +40,9 @@ _MrHyperDone::
 	line "with more if"
 	cont "you find any!"
 	done
+
+_MrHyperAlreadyTrained::
+	text "That #MON is"
+	line "already as strong"
+	cont "as it can be!"
+	done
