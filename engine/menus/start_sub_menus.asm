@@ -462,6 +462,25 @@ INCLUDE "data/items/use_party.asm"
 
 INCLUDE "data/items/use_overworld.asm"
 
+StartMenu_TownMap::
+	call GBPalWhiteOut
+	call ClearScreen
+	call UpdateSprites
+	ldh a, [hTileAnimations]
+	push af
+	xor a
+	ldh [hTileAnimations], a
+	farcall ItemUseTownMap
+	call GBPalWhiteOut
+	call LoadFontTilePatterns
+	call LoadScreenTilesFromBuffer2 ; restore saved screen
+	call RunDefaultPaletteCommand
+	call ReloadMapData
+	call LoadGBPal
+	pop af
+	ldh [hTileAnimations], a
+	jp RedisplayStartMenu
+
 StartMenu_TrainerInfo::
 	call GBPalWhiteOut
 	call ClearScreen

@@ -37,9 +37,6 @@ BluesHouseDaisySittingText:
 .give_town_map
 	ld hl, BluesHouseDaisyOfferMapText
 	call PrintText
-	lb bc, TOWN_MAP, 1
-	call GiveItem
-	jr nc, .bag_full
 	ld a, HS_TOWN_MAP
 	ld [wMissableObjectIndex], a
 	predef HideObject
@@ -53,9 +50,6 @@ BluesHouseDaisySittingText:
 	call PrintText
 	jr .done
 
-.bag_full
-	ld hl, BluesHouseDaisyBagFullText
-	call PrintText
 .done
 	jp TextScriptEnd
 
@@ -70,10 +64,6 @@ BluesHouseDaisyOfferMapText:
 GotMapText:
 	text_far _GotMapText
 	sound_get_key_item
-	text_end
-
-BluesHouseDaisyBagFullText:
-	text_far _BluesHouseDaisyBagFullText
 	text_end
 
 BluesHouseDaisyUseMapText:

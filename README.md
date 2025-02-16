@@ -31,6 +31,7 @@ Moves from later generations are only included if they fill out a new type, or a
 - [**Vortyne**](https://github.com/Vortyne/pureRGB)'s **PureRGB**
 - [**Jojobear13**](https://github.com/jojobear13/shinpokered)'s **Shin Pokémon Red**
 - [**David Volovskiy**](https://gitlab.com/devolov/rpp_v3_fork)'s **Pokémon Red++**
+- [**Melthelesbian**](https://github.com/melthelesbian/poke-amaranth)'s **Pokémon Amaranth**
 #### And anyone involved in the making of any of these resources, thank you so much!
   
 ## Pokered references

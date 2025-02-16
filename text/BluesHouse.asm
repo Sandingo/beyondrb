@@ -13,14 +13,7 @@ _BluesHouseDaisyOfferMapText::
 
 _GotMapText::
 	text "<PLAYER> got a"
-	line "@"
-	text_ram wStringBuffer
-	text "!@"
-	text_end
-
-_BluesHouseDaisyBagFullText::
-	text "You have too much"
-	line "stuff with you."
+	line "TOWN MAP!"
 	done
 
 _BluesHouseDaisyUseMapText::
