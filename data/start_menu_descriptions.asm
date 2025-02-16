@@ -42,8 +42,8 @@ StartMenuDescriptionTable:
 	next "items@"
 	
 .Map:
-	db "Show"
-	next "location@"
+	db "Open"
+	next "TOWN MAP@"
 
 .Player:
 	db "Your own"

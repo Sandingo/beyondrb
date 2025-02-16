@@ -4067,29 +4067,29 @@ CheckForDisobedience:
 ; it was traded
 .monIsTraded
 ; what level might disobey?
-	ld hl, wObtainedBadges
+	ld hl, wObtainedBadges ; Based on overall badge count rather than specific badges
 	bit BIT_EARTHBADGE, [hl]
 	ld a, 101
 	jr nz, .next
-	bit BIT_VOLCANOBADGE, [hl]
+	bit 7, [hl]
 	ld a, 80
 	jr nz, .next
-	bit BIT_MARSHBADGE, [hl]
+	bit 6, [hl]
 	ld a, 70
 	jr nz, .next
-	bit BIT_SOULBADGE, [hl]
+	bit 5, [hl]
 	ld a, 60
 	jr nz, .next
-	bit BIT_RAINBOWBADGE, [hl]
+	bit 4, [hl]
 	ld a, 50
 	jr nz, .next
-	bit BIT_THUNDERBADGE, [hl]
+	bit 3, [hl]
 	ld a, 40
 	jr nz, .next
-	bit BIT_CASCADEBADGE, [hl]
+	bit 2, [hl]
 	ld a, 30
 	jr nz, .next
-	bit BIT_BOULDERBADGE, [hl]
+	bit 1, [hl]
 	ld a, 20
 	jr nz, .next
 	ld a, 10

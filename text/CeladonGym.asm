@@ -49,11 +49,11 @@ _CeladonGymErikaPostBattleAdviceText::
 
 _CeladonGymRainbowBadgeInfoText::
 	text "The RAINBOWBADGE"
-	line "will make #MON"
-	cont "up to L50 obey."
+;	line "will make #MON"
+;	cont "up to L50 obey."
 
-	para "It also allows"
-	line "#MON to use"
+;	para "It also allows"
+	line "lets #MON use"
 	cont "STRENGTH in and"
 	cont "out of battle."
 

@@ -74,9 +74,9 @@ _PewterGymBrockBoulderBadgeInfoText::
 	line "#MON become"
 	cont "more powerful!"
 
-	para "Not only that, it"
-	line "makes all #MON"
-	cont "up to L20 obey!"
+;	para "Not only that, it"
+;	line "makes all #MON"
+;	cont "up to L20 obey!"
 
 	para "The technique"
 	line "FLASH can now be"

@@ -20,10 +20,10 @@ _FuchsiaGymKogaSoulBadgeInfoText::
 	line "SURF outside of"
 	cont "battle!"
 	
-	para "And lastly,"
-	line "#MON under"
-	cont "L60 will answer"
-	cont "to you!"
+;	para "And lastly,"
+;	line "#MON under"
+;	cont "L60 will answer"
+;	cont "to you!"
 
 	para "Ah! Take this"
 	line "too!"

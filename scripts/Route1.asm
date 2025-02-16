@@ -22,7 +22,7 @@ Route1_TextPointers:
 Route1TrainerHeaders:
 	def_trainers 3
 Route1TrainerHeader0:
-	trainer EVENT_BEAT_ROUTE_1_TRAINER_0, 2, Route1BattleText1, Route1EndBattleText1, Route1AfterBattleText1
+	trainer EVENT_BEAT_ROUTE_1_TRAINER_0, 3, Route1BattleText1, Route1EndBattleText1, Route1AfterBattleText1
 	db -1 ; end
 
 Route1Youngster1Text:
