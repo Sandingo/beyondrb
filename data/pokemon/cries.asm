@@ -212,7 +212,7 @@ CryData::
 	mon_cry SFX_CRY_0E, $77, $FF ; Poliwealth
 	mon_cry SFX_CRY_0C, $FF, $C0 ; Hitmontop
 	mon_cry SFX_CRY_0E, $EE, $35 ; Baloonda
-	mon_cry SFX_CRY_0D, $FF, $08 ; Buu
+	mon_cry SFX_CRY_0D, $FF, $08 ; Boo
 	mon_cry SFX_CRY_11, $CC, $80 ; Trampel
 	mon_cry SFX_CRY_19, $99, $FF ; Gorotora
 	mon_cry SFX_CRY_12, $E6, $FF ; Jagg
@@ -232,4 +232,6 @@ CryData::
 	mon_cry SFX_CRY_01, $00, $80 ; Nidoreign
 	mon_cry SFX_CRY_00, $E0, $C0 ; Nagahiss
 	mon_cry SFX_CRY_07, $EE, $80 ; Doomsday
+	mon_cry SFX_CRY_21, $20, $80 ; Weirduck
+	mon_cry SFX_CRY_1C, $80, $FF ; Magnetite
 	assert_table_length NUM_POKEMON_INDEXES

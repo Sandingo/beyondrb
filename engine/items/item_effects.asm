@@ -882,6 +882,8 @@ ItemUseMedicine:
 	jr z, ItemUseMedicine ; if so, force another choice
 .checkItemType
 	ld a, [wCurItem]
+	cp PEWTERCRUNCH
+	jr z, .cureStatusAilment
 	cp REVIVE
 	jr nc, .healHP ; if it's a Revive or Max Revive
 	cp FULL_HEAL
@@ -1008,7 +1010,10 @@ ItemUseMedicine:
 	ld a, [hld] ; status ailment
 	and a ; does the pokemon have a status ailment?
 	jp z, .healingItemNoEffect
+	ld a, PEWTERCRUNCH
+	jp z, .pretendToBeFullHeal
 	ld a, FULL_HEAL
+.pretendToBeFullHeal
 	ld [wCurItem], a
 	dec hl
 	dec hl
@@ -1223,6 +1228,8 @@ ItemUseMedicine:
 	ld a, [wCurItem]
 	cp FULL_RESTORE
 	jr c, .playStatusAilmentCuringSound
+	cp PEWTERCRUNCH
+	jr z, .playStatusAilmentCuringSound
 	cp FULL_HEAL
 	jr z, .playStatusAilmentCuringSound
 	ld a, SFX_HEAL_HP

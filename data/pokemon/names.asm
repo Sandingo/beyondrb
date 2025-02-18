@@ -206,7 +206,7 @@ MonsterNames::
 	db "POLIWEALTH"
 	db "HITMONTOP@"
 	db "BALOONDA@@"
-	db "BUU@@@@@@@"
+	db "BOO@@@@@@@"
 	db "TRAMPEL@@@"
 	db "GOROTORA@@"
 	db "JAGG@@@@@@"
@@ -226,4 +226,6 @@ MonsterNames::
 	db "NIDOREIGN@"
 	db "NAGAHISS@@"
 	db "DOOMSDAY@@"
+	db "WEIRDUCK@@"
+	db "MAGNETITE@"
 	assert_table_length NUM_POKEMON_INDEXES

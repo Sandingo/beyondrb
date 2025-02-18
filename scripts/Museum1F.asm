@@ -36,9 +36,17 @@ Museum1F_TextPointers:
 	def_text_pointers
 	dw_const Museum1FScientist1Text, TEXT_MUSEUM1F_SCIENTIST1
 	dw_const Museum1FGamblerText,    TEXT_MUSEUM1F_GAMBLER
+	dw_const Museum1FYoungsterTradeText,	 TEXT_MUSEUM1F_YOUNGSTER
 	dw_const Museum1FScientist2Text, TEXT_MUSEUM1F_SCIENTIST2
 	dw_const Museum1FScientist3Text, TEXT_MUSEUM1F_SCIENTIST3
 	dw_const Museum1FOldAmberText,   TEXT_MUSEUM1F_OLD_AMBER
+
+Museum1FYoungsterTradeText:
+	text_asm
+	ld a, TRADE_FOR_QUAX
+	ld [wWhichTrade], a
+	predef DoInGameTradeDialogue
+	jp TextScriptEnd
 
 Museum1FScientist1Text:
 	text_asm

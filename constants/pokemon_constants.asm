@@ -213,7 +213,7 @@
 	const POLIWEALTH
 	const HITMONTOP
 	const BALOONDA
-	const BUU
+	const BOO
 	const TRAMPEL
 	const GOROTORA
 	const JAGG
@@ -233,6 +233,8 @@
 	const NIDOREIGN
 	const NAGAHISS
 	const DOOMSDAY
+	const WEIRDUCK
+	const MAGNETITE
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

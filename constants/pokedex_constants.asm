@@ -66,6 +66,7 @@
 	const DEX_MEOWTH     ; 53
 	const DEX_PERSIAN    ; 54
 	const DEX_PSYDUCK    ; 55
+	const DEX_WEIRDUCK
 	const DEX_GOLDUCK    ; 56
 	const DEX_MANKEY     ; 57
 	const DEX_PRIMEAPE   ; 58
@@ -104,6 +105,7 @@
 	const DEX_SLOWBRO    ; 80
 	const DEX_SLOWKING
 	const DEX_MAGNEMITE  ; 81
+	const DEX_MAGNETITE
 	const DEX_MAGNETON   ; 82
 	const DEX_MAGNEZONE
 	const DEX_FARFETCHD  ; 83
@@ -177,7 +179,7 @@
 	const DEX_SCIZOR
 	const DEX_KLEAVOR
 	const DEX_JYNX       ; 124
-	const DEX_BUU
+	const DEX_BOO
 	const DEX_ELECTABUZZ ; 125
 	const DEX_ELECTIVIRE
 	const DEX_MAGMAR     ; 126

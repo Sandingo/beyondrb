@@ -75,7 +75,7 @@ SuperRodData:
 	db 4
 	db 30, DRATINI
 	db 30, KRABBY
-	db 30, PSYDUCK
+	db 30, WEIRDUCK
 	db 30, SLOWPOKE
 
 .Group7:
@@ -110,5 +110,5 @@ SuperRodData:
 	db 4
 	db 30, SKIMPER
 	db 30, KRABBY
-	db 30, PSYDUCK
+	db 30, WEIRDUCK
 	db 30, SLOWPOKE

@@ -206,7 +206,7 @@ PokedexEntryPointers:
 	dw PoliwealthDexEntry
 	dw HitmontopDexEntry
 	dw BaloondaDexEntry
-	dw BuuDexEntry
+	dw BooDexEntry
 	dw TrampelDexEntry
 	dw GorotoraDexEntry
 	dw JaggDexEntry
@@ -226,6 +226,8 @@ PokedexEntryPointers:
 	dw NidoreignDexEntry
 	dw NagahissDexEntry
 	dw DoomsdayDexEntry
+	dw WeirduckDexEntry
+	dw MagnetiteDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1661,11 +1663,11 @@ BaloondaDexEntry:
 	text_far _BaloondaDexEntry
 	text_end
 
-BuuDexEntry:
+BooDexEntry:
 	db "YETI@"
 	db 3,4
 	dw 770
-	text_far _BuuDexEntry
+	text_far _BooDexEntry
 	text_end
 
 TrampelDexEntry:
@@ -1799,4 +1801,18 @@ DoomsdayDexEntry:
 	db 91,4
 	dw 1
 	text_far _DoomsdayDexEntry
+	text_end
+
+WeirduckDexEntry:
+	db "DUCK@"
+	db 4,3
+	dw 1058
+	text_far _WeirduckDexEntry
+	text_end
+
+MagnetiteDexEntry:
+	db "MAGNET@"
+	db 2,0
+	dw 728
+	text_far _MagnetiteDexEntry
 	text_end

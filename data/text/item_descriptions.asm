@@ -176,6 +176,10 @@ _PokeDollDescription::
 	prompt
 
 _PewterCrunchDescription::
+	text "A local specialty."
+	next "Heals ailments."
+	prompt
+
 _FullHealDescription::
 	text "Eliminates all"
 	next "status problems."

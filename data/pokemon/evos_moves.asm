@@ -216,7 +216,7 @@ EvosMovesPointerTable:
 	dw PoliwealthEvosMoves
 	dw HitmontopEvosMoves
 	dw BaloondaEvosMoves
-	dw BuuEvosMoves
+	dw BooEvosMoves
 	dw TrampelEvosMoves
 	dw GorotoraEvosMoves
 	dw JaggEvosMoves
@@ -236,6 +236,8 @@ EvosMovesPointerTable:
 	dw NidoreignEvosMoves
 	dw NagahissEvosMoves
 	dw DoomsdayEvosMoves
+	dw WeirduckEvosMoves
+	dw MagnetiteEvosMoves
 	assert_table_length NUM_POKEMON_INDEXES
 
 RhydonEvosMoves:
@@ -804,12 +806,12 @@ ParasectEvosMoves:
 
 PsyduckEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 33, GOLDUCK
+	db EVOLVE_LEVEL, 22, WEIRDUCK
 	db 0
 ; Learnset
-	db 28, TAIL_WHIP
-	db 31, DISABLE
-	db 36, CONFUSION
+	db 14, WATER_GUN
+	db 28, DISABLE
+	db 32, CONFUSION
 	db 43, FURY_SWIPES
 	db 52, HYDRO_PUMP
 	db 0
@@ -892,9 +894,9 @@ MagnetonEvosMoves:
 	db EVOLVE_ITEM, THUNDER_STONE, 1, MAGNEZONE
 	db 0
 ; Learnset
+	db 14, THUNDERSHOCK
+	db 19, SUPERSONIC
 	db 21, SONICBOOM
-	db 25, THUNDERSHOCK
-	db 29, SUPERSONIC
 	db 38, THUNDER_WAVE
 	db 46, SWIFT
 	db 54, SCREECH
@@ -1759,9 +1761,9 @@ GolduckEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 28, TAIL_WHIP
-	db 31, DISABLE
-	db 39, CONFUSION
+	db 14, WATER_GUN
+	db 28, DISABLE
+	db 36, CONFUSION
 	db 48, FURY_SWIPES
 	db 59, HYDRO_PUMP
 	db 0
@@ -2268,12 +2270,12 @@ KokanaEvosMoves:
 
 MagnemiteEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 30, MAGNETON
+	db EVOLVE_LEVEL, 20, MAGNETITE
 	db 0
-; Learnset
+; Learnset=
+	db 14, THUNDERSHOCK
+	db 19, SUPERSONIC
 	db 21, SONICBOOM
-	db 25, THUNDERSHOCK
-	db 29, SUPERSONIC
 	db 35, THUNDER_WAVE
 	db 41, SWIFT
 	db 47, SCREECH
@@ -2309,7 +2311,7 @@ CharmanderEvosMoves:
 	db 0
 ; Learnset
 	db 9, EMBER
-	db 15, LEER
+	db 13, METAL_CLAW
 	db 22, RAGE
 	db 30, SLASH
 	db 38, FLAMETHROWER
@@ -2322,7 +2324,7 @@ SquirtleEvosMoves:
 	db 0
 ; Learnset
 	db 8, BUBBLE
-	db 15, WATER_GUN
+	db 13, WATER_GUN
 	db 22, BITE
 	db 28, WITHDRAW
 	db 35, SKULL_BASH
@@ -2335,7 +2337,7 @@ CharmeleonEvosMoves:
 	db 0
 ; Learnset
 	db 9, EMBER
-	db 15, LEER
+	db 13, METAL_CLAW
 	db 24, RAGE
 	db 33, SLASH
 	db 42, FLAMETHROWER
@@ -2348,7 +2350,7 @@ WartortleEvosMoves:
 	db 0
 ; Learnset
 	db 8, BUBBLE
-	db 15, WATER_GUN
+	db 13, WATER_GUN
 	db 24, BITE
 	db 31, WITHDRAW
 	db 39, SKULL_BASH
@@ -2360,7 +2362,7 @@ CharizardEvosMoves:
 	db 0
 ; Learnset
 	db 9, EMBER
-	db 15, LEER
+	db 13, METAL_CLAW
 	db 24, RAGE
 	db 36, SLASH
 	db 46, FLAMETHROWER
@@ -2494,9 +2496,9 @@ MagnezoneEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 24, SONICBOOM
-	db 28, THUNDERSHOCK
-	db 31, SUPERSONIC
+	db 14, THUNDERSHOCK
+	db 19, SUPERSONIC
+	db 21, SONICBOOM
 	db 40, THUNDER_WAVE
 	db 48, SWIFT
 	db 56, SCREECH
@@ -2616,7 +2618,7 @@ TotartleEvosMoves:
 	db 0
 ; Learnset
 	db 8, BUBBLE
-	db 15, WATER_GUN
+	db 13, WATER_GUN
 	db 24, BITE
 	db 31, WITHDRAW
 	db 42, SKULL_BASH
@@ -2657,7 +2659,7 @@ BaloondaEvosMoves:
 	db 49, FLY
 	db 0
 
-BuuEvosMoves:
+BooEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
@@ -2904,4 +2906,29 @@ DoomsdayEvosMoves:
 	db 86, CRUNCH
 	db 93, AMNESIA
 	db 96, GUILLOTINE
+	db 0
+
+WeirduckEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 33, GOLDUCK
+	db 0
+; Learnset
+	db 14, WATER_GUN
+	db 28, DISABLE
+	db 34, CONFUSION
+	db 44, FURY_SWIPES
+	db 54, HYDRO_PUMP
+	db 0
+
+MagnetiteEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 30, MAGNETON
+	db 0
+; Learnset
+	db 14, THUNDERSHOCK
+	db 19, SUPERSONIC
+	db 21, SONICBOOM
+	db 37, THUNDER_WAVE
+	db 43, SWIFT
+	db 50, SCREECH
 	db 0

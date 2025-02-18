@@ -318,7 +318,7 @@
 	next "nature"
 	dex
 
- _BuuDexEntry::
+ _BooDexEntry::
 	text "Mythologized as"
 	next "a wooly beast that"
 	next "spirits away lost"
@@ -516,4 +516,24 @@ _DoomsdayDexEntry::
 	page "soul that walks"
 	next "the Earth to"
 	next "avenge its death"
+	dex
+	
+_WeirduckDexEntry::
+	text "If it locks eyes"
+	next "with anything,"
+	next "they will be stuck"
+	
+	page "in a trance. It"
+	next "can take days to"
+	next "break out of it"
+	dex
+
+_MagnetiteDexEntry::
+	text "Its center of mass"
+	next "is unbalanced,"
+	next "causing it to"
+	
+	page "perpetually spin"
+	next "around the space"
+	next "between itself"
 	dex

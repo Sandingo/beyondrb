@@ -1,14 +1,14 @@
-	db DEX_PSYDUCK ; pokedex id
+	db DEX_WEIRDUCK ; pokedex id
 
-	db  50,  52,  48,  55,  50
+	db  65,  67,  63,  70,  65
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type
-	db 190 ; catch rate
-	db 80 ; base exp
+	db 120 ; catch rate
+	db 135 ; base exp
 
-	INCBIN "gfx/pokemon/front/psyduck.pic", 0, 1 ; sprite dimensions
-	dw PsyduckPicFront, PsyduckPicBack
+	INCBIN "gfx/pokemon/front/weirduck.pic", 0, 1 ; sprite dimensions
+	dw WeirduckPicFront, WeirduckPicBack
 
 	db SCRATCH, TAIL_WHIP, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -21,5 +21,5 @@
 	     SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         STRENGTH
 	; end
 
-	db BANK(PsyduckPicFront)
-	assert BANK(PsyduckPicFront) == BANK(PsyduckPicBack)
+	db BANK(WeirduckPicFront)
+	assert BANK(WeirduckPicFront) == BANK(WeirduckPicBack)
