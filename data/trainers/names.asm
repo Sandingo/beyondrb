@@ -12,7 +12,7 @@ TrainerNames::
 	li "BIKER"
 	li "BURGLAR"
 	li "ENGINEER"
-	li "JUGGLER"
+	li "IMAKUNI?"
 	li "FISHERMAN"
 	li "SWIMMER"
 	li "CUE BALL"

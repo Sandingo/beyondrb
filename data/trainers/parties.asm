@@ -12,7 +12,7 @@ TrainerDataPointers:
 	dw BikerData
 	dw BurglarData
 	dw EngineerData
-	dw UnusedJugglerData
+	dw ImakuniData
 	dw FisherData
 	dw SwimmerData
 	dw CueBallData
@@ -756,7 +756,7 @@ LanceData:
 
 MinaData:
 	db $FF, 21, JIGGLYPUFF, 22, MR_MIME, 0
-	db $FF, 54, MR_MIME, 54, WIGGLYTUFF, 55, NINETALES, 0 ; Post-Game
+	db $FF, 58, MR_MIME, 58, BALOONDA, 59, PERITOP, 60, NINETALES, 61, WIGGLYTUFF, 0 ; Post-Game
 	
 HitechJackData:
 	db $FF, 35, PORYGON, 36, MAGNETON, 37, ELECTRODE, 0 
@@ -771,3 +771,6 @@ ArcherData:
 KyleData:
 	db $FF, 13, MEOWTH, 15, LICKITUNG, 0
 	db $FF, 60, SNORLAX, 61, GORILLAIMO, 62, HAPPI, 63, PERSIAN, 64, LICKILORD, 0 ; Post-Game
+	
+ImakuniData:
+	db $FF, 25, SLOWPOKE, 26, WEIRDUCK, 27, FARFETCHD, 28, HYPNO, 0

@@ -315,3 +315,5 @@ ItemDescriptionPointers:
 	text_end
 	text_far _TM53Description
 	text_end
+	text_far _TM54Description
+	text_end

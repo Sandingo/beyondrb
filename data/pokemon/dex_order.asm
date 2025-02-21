@@ -228,4 +228,6 @@ PokedexOrder:
 	db DEX_DOOMSDAY
 	db DEX_WEIRDUCK
 	db DEX_MAGNETITE
+	db DEX_PERITOP
+	db DEX_KABIN
 	assert_table_length NUM_POKEMON_INDEXES

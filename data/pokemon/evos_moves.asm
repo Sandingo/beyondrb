@@ -238,6 +238,8 @@ EvosMovesPointerTable:
 	dw DoomsdayEvosMoves
 	dw WeirduckEvosMoves
 	dw MagnetiteEvosMoves
+	dw PeritopEvosMoves
+	dw KabinEvosMoves
 	assert_table_length NUM_POKEMON_INDEXES
 
 RhydonEvosMoves:
@@ -280,6 +282,7 @@ NidoranMEvosMoves:
 ClefairyEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, MOON_STONE, 1, CLEFABLE
+	db EVOLVE_ITEM, SUN_STONE, 1, PERITOP
 	db 0
 ; Learnset
 	db 9, FAIRY_WIND
@@ -1442,6 +1445,7 @@ WigglytuffEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 53, BAIBAI_PUNCH
 	db 0
 
 EeveeEvosMoves:
@@ -1589,6 +1593,9 @@ KakunaEvosMoves:
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db 0
 ; Learnset
+	db 7, HARDEN
+	db 8, HARDEN
+	db 9, HARDEN
 	db 0
 
 BeedrillEvosMoves:
@@ -1714,6 +1721,9 @@ MetapodEvosMoves:
 	db EVOLVE_LEVEL, 10, BUTTERFREE
 	db 0
 ; Learnset
+	db 7, HARDEN
+	db 8, HARDEN
+	db 9, HARDEN
 	db 0
 
 ButterfreeEvosMoves:
@@ -1915,6 +1925,7 @@ ClefableEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 55, BAIBAI_PUNCH
 	db 0
 
 WeezingEvosMoves:
@@ -2931,4 +2942,23 @@ MagnetiteEvosMoves:
 	db 37, THUNDER_WAVE
 	db 43, SWIFT
 	db 50, SCREECH
+	db 0
+
+PeritopEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 45, TRIPLE_KICK
+	db 55, BAIBAI_PUNCH
+	db 0
+
+KabinEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 32, CONFUSION
+	db 34, MINIMIZE
+	db 39, BODY_SLAM
+	db 40, AMNESIA
+	db 46, DOUBLE_EDGE
 	db 0

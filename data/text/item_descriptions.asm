@@ -641,8 +641,13 @@ _TM52Description::
 	prompt
 
 _TM53Description::
-	text "User emits a"
-	next "flash of light."
+	text "User attacks with"
+	next "a flash of light."
+	prompt
+
+_TM54Description::
+	text "User lunges at the"
+	next "target."
 	prompt
 
 _UnusedItemDescription::

@@ -1,5 +1,6 @@
 	object_const_def
 	const_export SAFARIZONECENTER_NUGGET
+	const_export SAFARIZONECENTER_TM_LUNGE
 
 SafariZoneCenter_Object:
 	db $0 ; border block
@@ -18,8 +19,10 @@ SafariZoneCenter_Object:
 	def_bg_events
 	bg_event 18, 20, TEXT_SAFARIZONECENTER_REST_HOUSE_SIGN
 	bg_event 14, 22, TEXT_SAFARIZONECENTER_TRAINER_TIPS_SIGN
+	bg_event 21, 15, TEXT_SAFARIZONECENTER_LOCAL_SIGN
 
 	def_object_events
 	object_event 14, 10, SPRITE_POKE_BALL, STAY, NONE, TEXT_SAFARIZONECENTER_NUGGET, NUGGET
+	object_event  9,  2, SPRITE_POKE_BALL, STAY, NONE, TEXT_SAFARIZONECENTER_TM_LUNGE, TM_LUNGE
 
 	def_warps_to SAFARI_ZONE_CENTER

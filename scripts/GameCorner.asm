@@ -44,9 +44,10 @@ GameCornerReenterMapAfterPlayerLoss:
 
 GameCorner_ScriptPointers:
 	def_script_pointers
-	dw_const GameCornerDefaultScript,      SCRIPT_GAMECORNER_DEFAULT
-	dw_const GameCornerRocketBattleScript, SCRIPT_GAMECORNER_ROCKET_BATTLE
-	dw_const GameCornerRocketExitScript,   SCRIPT_GAMECORNER_ROCKET_EXIT
+	dw_const GameCornerDefaultScript,      			SCRIPT_GAMECORNER_DEFAULT
+	dw_const GameCornerImakuniPostBattleScript,		SCRIPT_IMAKUNI_POST_BATTLE_SCRIPT
+	dw_const GameCornerRocketBattleScript, 			SCRIPT_GAMECORNER_ROCKET_BATTLE
+	dw_const GameCornerRocketExitScript,  		    SCRIPT_GAMECORNER_ROCKET_EXIT
 
 GameCornerDefaultScript:
 	ret
@@ -117,6 +118,18 @@ GameCornerRocketExitScript:
 	ld [wGameCornerCurScript], a
 	ret
 
+GameCornerImakuniPostBattleScript:
+ld a, [wIsInBattle]
+	cp $ff
+	jp z, GameCornerReenterMapAfterPlayerLoss
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	ld a, TEXT_GAMECORNER_IMAKUNI_POST_BATTLE
+	ldh [hTextID], a
+	call DisplayTextID
+	SetEvent EVENT_BEAT_IMAKUNI
+	jp GameCornerReenterMapAfterPlayerLoss
+
 GameCorner_TextPointers:
 	def_text_pointers
 	dw_const GameCornerBeauty1Text,           TEXT_GAMECORNER_BEAUTY1
@@ -129,9 +142,11 @@ GameCorner_TextPointers:
 	dw_const GameCornerGamblerText,           TEXT_GAMECORNER_GAMBLER
 	dw_const GameCornerClerk2Text,            TEXT_GAMECORNER_CLERK2
 	dw_const GameCornerGentlemanText,         TEXT_GAMECORNER_GENTLEMAN
+	dw_const GameCornerImakuniText,			  TEXT_GAMECORNER_IMAKUNI
 	dw_const GameCornerRocketText,            TEXT_GAMECORNER_ROCKET
 	dw_const GameCornerPosterText,            TEXT_GAMECORNER_POSTER
 	dw_const GameCornerRocketAfterBattleText, TEXT_GAMECORNER_ROCKET_AFTER_BATTLE
+	dw_const GameCornerImakuniPostBattleText, TEXT_GAMECORNER_IMAKUNI_POST_BATTLE
 
 GameCornerBeauty1Text:
 	text_far _GameCornerBeauty1Text
@@ -535,3 +550,110 @@ Has9990Coins:
 	ld a, $90
 	ldh [hCoins + 1], a
 	jp HasEnoughCoins
+
+GameCornerImakuniText:
+	text_asm
+	CheckEvent EVENT_BEAT_IMAKUNI
+	jp nz, .already_fought
+	ld hl, .Text
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, .decline_battle
+	ld c, BANK(Music_MeetMaleTrainer)
+	ld a, MUSIC_MEET_MALE_TRAINER
+	call PlayMusic
+	ld hl, .ImakuniAccept
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, .ImakuniDefeatedText
+	ld de, .ImakuniVictoryText
+	call SaveEndBattleTextPointers
+	ld [wIsTrainerBattle], a; Battle Start!
+	ld a, OPP_IMAKUNI
+	ld [wCurOpponent], a
+	ld a, 1
+	ld [wTrainerNo], a
+	xor a
+	ldh [hJoyHeld], a
+	ld a, SCRIPT_IMAKUNI_POST_BATTLE_SCRIPT
+	ld [wGameCornerCurScript], a
+	ld [wCurMapScript], a
+	jr .done
+.decline_battle
+	ld hl, .ImakuniDecline
+	call PrintText
+	jr .done
+.already_fought
+	CheckEvent EVENT_GOT_KABIN
+	jp nz, .got_kabin
+	ld hl, .KabinGiftText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .decline_kabin
+	lb bc, KABIN, 25
+	call GivePokemon
+	jr nc, .done
+	ld a, [wSimulatedJoypadStatesEnd]
+	and a
+	call z, WaitForTextScrollButtonPress
+	call EnableAutoTextBoxDrawing
+	ld hl, GameCornerKabinDescriptionText
+	call PrintText
+	SetEvent EVENT_GOT_KABIN
+	jr .done
+.decline_kabin
+	ld hl, .DeclineKabin
+	call PrintText
+	jr .done
+.got_kabin
+	ld hl, .AfterKabin
+	call PrintText
+.done
+	jp TextScriptEnd
+	
+.Text:
+	text_far _GameCornerImakuniText
+	text_end
+
+.ImakuniAccept:
+	text_far _GameCornerImakuniAcceptText
+	text_end
+
+.ImakuniDecline:
+	text_far _GameCornerImakuniDeclineText
+	text_end
+
+.AfterKabin:
+	text_far _GameCornerImakuniAfterBattleText
+	text_end
+
+.ImakuniDefeatedText
+	text_far _ImakuniDefeatedText
+	text_end
+
+.ImakuniVictoryText
+	text_far _ImakuniVictoryText
+	text_end
+
+.KabinGiftText
+	text_far _GameCornerImakuniGiftText
+	text_end
+
+.DeclineKabin
+	text_far _DeclineRecievingKabin
+	text_end
+
+GameCornerImakuniPostBattleText:
+	text_far _GameCornerImakuniPostBattleText
+	text_end
+
+GameCornerKabinDescriptionText:
+	text_far _GameCornerKabinDescriptionText
+	text_end

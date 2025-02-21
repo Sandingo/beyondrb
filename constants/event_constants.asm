@@ -144,8 +144,10 @@
 	const EVENT_GOT_20_COINS_2
 	const_skip 2
 	const EVENT_1BF ; ???
-	const_skip 32
+	const_skip 30
 	const EVENT_GOT_COIN_CASE
+	const EVENT_BEAT_IMAKUNI
+	const EVENT_GOT_KABIN
 
 ; Fuchsia City events
 	const_next $238

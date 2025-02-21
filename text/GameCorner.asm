@@ -188,3 +188,104 @@ _GameCornerOopsForgotCoinCaseText::
 	text "Oops! Forgot the"
 	line "COIN CASE!"
 	done
+
+_GameCornerImakuniText::
+	text "Huh? W..Who are"
+	line "you?"
+	
+	para "Who? Me? You don't"
+	line "know who I am?"
+	
+	para "I am the super"
+	line "musical star,"
+	cont "IMAKUNI?!"
+	
+	para "I'll sing the"
+	line "#RAP, you"
+	cont "dance!"
+	
+	para "La di da la di da!"
+	
+	para "Hey! Move those"
+	line "feet!"
+	
+	para "Huh? #MON?"
+	
+	para "I'll battle you,"
+	line "but if I win, you"
+	cont "dance!"
+	done
+
+_GameCornerImakuniDeclineText::
+	text "Huh?"
+	line "Have it your way!"
+	done
+
+_GameCornerImakuniAcceptText::
+	text "Okay!"
+	line "Let's battle!"
+	done
+	
+_GameCornerImakuniPostBattleText::
+	text "Hey, you're pretty"
+	line "good!"
+	
+	para "I wonder what would"
+	line "would be a fitting"
+	cont "fitting reward"
+	cont "for you..."
+	done
+
+_GameCornerImakuniGiftText::
+	text "Say, I have a" 
+	line "really special"
+	cont "#MON that I"
+	cont "think you should"
+	cont "have!"
+	
+	para "Don't be shy, take"
+	line "it!"
+	done
+
+_DeclineRecievingKabin::
+	text "Oh... that's"
+	line "not what I wanted"
+	cont "to hear."
+	done
+
+_GameCornerKabinDescriptionText::
+	text "KABIN is a pretty"
+	line "rare #MON!"
+	
+	para "It has METRONOME,"
+	line "which will keep"
+	cont "your foe's"
+	cont "guessing!"
+	
+	para "No need to thank"
+	line "me, I knew you'd"
+	cont "love it!"
+	done
+
+_GameCornerImakuniAfterBattleText::
+	text "In both battle and"
+	line "dance, soul and"
+	cont "rhythm are the"
+	cont "secret."
+	
+	para "Hey, that sounds"
+	line "pretty cool!"
+	
+	para "Maybe I'll become"
+	line "a poet!"
+	done
+
+_ImakuniDefeatedText::
+	text "La di"
+	line "da!"
+	prompt
+
+_ImakuniVictoryText::
+	text "Now,"
+	line "dance!"
+	prompt

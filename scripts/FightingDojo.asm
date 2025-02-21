@@ -38,7 +38,12 @@ FightingDojoDefaultScript:
 	ret nz
 	ld a, [wXCoord]
 	cp 4
+	ld a, [wYCoord]
+	jp z, .InCoords
+	ld a, [wXCoord] ; Fixed for the new room size
+	cp 5
 	ret nz
+.InCoords
 	ld a, 1
 	ld [wSavedCoordIndex], a
 	ld a, PLAYER_DIR_RIGHT
@@ -227,8 +232,10 @@ FightingDojoBlackbelt4AfterBattleText:
 FightingDojoHitmontopPokeBallText:
 	text_asm
 	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONTOP
+	jr nz, .BetterNotBeGreedy
+	CheckEvent EVENT_GOT_HITMONTOP
 	jr z, .GetMon
+.BetterNotBeGreedy
 	ld hl, FightingDojoBetterNotGetGreedyText
 	call PrintText
 	jr .done
@@ -262,8 +269,10 @@ FightingDojoHitmontopPokeBallText:
 FightingDojoHitmonleePokeBallText:
 	text_asm
 	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONTOP
+	jr nz, .BetterNotBeGreedy
+	CheckEvent EVENT_GOT_HITMONTOP
 	jr z, .GetMon
+.BetterNotBeGreedy
 	ld hl, FightingDojoBetterNotGetGreedyText
 	call PrintText
 	jr .done
@@ -297,8 +306,10 @@ FightingDojoHitmonleePokeBallText:
 FightingDojoHitmonchanPokeBallText:
 	text_asm
 	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONTOP
+	jr nz, .BetterNotBeGreedy
+	CheckEvent EVENT_GOT_HITMONTOP
 	jr z, .GetMon
+.BetterNotBeGreedy
 	ld hl, FightingDojoBetterNotGetGreedyText
 	call PrintText
 	jr .done

@@ -127,7 +127,7 @@ DEF NUM_FLOORS EQU const_value - 1 - NUM_ITEMS
 ; HMs are defined before TMs, so the actual number of TM definitions
 ; is not yet available. The TM quantity is hard-coded here and must
 ; match the actual number below.
-DEF NUM_TMS EQU 53 ; Was 50
+DEF NUM_TMS EQU 54 ; Was 50
 
 DEF __tmhm_value__ = NUM_TMS + 1
 
@@ -222,6 +222,7 @@ DEF TM01 EQU const_value
 	add_tm FLAMETHROWER ; $FB
 	add_tm STEEL_WING	; $FC
 	add_tm DAZZLINGLEAM ; $FD
+	add_tm LUNGE		; 
 ASSERT NUM_TMS == const_value - TM01, "NUM_TMS ({d:NUM_TMS}) does not match the number of add_tm definitions"
 
 DEF NUM_TM_HM EQU NUM_TMS + NUM_HMS

@@ -1,6 +1,6 @@
 	db DEX_NAGAHISS ; pokedex id
 
-	db  71,  82,  57,  95,  65
+	db  71,  112,  57,  95,  65
 	;   hp  atk  def  spd  spc
 
 	db POISON, GROUND ; type

@@ -45,6 +45,7 @@
 	const DEX_NIDOREIGN
 	const DEX_CLEFAIRY   ; 35
 	const DEX_CLEFABLE   ; 36
+	const DEX_PERITOP
 	const DEX_VULPIX     ; 37
 	const DEX_NINETALES  ; 38
 	const DEX_JIGGLYPUFF ; 39
@@ -211,6 +212,7 @@
 	const DEX_KABUTO     ; 140
 	const DEX_KABUTOPS   ; 141
 	const DEX_AERODACTYL ; 142
+	const DEX_KABIN
 	const DEX_SNORLAX    ; 143
 	const DEX_OHMEGA
 	const DEX_MARILL

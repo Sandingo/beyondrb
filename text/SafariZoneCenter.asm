@@ -9,3 +9,7 @@ _SafariZoneCenterTrainerTipsSignText::
 	line "Button to check"
 	cont "remaining time!"
 	done
+
+_SafariZoneCenterLocalSignText::
+	text "CENTER AREA"
+	done

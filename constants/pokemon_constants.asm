@@ -235,6 +235,8 @@
 	const DOOMSDAY
 	const WEIRDUCK
 	const MAGNETITE
+	const PERITOP
+	const KABIN
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

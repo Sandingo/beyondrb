@@ -88,6 +88,7 @@
 	const SPRITE_MEOWTH
 	const SPRITE_NIDORAN
 	const SPRITE_DOOMSDAY
+	const SPRITE_IMAKUNI
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e

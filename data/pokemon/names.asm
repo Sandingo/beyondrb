@@ -228,4 +228,6 @@ MonsterNames::
 	db "DOOMSDAY@@"
 	db "WEIRDUCK@@"
 	db "MAGNETITE@"
+	db "PERITOP@@@"
+	db "KABIN@@@@@"
 	assert_table_length NUM_POKEMON_INDEXES

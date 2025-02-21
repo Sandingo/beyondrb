@@ -161,6 +161,9 @@ RocketHideoutB4FBeatGiovanniScript:
 	ld a, HS_ROCKET_HIDEOUT_B4F_ARCHER
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_GAME_CORNER_IMAKUNI
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, HS_ROCKET_HIDEOUT_B4F_ITEM_4
 	ld [wMissableObjectIndex], a
 	predef ShowObject

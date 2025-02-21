@@ -190,5 +190,6 @@ MoveNames::
 	li "MACH PUNCH"
 	li "STEEL WING"
 	li "DAZZLINGLEAM"
+	li "LUNGE"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

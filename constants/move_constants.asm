@@ -196,6 +196,7 @@
 	const MACH_PUNCH
 	const STEEL_WING
 	const DAZZLINGLEAM
+	const LUNGE
 	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 

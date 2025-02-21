@@ -537,3 +537,23 @@ _MagnetiteDexEntry::
 	next "around the space"
 	next "between itself"
 	dex
+	
+_PeritopDexEntry::
+	text "An evolution of"
+	next "CLEFAIRY who's"
+	next "biology is similar"
+	
+	page "to HITMONTOP. It"
+	next "is thought to have"
+	next "adapted for caves"
+	dex
+	
+_KabinDexEntry::
+	text "A human-faced"
+	next "#MON that"
+	next "sleeps constantly."
+	
+	page "It's not known what"
+	next "advantages this"
+	next "behavior has"
+	dex

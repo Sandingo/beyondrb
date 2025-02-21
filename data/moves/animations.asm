@@ -190,6 +190,7 @@ AttackAnimationPointers:
 	dw MachPunchAnim
 	dw SteelWingAnim
 	dw DazzlinGleamAnim
+	dw LungeAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -801,6 +802,7 @@ AgilityAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
+LungeAnim:
 FeintAttackAnim:
 QuickAttackAnim:
 	battle_anim QUICK_ATTACK, SE_SLIDE_MON_OFF

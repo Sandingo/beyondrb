@@ -228,6 +228,8 @@ PokedexEntryPointers:
 	dw DoomsdayDexEntry
 	dw WeirduckDexEntry
 	dw MagnetiteDexEntry
+	dw PeritopDexEntry
+	dw KabinDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1815,4 +1817,18 @@ MagnetiteDexEntry:
 	db 2,0
 	dw 728
 	text_far _MagnetiteDexEntry
+	text_end
+
+PeritopDexEntry:
+	db "SPINNING@"
+	db 3,4
+	dw 660
+	text_far _PeritopDexEntry
+	text_end
+
+KabinDexEntry:
+	db "STRANGE@"
+	db 2,3
+	dw 101
+	text_far _KabinDexEntry
 	text_end

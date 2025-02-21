@@ -234,4 +234,6 @@ CryData::
 	mon_cry SFX_CRY_07, $EE, $80 ; Doomsday
 	mon_cry SFX_CRY_21, $20, $80 ; Weirduck
 	mon_cry SFX_CRY_1C, $80, $FF ; Magnetite
+	mon_cry SFX_CRY_19, $AA, $80 ; Peritop
+	mon_cry SFX_CRY_05, $55, $C0 ; Kabin
 	assert_table_length NUM_POKEMON_INDEXES
