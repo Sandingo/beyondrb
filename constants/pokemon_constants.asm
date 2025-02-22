@@ -141,7 +141,7 @@
 	const SNORLAX            ; $84
 	const MAGIKARP           ; $85
 	const ANIMON             ; $86
-	const DECILLA            ; $87
+	const GYAO            ; $87
 	const MUK                ; $88
 	const GYAOON             ; $89
 	const KINGLER            ; $8A
@@ -237,6 +237,9 @@
 	const MAGNETITE
 	const PERITOP
 	const KABIN
+	const PAPYO
+	const BUHI
+	const GODZILANTE
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

@@ -134,7 +134,7 @@ PokedexEntryPointers:
 	dw SnorlaxDexEntry
 	dw MagikarpDexEntry
 	dw AnimonDexEntry
-	dw DecillaDexEntry
+	dw GyaoDexEntry
 	dw MukDexEntry
 	dw GyaoonDexEntry
 	dw KinglerDexEntry
@@ -230,6 +230,9 @@ PokedexEntryPointers:
 	dw MagnetiteDexEntry
 	dw PeritopDexEntry
 	dw KabinDexEntry
+	dw PapyoDexEntry
+	dw BuhiDexEntry
+	dw GodzilanteDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1462,11 +1465,11 @@ AnimonDexEntry:
 	text_end
 
 
-DecillaDexEntry:
+GyaoDexEntry:
 	db "SHRIEKING@"
 	db 2,0
 	dw 1587
-	text_far _DecillaDexEntry
+	text_far _GyaoDexEntry
 	text_end
 
 GyaoonDexEntry:
@@ -1831,4 +1834,25 @@ KabinDexEntry:
 	db 2,3
 	dw 101
 	text_far _KabinDexEntry
+	text_end
+
+PapyoDexEntry:
+	db "STINKBUG@"
+	db 2,5
+	dw 107
+	text_far _PapyoDexEntry
+	text_end
+
+BuhiDexEntry:
+	db "HEX@"
+	db 2,4
+	dw 22
+	text_far _BuhiDexEntry
+	text_end
+	
+GodzilanteDexEntry:
+	db "KING@"
+	db 6,7
+	dw 4453
+	text_far _GodzilanteDexEntry
 	text_end

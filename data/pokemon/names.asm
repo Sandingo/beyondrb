@@ -134,7 +134,7 @@ MonsterNames::
 	db "SNORLAX@@@"
 	db "MAGIKARP@@"
 	db "ANIMON@@@@"
-	db "DECILLA@@@"
+	db "GYAO@@@@@@"
 	db "MUK@@@@@@@"
 	db "GYAOON@@@@"
 	db "KINGLER@@@"
@@ -230,4 +230,7 @@ MonsterNames::
 	db "MAGNETITE@"
 	db "PERITOP@@@"
 	db "KABIN@@@@@"
+	db "PAPYO@@@@@"
+	db "BUHI@@@@@@"
+	db "GODZILANTE" ; Names cannot go beyond 10 characters :pensive:
 	assert_table_length NUM_POKEMON_INDEXES

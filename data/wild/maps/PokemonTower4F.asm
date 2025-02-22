@@ -4,8 +4,14 @@ PokemonTower4FWildMons:
 	db 21, GASTLY
 	db 22, GASTLY
 	db 23, GASTLY
-	db 19, GASTLY
+IF DEF(_RED)
 	db 18, GASTLY
+	db 19, GASTLY
+ENDC
+IF DEF(_BLUE)
+	db 18, BUHI
+	db 19, BUHI
+ENDC
 	db 25, HAUNTER
 	db 20, CUBONE
 	db 22, CUBONE

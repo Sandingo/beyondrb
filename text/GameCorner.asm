@@ -230,8 +230,8 @@ _GameCornerImakuniPostBattleText::
 	text "Hey, you're pretty"
 	line "good!"
 	
-	para "I wonder what would"
-	line "would be a fitting"
+	para "I wonder what"
+	line  "would be a"
 	cont "fitting reward"
 	cont "for you..."
 	done

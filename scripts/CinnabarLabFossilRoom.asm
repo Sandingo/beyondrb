@@ -100,7 +100,7 @@ CinnabarLabFossilRoomScientist1Text:
 
 CinnabarLabFossilRoomScientist2Text:
 	text_asm
-	ld a, TRADE_FOR_SAILOR
+	ld a, TRADE_FOR_FLAMEO_LIGHTNI
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd

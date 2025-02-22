@@ -20,16 +20,17 @@ DEF SLOTS_SOMEONESKEYS EQU $ff
 ; in game trades
 ; TradeMons indexes (see data/events/trades.asm)
 	const_def
-	const TRADE_FOR_TERRY
+	const TRADE_FOR_PLUCKY_STRYKE
+	const TRADE_FOR_FLAMEO_LIGHTNI
+	const TRADE_FOR_FOXY_FIDO
+	const TRADE_FOR_SPROUTS_DOTTY
+	const TRADE_FOR_STINKUMS_SPOOKIT
 	const TRADE_FOR_MARCEL
 	const TRADE_FOR_CHIKUCHIKU ; unused
-	const TRADE_FOR_SAILOR
 	const TRADE_FOR_DUX
 	const TRADE_FOR_MARC
 	const TRADE_FOR_LOLA
 	const TRADE_FOR_DORIS
-	const TRADE_FOR_CRINKLES
-	const TRADE_FOR_SPOT
 	const TRADE_FOR_QUAX
 	const TRADE_WITH_SELF
 DEF NUM_NPC_TRADES EQU const_value

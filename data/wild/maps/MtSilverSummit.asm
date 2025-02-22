@@ -6,10 +6,10 @@ MtSilverSummitWildMons:
 	db  51, GOLDUCK
 	db  48, GRAVELER
 	db  48, ONIX
-	db  48, ONIX
 	db  48, GRAVELER
-	db  48, DECILLA
-	db  50, GYAOON
+	db  46, GYAO
+	db  48, GYAOON
+	db  50, GODZILANTE
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

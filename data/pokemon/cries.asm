@@ -140,7 +140,7 @@ CryData::
 	mon_cry SFX_CRY_05, $55, $01 ; Snorlax
 	mon_cry SFX_CRY_17, $80, $00 ; Magikarp
 	mon_cry SFX_CRY_0E, $FF, $80 ; Animon
-	mon_cry SFX_CRY_04, $CC, $80 ; Decilla
+	mon_cry SFX_CRY_04, $CC, $80 ; GYAO
 	mon_cry SFX_CRY_07, $EF, $FF ; Muk
 	mon_cry SFX_CRY_11, $10, $80 ; Gyaoon
 	mon_cry SFX_CRY_20, $EE, $E0 ; Kingler
@@ -236,4 +236,7 @@ CryData::
 	mon_cry SFX_CRY_1C, $80, $FF ; Magnetite
 	mon_cry SFX_CRY_19, $AA, $80 ; Peritop
 	mon_cry SFX_CRY_05, $55, $C0 ; Kabin
+	mon_cry SFX_CRY_13, $60, $01 ; Papyo
+	mon_cry SFX_CRY_19, $77, $80 ; Buhi
+	mon_cry SFX_CRY_0F, $3C, $FF ; Godzilante
 	assert_table_length NUM_POKEMON_INDEXES

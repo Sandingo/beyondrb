@@ -5,8 +5,14 @@ PokemonTower3FWildMons:
 	db 22, GASTLY
 	db 23, GASTLY
 	db 19, GASTLY
+IF DEF(_RED)
 	db 18, GASTLY
 	db 24, GASTLY
+ENDC
+IF DEF(_BLUE)
+	db 18, BUHI
+	db 24, BUHI
+ENDC
 	db 20, CUBONE
 	db 22, CUBONE
 	db 25, HAUNTER

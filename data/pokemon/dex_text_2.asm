@@ -28,7 +28,7 @@
 	next "in an instant"
 	dex
 
- _DecillaDexEntry::
+ _GyaoDexEntry::
 	text "It's cry can reach"
 	next "volumes up to 140"
 	next "dBs. It often gets"
@@ -556,4 +556,34 @@ _KabinDexEntry::
 	page "It's not known what"
 	next "advantages this"
 	next "behavior has"
+	dex
+
+_PapyoDexEntry::
+	text "A rather weak"
+	next "#MON that emits"
+	next "toxic fumes from"
+	
+	page "the geyser on its"
+	next "back. This guards"
+	next "it from PIDGEOTTO"
+	dex
+
+_BuhiDexEntry::
+	text "The spirit of a"
+	next "feline #MON"
+	next "from beyond the"
+	
+	page "grave. It is very"
+	next "lazy, and enjoys"
+	next "hexing humans"
+	dex
+
+_GodzilanteDexEntry::
+	text "Dubbed 'King of"
+	next "Monsters' in"
+	next "traditional times,"
+	
+	page "its DNA was first"
+	next "traced in the deep"
+	next "in the ocean"
 	dex

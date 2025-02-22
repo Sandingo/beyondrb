@@ -1,6 +1,6 @@
 	db DEX_BALOONDA ; pokedex id
 
-	db 80,  80,  30,  125,  80
+	db 80,  50,  30,  125,  80
 	;   hp  atk  def  spd  spc
 
 	db FAIRY, FLYING ; type

@@ -1,3 +1,6 @@
+	object_const_def
+	const_export CELADONMANSION2F_TRADEGUY
+
 CeladonMansion2F_Object:
 	db $f ; border block
 
@@ -11,5 +14,6 @@ CeladonMansion2F_Object:
 	bg_event  4,  9, TEXT_CELADONMANSION2F_MEETING_ROOM_SIGN
 
 	def_object_events
+	object_event  3,  4, SPRITE_YOUNGSTER, STAY, ANY_DIR, TEXT_CELADONMANSION2F_TRADEGUY
 
 	def_warps_to CELADON_MANSION_2F

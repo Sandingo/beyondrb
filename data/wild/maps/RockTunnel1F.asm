@@ -8,7 +8,7 @@ RockTunnel1FWildMons:
 	db 18, MANKEY
 	db 15, ONIX
 	db 17, MACHOP
-	db 15, DECILLA
+	db 15, GYAO
 	db 15, ONIX
 	end_grass_wildmons
 

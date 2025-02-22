@@ -433,7 +433,7 @@ JugglerData:
 ; Unused
 	db 33, HYPNO, 0
 ; Fuchsia Gym
-	db 38, HYPNO, 0
+	db 38, PAPYO, 0
 	db 34, DROWZEE, KADABRA, 0
 
 TamerData:
@@ -721,14 +721,14 @@ ChannelerData:
 ; Unused
 	db 24, HAUNTER, 0
 ; Pokémon Tower 3F
-	db 22, GASTLY, 0
+	db 22, BUHI, 0
 ; Pokémon Tower 4F
 	db 24, GASTLY, 0
 	db 23, GASTLY, GASTLY, 0
 ; Unused
 	db 24, GASTLY, 0
 ; Pokémon Tower 4F
-	db 22, GASTLY, 0
+	db 22, BUHI, 0
 ; Unused
 	db 24, GASTLY, 0
 ; Pokémon Tower 5F
@@ -742,7 +742,7 @@ ChannelerData:
 ; Pokémon Tower 6F
 	db 22, GASTLY, GASTLY, GASTLY, 0
 	db 24, GASTLY, 0
-	db 24, GASTLY, 0
+	db 24, BUHI, 0
 ; Saffron Gym
 	db 34, GASTLY, HAUNTER, 0
 	db 38, HAUNTER, 0

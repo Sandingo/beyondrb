@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/kokaroach.pic", 0, 1 ; sprite dimensions
 	dw KokaroachPicFront, KokaroachPicBack
 
-	db UPPERCUT, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db LEECH_LIFE, STRING_SHOT, HARDEN, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset

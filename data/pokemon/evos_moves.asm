@@ -144,7 +144,7 @@ EvosMovesPointerTable:
 	dw SnorlaxEvosMoves
 	dw MagikarpEvosMoves
 	dw AnimonEvosMoves
-	dw DecillaEvosMoves
+	dw GyaoEvosMoves
 	dw MukEvosMoves
 	dw GyaoonEvosMoves
 	dw KinglerEvosMoves
@@ -240,6 +240,9 @@ EvosMovesPointerTable:
 	dw MagnetiteEvosMoves
 	dw PeritopEvosMoves
 	dw KabinEvosMoves
+	dw PapyoEvosMoves
+	dw BuhiEvosMoves
+	dw GodzilanteEvosMoves
 	assert_table_length NUM_POKEMON_INDEXES
 
 RhydonEvosMoves:
@@ -1593,9 +1596,6 @@ KakunaEvosMoves:
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db 0
 ; Learnset
-	db 7, HARDEN
-	db 8, HARDEN
-	db 9, HARDEN
 	db 0
 
 BeedrillEvosMoves:
@@ -1721,9 +1721,6 @@ MetapodEvosMoves:
 	db EVOLVE_LEVEL, 10, BUTTERFREE
 	db 0
 ; Learnset
-	db 7, HARDEN
-	db 8, HARDEN
-	db 9, HARDEN
 	db 0
 
 ButterfreeEvosMoves:
@@ -1841,7 +1838,7 @@ AnimonEvosMoves:
 	db 50, REFLECT
 	db 0
 
-DecillaEvosMoves:
+GyaoEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 40, GYAOON
 	db 0
@@ -2961,4 +2958,40 @@ KabinEvosMoves:
 	db 39, BODY_SLAM
 	db 40, AMNESIA
 	db 46, DOUBLE_EDGE
+	db 0
+
+BuhiEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 28, CONFUSE_RAY
+	db 32, FEINT_ATTACK
+	db 34, FURY_SWIPES
+	db 37, PSYBEAM
+	db 45, SLASH
+	db 0
+
+PapyoEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 27, POISON_GAS
+	db 31, ACID
+	db 33, PIN_MISSILE
+	db 36, SLUDGE
+	db 44, LUNGE
+	db 0
+
+GodzilanteEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 10, SCREECH
+	db 18, BITE
+	db 24, DRAGON_RAGE
+	db 30, THRASH
+	db 36, CRUNCH
+	db 41, AMNESIA
+	db 50, FLAMETHROWER
+	db 54, HYPER_BEAM
 	db 0

@@ -146,6 +146,8 @@
 	const DEX_HITMONTOP
 	const DEX_LICKITUNG  ; 108
 	const DEX_LICKILORD
+	const DEX_PAPYO
+	const DEX_BUHI
 	const DEX_MURKROW
 	const DEX_HONCHKROW
 	const DEX_KOFFING    ; 109
@@ -160,9 +162,8 @@
 	const DEX_SLUGMA
 	const DEX_MAGCARGO
 	const DEX_KANGASKHAN ; 115
-	const DEX_DECILLA
+	const DEX_GYAO
 	const DEX_GYAOON
-	const DEX_GORILLAIMO
 	const DEX_HORSEA     ; 116
 	const DEX_SEADRA     ; 117
 	const DEX_KINGDRA
@@ -176,6 +177,8 @@
 	const DEX_JAGG
 	const DEX_MR_MIME    ; 122
 	const DEX_DIAA
+	const DEX_GORILLAIMO
+	const DEX_GODZILANTE
 	const DEX_SCYTHER    ; 123
 	const DEX_SCIZOR
 	const DEX_KLEAVOR

@@ -134,7 +134,7 @@ PokedexOrder:
 	db DEX_SNORLAX
 	db DEX_MAGIKARP
 	db DEX_ANIMON
-	db DEX_DECILLA
+	db DEX_GYAO
 	db DEX_MUK
 	db DEX_GYAOON
 	db DEX_KINGLER
@@ -230,4 +230,7 @@ PokedexOrder:
 	db DEX_MAGNETITE
 	db DEX_PERITOP
 	db DEX_KABIN
+	db DEX_PAPYO
+	db DEX_BUHI
+	db DEX_GODZILANTE
 	assert_table_length NUM_POKEMON_INDEXES

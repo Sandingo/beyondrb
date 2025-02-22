@@ -227,4 +227,7 @@ MonPartyData:
 	nybble ICON_MON
 	nybble ICON_MON
 	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
+	nybble ICON_MON
 	end_nybble_array NUM_POKEMON
