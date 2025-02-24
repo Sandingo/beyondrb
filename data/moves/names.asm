@@ -177,7 +177,7 @@ MoveNames::
 	li "FEINT ATTACK"
 	li "IRON BASH"
 	li "STAR FREEZE"
-	li "INK SPRAY"
+	li "INK SPRAY"	; Ikasumi
 	li "BAIBAI PUNCH"
 	li "POWDER SNOW"
 	li "BONE RUSH"
@@ -191,5 +191,6 @@ MoveNames::
 	li "STEEL WING"
 	li "DAZZLINGLEAM"
 	li "LUNGE"
+	li "NUMB PINCER" ; Shibire Hasami
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

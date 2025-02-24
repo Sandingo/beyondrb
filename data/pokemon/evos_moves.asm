@@ -586,6 +586,7 @@ PinsirEvosMoves:
 	db 0
 ; Learnset
 	db 25, SEISMIC_TOSS
+	db 28, NUMB_PINCER
 	db 30, GUILLOTINE
 	db 36, FOCUS_ENERGY
 	db 43, HARDEN
@@ -805,6 +806,7 @@ ParasectEvosMoves:
 ; Learnset
 	db 13, STUN_SPORE
 	db 20, LEECH_LIFE
+	db 24, NUMB_PINCER
 	db 30, SPORE
 	db 39, SLASH
 	db 48, GROWTH
@@ -1186,6 +1188,7 @@ KrabbyEvosMoves:
 	db 21, METAL_CLAW
 	db 25, GUILLOTINE
 	db 30, STOMP
+	db 31, NUMB_PINCER
 	db 35, CRABHAMMER
 	db 40, HARDEN
 	db 0
@@ -1319,7 +1322,7 @@ KabutoEvosMoves:
 ; Learnset
 	db 34, ABSORB
 	db 39, SLASH
-	db 44, LEER
+	db 44, NUMB_PINCER
 	db 49, HYDRO_PUMP
 	db 0
 
@@ -1329,7 +1332,7 @@ KabutopsEvosMoves:
 ; Learnset
 	db 34, ABSORB
 	db 39, SLASH
-	db 46, LEER
+	db 46, NUMB_PINCER
 	db 53, HYDRO_PUMP
 	db 0
 
@@ -1556,6 +1559,7 @@ ParasEvosMoves:
 ; Learnset
 	db 13, STUN_SPORE
 	db 20, LEECH_LIFE
+	db 24, NUMB_PINCER
 	db 27, SPORE
 	db 34, SLASH
 	db 41, GROWTH
@@ -1754,6 +1758,7 @@ PluxEvosMoves:
 	db 0
 ; Learnset
 	db 25, SEISMIC_TOSS
+	db 28, NUMB_PINCER
 	db 30, GUILLOTINE
 	db 32, METAL_CLAW
 	db 36, FOCUS_ENERGY
@@ -1883,6 +1888,7 @@ KinglerEvosMoves:
 	db 21, METAL_CLAW
 	db 25, GUILLOTINE
 	db 34, STOMP
+	db 35, NUMB_PINCER
 	db 42, CRABHAMMER
 	db 49, HARDEN
 	db 0

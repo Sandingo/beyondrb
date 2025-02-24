@@ -192,6 +192,7 @@ MoveSoundTable:
 	db SFX_BATTLE_0B,          $01, $80 ; STEEL_WING
 	db SFX_PSYBEAM,            $00, $80 ; DAZZLINGLEAM
 	db SFX_SUPER_EFFECTIVE,    $f0, $ff ; LUNGE
+	db SFX_BATTLE_0D,          $00, $a0 ; NUMB_PINCER
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

@@ -111,27 +111,27 @@ _OldAmberDescription::
 	prompt
 
 _HPUpDescription::
-	text "Raises the HP of"
+	text "Maxes the HP of"
 	next "one #MON."
 	prompt
 
 _ProteinDescription::
-	text "Raises ATTACK of"
+	text "Maxes ATTACK of"
 	next "one #MON."
 	prompt
 
 _IronDescription::
-	text "Raises DEFENSE of"
+	text "Maxes DEFENSE of"
 	next "one #MON."
 	prompt
 
 _CarbosDescription::
-	text "Raises SPEED of"
+	text "Maxes SPEED of"
 	next "one #MON."
 	prompt
 
 _CalciumDescription::
-	text "Raises SPECIAL"
+	text "Maxes SPECIAL"
 	next "of one #MON."
 	prompt
 

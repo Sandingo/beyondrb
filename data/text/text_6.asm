@@ -140,7 +140,7 @@ _RestorePPWhichTechniqueText::
 _PPMaxedOutText::
 	text_ram wStringBuffer
 	text "'s PP"
-	line "is maxed out."
+	line "cannot go higher."
 	prompt
 
 _PPIncreasedText::

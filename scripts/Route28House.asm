@@ -16,7 +16,7 @@ MrHyperText:
 	predef GetQuantityOfItemInBag
 	ld a, b
 	and a
-	jr z, .NoBottleCap ; If zero, MrHyper says something else.
+	jp z, .NoBottleCap ; If zero, MrHyper says something else.
 	
 	ld hl, MrHyperSeesBottleCap ; Otherwise, he perks up.
 	call PrintText
@@ -24,7 +24,7 @@ MrHyperText:
 	call YesNoChoice ; Yes/No Prompt
 	ld a, [wCurrentMenuItem]
 	and a
-	jr nz, .refused
+	jp nz, .refused
 	; Proceed from here if Yes is stated. 
 	
 	; Here, the party menu pops up and the player picks a Pokemon to juice.
@@ -69,9 +69,29 @@ MrHyperText:
 	ld a, %11111111 ; Load FFFF FFFF, perfect 15s
 	ld [hli], a ; Load 1111 to Attack + Defence
 	ld [hl], a ; Now load 1111 to Speed + Special
-	; And we're done!
-	
-	; Currently, this doesn't automatically change the stats. Vitamins don't either, so you could say it's consistent, but it's also inconvenient.
+; Recalc the stats (Thanks, ZetaPheonix!)
+ld a, 0 
+ld [wMonDataLocation], a
+call LoadMonData
+ld a, [wWhichPokemon]
+ld hl, wPartyMons
+ld bc, wPartyMon2 - wPartyMon1
+call AddNTimes
+push hl
+ld bc, wPartyMon1Level - wPartyMon1
+add hl, bc ; hl now points to level
+ld a, [hl] ; a = level
+ld [wCurEnemyLevel], a ; store level
+pop hl
+ld bc, wPartyMon1Stats - wPartyMon1
+add hl, bc
+ld d, h
+ld e, l ; de now points to stats
+ld bc, (wPartyMon1Exp + 2) - wPartyMon1Stats
+add hl, bc ; hl now points to LSB of experience
+ld b, 1
+call CalcStats ; recalculate stats
+
 	ld hl, MrHyperDone
 	call PrintText
 	; Bottle Cap removal service

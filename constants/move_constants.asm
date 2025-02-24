@@ -197,6 +197,7 @@
 	const STEEL_WING
 	const DAZZLINGLEAM
 	const LUNGE
+	const NUMB_PINCER
 	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 

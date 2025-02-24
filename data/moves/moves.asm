@@ -202,5 +202,6 @@ Moves:
 	move STEEL_WING,   NO_ADDITIONAL_EFFECT,		70, STEEL,		   90, 25
 	move DAZZLINGLEAM, NO_ADDITIONAL_EFFECT,        80, FAIRY,		  100, 10
 	move LUNGE,		   ATTACK_DOWN_SIDE_EFFECT,		80, BUG,		   80, 15
+	move NUMB_PINCER,  PARALYZE_SIDE_EFFECT1,       40, BUG,           95, 20
 	move STRUGGLE,     RECOIL_EFFECT,               50, BIRD,         100, 10
 	assert_table_length NUM_ATTACKS
