@@ -220,11 +220,11 @@ PromptText::
 
 DoneText::
 	pop hl
-	ld de, .stop
+	ld de, TextScriptEndingText
 	dec de
 	ret
-
-.stop:
+	
+TextScriptEndingText::
 	text_end
 
 Paragraph::

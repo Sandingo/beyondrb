@@ -1,7 +1,8 @@
 ; rst vectors (unused)
 
 SECTION "rst0", ROM0[$0000]
-	rst $38
+_Bankswitch::
+    jp Bankswitch
 
 	ds $08 - @, 0 ; unused
 
@@ -38,9 +39,6 @@ SECTION "rst30", ROM0[$0030]
 SECTION "rst38", ROM0[$0038]
 	rst $38
 
-	ds $40 - @, 0 ; unused
-
-
 ; Game Boy hardware interrupts
 
 SECTION "vblank", ROM0[$0040]
@@ -60,8 +58,6 @@ SECTION "timer", ROM0[$0050]
 
 SECTION "serial", ROM0[$0058]
 	jp Serial
-
-	ds $60 - @, 0 ; unused
 
 SECTION "joypad", ROM0[$0060]
 	reti

@@ -4,6 +4,7 @@ UsableItems_PartyMenu:
 	db SUN_STONE
 	db ICE_STONE
 	db METAL_COAT
+	db CANDY_JAR
 	db NUGGET
 	db DRAGON_SCALE
 	db ANTIDOTE

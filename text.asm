@@ -217,6 +217,8 @@ INCLUDE "text/WardensHouse.asm"
 INCLUDE "text/SafariZoneGate.asm"
 INCLUDE "text/FuchsiaGym.asm"
 
+INCLUDE "engine/battle/just_slot_machine_stuff.asm" ; to free bank1E
+
 
 SECTION "Text 9", ROMX
 
@@ -277,7 +279,6 @@ INCLUDE "text/Route28House.asm"
 INCLUDE "text/SilphFacility.asm"
 
 INCLUDE "data/text/text_7.asm"
-
 
 SECTION "Pokédex Text", ROMX
 

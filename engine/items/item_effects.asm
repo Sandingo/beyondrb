@@ -771,10 +771,6 @@ ItemUseSurfboard:
 	ld [wSimulatedJoypadStatesIndex], a
 	ret
 
-SurfingGotOnText:
-	text_far _SurfingGotOnText
-	text_end
-
 SurfingNoPlaceToGetOffText:
 	text_far _SurfingNoPlaceToGetOffText
 	text_end
@@ -1862,7 +1858,7 @@ PlayedFluteHadEffectText:
 	jr z, .musicWaitLoop
 	call PlayDefaultMusic ; start playing normal music again
 .done
-	jp TextScriptEnd ; end text
+	jp TextScriptEnd ; PureRGB - jp TextScriptEnd
 
 ItemUseCoinCase:
 	ld a, [wIsInBattle]

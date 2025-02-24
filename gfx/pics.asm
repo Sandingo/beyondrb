@@ -282,10 +282,11 @@ JugglerPic::       INCBIN "gfx/trainers/juggler.pic"
 TamerPic::         INCBIN "gfx/trainers/tamer.pic"
 BirdKeeperPic::    INCBIN "gfx/trainers/birdkeeper.pic"
 BlackbeltPic::     INCBIN "gfx/trainers/blackbelt.pic"
+Rival1Pic::        INCBIN "gfx/trainers/rival1.pic"
 
 SECTION "Trainer Pics 2", ROMX
 
-Rival1Pic::        INCBIN "gfx/trainers/rival1.pic"
+
 ProfOakPic::       INCBIN "gfx/trainers/prof.oak.pic"
 ChiefPic::		   INCBIN "gfx/trainers/chief.pic"
 ScientistPic::     INCBIN "gfx/trainers/scientist.pic"

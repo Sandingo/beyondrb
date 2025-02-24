@@ -87,14 +87,18 @@ OverworldLoopLessDelay::
 	jp nz, .noDirectionButtonsPressed
 	call IsPlayerCharacterBeingControlledByGame
 	jr nz, .checkForOpponent
+	callfar CheckForFlash ; jp OverworldLoop if succeeds
+	callfar CheckForCut ; jp OverworldLoop if succeeds
 	call CheckForHiddenObjectOrBookshelfOrCardKeyDoor
-	ldh a, [hItemAlreadyFound]
+	ldh a, [hItemAlreadyFound] ; a = $ff if not found, = 0 if found
 	and a
 	jp z, OverworldLoop ; jump if a hidden object or bookshelf was found, but not if a card key door was found
 	call IsSpriteOrSignInFrontOfPlayer
 	ldh a, [hTextID]
 	and a
-	jp z, OverworldLoop
+	jr nz, .displayDialogue ; checks for Strength via BoulderText
+	callfar CheckForSurf ; jp OverworldLoop if succeeds
+	jp OverworldLoop
 .displayDialogue
 	predef GetTileAndCoordsInFrontOfPlayer
 	call UpdateSprites
@@ -1342,9 +1346,10 @@ CheckForTilePairCollisions::
 	jr .retry
 .currentTileMatchesFirstInPair
 	inc hl
-	ld a, [hl]
+	ld a, [hli]
 	cp c
 	jr z, .foundMatch
+	inc hl
 	jr .tilePairCollisionLoop
 .currentTileMatchesSecondInPair
 	dec hl
@@ -2462,7 +2467,7 @@ ResetUsingStrengthOutOfBattleBit:
 ForceBikeOrSurf::
 	ld b, BANK(RedSprite)
 	ld hl, LoadPlayerSpriteGraphics ; in bank 0
-	call Bankswitch
+	rst _Bankswitch ; marcelnote - free space in Home bank, changed from call Bankswitch
 	jp PlayDefaultMusic ; update map/player state?
 
 CheckForUserInterruption::

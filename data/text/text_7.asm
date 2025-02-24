@@ -216,3 +216,34 @@ _Thanks4Text::
 	text "All done, I hope"
 	line "that helped!"
 	done
+
+_MonCouldSurfText::
+	text "A #MON could"
+	line "SURF here."
+	done
+
+_WantToSurfText::
+	text "The water is calm."
+	line "Want to SURF?"
+	done
+
+_TreeCanBeCutText::
+	text "This tree can"
+	line "be CUT."
+	done
+
+_WantToCutText::
+	text "Want to CUT this"
+	line "tree?"
+	done
+
+_UsedFlashText::
+	text_ram wNameBuffer
+	text " lights"
+	line "the area!"
+	prompt
+
+_WantToStrengthText::
+	text "Want to use"
+	line "STRENGTH?"
+	done

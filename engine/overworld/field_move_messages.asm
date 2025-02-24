@@ -14,10 +14,6 @@ UsedStrengthText:
 	call Delay3
 	jp TextScriptEnd
 
-CanMoveBouldersText:
-	text_far _CanMoveBouldersText
-	text_end
-
 IsSurfingAllowed:
 ; Returns whether surfing is allowed in BIT_SURF_ALLOWED of wStatusFlags1.
 ; Surfing isn't allowed on the Cycling Road or in the lowest level of the
