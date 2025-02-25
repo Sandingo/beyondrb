@@ -323,7 +323,8 @@ INCLUDE "engine/events/in_game_trades.asm"
 INCLUDE "engine/gfx/palettes.asm"
 INCLUDE "engine/menus/save.asm"
 INCLUDE "engine/items/tm_prices.asm"
-INCLUDE "engine/overworld/hms_overworld.asm" ; new, testing
+INCLUDE "engine/overworld/hms_overworld.asm"
+INCLUDE "engine/overworld/use_another_repel.asm"
 
 SECTION "Engine Spillover", ROMX
 
