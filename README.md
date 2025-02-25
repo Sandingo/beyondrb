@@ -3,7 +3,7 @@
 A romhack of Pokémon Red and Blue that includes various features from each iteration of Kanto, along with unused beta content found in the Gigaleaks.
 Features:
 - Beta versions of the Steel/Dark/Fairy types!
-- Evolutions from beta builds and future generations, as well as the inclusion of Kanto-exclusive 'mons from GSC (Houndour/Murkrow/Slugma)
+- Unused Pokémon from beta builds and future generation evolutions, as well as the inclusion of Kanto-exclusive 'mons from GSC (Houndour/Murkrow/Slugma)
 - Added NPCs and trades to help with version exclusive or once per save Pokémon.
 - Tradeback NPC in Celadon.
 - FRLG Oak's Aide rewards! (Everstone + Amulet Coin)
@@ -12,6 +12,8 @@ Features:
 - Tougher Boss trainer learnsets from Yellow version.
 - Gym Leader post-game rematches.
 - Modern Exp. All sharing formula (Still requires 50 Pokémon caught to get)
+- QoL with BW's reusable Repel system and HMs usable in the overworld.
+- Improved Vitamins and purchasable PP Ups!
 - Hyper Training!
 
 The goal is to include as many beta features as possible, and some new Kanto-related ones, without changing the feel of Generation 1.
