@@ -21,7 +21,8 @@ _CeladonMartRoofLittleGirlReceivedTM13Text::
 
 _CeladonMartRoofLittleGirlTM13ExplanationText::
 	text_start
-	text "TM13 contains"
+	
+	para "TM13 contains"
 	line "ICE BEAM!"
 
 	para "It can freeze the"

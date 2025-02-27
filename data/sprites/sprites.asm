@@ -94,6 +94,8 @@ SpriteSheetPointerTable:
 	overworld_sprite NidoranSprite, 12
 	overworld_sprite DoomsdaySprite, 12
 	overworld_sprite ImakuniSprite,  12
+	overworld_sprite MachokeSprite, 12
+	overworld_sprite WigglytuffSprite, 12
 	overworld_sprite PokeBallSprite, 4          ; SPRITE_POKE_BALL
 	overworld_sprite FossilSprite, 4            ; SPRITE_FOSSIL
 	overworld_sprite BoulderSprite, 4           ; SPRITE_BOULDER

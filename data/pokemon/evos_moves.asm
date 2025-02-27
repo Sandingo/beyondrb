@@ -856,8 +856,8 @@ AnnihilapeEvosMoves:
 	db 15, KARATE_CHOP
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
+	db 35, RAGE_FIST
 	db 37, SEISMIC_TOSS
-	db 44, RAGE_FIST
 	db 46, THRASH
 	db 0
 
@@ -1641,15 +1641,15 @@ DodrioEvosMoves:
 
 PrimeapeEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 44, ANNIHILAPE
+	db EVOLVE_LEVEL, 35, ANNIHILAPE
 	db 0
 ; Learnset
 	db 9, LOW_KICK
 	db 15, KARATE_CHOP
 	db 21, FURY_SWIPES
+	db 35, RAGE_FIST
 	db 27, FOCUS_ENERGY
 	db 37, SEISMIC_TOSS
-	db 44, RAGE_FIST
 	db 46, THRASH
 	db 0
 

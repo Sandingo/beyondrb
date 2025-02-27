@@ -23,7 +23,7 @@ MtMoon1F_TextPointers:
 	dw_const MtMoon1FYoungster2Text,    TEXT_MTMOON1F_YOUNGSTER2
 	dw_const MtMoon1FYoungster3Text,    TEXT_MTMOON1F_YOUNGSTER3
 	dw_const PickUpItemText,            TEXT_MTMOON1F_POTION1
-	dw_const PickUpItemText,            TEXT_MTMOON1F_MOON_STONE
+	dw_const PickUpItemText,            TEXT_MTMOON1F_ANTIDOTE
 	dw_const PickUpItemText,            TEXT_MTMOON1F_RARE_CANDY
 	dw_const PickUpItemText,            TEXT_MTMOON1F_ESCAPE_ROPE
 	dw_const PickUpItemText,            TEXT_MTMOON1F_POTION2
