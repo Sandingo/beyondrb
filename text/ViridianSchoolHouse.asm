@@ -89,7 +89,9 @@ _ViridianSchoolKylePostBattle::
 
 _ViridianSchoolHouseRecievedTMTakeDown::
 	text "<PLAYER> received"
-	line "TM09!@"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
 	text_end
 
 _ViridianSchoolHouseNoRoom::

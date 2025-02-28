@@ -2217,11 +2217,6 @@ ItemUseTMHM:
 	call GetMoveName
 	call CopyToStringBuffer
 	pop af
-	ld hl, BootedUpTMText
-	jr nc, .printBootedUpMachineText
-	ld hl, BootedUpHMText
-.printBootedUpMachineText
-	call PrintText
 	ld hl, TeachMachineMoveText
 	call PrintText
 	hlcoord 14, 7
@@ -2295,15 +2290,7 @@ ItemUseTMHM:
 	call IsItemHM
 	ret c
 	jp RemoveUsedItem
-
-BootedUpTMText:
-	text_far _BootedUpTMText
-	text_end
-
-BootedUpHMText:
-	text_far _BootedUpHMText
-	text_end
-
+	
 TeachMachineMoveText:
 	text_far _TeachMachineMoveText
 	text_end

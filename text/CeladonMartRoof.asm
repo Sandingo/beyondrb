@@ -16,7 +16,9 @@ _CeladonMartRoofLittleGirlYayFreshWaterText::
 
 _CeladonMartRoofLittleGirlReceivedTM13Text::
 	text "<PLAYER> received"
-	line "TM13!@"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
 	text_end
 
 _CeladonMartRoofLittleGirlTM13ExplanationText::
@@ -42,7 +44,9 @@ _CeladonMartRoofLittleGirlYaySodaPopText::
 
 _CeladonMartRoofLittleGirlReceivedTM48Text::
 	text "<PLAYER> received"
-	line "TM48!@"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
 	text_end
 
 _CeladonMartRoofLittleGirlTM48ExplanationText::
@@ -68,7 +72,9 @@ _CeladonMartRoofLittleGirlYayLemonadeText::
 
 _CeladonMartRoofLittleGirlReceivedTM49Text::
 	text "<PLAYER> received"
-	line "TM49!@"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
 	text_end
 
 _CeladonMartRoofLittleGirlTM49ExplanationText::

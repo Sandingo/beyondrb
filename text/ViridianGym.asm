@@ -63,7 +63,9 @@ _ViridianGymGiovanniEarthBadgeInfoText::
 
 _ViridianGymGiovanniReceivedTM27Text::
 	text "<PLAYER> received"
-	line "TM27!@"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
 	text_end
 
 _ViridianGymGiovanniTM27ExplanationText::

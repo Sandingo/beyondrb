@@ -153,20 +153,20 @@ _PPRestoredText::
 	text "PP was restored."
 	prompt
 
-_BootedUpTMText::
-	text "Booted up TM"
-	line "@"
-	text_ram wStringBuffer
-	text "!"
-	prompt
+;_BootedUpTMText::
+;	text "Booted up TM"
+;	line "@"
+;	text_ram wStringBuffer
+;	text "!"
+;	prompt
 
-_BootedUpHMText::
-	text "Booted up HM"
-	line "@"
-	text_ram wStringBuffer
-	text "!"
-	prompt
-	prompt
+;_BootedUpHMText::
+;	text "Booted up HM"
+;	line "@"
+;	text_ram wStringBuffer
+;	text "!"
+;	prompt
+;	prompt
 
 _TeachMachineMoveText::
 ;	text "It contained"

@@ -145,10 +145,13 @@ DisplayListMenuIDLoop::
 	ld a, [hl] ; a = item quantity
 	ld [wMaxItemQuantity], a
 .skipGettingQuantity
+	cp HM01
 	ld a, [wCurItem]
 	ld [wNameListIndex], a
-;	ld a, BANK(ItemNames)
-;	ld [wPredefBank], a
+	jr c, .go_get_name
+	ld a, BANK(TmhmNames)
+	ld [wPredefBank], a
+.go_get_name
 	call GetName
 	jr .storeChosenEntry
 .pokemonList

@@ -2,7 +2,7 @@ NamePointers::
 ; entries correspond to *_NAME constants
 	dw MonsterNames
 	dw MoveNames
-	dw UnusedBadgeNames
+	dw TmhmNames
 	dw ItemNames
 	dw wPartyMonOT ; player's OT names list
 	dw wEnemyMonOT ; enemy's OT names list
@@ -28,7 +28,11 @@ GetName::
 	pop bc
 	jr nz, .notMachine
 	cp HM01
-	jp nc, GetMachineName
+	jr c, .notMachine
+	sub (HM01 - 1)	;need to shift things because tm and hm constants are offset by +$C3 from the first item constant
+	ld [wCurSpecies], a
+	ld a, TMHM_NAME	
+	ld [wNameListType], a
 .notMachine
 
 	ldh a, [hLoadedROMBank]
@@ -89,10 +93,12 @@ GetName::
 	ld bc, NAME_BUFFER_LENGTH
 	call CopyData
 .gotPtr
-	ld a, e
-	ld [wUnusedNamePointer], a
-	ld a, d
-	ld [wUnusedNamePointer + 1], a
+	ld a, [wNamedObjectIndex]
+	cp HM01
+	jr c, .notMachine2
+	ld a, ITEM_NAME	;this needs to be reset because machines can be in the same listings as items	
+	ld [wNameListType], a
+.notMachine2
 	pop de
 	pop bc
 	pop hl

@@ -47,7 +47,9 @@ _CeruleanGymMistyCascadeBadgeInfoText::
 
 _CeruleanGymMistyReceivedTM11Text::
 	text "<PLAYER> received"
-	line "TM11!@"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
 	text_end
 
 _CeruleanGymMistyTM11NoRoomText::
