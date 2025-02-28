@@ -1308,29 +1308,29 @@ ItemUseMedicine:
 	ld l, a
 	jr nc, .noCarry2
 	inc h
-.noCarry2 ; Edited for Maxed Vitamins
-	ld a, [hl] ; a = MSB of stat experience of the appropriate stat
-	cp $FF ; is the stat maxed out?
-	jr nc, .vitaminNoEffect ; if so, vitamins can't add any more
-	ld a, $FF
-	cp [hl] ; is the first byte of their DVs maxed?
-	jr nc, .noCarry3 ; a carry should be impossible here, so this will always jump
-	ld a, 255
-.noCarry3
-	ld [hli], a
-	ld [hl], a
-	
-;.noCarry2 - Old Vitamin code, commented out for quick replacing in case this isn't desired.
-;	ld a, 10
-;	ld b, a
+;.noCarry2 ; Maxed Vitamins version
 ;	ld a, [hl] ; a = MSB of stat experience of the appropriate stat
-;	cp 100 ; is there already at least 25600 (256 * 100) stat experience?
+;	cp $FF ; is the stat maxed out?
 ;	jr nc, .vitaminNoEffect ; if so, vitamins can't add any more
-;	add b ; add 2560 (256 * 10) stat experience
+;	ld a, $FF
+;	cp [hl] ; is the first byte of their DVs maxed?
 ;	jr nc, .noCarry3 ; a carry should be impossible here, so this will always jump
 ;	ld a, 255
 ;.noCarry3
+;	ld [hli], a
 ;	ld [hl], a
+	
+.noCarry2 
+	ld a, 51 ; Now takes 5 of each Vitamin to max a stat out.
+	ld b, a
+	ld a, [hl] ; a = MSB of stat experience of the appropriate stat
+	cp $FF ; is the stat maxed out? - changed from 100
+	jr nc, .vitaminNoEffect ; if so, vitamins can't add any more
+	add b ; add 13,056 (256 * 51) stat experience - Max EXP value: 65535
+	jr nc, .noCarry3 ; a carry should be impossible here, so this will always jump
+	ld a, 255
+.noCarry3
+	ld [hl], a
 
 	pop hl
 	call .recalculateStats
@@ -2054,7 +2054,7 @@ ItemUsePPRestore:
 	jr .chooseMove
 .PPNotMaxedOut
 	ld a, [hl]
-	add 3 << 6 ; increase PP Up count by 3 - Changed from Vanilla to make better.
+	add 1 << 6 ; increase PP Up count by 1 - Reverted to normal.
 	ld [hl], a
 	ld a, 1 ; 1 PP Up used
 	ld [wUsingPPUp], a
