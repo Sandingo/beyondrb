@@ -147,16 +147,9 @@ ReadTrainer:
 	jp nz, .DoubleReward
 	ret
 
-.DoubleReward: ; Literally code copy-pasted from PokeCrystal
+.DoubleReward: ; Found out this could be simplified further LOL
+	ld de, wAmountMoneyWon + 2
 	ld hl, wAmountMoneyWon + 2
-	sla [hl]
-	dec hl
-	rl [hl]
-	dec hl
-	rl [hl]
-	ret nc
-	ld a, $ff
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
+	ld c, $3
+	predef_jump AddBCDPredef
 	ret
