@@ -111,24 +111,14 @@ MapHSPointers:
 	dw SSAnne1FRoomsHS
 	dw SSAnne2FRoomsHS
 	dw SSAnneB1FRoomsHS
-	dw NoHS
-	dw NoHS
 	dw VictoryRoad1FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw ChampionsRoomHS
 	dw NoHS
 	dw NoHS
-	dw NoHS
+	dw CeladonMart2FHS
 	dw NoHS
 	dw CeladonMart4FHS
 	dw NoHS ;roof
@@ -249,7 +239,6 @@ MapHSPointers:
 	dw NoHS
 ;	dw NoHS
 ;	dw NoHS
-;	dw UnusedMapF4HS
 	dw NoHS
 	dw NoHS
 	dw NoHS
@@ -383,6 +372,8 @@ PokemonTower7FHS:
 	db POKEMON_TOWER_7F, POKEMONTOWER7F_DOOMSDAY, HIDE
 MrFujisHouseHS:
 	db MR_FUJIS_HOUSE, MRFUJISHOUSE_MR_FUJI, HIDE
+CeladonMart2FHS:
+	db CELADON_MART_2F, CELADONMART2F_CLERK3, HIDE
 CeladonMart4FHS:
 	db CELADON_MART_4F, CELADONMART4F_CLERK2, HIDE
 CeladonMansionRoofHouseHS:
@@ -523,7 +514,6 @@ SilphCo7FHS:
 	db SILPH_CO_7F, SILPHCO7F_RIVAL,           SHOW
 	db SILPH_CO_7F, SILPHCO7F_CALCIUM,         SHOW
 	db SILPH_CO_7F, SILPHCO7F_TM_SWORDS_DANCE, SHOW
-	db SILPH_CO_7F, SILPHCO7F_UNUSED,          SHOW
 SilphCo8FHS:
 	db SILPH_CO_8F, SILPHCO8F_ROCKET1,   SHOW
 	db SILPH_CO_8F, SILPHCO8F_SCIENTIST, SHOW
@@ -547,8 +537,6 @@ SilphCo11FHS:
 ;db SILPH_CO_11F, SILPHCO11F_ARCHER,    SHOW 
 ;db SILPH_CO_11F, SILPHCO11F_OMEGADGE,   HIDE
 	db SILPH_CO_11F, SILPHCO11F_ELECTIRIZER,   SHOW
-;UnusedMapF4HS:
-;	db UNUSED_MAP_F4, $02, SHOW ; unused
 PokemonMansion2FHS:
 	db POKEMON_MANSION_2F, POKEMONMANSION2F_CALCIUM, SHOW
 PokemonMansion3FHS:

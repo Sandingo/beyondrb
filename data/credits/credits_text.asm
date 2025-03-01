@@ -69,10 +69,10 @@ CreditsTextPointers:
 
 CredVersion:
 IF DEF(_RED)
-	db -8, "RED VERSION STAFF@"
+	db -5, "BEYOND RED@"
 ENDC
 IF DEF(_BLUE)
-	db -8, "BLUE VERSION STAFF@"
+	db -5, "BEYOND BLUE@"
 ENDC
 CredTajiri:
 	db -6, "SATOSHI TAJIRI@"
@@ -139,7 +139,7 @@ CredCharDesign:
 CredMusic:
 	db -2, "MUSIC@"
 CredSoundEffects:
-	db -6, "SOUND EFFECTS@"
+	db -7, "MUSIC AND SOUND@"
 CredGameDesign:
 	db -5, "GAME DESIGN@"
 CredMonsterDesign:
@@ -169,7 +169,7 @@ CredYoshikawa:
 CredToOota:
 	db -6, "TOMOMICHI OOTA@"
 CredUSStaff:
-	db -7, "US VERSION STAFF@"
+	db -6, "by SANDMEISTER@"
 CredUSCoord:
 	db -7, "US COORDINATION@"
 CredTilden:

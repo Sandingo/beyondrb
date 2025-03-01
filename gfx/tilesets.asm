@@ -41,12 +41,12 @@ Gate_Block::        INCBIN "gfx/blocksets/gate.bst"
 
 Forest_GFX::        INCBIN "gfx/tilesets/forest.2bpp"
 Forest_Block::      INCBIN "gfx/blocksets/forest.bst"
-Facility_GFX::      INCBIN "gfx/tilesets/facility.2bpp"
-Facility_Block::    INCBIN "gfx/blocksets/facility.bst"
 
 
 SECTION "Tilesets 3", ROMX
 
+Facility_GFX::      INCBIN "gfx/tilesets/facility.2bpp"
+Facility_Block::    INCBIN "gfx/blocksets/facility.bst"
 Cemetery_GFX::      INCBIN "gfx/tilesets/cemetery.2bpp"
 Cemetery_Block::    INCBIN "gfx/blocksets/cemetery.bst"
 Cavern_GFX::        INCBIN "gfx/tilesets/cavern.2bpp"
@@ -55,6 +55,9 @@ Lobby_GFX::         INCBIN "gfx/tilesets/lobby.2bpp"
 Lobby_Block::       INCBIN "gfx/blocksets/lobby.bst"
 Ship_GFX::          INCBIN "gfx/tilesets/ship.2bpp"
 Ship_Block::        INCBIN "gfx/blocksets/ship.bst"
+
+SECTION "Tilesets 4", ROMX
+
 Lab_GFX::           INCBIN "gfx/tilesets/lab.2bpp"
 Lab_Block::         INCBIN "gfx/blocksets/lab.bst"
 Club_GFX::          INCBIN "gfx/tilesets/club.2bpp"

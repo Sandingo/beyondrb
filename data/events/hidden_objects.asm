@@ -33,7 +33,6 @@ HiddenObjectMaps:
 	db COLOSSEUM
 	db VIRIDIAN_FOREST
 	db MT_MOON_B2F
-	db INDIGO_PLATEAU
 	db ROUTE_25
 	db ROUTE_9
 	db SS_ANNE_KITCHEN
@@ -44,7 +43,6 @@ HiddenObjectMaps:
 	db SAFFRON_POKECENTER
 	db POKEMON_TOWER_5F
 	db ROUTE_13
-	db SAFARI_ZONE_GATE
 	db SAFARI_ZONE_WEST
 	db SILPH_CO_5F
 	db SILPH_CO_9F
@@ -58,7 +56,6 @@ HiddenObjectMaps:
 	db POKEMON_MANSION_3F
 	db ROUTE_23
 	db VICTORY_ROAD_2F
-	db UNUSED_MAP_6F
 	db BILLS_HOUSE
 	db VIRIDIAN_CITY
 	db ROUTE_15_GATE_2F
@@ -124,7 +121,6 @@ HiddenObjectPointers:
 	dw ColosseumHiddenObjects
 	dw ViridianForestHiddenObjects
 	dw MtMoon3HiddenObjects
-	dw IndigoPlateauHiddenObjects
 	dw Route25HiddenObjects
 	dw Route9HiddenObjects
 	dw SSAnne6HiddenObjects
@@ -135,7 +131,6 @@ HiddenObjectPointers:
 	dw SaffronPokecenterHiddenObjects
 	dw PokemonTower5HiddenObjects
 	dw Route13HiddenObjects
-	dw SafariZoneEntranceHiddenObjects
 	dw SafariZoneWestHiddenObjects
 	dw SilphCo5FHiddenObjects
 	dw SilphCo9FHiddenObjects
@@ -149,7 +144,6 @@ HiddenObjectPointers:
 	dw Mansion3HiddenObjects
 	dw Route23HiddenObjects
 	dw VictoryRoad2HiddenObjects
-	dw Unused6FHiddenObjects
 	dw BillsHouseHiddenObjects
 	dw ViridianCityHiddenObjects
 	dw Route15GateUpstairsHiddenObjects
@@ -431,11 +425,6 @@ MtMoon3HiddenObjects:
 	hidden_object 33,  9, ETHER, HiddenItems
 	db -1 ; end
 
-IndigoPlateauHiddenObjects:
-	hidden_object  8, 13, $ff, PrintIndigoPlateauHQText ; inaccessible
-	hidden_object 11, 13, SPRITE_FACING_DOWN, PrintIndigoPlateauHQText ; inaccessible
-	db -1 ; end
-
 Route25HiddenObjects:
 	hidden_object 38,  3, ETHER, HiddenItems
 	hidden_object 10,  1, ELIXER, HiddenItems
@@ -484,10 +473,6 @@ PokemonTower5HiddenObjects:
 Route13HiddenObjects:
 	hidden_object  1, 14, PP_UP, HiddenItems
 	hidden_object 16, 13, CALCIUM, HiddenItems
-	db -1 ; end
-
-SafariZoneEntranceHiddenObjects:
-	hidden_object 10,  1, NUGGET, HiddenItems ; inaccessible
 	db -1 ; end
 
 SafariZoneWestHiddenObjects:
@@ -556,10 +541,6 @@ Route23HiddenObjects:
 VictoryRoad2HiddenObjects:
 	hidden_object  5,  2, ULTRA_BALL, HiddenItems
 	hidden_object 26,  7, FULL_RESTORE, HiddenItems
-	db -1 ; end
-
-Unused6FHiddenObjects:
-	hidden_object 14, 11, MAX_ELIXER, HiddenItems
 	db -1 ; end
 
 BillsHouseHiddenObjects:

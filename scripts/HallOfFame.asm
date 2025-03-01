@@ -112,6 +112,12 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_ROUTE_22_SILVERGUARD_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_MT_SILVER_SUMMIT_OAK ; Oak is a little buggy, guarantee he shows up at Mt. Silver.
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ld a, HS_CELADONMART2F_CLERK3 ; Allow repurchasable good TMs
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, HS_CELADONMART4F_CLERK2 ; Allow rare evolution items to be sold
 	ld [wMissableObjectIndex], a
 	predef ShowObject

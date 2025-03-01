@@ -5,6 +5,7 @@ CeladonMart2F_TextPointers:
 	def_text_pointers
 	dw_const CeladonMart2FClerk1Text,           TEXT_CELADONMART2F_CLERK1
 	dw_const CeladonMart2FClerk2Text,           TEXT_CELADONMART2F_CLERK2
+	dw_const CeladonMart2FClerk3Text,           TEXT_CELADONMART2F_CLERK3
 	dw_const CeladonMart2FMiddleAgedManText,    TEXT_CELADONMART2F_MIDDLE_AGED_MAN
 	dw_const CeladonMart2FGirlText,             TEXT_CELADONMART2F_GIRL
 	dw_const CeladonMart2FCurrentFloorSignText, TEXT_CELADONMART2F_CURRENT_FLOOR_SIGN
@@ -26,3 +27,6 @@ CeladonMart2FClerk1Text:
 
 CeladonMart2FClerk2Text:
 	script_mart TM_DOUBLE_TEAM, TM_REFLECT, TM_RAZOR_WIND, TM_HORN_DRILL, TM_EGG_BOMB, TM_MEGA_PUNCH, TM_MEGA_KICK, TM_TAKE_DOWN, TM_SUBMISSION
+
+CeladonMart2FClerk3Text:
+	script_mart TM_SWORDS_DANCE, TM_FLAMETHROWER, TM_EXPLOSION, TM_BODY_SLAM, TM_EARTHQUAKE, TM_PSYCHIC_M, TM_BLIZZARD, TM_THUNDER, TM_SOLARBEAM

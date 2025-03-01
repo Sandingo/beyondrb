@@ -9,8 +9,27 @@ CeladonMart1F_TextPointers:
 	dw_const CeladonMart1FCurrentFloorSignText, TEXT_CELADONMART1F_CURRENT_FLOOR_SIGN
 
 CeladonMart1FReceptionistText:
+	text_asm
+	ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .postGameVersion
+	ld hl, .text
+	call PrintText
+	jp .done
+.postGameVersion
+	ld hl, CeladonMart1FReceptionistPostGameText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+.text
 	text_far _CeladonMart1FReceptionistText
 	text_end
+
+CeladonMart1FReceptionistPostGameText:
+	text_far _CeladonMart1FReceptionistPostGameText
+	text_end
+
 
 CeladonMart1FDirectorySignText:
 	text_far _CeladonMart1FDirectorySignText

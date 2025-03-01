@@ -109,18 +109,8 @@ MapHeaderBanks::
 	db BANK(SSAnne1FRooms_h)
 	db BANK(SSAnne2FRooms_h)
 	db BANK(SSAnneB1FRooms_h)
-	db $1D ; UNUSED_MAP_6A
-	db $1D ; UNUSED_MAP_6B
 	db BANK(VictoryRoad1F_h)
-	db $1D ; UNUSED_MAP_6D
-	db $1D ; UNUSED_MAP_6E
-	db $1D ; UNUSED_MAP_6F
-	db $1D ; UNUSED_MAP_70
 	db BANK(LancesRoom_h)
-	db $1D ; UNUSED_MAP_72
-	db $1D ; UNUSED_MAP_73
-	db $1D ; UNUSED_MAP_74
-	db $1D ; UNUSED_MAP_75
 	db BANK(HallOfFame_h)
 	db BANK(UndergroundPathNorthSouth_h)
 	db BANK(ChampionsRoom_h)

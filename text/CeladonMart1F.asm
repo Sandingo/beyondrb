@@ -8,6 +8,27 @@ _CeladonMart1FReceptionistText::
 	cont "the store layout."
 	done
 
+_CeladonMart1FReceptionistPostGameText::
+	text "Hello! Welcome to"
+	line "CELADON DEPT."
+	cont "STORE."
+
+	para "We have expanded"
+	line "our inventory"
+	cont "recently."
+	
+	para "2F now has a"
+	line "greater selection"
+	cont "of TMs available."
+	
+	para "As well, 4F has"
+	line "new evolution"
+	cont "items."
+	
+	para "We hope you enjoy"
+	line "your visit!"
+	done
+
 _CeladonMart1FDirectorySignText::
 	text "1F: SERVICE"
 	line "    COUNTER"
