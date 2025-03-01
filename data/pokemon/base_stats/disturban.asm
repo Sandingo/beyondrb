@@ -1,4 +1,4 @@
-	db DEX_TURBANN ; pokedex id
+	db DEX_DISTURBAN ; pokedex id
 
 	db  80,  90, 150,  30,  80
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 60 ; catch rate
 	db 203 ; base exp
 
-	INCBIN "gfx/pokemon/front/turbann.pic", 0, 1 ; sprite dimensions
-	dw TurbannPicFront, TurbannPicBack
+	INCBIN "gfx/pokemon/front/disturban.pic", 0, 1 ; sprite dimensions
+	dw DisturbanPicFront, DisturbanPicBack
 
 	db WITHDRAW, SUPERSONIC, CLAMP, BITE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
@@ -21,5 +21,5 @@
 	     SURF,		  FISSURE
 	; end
 
-	db BANK(TurbannPicFront)
-	assert BANK(TurbannPicFront) == BANK(TurbannPicBack)
+	db BANK(DisturbanPicFront)
+	assert BANK(DisturbanPicFront) == BANK(DisturbanPicBack)

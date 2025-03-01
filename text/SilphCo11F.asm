@@ -152,20 +152,20 @@ _SilphCo11ArcherText::
 	cont "engineering can"
 	cont "achieve!"
 	
-	para "Come, OHMEGA!"
+	para "Come, OMEGADGE!"
 	done
 	
-_SilphCo11OhmegaText::
-	text "OHMEGA: Gyagogo!"
+_SilphCo11OmegadgeText::
+	text "OMEGADGE: Gyagogo!"
 	done
 
-_SilphCo11DefeatedOhmegaText::
+_SilphCo11DefeatedOmegadgeText::
 	text "Impossible!"
 	line "You bested"
-	cont "our OHMEGA!?"
+	cont "our OMEGADGE!?"
 	done
 	
-_SilphCo11CaughtOhmegaText::
+_SilphCo11CaughtOmegadgeText::
 	text "This is"
 	line "unbelievable!"
 	

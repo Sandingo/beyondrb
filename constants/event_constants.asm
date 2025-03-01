@@ -702,7 +702,7 @@
 	const_skip 3
 	const EVENT_SILPH_CO_11_BEAT_ARCHER ; Unused
 	const EVENT_GOT_MASTER_BALL
-	const EVENT_SILPH_CO_11_OHMEGA ; Unused
+	const EVENT_SILPH_CO_11_OMEGADGE ; Unused
 	const EVENT_BEAT_SILPH_CO_GIOVANNI
 
 ; Pokémon Mansion events

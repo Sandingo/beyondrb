@@ -1,4 +1,4 @@
-	db DEX_KASANAGI ; pokedex id
+	db DEX_PUPAL ; pokedex id
 
 	db  45,  20,  50,  40,  30
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 120 ; catch rate
 	db 71 ; base exp
 
-	INCBIN "gfx/pokemon/front/kasanagi.pic", 0, 1 ; sprite dimensions
-	dw KasanagiPicFront, KasanagiPicBack
+	INCBIN "gfx/pokemon/front/pupal.pic", 0, 1 ; sprite dimensions
+	dw PupalPicFront, PupalPicBack
 
 	db HARDEN, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -17,5 +17,5 @@
 	tmhm
 	; end
 
-	db BANK(KasanagiPicFront)
-	assert BANK(KasanagiPicFront) == BANK(KasanagiPicBack)
+	db BANK(PupalPicFront)
+	assert BANK(PupalPicFront) == BANK(PupalPicBack)

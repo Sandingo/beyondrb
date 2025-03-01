@@ -7,8 +7,8 @@ MtSilverF1WildMons:
 	db  43, GRAVELER
 	db  42, ONIX
 	db  43, GRAVELER
-	db  44, GYAO
-	db  46, GYAOON
+	db  44, DECILLA
+	db  46, GAWARHED
 	db  48, GODZILANTE
 	end_grass_wildmons
 

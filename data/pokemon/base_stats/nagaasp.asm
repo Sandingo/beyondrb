@@ -1,4 +1,4 @@
-	db DEX_NAGAHISS ; pokedex id
+	db DEX_NAGAASP ; pokedex id
 
 	db  71,  112,  57,  95,  65
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 50 ; catch rate
 	db 170 ; base exp
 
-	INCBIN "gfx/pokemon/front/nagahiss.pic", 0, 1 ; sprite dimensions
-	dw NagahissPicFront, NagahissPicBack
+	INCBIN "gfx/pokemon/front/nagaasp.pic", 0, 1 ; sprite dimensions
+	dw NagaaspPicFront, NagaaspPicBack
 
 	db WRAP, TAIL_WHIP, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -21,5 +21,5 @@
 		 FLAMETHROWER
 	; end
 
-	db BANK(NagahissPicFront)
-	assert BANK(NagahissPicFront) == BANK(NagahissPicBack)
+	db BANK(NagaaspPicFront)
+	assert BANK(NagaaspPicFront) == BANK(NagaaspPicBack)

@@ -1,4 +1,4 @@
-	db DEX_STACKTUS ; pokedex id
+	db DEX_CACTORMUS ; pokedex id
 
 	db  60,  90,  100,  90,  75
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 120 ; catch rate
 	db 161 ; base exp
 
-	INCBIN "gfx/pokemon/front/stacktus.pic", 0, 1 ; sprite dimensions
-	dw StacktusPicFront, StacktusPicBack
+	INCBIN "gfx/pokemon/front/cactormus.pic", 0, 1 ; sprite dimensions
+	dw CactormusPicFront, CactormusPicBack
 
 	db BARRAGE, SAND_ATTACK, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -20,5 +20,5 @@
 	     CUT,          SELFDESTRUCT, EXPLOSION
 	; end
 
-	db BANK(StacktusPicFront)
-	assert BANK(StacktusPicFront) == BANK(StacktusPicBack)
+	db BANK(CactormusPicFront)
+	assert BANK(CactormusPicFront) == BANK(CactormusPicBack)

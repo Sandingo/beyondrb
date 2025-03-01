@@ -217,7 +217,7 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_11F_2                ; B8
 	const HS_SILPH_CO_11F_3                ; B9
 ;const HS_SILPH_CO_11F_4
-;const HS_SILPH_CO_11F_OHMEGA
+;const HS_SILPH_CO_11F_OMEGADGE
 	const HS_SILPH_CO_11F_ITEM_1
 ;	const HS_UNUSED_MAP_F4_1               ; BA XXX sprite doesn't exist
 	const HS_POKEMON_MANSION_2F_ITEM       ; BB X

@@ -38,7 +38,7 @@
 	const PINSIR             ; $1D
 	const TANGELA            ; $1E
 	const CROBAT               ; $1F
-	const GELANIA               ; $20
+	const JUNGELA               ; $20
 	const GROWLITHE          ; $21
 	const ONIX               ; $22
 	const FEAROW             ; $23
@@ -86,14 +86,14 @@
 	const MEOWTH             ; $4D
 	const KRABBY             ; $4E
 	const GLACEON               ; $4F
-	const MADAME               ; $50
+	const LUXWAN               ; $50
 	const BELLIGNANT              ; $51
 	const VULPIX             ; $52
 	const NINETALES          ; $53
 	const PIKACHU            ; $54
 	const RAICHU             ; $55
 	const POLITOED               ; $56
-	const HAPPI               ; $57
+	const BLISSEY               ; $57
 	const DRATINI            ; $58
 	const DRAGONAIR          ; $59
 	const KABUTO             ; $5A
@@ -133,17 +133,17 @@
 	const METAPOD            ; $7C
 	const BUTTERFREE         ; $7D
 	const MACHAMP            ; $7E
-	const PLUX               ; $7F
+	const TRICULES               ; $7F
 	const GOLDUCK            ; $80
 	const HYPNO              ; $81
 	const GOLBAT             ; $82
 	const MEWTWO             ; $83
 	const SNORLAX            ; $84
 	const MAGIKARP           ; $85
-	const ANIMON             ; $86
-	const GYAO            ; $87
+	const MIMMEO             ; $86
+	const DECILLA            ; $87
 	const MUK                ; $88
-	const GYAOON             ; $89
+	const GAWARHED             ; $89
 	const KINGLER            ; $8A
 	const CLOYSTER           ; $8B
 	const SLOWKING               ; $8C
@@ -152,7 +152,7 @@
 	const WEEZING            ; $8F
 	const PERSIAN            ; $90
 	const MAROWAK            ; $91
-	const CROCKY               ; $92
+	const GAVILLAIN               ; $92
 	const HAUNTER            ; $93
 	const ABRA               ; $94
 	const ALAKAZAM           ; $95
@@ -166,7 +166,7 @@
 	const GOLDEEN            ; $9D
 	const SEAKING            ; $9E
 	const RAITORA            ; $9F
-	const DIAA               ; $A0
+	const RAMOOSE               ; $A0
 	const GOROCHU            ; $A1
 	const GORILLAIMO         ; $A2
 	const PONYTA             ; $A3
@@ -180,8 +180,8 @@
 	const AERODACTYL         ; $AB
 	const KOKANA             ; $AC
 	const MAGNEMITE          ; $AD
-	const KASANAGI           ; $AE
-	const KOKAROACH          ; $AF
+	const PUPAL           ; $AE
+	const CARAPTHOR          ; $AF
 	const CHARMANDER         ; $B0
 	const SQUIRTLE           ; $B1
 	const CHARMELEON         ; $B2
@@ -198,7 +198,7 @@
 	const WEEPINBELL         ; $BD
 	const VICTREEBEL         ; $BE
 	const PORYGON2
-	const TURBANN
+	const DISTURBAN
 	const MAGNEZONE
 	const MURKROW
 	const HONCHKROW
@@ -212,17 +212,17 @@
 	const TOTARTLE
 	const POLIWEALTH
 	const HITMONTOP
-	const BALOONDA
-	const BOO
+	const BALUMBA
+	const FREEZETI
 	const TRAMPEL
 	const GOROTORA
-	const JAGG
-	const STACKTUS
+	const SHARPOON
+	const CACTORMUS
 	const CHEEP
 	const JABETTA
 	const BLOTTLE
 	const PENDRAKEN
-	const OHMEGA
+	const OMEGADGE
 	const MARILL
 	const AZUMARILL
 	const SLUGMA
@@ -231,7 +231,7 @@
 	const QUADRAGON
 	const SKULKRAKEN
 	const NIDOREIGN
-	const NAGAHISS
+	const NAGAASP
 	const DOOMSDAY
 	const WEIRDUCK
 	const MAGNETITE

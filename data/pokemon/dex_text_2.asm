@@ -8,7 +8,7 @@
 	next "temperature"
 	dex
 
- _PluxDexEntry::
+ _TriculesDexEntry::
 	text "Withstands foes'"
 	next "attacks with its"
 	next "sturdy body, then"
@@ -18,7 +18,7 @@
 	next "flipping them"
 	dex
 
- _AnimonDexEntry::
+ _MimmeoDexEntry::
 	text "A sudden mutation"
 	next "of DITTO, its"
 	next "mimicry skills"
@@ -28,7 +28,7 @@
 	next "in an instant"
 	dex
 
- _GyaoDexEntry::
+ _DecillaDexEntry::
 	text "It's cry can reach"
 	next "volumes up to 140"
 	next "dBs. It often gets"
@@ -38,13 +38,13 @@
 	next "causing it to cry"
 	dex
 
- _GyaoonDexEntry::
+ _GawarhedDexEntry::
 	text "Myths tell of a"
 	next "thousand foot"
-	next "GYAOON that could"
+	next "GAWARHED that"
 	
-	page "flatten cities. It"
-	next "is the #MON"
+	page "flattened cities."
+	next "It is the #MON"
 	next "LEAGUE mascot"
 	dex
 
@@ -58,7 +58,7 @@
 	next "and collected"
 	dex
 
- _CrockyDexEntry::
+ _GavillainDexEntry::
 	text "An errattic and"
 	next "odd #MON. It"
 	next "can be found in"
@@ -88,7 +88,7 @@
 	next "tough fangs"
 	dex
 
- _DiaaDexEntry::
+ _RamooseDexEntry::
 	text "Its body is made"
 	next "up of a metal"
 	next "harder than"
@@ -128,7 +128,7 @@
 	next "under leaf piles"
 	dex
 
- _KasanagiDexEntry::
+ _PupalDexEntry::
 	text "It has developed"
 	next "lightning-fast"
 	next "reflexes, which"
@@ -138,7 +138,7 @@
 	next "until it evolves"
 	dex
 
- _KokaroachDexEntry::
+ _CarapthorDexEntry::
 	text "Known for punches."
 	next "during mating"
 	next "season, the males"
@@ -168,10 +168,10 @@
 	next "stronger"
 	dex
 
- _TurbannDexEntry::
+ _DisturbanDexEntry::
 	text "The fangs of a"
-	next "TURBANN are coated"
-	next "in a type of"
+	next "DISTURBAN are"
+	next "coated in a"
 	
 	page "poison, SLOWPOKE"
 	next "however are"
@@ -308,7 +308,7 @@
 	next "drilled hard"
 	dex
 	
- _BaloondaDexEntry::
+ _BalumbaDexEntry::
 	text "Evolved to mimic"
 	next "balloons, it flows"
 	next "naturally with the"
@@ -318,7 +318,7 @@
 	next "nature"
 	dex
 
- _BooDexEntry::
+ _FreezetiDexEntry::
 	text "Mythologized as"
 	next "a wooly beast that"
 	next "spirits away lost"
@@ -348,7 +348,7 @@
 	next "#MON"
 	dex
 
- _JaggDexEntry::
+ _SharpoonDexEntry::
 	text "A ferocious"
 	next "#MON with"
 	next "a sword-like nose."
@@ -358,7 +358,7 @@
 	next "flails wildly"
 	dex
 
- _StacktusDexEntry::
+ _CactormusDexEntry::
 	text "Adapted for arid,"
 	next "rocky terrain. It"
 	next "can shoot out"
@@ -375,7 +375,7 @@
 	
 	page "The losers often"
 	next "become easy pray"
-	next "for JAGG"
+	next "for SHARPOON"
 	dex
 
  _JabettaDexEntry::
@@ -408,7 +408,7 @@ _PendrakenDexEntry::
 	next "this serves"
 	dex
 
-_OhmegaDexEntry::
+_OmegadgeDexEntry::
 	text "A powerful"
 	next "mechanical #MON"
 	next "developed by SILPH"
@@ -498,7 +498,7 @@ _NidoreignDexEntry::
 	next "make MAX REVIVES"
 	dex
 
-_NagahissDexEntry::
+_NagaaspDexEntry::
 	text "A rather violent"
 	next "#MON. If it"
 	next "clamps on down"

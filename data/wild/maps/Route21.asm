@@ -20,7 +20,7 @@ Route21WildMons:
 	db 25, BLOTTLE
 	db 15, CHEEP
 	db 20, CHEEP
-	db 30, JAGG
+	db 30, SHARPOON
 	db 35, PENDRAKEN
 	db 40, TENTACRUEL
 	end_water_wildmons

@@ -1,4 +1,4 @@
-	db DEX_ANIMON ; pokedex id
+	db DEX_MIMMEO ; pokedex id
 
 	db  100,  55,  50,  150,  50
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 25 ; catch rate
 	db 121 ; base exp
 
-	INCBIN "gfx/pokemon/front/animon.pic", 0, 1 ; sprite dimensions
-	dw AnimonPicFront, AnimonPicBack
+	INCBIN "gfx/pokemon/front/mimmeo.pic", 0, 1 ; sprite dimensions
+	dw MimmeoPicFront, MimmeoPicBack
 
 	db TRANSFORM, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -17,5 +17,5 @@
 	tmhm
 	; end
 
-	db BANK(AnimonPicFront)
-	assert BANK(AnimonPicFront) == BANK(AnimonPicBack)
+	db BANK(MimmeoPicFront)
+	assert BANK(MimmeoPicFront) == BANK(MimmeoPicBack)

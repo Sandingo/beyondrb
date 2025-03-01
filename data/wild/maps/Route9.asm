@@ -13,10 +13,10 @@ IF DEF(_BLUE)
 	db 13, SPEAROW
 	db 15, SANDSHREW
 ENDC
-	db 17, STACKTUS
-	db 17, STACKTUS
-	db 13, NAGAHISS
-	db 17, NAGAHISS
+	db 17, CACTORMUS
+	db 17, CACTORMUS
+	db 13, NAGAASP
+	db 17, NAGAASP
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

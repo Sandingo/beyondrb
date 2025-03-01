@@ -1,4 +1,4 @@
-	db DEX_MADAME ; pokedex id
+	db DEX_LUXWAN ; pokedex id
 
 	db  72,  105,  75,  70,  63
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 177 ; base exp
 
-	INCBIN "gfx/pokemon/front/madame.pic", 0, 1 ; sprite dimensions
-	dw MadamePicFront, MadamePicBack
+	INCBIN "gfx/pokemon/front/luxwan.pic", 0, 1 ; sprite dimensions
+	dw LuxwanPicFront, LuxwanPicBack
 
 	db PECK, SAND_ATTACK, GUST, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -20,5 +20,5 @@
 	     SUBSTITUTE,   CUT,          FLY,		   SKY_ATTACK,   STEEL_WING
 	; end
 
-	db BANK(MadamePicFront)
-	assert BANK(MadamePicFront) == BANK(MadamePicBack)
+	db BANK(LuxwanPicFront)
+	assert BANK(LuxwanPicFront) == BANK(LuxwanPicBack)

@@ -9,7 +9,7 @@ IF DEF(_RED)
 	db 15, EKANS
 	db 14, KOTORA
 	db 17, KOTORA
-	db 13, STACKTUS
+	db 13, CACTORMUS
 	db 17, EKANS
 ENDC
 IF DEF(_BLUE)
@@ -18,7 +18,7 @@ IF DEF(_BLUE)
 	db 15, SANDSHREW
 	db 14, KOTORA
 	db 17, KOTORA
-	db 13, STACKTUS
+	db 13, CACTORMUS
 	db 17, SANDSHREW
 ENDC
 	end_grass_wildmons

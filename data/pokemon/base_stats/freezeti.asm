@@ -1,4 +1,4 @@
-	db DEX_BOO ; pokedex id
+	db DEX_FREEZETI ; pokedex id
 
 	db  65,  93,  57,  95,  85
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 156 ; base exp
 
-	INCBIN "gfx/pokemon/front/boo.pic", 0, 1 ; sprite dimensions
-	dw BooPicFront, BooPicBack
+	INCBIN "gfx/pokemon/front/freezeti.pic", 0, 1 ; sprite dimensions
+	dw FreezetiPicFront, FreezetiPicBack
 
 	db QUICK_ATTACK, LEER, POWDER_SNOW, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -22,5 +22,5 @@
 	     SUBSTITUTE
 	; end
 
-	db BANK(BooPicFront)
-	assert BANK(BooPicFront) == BANK(BooPicBack)
+	db BANK(FreezetiPicFront)
+	assert BANK(FreezetiPicFront) == BANK(FreezetiPicBack)

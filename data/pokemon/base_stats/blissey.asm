@@ -1,4 +1,4 @@
-	db DEX_HAPPI ; pokedex id
+	db DEX_BLISSEY ; pokedex id
 
 	db 255,   10,   10,  55, 135
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 30 ; catch rate
 	db 255 ; base exp
 
-	INCBIN "gfx/pokemon/front/happi.pic", 0, 1 ; sprite dimensions
-	dw HappiPicFront, HappiPicBack
+	INCBIN "gfx/pokemon/front/blissey.pic", 0, 1 ; sprite dimensions
+	dw BlisseyPicFront, BlisseyPicBack
 
 	db POUND, DOUBLESLAP, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_FAST ; growth rate
@@ -24,5 +24,5 @@
 	     FLASH,	       FLAMETHROWER, DAZZLINGLEAM
 	; end
 
-	db BANK(HappiPicFront)
-	assert BANK(HappiPicFront) == BANK(HappiPicBack)
+	db BANK(BlisseyPicFront)
+	assert BANK(BlisseyPicFront) == BANK(BlisseyPicBack)

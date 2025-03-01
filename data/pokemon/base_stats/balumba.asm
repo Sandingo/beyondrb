@@ -1,4 +1,4 @@
-	db DEX_BALOONDA ; pokedex id
+	db DEX_BALUMBA ; pokedex id
 
 	db 80,  50,  30,  125,  80
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 170 ; catch rate
 	db 89 ; base exp
 
-	INCBIN "gfx/pokemon/front/baloonda.pic", 0, 1 ; sprite dimensions
-	dw BaloondaPicFront, BaloondaPicBack
+	INCBIN "gfx/pokemon/front/balumba.pic", 0, 1 ; sprite dimensions
+	dw BalumbaPicFront, BalumbaPicBack
 
 	db GUST, DEFENSE_CURL, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_FAST ; growth rate
@@ -22,5 +22,5 @@
 	     REST,         THUNDER_WAVE, DAZZLINGLEAM, FLAMETHROWER
 	; end
 
-	db BANK(BaloondaPicFront)
-	assert BANK(BaloondaPicFront) == BANK(BaloondaPicBack)
+	db BANK(BalumbaPicFront)
+	assert BANK(BalumbaPicFront) == BANK(BalumbaPicBack)

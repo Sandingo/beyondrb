@@ -1,4 +1,4 @@
-	db DEX_GYAOON ; pokedex id
+	db DEX_GAWARHED ; pokedex id
 
 	db 101, 124, 100,  30, 95
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 218 ; base exp
 
-	INCBIN "gfx/pokemon/front/gyaoon.pic", 0, 1 ; sprite dimensions
-	dw GyaoonPicFront, GyaoonPicBack
+	INCBIN "gfx/pokemon/front/gawarhed.pic", 0, 1 ; sprite dimensions
+	dw GawarhedPicFront, GawarhedPicBack
 
 	db SUBSTITUTE, GROWL, TACKLE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
@@ -23,5 +23,5 @@
 	     SURF,         STRENGTH,	FLAMETHROWER
 	; end
 
-	db BANK(GyaoonPicFront)
-	assert BANK(GyaoonPicFront) == BANK(GyaoonPicBack)
+	db BANK(GawarhedPicFront)
+	assert BANK(GawarhedPicFront) == BANK(GawarhedPicBack)

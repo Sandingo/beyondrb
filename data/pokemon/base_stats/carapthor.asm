@@ -1,4 +1,4 @@
-	db DEX_KOKAROACH ; pokedex id
+	db DEX_CARAPTHOR ; pokedex id
 
 	db  65,  85,  50,  60,  60
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 45 ; catch rate
 	db 159 ; base exp
 
-	INCBIN "gfx/pokemon/front/kokaroach.pic", 0, 1 ; sprite dimensions
-	dw KokaroachPicFront, KokaroachPicBack
+	INCBIN "gfx/pokemon/front/carapthor.pic", 0, 1 ; sprite dimensions
+	dw CarapthorPicFront, CarapthorPicBack
 
 	db LEECH_LIFE, STRING_SHOT, HARDEN, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
@@ -21,5 +21,5 @@
 		 DIG,		   MEGA_PUNCH,   LUNGE
 	; end
 
-	db BANK(KokaroachPicFront)
-	assert BANK(KokaroachPicFront) == BANK(KokaroachPicBack)
+	db BANK(CarapthorPicFront)
+	assert BANK(CarapthorPicFront) == BANK(CarapthorPicBack)

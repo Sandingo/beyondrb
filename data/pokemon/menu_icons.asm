@@ -152,7 +152,7 @@ MonPartyData:
 	nybble ICON_MON       ; Mewtwo
 	nybble ICON_MON       ; Mew
 	nybble ICON_MON       ; Crobat
-	nybble ICON_GRASS     ; Gelania
+	nybble ICON_GRASS     ; Jungela
 	nybble ICON_MON       ; Annihilape
 	nybble ICON_MON       ; Electivire
 	nybble ICON_MON       ; Magmortar

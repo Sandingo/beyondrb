@@ -76,7 +76,7 @@ _FuchsiaCityVoltorbSignText::
 	prompt
 
 _FuchsiaCityKangaskhanSignText::
-	text "Name: GYAOON"
+	text "Name: GAWARHED"
 
 	para "A rare #MON"
 	line "that acts as the"

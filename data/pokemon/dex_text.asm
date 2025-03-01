@@ -69,7 +69,7 @@ _NidokingDexEntry::
 	dex
 
 _SlowbroDexEntry::
-	text "The TURBANN that"
+	text "The DISTURBAN that"
 	next "is latched onto"
 	next "SLOWPOKE's tail"
 
@@ -1518,7 +1518,7 @@ _CrobatDexEntry::
 	next "its hind legs"
 	dex
 	
-_GelaniaDexEntry::
+_JungelaDexEntry::
 	text "Its self styled"
 	next "vines are a great"
 	next "source of pride"
@@ -1628,7 +1628,7 @@ _GlaceonDexEntry::
 	next "needles"
 	dex
 
-_MadameDexEntry::
+_LuxwanDexEntry::
 	text "A species that is"
 	next "rarely seen. It"
 	next "always holds a"
@@ -1658,14 +1658,14 @@ _MadameDexEntry::
 	next "and wide"
 	dex
 	
- _HappiDexEntry::
-	text "Anyone who takes a"
-	next "bite out of HAPPI's"
-	next "egg will become"
+ _BlisseyDexEntry::
+	text "Biting into one"
+	next "of the delicious"
+	next "eggs that BLISSEY"
 	
-	page "unfailingly caring"
-	next "and pleasant to"
-	next "everyone"
+	page "provides will make"
+	next "everyone around"
+	next "smile with joy"
 	dex
 
  _KingdraDexEntry::

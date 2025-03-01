@@ -196,14 +196,14 @@ FullyEvolvedMons: ; 0-103
 	db ELECTRODE
 	db WEEZING
 	db SEAKING
-	db ANIMON
-	db MADAME
-	db BALOONDA
+	db MIMMEO
+	db LUXWAN
+	db BALUMBA
 	db MAGCARGO
-	db TURBANN
-	db STACKTUS
+	db DISTURBAN
+	db CACTORMUS
 	db HOUNDOOM
-	db CROCKY
+	db GAVILLAIN
 	; average
 	db PIDGEOT
 	db RATICATE
@@ -232,7 +232,7 @@ FullyEvolvedMons: ; 0-103
 	db TENTACRUEL
 	db SLOWKING
 	db CLOYSTER
-	db GELANIA
+	db JUNGELA
 	db KLEAVOR
 	db ELECTIVIRE
 	db MAGMORTAR
@@ -241,10 +241,10 @@ FullyEvolvedMons: ; 0-103
 	db POLIWEALTH
 	db HONCHKROW
 	db TRAMPEL
-	db JAGG
+	db SHARPOON
 	db GOROTORA
 	db BELLIGNANT
-	db GYAOON
+	db GAWARHED
 	; strong
 	db GUARDIA
 	db VENUSAUR
@@ -263,11 +263,11 @@ FullyEvolvedMons: ; 0-103
 	db STEELIX
 	db EXEGGUTOR
 	db RHYPERIOR
-	db HAPPI
+	db BLISSEY
 	db KINGDRA
 	db STARMIE
 	db SCIZOR
-	db PLUX
+	db TRICULES
 	db JYNX
 	db TAUROS
 	db GYARADOS
@@ -283,7 +283,7 @@ FullyEvolvedMons: ; 0-103
 	db SYLVEON
 	db PORYGON2
 	db MACHAMP
-	db OHMEGA
+	db OMEGADGE
 	db CRYITHAN
 	db GOROCHU
 	db -1

@@ -7,8 +7,8 @@ MtSilverSummitWildMons:
 	db  48, GRAVELER
 	db  48, ONIX
 	db  48, GRAVELER
-	db  46, GYAO
-	db  48, GYAOON
+	db  46, DECILLA
+	db  48, GAWARHED
 	db  50, GODZILANTE
 	end_grass_wildmons
 

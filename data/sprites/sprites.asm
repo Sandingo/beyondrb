@@ -73,7 +73,7 @@ SpriteSheetPointerTable:
 	overworld_sprite MoltresSprite, 12			; SPRITE_MOLTRES
 	overworld_sprite ChanseySprite, 12          ; SPRITE_CHANSEY
 	overworld_sprite JigglypuffSprite, 12       ; SPRITE_JIGGLYPUFF
-	overworld_sprite OhmegaSprite, 12			; SPRITE_OHMEGA
+	overworld_sprite OmegadgeSprite, 12			; SPRITE_OMEGADGE
 	overworld_sprite MrMimeSprite,	12        ; SPRITE_MR_MIME
 	overworld_sprite BrockSprite,	12        ; SPRITE_BROCK
 	overworld_sprite ErikaSprite,	12        ; SPRITE_ERIKA

@@ -2,8 +2,8 @@ BillsGardenWildMons:
 	def_grass_wildmons 25 ; encounter rate
 	db 32, DODUO
 	db 30, DITTO
-	db 34, KASANAGI
-	db 30, KASANAGI
+	db 34, PUPAL
+	db 30, PUPAL
 	db 32, EEVEE
 	db 30, METAPOD
 	db 30, KAKUNA

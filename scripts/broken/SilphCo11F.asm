@@ -164,7 +164,7 @@ SilphCo11F_ScriptPointers:
 	dw_const SilphCo11FGiovanniStartBattleScript,   SCRIPT_SILPHCO11F_GIOVANNI_START_BATTLE
 	dw_const SilphCo11FGiovanniAfterBattleScript,   SCRIPT_SILPHCO11F_GIOVANNI_AFTER_BATTLE
 	dw_const SilphCo11FDefeatArcherScript,          SCRIPT_SILPHCO11F_DEFEAT_ARCHER
-	dw_const SilphCo11FOhmegaPostBattleScript,    SCRIPT_SILPHCO11F_OHMEGA_POSTBATTLE
+	dw_const SilphCo11FOmegadgePostBattleScript,    SCRIPT_SILPHCO11F_OMEGADGE_POSTBATTLE
 
 SilphCo11FDefeatArcherScript:
 	ld a, [wIsInBattle]
@@ -188,22 +188,22 @@ SilphCo11FDefeatArcherScript:
 	ld [wCurMapScript], a
 	ret
 
-SilphCo11FOhmegaPostBattleScript:
+SilphCo11FOmegadgePostBattleScript:
 	ld a, [wIsInBattle]
 	cp $ff
 	ld [wSilphCo11FCurScript], a
 	ld [wCurMapScript], a
 	call UpdateSprites
-	SetEvent EVENT_SILPH_CO_11_OHMEGA
+	SetEvent EVENT_SILPH_CO_11_OMEGADGE
 	ld a, SCRIPT_SILPHCO11F_DEFAULT
 	ld [wSilphCo11FCurScript], a
 	ld [wCurMapScript], a
 	ret
 
 SilphCo11FDefaultScript:
-	CheckEvent EVENT_SILPH_CO_11_OHMEGA
+	CheckEvent EVENT_SILPH_CO_11_OMEGADGE
 	jp nz, .ArcherEventCheck
-	ld hl, .OhmegaEventCoords
+	ld hl, .OmegadgeEventCoords
 	call ArePlayerCoordsInArray
 	jp nc, CheckFightingMapTrainers
 	ld a, [wCoordIndex]
@@ -214,31 +214,31 @@ SilphCo11FDefaultScript:
 	ld a, TEXT_SILPHCO11F_ARCHER
 	ldh [hTextID], a
 	call DisplayTextID
-	ld a, HS_SILPH_CO_11F_OHMEGA
+	ld a, HS_SILPH_CO_11F_OMEGADGE
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	ld a, TEXT_SILPHCO11F_OHMEGA
+	ld a, TEXT_SILPHCO11F_OMEGADGE
 	ldh [hTextID], a
 	call DisplayTextID
 	xor a
 	ldh [hJoyHeld], a
 	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
-	ld a, OHMEGA
+	ld a, OMEGADGE
 	ld [wCurOpponent], a
 	ld a, 28
 	ld [wCurEnemyLevel], a
 	xor a
 	ld [wIsTrainerBattle], a
-	ld a, HS_SILPH_CO_11F_OHMEGA
+	ld a, HS_SILPH_CO_11F_OMEGADGE
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	call UpdateSprites
-	ld a, SCRIPT_SILPHCO11F_OHMEGA_POSTBATTLE
+	ld a, SCRIPT_SILPHCO11F_OMEGADGE_POSTBATTLE
 	jp .done
 .ArcherEventCheck
 	CheckEvent EVENT_SILPH_CO_11_BEAT_ARCHER
 	jp nz, .GiovanniEventCheck
-	ld hl, .OhmegaEventCoords
+	ld hl, .OmegadgeEventCoords
 	call ArePlayerCoordsInArray
 	jp nc, CheckFightingMapTrainers
 	ld a, [wCoordIndex]
@@ -299,7 +299,7 @@ xor a
 	dbmapcoord  7, 12
 	db -1 ; end
 
-.OhmegaEventCoords:
+.OmegadgeEventCoords:
 	dbmapcoord  3, 14
 	dbmapcoord  2, 14
 	dbmapcoord  1, 14
@@ -399,9 +399,9 @@ SilphCo11F_TextPointers:
 	dw_const SilphCo11FRocket1Text,                   TEXT_SILPHCO11F_ROCKET1
 	dw_const SilphCo11FRocket2Text,                   TEXT_SILPHCO11F_ROCKET2
 	dw_const SilphCo11ArcherText,						TEXT_SILPHCO11F_ARCHER
-	dw_const SilphCo11OhmegaText,					TEXT_SILPHCO11F_OHMEGA
-	dw_const SilphCo11DefeatedOhmegaText,      TEXT_SILPHCO11F_DEFEATED_OHMEGA
-	dw_const SilphCo11CaughtOhmegaText, 			TEXT_SILPHCO11F_CAUGHT_OHMEGA
+	dw_const SilphCo11OmegadgeText,					TEXT_SILPHCO11F_OMEGADGE
+	dw_const SilphCo11DefeatedOmegadgeText,      TEXT_SILPHCO11F_DEFEATED_OMEGADGE
+	dw_const SilphCo11CaughtOmegadgeText, 			TEXT_SILPHCO11F_CAUGHT_OMEGADGE
 	dw_const SilphCo11ArcherPreBattleText, 			TEXT_SILPHCO11F_PREBATTLE_ARCHER
 	dw_const SilphCo11FGiovanniYouRuinedOurPlansText, TEXT_SILPHCO11F_GIOVANNI_YOU_RUINED_OUR_PLANS
 	dw_const PickUpItemText,                 	  TEXT_SILPHCO11F_ELECTIRIZER
@@ -483,25 +483,25 @@ SilphCo11ArcherPreBattleText:
 	text_far _SilphCo11ArcherPreBattle
 	text_end
 
-SilphCo11OhmegaText:
+SilphCo11OmegadgeText:
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, OHMEGA
+	ld a, OMEGADGE
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
 	
 .Text:
-	text_far _SilphCo11OhmegaText
+	text_far _SilphCo11OmegadgeText
 	text_end
 
-SilphCo11DefeatedOhmegaText:
-	text_far _SilphCo11DefeatedOhmegaText
+SilphCo11DefeatedOmegadgeText:
+	text_far _SilphCo11DefeatedOmegadgeText
 	text_end
 
-SilphCo11CaughtOhmegaText:
-	text_far _SilphCo11CaughtOhmegaText
+SilphCo11CaughtOmegadgeText:
+	text_far _SilphCo11CaughtOmegadgeText
 	text_end
 
 SilphCo11FArcherDefeatedText:

@@ -20,8 +20,8 @@ IF DEF(_BLUE)
 	db 26, BELLSPROUT
 	db 30, WEEPINBELL
 ENDC
-	db 28, DIAA
-	db 30, DIAA
+	db 28, RAMOOSE
+	db 30, RAMOOSE
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

@@ -259,7 +259,7 @@ _ViridianGymGuidePostgameText::
 	para "That said, we"
 	line "haven't had the"
 	cont "time to change"
-	cont "out the GYAOON"
+	cont "out the GAWARHED"
 	cont "statues..."
 	done
 

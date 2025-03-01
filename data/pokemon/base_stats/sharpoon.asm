@@ -1,4 +1,4 @@
-	db DEX_JAGG ; pokedex id
+	db DEX_SHARPOON ; pokedex id
 
 	db  80,  115,  100,  60,  85
 	;   hp  atk  def  spd  spc
@@ -7,8 +7,8 @@
 	db 60 ; catch rate
 	db 170 ; base exp
 
-	INCBIN "gfx/pokemon/front/jagg.pic", 0, 1 ; sprite dimensions
-	dw JaggPicFront, JaggPicBack
+	INCBIN "gfx/pokemon/front/sharpoon.pic", 0, 1 ; sprite dimensions
+	dw SharpoonPicFront, SharpoonPicBack
 
 	db BITE, LEER, WATER_GUN, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
@@ -20,5 +20,5 @@
 	     REST,         SUBSTITUTE,   SURF,		   EARTHQUAKE,   FISSURE
 	; end
 
-	db BANK(JaggPicFront)
-	assert BANK(JaggPicFront) == BANK(JaggPicBack)
+	db BANK(SharpoonPicFront)
+	assert BANK(SharpoonPicFront) == BANK(SharpoonPicBack)
