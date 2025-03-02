@@ -16,7 +16,7 @@ PowerPlant_ScriptPointers:
 PowerPlant_TextPointers:
 	def_text_pointers
 	dw_const PowerPlantVoltorb1Text,   TEXT_POWERPLANT_VOLTORB1
-	dw_const PowerPlantVoltorb2Text,   TEXT_POWERPLANT_VOLTORB2
+;	dw_const PowerPlantVoltorb2Text,   TEXT_POWERPLANT_VOLTORB2
 	dw_const PowerPlantVoltorb3Text,   TEXT_POWERPLANT_VOLTORB3
 	dw_const PowerPlantElectrode1Text, TEXT_POWERPLANT_ELECTRODE1
 	dw_const PowerPlantVoltorb4Text,   TEXT_POWERPLANT_VOLTORB4
@@ -37,7 +37,7 @@ Voltorb0TrainerHeader:
 	trainer EVENT_BEAT_POWER_PLANT_VOLTORB_0, 0, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText
 Voltorb1TrainerHeader:
 	trainer EVENT_BEAT_POWER_PLANT_VOLTORB_1, 0, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText
-Voltorb2TrainerHeader:
+Voltorb2TrainerHeader: ; removed
 	trainer EVENT_BEAT_POWER_PLANT_VOLTORB_2, 0, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText
 Voltorb3TrainerHeader:
 	trainer EVENT_BEAT_POWER_PLANT_VOLTORB_3, 0, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText, PowerPlantVoltorbBattleText

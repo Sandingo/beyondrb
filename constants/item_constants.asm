@@ -58,7 +58,7 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const LEAF_STONE    ; $2F
 	const CARD_KEY      ; $30
 	const NUGGET        ; $31
-	const ICE_STONE       ; $32 ; unused
+	const ICE_STONE     ; $32
 	const POKE_DOLL     ; $33
 	const FULL_HEAL     ; $34
 	const REVIVE        ; $35
@@ -103,6 +103,10 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const AMULET_COIN
 	const ORANGE_TICKET
 	const DRAGON_SCALE
+	const KINGS_ROCK
+	const DUSK_STONE
+	const UP_GRADE
+	const BLK_AUGURITE
 DEF NUM_ITEMS EQU const_value - 1
 
 ; elevator floors use item IDs

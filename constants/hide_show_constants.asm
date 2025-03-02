@@ -48,6 +48,7 @@ DEF SHOW EQU $15
 	const HS_ROUTE_12_ITEM_3
 	const HS_ROUTE_15_ITEM                 ; 20 X
 	const HS_ROUTE_16_SNORLAX              ; 21
+	const HS_ROUTE_20_ITEM_1
 	const HS_ROUTE_22_RIVAL_1              ; 22
 	const HS_ROUTE_22_RIVAL_2              ; 23
 	const HS_NUGGET_BRIDGE_GUY             ; 24
@@ -103,7 +104,7 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_1F_RECEPTIONIST      ; 4C
 	const HS_ROCK_TUNNEL_1F_ITEM_1
 	const HS_VOLTORB_1                     ; 4D X
-	const HS_VOLTORB_2                     ; 4E X
+;	const HS_VOLTORB_2                     ; 4E X - removed
 	const HS_VOLTORB_3                     ; 4F X
 	const HS_ELECTRODE_1                   ; 50 X
 	const HS_VOLTORB_4                     ; 51 X
@@ -165,6 +166,7 @@ DEF SHOW EQU $15
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_3     ; 86 X
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_4     ; 87
 	const HS_ROCKET_HIDEOUT_B4F_ITEM_5     ; 88
+	const HS_ROCKET_HIDEOUT_B4F_ITEM_6
 	const HS_SILPH_CO_2F_1                 ; 89 XXX never (de)activated?
 	const HS_SILPH_CO_2F_2                 ; 8A
 	const HS_SILPH_CO_2F_3                 ; 8B

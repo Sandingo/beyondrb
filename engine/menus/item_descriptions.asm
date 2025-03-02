@@ -199,6 +199,14 @@ ItemDescriptionPointers:
 	text_end
 	text_far _DragonScaleDescription
 	text_end
+	text_far _KingsRockDescription
+	text_end
+	text_far _DuskStoneDescription
+	text_end
+	text_far _UpgradeDescription
+	text_end
+	text_far _BlkAuguriteDescription
+	text_end
 	text_far _HM01Description
 	text_end
 	text_far _HM02Description

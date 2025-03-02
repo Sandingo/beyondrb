@@ -41,6 +41,10 @@ _ElectirizerDescription::
 _MagmarizerDescription::
 _CandyJarDescription::
 _DragonScaleDescription::
+_KingsRockDescription::
+_DuskStoneDescription::
+_UpgradeDescription::
+_BlkAuguriteDescription::
 	text "Evolves certain"
 	next "kinds of #MON."
 	prompt

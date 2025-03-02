@@ -65,7 +65,7 @@ ItemUsePtrTable:
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
 	dw ItemUseCardKey    ; CARD_KEY
-	dw ItemUseEvoStone   ; NUGGET
+	dw UnusableItem       ; NUGGET
 	dw ItemUseEvoStone   ; ICE_STONE
 	dw ItemUsePokeDoll   ; POKE_DOLL
 	dw ItemUseMedicine   ; FULL_HEAL
@@ -111,7 +111,11 @@ ItemUsePtrTable:
 	dw UnusableItem      ; AMULET_COIN
 	dw UnusableItem      ; ORANGE_TICKET
 	dw ItemUseEvoStone ; DRAGON_SCALE
-
+	dw ItemUseEvoStone ; KINGS_ROCK
+	dw ItemUseEvoStone ; DUSK_STONE
+	dw ItemUseEvoStone ; UP-GRADE
+	dw ItemUseEvoStone ; BLK_AUGURITE
+	
 ItemUseBall:
 
 ; Balls can't be used out of battle.

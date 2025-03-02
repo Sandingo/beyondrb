@@ -5,8 +5,11 @@ UsableItems_PartyMenu:
 	db ICE_STONE
 	db METAL_COAT
 	db CANDY_JAR
-	db NUGGET
 	db DRAGON_SCALE
+	db KINGS_ROCK
+	db DUSK_STONE
+	db UP_GRADE
+	db BLK_AUGURITE
 	db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL

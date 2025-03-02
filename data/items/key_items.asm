@@ -94,4 +94,8 @@ KeyItemFlags:
 	dbit TRUE ; AMULET_COIN
 	dbit TRUE ; ORANGE_TICKET
 	dbit FALSE ; DRAGON_SCALE
+	dbit FALSE ; KINGS_ROCK
+	dbit FALSE ; DUSK_STONE
+	dbit FALSE ; UP_GRADE
+	dbit FALSE ; BLK_AUGURITE
 	end_bit_array NUM_ITEMS

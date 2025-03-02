@@ -94,6 +94,10 @@ ItemPrices::
 	bcd3 0     ; AMULET_COIN
 	bcd3 0     ; ORANGE_TICKET
 	bcd3 2100 ; DRAGON_SCALE
+	bcd3 2100 ; KINGS_ROCK
+	bcd3 2100 ; DUSK_STONE
+	bcd3 2100 ; UP_GRADE
+	bcd3 2100 ; BLK_AUGURITE
 	assert_table_length NUM_ITEMS
 	bcd3 0     ; FLOOR_B2F
 	bcd3 0     ; FLOOR_B1F

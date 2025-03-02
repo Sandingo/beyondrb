@@ -94,6 +94,10 @@ ItemNames::
 	li "AMULET COIN"
 	li "ORNG TICKET"
 	li "DRAGON SCALE"
+	li "KING'S ROCK"
+	li "DUSK STONE"
+	li "UP-GRADE"
+	li "BLK AUGURITE"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"
