@@ -10,6 +10,7 @@
 	const_export SSANNE1FROOMS_GIRL2
 	const_export SSANNE1FROOMS_TM_BODY_SLAM
 	const_export SSANNE1FROOMS_GENTLEMAN3
+	const_export SSANNE1FROOMS_NURSE
 
 SSAnne1FRooms_Object:
 	db $c ; border block
@@ -21,6 +22,7 @@ SSAnne1FRooms_Object:
 	warp_event  0, 10, SS_ANNE_1F, 6
 	warp_event 10, 10, SS_ANNE_1F, 7
 	warp_event 20, 10, SS_ANNE_1F, 8
+	warp_event 30,  0, SS_ANNE_1F, 12
 
 	def_bg_events
 
@@ -36,5 +38,6 @@ SSAnne1FRooms_Object:
 	object_event 10, 13, SPRITE_GIRL, STAY, RIGHT, TEXT_SSANNE1FROOMS_GIRL2
 	object_event 12, 15, SPRITE_POKE_BALL, STAY, NONE, TEXT_SSANNE1FROOMS_TM_BODY_SLAM, TM_BODY_SLAM
 	object_event 21, 13, SPRITE_GENTLEMAN, WALK, LEFT_RIGHT, TEXT_SSANNE1FROOMS_GENTLEMAN3
+	object_event 32,  1, SPRITE_NURSE, STAY, DOWN, TEXT_SSANNE1FROOMS_NURSE
 
 	def_warps_to SS_ANNE_1F_ROOMS

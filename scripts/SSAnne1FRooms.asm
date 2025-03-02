@@ -24,6 +24,7 @@ SSAnne1FRooms_TextPointers:
 	dw_const SSAnne1FRoomsLittleGirlText,    TEXT_SSANNE1FROOMS_LITTLE_GIRL
 	dw_const SSAnne1FRoomsWigglytuffText,    TEXT_SSANNE1FROOMS_WIGGLYTUFF
 	dw_const SSAnne1FRoomsGirl2Text,         TEXT_SSANNE1FROOMS_GIRL2
+	dw_const SSAnne1FRoomsNurseText,		TEXT_SSANNE1FROOMS_NURSE
 	dw_const PickUpItemText,                 TEXT_SSANNE1FROOMS_TM_BODY_SLAM
 	dw_const SSAnne1FRoomsGentleman3Text,    TEXT_SSANNE1FROOMS_GENTLEMAN3
 
@@ -136,4 +137,26 @@ SSAnne1FRoomsGirl2Text:
 
 SSAnne1FRoomsGentleman3Text:
 	text_far _SSAnne1FRoomsGentleman3Text
+	text_end
+
+SSAnne1FRoomsNurseText:
+	text_asm
+	ld hl, .YouLookTiredText
+	call PrintText
+	predef HealParty
+	call GBFadeOutToWhite
+	call Delay3
+	call GBFadeInFromWhite
+	ld hl, .DontGiveUpText
+	call PrintText
+	jr .text_script_end
+.text_script_end
+	jp TextScriptEnd
+	
+.YouLookTiredText:
+	text_far _SSAnne1FRoomsNurseYouLookTiredText
+	text_end
+
+.DontGiveUpText:
+	text_far _SSAnne1FRoomsNurseDontGiveUpText
 	text_end

@@ -103,3 +103,14 @@ _SSAnne1FRoomsGentleman3Text::
 	para "I'm on the trail"
 	line "of TEAM ROCKET!"
 	done
+
+_SSAnne1FRoomsNurseYouLookTiredText::
+	text "I'm off duty, but"
+	line "I can still heal"
+	cont "#MON!"
+	prompt
+
+_SSAnne1FRoomsNurseDontGiveUpText::
+	text "There, there."
+	line "All better!"
+	done
