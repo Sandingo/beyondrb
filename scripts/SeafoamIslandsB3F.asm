@@ -26,7 +26,7 @@ SeafoamIslandsB3F_Script:
 .hideAndShowBoulderObjects
 	ld a, [wObjectToHide]
 	ld [wMissableObjectIndex], a
-	predef HideObject
+	predef HideExtraObject
 	ld a, [wObjectToShow]
 	ld [wMissableObjectIndex], a
 	predef ShowObject

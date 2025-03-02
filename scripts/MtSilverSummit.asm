@@ -36,7 +36,7 @@ MtSilverSummitGiveOrangeTicketScript:
 	call GBFadeOutToBlack
 	ld a, HS_MT_SILVER_SUMMIT_OAK
 	ld [wMissableObjectIndex], a
-	predef HideObject
+	predef HideExtraObject
 	ld a, HS_PALLET_TOWN_SCIENTIST
 	ld [wMissableObjectIndex], a
 	predef HideObject

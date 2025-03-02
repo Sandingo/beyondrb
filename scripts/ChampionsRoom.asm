@@ -203,7 +203,7 @@ ChampionsRoomOakExitsScript:
 	ret nz
 	ld a, HS_CHAMPIONS_ROOM_OAK
 	ld [wMissableObjectIndex], a
-	predef HideObject
+	predef HideExtraObject
 	ld a, SCRIPT_CHAMPIONSROOM_PLAYER_FOLLOWS_OAK
 	ld [wChampionsRoomCurScript], a
 	ret

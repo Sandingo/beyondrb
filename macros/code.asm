@@ -18,3 +18,10 @@ MACRO dict
 	ENDC
 	jp z, \2
 ENDM
+
+MACRO srl_a_3x ; optimized version of doing srl a three times (shift a right 3 times) (aka divide by 8)
+	rrca
+	rrca
+	rrca
+	and %00011111
+ENDM

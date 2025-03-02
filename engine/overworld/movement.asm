@@ -710,9 +710,12 @@ GetTileSpriteStandsOn:
 	ld b, $0
 	inc l
 	ld a, [hl]      ; x#SPRITESTATEDATA1_XPIXELS
-	srl a
-	srl a
-	srl a            ; screen X tile
+; PureRGBnote: OPTIMIZED
+	;srl a
+	;srl a
+	;srl a       
+	srl_a_3x
+	; a =  screen X tile     
 	add SCREEN_WIDTH ; screen X tile + 20
 	ld d, $0
 	ld e, a

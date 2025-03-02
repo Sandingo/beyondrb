@@ -1756,6 +1756,10 @@ wNumBagItems:: db
 ; item, quantity
 wBagItems:: ds BAG_ITEM_CAPACITY * 2 + 1
 
+; PureRGBnote: ADDED: we use this empty space currently for a store of extra flags to hide/show objects in the safari zone.
+wExtraMissableObjectFlags:: flag_array NUM_EXTRA_HS_OBJECTS ; max size 20 bytes or 152 flags
+wExtraMissableObjectFlagsEnd::
+
 wPlayerMoney:: ds 3 ; BCD
 
 wRivalName:: ds NAME_LENGTH

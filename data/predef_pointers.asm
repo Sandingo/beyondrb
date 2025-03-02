@@ -32,7 +32,6 @@ PredefPointers::
 	add_predef ApplyOutOfBattlePoisonDamage
 	add_predef AnyPartyAlive
 	add_predef ShowObject
-	add_predef ShowObject2
 	add_predef ReplaceTileBlock
 	add_predef InitPlayerData2
 	add_predef LoadTilesetHeader
@@ -111,3 +110,4 @@ PredefPointers::
 	add_predef DisplayElevatorFloorMenu
 	add_predef OaksAideScript
 	add_predef FindTileBlock
+	add_predef HideExtraObject

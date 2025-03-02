@@ -45,6 +45,9 @@ DEF START_MONEY EQU $3000
 	ld bc, wGameProgressFlagsEnd - wGameProgressFlags
 	call FillMemory ; clear all game progress flags
 
+	; PureRGBnote: ADDED: an extra WRAM variable with more missable object flags was added to have more space for flags.
+	; this is where it's initialized.
+	call InitializeExtraMissableObjectsFlags 
 	jp InitializeMissableObjectsFlags
 
 InitializeEmptyList:
