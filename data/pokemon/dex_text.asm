@@ -1638,7 +1638,7 @@ _LuxwanDexEntry::
 	next "studies"
 	dex
 	
- _BellignantDexEntry::
+ _BellignanDexEntry::
 	text "A plant #MON"
 	next "that's revered in"
 	next "another region"

@@ -80,7 +80,7 @@ PokedexEntryPointers:
 	dw KrabbyDexEntry
 	dw GlaceonDexEntry
 	dw LuxwanDexEntry
-	dw BellignantDexEntry
+	dw BellignanDexEntry
 	dw VulpixDexEntry
 	dw NinetalesDexEntry
 	dw PikachuDexEntry
@@ -233,6 +233,11 @@ PokedexEntryPointers:
 	dw PapyoDexEntry
 	dw BuhiDexEntry
 	dw GodzilanteDexEntry
+	dw CoinpurDexEntry
+	dw BittybatDexEntry
+	dw OrfryDexEntry
+	dw KoltaDexEntry
+	dw VulpiiiDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1394,11 +1399,11 @@ LuxwanDexEntry:
 	text_far _LuxwanDexEntry
 	text_end
 
-BellignantDexEntry:
+BellignanDexEntry:
 	db "BELL PLANT@"
 	db 6,2
 	dw 420
-	text_far _BellignantDexEntry
+	text_far _BellignanDexEntry
 	text_end
 
 PolitoedDexEntry:
@@ -1855,4 +1860,39 @@ GodzilanteDexEntry:
 	db 6,7
 	dw 4453
 	text_far _GodzilanteDexEntry
+	text_end
+	
+CoinpurDexEntry:
+	db "KITTEN@"
+	db 1,0
+	dw 55
+	text_far _CoinpurDexEntry
+	text_end
+
+BittybatDexEntry:
+	db "TINY BAT@"
+	db 1,4
+	dw 33
+	text_far _BittybatDexEntry
+	text_end
+
+OrfryDexEntry:
+	db "GOLDFISH@"
+	db 0,8
+	dw 20
+	text_far _OrfryDexEntry
+	text_end
+
+KoltaDexEntry:
+	db "FIRE HORSE@"
+	db 2,4
+	dw 441
+	text_far _KoltaDexEntry
+	text_end
+
+VulpiiiDexEntry:
+	db "FOX@"
+	db 1,0
+	dw 99
+	text_far _VulpiiiDexEntry
 	text_end

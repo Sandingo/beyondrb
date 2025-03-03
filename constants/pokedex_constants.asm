@@ -46,10 +46,12 @@
 	const DEX_CLEFAIRY   ; 35
 	const DEX_CLEFABLE   ; 36
 	const DEX_PERITOP
+	const DEX_VULPIII
 	const DEX_VULPIX     ; 37
 	const DEX_NINETALES  ; 38
 	const DEX_JIGGLYPUFF ; 39
 	const DEX_WIGGLYTUFF ; 40
+	const DEX_BITTYBAT
 	const DEX_ZUBAT      ; 41
 	const DEX_GOLBAT     ; 42
 	const DEX_CROBAT	 
@@ -64,6 +66,7 @@
 	const DEX_BALUMBA
 	const DEX_DIGLETT    ; 51
 	const DEX_DUGTRIO    ; 52
+	const DEX_COINPUR
 	const DEX_MEOWTH     ; 53
 	const DEX_PERSIAN    ; 54
 	const DEX_PSYDUCK    ; 55
@@ -88,7 +91,7 @@
 	const DEX_BELLSPROUT ; 69
 	const DEX_WEEPINBELL ; 70
 	const DEX_VICTREEBEL ; 71
-	const DEX_BELLIGNANT
+	const DEX_BELLIGNAN
 	const DEX_TENTACOOL  ; 72
 	const DEX_TENTACRUEL ; 73
 	const DEX_BLOTTLE
@@ -96,6 +99,7 @@
 	const DEX_GEODUDE    ; 74
 	const DEX_GRAVELER   ; 75
 	const DEX_GOLEM      ; 76
+	const DEX_KOLTA
 	const DEX_PONYTA     ; 77
 	const DEX_RAPIDASH   ; 78
 	const DEX_CACTORMUS
@@ -168,6 +172,7 @@
 	const DEX_SEADRA     ; 117
 	const DEX_KINGDRA
 	const DEX_QUADRAGON
+	const DEX_ORFRY
 	const DEX_GOLDEEN    ; 118
 	const DEX_SEAKING    ; 119
 	const DEX_CHEEP

@@ -243,7 +243,7 @@ FullyEvolvedMons: ; 0-103
 	db TRAMPEL
 	db SHARPOON
 	db GOROTORA
-	db BELLIGNANT
+	db BELLIGNAN
 	db GAWARHED
 	; strong
 	db GUARDIA

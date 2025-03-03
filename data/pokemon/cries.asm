@@ -86,7 +86,7 @@ CryData::
 	mon_cry SFX_CRY_20, $20, $E0 ; Krabby
 	mon_cry SFX_CRY_1A, $AA, $E0 ; Glaceon
 	mon_cry SFX_CRY_10, $DD, $FF ; Luxwan
-	mon_cry SFX_CRY_25, $66, $C0 ; Bellignant
+	mon_cry SFX_CRY_25, $66, $C0 ; BELLIGNAN
 	mon_cry SFX_CRY_24, $4F, $10 ; Vulpix
 	mon_cry SFX_CRY_24, $88, $60 ; Ninetales
 	mon_cry SFX_CRY_0F, $EE, $01 ; Pikachu
@@ -239,4 +239,9 @@ CryData::
 	mon_cry SFX_CRY_13, $60, $01 ; Papyo
 	mon_cry SFX_CRY_19, $77, $80 ; Buhi
 	mon_cry SFX_CRY_0F, $3C, $FF ; Godzilante
+	mon_cry SFX_CRY_19, $77, $01 ; Coinpur
+	mon_cry SFX_CRY_1D, $E0, $01 ; Bittybat
+	mon_cry SFX_CRY_16, $80, $01 ; Orfry
+	mon_cry SFX_CRY_25, $00, $01 ; Kolta
+	mon_cry SFX_CRY_24, $4F, $01 ; Vulpiii
 	assert_table_length NUM_POKEMON_INDEXES

@@ -101,13 +101,13 @@ ROMX $13
 ROMX $14
 	"Maps 10"
 	"Battle Engine 8"
-	"Hidden Objects 2"
 ROMX $15
 	"Maps 11"
 	"Battle Engine 9"
 	"Maps 12"
 	"Diploma"
 	"Trainer Sight"
+	"Hidden Objects 2"
 ROMX $16
 	"Maps 13"
 	"Battle Engine 10"
@@ -174,6 +174,7 @@ ROMX $2B
 	"Pokédex Text"
 ROMX $2C
 	"Move Names"
+	"Draw Badges"
 ROMX $2D
 	"Battle Engine 2"
 	"Battle Engine 3"

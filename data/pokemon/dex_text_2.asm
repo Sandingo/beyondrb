@@ -587,3 +587,53 @@ _GodzilanteDexEntry::
 	next "traced in the deep"
 	next "in the ocean"
 	dex
+
+_VulpiiiDexEntry::
+	text "It's quite cute"
+	next "and sought-after"
+	next "as a pet, but its"
+	
+	page "very mischievous"
+	next "nature makes it"
+	next "hard to care for"
+	dex
+
+_BittybatDexEntry::
+	text "Due to their tiny"
+	next "size, several of"
+	next "these #MON may"
+	
+	page "swarm a victim at"
+	next "once so they may"
+	next "prey on it"
+	dex
+
+_CoinpurDexEntry::
+	text "It tries to"
+	next "collect up"
+	next "everything it"
+	
+	page "sees, but has"
+	next "trouble storing"
+	next "it all"
+	dex
+
+_OrfryDexEntry::
+	text "It almost became"
+	next "extinct, but due"
+	next "to the efforts"
+	
+	page "of one dedicated"
+	next "breeder, it has"
+	next "flourished again"
+	dex
+
+_KoltaDexEntry::
+	text "It is big enough"
+	next "to be ridden by"
+	next "small children,"
+	
+	page "and can be"
+	next "trained for this"
+	next "before evolving"
+	dex

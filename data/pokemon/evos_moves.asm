@@ -90,7 +90,7 @@ EvosMovesPointerTable:
 	dw KrabbyEvosMoves
 	dw GlaceonEvosMoves
 	dw LuxwanEvosMoves
-	dw BellignantEvosMoves
+	dw BellignanEvosMoves
 	dw VulpixEvosMoves
 	dw NinetalesEvosMoves
 	dw PikachuEvosMoves
@@ -243,6 +243,11 @@ EvosMovesPointerTable:
 	dw PapyoEvosMoves
 	dw BuhiEvosMoves
 	dw GodzilanteEvosMoves
+	dw CoinpurEvosMoves
+	dw BittybatEvosMoves
+	dw OrfryEvosMoves
+	dw KoltaEvosMoves
+	dw VulpiiiEvosMoves
 	assert_table_length NUM_POKEMON_INDEXES
 
 RhydonEvosMoves:
@@ -686,7 +691,7 @@ PidgeyEvosMoves:
 SlowpokeEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 37, SLOWBRO
-	db EVOLVE_TRADE, 1, SLOWKING
+	db EVOLVE_ITEM, KINGS_ROCK, 1, SLOWKING
 	db 0
 ; Learnset
 	db 18, DISABLE
@@ -1219,7 +1224,7 @@ LuxwanEvosMoves:
 	db 45, DRILL_PECK
 	db 0
 
-BellignantEvosMoves:
+BellignanEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
@@ -2468,7 +2473,7 @@ BellsproutEvosMoves:
 WeepinbellEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, LEAF_STONE, 1, VICTREEBEL
-	db EVOLVE_ITEM, SUN_STONE, 1, BELLIGNANT
+	db EVOLVE_ITEM, SUN_STONE, 1, BELLIGNAN
 	db 0
 ; Learnset
 	db 13, WRAP
@@ -3000,4 +3005,67 @@ GodzilanteEvosMoves:
 	db 41, AMNESIA
 	db 50, FLAMETHROWER
 	db 54, HYPER_BEAM
+	db 0
+
+CoinpurEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 14, MEOWTH
+	db 0
+; Learnset
+	db 12, BITE
+	db 14, PAY_DAY
+	db 22, SCREECH
+	db 24, FEINT_ATTACK
+	db 28, FURY_SWIPES
+	db 35, SLASH
+	db 0
+
+BittybatEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 12, ZUBAT
+	db 0
+; Learnset
+	db 10, SUPERSONIC
+	db 12, BITE
+	db 18, CONFUSE_RAY
+	db 22, WING_ATTACK
+	db 30, HAZE
+	db 0
+
+OrfryEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 22, GOLDEEN
+	db 0
+; Learnset
+	db 19, SUPERSONIC
+	db 22, HORN_ATTACK
+	db 28, FURY_ATTACK
+	db 34, WATERFALL
+	db 40, HORN_DRILL
+	db 46, AGILITY
+	db 0
+
+KoltaEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 20, PONYTA
+	db 0
+; Learnset
+	db 20, TAIL_WHIP
+	db 28, STOMP
+	db 30, GROWL
+	db 32, FIRE_SPIN
+	db 38, TAKE_DOWN
+	db 40, AGILITY
+	db 0
+
+VulpiiiEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 13, VULPIX
+	db 0
+; Learnset
+	db 13, QUICK_ATTACK
+	db 18, ROAR
+	db 22, CONFUSE_RAY
+	db 28, FLAMETHROWER
+	db 30, FIRE_SPIN
 	db 0

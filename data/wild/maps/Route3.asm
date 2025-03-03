@@ -3,7 +3,7 @@ Route3WildMons:
 	db  7, PIDGEY
 	db  7, SPEAROW
 	db  8, PIDGEY
-	db  8, MANKEY
+	db  8, KOLTA
 	db  9, SPEAROW
 IF DEF(_RED)
 	db  8, NIDORAN_M

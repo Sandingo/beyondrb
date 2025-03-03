@@ -87,7 +87,7 @@
 	const KRABBY             ; $4E
 	const GLACEON               ; $4F
 	const LUXWAN               ; $50
-	const BELLIGNANT              ; $51
+	const BELLIGNAN              ; $51
 	const VULPIX             ; $52
 	const NINETALES          ; $53
 	const PIKACHU            ; $54
@@ -240,6 +240,11 @@
 	const PAPYO
 	const BUHI
 	const GODZILANTE
+	const COINPUR
+	const BITTYBAT
+	const ORFRY
+	const KOLTA
+	const VULPIII
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

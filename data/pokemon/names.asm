@@ -80,7 +80,7 @@ MonsterNames::
 	db "KRABBY@@@@"
 	db "GLACEON@@@"
 	db "LUXWAN@@@@"
-	db "BELLIGNANT"
+	db "BELLIGNAN@"
 	db "VULPIX@@@@"
 	db "NINETALES@"
 	db "PIKACHU@@@"
@@ -233,4 +233,9 @@ MonsterNames::
 	db "PAPYO@@@@@"
 	db "BUHI@@@@@@"
 	db "GODZILANTE" ; Names cannot go beyond 10 characters :pensive:
+	db "COINPUR@@@"
+	db "BITTYBAT@@"
+	db "ORFRY@@@@@"
+	db "KOLTA@@@@@"
+	db "VULPIII@@@"
 	assert_table_length NUM_POKEMON_INDEXES
