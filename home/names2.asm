@@ -30,7 +30,7 @@ GetName::
 	cp HM01
 	jr c, .notMachine
 	sub (HM01 - 1)	;need to shift things because tm and hm constants are offset by +$C3 from the first item constant
-	ld [wCurSpecies], a
+	ld [wNameListIndex], a
 	ld a, TMHM_NAME	
 	ld [wNameListType], a
 .notMachine

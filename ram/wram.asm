@@ -2275,7 +2275,7 @@ wEXPBarKeepFullFlag:: ds 1
 SECTION "Stack", WRAM0
 
 ; the stack grows downward
-	ds $FE - 1
+	ds $100 - 1
 wStack:: db
 
 ENDSECTION

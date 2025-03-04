@@ -31,7 +31,7 @@ GetItemName::
 	ld a, ITEM_NAME
 	ld [wNameListType], a
 	ld a, [wNamedObjectIndex]
-	ld [wCurSpecies], a
+	ld [wNameListIndex], a
 	cp HM01 ; is this a TM/HM?
 	jr nc, .Machine
 
