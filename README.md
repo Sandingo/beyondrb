@@ -23,6 +23,7 @@ Moves from later generations are only included if they fill out a new type, or a
 
 [**Google Sheets**](https://docs.google.com/spreadsheets/d/1M3bosRwThGeiIzk041AlRherJHYMNcCBpjoqek_yNrA/edit?usp=sharing) containing as much documentation as possible is also available! Base Stats, learnsets, type chart, etc.
 
+![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00001.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00002.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00005.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00007.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00010.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00011.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00013.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00014.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00016.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00017.bmp) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00018.bmp)
 
 ## Credits where it's due!
 - [**Helix Chamber**](https://helixchamber.com) - For documenting a ton of beta RBY content and some custom sprites/designs relating to it.
