@@ -93,7 +93,7 @@ GetName::
 	ld bc, NAME_BUFFER_LENGTH
 	call CopyData
 .gotPtr
-	ld a, [wNamedObjectIndex]
+;	ld a, [wNamedObjectIndex] - Source of all my woes.
 	cp HM01
 	jr c, .notMachine2
 	ld a, ITEM_NAME	;this needs to be reset because machines can be in the same listings as items	
