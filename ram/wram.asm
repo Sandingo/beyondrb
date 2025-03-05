@@ -2053,7 +2053,13 @@ wGameProgressFlagsEnd::
 			ds 1
 	
 		; unused
-			ds 55
+			ds 52
+
+wOpponentMonShiny:: db
+wPlayerMonShiny:: db
+wHoFMonShiny:: db
+wAreWeUsingTheHoFPC:: db
+wWeAreTrading:: db
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 

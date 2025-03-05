@@ -316,6 +316,7 @@ DoomsdayEvent:
 	ld [wCurOpponent], a
 	ld a, 80
 	ld [wCurEnemyLevel], a
+	callfar RollForShiny
 	xor a
 	ld [wIsTrainerBattle], a
 	ld a, SCRIPT_DOOMSDAY_POST_BATTLE

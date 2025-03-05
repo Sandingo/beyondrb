@@ -325,8 +325,6 @@ INCLUDE "engine/events/in_game_trades.asm"
 INCLUDE "engine/gfx/palettes.asm"
 INCLUDE "engine/menus/save.asm"
 INCLUDE "engine/items/tm_prices.asm"
-INCLUDE "engine/overworld/hms_overworld.asm"
-INCLUDE "engine/overworld/use_another_repel.asm"
 
 SECTION "Engine Spillover", ROMX
 
@@ -364,6 +362,8 @@ INCLUDE "data/battle_anims/frame_blocks.asm"
 
 SECTION "bank1F", ROMX
 
+INCLUDE "engine/overworld/hms_overworld.asm"
+INCLUDE "engine/overworld/use_another_repel.asm"
 INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "data/items/tmhm_names.asm"

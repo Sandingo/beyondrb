@@ -10,7 +10,15 @@ PrintBeginningBattleText:
 .notPokemonTower
 	ld a, [wEnemyMonSpecies2]
 	call PlayCry
+    ld hl, wEnemyMonSpecies2
+    ld a, [wOpponentMonShiny]
+    cp 1
+	jr nz, .notShiny
+	ld hl, WildShinyMonText
+	jr .normal
+.notShiny
 	ld hl, WildMonAppearedText
+.normal
 	ld a, [wMoveMissed]
 	and a
 	jr z, .notFishing
@@ -76,6 +84,10 @@ PrintBeginningBattleText:
 
 WildMonAppearedText:
 	text_far _WildMonAppearedText
+	text_end
+
+WildShinyMonText:
+	text_far _WildShinyMonText
 	text_end
 
 HookedMonAttackedText:

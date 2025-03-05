@@ -1,4 +1,6 @@
 PKMNLeaguePC:
+	ld a, 1                     ; new, for the shiny
+	ld [wAreWeUsingTheHoFPC], a ; new, for the shiny
 	ld hl, AccessedHoFPCText
 	call PrintText
 	ld hl, wStatusFlags5
@@ -48,6 +50,8 @@ PKMNLeaguePC:
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	call RunDefaultPaletteCommand
+	xor a                       ; new, for the shiny
+	ld [wAreWeUsingTheHoFPC], a ; new, for the shiny
 	jp GBPalNormal
 
 LeaguePCShowTeam:
@@ -91,10 +95,19 @@ LeaguePCShowMon:
 	ld [wHoFMonLevel], a
 	ld de, wNameBuffer
 	ld bc, NAME_LENGTH
-	call CopyData
+	call CopyData ; copies bc bytes from hl to de; edited
+
+; new, for the shiny
+; we need to advance hl by NAME_LENGTH times
+	inc hl ; does hl work here?
+	ld a, [hl] ; a should contain the shiny-ness of that HoF mon
+	ld [wPlayerMonShiny], a
 	ld b, SET_PAL_POKEMON_WHOLE_SCREEN
 	ld c, 0
 	call RunPaletteCommand
+	xor a
+	ld [wPlayerMonShiny], a
+; back to vanilla
 	hlcoord 12, 5
 	call GetMonHeader
 	call LoadFrontSpriteByMonIndex

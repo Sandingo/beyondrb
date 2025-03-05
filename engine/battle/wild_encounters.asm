@@ -99,6 +99,11 @@ TryDoWildEncounter:
 	and a
 	ret
 .willEncounter
+	CheckEvent EVENT_GOT_POKEDEX ; Prevent shinies before getting Pokeballs
+	jr z, .vanilla
+	callfar RollForShiny
+; back to vanilla
+.vanilla
 	xor a
 	ld [wIsTrainerBattle], a
 	ret

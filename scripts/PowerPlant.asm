@@ -57,6 +57,7 @@ PowerPlantInitBattleScript:
 	call TalkToTrainer
 	ld a, [wCurMapScript]
 	ld [wPowerPlantCurScript], a
+	callfar RollForShiny
 	jp TextScriptEnd
 
 PowerPlantVoltorb1Text:
@@ -114,4 +115,5 @@ PowerPlantZapdosBattleText:
 	ld a, ZAPDOS
 	call PlayCry
 	call WaitForSoundToFinish
+	callfar RollForShiny
 	jp TextScriptEnd

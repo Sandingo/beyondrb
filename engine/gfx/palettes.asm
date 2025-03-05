@@ -32,12 +32,41 @@ SetPal_Battle:
 	call CopyData
 	ld a, [wPlayerBattleStatus3]
 	ld hl, wBattleMonSpecies
+	ld a, [hl]
+	and a
+	jr z, .playerPalette
+	ld hl, wPartyMon1
+	ld a, [wPlayerMonNumber]
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes ; add bc to hl a times
+; for the shiny
+	ld a, [wBattleMonCatchRate]
+	cp 1
+	jr z, .shinyPlayer
+.playerPalette
 	call DeterminePaletteID
+	jr .continuePlayer
+.shinyPlayer
+	call DetermineShinyPaletteID
+.continuePlayer
 	ld b, a
+
+	
 	ld a, [wEnemyBattleStatus3]
 	ld hl, wEnemyMonSpecies2
 	call DeterminePaletteID
 	ld c, a
+	ld hl, wEnemyMonSpecies2
+	ld a, [wOpponentMonShiny]
+	cp 1
+	jr z, .shinyOpponent
+	call DeterminePaletteID
+	jr .continueOpponent
+.shinyOpponent
+	call DetermineShinyPaletteID
+.continueOpponent
+	ld c, a
+; back to vanilla
 	ld hl, wPalPacket + 1
 	ld a, [wPlayerHPBarColor]
 	add PAL_GREENBAR
@@ -73,8 +102,30 @@ SetPal_StatusScreen:
 	cp NUM_POKEMON_INDEXES + 1
 	jr c, .pokemon
 	ld a, $1 ; not pokemon
+
+	ld hl, PalPacket_Empty
+	ld de, wPalPacket
+	ld bc, $10
+	call CopyData
+	ld a, [wCurPartySpecies]
+	cp NUM_POKEMON_INDEXES + 1
+	jr c, .pokemon
+	ld a, $1 ; not pokemon
+	jr .notMon
 .pokemon
+; for the shiny
+	ld b, a ; save the index in b
+	ld a, [wLoadedMonCatchRate]
+	cp 1
+	ld a, b ; load the index from b
+	jr z, .shinyMon
+.notMon
 	call DeterminePaletteIDOutOfBattle
+	jr .continueMon
+.shinyMon
+	call DetermineShinyPaletteIDOutOfBattle
+.continueMon
+; back to vanilla
 	push af
 	ld hl, wPalPacket + 1
 	ld a, [wStatusScreenHPBarColor]
@@ -86,6 +137,26 @@ SetPal_StatusScreen:
 	ld hl, wPalPacket
 	ld de, BlkPacket_StatusScreen
 	ret
+
+DetermineShinyPaletteID: ; new
+	ld a, [hl]
+DetermineShinyPaletteIDOutOfBattle:
+	ld [wPokedexNum], a
+	and a ; is the mon index 0?
+	jr z, .skipDexNumConversion
+	push bc
+	predef IndexToPokedex
+	pop bc
+	ld a, [wPokedexNum]
+.skipDexNumConversion
+	ld e, a
+	ld d, 0
+	ld hl, MonsterPalettesShiny
+	add hl, de
+	ld a, [hl]
+	ret
+
+
 
 SetPal_PartyMenu:
 	ld hl, PalPacket_PartyMenu
@@ -192,8 +263,46 @@ SetPal_PokemonWholeScreen:
 	and a
 	ld a, PAL_BLACK
 	jr nz, .next
+	ld a, [wWeAreTrading]
+	and a
+	jr z, .wWeAreNotTrading
+; we do are trading, specifically we are receiving the traded mon, we need to check if it is shiny or not
+	ld a, [wOpponentMonShiny]
+	cp 1
 	ld a, [wWholeScreenPaletteMonSpecies]
+	jr z, .shinyPalette
+	jr .notShinyPalette
+.wWeAreNotTrading
+	ld a, [wAreWeUsingTheHoFPC]
+	and a
+	jr z, .notHoFPC
+; we are using the HoF PC and the mon is shiny
+	ld a, [wPlayerMonShiny]
+	and a
+	ld a, [wWholeScreenPaletteMonSpecies]
+	jr z, .notShinyPalette
+	jr .shinyPalette
+.notHoFPC
+	ld a, [wCurMap]
+	cp HALL_OF_FAME
+	ld a, [wHoFPartyMonIndex] ; testing
+	jr z, .continueWithHoF
+; we are not in the HoF
+	ld a, [wWhichPokemon]
+.continueWithHoF
+	ld hl, wPartyMon1CatchRate
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes ; add bc to hl a times
+	ld a, [hl]
+	cp 1
+	ld a, [wWholeScreenPaletteMonSpecies]
+	jr z, .shinyPalette
+.notShinyPalette
 	call DeterminePaletteIDOutOfBattle
+	jr .next
+.shinyPalette
+	call DetermineShinyPaletteIDOutOfBattle
+; back to vanilla
 .next
 	ld [wPalPacket + 1], a
 	ld hl, wPalPacket

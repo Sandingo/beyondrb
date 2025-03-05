@@ -142,6 +142,7 @@ VictoryRoad2FMoltresBattleText:
 	ld a, MOLTRES
 	call PlayCry
 	call WaitForSoundToFinish
+	callfar RollForShiny
 	jp TextScriptEnd
 
 VictoryRoad2FHikerBattleText:

@@ -951,6 +951,7 @@ OaksLabMonChoiceMenu:
 	ld [wCurEnemyLevel], a
 	ld a, [wCurPartySpecies]
 	ld [wPokedexNum], a
+	callfar RollForShiny
 	call AddPartyMon
 	ld hl, wStatusFlags4
 	set BIT_GOT_STARTER, [hl]

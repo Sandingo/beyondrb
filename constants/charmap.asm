@@ -169,7 +169,7 @@
 	charmap "!",         $e7
 	charmap ".",         $e8
 
-	charmap "ァ",         $e9 ; katakana small a, unused
+	charmap "<SHINY>",  $e9
 	charmap "ゥ",         $ea ; katakana small u, unused
 	charmap "ェ",         $eb ; katakana small e, unused
 

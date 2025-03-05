@@ -287,3 +287,60 @@ FullyEvolvedMons: ; 0-103
 	db CRYITHAN
 	db GOROCHU
 	db -1
+
+RollForShiny::
+; roll some numbers and do some checks
+;	call Random
+;	and a
+;	jr nz, .vanilla
+;call Random
+;and %00000100
+    ldh a, [hRandomAdd]
+    cp 24 ; Can be any number, should be around 1/500?
+    jr nz, .notShiny ; nz for real, z for testing purposes
+	ld a, 1 ; this is the "yes it is shiny" value
+	jr nz, .shiny ; this check is a nz now, but may need to be edited
+.notShiny
+	xor a ; not shiny; prolly redundant, but safer
+.shiny
+	ld [wOpponentMonShiny], a
+	ret
+
+PlayShinyAnimationIfShinyPlayerMon:
+    ld a, [wBattleMonCatchRate]
+    cp 1
+    ret nz
+    xor a
+	ld a, SHINY_ANIM
+	ld [wAnimationID], a
+	xor a
+	ld [wAnimationType], a
+	ldh [hWhoseTurn], a	
+	predef MoveAnimation
+    ret
+
+PlayShinyAnimationIfShinyEnemyMon:
+    ld a, [wIsTrainerBattle]
+    and a
+    jr z, .wildBattle
+; trainer battle, do the checks
+;    call CheckForTrainersShinyMons ; unnecessary, already calling this in engine/gfx/palettes.asm
+    ld a, [wOpponentMonShiny]
+    and a
+    ret z
+    jr .playShinyAnim
+.wildBattle
+    ld hl, wEnemyMonSpecies2
+    ld a, [wOpponentMonShiny]
+    cp 1
+    ret nz
+.playShinyAnim
+    xor a
+	ld a, SHINY_ANIM
+	ld [wAnimationID], a
+	xor a
+	ld [wAnimationType], a
+	ld a, $1
+	ldh [hWhoseTurn], a	
+	predef MoveAnimation
+    ret

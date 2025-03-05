@@ -121,6 +121,19 @@ PlacePlayerHUDTiles:
 	ld de, wHUDGraphicsTiles
 	ld bc, $3
 	call CopyData
+
+;joenote - let's draw a shiny symbol if applicable
+	ld hl, wBattleMonSpecies
+	ld a, [hl]
+	and a
+	jr z, .noshiny ; Don't display icon if the player is showing.
+    ld a, [wBattleMonCatchRate]
+    cp 1
+	jr nz, .noshiny
+	coord hl, 9, 7
+	ld [hl], "<SHINY>"
+.noshiny
+
 	hlcoord 18, 10
 	ld de, -1
 	jr PlaceHUDTiles
@@ -136,6 +149,16 @@ PlaceEnemyHUDTiles:
 	ld de, wHUDGraphicsTiles
 	ld bc, $3
 	call CopyData
+	
+;joenote - let's draw a shiny symbol if applicable
+    ld hl, wEnemyMonSpecies2
+    ld a, [wOpponentMonShiny]
+    cp 1
+	jr nz, .noshiny
+	coord hl, 0, 0
+	ld [hl], "<SHINY>"
+	
+.noshiny
 	hlcoord 1, 2
 	ld de, $1
 	jr PlaceHUDTiles

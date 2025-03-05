@@ -180,7 +180,7 @@ _AddPartyMon::
 	ld a, [hli]       ; type 2
 	ld [de], a
 	inc de
-	ld a, [hli]       ; catch rate (held item in gen 2)
+	ld a, [wOpponentMonShiny]
 	ld [de], a
 	ld hl, wMonHMoves
 	ld a, [hli]

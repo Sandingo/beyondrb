@@ -2877,6 +2877,10 @@ SendNewMonToBox:
 	ld [de], a
 	dec b
 	jr nz, .loop6
+	
+	ld a, [wOpponentMonShiny]
+	ld [wBoxMon1CatchRate], a
+	
 	ret
 
 ; checks if the tile in front of the player is a shore or water tile

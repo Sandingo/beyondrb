@@ -34,6 +34,7 @@ Route12DefaultScript:
 	ld [wCurOpponent], a
 	ld a, 30
 	ld [wCurEnemyLevel], a
+	callfar RollForShiny
 	xor a
 	ld [wIsTrainerBattle], a
 	ld a, HS_ROUTE_12_SNORLAX

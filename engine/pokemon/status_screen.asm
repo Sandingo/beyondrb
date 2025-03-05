@@ -146,6 +146,15 @@ StatusScreen:
 	ld de, wPokedexNum
 	lb bc, LEADING_ZEROES | 1, 3
 	call PrintNumber ; Pokémon no.
+; new, for the shiny symbol
+	ld a, [wLoadedMonCatchRate]
+	and a
+	jr z, .notShiny
+; print shiny symbol
+	hlcoord 8, 1
+	ld [hl], "<SHINY>"
+.notShiny
+; back to vanilla
 	hlcoord 11, 10
 	predef PrintMonType
 	ld hl, NamePointers2

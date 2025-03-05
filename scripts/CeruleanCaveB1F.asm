@@ -37,4 +37,5 @@ MewtwoBattleText:
 	ld a, MEWTWO
 	call PlayCry
 	call WaitForSoundToFinish
+	callfar RollForShiny
 	jp TextScriptEnd

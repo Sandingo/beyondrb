@@ -1239,6 +1239,13 @@ _WildMonAppearedText::
 	text_start
 	line "appeared!"
 	prompt
+	
+_WildShinyMonText::
+	text "Oh! It's a"
+	line "SHINY @"
+	text_ram wEnemyMonNick
+	text "!"
+	prompt
 
 _HookedMonAttackedText::
 	text "The hooked"

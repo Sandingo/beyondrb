@@ -96,6 +96,7 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	call Delay3
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
+	callfar PlayShinyAnimationIfShinyEnemyMon
 	call HideSprites
 	jpfar PrintBeginningBattleText
 
@@ -1535,6 +1536,9 @@ NoWillText:
 TryRunningFromBattle:
 	call IsGhostBattle
 	jp z, .canEscape ; jump if it's a ghost battle
+	ld a, [wOpponentMonShiny]
+	and a
+	jp nz, .cantEscape
 	ld a, [wBattleType]
 	cp BATTLE_TYPE_SAFARI
 	jp z, .canEscape ; jump if it's a safari battle
@@ -1606,6 +1610,7 @@ TryRunningFromBattle:
 	cp b
 	jr nc, .canEscape ; if the random value was less than or equal to the quotient
 	                  ; plus 30 times the number of attempts, the player can escape
+.cantEscape
 ; can't escape
 	ld a, $1
 	ld [wActionResultOrTookBattleTurn], a ; you lose your turn when you can't escape
@@ -1799,6 +1804,7 @@ SendOutMon:
 	call PlayMoveAnimation
 	hlcoord 4, 11
 	predef AnimateSendingOutMon
+	callfar PlayShinyAnimationIfShinyPlayerMon
 	ld a, [wCurPartySpecies]
 	call PlayCry
 	call PrintEmptyString

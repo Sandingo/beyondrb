@@ -231,6 +231,7 @@ AttackAnimationPointers:
 	dw HidePicAnim
 	dw ThrowRockAnim
 	dw ThrowBaitAnim
+	dw ShinyAnim
 	assert_table_length NUM_ATTACK_ANIMS
 	dw ZigZagScreenAnim
 
@@ -255,6 +256,11 @@ ENDM
 
 ; The 0 or 1 in the name of a subanim indicates whether to use tileset 0 or 1.
 ; "Both" indicates either can be used for different images using the same animation.
+ShinyAnim:
+	battle_anim NO_MOVE, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_SHOOT_MANY_BALLS_UPWARD
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
 
 ZigZagScreenAnim:
 	battle_anim NO_MOVE, SE_WAVY_SCREEN

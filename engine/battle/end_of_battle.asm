@@ -49,6 +49,7 @@ EndOfBattle:
 .resetVariables
 	xor a
 	ld [wLowHealthAlarm], a ;disable low health alarm
+	ld [wOpponentMonShiny], a
 	ld [wChannelSoundIDs + CHAN5], a
 	ld [wIsInBattle], a
 	ld [wBattleType], a

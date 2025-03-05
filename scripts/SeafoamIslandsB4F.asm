@@ -162,6 +162,7 @@ SeafoamIslandsB4FArticunoBattleText:
 	ld a, ARTICUNO
 	call PlayCry
 	call WaitForSoundToFinish
+	callfar RollForShiny
 	jp TextScriptEnd
 
 SeafoamIslandsB4FBouldersSignText:

@@ -289,6 +289,7 @@ VermilionDockMewText:
 	ld a, MEW
 	call PlayCry
 	call WaitForSoundToFinish
+	callfar RollForShiny
 	jp TextScriptEnd
 
 .Text:

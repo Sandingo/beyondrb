@@ -76,6 +76,10 @@ IF DEF(_DEBUG)
 	ld [hl], a
 	
 	; Jolteon gets Thunderbolt.
+    ; Mon is shiny
+    ld hl, wPartyMon3CatchRate
+    ld a, 1
+    ld [hl], a
 	ld hl, wPartyMon3Moves + 3
 	ld a, THUNDERBOLT
 	ld [hl], a
