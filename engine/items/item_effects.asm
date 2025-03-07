@@ -1878,6 +1878,7 @@ CoinCaseNumCoinsText:
 ItemUseOldRod:
 	call FishingInit
 	jp c, ItemUseNotTime
+	callfar RollForShiny
 .RandomLoop
 	call Random
 	srl a
@@ -1906,6 +1907,7 @@ INCLUDE "data/wild/old_rod.asm"
 ItemUseGoodRod:
 	call FishingInit
 	jp c, ItemUseNotTime
+	callfar RollForShiny
 .RandomLoop
 	call Random
 	srl a
@@ -1934,6 +1936,7 @@ INCLUDE "data/wild/good_rod.asm"
 ItemUseSuperRod:
 	call FishingInit
 	jp c, ItemUseNotTime
+	callfar RollForShiny
 	call ReadSuperRodData
 	ld a, e
 RodResponse:

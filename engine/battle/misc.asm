@@ -296,7 +296,7 @@ RollForShiny::
 ;call Random
 ;and %00000100
     ldh a, [hRandomAdd]
-    cp 24 ; Can be any number, should be around 1/500?
+    cp 42 ; Can be any number, should be around 1/500?
     jr nz, .notShiny ; nz for real, z for testing purposes
 	ld a, 1 ; this is the "yes it is shiny" value
 	jr nz, .shiny ; this check is a nz now, but may need to be edited

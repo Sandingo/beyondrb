@@ -184,6 +184,11 @@ _GameCornerPosterSwitchBehindPosterText::
 	cont "Let's push it!@"
 	text_end
 
+_GameCornerSwitchBehindPosterAlreadyPressedText::
+	text "Pressing it again"
+	line "does nothing..."
+	done
+
 _GameCornerOopsForgotCoinCaseText::
 	text "Oops! Forgot the"
 	line "COIN CASE!"

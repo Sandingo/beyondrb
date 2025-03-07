@@ -80,7 +80,7 @@ _SilphCo7FSilphWorkerM4SafeAtLastText::
 
 _SilphCo7FRocket1BattleText::
 	text "Oh ho! I smell a"
-	line "little rat!"
+	line "little RATTATA!"
 	done
 
 _SilphCo7FRocket1EndBattleText::

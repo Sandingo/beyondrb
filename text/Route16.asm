@@ -35,7 +35,7 @@ _Route16Biker3BattleText::
 
 _Route16Biker3EndBattleText::
 	text "You"
-	line "little rat!"
+	line "little RATTATA!"
 	prompt
 
 _Route16Biker3AfterBattleText::

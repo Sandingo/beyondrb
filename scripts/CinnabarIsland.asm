@@ -17,6 +17,9 @@ CinnabarIslandDefaultScript:
 	ld b, SECRET_KEY
 	call IsItemInBag
 	ret nz
+	ld a, [wGameStage] ; Door is also unlocked after becoming the champion
+	and a
+	ret nz
 	ld a, [wYCoord]
 	cp 4
 	ret nz

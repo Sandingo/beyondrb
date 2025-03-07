@@ -2821,6 +2821,9 @@ NoMovesLeftText:
 	text_end
 
 SwapMovesInMenu:
+	ld a, [wPlayerBattleStatus3]
+	bit TRANSFORMED, a
+	jp nz, MoveSelectionMenu ; No move swapping while transformed
 	ld a, [wMenuItemToSwap]
 	and a
 	jr z, .noMenuItemSelected
@@ -3549,8 +3552,8 @@ CheckPlayerStatusConditions:
 .MonHurtItselfOrFullyParalysed
 	ld hl, wPlayerBattleStatus1
 	ld a, [hl]
-	; clear bide, thrashing, charging up, and trapping moves such as warp (already cleared for confusion damage)
-	and ~((1 << STORING_ENERGY) | (1 << THRASHING_ABOUT) | (1 << CHARGING_UP) | (1 << USING_TRAPPING_MOVE))
+; clear bide, thrashing, charging up, trapping moves such as wrap (already cleared for confusion damage), and invulnerable moves
+	and ~((1 << STORING_ENERGY) | (1 << THRASHING_ABOUT) | (1 << CHARGING_UP) | (1 << USING_TRAPPING_MOVE) | (1 << INVULNERABLE))
 	ld [hl], a
 	ld a, [wPlayerMoveEffect]
 	cp FLY_EFFECT
@@ -5035,6 +5038,8 @@ ApplyAttackToPlayerPokemon:
 ; it's possible for the enemy to do 0 damage with Psywave, but the player always does at least 1 damage
 .loop
 	call BattleRandom
+	and a
+	jr z, .loop ; This fixes Psywave desync
 	cp b
 	jr nc, .loop
 	ld b, a
@@ -6103,8 +6108,8 @@ CheckEnemyStatusConditions:
 .monHurtItselfOrFullyParalysed
 	ld hl, wEnemyBattleStatus1
 	ld a, [hl]
-	; clear bide, thrashing about, charging up, and multi-turn moves such as warp
-	and ~((1 << STORING_ENERGY) | (1 << THRASHING_ABOUT) | (1 << CHARGING_UP) | (1 << USING_TRAPPING_MOVE))
+; clear bide, thrashing, charging up, trapping moves such as wrap (already cleared for confusion damage), and invulnerable moves
+	and ~((1 << STORING_ENERGY) | (1 << THRASHING_ABOUT) | (1 << CHARGING_UP) | (1 << USING_TRAPPING_MOVE) | (1 << INVULNERABLE))
 	ld [hl], a
 	ld a, [wEnemyMoveEffect]
 	cp FLY_EFFECT

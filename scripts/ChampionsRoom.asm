@@ -126,7 +126,7 @@ ChampionsRoomOakArrivesScript:
 	call MoveSprite
 	ld a, HS_CHAMPIONS_ROOM_OAK
 	ld [wMissableObjectIndex], a
-	predef ShowObject
+	predef ShowExtraObject
 	ld a, SCRIPT_CHAMPIONSROOM_OAK_CONGRATULATES_PLAYER
 	ld [wChampionsRoomCurScript], a
 	ret

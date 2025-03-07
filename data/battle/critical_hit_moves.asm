@@ -5,4 +5,5 @@ HighCriticalMoves:
 	db SLASH
 	db STONE_AXE
 	db CROSS_CUTTER
+	db RAZOR_WIND
 	db -1 ; end

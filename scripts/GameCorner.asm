@@ -469,6 +469,8 @@ GameCornerRocketAfterBattleText:
 
 GameCornerPosterText:
 	text_asm
+	CheckEvent EVENT_FOUND_ROCKET_HIDEOUT
+	jp nz, .alreadyPressed
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, .SwitchBehindPosterText
@@ -482,6 +484,11 @@ GameCornerPosterText:
 	ld [wNewTileBlockID], a
 	lb bc, 2, 8
 	predef ReplaceTileBlock
+	jp .done
+.alreadyPressed
+	ld hl, .SwitchBehindPosterAlreadyPressedText
+	call PrintText
+.done
 	jp TextScriptEnd
 
 .SwitchBehindPosterText:
@@ -491,6 +498,10 @@ GameCornerPosterText:
 	call PlaySound
 	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+.SwitchBehindPosterAlreadyPressedText:
+	text_far _GameCornerSwitchBehindPosterAlreadyPressedText
+	text_end
 
 GameCornerOopsForgotCoinCaseText:
 	text_far _GameCornerOopsForgotCoinCaseText
