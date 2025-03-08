@@ -134,3 +134,58 @@ _FightingDojoBetterNotGetGreedyText::
 	text "Better not get"
 	line "greedy..."
 	done
+
+_FightingDojoKarateMasterRematchText::
+	text "Hm! So you have"
+	line "returned!"
+
+	para "I've heard of your"
+	line "exploits, and how"
+	cont "you've defeated"
+	cont "BRUNO!"
+	
+	para "And thus, the"
+	line "student is now"
+	cont "the master..."
+	
+	para "Will you spar with"
+	line "me and teach me"
+	cont "what you have"
+	cont "learned?"
+	done
+
+_FightingDojoKarateMasterRematchDeclineText::
+	text "Hm. So be it."
+	done
+
+_FightingDojoKarateMasterRematchAcceptText::
+	text "Then I shall give"
+	line "everything I got!"
+	done
+
+_FightingDojoKarateMasterRematchAfterBattleText::
+	text "I must rest so I"
+	line "may fight another"
+	cont "day."
+	
+	para "I await your"
+	line "return, champion!"
+	done
+
+_FightingDojoKarateMasterOfferRemaining::
+	text "I have lost once"
+	line "again..."
+	
+	para "No matter! A"
+	line "champion deserves"
+	cont "fitting reward!"
+	
+	para "The other two"
+	line "fighting #MON,"
+	cont "they are yours"
+	cont "to command."
+	
+	para "Please, take them."
+	line "and may we battle"
+	cont "again some day."
+	done

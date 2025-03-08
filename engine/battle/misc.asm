@@ -289,22 +289,29 @@ FullyEvolvedMons: ; 0-103
 	db -1
 
 RollForShiny::
-; roll some numbers and do some checks
-;	call Random
-;	and a
-;	jr nz, .vanilla
-;call Random
-;and %00000100
     ldh a, [hRandomAdd]
-    cp 42 ; Can be any number, should be around 1/500?
-    jr nz, .notShiny ; nz for real, z for testing purposes
-	ld a, 1 ; this is the "yes it is shiny" value
-	jr nz, .shiny ; this check is a nz now, but may need to be edited
-.notShiny
-	xor a ; not shiny; prolly redundant, but safer
-.shiny
+    cp 42 ; can be any number, I just want a 1/256 chance here
+    jr nz, .notShinyEncounter ; nz for real, z for testing purposes
+    ld b, SHINY_CHARM
+    call IsItemInBag
+    jr nz, .shinyEncounter
+    call CountHowManyBadges ; d contains the number of badges
+    ld a, d ; a contains the number of badges
+    call ConvertNumberOfBadgesIntoUpperLimit ; a contains the upper limit for the second random number
+    ld b, a ; now it's b that holds the upper limit
+    ldh a, [hRandomSub] ; a holds the random number
+    cp b ; a-b, random-limit, c flag set if a is strictly lower than b, aka in b/256 cases, as 0 is included
+    jr c, .shinyEncounter
+.shinyEncounter
+    ld a, 1 ; this is the "yes it is shiny" value
+    ld [wOpponentMonShiny], a
+; reset the non-shiny counter
+    xor a
+    ret
+.notShinyEncounter
+	xor a ; not shiny
 	ld [wOpponentMonShiny], a
-	ret
+    ret
 
 PlayShinyAnimationIfShinyPlayerMon:
     ld a, [wBattleMonCatchRate]
@@ -343,4 +350,86 @@ PlayShinyAnimationIfShinyEnemyMon:
 	ld a, $1
 	ldh [hWhoseTurn], a	
 	predef MoveAnimation
+    ret
+
+CountHowManyBadges:: ; returns in d the number of badges we own
+    ld d, 0
+    ld hl, wObtainedBadges
+	bit BIT_EARTHBADGE, [hl]
+	jr z, .next1
+    inc d
+.next1
+	bit BIT_VOLCANOBADGE, [hl]
+	jr z, .next2
+    inc d
+.next2
+	bit BIT_MARSHBADGE, [hl]
+	jr z, .next3
+    inc d
+.next3
+	bit BIT_SOULBADGE, [hl]
+	jr z, .next4
+    inc d
+.next4
+	bit BIT_RAINBOWBADGE, [hl]
+	jr z, .next5
+    inc d
+.next5
+	bit BIT_THUNDERBADGE, [hl]
+	jr z, .next6
+    inc d
+.next6
+	bit BIT_CASCADEBADGE, [hl]
+	jr z, .next7
+    inc d
+.next7
+	bit BIT_BOULDERBADGE, [hl]
+	jr z, .next8
+    inc d
+.next8
+    ret
+
+ConvertNumberOfBadgesIntoUpperLimit: ; returns in a the upper limit for the second random number; used for shiny probabilities
+    cp 0
+    jr z, .badges0
+    cp 1
+    jr z, .badges1
+    cp 2
+    jr z, .badges2
+    cp 3
+    jr z, .badges3
+    cp 4
+    jr z, .badges4
+    cp 5
+    jr z, .badges5
+    cp 6
+    jr z, .badges6
+    cp 7
+    jr z, .badges7
+; badges8
+    ld a, 66
+    ret
+.badges7
+    ld a, 33
+    ret
+.badges6
+    ld a, 22
+    ret
+.badges5
+    ld a, 16
+    ret
+.badges4
+    ld a, 13
+    ret
+.badges3
+    ld a, 11
+    ret
+.badges2
+    ld a, 9
+    ret
+.badges1
+    ld a, 8
+    ret
+.badges0
+    ld a, 7
     ret

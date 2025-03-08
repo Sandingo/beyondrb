@@ -207,6 +207,8 @@ ItemDescriptionPointers:
 	text_end
 	text_far _BlkAuguriteDescription
 	text_end
+	text_far _ShinyCharmDescription
+	text_end
 	text_far _HM01Description
 	text_end
 	text_far _HM02Description

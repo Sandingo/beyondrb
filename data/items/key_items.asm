@@ -98,4 +98,5 @@ KeyItemFlags:
 	dbit FALSE ; DUSK_STONE
 	dbit FALSE ; UP_GRADE
 	dbit FALSE ; BLK_AUGURITE
+	dbit TRUE ; SHINY_CHARM
 	end_bit_array NUM_ITEMS

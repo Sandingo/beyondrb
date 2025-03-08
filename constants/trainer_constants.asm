@@ -66,4 +66,5 @@ ENDM
 	trainer_const HITECH_JACK
 	trainer_const ARCHER
 	trainer_const KYLE
+	trainer_const KOICHI
 DEF NUM_TRAINERS EQU const_value - 1

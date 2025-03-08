@@ -359,6 +359,11 @@ _OrangeTicketDescription::
 	next "ORANGE ISLANDS."
 	prompt
 
+_ShinyCharmDescription::
+	text "Increases the odds"
+	next "of SHINY #MON."
+	prompt
+
 _HM01Description::
 	text "Cuts using claws,"
 	next "scythes, etc."

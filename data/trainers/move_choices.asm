@@ -60,4 +60,5 @@ TrainerClassMoveChoiceModifications:
 	move_choices 1, 2, 3 ; HITECH JACK
 	move_choices 1       ; ARCHER
 	move_choices 1, 3    ; KYLE
+	move_choices 1, 3    ; KOICHI
 	assert_list_length NUM_TRAINERS

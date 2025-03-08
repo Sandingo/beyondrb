@@ -313,6 +313,7 @@ MinaPic::          INCBIN "gfx/trainers/mina.pic"
 HiTechJackPic::	   INCBIN "gfx/trainers/hitech_jack.pic"
 ArcherPic::		   INCBIN "gfx/trainers/archer.pic"
 KylePic::		   INCBIN "gfx/trainers/kyle.pic"
+KoichiPic::		   INCBIN "gfx/trainers/koichi.pic"
 
 SECTION "Pics 7", ROMX
 PersianPicFront::      INCBIN "gfx/pokemon/front/persian.pic"

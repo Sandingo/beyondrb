@@ -98,6 +98,7 @@ ItemNames::
 	li "DUSK STONE"
 	li "UP-GRADE"
 	li "BLK AUGURITE"
+	li "SHINY CHARM"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

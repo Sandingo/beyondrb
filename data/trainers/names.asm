@@ -51,4 +51,5 @@ TrainerNames::
 	li "HI-TECH JACK"
 	li "ARCHER"
 	li "KYLE"
+	li "KOICHI"
 	assert_list_length NUM_TRAINERS

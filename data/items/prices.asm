@@ -98,6 +98,7 @@ ItemPrices::
 	bcd3 2100 ; DUSK_STONE
 	bcd3 2100 ; UP_GRADE
 	bcd3 2100 ; BLK_AUGURITE
+	bcd3 0		; SHINY_CHARM
 	assert_table_length NUM_ITEMS
 	bcd3 0     ; FLOOR_B2F
 	bcd3 0     ; FLOOR_B1F

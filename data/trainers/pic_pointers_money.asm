@@ -58,4 +58,5 @@ TrainerPicAndMoneyPointers::
 	pic_money HiTechJackPic,   3000
 	pic_money ArcherPic, 	   3500
 	pic_money KylePic,         9900
+	pic_money KoichiPic,		 9900
 	assert_table_length NUM_TRAINERS

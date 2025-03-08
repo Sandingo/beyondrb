@@ -115,6 +115,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone ; DUSK_STONE
 	dw ItemUseEvoStone ; UP-GRADE
 	dw ItemUseEvoStone ; BLK_AUGURITE
+	dw UnusableItem		; SHINY_CHARM
 	
 ItemUseBall:
 

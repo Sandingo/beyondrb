@@ -62,6 +62,8 @@ FightingDojoKarateMasterPostBattleScript:
 	ld a, [wIsInBattle]
 	cp $ff
 	jp z, FightingDojoResetScripts
+	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
+	jp nz, .thisIsTheRematch
 	ld a, [wSavedCoordIndex]
 	and a ; nz if the player was at (4, 3), left of the Karate Master
 	jr z, .already_facing
@@ -77,12 +79,24 @@ FightingDojoKarateMasterPostBattleScript:
 	ld [wJoyIgnore], a
 	SetEventRange EVENT_BEAT_KARATE_MASTER, EVENT_BEAT_FIGHTING_DOJO_TRAINER_3
 	ld a, TEXT_FIGHTINGDOJO_KARATE_MASTER_I_WILL_GIVE_YOU_A_POKEMON
+	jp .finish
+.thisIsTheRematch
+	CheckEvent EVENT_GET_REST_FIGHTING_DOJO_MONS
+	jp nz, .alreadyGotMons
+	SetEvent EVENT_GET_REST_FIGHTING_DOJO_MONS
+	ld a, TEXT_FIGHTINGDOJO_OFFER_REMAINING
+	jp .finish
+.alreadyGotMons
+	ld a, TEXT_FIGHTINGDOJO_KARATE_MASTER_REMATCH_AFTER_TEXT
+	jp .finish
+.finish
 	ldh [hTextID], a
 	call DisplayTextID
 	xor a ; SCRIPT_FIGHTINGDOJO_DEFAULT
 	ld [wJoyIgnore], a
 	ld [wFightingDojoCurScript], a
 	ld [wCurMapScript], a
+	SetEvent EVENT_BEAT_KOICHI_REMATCH ; Set here in case the player never fought Koichi, they'll have to go through the E4 again
 	ret
 
 FightingDojo_TextPointers:
@@ -96,6 +110,8 @@ FightingDojo_TextPointers:
 	dw_const FightingDojoHitmonchanPokeBallText,                    TEXT_FIGHTINGDOJO_HITMONCHAN_POKE_BALL
 	dw_const FightingDojoHitmontopPokeBallText,                     TEXT_FIGHTINGDOJO_HITMONTOP_POKE_BALL
 	dw_const FightingDojoKarateMasterText.IWillGiveYouAPokemonText, TEXT_FIGHTINGDOJO_KARATE_MASTER_I_WILL_GIVE_YOU_A_POKEMON
+	dw_const FightingDojoKarateMasterText.RematchAfterText, TEXT_FIGHTINGDOJO_KARATE_MASTER_REMATCH_AFTER_TEXT
+	dw_const FightingDojoKarateMasterOfferRemaining,  TEXT_FIGHTINGDOJO_OFFER_REMAINING
 
 FightingDojoTrainerHeaders:
 	def_trainers 2
@@ -132,11 +148,50 @@ FightingDojoKarateMasterText:
 	ld [wCurMapScript], a
 	jr .end
 .defeated_dojo
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .inPostgame
 	ld hl, .StayAndTrainWithUsText
+	call PrintText
+	jr .end
+.inPostgame
+	CheckEvent EVENT_BEAT_KOICHI_REMATCH
+	jp nz, .defeated_dojo2
+	ld hl, .offerRematch
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .rematchAccepted
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, .DefeatedText
+	ld de, .DefeatedText
+	call SaveEndBattleTextPointers
+	ld a, 1
+	ld [wIsTrainerBattle], a
+	ld a, OPP_KOICHI
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld a, SCRIPT_FIGHTINGDOJO_KARATE_MASTER_POST_BATTLE
+	ld [wFightingDojoCurScript], a
+	ld [wCurMapScript], a
+	jr .end
+.refused
+	ld hl, .rematchRefused
 	call PrintText
 	jr .end
 .defeated_master
 	ld hl, .IWillGiveYouAPokemonText
+	call PrintText
+	jr .end
+.defeated_dojo2
+	ld hl, FightingDojoKarateMasterText.RematchAfterText
 	call PrintText
 .end
 	jp TextScriptEnd
@@ -155,6 +210,23 @@ FightingDojoKarateMasterText:
 
 .StayAndTrainWithUsText:
 	text_far _FightingDojoKarateMasterStayAndTrainWithUsText
+	text_end
+
+.offerRematch:
+	text_far _FightingDojoKarateMasterRematchText
+	text_end
+
+.rematchRefused:
+	text_far _FightingDojoKarateMasterRematchDeclineText
+	text_end
+
+.rematchAccepted:
+	text_far _FightingDojoKarateMasterRematchAcceptText
+	text_end
+
+
+FightingDojoKarateMasterText.RematchAfterText:
+	text_far _FightingDojoKarateMasterRematchAfterBattleText
 	text_end
 
 FightingDojoBlackbelt1Text:
@@ -231,6 +303,8 @@ FightingDojoBlackbelt4AfterBattleText:
 
 FightingDojoHitmontopPokeBallText:
 	text_asm
+	CheckEvent EVENT_GET_REST_FIGHTING_DOJO_MONS
+	jp nz, .GetMon
 	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
 	jr nz, .BetterNotBeGreedy
 	CheckEvent EVENT_GOT_HITMONTOP
@@ -268,6 +342,8 @@ FightingDojoHitmontopPokeBallText:
 
 FightingDojoHitmonleePokeBallText:
 	text_asm
+	CheckEvent EVENT_GET_REST_FIGHTING_DOJO_MONS
+	jp nz, .GetMon
 	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
 	jr nz, .BetterNotBeGreedy
 	CheckEvent EVENT_GOT_HITMONTOP
@@ -305,6 +381,8 @@ FightingDojoHitmonleePokeBallText:
 
 FightingDojoHitmonchanPokeBallText:
 	text_asm
+	CheckEvent EVENT_GET_REST_FIGHTING_DOJO_MONS
+	jp nz, .GetMon
 	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
 	jr nz, .BetterNotBeGreedy
 	CheckEvent EVENT_GOT_HITMONTOP
@@ -342,4 +420,8 @@ FightingDojoHitmonchanPokeBallText:
 
 FightingDojoBetterNotGetGreedyText:
 	text_far _FightingDojoBetterNotGetGreedyText
+	text_end
+
+FightingDojoKarateMasterOfferRemaining:
+	text_far _FightingDojoKarateMasterOfferRemaining
 	text_end

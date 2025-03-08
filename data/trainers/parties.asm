@@ -51,6 +51,7 @@ TrainerDataPointers:
 	dw HitechJackData
 	dw ArcherData
 	dw KyleData
+	dw KoichiData
 	assert_table_length NUM_TRAINERS
 
 ; if first byte != $FF, then
@@ -476,7 +477,6 @@ BirdKeeperData:
 
 BlackbeltData:
 ; Fighting Dojo
-	db 37, HITMONLEE, HITMONCHAN, HITMONTOP, 0
 	db 31, MANKEY, MANKEY, PRIMEAPE, 0
 	db 32, MACHOP, MACHOKE, 0
 	db 36, PRIMEAPE, 0
@@ -487,6 +487,10 @@ BlackbeltData:
 	db 38, MACHOKE, MACHOP, MACHOKE, 0
 ; Victory Road 2F
 	db 43, MACHOKE, MACHOP, MACHOKE, 0
+
+KoichiData:
+	db 37, HITMONLEE, HITMONCHAN, HITMONTOP, 0
+	db $FF, 60, MACHAMP, 61, ANNIHILAPE, 62, HITMONLEE, 63, HITMONCHAN, 64, HITMONTOP, 0 ; Rematch
 
 Green1Data:
 	db 5, SQUIRTLE, 0

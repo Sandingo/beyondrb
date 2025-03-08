@@ -148,7 +148,17 @@ SpecialTrainerMoves:
 	db 4, 2, TOXIC
 	db 5, 1, TRI_ATTACK
 	db 0
-	
+
+	db KOICHI, 2 ; Post-Game Rematch
+	db 1, 1, EARTHQUAKE
+	db 1, 2, BODY_SLAM
+	db 1, 3, HYPER_BEAM
+	db 2, 1, THUNDERBOLT
+	db 3, 1, COUNTER
+	db 3, 2, BODY_SLAM
+	db 5, 1, MEGA_KICK
+	db 0
+
 	db GIOVANNI, 3
 	db 1, 3, FISSURE
 	db 2, 2, DOUBLE_TEAM
