@@ -277,6 +277,7 @@ INCLUDE "text/MtSilverPokecenter.asm"
 INCLUDE "text/VermilionCity_2.asm"
 INCLUDE "text/Route28House.asm"
 INCLUDE "text/SilphFacility.asm"
+INCLUDE "text/SafariZoneExpansion.asm"
 
 INCLUDE "data/text/text_7.asm"
 

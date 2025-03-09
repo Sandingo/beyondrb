@@ -39,6 +39,7 @@ SuperRodData:
 	dbw MT_SILVER_F1,		 .Group6
 	dbw MT_SILVER_F2,		 .Group6
 	dbw BILLS_GARDEN,		 .Group11
+	dbw SAFARI_ZONE_EXPANSION, .Group6
 	db -1 ; end
 
 ; fishing groups

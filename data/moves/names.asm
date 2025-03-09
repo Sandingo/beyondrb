@@ -192,5 +192,8 @@ MoveNames::
 	li "DAZZLINGLEAM"
 	li "LUNGE"
 	li "NUMB PINCER" ; Shibire Hasami
+	li "FLASH CANNON"
+	li "SHADOW PUNCH"
+	li "DRAGONBREATH"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

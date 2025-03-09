@@ -192,6 +192,9 @@ AttackAnimationPointers:
 	dw DazzlinGleamAnim
 	dw LungeAnim
 	dw NumbPincerAnim
+	dw FlashCannonAnim
+	dw ShadowPunchAnim
+	dw DragonbreathAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -549,6 +552,7 @@ EmberAnim:
 	battle_anim EMBER, SUBANIM_1_FLAMES, 1, 6
 	db -1 ; end
 
+DragonbreathAnim:
 FlamethrowerAnim:
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_BEAM, 1, 6
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_1, 1, 6
@@ -1059,6 +1063,12 @@ GlareAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
+ShadowPunchAnim:
+	battle_anim DREAM_EATER, SE_DARK_SCREEN_PALETTE
+	battle_anim DREAM_EATER, SUBANIM_0_STAR_THRICE, 0, 8
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
 DreamEaterAnim:
 	battle_anim DREAM_EATER, SE_FLASH_SCREEN_LONG
 	battle_anim DREAM_EATER, SE_DARK_SCREEN_PALETTE
@@ -1070,6 +1080,7 @@ PoisonGasAnim:
 	battle_anim POISON_GAS, SUBANIM_1_CLOUD_TOSS, 1, 6
 	db -1 ; end
 
+FlashCannonAnim:
 BarrageAnim:
 	battle_anim BARRAGE, SUBANIM_1_CIRCLE_BLACK_TOSS, 1, 3
 	battle_anim NO_MOVE, SUBANIM_0_STAR_HIGH, 0, 5

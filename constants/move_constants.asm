@@ -198,6 +198,9 @@
 	const DAZZLINGLEAM
 	const LUNGE
 	const NUMB_PINCER
+	const FLASH_CANNON
+	const SHADOW_PUNCH
+	const DRAGONBREATH
 	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 

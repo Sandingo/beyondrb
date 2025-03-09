@@ -36,3 +36,19 @@ _SafariZoneNorthTrainerTips3Text::
 	line "finding the"
 	cont "SECRET HOUSE!"
 	done
+
+_SafariZoneNorthExpansionGuardText::
+	text "We're working on"
+	line "expanding the"
+	cont "SAFARI ZONE."
+	
+	para "It will be some"
+	line "time until it is"
+	cont "finished."
+	
+	para "Why not aim to"
+	line "be the champion?"
+	
+	para "That should take"
+	line "you a while!"
+	done

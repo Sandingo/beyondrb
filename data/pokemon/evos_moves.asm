@@ -414,6 +414,7 @@ GengarEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 25, SHADOW_PUNCH
 	db 29, HYPNOSIS
 	db 38, DREAM_EATER
 	db 0
@@ -581,6 +582,7 @@ BlastoiseEvosMoves:
 	db 15, WATER_GUN
 	db 24, BITE
 	db 31, WITHDRAW
+	db 36, FLASH_CANNON
 	db 42, SKULL_BASH
 	db 52, HYDRO_PUMP
 	db 0
@@ -659,6 +661,7 @@ OnixEvosMoves:
 	db 19, ROCK_THROW
 	db 25, RAGE
 	db 33, SLAM
+	db 41, DRAGONBREATH
 	db 43, HARDEN
 	db 45, IRON_TAIL
 	db 0
@@ -862,6 +865,7 @@ AnnihilapeEvosMoves:
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
 	db 35, RAGE_FIST
+	db 35, SHADOW_PUNCH
 	db 37, SEISMIC_TOSS
 	db 46, THRASH
 	db 0
@@ -910,7 +914,9 @@ MagnetonEvosMoves:
 	db 14, THUNDERSHOCK
 	db 19, SUPERSONIC
 	db 21, SONICBOOM
+	db 30, TRI_ATTACK
 	db 38, THUNDER_WAVE
+	db 44, FLASH_CANNON
 	db 46, SWIFT
 	db 54, SCREECH
 	db 0
@@ -996,6 +1002,7 @@ SteelixEvosMoves:
 	db 19, ROCK_THROW
 	db 25, RAGE
 	db 33, SLAM
+	db 41, DRAGONBREATH
 	db 43, HARDEN
 	db 45, IRON_TAIL
 	db 49, CRUNCH
@@ -1055,6 +1062,7 @@ DragoniteEvosMoves:
 	db 20, AGILITY
 	db 35, SLAM
 	db 45, DRAGON_RAGE
+	db 55, WING_ATTACK
 	db 60, HYPER_BEAM
 	db 0
 
@@ -1351,6 +1359,7 @@ HorseaEvosMoves:
 	db 30, WATER_GUN
 	db 34, INK_SPRAY
 	db 37, AGILITY
+	db 42, DRAGONBREATH
 	db 45, HYDRO_PUMP
 	db 0
 
@@ -1364,6 +1373,7 @@ SeadraEvosMoves:
 	db 30, WATER_GUN
 	db 36, INK_SPRAY
 	db 41, AGILITY
+	db 44, DRAGONBREATH
 	db 52, HYDRO_PUMP
 	db 0
 
@@ -1376,6 +1386,7 @@ KingdraEvosMoves:
 	db 30, WATER_GUN
 	db 36, INK_SPRAY
 	db 41, AGILITY
+	db 45, DRAGONBREATH
 	db 52, HYDRO_PUMP
 	db 0
 
@@ -1399,7 +1410,7 @@ SandshrewEvosMoves:
 ; Learnset
 	db 10, SAND_ATTACK
 	db 17, SLASH
-	db 24, POISON_STING
+	db 24, PIN_MISSILE
 	db 31, SWIFT
 	db 38, FURY_SWIPES
 	db 0
@@ -1410,7 +1421,7 @@ SandslashEvosMoves:
 ; Learnset
 	db 10, SAND_ATTACK
 	db 17, SLASH
-	db 27, POISON_STING
+	db 27, PIN_MISSILE
 	db 36, SWIFT
 	db 47, FURY_SWIPES
 	db 0
@@ -1611,8 +1622,8 @@ BeedrillEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 12, FURY_ATTACK
-	db 16, FOCUS_ENERGY
+	db 10, FURY_ATTACK
+	db 14, FOCUS_ENERGY
 	db 20, TWINEEDLE
 	db 25, RAGE
 	db 30, PIN_MISSILE
@@ -1639,6 +1650,7 @@ DodrioEvosMoves:
 	db 20, GROWL
 	db 24, FURY_ATTACK
 	db 30, DRILL_PECK
+	db 31, TRI_ATTACK
 	db 39, RAGE
 	db 45, TRI_ATTACK
 	db 51, AGILITY
@@ -1736,6 +1748,7 @@ ButterfreeEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 10, GUST
 	db 12, CONFUSION
 	db 15, POISONPOWDER
 	db 16, STUN_SPORE
@@ -1859,6 +1872,7 @@ DecillaEvosMoves:
 	db 38, TAKE_DOWN
 	db 40, ROAR
 	db 45, THRASH
+	db 48, DRAGONBREATH
 	db 0
 
 MukEvosMoves:
@@ -1883,6 +1897,7 @@ GawarhedEvosMoves:
 	db 38, TAKE_DOWN
 	db 40, ROAR
 	db 48, THRASH
+	db 52, DRAGONBREATH
 	db 0
 
 KinglerEvosMoves:
@@ -1991,6 +2006,7 @@ HaunterEvosMoves:
 	db EVOLVE_TRADE, 1, GENGAR
 	db 0
 ; Learnset
+	db 25, SHADOW_PUNCH
 	db 29, HYPNOSIS
 	db 38, DREAM_EATER
 	db 0
@@ -2070,6 +2086,7 @@ VenusaurEvosMoves:
 	db 13, VINE_WHIP
 	db 22, POISONPOWDER
 	db 30, RAZOR_LEAF
+	db 32, PETAL_DANCE
 	db 43, GROWTH
 	db 55, SLEEP_POWDER
 	db 65, SOLARBEAM
@@ -2193,6 +2210,7 @@ RapidashEvosMoves:
 	db 32, STOMP
 	db 35, GROWL
 	db 39, FIRE_SPIN
+	db 40, FURY_ATTACK
 	db 47, TAKE_DOWN
 	db 55, AGILITY
 	db 0
@@ -2296,6 +2314,7 @@ MagnemiteEvosMoves:
 	db 19, SUPERSONIC
 	db 21, SONICBOOM
 	db 35, THUNDER_WAVE
+	db 38, FLASH_CANNON
 	db 41, SWIFT
 	db 47, SCREECH
 	db 0
@@ -2383,7 +2402,8 @@ CharizardEvosMoves:
 	db 9, EMBER
 	db 13, METAL_CLAW
 	db 24, RAGE
-	db 36, SLASH
+	db 36, WING_ATTACK
+	db 42, SLASH
 	db 46, FLAMETHROWER
 	db 55, FIRE_SPIN
 	db 0
@@ -2519,6 +2539,7 @@ MagnezoneEvosMoves:
 	db 19, SUPERSONIC
 	db 21, SONICBOOM
 	db 40, THUNDER_WAVE
+	db 44, FLASH_CANNON
 	db 48, SWIFT
 	db 56, SCREECH
 	db 0
@@ -2604,6 +2625,7 @@ MeltanEvosMoves:
 	db 18, THUNDER_WAVE
 	db 27, THUNDERSHOCK
 	db 36, ACID_ARMOR
+	db 45, FLASH_CANNON
 	db 0
 
 MelmetalEvosMoves:
@@ -2614,6 +2636,7 @@ MelmetalEvosMoves:
 	db 18, THUNDER_WAVE
 	db 27, THUNDERSHOCK
 	db 36, ACID_ARMOR
+	db 45, FLASH_CANNON
 	db 54, MEGA_PUNCH
 	db 63, IRON_BASH
 	db 72, HYPER_BEAM
@@ -2640,6 +2663,7 @@ TotartleEvosMoves:
 	db 13, WATER_GUN
 	db 24, BITE
 	db 31, WITHDRAW
+	db 36, AURORA_BEAM
 	db 42, SKULL_BASH
 	db 53, HYDRO_PUMP
 	db 60, BLIZZARD
@@ -2878,6 +2902,7 @@ QuadragonEvosMoves:
 	db 28, WING_ATTACK
 	db 36, DRAGON_RAGE
 	db 43, FLAMETHROWER
+	db 45, DRAGONBREATH
 	db 54, HYPER_BEAM
 	db 0
 
@@ -2948,6 +2973,7 @@ MagnetiteEvosMoves:
 	db 19, SUPERSONIC
 	db 21, SONICBOOM
 	db 37, THUNDER_WAVE
+	db 40, FLASH_CANNON
 	db 43, SWIFT
 	db 50, SCREECH
 	db 0
@@ -3003,7 +3029,7 @@ GodzilanteEvosMoves:
 	db 30, THRASH
 	db 36, CRUNCH
 	db 41, AMNESIA
-	db 50, FLAMETHROWER
+	db 50, DRAGONBREATH
 	db 54, HYPER_BEAM
 	db 0
 

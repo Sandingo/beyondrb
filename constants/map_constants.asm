@@ -231,6 +231,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const SAFARI_ZONE_EAST,              15, 13 ; $D9
 	map_const SAFARI_ZONE_NORTH,             20, 18 ; $DA
 	map_const SAFARI_ZONE_WEST,              15, 13 ; $DB
+	map_const SAFARI_ZONE_EXPANSION,		 10, 10
 	map_const SAFARI_ZONE_CENTER,            15, 13 ; $DC
 	map_const SAFARI_ZONE_CENTER_REST_HOUSE,  4,  4 ; $DD
 	map_const SAFARI_ZONE_SECRET_HOUSE,       4,  4 ; $DE
@@ -264,7 +265,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const MT_SILVER_SUMMIT,				 13, 18
 	map_const MT_SILVER_POKECENTER,           7,  4
 	map_const ROUTE_28_HOUSE,                 4,  4
-	map_const SILPH_FACILITY,				     4, 4
+	map_const SILPH_FACILITY,				  4,  4
 DEF NUM_MAPS EQU const_value
 
 ; Indoor maps, such as houses, use this as the Map ID in their exit warps

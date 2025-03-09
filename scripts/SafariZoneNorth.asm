@@ -3,6 +3,8 @@ SafariZoneNorth_Script:
 
 SafariZoneNorth_TextPointers:
 	def_text_pointers
+	dw_const SafariZoneNorthWorkerText,		   TEXT_SAFARIZONENORTH_WORKER_1
+	dw_const SafariZoneNorthWorkerText,		   TEXT_SAFARIZONENORTH_WORKER_2
 	dw_const PickUpItemText,                   TEXT_SAFARIZONENORTH_PROTEIN
 	dw_const PickUpItemText,                   TEXT_SAFARIZONENORTH_TM_SKULL_BASH
 	dw_const SafariZoneNorthRestHouseSignText, TEXT_SAFARIZONENORTH_REST_HOUSE_SIGN
@@ -10,6 +12,10 @@ SafariZoneNorth_TextPointers:
 	dw_const SafariZoneNorthSignText,          TEXT_SAFARIZONENORTH_SIGN
 	dw_const SafariZoneNorthTrainerTips2Text,  TEXT_SAFARIZONENORTH_TRAINER_TIPS_2
 	dw_const SafariZoneNorthTrainerTips3Text,  TEXT_SAFARIZONENORTH_TRAINER_TIPS_3
+
+SafariZoneNorthWorkerText:
+	text_far _SafariZoneNorthExpansionGuardText
+	text_end
 
 SafariZoneNorthRestHouseSignText:
 	text_far _SafariZoneNorthRestHouseSignText

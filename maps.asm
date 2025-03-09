@@ -1281,3 +1281,8 @@ INCLUDE "data/maps/headers/SilphFacility.asm"
 INCLUDE "scripts/SilphFacility.asm"
 INCLUDE "data/maps/objects/SilphFacility.asm"
 SilphFacility_Blocks: INCBIN "maps/SilphFacility.blk"
+
+INCLUDE "data/maps/headers/SafariZoneExpansion.asm"
+INCLUDE "scripts/SafariZoneExpansion.asm"
+INCLUDE "data/maps/objects/SafariZoneExpansion.asm"
+SafariZoneExpansion_Blocks: INCBIN "maps/SafariZoneExpansion.blk"

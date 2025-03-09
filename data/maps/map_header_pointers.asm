@@ -213,6 +213,7 @@ MapHeaderPointers::
 	dw SafariZoneEast_h
 	dw SafariZoneNorth_h
 	dw SafariZoneWest_h
+	dw SafariZoneExpansion_h
 	dw SafariZoneCenter_h
 	dw SafariZoneCenterRestHouse_h
 	dw SafariZoneSecretHouse_h

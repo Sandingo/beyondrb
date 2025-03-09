@@ -202,6 +202,7 @@ SpecialTrainerMoves:
 	db 1, 4, MEGA_DRAIN
 	db 2, 2, TOXIC
 	db 2, 4, LEECH_LIFE
+	db 3, 1, THUNDERBOLT
 	db 4, 1, WRAP
 	db 5, 2, PSYCHIC_M
 	db 0
@@ -219,6 +220,18 @@ SpecialTrainerMoves:
 	db 5, 1, BLIZZARD
 	db 5, 2, FIRE_BLAST
 	db 5, 3, THUNDER
+	db 0
+
+	db RIVAL1, 7
+	db 2, 2, PSYWAVE ; Give Abra SOMETHING to do.
+	db 0
+	
+	db RIVAL1, 8
+	db 2, 2, PSYWAVE
+	db 0
+
+	db RIVAL1, 9
+	db 2, 2, PSYWAVE
 	db 0
 
 	db RIVAL3, 1

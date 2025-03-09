@@ -109,7 +109,7 @@ Moves:
 	move MEDITATE,     ATTACK_UP1_EFFECT,            0, PSYCHIC_TYPE, 100, 40
 	move AGILITY,      SPEED_UP2_EFFECT,             0, PSYCHIC_TYPE, 100, 30
 	move QUICK_ATTACK, NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 30
-	move RAGE,         RAGE_EFFECT,                 20, NORMAL,       100, 20
+	move RAGE,         THRASH_PETAL_DANCE_EFFECT,   40, NORMAL,       100, 20
 	move TELEPORT,     SWITCH_AND_TELEPORT_EFFECT,   0, PSYCHIC_TYPE, 100, 20
 	move NIGHT_SHADE,  SPECIAL_DAMAGE_EFFECT,        0, GHOST,        100, 15
 	move MIMIC,        MIMIC_EFFECT,                 0, NORMAL,       100, 10
@@ -175,7 +175,7 @@ Moves:
 	move SUPER_FANG,   SUPER_FANG_EFFECT,            1, NORMAL,        90, 10
 	move SLASH,        NO_ADDITIONAL_EFFECT,        70, NORMAL,       100, 20
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,       100, 10
-	move RAGE_FIST,    RAGE_EFFECT,                 50, GHOST,        100, 10
+	move RAGE_FIST,    THRASH_PETAL_DANCE_EFFECT,   50, GHOST,        100, 10
 	move CRUNCH,       SPECIAL_DOWN_SIDE_EFFECT,    80, DARK, 		  100, 15
 	move IRON_TAIL,    DEFENSE_DOWN_SIDE_EFFECT,   100, STEEL,         75, 15
 	move METAL_CLAW,   NO_ADDITIONAL_EFFECT,        50, STEEL,         90, 35
@@ -203,5 +203,8 @@ Moves:
 	move DAZZLINGLEAM, NO_ADDITIONAL_EFFECT,        80, FAIRY,		  100, 10
 	move LUNGE,		   ATTACK_DOWN_SIDE_EFFECT,		80, BUG,		   80, 15
 	move NUMB_PINCER,  PARALYZE_SIDE_EFFECT1,       40, BUG,           95, 20
+	move FLASH_CANNON, SPECIAL_DOWN_SIDE_EFFECT,    80, STEEL, 		  100, 10
+	move SHADOW_PUNCH, SWIFT_EFFECT,				60,	GHOST,        100, 20
+	move DRAGONBREATH, PARALYZE_SIDE_EFFECT1,		60, DRAGON, 	  100, 20
 	move STRUGGLE,     RECOIL_EFFECT,               50, BIRD,         100, 10
 	assert_table_length NUM_ATTACKS

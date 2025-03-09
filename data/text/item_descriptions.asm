@@ -485,8 +485,8 @@ _TM19Description::
 	prompt
 
 _TM20Description::
-	text "Raises ATTACK if"
-	next "the user is hit."
+	text "Works 2-3 turns"
+	next "and confuses user."
 	prompt
 
 _TM21Description::

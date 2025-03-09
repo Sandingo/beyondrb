@@ -213,6 +213,7 @@ MapHeaderBanks::
 	db BANK(SafariZoneEast_h)
 	db BANK(SafariZoneNorth_h)
 	db BANK(SafariZoneWest_h)
+	db BANK(SafariZoneExpansion_h)
 	db BANK(SafariZoneCenter_h)
 	db BANK(SafariZoneCenterRestHouse_h)
 	db BANK(SafariZoneSecretHouse_h)

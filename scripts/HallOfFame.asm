@@ -106,6 +106,12 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_CERULEAN_CAVE_GUY ; Mewtwo is available
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_SAFARI_ZONE_NORTH_WORKER_1 ; Allow access to Safari Zone Expansion
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_SAFARI_ZONE_NORTH_WORKER_2
+	ld [wMissableObjectIndex], a
+	predef HideObject
 	ld a, HS_ROUTE_22_SILVERGUARD_1 ; Allow access to Mt. Silver
 	ld [wMissableObjectIndex], a
 	predef HideExtraObject

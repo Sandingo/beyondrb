@@ -212,6 +212,7 @@ WildDataPointers:
 	dw SafariZoneEastWildMons
 	dw SafariZoneNorthWildMons
 	dw SafariZoneWestWildMons
+	dw SafariZoneExpansionWildMons
 	dw SafariZoneCenterWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -331,3 +332,4 @@ INCLUDE "data/wild/maps/CeladonCity.asm"
 INCLUDE "data/wild/maps/ViridianCity.asm"
 INCLUDE "data/wild/maps/VermilionCity.asm"
 INCLUDE "data/wild/maps/VermilionDock.asm"
+INCLUDE "data/wild/maps/SafariZoneExpansion.asm"

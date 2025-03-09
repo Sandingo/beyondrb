@@ -193,6 +193,9 @@ MoveSoundTable:
 	db SFX_PSYBEAM,            $00, $80 ; DAZZLINGLEAM
 	db SFX_SUPER_EFFECTIVE,    $f0, $ff ; LUNGE
 	db SFX_BATTLE_0D,          $00, $a0 ; NUMB_PINCER
+	db SFX_PSYBEAM,            $00, $80 ; FLASH_CANNON
+	db SFX_BATTLE_0B,          $01, $80 ; SHADOW_PUNCH
+	db SFX_BATTLE_29,          $f0, $80 ; DRAGONBREATH
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80
