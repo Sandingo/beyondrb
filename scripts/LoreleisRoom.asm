@@ -131,6 +131,12 @@ LoreleisRoomLoreleiText:
 	text_asm
 	ld hl, LoreleisRoomTrainerHeader0
 	call TalkToTrainer
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr z, .notRematch
+	ld a, 2
+	ld [wTrainerNo], a
+.notRematch
 	jp TextScriptEnd
 
 LoreleisRoomLoreleiBeforeBattleText:

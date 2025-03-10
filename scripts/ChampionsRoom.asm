@@ -68,6 +68,24 @@ ChampionsRoomRivalReadyToBattleScript:
 	ld a, OPP_RIVAL3
 	ld [wCurOpponent], a
 
+   ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr z, .notRematch
+	; select which team to use during the encounter
+	ld a, [wRivalStarter]
+	cp STARTER2
+	jr nz, .NotStarter2Rematch
+	ld a, $4
+	jr .saveTrainerId
+.NotStarter2Rematch
+	cp STARTER3
+	jr nz, .NotStarter3Rematch
+	ld a, $5
+	jr .saveTrainerId
+.NotStarter3Rematch
+	ld a, $6
+	jr .saveTrainerId
+.notRematch
 	; select which team to use during the encounter
 	ld a, [wRivalStarter]
 	cp STARTER2

@@ -132,6 +132,12 @@ AgathasRoomAgathaText:
 	text_asm
 	ld hl, AgathasRoomTrainerHeader0
 	call TalkToTrainer
+    ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr z, .notRematch
+	ld a, 2
+	ld [wTrainerNo], a
+.notRematch
 	jp TextScriptEnd
 
 AgathaBeforeBattleText:
