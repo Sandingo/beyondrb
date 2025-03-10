@@ -358,7 +358,55 @@ _OaksLabRivalLeaveItAllToMeText::
 	cont "<PLAYER>! Hahaha!"
 	done
 
+_OaksLabOfferShinyCharm::
+	text "This is"
+	line "incredible!"
+	
+	para "I never thought I'd"
+	line "see the day my"
+	cont "#DEX would be"
+	cont "completed!"
+	
+	para "From the bottom"
+	line "of my heart, I"
+	cont "thank you!"
+	
+	para "Here, have this."
+	line "One last gift to"
+	cont "commemorate the"
+	cont "occassion."
+	prompt
+
+_OaksLabReceiveShinyCharmText::
+	text "<PLAYER> got a"
+	line "SHINY CHARM!@"
+	text_end
+
+_OaksLabGiveShinyCharmExplanationText::
+	text "The SHINY CHARM"
+	line "is a special item"
+	cont "that makes rare"
+	cont "-colored #MON"
+	cont "appear more!"
+	
+	para "You have completed"
+	line "all the tasks I've"
+	cont "set before you,"
+	cont "and then some."
+	
+	para "Let this treasure"
+	line "be motivation to"
+	cont "not let your"
+	cont "journey end yet!"
+	prompt
+
 _OaksLabScientistText::
 	text "I study #MON as"
 	line "PROF.OAK's AIDE."
+	done
+
+_OaksLabNoMoreRoomText::
+	text "Come back after"
+	line "you make some room"
+	cont "for this!"
 	done

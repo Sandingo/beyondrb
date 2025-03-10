@@ -235,3 +235,10 @@ _SilphCo11FArcherAfterBattleText::
 	cont "about you in"
 	cont "the future..."
 	done
+
+_SilphCo11FOmegadgeActivated::
+	text "...?"
+	
+	para "You hear something"
+	line "getting closer."
+	done

@@ -1004,6 +1004,33 @@ OaksLabOak1Text:
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	predef DisplayDexRating
+; Check if the player completed the Pokedex
+	ld a, 230
+	ldh [hOaksAideRequirement], a ; Use the same system as Oak's Aides to check no. of Pokemon
+	ld hl, wPokedexOwned
+	ld b, wPokedexOwnedEnd - wPokedexOwned
+	call CountSetBits
+	ld a, [wNumSetBits]
+	ldh [hOaksAideNumMonsOwned], a
+	ld b, a
+	ldh a, [hOaksAideRequirement] ; Compare DexOwned to the max count
+	cp b
+	jr z, .caughtEmAll
+	jp nc, .done ; If not, skip gifting the Shiny Charm
+.caughtEmAll
+	CheckEvent EVENT_GOT_SHINY_CHARM
+	jp nz, .done
+	ld hl, .ShinyCharmOffer
+	call PrintText
+	lb bc, SHINY_CHARM, 1
+	call GiveItem
+	jr nc, .bagFullForShinyCharm
+; Got Shiny Charm
+	ld hl, .RecievedCharm
+	call PrintText
+	ld hl, .CharmExplaination
+	call PrintText
+	SetEvent EVENT_GOT_SHINY_CHARM
 	jp .done
 .check_for_poke_balls
 	ld b, POKE_BALL
@@ -1043,6 +1070,10 @@ OaksLabOak1Text:
 	ld hl, .PokemonAroundTheWorldText
 	call PrintText
 	jr .done
+.bagFullForShinyCharm
+	ld hl, .NoMoreRoom
+	call PrintText
+	jr .done
 .come_see_me_sometimes
 	ld hl, .ComeSeeMeSometimesText
 	call PrintText
@@ -1077,6 +1108,23 @@ OaksLabOak1Text:
 
 .HowIsYourPokedexComingText:
 	text_far _OaksLabOak1HowIsYourPokedexComingText
+	text_end
+
+.ShinyCharmOffer
+	text_far _OaksLabOfferShinyCharm
+	text_end
+
+.RecievedCharm:
+	text_far _OaksLabReceiveShinyCharmText
+	sound_get_key_item
+	text_end
+
+.CharmExplaination
+	text_far _OaksLabGiveShinyCharmExplanationText
+	text_end
+
+.NoMoreRoom
+	text_far _OaksLabNoMoreRoomText
 	text_end
 
 OaksLabPokedexText:

@@ -270,6 +270,7 @@ VermilionTruck1:
 	ld [wCurOpponent], a
 	ld a, 30
 	ld [wCurEnemyLevel], a
+	callfar RollForShiny
 	xor a
 	ld [wIsTrainerBattle], a
 	ld a, SCRIPT_VERMILIONDOCK_MEW_POST_BATTLE

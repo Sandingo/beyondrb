@@ -68,6 +68,18 @@ SilphCo11FSetUnlockedDoorEventScript:
 	and a
 	ret z
 	SetEvent EVENT_SILPH_CO_11_UNLOCKED_DOOR
+	ld a, TEXT_OMEGADGE_ACTIVATED
+	ldh [hTextID], a
+	call DisplayTextID
+	ld a, OMEGADGE
+	ld [wCurOpponent], a
+	ld a, 35
+	ld [wCurEnemyLevel], a
+	callfar RollForShiny
+	xor a
+	ld [wIsTrainerBattle], a
+	ld [SilphCo11FResetCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 SilphCo11FTeamRocketLeavesScript:
@@ -125,6 +137,7 @@ SilphCo11FTeamRocketLeavesScript:
 	db HS_SILPH_CO_5F_2
 	db HS_SILPH_CO_5F_3
 	db HS_SILPH_CO_5F_4
+	db HS_SILPH_CO_5F_5
 	db HS_SILPH_CO_6F_1
 	db HS_SILPH_CO_6F_2
 	db HS_SILPH_CO_6F_3
@@ -278,10 +291,11 @@ SilphCo11F_TextPointers:
 	dw_const SilphCo11FSilphPresidentText,            TEXT_SILPHCO11F_SILPH_PRESIDENT
 	dw_const SilphCo11FBeautyText,                    TEXT_SILPHCO11F_BEAUTY
 	dw_const SilphCo11FGiovanniText,                  TEXT_SILPHCO11F_GIOVANNI
-	dw_const SilphCo11FArcherText,          TEXT_SILPHCO11F_ARCHER
+	dw_const SilphCo11FArcherText,          		  TEXT_SILPHCO11F_ARCHER
 	dw_const SilphCo11FRocket2Text,                   TEXT_SILPHCO11F_ROCKET2
-	dw_const PickUpItemText,                 	  TEXT_SILPHCO11F_ELECTIRIZER
+	dw_const PickUpItemText,                 	      TEXT_SILPHCO11F_ELECTIRIZER
 	dw_const SilphCo11FGiovanniYouRuinedOurPlansText, TEXT_SILPHCO11F_GIOVANNI_YOU_RUINED_OUR_PLANS
+	dw_const SilphCo11FOmegadgeActivatedText,		  TEXT_OMEGADGE_ACTIVATED
 
 
 SilphCo11TrainerHeaders:
@@ -291,6 +305,19 @@ SilphCo11TrainerHeader0:
 SilphCo11TrainerHeader1:
 	trainer EVENT_BEAT_SILPH_CO_11F_TRAINER_1, 3, SilphCo11FRocket2BattleText, SilphCo11FRocket2EndBattleText, SilphCo11FRocket2AfterBattleText
 	db -1 ; end
+
+SilphCo11FOmegadgeActivatedText:
+	text_asm
+	ld hl, SilphCo11FOmegadgeActivated
+	call PrintText
+	ld c, BANK(Music_MeetEvilTrainer)
+	ld a, MUSIC_MEET_EVIL_TRAINER
+	call PlayMusic
+	jp TextScriptEnd
+
+SilphCo11FOmegadgeActivated:
+	text_far _SilphCo11FOmegadgeActivated
+	text_end
 
 SilphCo11FSilphPresidentText:
 	text_asm
