@@ -120,3 +120,24 @@ _VermilionCityNoRoomText::
 	text "You don't have"
 	line "room for this!"
 	done
+
+_VermilionCityOrangeTicketText::
+	text "Ah, that's... an"
+	line "ORANGE TICKET!"
+	
+	para "I can page a ferry"
+	line "if you want to go"
+	cont "to CITRINE ISLAND."
+	done
+
+_VermilionCityOrangeTicketDecline::
+	text "Alright, come back"
+	line "if you change your"
+	cont "mind."
+	done
+
+_VermilionCityOrangeTicketAccept::
+	text "It will be here"
+	line "shortly. Please"
+	cont "wait!"
+	done

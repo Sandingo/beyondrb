@@ -37,14 +37,18 @@ DEF SET_PAL_DEFAULT EQU $ff
 	const PAL_PALLET    ; $01
 	const PAL_VIRIDIAN  ; $02
 	const PAL_PEWTER    ; $03
+	const PAL_ROUTE_4
 	const PAL_CERULEAN  ; $04
+	const PAL_ROUTE_10
 	const PAL_LAVENDER  ; $05
 	const PAL_VERMILION ; $06
 	const PAL_CELADON   ; $07
 	const PAL_FUCHSIA   ; $08
 	const PAL_CINNABAR  ; $09
-	const PAL_INDIGO    ; $0A
 	const PAL_SAFFRON   ; $0B
+	const PAL_INDIGO    ; $0A
+	const PAL_ROUTE_28
+	const PAL_CITRINE
 	const PAL_TOWNMAP   ; $0C
 	const PAL_LOGO1     ; $0D
 	const PAL_LOGO2     ; $0E

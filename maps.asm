@@ -1286,3 +1286,8 @@ INCLUDE "data/maps/headers/SafariZoneExpansion.asm"
 INCLUDE "scripts/SafariZoneExpansion.asm"
 INCLUDE "data/maps/objects/SafariZoneExpansion.asm"
 SafariZoneExpansion_Blocks: INCBIN "maps/SafariZoneExpansion.blk"
+
+INCLUDE "data/maps/headers/CitrineIsland.asm"
+INCLUDE "scripts/CitrineIsland.asm"
+INCLUDE "data/maps/objects/CitrineIsland.asm"
+CitrineIsland_Blocks: INCBIN "maps/CitrineIsland.blk"

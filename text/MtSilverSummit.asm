@@ -61,8 +61,8 @@ _OrangeTicketExplaination::
 
 	para "That is the ticket"
 	line "required to take"
-	cont "a ferry to the"
-	cont "ORANGE ISLANDS."
+	cont "a ferry to"
+	cont "CITRINE ISLAND."
 	
 	para "Take it to"
 	line "VERMILION CITY"

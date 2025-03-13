@@ -9,7 +9,7 @@ PalletTown_Object:
 
 	def_warp_events
 IF DEF(_DEBUG)
-	warp_event  5,  5, HALL_OF_FAME, 1 ; Used for quick testing
+	warp_event  5,  5, CITRINE_ISLAND, 1 ; Used for quick testing
 ELSE
 	warp_event  5,  5, REDS_HOUSE_1F, 1
 ENDC

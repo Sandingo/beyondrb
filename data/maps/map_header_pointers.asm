@@ -4,25 +4,27 @@ MapHeaderPointers::
 	dw PalletTown_h
 	dw ViridianCity_h
 	dw PewterCity_h
+	dw Route4_h
 	dw CeruleanCity_h
+	dw Route10_h
 	dw LavenderTown_h
 	dw VermilionCity_h
 	dw CeladonCity_h
 	dw FuchsiaCity_h
 	dw CinnabarIsland_h
-	dw IndigoPlateau_h
 	dw SaffronCity_h
+	dw IndigoPlateau_h
+	dw MtSilverFront_h
+	dw CitrineIsland_h
 	dw SaffronCity_h ; UNUSED_MAP_0B
 	dw Route1_h
 	dw Route2_h
 	dw Route3_h
-	dw Route4_h
 	dw Route5_h
 	dw Route6_h
 	dw Route7_h
 	dw Route8_h
 	dw Route9_h
-	dw Route10_h
 	dw Route11_h
 	dw Route12_h
 	dw Route13_h
@@ -39,7 +41,6 @@ MapHeaderPointers::
 	dw Route24_h
 	dw Route25_h
 	dw Route28_h
-	dw MtSilverFront_h
 	dw BillsGarden_h
 	dw RedsHouse1F_h
 	dw RedsHouse2F_h

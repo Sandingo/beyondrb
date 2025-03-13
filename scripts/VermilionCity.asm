@@ -74,6 +74,7 @@ VermilionCity_ScriptPointers:
 	dw_const VermilionCityPlayerMovingUp2Script,     SCRIPT_VERMILIONCITY_PLAYER_MOVING_UP2
 	dw_const VermilionCityPlayerAllowedToPassScript, SCRIPT_VERMILIONCITY_PLAYER_ALLOWED_TO_PASS
 	dw_const VermilionCityMinaPostBattleScript,		 SCRIPT_VERMILIONCITY_MINA_POST_BATTLE
+	dw_const VermilionCityWarpToCitrineScript,		 SCRIPT_VERMILIONCITY_WARP_CITRINE
 
 VermilionCityDefaultScript:
 	ld a, [wSpritePlayerStateData1FacingDirection]
@@ -149,6 +150,20 @@ VermilionCityPlayerMovingUp1Script:
 	call DelayFrames
 	ld a, SCRIPT_VERMILIONCITY_DEFAULT
 	ld [wVermilionCityCurScript], a
+	ret
+
+VermilionCityWarpToCitrineScript: ; This does not work correctly.
+	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	ld a, CITRINE_ISLAND
+	ldh [hWarpDestinationMap], a
+	ld a, $1
+	ld [wDestinationWarpID], a
+	ld hl, wStatusFlags3
+	set BIT_WARP_FROM_CUR_SCRIPT, [hl]
+	ld a, SCRIPT_VERMILIONCITY_DEFAULT
+	ld [wVermilionCityCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 VermilionCity_TextPointers:
@@ -229,7 +244,29 @@ VermilionCitySailor1Text:
 	ld [wVermilionCityCurScript], a
 	jr .end
 .ship_departed
+	ld b, ORANGE_TICKET
+	predef GetQuantityOfItemInBag
+	ld a, b
+	and a
+	jr nz, .player_has_orange_ticket
 	ld hl, .ShipSetSailText
+	call PrintText
+	jp .end
+.player_has_orange_ticket
+	ld hl, .OrangeTicketCheck
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .decline_orange
+	ld hl, .OrangeTicketAccept
+	call PrintText
+	ld a, SCRIPT_VERMILIONCITY_WARP_CITRINE
+	ld [wVermilionCityCurScript], a
+	ld [wCurMapScript], a
+	jp .end
+.decline_orange
+	ld hl, .OrangeTicketDecline
 	call PrintText
 .end
 	jp TextScriptEnd
@@ -238,6 +275,18 @@ VermilionCitySailor1Text:
 	dbmapcoord 19, 29 ; in front of guard
 	dbmapcoord 19, 31 ; behind guard
 	db -1 ; end
+
+.OrangeTicketCheck:
+	text_far _VermilionCityOrangeTicketText
+	text_end
+
+.OrangeTicketDecline:
+	text_far _VermilionCityOrangeTicketDecline
+	text_end
+
+.OrangeTicketAccept:
+	text_far _VermilionCityOrangeTicketAccept
+	text_end
 
 .WelcomeToSSAnneText:
 	text_far _VermilionCitySailor1WelcomeToSSAnneText

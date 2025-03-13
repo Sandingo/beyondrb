@@ -10,25 +10,27 @@ ExternalMapEntries:
 	external_map  2, 11, PalletTownName
 	external_map  2,  8, ViridianCityName
 	external_map  2,  3, PewterCityName
+	external_map  8,  2, Route4Name
 	external_map 10,  2, CeruleanCityName
+	external_map 14,  4, Route10Name
 	external_map 14,  5, LavenderTownName
 	external_map 10,  9, VermilionCityName
 	external_map  7,  5, CeladonCityName
 	external_map  8, 13, FuchsiaCityName
 	external_map  2, 15, CinnabarIslandName
-	external_map  0,  2, IndigoPlateauName
 	external_map 10,  5, SaffronCityName
+	external_map  0,  2, IndigoPlateauName
+	external_map  0,  9, Route28Name ; Mt Silver Front
+	external_map 14, 15, CitrineIslandName
 	external_map  0,  0, PalletTownName ; unused
 	external_map  2, 10, Route1Name
 	external_map  2,  6, Route2Name
 	external_map  4,  3, Route3Name
-	external_map  8,  2, Route4Name
 	external_map 10,  3, Route5Name
 	external_map 10,  8, Route6Name
 	external_map  8,  5, Route7Name
 	external_map 13,  5, Route8Name
 	external_map 13,  2, Route9Name
-	external_map 14,  4, Route10Name
 	external_map 12,  9, Route11Name
 	external_map 14,  9, Route12Name
 	external_map 13, 11, Route13Name
@@ -45,7 +47,6 @@ ExternalMapEntries:
 	external_map 10,  1, Route24Name
 	external_map 11,  0, Route25Name
 	external_map  0,  9, Route28Name
-	external_map  0,  9, Route28Name ; Mt Silver Front
 	external_map 11,  0, Route25Name ; Bill's Garden
 	assert_table_length FIRST_INDOOR_MAP
 

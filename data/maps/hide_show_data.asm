@@ -6,25 +6,27 @@ MapHSPointers:
 	dw PalletTownHS
 	dw ViridianCityHS
 	dw PewterCityHS
+	dw Route4HS
 	dw CeruleanCityHS
+	dw NoHS				; Route 10
 	dw NoHS
 	dw VermilionCityHS
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw NoHS
 	dw SaffronCityHS
+	dw NoHS
+	dw NoHS             ; Mt Silver Front
+	dw NoHS ; CitrineIsland
 	dw NoHS
 	dw Route1HS
 	dw Route2HS
 	dw NoHS
-	dw Route4HS
 	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw Route9HS
-	dw NoHS
 	dw NoHS
 	dw Route12HS
 	dw NoHS
@@ -41,7 +43,6 @@ MapHSPointers:
 	dw Route24HS
 	dw Route25HS
 	dw Route28HS		; Route28
-	dw NoHS             ; Mt Silver Front
 	dw NoHS				; Bills Garden
 	dw NoHS
 	dw NoHS

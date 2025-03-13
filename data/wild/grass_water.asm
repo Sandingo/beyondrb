@@ -3,25 +3,27 @@ WildDataPointers:
 	dw NothingWildMons         ; PALLET_TOWN
 	dw ViridianCityWildMons         ; VIRIDIAN_CITY
 	dw NothingWildMons         ; PEWTER_CITY
+	dw Route4WildMons          ; ROUTE_4
 	dw CeruleanCityWildMons    ; CERULEAN_CITY
+	dw Route10WildMons         ; ROUTE_10
 	dw NothingWildMons         ; LAVENDER_TOWN
 	dw VermilionCityWildMons         ; VERMILION_CITY
 	dw CeladonCityWildMons     ; CELADON_CITY
 	dw ViridianCityWildMons         ; FUCHSIA_CITY
 	dw SeaRoutesWildMons         ; CINNABAR_ISLAND
-	dw NothingWildMons         ; INDIGO_PLATEAU
 	dw NothingWildMons         ; SAFFRON_CITY
+	dw NothingWildMons         ; INDIGO_PLATEAU
+	dw MtSilverFrontWildMons
+	dw VermilionCityWildMons   ; CITRINE_ISLAND
 	dw NothingWildMons         ; unused
 	dw Route1WildMons          ; ROUTE_1
 	dw Route2WildMons          ; ROUTE_2
 	dw Route3WildMons          ; ROUTE_3
-	dw Route4WildMons          ; ROUTE_4
 	dw Route5WildMons          ; ROUTE_5
 	dw Route6WildMons          ; ROUTE_6
 	dw Route7WildMons          ; ROUTE_7
 	dw Route8WildMons          ; ROUTE_8
 	dw Route9WildMons          ; ROUTE_9
-	dw Route10WildMons         ; ROUTE_10
 	dw Route11WildMons         ; ROUTE_11
 	dw Route12WildMons         ; ROUTE_12
 	dw Route13WildMons         ; ROUTE_13
@@ -38,7 +40,6 @@ WildDataPointers:
 	dw Route24WildMons         ; ROUTE_24
 	dw Route25WildMons         ; ROUTE_25
 	dw Route28WildMons
-	dw MtSilverFrontWildMons
 	dw BillsGardenWildMons
 	dw NothingWildMons         ; REDS_HOUSE_1F
 	dw NothingWildMons
