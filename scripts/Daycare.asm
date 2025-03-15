@@ -56,10 +56,37 @@ DaycareGentlemanText:
 	call RemovePokemon
 	ld a, [wCurPartySpecies]
 	call PlayCry
+	call SetEggSteps
 	ld hl, .ComeSeeMeInAWhileText
 	jp .done
-
 .daycareInUse
+	call CanBreed
+	jp c, .cannot
+	ld a, [wIsEggInDaycare]
+	and a
+	jr z, .cannot ; There is no egg
+	call GetBabyID
+; Skip calculating custom DVs
+	ld hl, .EggOfferText
+	call PrintText	
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, .declineEgg
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	ld hl, .NoRoomForMonText ; If there is no room.
+	jp z, .done
+	call GetBabyID ; Get BabymonID
+	ld c, $5	   ; Babies are at lv 5, like Gen 2
+	call GivePokemon
+	jp .noEgg
+.declineEgg
+	ld hl, .DeclineEggText 
+	call PrintText ; Then check on Pokemon
+.noEgg
+	call SetEggSteps
+.cannot
 	xor a
 	ld hl, wDayCareMonName
 	call GetPartyMonName
@@ -201,7 +228,7 @@ DaycareGentlemanText:
 	ld a, [wCurPartySpecies]
 	call PlayCry
 	ld hl, .GotMonBackText
-	jr .done
+	jp .done
 
 .leaveMonInDayCare
 	ld a, [wDayCareStartLevel]
@@ -268,3 +295,49 @@ DaycareGentlemanText:
 .NotEnoughMoneyText:
 	text_far _DaycareGentlemanNotEnoughMoneyText
 	text_end
+
+.EggOfferText:
+	text_far _DaycareGentlemanEggExplain
+	text_end
+
+.DeclineEggText:
+	text_far _DaycareGentlemanDeclineEgg
+	text_end
+
+INCLUDE "data/pokemon/breeding_list.asm"
+
+
+CanBreed: ; Checks if the Pokemon cannot breed (Legendaries and Ditto)
+	ld hl, NoBreedList
+	ld a, [wDayCareMonSpecies]
+	ld b, a
+.loop
+	ld a, [hli]
+	cp b
+	jr z, .cannot
+	inc a
+	jr nz, .loop
+	xor a
+	ret
+.cannot
+	scf
+	ret
+
+GetBabyID: ; Read the table to determine which baby the Pokemon had
+	ld a, [wDayCareMonSpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, BreedingList
+	add hl,bc
+	ld a, [hl]
+	ld b, a
+	ret
+
+SetEggSteps:
+   	ld a, 0
+   	ld [wIsEggInDaycare], a ; Clear Eggs 
+	ld b, 250 ; 250 steps for an Egg to spawn
+	ld a, b
+	ld [wEggRemainingSteps], a
+	ret

@@ -4,7 +4,7 @@ _DaycareGentlemanAllRightThenText::
 	text_end
 
 _DaycareGentlemanComeAgainText::
-	text "come again."
+	text "Do come again!"
 	done
 
 _DaycareGentlemanNoRoomForMonText::
@@ -32,3 +32,24 @@ _DaycareGentlemanNotEnoughMoneyText::
 	text "Hey, you don't"
 	line "have enough ¥!"
 	done
+
+_DaycareGentlemanEggExplain::
+	text "Your @"
+	text_ram wDayCareMonName
+	db $0
+	line "has been playing"
+	cont "with my DITTO."
+	
+	para "It looks like they"
+	line "had an EGG!"
+	
+	para "Do you want the"
+	line "#MON that"
+	cont "hatched from it?"
+	done
+
+_DaycareGentlemanDeclineEgg::
+	text "Alright, I'll take"
+	line "good care of it,"
+	cont "then!"
+	prompt

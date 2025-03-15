@@ -162,6 +162,21 @@ UNION
 wTileMapBackup:: ds SCREEN_WIDTH * SCREEN_HEIGHT
 
 NEXTU
+ ; buffer for the blocks surrounding the player (6 columns by 5 rows of 4x4-tile blocks)
+ wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
+ 
+ NEXTU
+ ; buffer for temporarily saving and restoring shadow OAM
+ wShadowOAMBackup::
+ ; wShadowOAMBackupSprite00 - wShadowOAMBackupSprite39
+ FOR n, NUM_SPRITE_OAM_STRUCTS
+ wShadowOAMBackupSprite{02d:n}:: sprite_oam_struct wShadowOAMBackupSprite{02d:n}
+ ENDR
+ wShadowOAMBackupEnd::
+ 
+
+
+NEXTU
 ; list of indexes to patch with SERIAL_NO_DATA_BYTE after transfer
 wSerialPartyMonsPatchList:: ds 200
 
@@ -176,8 +191,6 @@ wBattleFacilityMonNumber3:: db ; new
 wBattleFacilityMonNumber4:: db ; new
 wBattleFacilityMonNumber5:: db ; new
 wBattleFacilityWinningStreak:: db ; new
-
-	ds 70
 
 SECTION "Overworld Map", WRAM0
 
@@ -416,8 +429,13 @@ wSimulatedJoypadStatesEnd::
 NEXTU
 wUnusedFlag::
 wBoostExpByExpAll:: db
+wEggRemainingSteps:: db
+wIsEggInDaycare::
+		; $00 = no
+		; $01 = yes
+		ds 0
 
-	ds 59
+	ds 57
 
 wNPCMovementDirections2:: ds 10
 ; used in Pallet Town scripted movement
@@ -2053,7 +2071,7 @@ wGameProgressFlagsEnd::
 			ds 1
 	
 		; unused
-			ds 52
+			ds 42
 
 wOpponentMonShiny:: db
 wPlayerMonShiny:: db

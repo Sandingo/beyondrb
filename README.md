@@ -13,8 +13,10 @@ Features:
 - Gym Leader post-game rematches.
 - Modern Exp. All sharing formula (Still requires 50 Pokémon caught to get)
 - QoL with BW's reusable Repel system and HMs usable in the overworld.
+- Daycare now has a PC, and there's a chance your Pokémon will have an Egg! (Living Dex possible in one save file?) 
 - Improved Vitamins and purchasable PP Ups!
 - Hyper Training!
+
 
 The goal is to include as many beta features as possible, and some new Kanto-related ones, without changing the feel of Generation 1.
 Pokémon are only type changed to their modern vanilla counterparts, however regional variants/regional fakes/gimmick forms/paradox forms etc. are NOT included.
@@ -23,7 +25,7 @@ Moves from later generations are only included if they fill out a new type, or a
 
 [**Google Sheets**](https://docs.google.com/spreadsheets/d/1M3bosRwThGeiIzk041AlRherJHYMNcCBpjoqek_yNrA/edit?usp=sharing) containing as much documentation as possible is also available! Base Stats, learnsets, type chart, etc.
 
-![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00001.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00002.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00005.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00007.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00010.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00011.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00013.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00014.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00016.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00017.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00018.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00021.png)
+![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00001.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00002.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00005.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00007.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00010.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00011.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00013.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00014.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00016.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00017.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00018.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00021.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00028.png)
 
 
 ## Credits where it's due!
