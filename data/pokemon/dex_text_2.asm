@@ -558,7 +558,7 @@ _KabinDexEntry::
 	next "behavior has"
 	dex
 
-_PapyoDexEntry::
+_SmogrubDexEntry::
 	text "A rather weak"
 	next "#MON that emits"
 	next "toxic fumes from"
@@ -568,7 +568,7 @@ _PapyoDexEntry::
 	next "it from PIDGEOTTO"
 	dex
 
-_BuhiDexEntry::
+_WispurrDexEntry::
 	text "The spirit of a"
 	next "feline #MON"
 	next "from beyond the"
@@ -636,4 +636,164 @@ _KoltaDexEntry::
 	page "and can be"
 	next "trained for this"
 	next "before evolving"
+	dex
+
+_ElebabyDexEntry::
+	text "It loves violent"
+	next "thunder. The space"
+	next "between its horns"
+
+	page "flickers bluish-"
+	next "white when it is"
+	next "charging energy"
+	dex
+
+_MagbyDexEntry::
+	text "It naturally spits"
+	next "an 1100-degree"
+	next "flame. It is said"
+
+	page "when many appear,"
+	next "it heralds a"
+	next "volcanic eruption"
+	dex
+
+_TyrogueDexEntry::
+	text "To brush up on its"
+	next "fighting skills,"
+	next "it will challenge"
+
+	page "anyone. It has a"
+	next "very strong com-"
+	next "petitive spirit"
+	dex
+
+_SmoochumDexEntry::
+	text "The sensitivity of"
+	next "its lips develops"
+	next "most quickly."
+
+	page "It uses them to"
+	next "try to identify"
+	next "unknown objects"
+	dex
+
+_IgglybuffDexEntry::
+	text "Instead of walking"
+	next "with its short"
+	next "legs, it moves"
+
+	page "around by bouncing"
+	next "on its soft,"
+	next "tender body"
+	dex
+
+_CleffaDexEntry::
+	text "If the impact site"
+	next "of a meteorite is"
+	next "found, this"
+
+	page "#MON is certain"
+	next "to be within the"
+	next "immediate area"
+	dex
+
+_PichuDexEntry::
+	text "It is unskilled at"
+	next "storing electric"
+	next "power. Any kind of"
+
+	page "shock causes it to"
+	next "discharge energy"
+	next "spontaneously"
+	dex
+
+_SmujjDexEntry::
+	text "Loves to float in"
+	next "polluted water."
+	next "Seeing these in a"
+
+	page "lake is a sign of"
+	next "a larger pollution"
+	next "issue"
+	dex
+
+_BallerineDexEntry::
+	text "Is able to stop"
+	next "foes in their"
+	next "tracks by using"
+
+	page "its mind to fool"
+	next "them into losing"
+	next "their orientation"
+	dex
+
+_ParasporDexEntry::
+	text "After birth, it"
+	next "is implanted into"
+	next "a mushroom by"
+	
+	page "its parents,"
+	next "becoming a part"
+	next "of its body"
+	dex
+
+_PupperonDexEntry::
+	text "Territorial and"
+	next "aggressive, if not"
+	next "tamed at an early"
+	
+	page "age, it will"
+	next "become dangerous"
+	next "after evolving"
+	dex
+
+_AzurillDexEntry::
+	text "Its tail bounces"
+	next "like a ball. It"
+	next "flings that tail"
+	
+	page "around to ward"
+	next "off foes bigger"
+	next "than itself"
+	dex
+
+_MunchlaxDexEntry::
+	text "It wolfs down its"
+	next "own weight in food"
+	next "once a day,"
+	
+	page "swallowing food"
+	next "whole with almost"
+	next "no chewing"
+	dex
+
+_HappinyDexEntry::
+	text "It carries a round"
+	next "rock, thinking"
+	next "it is an egg."
+	
+	page "It does this to"
+	next "mimic the other"
+	next "CHANSEY it sees"
+	dex
+
+_BurgelaDexEntry::
+	text "It cares not for"
+	next "the vines that"
+	next "tangle around eye,"
+	
+	page "much to the dismay"
+	next "of the JUNGELA"
+	next "taking care of it"
+	dex
+	
+_DodaerieDexEntry::
+	text "Upon evolving, the"
+	next "weakest head becomes"
+	next "becomes dormant,"
+	
+	page "It is the angriest"
+	next "head when it matures"
+	next "into DODRIO"
 	dex

@@ -230,14 +230,30 @@ PokedexEntryPointers:
 	dw MagnetiteDexEntry
 	dw PeritopDexEntry
 	dw KabinDexEntry
-	dw PapyoDexEntry
-	dw BuhiDexEntry
+	dw SmogrubDexEntry
+	dw WispurrDexEntry
 	dw GodzilanteDexEntry
 	dw CoinpurDexEntry
 	dw BittybatDexEntry
 	dw OrfryDexEntry
 	dw KoltaDexEntry
 	dw VulpiiiDexEntry
+	dw ElebabyDexEntry
+	dw MagbyDexEntry
+	dw TyrogueDexEntry
+	dw SmoochumDexEntry
+	dw SmujjDexEntry
+	dw BallerineDexEntry
+	dw ParasporDexEntry
+	dw PupperonDexEntry
+	dw IgglybuffDexEntry
+	dw CleffaDexEntry
+	dw PichuDexEntry
+	dw AzurillDexEntry
+	dw MunchlaxDexEntry
+	dw HappinyDexEntry
+	dw BurgelaDexEntry
+	dw DodaerieDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -1841,18 +1857,18 @@ KabinDexEntry:
 	text_far _KabinDexEntry
 	text_end
 
-PapyoDexEntry:
+SmogrubDexEntry:
 	db "STINKBUG@"
 	db 2,5
 	dw 107
-	text_far _PapyoDexEntry
+	text_far _SmogrubDexEntry
 	text_end
 
-BuhiDexEntry:
+WispurrDexEntry:
 	db "HEX@"
 	db 2,4
 	dw 22
-	text_far _BuhiDexEntry
+	text_far _WispurrDexEntry
 	text_end
 	
 GodzilanteDexEntry:
@@ -1895,4 +1911,116 @@ VulpiiiDexEntry:
 	db 1,0
 	dw 99
 	text_far _VulpiiiDexEntry
+	text_end
+
+ElebabyDexEntry:
+	db "ELECTRIC@"
+	db 1,0
+	dw 318
+	text_far _ElebabyDexEntry
+	text_end
+
+MagbyDexEntry:
+	db "LIVE COAL@"
+	db 2,4
+	dw 472
+	text_far _MagbyDexEntry
+	text_end
+
+TyrogueDexEntry:
+	db "SCUFFLE@"
+	db 2,4
+	dw 463
+	text_far _TyrogueDexEntry
+	text_end
+
+SmoochumDexEntry:
+	db "KISS@"
+	db 1,4
+	dw 132
+	text_far _SmoochumDexEntry
+	text_end
+
+SmujjDexEntry:
+	db "SLUDGE@"
+	db 1,5
+	dw 331
+	text_far _SmujjDexEntry
+	text_end
+
+BallerineDexEntry:
+	db "BALL@"
+	db 2,0
+	dw 287
+	text_far _BallerineDexEntry
+	text_end
+
+ParasporDexEntry:
+	db "SPORE@"
+	db 0,8
+	dw 89
+	text_far _ParasporDexEntry
+	text_end
+	
+PupperonDexEntry:
+	db "PUPPY@"
+	db 1,2
+	dw 102
+	text_far _PupperonDexEntry
+	text_end
+
+IgglybuffDexEntry:
+	db "BALLOON@"
+	db 1,0
+	dw 22
+	text_far _IgglybuffDexEntry
+	text_end
+
+CleffaDexEntry:
+	db "STARSHAPE@"
+	db 1,0
+	dw 66
+	text_far _CleffaDexEntry
+	text_end
+
+PichuDexEntry:
+	db "TINY MOUSE@"
+	db 1,0
+	dw 44
+	text_far _PichuDexEntry
+	text_end
+
+AzurillDexEntry:
+	db "POLKADOT@"
+	db 0,8
+	dw 44
+	text_far _AzurillDexEntry
+	text_end
+
+MunchlaxDexEntry:
+	db "BIG EATER@"
+	db 2,0
+	dw 2315
+	text_far _MunchlaxDexEntry
+	text_end
+
+HappinyDexEntry:
+	db "PLAYHOUSE@"
+	db 2,0
+	dw 538
+	text_far _HappinyDexEntry
+	text_end
+
+BurgelaDexEntry:
+	db "VINE@"
+	db 2,2
+	dw 442
+	text_far _BurgelaDexEntry
+	text_end
+
+DodaerieDexEntry:
+	db "NESTING@"
+	db 1,4
+	dw 442
+	text_far _DodaerieDexEntry
 	text_end

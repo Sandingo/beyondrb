@@ -237,14 +237,30 @@
 	const MAGNETITE
 	const PERITOP
 	const KABIN
-	const PAPYO
-	const BUHI
+	const SMOGRUB
+	const WISPURR
 	const GODZILANTE
 	const COINPUR
 	const BITTYBAT
 	const ORFRY
 	const KOLTA
 	const VULPIII
+	const ELEBABY
+	const MAGBY
+	const TYROGUE
+	const SMOOCHUM
+	const SMUJJ
+	const BALLERINE
+	const PARASPOR
+	const PUPPERON
+	const IGGLYBUFF
+	const CLEFFA
+	const PICHU
+	const AZURILL
+	const MUNCHLAX
+	const HAPPINY
+	const BURGELA
+	const DODAERIE
 
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 

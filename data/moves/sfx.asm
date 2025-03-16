@@ -196,6 +196,8 @@ MoveSoundTable:
 	db SFX_PSYBEAM,            $00, $80 ; FLASH_CANNON
 	db SFX_BATTLE_0B,          $01, $80 ; SHADOW_PUNCH
 	db SFX_BATTLE_29,          $f0, $80 ; DRAGONBREATH
+	db SFX_BATTLE_09,          $88, $10 ; CHARM
+	db SFX_BATTLE_27,          $40, $60 ; SWEET_KISS
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

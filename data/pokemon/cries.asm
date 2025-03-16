@@ -236,12 +236,28 @@ CryData::
 	mon_cry SFX_CRY_1C, $80, $FF ; Magnetite
 	mon_cry SFX_CRY_19, $AA, $80 ; Peritop
 	mon_cry SFX_CRY_05, $55, $C0 ; Kabin
-	mon_cry SFX_CRY_13, $60, $01 ; Papyo
-	mon_cry SFX_CRY_19, $77, $80 ; Buhi
+	mon_cry SFX_CRY_13, $60, $01 ; Smogrub
+	mon_cry SFX_CRY_19, $77, $80 ; Wispurr
 	mon_cry SFX_CRY_0F, $3C, $FF ; Godzilante
 	mon_cry SFX_CRY_19, $77, $01 ; Coinpur
 	mon_cry SFX_CRY_1D, $E0, $01 ; Bittybat
 	mon_cry SFX_CRY_16, $80, $01 ; Orfry
 	mon_cry SFX_CRY_25, $00, $01 ; Kolta
 	mon_cry SFX_CRY_24, $4F, $01 ; Vulpiii
+	mon_cry SFX_CRY_06, $8F, $01 ; Elebaby
+	mon_cry SFX_CRY_04, $FF, $01 ; Magby
+	mon_cry SFX_CRY_0C, $EE, $01 ; Tyrogue
+	mon_cry SFX_CRY_0D, $FF, $01 ; Smoochum
+	mon_cry SFX_CRY_05, $00, $01 ; Smujj
+	mon_cry SFX_CRY_20, $08, $01 ; Ballerine
+	mon_cry SFX_CRY_1E, $20, $01 ; Paraspor
+	mon_cry SFX_CRY_1F, $20, $01 ; Pupperon
+	mon_cry SFX_CRY_0E, $FF, $01 ; Igglybuff
+	mon_cry SFX_CRY_19, $CC, $10 ; Cleffa
+	mon_cry SFX_CRY_0F, $EE, $10 ; Pichu
+	mon_cry SFX_CRY_0F, $EE, $10 ; Azurill
+	mon_cry SFX_CRY_05, $55, $10 ; Munchlax
+	mon_cry SFX_CRY_14, $0A, $01 ; Happiny
+	mon_cry SFX_CRY_12, $00, $01 ; Burgela
+	mon_cry SFX_CRY_0B, $BB, $10 ; Dodaerie
 	assert_table_length NUM_POKEMON_INDEXES

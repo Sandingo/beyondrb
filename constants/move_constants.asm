@@ -201,6 +201,8 @@
 	const FLASH_CANNON
 	const SHADOW_PUNCH
 	const DRAGONBREATH
+	const CHARM
+	const SWEET_KISS
 	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 

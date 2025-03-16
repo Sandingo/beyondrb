@@ -1,4 +1,4 @@
-	db DEX_PAPYO ; pokedex id
+	db DEX_SMOGRUB ; pokedex id
 
 	db  68,  97,  50,  102,  43
 	;   hp  atk  def  spd  spc
@@ -8,7 +8,7 @@
 	db 107 ; base exp
 
 	INCBIN "gfx/pokemon/front/papyo.pic", 0, 1 ; sprite dimensions
-	dw PapyoPicFront, PapyoPicBack
+	dw SmogrubPicFront, SmogrubPicBack
 
 	db LEECH_LIFE, SMOKESCREEN, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_FAST ; growth rate
@@ -20,5 +20,5 @@
 	     CUT,          LUNGE,		 EXPLOSION
 	; end
 
-	db BANK(PapyoPicFront)
-	assert BANK(PapyoPicFront) == BANK(PapyoPicBack)
+	db BANK(SmogrubPicFront)
+	assert BANK(SmogrubPicFront) == BANK(SmogrubPicBack)

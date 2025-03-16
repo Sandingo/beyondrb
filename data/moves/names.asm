@@ -195,5 +195,7 @@ MoveNames::
 	li "FLASH CANNON"
 	li "SHADOW PUNCH"
 	li "DRAGONBREATH"
+	li "CHARM"
+	li "SWEET KISS"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

@@ -1005,7 +1005,7 @@ OaksLabOak1Text:
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	predef DisplayDexRating
 ; Check if the player completed the Pokedex
-	ld a, 230
+	ld a, 251
 	ldh [hOaksAideRequirement], a ; Use the same system as Oak's Aides to check no. of Pokemon
 	ld hl, wPokedexOwned
 	ld b, wPokedexOwnedEnd - wPokedexOwned

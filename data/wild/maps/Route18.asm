@@ -7,8 +7,8 @@ Route18WildMons:
 	db 25, DODUO
 	db 26, SLUGMA
 IF DEF(_RED)
-	db 28, PAPYO
-	db 29, PAPYO
+	db 28, SMOGRUB
+	db 29, SMOGRUB
 ENDC
 IF DEF(_BLUE)
 	db 28, SLUGMA

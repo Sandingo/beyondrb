@@ -206,5 +206,7 @@ Moves:
 	move FLASH_CANNON, SPECIAL_DOWN_SIDE_EFFECT,    80, STEEL, 		  100, 10
 	move SHADOW_PUNCH, SWIFT_EFFECT,				60,	GHOST,        100, 20
 	move DRAGONBREATH, PARALYZE_SIDE_EFFECT1,		60, DRAGON, 	  100, 20
+	move CHARM,		   ATTACK_DOWN2_EFFECT,			 0, FAIRY,        100, 20
+	move SWEET_KISS,   CONFUSION_EFFECT,             0, FAIRY,         75, 10
 	move STRUGGLE,     RECOIL_EFFECT,               50, BIRD,         100, 10
 	assert_table_length NUM_ATTACKS
