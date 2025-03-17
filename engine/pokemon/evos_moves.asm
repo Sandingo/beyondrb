@@ -119,9 +119,43 @@ Evolution_PartyMonLoop: ; loop over party mons
 	call GetPartyMonName
 	call CopyToStringBuffer
 	ld hl, IsEvolvingText
+; for Tyrogue
+	ld a, [wEvoOldSpecies]
+	cp TYROGUE
+	jr nz, .continueVanilla
+
+	ld hl, TyrogueIsEvolvingText
 	call PrintText
 	ld c, 50
 	call DelayFrames
+
+	call TyrogueEvolutionChoice ; added routine at the end of this file
+	; store Tyrogue's chosen evolution in wEvoNewSpecies: 00 for Chan, 01 for Lee, 02 for Top
+	ld a, [wCurrentMenuItem]
+	cp 0
+	jr z, .loadChan
+	cp 1
+	jr z, .loadLee
+	ld a, HITMONTOP
+	ld [wEvoNewSpecies], a
+	ld [wTyrogueEvolutions], a
+	jr .continueVanilla2
+.loadChan
+	ld a, HITMONCHAN
+	ld [wEvoNewSpecies], a
+	ld [wTyrogueEvolutions], a
+	jr .continueVanilla2
+.loadLee
+	ld a, HITMONLEE
+	ld [wEvoNewSpecies], a
+	ld [wTyrogueEvolutions], a
+	jr .continueVanilla2
+; Vanilla
+.continueVanilla
+	call PrintText
+	ld c, 50
+	call DelayFrames
+.continueVanilla2
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	hlcoord 0, 0
@@ -137,7 +171,14 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld hl, EvolvedText
 	call PrintText
 	pop hl
+	ld a, [wEvoOldSpecies]
+	cp TYROGUE
+	jr nz, .nonTyrogue
+	ld a, [wTyrogueEvolutions]
+	jr .continueVanilla3
+.nonTyrogue
 	ld a, [hl]
+.continueVanilla3
 	ld [wCurSpecies], a
 	ld [wLoadedMonSpecies], a
 	ld [wEvoNewSpecies], a
@@ -313,6 +354,10 @@ StoppedEvolvingText:
 
 IsEvolvingText:
 	text_far _IsEvolvingText
+	text_end
+	
+TyrogueIsEvolvingText:
+	text_far _TyrogueIsEvolvingText
 	text_end
 
 Evolution_ReloadTilesetTilePatterns:
@@ -518,6 +563,45 @@ WriteMonMoves_ShiftMoveData:
 
 Evolution_FlagAction:
 	predef_jump FlagActionPredef
+
+; new: displays Tyrogue choices
+TyrogueEvolutionChoice::
+	call SaveScreenTilesToBuffer1
+	ld a, TYROGUE_EVOLUTIONS
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
+	ld hl, wTopMenuItemY
+	ld a, 7
+	ld [hli], a ; top menu item Y
+	ld a, 10
+	ld [hli], a ; top menu item X
+	xor a
+	ld [hli], a ; current menu item ID
+	inc hl
+	ld a, $2
+	ld [hli], a ; wMaxMenuItem
+	ld a, B_BUTTON | A_BUTTON
+	ld [hli], a ; wMenuWatchedKeys
+	xor a
+	ld [hl], a ; wLastMenuItem
+	call HandleMenuInput
+	bit BIT_B_BUTTON, a
+	jr nz, .noEvolution ; if B was pressed, no evolution
+; A was pressed
+	call PlaceUnfilledArrowMenuCursor
+	ld a, [wCurrentMenuItem]
+	jp LoadScreenTilesFromBuffer1
+.noEvolution
+	ld a, 1
+	ld [wEvoCancelled], a
+	call LoadScreenTilesFromBuffer1
+	ld hl, StoppedEvolvingText
+	call PrintText
+	pop hl
+	pop hl
+	call Evolution_ReloadTilesetTilePatterns
+	jp Evolution_PartyMonLoop
+
 
 ; From here, Move Relearner-related code -PvK
 ;joenote - custom function by Mateo for move relearner

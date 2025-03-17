@@ -30,6 +30,7 @@ DEF PC_ITEM_CAPACITY  EQU 75
 	const_skip                              ; $18
 	const_skip                              ; $19
 	const JP_POKEDEX_MENU_TEMPLATE          ; $1a
+	const TYROGUE_EVOLUTIONS                ; new for Tyrogue
 	const SAFARI_BATTLE_MENU_TEMPLATE       ; $1b
 
 ; two option menu constants

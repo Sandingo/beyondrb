@@ -102,3 +102,13 @@ _BoxIsFullText::
 	para "Change the BOX at"
 	line "a #MON CENTER!"
 	done
+
+_TyrogueIsEvolvingText::
+	text "What? @"
+	text_ram wStringBuffer
+	text_start
+	line "wants to evolve!"
+	
+	para "What should it"
+	line "specialize in?"
+	prompt

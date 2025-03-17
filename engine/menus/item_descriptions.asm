@@ -209,6 +209,10 @@ ItemDescriptionPointers:
 	text_end
 	text_far _ShinyCharmDescription
 	text_end
+	text_far _OvalStoneDescription
+	text_end
+	text_far _WingFossilDescription
+	text_end
 	text_far _HM01Description
 	text_end
 	text_far _HM02Description

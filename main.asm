@@ -232,6 +232,14 @@ SECTION "Battle Engine 8", ROMX
 
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "gfx/trade.asm"
+INCLUDE "engine/battle/move_effects/heal.asm"
+INCLUDE "engine/battle/move_effects/transform.asm"
+INCLUDE "engine/battle/move_effects/reflect_light_screen.asm"
+INCLUDE "engine/battle/init_battle_variables.asm"
+INCLUDE "engine/battle/move_effects/paralyze.asm"
+
+SECTION "Evo Moves", ROMX
+
 INCLUDE "engine/pokemon/evos_moves.asm"
 
 
@@ -246,11 +254,6 @@ INCLUDE "engine/events/hidden_objects/indigo_plateau_hq.asm"
 
 SECTION "Battle Engine 9", ROMX
 
-INCLUDE "engine/battle/move_effects/heal.asm"
-INCLUDE "engine/battle/move_effects/transform.asm"
-INCLUDE "engine/battle/move_effects/reflect_light_screen.asm"
-INCLUDE "engine/battle/init_battle_variables.asm"
-INCLUDE "engine/battle/move_effects/paralyze.asm"
 INCLUDE "engine/battle/experience.asm"
 INCLUDE "engine/gfx/exp_bar.asm"
 

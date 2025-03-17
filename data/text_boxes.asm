@@ -36,6 +36,7 @@ TextBoxTextAndCoordTable:
 	text_box_text MONEY_BOX_TEMPLATE,                11,  0, 19,  2, MoneyText,               13,  0
 	text_box_text JP_AH_MENU_TEMPLATE,                7,  6, 11, 10, JapaneseAhText,           8,  8
 	text_box_text JP_POKEDEX_MENU_TEMPLATE,          11,  8, 19, 17, JapanesePokedexMenu,     12, 10
+	text_box_text TYROGUE_EVOLUTIONS,				  9,  6, 19, 12, TyrogueEvolutions,		  11,  7 ; new
 
 BuySellQuitText:
 	db   "BUY"
@@ -88,3 +89,8 @@ JapanesePokedexMenu:
 	next "なきごえ"
 	next "ぶんぷをみる"
 	next "キャンセル@"
+
+TyrogueEvolutions: ; new
+	db   "PUNCHING"
+	next "KICKING"
+	next "SPINNING@"

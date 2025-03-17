@@ -2069,9 +2069,13 @@ wGameProgressFlagsEnd::
 		; $00 = male
 		; $01 = female
 			ds 1
+			
+wTyrogueEvolutions::
+	; stores directly the number/name of the chosen Hitmon
+	ds 1
 	
 		; unused
-			ds 42
+			ds 40
 
 wOpponentMonShiny:: db
 wPlayerMonShiny:: db

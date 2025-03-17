@@ -159,6 +159,8 @@ VermilionCityWarpToCitrineScript: ; This does not work correctly.
 	ldh [hWarpDestinationMap], a
 	ld a, $1
 	ld [wDestinationWarpID], a
+	ld a, CITRINE_ISLAND
+	ld [wLastMap], a
 	ld hl, wStatusFlags3
 	set BIT_WARP_FROM_CUR_SCRIPT, [hl]
 	ld a, SCRIPT_VERMILIONCITY_DEFAULT

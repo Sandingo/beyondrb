@@ -10,6 +10,7 @@ UsableItems_PartyMenu:
 	db DUSK_STONE
 	db UP_GRADE
 	db BLK_AUGURITE
+	db OVAL_STONE
 	db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL

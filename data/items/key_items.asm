@@ -99,4 +99,6 @@ KeyItemFlags:
 	dbit FALSE ; UP_GRADE
 	dbit FALSE ; BLK_AUGURITE
 	dbit TRUE ; SHINY_CHARM
+	dbit FALSE ; OVAL_STONE
+	dbit TRUE ; WING_FOSSIL
 	end_bit_array NUM_ITEMS

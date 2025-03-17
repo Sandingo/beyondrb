@@ -99,6 +99,8 @@ ItemNames::
 	li "UP-GRADE"
 	li "BLK AUGURITE"
 	li "SHINY CHARM"
+	li "OVAL STONE"
+	li "WING FOSSIL"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

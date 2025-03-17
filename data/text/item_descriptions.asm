@@ -45,6 +45,7 @@ _KingsRockDescription::
 _DuskStoneDescription::
 _UpgradeDescription::
 _BlkAuguriteDescription::
+_OvalStoneDescription::
 	text "Evolves certain"
 	next "kinds of #MON."
 	prompt
@@ -142,6 +143,11 @@ _CalciumDescription::
 _RareCandyDescription::
 	text "Raises level of a"
 	next "#MON by one."
+	prompt
+
+_WingFossilDescription::
+	text "A fossilized"
+	next "#MON wing."
 	prompt
 
 _DomeFossilDescription::

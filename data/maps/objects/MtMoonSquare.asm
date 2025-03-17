@@ -7,6 +7,7 @@ MtMoonSquare_Object:
 	def_warp_events
 	warp_event 20,  5, MT_MOON_1F, 6
 	warp_event 13,  7, MT_MOON_HOUSE, 1
+	warp_event 22, 11, MT_MOON_B1F, 9
 
 	def_bg_events
 	bg_event 17,  7, TEXT_MTMOONSQUARE_SIGN

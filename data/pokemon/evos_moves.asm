@@ -798,7 +798,7 @@ GravelerEvosMoves:
 
 HappinyEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 15, CHANSEY
+	db EVOLVE_ITEM, OVAL_STONE, 1, CHANSEY
 	db 0
 ; Learnset
 	db 6, FAIRY_WIND
@@ -861,9 +861,7 @@ MrMimeEvosMoves:
 
 TyrogueEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 15, HITMONLEE
-	db EVOLVE_LEVEL, 15, HITMONCHAN
-	db EVOLVE_LEVEL, 15, HITMONTOP
+	db EVOLVE_LEVEL, 15, TYROGUE
 	db 0
 ; Learnset
 	db 0
@@ -3230,12 +3228,12 @@ GodzilanteEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 10, SCREECH
+	db 10, ROCK_THROW
 	db 18, BITE
 	db 24, DRAGON_RAGE
 	db 30, THRASH
 	db 36, CRUNCH
-	db 41, AMNESIA
+	db 41, SCREECH
 	db 50, DRAGONBREATH
 	db 54, HYPER_BEAM
 	db 0

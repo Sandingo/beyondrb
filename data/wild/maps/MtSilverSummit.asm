@@ -8,8 +8,8 @@ MtSilverSummitWildMons:
 	db  48, ONIX
 	db  48, GRAVELER
 	db  46, DECILLA
-	db  48, GAWARHED
-	db  50, GODZILANTE
+	db  50, GAWARHED
+	db  48, DECILLA
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

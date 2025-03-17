@@ -790,10 +790,10 @@ _BurgelaDexEntry::
 	
 _DodaerieDexEntry::
 	text "Upon evolving, the"
-	next "weakest head becomes"
+	next "weakest head"
 	next "becomes dormant,"
 	
 	page "It is the angriest"
-	next "head when it matures"
-	next "into DODRIO"
+	next "head when maturing"
+	next "into a DODRIO"
 	dex
