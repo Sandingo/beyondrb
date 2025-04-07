@@ -21,7 +21,7 @@ ExternalMapEntries:
 	external_map 10,  5, SaffronCityName
 	external_map  0,  2, IndigoPlateauName
 	external_map  0,  9, Route28Name ; Mt Silver Front
-	external_map 14, 15, CitrineIslandName
+	external_map 14, 15, CitrineIslandName ; unused
 	external_map  0,  0, PalletTownName ; unused
 	external_map  2, 10, Route1Name
 	external_map  2,  6, Route2Name

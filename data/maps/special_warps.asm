@@ -76,7 +76,7 @@ FlyWarpDataPtr:
 	fly_warp_spec SAFFRON_CITY,    .SaffronCity
 	fly_warp_spec INDIGO_PLATEAU,  .IndigoPlateau
 	fly_warp_spec MT_SILVER_FRONT, .MtSilverFront
-	fly_warp_spec CITRINE_ISLAND,  .CitrineIsland
+;	fly_warp_spec CITRINE_ISLAND,  .CitrineIsland
 
 .PalletTown:     fly_warp PALLET_TOWN,      5,  6
 .ViridianCity:   fly_warp VIRIDIAN_CITY,   23, 26
@@ -92,4 +92,4 @@ FlyWarpDataPtr:
 .SaffronCity:    fly_warp SAFFRON_CITY,     9, 30
 .IndigoPlateau:  fly_warp INDIGO_PLATEAU,   9,  6
 .MtSilverFront:  fly_warp MT_SILVER_FRONT, 21, 20
-.CitrineIsland:  fly_warp CITRINE_ISLAND,  19,  8
+;.CitrineIsland:  fly_warp CITRINE_ISLAND,  19,  8
