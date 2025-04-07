@@ -25,14 +25,6 @@ MtSilverSummitOakPostBattleScript:
 	ldh [hTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_OAK
-MtSilverSummitGiveOrangeTicketScript:
-	lb bc, ORANGE_TICKET, 1
-	call GiveItem
-	jr nc, .BagFull
-	ld a, TEXT_MT_SILVERSUMMIT_RECIEVED_ORANGE_TICKET
-	ldh [hTextID], a
-	call DisplayTextID
-	SetEvent EVENT_GOT_ORANGE_TICKET
 	call GBFadeOutToBlack
 	ld a, HS_MT_SILVER_SUMMIT_OAK
 	ld [wMissableObjectIndex], a
@@ -46,12 +38,21 @@ MtSilverSummitGiveOrangeTicketScript:
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack
-	jr .end
+.end
+	jp MtSilverSummitResetScripts
+
+MtSilverSummitGiveOrangeTicketScript: ; unused
+	lb bc, ORANGE_TICKET, 1
+	call GiveItem
+	jr nc, .BagFull
+	ld a, TEXT_MT_SILVERSUMMIT_RECIEVED_ORANGE_TICKET
+	ldh [hTextID], a
+	call DisplayTextID
+	SetEvent EVENT_GOT_ORANGE_TICKET
 .BagFull
 	ld a, TEXT_MTSILVERSUMMIT_NO_ROOM
 	ldh [hTextID], a
 	call DisplayTextID
-	.end
 	jp MtSilverSummitResetScripts
 
 MtSilverSummit_ScriptPointers:
