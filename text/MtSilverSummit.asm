@@ -46,10 +46,17 @@ _OakPostBattleText::
 	line "invigorated since"
 	cont "I was your age."
 	
+	para "Now then, I ought"
+	line "to get back to"
+	cont "the lab."
+	
+	para "Be seeing you now!"
+	done
+
+_OakGiveOrangeTicket:: ;unused
 	para "I'd like to give"
 	line "you this, as"
 	cont "a thank you."
-	done
 
 _OrangeTicketGet::
 	text "<PLAYER> received"
@@ -74,12 +81,6 @@ _OrangeTicketExplaination::
 	para "I'm sure you'll find"
 	line "it a pleasant"
 	cont "vacation retreat."
-	
-	para "Now then, I ought"
-	line "to get back to"
-	cont "the lab."
-	
-	para "Be seeing you now!"
 	done
 
 _MtSilverNoRoom::

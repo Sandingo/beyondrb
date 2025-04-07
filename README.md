@@ -25,6 +25,8 @@ Moves from later generations are only included if they fill out a new type, or a
 
 [**Google Sheets**](https://docs.google.com/spreadsheets/d/1M3bosRwThGeiIzk041AlRherJHYMNcCBpjoqek_yNrA/edit?usp=sharing) containing as much documentation as possible is also available! Base Stats, learnsets, type chart, etc.
 
+An online patcher can be found [**here**](https://www.marcrobledo.com/RomPatcher.js/), and the patches can be found in the [**here**](https://github.com/Sandingo/beyondrb/releases/tag/v1.0)!
+
 ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00001.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00002.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00005.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00007.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00010.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00011.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00013.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00014.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00016.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00017.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00018.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00021.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00028.png)
 
 

@@ -47,6 +47,6 @@ TownMapOrder:
 	db VICTORY_ROAD_3F
 	db INDIGO_PLATEAU
 	db ROUTE_28
-	db CITRINE_ISLAND
+;	db CITRINE_ISLAND
 ;	db MT_SILVER
 TownMapOrderEnd:

@@ -9,7 +9,6 @@ hSoftReset:: db
 UNION
 hBaseTileID:: ; base tile ID to which offsets are added
 hDexWeight::
-hWarpDestinationMap::
 hOAMTile::
 hROMBankTemp::
 hPreviousTileset::
@@ -385,7 +384,7 @@ hWhoseTurn:: db ; 0 on player's turn, 1 on enemy's turn
 
 hClearLetterPrintingDelayFlags:: db
 
-	ds 1
+hWarpDestinationMap:: db ; Moves to attempt to fix a Glitch City warp
 
 ; bit 0: draw HP fraction to the right of bar instead of below (for party menu)
 ; bit 1: menu is double spaced
