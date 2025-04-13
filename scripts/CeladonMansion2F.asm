@@ -15,8 +15,7 @@ CeladonMansion2FTradeGuyText:
 	ld a, TRADE_FOR_STINKUMS_SPOOKIT
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
-	ld hl, CeladonMansion2F_TextScriptEndingText
-	ret
+	jp TextScriptEnd
 
 CeladonMansion2FMeetingRoomSignText:
 	text_far _CeladonMansion2FMeetingRoomSignText

@@ -55,7 +55,7 @@ DoInGameTradeDialogue:
 	ld [wInGameTradeTextPointerTableIndex], a
 	jr nz, .printText
 ; if the trade hasn't been done yet
-ASSERT TRADETEXT_WANNA_TRADE == 0
+	ASSERT TRADETEXT_WANNA_TRADE == 0
 	xor a
 	ld [wInGameTradeTextPointerTableIndex], a
 	call .printText
@@ -167,27 +167,27 @@ InGameTrade_DoTrade:
 	ld a, $80 ; prevent the player from naming the mon
 	ld [wMonDataLocation], a
 ; new, for the shiny
-	ld a, [wWhichPokemon]
-	ld hl, wPartyMon1CatchRate
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes ; add bc to hl a times
-	ld a, [hl] ; a now contains the shiny-ness of the mon we are trading away
-	           ; this is because if we trade a shiny, we get a guaranteed shiny back
-	cp 1
-	jr nz, .doTheRollForTheShiny
+        ld a, [wWhichPokemon]
+        ld hl, wPartyMon1CatchRate
+        ld bc, wPartyMon2 - wPartyMon1
+        call AddNTimes ; add bc to hl a times
+        ld a, [hl] ; a now contains the shiny-ness of the mon we are trading away
+                   ; this is because if we trade a shiny, we get a guaranteed shiny back
+        cp 1
+        jr nz, .doTheRollForTheShiny
 ; we do be trading a shiny away
-;	ld a, 1
-	ld [wOpponentMonShiny], a
-	jr .vanilla
+;        ld a, 1
+        ld [wOpponentMonShiny], a
+        jr .vanilla
 .doTheRollForTheShiny
 ; if we are not trading away a shiny, let's run the normal function to see if it is shiny or not
-	push hl
-	push de
-	push bc
-	callfar RollForShiny
-	pop bc
-	pop de
-	pop hl
+        push hl
+        push de
+        push bc
+        callfar RollForShiny
+        pop bc
+        pop de
+        pop hl
 ; and now wOpponentMonShiny is properly set
 .vanilla
 ; back to vanilla
@@ -208,8 +208,6 @@ InGameTrade_DoTrade:
 	scf
 .tradeSucceeded
 	ld [wInGameTradeTextPointerTableIndex], a
-	xor a                     ; new, for the shiny
-	ld [wOpponentMonShiny], a ; new, for the shiny
 	ret
 
 InGameTrade_RestoreScreen:
