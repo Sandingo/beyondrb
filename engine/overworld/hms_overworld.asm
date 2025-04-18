@@ -47,19 +47,19 @@ CheckForCut::
     predef GetTileAndCoordsInFrontOfPlayer ; load tile in front
     ld a, [wObtainedBadges]
     bit BIT_CASCADEBADGE, a
-	jr z, .fail
+	jp z, .fail
 ; we have the right badge
     ld a, [wCurMapTileset]
     and a ; overworld
     jr z, .overworld
-    ;cp GYM
-    ;jr z, .gym
-    ;cp CAVERN
-    ;ld a, [wTileInFrontOfPlayer]
-    ;cp $54 ; cavern cut tree
-    ;jr nz, .fail
-    ;jr .cuttableTile
-;.gym
+    cp GYM
+    jr z, .gym
+    cp CAVERN
+    ld a, [wTileInFrontOfPlayer]
+    cp $54 ; cavern cut tree
+    jr nz, .fail
+    jr .cuttableTile
+.gym
     ld a, [wTileInFrontOfPlayer]
     cp $50 ; gym cut tree
     jr nz, .fail
