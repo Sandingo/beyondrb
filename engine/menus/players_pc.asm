@@ -133,6 +133,14 @@ PlayerPCDeposit:
 	ld a, SFX_WITHDRAW_DEPOSIT
 	call PlaySound
 	call WaitForSoundToFinish
+; Attempt to fix desync visual bug
+	ld a, [wCurItem]
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	call CopyToStringBuffer
+	ld a, [wCurItem]
+	ld a, [wCurrentMenuItem]
+; Vanilla
 	ld hl, ItemWasStoredText
 	call PrintText
 	jp .loop
