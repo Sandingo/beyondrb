@@ -120,7 +120,7 @@ _FuchsiaGymRocker4BattleText::
 
 _FuchsiaGymRocker4EndBattleText::
 	text "Whoa!"
-	line "He's got it!"
+	line "You got it!"
 	prompt
 
 _FuchsiaGymRocker4AfterBattleText::

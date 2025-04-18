@@ -584,8 +584,8 @@ _GodzilanteDexEntry::
 	next "traditional times,"
 	
 	page "its DNA was first"
-	next "traced in the deep"
-	next "in the ocean"
+	next "traced in the"
+	next "ocean's depths"
 	dex
 
 _VulpiiiDexEntry::

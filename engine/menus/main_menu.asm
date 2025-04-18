@@ -50,6 +50,9 @@ MainMenu:
 	ld de, NewGameText
 	call PlaceString
 .next2
+	hlcoord 0, 17
+	ld de, VersionText
+	call PlaceString
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
 	call UpdateSprites
@@ -348,6 +351,9 @@ ContinueText:
 NewGameText:
 	db   "NEW GAME"
 	next "OPTION@"
+	
+VersionText:
+	db "v1.1@"
 
 CableClubOptionsText:
 	db   "TRADE CENTER"
