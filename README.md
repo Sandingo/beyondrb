@@ -35,6 +35,7 @@ An online patcher can be found [**here**](https://www.marcrobledo.com/RomPatcher
 - [**The Cutting Room Floor**](https://tcrf.net/The_Cutting_Room_Floor/) - For documenting all of the Spaceworld demos.
 - [**Pokered**](https://github.com/pret/pokered) and their Discord for the dissassembly and help figuring out how to navigate it!
 #### Code referenced from:
+- [**Kanto Expansion Pak**](https://github.com/ShiraTheMogul/kep-hack)
 - [**RainbowMetalPigeon**](https://github.com/RainbowMetalPigeon/ExtremeYellow)'s **Extreme Yellow**
 - [**Vortyne**](https://github.com/Vortyne/pureRGB)'s **PureRGB**
 - [**Jojobear13**](https://github.com/jojobear13/shinpokered)'s **Shin Pokémon Red**
