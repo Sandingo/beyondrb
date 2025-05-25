@@ -39,7 +39,7 @@ An online patcher can be found [**here**](https://www.marcrobledo.com/RomPatcher
 - [**RainbowMetalPigeon**](https://github.com/RainbowMetalPigeon/ExtremeYellow)'s **Extreme Yellow**
 - [**Vortyne**](https://github.com/Vortyne/pureRGB)'s **PureRGB**
 - [**Jojobear13**](https://github.com/jojobear13/shinpokered)'s **Shin Pokémon Red**
-- [**David Volovskiy**](https://gitlab.com/devolov/rpp_v3_fork)'s **Pokémon Red++**
+- [**JustRegularLuna**](https://github.com/JustRegularLuna/rpp-backup)'s **Pokémon Red++**, and [**David Volovskiy**](https://gitlab.com/devolov/rpp_v3_fork)'s fork of R++
 - [**Melthelesbian**](https://github.com/melthelesbian/poke-amaranth)'s **Pokémon Amaranth**
 #### And anyone involved in the making of any of these resources, thank you so much!
   
