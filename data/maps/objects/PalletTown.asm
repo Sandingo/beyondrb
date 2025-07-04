@@ -8,11 +8,11 @@ PalletTown_Object:
 	db $b ; border block
 
 	def_warp_events
-IF DEF(_DEBUG)
-	warp_event  5,  5, HALL_OF_FAME, 1 ; Used for quick testing
-ELSE
+;IF DEF(_DEBUG)
+;	warp_event  5,  5, HALL_OF_FAME, 1 ; Used for quick testing
+;ELSE
 	warp_event  5,  5, REDS_HOUSE_1F, 1
-ENDC
+;ENDC
 	warp_event 13,  5, BLUES_HOUSE, 1
 	warp_event 12, 11, OAKS_LAB, 2
 

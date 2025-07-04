@@ -57,6 +57,12 @@ RedsHouse1FTVText:
 	cp SPRITE_FACING_UP
 	ld hl, .WrongSideText
 	jr nz, .got_text
+	ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr z, .og_text
+	ld hl, .CeladonMartAdText
+	jr .got_text
+.og_text	
 	ld hl, .StandByMeMovieText
 .got_text
 	call PrintText
@@ -64,6 +70,10 @@ RedsHouse1FTVText:
 
 .StandByMeMovieText:
 	text_far _RedsHouse1FTVStandByMeMovieText
+	text_end
+
+.CeladonMartAdText:
+	text_far _RedsHouse1FCeladonMartAdText
 	text_end
 
 .WrongSideText:

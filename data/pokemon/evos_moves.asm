@@ -757,8 +757,8 @@ PidgeyEvosMoves:
 
 SlowpokeEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 37, SLOWBRO
 	db EVOLVE_ITEM, KINGS_ROCK, 1, SLOWKING
+	db EVOLVE_LEVEL, 37, SLOWBRO
 	db 0
 ; Learnset
 	db 18, DISABLE
@@ -2191,7 +2191,8 @@ GavillainEvosMoves:
 	db 32, SCREECH
 	db 38, RAZOR_LEAF
 	db 42, DRAGON_RAGE
-	db 48, THRASH
+	db 46, CRUNCH
+	db 52, THRASH
 	db 0
 
 HaunterEvosMoves:
