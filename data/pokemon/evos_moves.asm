@@ -1762,9 +1762,9 @@ ParasEvosMoves:
 
 PoliwhirlEvosMoves:
 ; Evolutions
+	db EVOLVE_TRADE, 1, POLITOED
 	db EVOLVE_ITEM, KINGS_ROCK, 1, POLIWEALTH
 	db EVOLVE_ITEM, WATER_STONE, 1, POLIWRATH
-	db EVOLVE_TRADE, 1, POLITOED
 	db 0
 ; Learnset
 	db 16, HYPNOSIS

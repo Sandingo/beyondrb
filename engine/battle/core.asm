@@ -2150,9 +2150,16 @@ DisplayBattleMenu::
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
 	ld [hl], D_RIGHT | A_BUTTON ; wMenuWatchedKeys
+	ld a, [wIsInBattle]
+	dec a
+	jr nz, .leftColumn_WaitForInput_BPressedIgnore
+	ld [hl], D_RIGHT | A_BUTTON | B_BUTTON ; wMenuWatchedKeys
+.leftColumn_WaitForInput_BPressedIgnore
 	call HandleMenuInput
 	bit BIT_D_RIGHT, a
 	jr nz, .rightColumn
+	bit BIT_B_BUTTON, a
+	jr nz, .BButtonPressed
 	jr .AButtonPressed ; the A button was pressed
 .rightColumn ; put cursor in right column of menu
 	ld a, [wBattleType]
@@ -2182,14 +2189,26 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
+	ld a, [wIsInBattle]
+	dec a
 	ld a, D_LEFT | A_BUTTON
+	jr nz, .rightColumn_WaitForInput_BPressedIgnore
+	ld a, D_LEFT | A_BUTTON | B_BUTTON
+.rightColumn_WaitForInput_BPressedIgnore
 	ld [hli], a ; wMenuWatchedKeys
 	call HandleMenuInput
 	bit BIT_D_LEFT, a
-	jr nz, .leftColumn ; if left was pressed, jump
+	jp nz, .leftColumn ; if left was pressed, jump
+	bit BIT_B_BUTTON, a
+	jr nz, .BButtonPressed
 	ld a, [wCurrentMenuItem]
 	add $2 ; if we're in the right column, the actual id is +2
 	ld [wCurrentMenuItem], a
+	jr .AButtonPressed
+.BButtonPressed
+	ld a, $1
+	ld [wCurrentMenuItem], a
+	jr .rightColumn
 .AButtonPressed
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wBattleType]

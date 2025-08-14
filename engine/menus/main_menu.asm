@@ -353,7 +353,7 @@ NewGameText:
 	next "OPTION@"
 	
 VersionText:
-	db "v1.2@"
+	db "v1.3@"
 
 CableClubOptionsText:
 	db   "TRADE CENTER"
