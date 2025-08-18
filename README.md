@@ -40,6 +40,7 @@ An online patcher can be found [**here**](https://www.marcrobledo.com/RomPatcher
 - [**Jojobear13**](https://github.com/jojobear13/shinpokered)'s **Shin Pokémon Red**
 - [**David Volovskiy**](https://gitlab.com/devolov/rpp_v3_fork)'s **Pokémon Red++**
 - [**Melthelesbian**](https://github.com/melthelesbian/poke-amaranth)'s **Pokémon Amaranth**
+- [**PokefanMarcel**](https://github.com/PokefanMarcel/yumepokered)'s **Pokémon Yume**
 #### And anyone involved in the making of any of these resources, thank you so much!
   
 ## Pokered references
