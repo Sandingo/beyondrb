@@ -41,7 +41,7 @@ VermilionCityMinaPostBattleScript:
 ld a, [wIsInBattle]
 	cp $ff
 	jp z, VermilionCityResetScripts
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	ld a, TEXT_VERMILIONCITY_MINA_POST_BATTLE
 	ldh [hTextID], a
@@ -97,13 +97,23 @@ VermilionCityDefaultScript:
 	and a
 	ret nz
 .ship_departed
-;	ld a, D_UP
+; HEAD
+;	ld a, PAD_UP
 ;	ld [wSimulatedJoypadStatesEnd], a
 ;	ld a, $1
 ;	ld [wSimulatedJoypadStatesIndex], a
 ;	call StartSimulatingJoypadStates
 ;	ld a, SCRIPT_VERMILIONCITY_PLAYER_MOVING_UP1
 ;	ld [wVermilionCityCurScript], a
+;
+	ld a, PAD_UP
+	ld [wSimulatedJoypadStatesEnd], a
+	ld a, $1
+	ld [wSimulatedJoypadStatesIndex], a
+	call StartSimulatingJoypadStates
+	ld a, SCRIPT_VERMILIONCITY_PLAYER_MOVING_UP1
+	ld [wVermilionCityCurScript], a
+; 2dce4ad19646c024fc8159c700db9cab73fb0fbc
 	ret
 
 SSAnneTicketCheckCoords:
@@ -119,9 +129,9 @@ VermilionCityPlayerAllowedToPassScript:
 	ret
 
 VermilionCityPlayerExitShipScript:
-	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	ld a, D_UP
+	ld a, PAD_UP
 	ld [wSimulatedJoypadStatesEnd], a
 	ld [wSimulatedJoypadStatesEnd + 1], a
 	ld a, 2
@@ -153,7 +163,7 @@ VermilionCityPlayerMovingUp1Script:
 	ret
 
 VermilionCityWarpToCitrineScript: ; This does not work correctly.
-	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, CITRINE_ISLAND
 	ldh [hWarpDestinationMap], a

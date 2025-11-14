@@ -28,7 +28,7 @@ ENDC
 	call ArePlayerCoordsInArray
 	ret nc
 	ld a, SFX_STOP_ALL_MUSIC
-	ld [wNewSoundID], a
+	call PlaySound
 	call PlaySound
 	ld c, BANK(Music_MeetRival)
 	ld a, MUSIC_MEET_RIVAL
@@ -69,7 +69,7 @@ PokemonTower2FDefeatedRivalScript:
 	jp z, PokemonTower2FResetRivalEncounter
 	xor a
 	ld [wIsTrainerBattle], a
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	SetEvent EVENT_BEAT_POKEMON_TOWER_RIVAL
 	ld a, TEXT_POKEMONTOWER2F_RIVAL
@@ -84,7 +84,7 @@ PokemonTower2FDefeatedRivalScript:
 	ldh [hSpriteIndex], a
 	call MoveSprite
 	ld a, SFX_STOP_ALL_MUSIC
-	ld [wNewSoundID], a
+	call PlaySound
 	call PlaySound
 	farcall Music_RivalAlternateStart
 	ld a, SCRIPT_POKEMONTOWER2F_RIVAL_EXITS

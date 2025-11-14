@@ -430,7 +430,7 @@ MoveAnimation:
 	call WaitForSoundToFinish
 	xor a
 	ld [wSubAnimSubEntryAddr], a
-	ld [wUnusedMoveAnimByte], a
+;	ld [wUnusedMoveAnimByte], a
 	ld [wSubAnimTransform], a
 	dec a ; NO_MOVE - 1
 	ld [wAnimSoundID], a
@@ -1116,12 +1116,12 @@ AnimationWaterDropletsEverywhere:
 	ld a, 16
 	ld [wBaseCoordY], a
 	ld a, 0
-	ld [wUnusedWaterDropletsByte], a
+;	ld [wUnusedWaterDropletsByte], a
 	call _AnimationWaterDroplets
 	ld a, 24
 	ld [wBaseCoordY], a
 	ld a, 32
-	ld [wUnusedWaterDropletsByte], a
+;	ld [wUnusedWaterDropletsByte], a
 	call _AnimationWaterDroplets
 	dec d
 	jr nz, .loop

@@ -44,7 +44,11 @@ VermilionDockSSAnneLeavesScript:
 	SetEventForceReuseHL EVENT_SS_ANNE_LEFT
 	ld a, SFX_STOP_ALL_MUSIC
 	ld [wJoyIgnore], a
+<<<<<<< Updated upstream
 	ld [wNewSoundID], a
+=======
+;	call PlaySound
+>>>>>>> Stashed changes
 	call PlaySound
 	ld c, BANK(Music_Surfing)
 	ld a, MUSIC_SURFING

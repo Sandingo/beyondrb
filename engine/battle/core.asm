@@ -309,7 +309,11 @@ MainInBattleLoop:
 	and a
 	ret nz ; return if pokedoll was used to escape from battle
 	ld a, [wBattleMonStatus]
+<<<<<<< Updated upstream
 	and (1 << FRZ) ;| SLP_MASK
+=======
+	and (1 << FRZ);| SLP_MASK
+>>>>>>> Stashed changes
 	jr nz, .selectEnemyMove ; if so, jump
 	ld a, [wPlayerBattleStatus1]
 	and (1 << STORING_ENERGY) | (1 << USING_TRAPPING_MOVE) ; check player is using Bide or using a multi-turn attack like wrap
@@ -369,10 +373,16 @@ MainInBattleLoop:
 	callfar SwitchEnemyMon
 .noLinkBattle
 	call HandleMovePriority
+<<<<<<< Updated upstream
 	; c = player priority, e = enemy priority
 	ld a, c
 	cp e
 	jr z, .compareSpeed ; if both used Counter
+=======
+	ld a, c
+	cp e
+	jr z, .compareSpeed
+>>>>>>> Stashed changes
 	jr c, .enemyMovesFirst
 	jr .playerMovesFirst
 .compareSpeed
@@ -455,16 +465,26 @@ MainInBattleLoop:
 
 HandleMovePriority:
 ; This subroutine modifies registers a, hl, bc, and de
+<<<<<<< Updated upstream
 ; The player's priority value will be stored in register c and 
 ; the enemy's priority value will be stored in register e.
 ; These values will be compared after the 'ret' instruction is called
 
+=======
+; The player's priority value will be stored in register c and
+; the enemy's priority value will be stored in register e.
+; These values will be compared after the 'ret' instruction is called
+>>>>>>> Stashed changes
         ld a, [wPlayerSelectedMove]
         ld b, a
         ld hl, PriorityMovesList
         ld c, 7           ; no priority is 7
 .playerPriorityMoveLoop
+<<<<<<< Updated upstream
         ld a, [hli]       ; load the move ID from priority list and 
+=======
+        ld a, [hli]       ; load the move ID from priority list and
+>>>>>>> Stashed changes
                           ; increment address to the priority value address
         cp b              ; compare with move being used
         jr z, .playerUsingPriorityMove
@@ -473,16 +493,26 @@ HandleMovePriority:
         inc hl            ; increment address to the next move
         jr .playerPriorityMoveLoop
 .playerUsingPriorityMove
+<<<<<<< Updated upstream
         ld c, [hl]        ; get new priority value 
 .noPlayerPriorityMove
 
 ; Now check enemy priority 
+=======
+        ld c, [hl]        ; get new priority value
+.noPlayerPriorityMove
+; Now check enemy priority
+>>>>>>> Stashed changes
         ld a, [wEnemySelectedMove]
         ld d, a
         ld hl, PriorityMovesList
         ld e, 7           ; no priority is 7
 .enemyPriorityMoveLoop
+<<<<<<< Updated upstream
         ld a, [hli]       ; load the move ID from priority list and 
+=======
+        ld a, [hli]       ; load the move ID from priority list and
+>>>>>>> Stashed changes
                           ; increment address to the priority value address
         cp d              ; compare with move being used
         jr z, .enemyUsingPriorityMove
@@ -491,10 +521,16 @@ HandleMovePriority:
         inc hl            ; increment address to the next move
         jr .enemyPriorityMoveLoop
 .enemyUsingPriorityMove
+<<<<<<< Updated upstream
         ld e, [hl]        ; get new priority value 
 .noEnemyPriorityMove
         ret
 
+=======
+        ld e, [hl]        ; get new priority value
+.noEnemyPriorityMove
+        ret
+>>>>>>> Stashed changes
 INCLUDE "data/battle/priority_moves.asm"
 
 HandlePoisonBurnLeechSeed:
@@ -970,6 +1006,7 @@ TrainerBattleVictory:
 	ld c, 40
 	call DelayFrames
 	call PrintEndBattleText
+<<<<<<< Updated upstream
 	ld a, [wCurMap]
 	cp SILPH_FACILITY
 	ret z
@@ -982,6 +1019,18 @@ TrainerBattleVictory:
 	inc a
 	ld [wWasTrainerBattle], a
 	
+=======
+        ld a, [wCurMap]
+        cp SILPH_FACILITY
+        ret z
+; win money
+	ld hl, MoneyForWinningText
+	call PrintText
+        xor a
+        ld [wIsTrainerBattle], a
+        inc a
+        ld [wWasTrainerBattle], a
+>>>>>>> Stashed changes
 	ld de, wPlayerMoney + 2
 	ld hl, wAmountMoneyWon + 2
 	ld c, $3
@@ -1611,7 +1660,10 @@ TryRunningFromBattle:
 	jr nc, .canEscape ; if the random value was less than or equal to the quotient
 	                  ; plus 30 times the number of attempts, the player can escape
 .cantEscape
+<<<<<<< Updated upstream
 ; can't escape
+=======
+>>>>>>> Stashed changes
 	ld a, $1
 	ld [wActionResultOrTookBattleTurn], a ; you lose your turn when you can't escape
 	ld hl, CantEscapeText
@@ -1869,7 +1921,11 @@ DrawPlayerHUDAndHPBar:
 	hlcoord 10, 7
 	call CenterMonName
 	call PlaceString
+<<<<<<< Updated upstream
     callfar PrintEXPBar
+=======
+	callfar PrintEXPBar
+>>>>>>> Stashed changes
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
 	ld bc, wBattleMonDVs - wBattleMonSpecies
@@ -1925,6 +1981,7 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+<<<<<<< Updated upstream
 	push hl
 	ld a, [wEnemyMonSpecies2]
 	ld [wPokedexNum], a
@@ -1942,6 +1999,25 @@ DrawEnemyHUDAndHPBar:
 	ld [hl], $72 ; replace this with your Poké Ball icon or other character
 .notOwned
 	pop hl
+=======
+        push hl
+        ld a, [wEnemyMonSpecies2]
+        ld [wPokedexNum], a
+        callfar IndexToPokedex
+        ld a, [wPokedexNum]
+        dec a
+        ld c, a
+        ld b, FLAG_TEST
+        ld hl, wPokedexOwned
+        predef FlagActionPredef
+        ld a, c
+        and a
+        jr z, .notOwned
+        hlcoord 1, 1
+        ld [hl], $72 ; replace this with your Poké Ball icon or other character
+.notOwned
+        pop hl
+>>>>>>> Stashed changes
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
@@ -2079,6 +2155,10 @@ DisplayBattleMenu::
 	call DisplayTextBoxID
  ; handle menu input if it's not the old man tutorial
 	ld a, [wBattleType]
+<<<<<<< Updated upstream
+=======
+;ASSERT BATTLE_TYPE_OLD_MAN == 1
+>>>>>>> Stashed changes
 	dec a
 	jp nz, .handleBattleMenuInput
 ; the following happens for the old man tutorial
@@ -2149,17 +2229,30 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
+<<<<<<< Updated upstream
 	ld [hl], D_RIGHT | A_BUTTON ; wMenuWatchedKeys
 	ld a, [wIsInBattle]
 	dec a
 	jr nz, .leftColumn_WaitForInput_BPressedIgnore
 	ld [hl], D_RIGHT | A_BUTTON | B_BUTTON ; wMenuWatchedKeys
+=======
+	ld [hl], PAD_RIGHT | PAD_A ; wMenuWatchedKeys
+        ld a, [wIsInBattle]
+        dec a
+        jr nz, .leftColumn_WaitForInput_BPressedIgnore
+        ld [hl], PAD_RIGHT | PAD_A | PAD_B ; wMenuWatchedKeys
+>>>>>>> Stashed changes
 .leftColumn_WaitForInput_BPressedIgnore
 	call HandleMenuInput
 	bit BIT_D_RIGHT, a
 	jr nz, .rightColumn
+<<<<<<< Updated upstream
 	bit BIT_B_BUTTON, a
 	jr nz, .BButtonPressed
+=======
+        bit B_PAD_B, a
+        jr nz, .BButtonPressed
+>>>>>>> Stashed changes
 	jr .AButtonPressed ; the A button was pressed
 .rightColumn ; put cursor in right column of menu
 	ld a, [wBattleType]
@@ -2189,6 +2282,7 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
+<<<<<<< Updated upstream
 	ld a, [wIsInBattle]
 	dec a
 	ld a, D_LEFT | A_BUTTON
@@ -2209,6 +2303,28 @@ DisplayBattleMenu::
 	ld a, $1
 	ld [wCurrentMenuItem], a
 	jr .rightColumn
+=======
+       ld a, [wIsInBattle]
+        dec a
+	ld a, PAD_LEFT | PAD_A
+        jr nz, .rightColumn_WaitForInput_BPressedIgnore
+        ld a, PAD_LEFT | PAD_A | PAD_B
+.rightColumn_WaitForInput_BPressedIgnore
+	ld [hli], a ; wMenuWatchedKeys
+	call HandleMenuInput
+	bit B_PAD_LEFT, a
+	jp nz, .leftColumn ; if left was pressed, jump
+        bit B_PAD_B, a
+        jr nz, .BButtonPressed
+	ld a, [wCurrentMenuItem]
+	add $2 ; if we're in the right column, the actual id is +2
+	ld [wCurrentMenuItem], a
+        jr .AButtonPressed
+.BButtonPressed
+        ld a, $1
+        ld [wCurrentMenuItem], a
+        jr .rightColumn
+>>>>>>> Stashed changes
 .AButtonPressed
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wBattleType]
@@ -2840,9 +2956,15 @@ NoMovesLeftText:
 	text_end
 
 SwapMovesInMenu:
+<<<<<<< Updated upstream
 	ld a, [wPlayerBattleStatus3]
 	bit TRANSFORMED, a
 	jp nz, MoveSelectionMenu ; No move swapping while transformed
+=======
+        ld a, [wPlayerBattleStatus3]
+        bit TRANSFORMED, a
+        jp nz, MoveSelectionMenu ; No move swapping while transformed
+>>>>>>> Stashed changes
 	ld a, [wMenuItemToSwap]
 	and a
 	jr z, .noMenuItemSelected
@@ -2986,6 +3108,7 @@ PrintMenuItem:
 	predef PrintMoveType
 ; Move Damage Display from Extreme Yellow
 ;==========================================
+<<<<<<< Updated upstream
 	hlcoord 1, 11 ; new
 	ld a, [wPlayerMoveEffect]
 	cp OHKO_EFFECT
@@ -3006,16 +3129,45 @@ PrintMenuItem:
 .specialDamage
 	hlcoord 3, 11
 	ld [hl], "?"
+=======
+        hlcoord 1, 11 ; new
+        ld a, [wPlayerMoveEffect]
+        cp OHKO_EFFECT
+        jr z, .OHKOMove
+        cp SPECIAL_DAMAGE_EFFECT
+        ld a, [wPlayerMovePower]
+        cp 1 ; this should cover all the SPECIAL_DAMAGE_EFFECT, AND COUNTER / MIRROR_COAT / GYRO_BALL
+        jr z, .specialDamage
+        hlcoord 1, 11
+        ld de, wPlayerMovePower ; testing
+        lb bc, 1, 3
+        call PrintNumber ; prints the c-digit, b-byte value at de
+        jr .afterDamagePrinting
+.OHKOMove
+        ld de, InfDamageText
+        call PlaceString
+        jr .afterDamagePrinting
+.specialDamage
+        hlcoord 3, 11
+        ld [hl], "?"
+>>>>>>> Stashed changes
 .afterDamagePrinting
 ; ==========================================================
 .moveDisabled
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
 	jp Delay3
+<<<<<<< Updated upstream
 
 InfDamageText:
 	db "OHKO@"
 	
+=======
+	
+InfDamageText:
+        db "OHKO@"
+        
+>>>>>>> Stashed changes
 DisabledText:
 	db "disabled!@"
 
@@ -3130,7 +3282,12 @@ LinkBattleExchangeData:
 	ld b, LINKBATTLE_STRUGGLE
 	jr z, .next
 	dec b ; LINKBATTLE_NO_ACTION
+<<<<<<< Updated upstream
 	inc a ; does move equal -1 (i.e. no action)?
+=======
+
+	inc a
+>>>>>>> Stashed changes
 	jr z, .next
 	ld a, [wPlayerMoveListIndex]
 	jr .doExchange
@@ -3418,9 +3575,15 @@ IsGhostBattle:
 	ld a, [wIsInBattle]
 	dec a
 	ret nz
+<<<<<<< Updated upstream
 	ld a, [wCurOpponent]
 	cp DOOMSDAY ; Make exceptions for Doomsday
 	jr z, .next
+=======
+        ld a, [wCurOpponent]
+        cp DOOMSDAY ; Make exceptions for Doomsday
+        jr z, .next
+>>>>>>> Stashed changes
 	ld a, [wCurMap]
 	cp POKEMON_TOWER_1F
 	jr c, .next
@@ -3457,7 +3620,11 @@ CheckPlayerStatusConditions:
 .WakeUp
 	ld hl, WokeUpText
 	call PrintText
+<<<<<<< Updated upstream
 	jr .FrozenCheck
+=======
+        jr .FrozenCheck
+>>>>>>> Stashed changes
 .sleepDone
 	xor a
 	ld [wPlayerUsedMove], a
@@ -4775,6 +4942,7 @@ CriticalHitTest:
 	jr nc, .SkipHighCritical
 	ld b, $ff
 .SkipHighCritical
+<<<<<<< Updated upstream
 	ld a, [de]
 	bit GETTING_PUMPED, a        ; test for focus energy
 	jr z, .noFocusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left, FIXED
@@ -4805,6 +4973,38 @@ CriticalHitTest:
 ;	sla b                        ; *4 for high critical move (effective (base speed/2)*8))
 ;	jr nc, .SkipHighCritical
 ;	ld b, $ff
+=======
+        ld a, [de]
+        bit GETTING_PUMPED, a        ; test for focus energy
+        jr z, .noFocusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left, FIXED
+                                     ; resulting in 1/4 the usual crit chance
+        sla b                        ; (effective (base speed/2))
+        jr nc, .focusEnergyUsed
+        ld b, $ff                    ; cap at 255/256
+        jr .noFocusEnergyUsed
+.focusEnergyUsed
+        sla b
+        jr nc, .noFocusEnergyUsed
+        ld b, $ff                    ; cap at 255/256
+.noFocusEnergyUsed
+;        ld hl, HighCriticalMoves     ; table of high critical hit moves
+;.Loop
+;        ld a, [hli]                  ; read move from move table
+;        cp c                         ; does it match the move about to be used?
+;        jr z, .HighCritical          ; if so, the move about to be used is a high critical hit ratio move
+;        inc a                        ; move on to the next move, FF terminates loop
+;        jr nz, .Loop                 ; check the next move in HighCriticalMoves
+;        srl b                        ; /2 for regular move (effective (base speed / 2))
+;        jr .SkipHighCritical         ; continue as a normal move
+;.HighCritical
+;        sla b                        ; *2 for high critical hit moves
+;        jr nc, .noCarry
+;        ld b, $ff                    ; cap at 255/256
+;.noCarry
+;        sla b                        ; *4 for high critical move (effective (base speed/2)*8))
+;        jr nc, .SkipHighCritical
+;        ld b, $ff
+>>>>>>> Stashed changes
 ;.SkipHighCritical
 	call BattleRandom            ; generates a random value, in "a"
 	rlc a
@@ -4848,12 +5048,22 @@ HandleCounterMove:
 	ld a, [de]
 	and a
 	ret z ; miss if the opponent's last selected move's Base Power is 0.
+<<<<<<< Updated upstream
 ; check if the move the target last selected was a physical type - Change from vanilla, where only Fighting and Normal can be countered.
 	inc de
 	ld a, [de]
 	cp 15
 	jr c, .counterableType
 ; if the move wasn't  a physical type, miss
+=======
+; check if the move the target last selected was Physical
+	inc de
+	ld a, [de]
+	jr z, .counterableType
+	cp 15
+	jr c, .counterableType
+; if the move wasn't Physical, miss
+>>>>>>> Stashed changes
 	xor a
 	ret
 .counterableType
@@ -5057,8 +5267,13 @@ ApplyAttackToPlayerPokemon:
 ; it's possible for the enemy to do 0 damage with Psywave, but the player always does at least 1 damage
 .loop
 	call BattleRandom
+<<<<<<< Updated upstream
 	and a
 	jr z, .loop ; This fixes Psywave desync
+=======
+        and a
+        jr z, .loop ; This fixes Psywave desync
+>>>>>>> Stashed changes
 	cp b
 	jr nc, .loop
 	ld b, a
@@ -5424,6 +5639,7 @@ AdjustDamageForMoveType:
 	ld b, a
 	ld a, [hl] ; a = damage multiplier
 	ldh [hMultiplier], a
+<<<<<<< Updated upstream
 	and a  ; cp NO_EFFECT
 	jr z, .gotMultiplier
 	cp NOT_VERY_EFFECTIVE
@@ -5438,6 +5654,23 @@ AdjustDamageForMoveType:
 	ld a, [wDamageMultipliers]
 	and $7f
 	sla a
+=======
+        ldh [hMultiplier], a
+        and a  ; cp NO_EFFECT
+        jr z, .gotMultiplier
+        cp NOT_VERY_EFFECTIVE
+        jr nz, .nothalf
+        ld a, [wDamageMultipliers]
+        and $7f
+        srl a
+        jr .gotMultiplier
+.nothalf
+        cp SUPER_EFFECTIVE
+        jr nz, .gotMultiplier
+        ld a, [wDamageMultipliers]
+        and $7f
+        sla a
+>>>>>>> Stashed changes
 .gotMultiplier
 	add b
 	ld [wDamageMultipliers], a
@@ -6492,6 +6725,7 @@ SwapPlayerAndEnemyLevels:
 LoadPlayerBackPic:
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
+<<<<<<< Updated upstream
 ;	ld de, RedPicBack
 ;	jr nz, .next
 ;	ld de, OldManPicBack
@@ -6516,6 +6750,31 @@ LoadPlayerBackPic:
 	call UncompressSpriteFromDE
 ;predef ScaleSpriteByTwo
 	call LoadBackspriteUnzoomed
+=======
+	ld de, RedPicBack
+	jr nz, .next
+	ld de, OldManPicBack
+;.next
+;        ld a, BANK(RedPicBack)
+;        ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
+        ld de, OldManPicBack   ; Load the old man back sprite preemptively
+        ld a, BANK(RedPicBack) ; Default Red back sprite will be used as a means to load in the Old Man back sprite
+        jr z, .next
+        ld a, [wPlayerGender]
+        and a
+        jr z, .RedBack
+        ld de, GreenPicBack
+        ld a, BANK(GreenPicBack) ; Load female back sprite
+        jr .next
+.RedBack
+        ld de, RedPicBack ; Load default Red back sprite
+        ld a, BANK(RedPicBack)
+.next
+	ASSERT BANK(GreenPicBack) == BANK(OldManPicBack) ; These two ASSERTs make sure to cover
+	ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
+	call UncompressSpriteFromDE
+	call LoadBackSpriteUnzoomed
+>>>>>>> Stashed changes
 	ld hl, wShadowOAM
 	xor a
 	ldh [hOAMTile], a ; initial tile number
@@ -6547,8 +6806,11 @@ LoadPlayerBackPic:
 	ld e, a
 	dec b
 	jr nz, .loop
+<<<<<<< Updated upstream
 ;ld de, vBackPic
 ;call InterlaceMergeSpriteBuffers
+=======
+>>>>>>> Stashed changes
 	ld a, $a
 	ld [MBC1SRamEnable], a
 	xor a
@@ -6977,12 +7239,21 @@ InitBattleCommon:
 	push af
 	res BIT_TEXT_DELAY, [hl] ; no delay
 	callfar InitBattleVariables
+<<<<<<< Updated upstream
 	ld a, [wIsTrainerBattle]
 	and a
 	jp z, InitWildBattle
 	ld a, [wEnemyMonSpecies2]
 	sub OPP_ID_OFFSET
 ;	jp c, InitWildBattle
+=======
+        ld a, [wIsTrainerBattle]
+        and a
+        jp z, InitWildBattle
+	ld a, [wEnemyMonSpecies2]
+	sub OPP_ID_OFFSET
+;jp c, InitWildBattle
+>>>>>>> Stashed changes
 	ld [wTrainerClass], a
 	call GetTrainerInformation
 	callfar ReadTrainer
@@ -7099,11 +7370,19 @@ _LoadTrainerPic:
 	ld d, a ; de contains pointer to trainer pic
 	ld a, [wLinkState]
 	and a
+<<<<<<< Updated upstream
 	jr nz, .useRed
 	ld a, [wTrainerClass]
 	cp PROF_OAK ; first trainer class in "Trainer Pics 2"
 	ld a, BANK("Trainer Pics 2")
 	jr nc, .loadSprite
+=======
+        jr nz, .useRed
+        ld a, [wTrainerClass]
+        cp PROF_OAK ; first trainer class in "Trainer Pics 2"
+        ld a, BANK("Trainer Pics 2")
+        jr nc, .loadSprite
+>>>>>>> Stashed changes
 	ld a, BANK("Trainer Pics 1")
 	jr .loadSprite
 .useRed
@@ -7227,19 +7506,32 @@ LoadMonBackPic:
 	call ClearScreenArea
 	ld hl,  wMonHBackSprite - wMonHeader
 	call UncompressMonSprite
+<<<<<<< Updated upstream
 ;predef ScaleSpriteByTwo
 ;ld de, vBackPic
 ;call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
 	call LoadBackspriteUnzoomed
+=======
+	call LoadBackSpriteUnzoomed
+>>>>>>> Stashed changes
 	ld hl, vSprites
 	ld de, vBackPic
 	ld c, (2 * SPRITEBUFFERSIZE) / 16 ; count of 16-byte chunks to be copied
 	ldh a, [hLoadedROMBank]
 	ld b, a
 	jp CopyVideoData
+<<<<<<< Updated upstream
 	
 LoadBackspriteUnzoomed:
 	ld a, $66
 	ld de, vBackPic
 	push de
 	jp LoadUncompressedBackSprite
+=======
+
+LoadBackSpriteUnzoomed:
+	ld a, $66
+	ld de, vBackPic
+	push de
+	jp LoadUncompressedBackSprite
+>>>>>>> Stashed changes

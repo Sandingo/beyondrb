@@ -179,7 +179,7 @@ UpdateNPCSprite:
 	res BIT_SCRIPTED_NPC_MOVEMENT, [hl]
 	xor a
 	ld [wSimulatedJoypadStatesIndex], a
-	ld [wUnusedOverrideSimulatedJoypadStatesIndex], a
+;	ld [wUnusedOverrideSimulatedJoypadStatesIndex], a
 	ret
 .next
 	cp WALK

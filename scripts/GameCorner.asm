@@ -122,7 +122,7 @@ GameCornerImakuniPostBattleScript:
 ld a, [wIsInBattle]
 	cp $ff
 	jp z, GameCornerReenterMapAfterPlayerLoss
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	ld a, TEXT_GAMECORNER_IMAKUNI_POST_BATTLE
 	ldh [hTextID], a

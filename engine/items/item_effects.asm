@@ -773,7 +773,7 @@ ItemUseSurfboard:
 	ld a, b
 	ld [wSimulatedJoypadStatesEnd], a
 	xor a
-	ld [wUnusedSimulatedJoypadStatesMask], a
+;	ld [wUnusedSimulatedJoypadStatesMask], a
 	inc a
 	ld [wSimulatedJoypadStatesIndex], a
 	ret
@@ -1606,7 +1606,7 @@ ItemUseXAccuracy:
 ; The Card Key is handled in a different way.
 ItemUseCardKey:
 	xor a
-	ld [wUnusedCardKeyGateID], a
+;	ld [wUnusedCardKeyGateID], a
 	call GetTileAndCoordsInFrontOfPlayer
 	ld a, [GetTileAndCoordsInFrontOfPlayer]
 	cp $18
@@ -1638,7 +1638,7 @@ ItemUseCardKey:
 	cp e
 	jr nz, .nextEntry3
 	ld a, [hl]
-	ld [wUnusedCardKeyGateID], a
+;	ld [wUnusedCardKeyGateID], a
 	jr .done
 .nextEntry1
 	inc hl

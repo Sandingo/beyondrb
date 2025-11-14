@@ -31,6 +31,7 @@ RedsHouse1FMomHealScript:
 	call ReloadMapData
 	predef HealParty
 	ld a, MUSIC_PKMN_HEALED
+<<<<<<< Updated upstream
 	ld [wNewSoundID], a
 	call PlaySound
 .next
@@ -40,6 +41,20 @@ RedsHouse1FMomHealScript:
 	ld a, [wMapMusicSoundID]
 	ld [wNewSoundID], a
 	call PlaySound
+=======
+;	call PlaySound
+	call PlayMusic
+
+	call WaitForSongToFinish
+;.next
+;	ld a, [wChannelSoundIDs]
+;	cp MUSIC_PKMN_HEALED
+;	jr z, .next
+
+	ld a, [wMapMusicSoundID]
+;	call PlaySound
+	call PlayMusic
+>>>>>>> Stashed changes
 	call GBFadeInFromWhite
 	ld hl, RedsHouse1FMomLookingGreatText
 	jp PrintText

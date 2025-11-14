@@ -70,7 +70,11 @@ ENDC
 	and a
 	jr z, .walking
 	ld a, SFX_STOP_ALL_MUSIC
+<<<<<<< Updated upstream
 	ld [wNewSoundID], a
+=======
+;	call PlaySound
+>>>>>>> Stashed changes
 	call PlaySound
 .walking
 	ld c, BANK(Music_MeetRival)
@@ -181,7 +185,11 @@ CeruleanCityRivalDefeatedScript:
 	ldh [hTextID], a
 	call DisplayTextID
 	ld a, SFX_STOP_ALL_MUSIC
+<<<<<<< Updated upstream
 	ld [wNewSoundID], a
+=======
+;	call PlaySound
+>>>>>>> Stashed changes
 	call PlaySound
 	farcall Music_RivalAlternateStart
 	ld a, CERULEANCITY_RIVAL

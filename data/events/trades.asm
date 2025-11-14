@@ -28,4 +28,8 @@ ENDC
 	db RAICHU,     ELECTRODE, TRADE_DIALOGSET_EVOLUTION, "DORIS@@@@@@"
 	db PIKACHU,    PSYDUCK,   TRADE_DIALOGSET_CASUAL,	 "QUAX@@@@@@@"
 	db NO_MON,     NO_MON, 	  TRADE_DIALOGSET_SELF,   	 "Unseen@@@@@"
+<<<<<<< Updated upstream
 	assert_table_length NUM_NPC_TRADES
+=======
+	assert_table_length NUM_NPC_TRADES
+>>>>>>> Stashed changes

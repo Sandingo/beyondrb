@@ -45,6 +45,7 @@ SSAnneCaptainsRoomCaptainText:
 SSAnneCaptainsRoomRubCaptainsBackText:
 	text_far _SSAnneCaptainsRoomRubCaptainsBackText
 	text_asm
+<<<<<<< Updated upstream
 	ld a, [wAudioROMBank]
 	cp BANK("Audio Engine 3")
 	ld [wAudioSavedROMBank], a
@@ -62,6 +63,28 @@ SSAnneCaptainsRoomRubCaptainsBackText:
 	ld a, [wChannelSoundIDs]
 	cp MUSIC_PKMN_HEALED
 	jr z, .loop
+=======
+;	ld a, [wAudioROMBank]
+;	cp BANK("Audio Engine 3")
+;	ld [wAudioSavedROMBank], a
+;	jr nz, .not_audio_engine_3
+;	ld a, SFX_STOP_ALL_MUSIC
+;	call PlaySound
+;	call PlaySound
+;	ld a, 0 ; BANK(Music_PkmnHealed)
+;	ld [wAudioROMBank], a
+;.not_audio_engine_3
+	ld a, MUSIC_PKMN_HEALED
+;	call PlaySound
+	call PlayMusic
+
+	call WaitForSongToFinish
+;.loop
+;	ld a, [wChannelSoundIDs]
+;	cp MUSIC_PKMN_HEALED
+;	jr z, .loop
+
+>>>>>>> Stashed changes
 	call PlayDefaultMusic
 	SetEvent EVENT_RUBBED_CAPTAINS_BACK
 	ld hl, wStatusFlags3

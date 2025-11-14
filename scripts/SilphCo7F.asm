@@ -127,14 +127,14 @@ SilphCo7FDefaultScript:
 	jp nc, CheckFightingMapTrainers
 	xor a
 	ldh [hJoyHeld], a
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, PLAYER_DIR_DOWN
 	ld [wPlayerMovingDirection], a
 	ld a, SFX_STOP_ALL_MUSIC
-	ld [wNewSoundID], a
+;	call PlaySound
 	call PlaySound
-	ld c, BANK(Music_MeetRival)
+	ld c, 0 ; BANK(Music_MeetRival)
 	ld a, MUSIC_MEET_RIVAL
 	call PlayMusic
 	ld a, TEXT_SILPHCO7F_RIVAL
@@ -209,9 +209,13 @@ SilphCo7FRivalAfterBattleScript:
 	ld a, [wIsInBattle]
 	cp $ff
 	jp z, SilphCo7FSetDefaultScript
+; HEAD
 	xor a
 	ld [wIsTrainerBattle], a
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
+
+	ld a, PAD_CTRL_PAD
+; 2dce4ad19646c024fc8159c700db9cab73fb0fbc
 	ld [wJoyIgnore], a
 	SetEvent EVENT_BEAT_SILPH_CO_RIVAL
 	ld a, PLAYER_DIR_DOWN
@@ -225,7 +229,7 @@ SilphCo7FRivalAfterBattleScript:
 	ldh [hTextID], a
 	call DisplayTextID
 	ld a, SFX_STOP_ALL_MUSIC
-	ld [wNewSoundID], a
+;	call PlaySound
 	call PlaySound
 	farcall Music_RivalAlternateStart
 	ld de, .RivalWalkAroundPlayerMovement

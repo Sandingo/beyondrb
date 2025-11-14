@@ -14,7 +14,15 @@ wMuteAudioAndPauseMusic:: db
 
 wDisableChannelOutputWhenSfxEnds:: db
 
+<<<<<<< Updated upstream
 wStereoPanning:: db
+=======
+wCurTrackDuty:: db
+wCurTrackVolumeEnvelope:: db
+wCurTrackFrequency:: dw
+;wUnusedBCDNumber:: db ; BCD value, dummied out
+wCurNoteDuration:: db ; used in MusicE0 and LoadNote
+>>>>>>> Stashed changes
 
 wSavedVolume:: db
 
@@ -39,6 +47,7 @@ wChannelFrequencyLowBytes:: ds NUM_CHANNELS
 ; delay of the beginning of the vibrato from the start of the note
 wChannelVibratoDelayCounterReloadValues:: ds NUM_CHANNELS
 
+<<<<<<< Updated upstream
 wChannelPitchSlideLengthModifiers:: ds NUM_CHANNELS
 wChannelPitchSlideFrequencySteps:: ds NUM_CHANNELS
 wChannelPitchSlideFrequencyStepsFractionalPart:: ds NUM_CHANNELS
@@ -47,6 +56,10 @@ wChannelPitchSlideCurrentFrequencyHighBytes:: ds NUM_CHANNELS
 wChannelPitchSlideCurrentFrequencyLowBytes:: ds NUM_CHANNELS
 wChannelPitchSlideTargetFrequencyHighBytes:: ds NUM_CHANNELS
 wChannelPitchSlideTargetFrequencyLowBytes:: ds NUM_CHANNELS
+=======
+wLastVolume:: db
+;wUnusedMusicF9Flag:: db
+>>>>>>> Stashed changes
 
 ; Note delays are stored as 16-bit fixed-point numbers where the integer part
 ; is 8 bits and the fractional part is 8 bits.
@@ -75,7 +88,6 @@ wTempoModifier:: db
 
 	ds 13
 
-
 SECTION "Sprite State Data", WRAM0
 
 wSpriteDataStart::
@@ -101,10 +113,11 @@ wSpriteStateData1::
 ; - E
 ; - F
 wSpritePlayerStateData1::  spritestatedata1 wSpritePlayerStateData1 ; player is struct 0
-; wSprite01StateData1 - wSprite15StateData1
-FOR n, 1, NUM_SPRITESTATEDATA_STRUCTS
+; wSprite02StateData1 - wSprite15StateData1
+FOR n, 1, NUM_SPRITESTATEDATA_STRUCTS - 1
 wSprite{02d:n}StateData1:: spritestatedata1 wSprite{02d:n}StateData1
 ENDR
+wSpritePikachuStateData1:: spritestatedata1 wSpritePikachuStateData1 ; pikachu is struct 15
 
 ; more data for all sprites on the current map
 ; holds info for 16 sprites with $10 bytes each
@@ -127,15 +140,16 @@ wSpriteStateData2::
 ; - E: sprite image base offset (in video ram, player always has value 1, used to compute sprite image index)
 ; - F
 wSpritePlayerStateData2::  spritestatedata2 wSpritePlayerStateData2 ; player is struct 0
-; wSprite01StateData2 - wSprite15StateData2
-FOR n, 1, NUM_SPRITESTATEDATA_STRUCTS
+; wSprite02StateData2 - wSprite15StateData2
+FOR n, 1, NUM_SPRITESTATEDATA_STRUCTS - 1
 wSprite{02d:n}StateData2:: spritestatedata2 wSprite{02d:n}StateData2
 ENDR
+wSpritePikachuStateData2:: spritestatedata2 wSpritePikachuStateData2 ; pikachu is struct 15
 
 ; The high byte of a pointer to anywhere within wSpriteStateData1 can be incremented
 ; to reach within wSpriteStateData2, and vice-versa for decrementing.
 ASSERT HIGH(wSpriteStateData1) + 1 == HIGH(wSpriteStateData2)
-ASSERT LOW(wSpriteStateData1) == 0 && LOW(wSpriteStateData2) == 0
+;SSERT LOW(wSpriteStateData1) == 0 && LOW(wSpriteStateData2) == 0
 
 wSpriteDataEnd::
 
@@ -397,8 +411,11 @@ wSlotMachineSevenAndBarModeChance:: db
 	ds 2
 ; ROM back to return to when the player is done with the slot machine
 wSlotMachineSavedROMBank:: db
+<<<<<<< Updated upstream
 ;	ds 166
 
+=======
+>>>>>>> Stashed changes
 ; Move Buffer stuff for Mateo's code
 wMoveBuffer::
 wRelearnableMoves::
@@ -427,7 +444,7 @@ NEXTU
 wSimulatedJoypadStatesEnd::
 
 NEXTU
-wUnusedFlag::
+;wUnusedFlag::
 wBoostExpByExpAll:: db
 wEggRemainingSteps:: db
 wIsEggInDaycare::
@@ -603,7 +620,7 @@ ENDU
 	ds 1
 
 wNPCMovementDirections2Index::
-wUnusedLinkMenuByte::
+;wUnusedLinkMenuByte::
 ; number of items in wFilteredBagItems list
 wFilteredBagItemsCount:: db
 
@@ -611,9 +628,9 @@ wFilteredBagItemsCount:: db
 ; 0 if the joypad state is not being simulated
 wSimulatedJoypadStatesIndex:: db
 ; written to but nothing ever reads it
-wUnusedSimulatedJoypadStatesMask:: db
+;wUnusedSimulatedJoypadStatesMask:: db
 ; written to but nothing ever reads it
-wUnusedOverrideSimulatedJoypadStatesIndex:: db
+;wUnusedOverrideSimulatedJoypadStatesIndex:: db
 ; mask indicating which real button presses can override simulated ones
 ; XXX is it ever not 0?
 wOverrideSimulatedJoypadStatesMask:: db
@@ -651,7 +668,7 @@ NEXTU
 wFieldMoves:: ds NUM_MOVES
 wNumFieldMoves:: db
 wFieldMovesLeftmostXCoord:: db
-wLastFieldMoveID:: db ; unused
+wLastFieldMoveID:: db
 
 NEXTU
 wBoxNumString:: ds 3
@@ -819,7 +836,7 @@ wBadgeOrFaceTiles:: ds NUM_BADGES + 1
 wTempObtainedBadgesBooleans:: ds NUM_BADGES
 
 NEXTU
-wUnusedCreditsByte:: db
+;wUnusedCreditsByte:: db
 ; the number of credits mons that have been displayed so far
 wNumCreditsMonsDisplayed:: db
 
@@ -1050,6 +1067,10 @@ wScriptedNPCWalkCounter:: db
 
 	ds 1
 
+<<<<<<< Updated upstream
+=======
+; always 0 since full CGB support was not implemented
+>>>>>>> Stashed changes
 wGBC:: db
 
 ; if running on SGB, it's 1, else it's 0
@@ -1106,7 +1127,7 @@ wItemList:: ds 16
 wListPointer:: dw
 
 ; used to store pointers, but never read
-wUnusedNamePointer:: dw
+;wUnusedNamePointer:: dw
 
 wItemPrices:: dw
 
@@ -1418,8 +1439,8 @@ wOptionsInitialized::
 wNewSlotMachineBallTile::
 ; how much to add to the X/Y coord
 wCoordAdjustmentAmount::
-wUnusedWaterDropletsByte::
-	db
+;wUnusedWaterDropletsByte::
+;	db
 
 wSlideMonDelay::
 ; generic counter variable for various animations
@@ -1463,7 +1484,7 @@ wPartyMenuAnimMonEnabled::
 ; non-zero when enabled. causes nest locations to blink on and off.
 ; the town selection cursor will blink regardless of what this value is
 wTownMapSpriteBlinkingEnabled::
-wUnusedMoveAnimByte:: db
+;wUnusedMoveAnimByte:: db
 
 ; current destination address in OAM for frame blocks (big endian)
 wFBDestAddr:: dw
@@ -1555,7 +1576,10 @@ wMonHBackSprite:: dw
 wMonHMoves:: ds NUM_MOVES
 wMonHGrowthRate:: db
 wMonHLearnset:: flag_array NUM_TMS + NUM_HMS
+<<<<<<< Updated upstream
 ;ds 1
+=======
+>>>>>>> Stashed changes
 wMonHPicBank:: db
 wMonHeaderEnd::
 
@@ -1577,7 +1601,7 @@ wMoveNum:: db
 
 wMovesString:: ds 56
 
-wUnusedCurMapTilesetCopy:: db
+;wUnusedCurMapTilesetCopy:: db
 
 ; wWalkBikeSurfState is sometimes copied here, but it doesn't seem to be used for anything
 wWalkBikeSurfStateCopy:: db
@@ -1718,7 +1742,7 @@ wSerialPlayerDataBlock:: ; ds $1a8
 ; that case, this would be ESCAPE_ROPE.
 wPseudoItemID:: db
 
-wUnusedAlreadyOwnedFlag:: db
+;wUnusedAlreadyOwnedFlag:: db
 
 wIsTrainerBattle:: db
 
@@ -1770,9 +1794,9 @@ wPokedexOwnedEnd::
 wPokedexSeen:: flag_array NUM_POKEMON
 wPokedexSeenEnd::
 
-wNumBagItems:: db
-; item, quantity
-wBagItems:: ds BAG_ITEM_CAPACITY * 2 + 1
+; PureRGBnote: ADDED: we use this empty space currently for a store of extra flags to hide/show objects in the safari zone.
+wExtraMissableObjectFlags:: flag_array NUM_EXTRA_HS_OBJECTS ; max size 20 bytes or 152 flags
+wExtraMissableObjectFlagsEnd::
 
 ; PureRGBnote: ADDED: we use this empty space currently for a store of extra flags to hide/show objects in the safari zone.
 wExtraMissableObjectFlags:: flag_array NUM_EXTRA_HS_OBJECTS ; max size 20 bytes or 152 flags
@@ -1786,7 +1810,7 @@ wOptions:: db
 
 wObtainedBadges:: flag_array NUM_BADGES
 
-wUnusedObtainedBadges:: db
+;wUnusedObtainedBadges:: db
 
 wLetterPrintingDelayFlags:: db
 
@@ -1813,7 +1837,7 @@ wYBlockCoord:: db
 wXBlockCoord:: db
 
 wLastMap:: db
-wUnusedLastMapWidth:: db
+;wUnusedLastMapWidth:: db
 
 wCurMapHeader::
 wCurMapTileset:: db
@@ -1851,7 +1875,27 @@ wWarpEntries:: ds 32 * 4 ; Y, X, warp ID, map ID
 ; if $ff, the player's coordinates are not updated when entering the map
 wDestinationWarpID:: db
 
+<<<<<<< Updated upstream
 ;	ds 128
+=======
+UNION
+	;;;;;;;;; note: CHANGED: this empty space is now used for bigger bag space
+	UNION
+	; original size of this empty space
+	;ds 128
+
+	NEXTU
+	wNumBagItems:: db
+	; item, quantity
+       wBagItems:: ds BAG_ITEM_CAPACITY * 2 + 1 ; now holds 50 items
+       ;;;;
+       ; 26 bytes left to use
+       ENDU
+NEXTU
+wChannel5:: channel_struct wChannel5
+wChannel6:: channel_struct wChannel6
+ENDU
+>>>>>>> Stashed changes
 
 ; number of signs in the current map (up to 16)
 wNumSigns:: db
@@ -1923,7 +1967,7 @@ wCurrentBoxNum:: db
 ; number of HOF teams
 wNumHoFTeams:: db
 
-wUnusedMapVariable:: db
+;wUnusedMapVariable:: db
 
 wPlayerCoins:: dw ; BCD
 
@@ -2062,7 +2106,11 @@ wRoute18Gate1FCurScript:: db
 wMtSilverSummitCurScript:: db
 wViridianSchoolHouseCurScript:: db
 wSilphFacilityCurScript:: db
+<<<<<<< Updated upstream
 	ds 75
+=======
+	ds 75 ; Do not touch unless adding maps!
+>>>>>>> Stashed changes
 wGameProgressFlagsEnd::
 
 	wPlayerGender::
@@ -2073,15 +2121,30 @@ wGameProgressFlagsEnd::
 wTyrogueEvolutions::
 	; stores directly the number/name of the chosen Hitmon
 	ds 1
+<<<<<<< Updated upstream
 	
 		; unused
 			ds 40
+=======
+
+                ; unused - Usable Data
+                        ds 7
+>>>>>>> Stashed changes
 
 wOpponentMonShiny:: db
 wPlayerMonShiny:: db
 wHoFMonShiny:: db
 wAreWeUsingTheHoFPC:: db
 wWeAreTrading:: db
+<<<<<<< Updated upstream
+=======
+
+UNION
+NEXTU
+wChannel7:: channel_struct wChannel7
+wChannel8:: channel_struct wChannel8
+ENDU
+>>>>>>> Stashed changes
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 
@@ -2126,7 +2189,7 @@ wLastBlackoutMap:: db
 wDestinationMap:: db
 
 ; initialized to $ff, but nothing ever reads it
-wUnusedPlayerDataByte:: db
+;wUnusedPlayerDataByte:: db
 
 ; used to store the tile in front of the boulder when trying to push a boulder
 ; also used to store the result of the collision check ($ff for a collision and $00 for no collision)
@@ -2298,7 +2361,10 @@ wEXPBarBaseEXP::      ds 3
 wEXPBarCurEXP::       ds 3
 wEXPBarNeededEXP::    ds 3
 wEXPBarKeepFullFlag:: ds 1
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 SECTION "Stack", WRAM0
 

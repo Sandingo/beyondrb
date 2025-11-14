@@ -92,9 +92,9 @@ InitList:
 	ld a, h
 	ld [wListPointer + 1], a
 	ld a, e
-	ld [wUnusedNamePointer], a
+;	ld [wUnusedNamePointer], a
 	ld a, d
-	ld [wUnusedNamePointer + 1], a
+;	ld [wUnusedNamePointer + 1], a
 	ld bc, ItemPrices
 	ld a, c
 	ld [wItemPrices], a

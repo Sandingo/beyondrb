@@ -190,7 +190,6 @@ ROMX $31
 	"Party Mon Sprites Routines"
 WRAM0
 	"Audio RAM"
-	org $c100
 	"Sprite State Data"
 	"OAM Buffer"
 	"Tilemap"
@@ -199,7 +198,6 @@ WRAM0
 	"Party Data"
 	"Main Data"
 	"Current Box Data"
-	org $df00
 	"Stack"
 VRAM
 	"VRAM"

@@ -580,12 +580,12 @@ TyrogueEvolutionChoice::
 	inc hl
 	ld a, $2
 	ld [hli], a ; wMaxMenuItem
-	ld a, B_BUTTON | A_BUTTON
+	ld a, PAD_BUTTONS
 	ld [hli], a ; wMenuWatchedKeys
 	xor a
 	ld [hl], a ; wLastMenuItem
 	call HandleMenuInput
-	bit BIT_B_BUTTON, a
+	bit B_PAD_B, a
 	jr nz, .noEvolution ; if B was pressed, no evolution
 ; A was pressed
 	call PlaceUnfilledArrowMenuCursor

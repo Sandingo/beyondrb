@@ -259,9 +259,9 @@ CableClub_DoBattleOrTradeAgain:
 	dec c
 	jr nz, .unpatchEnemyMonsLoop
 	ld a, LOW(wEnemyMonOT)
-	ld [wUnusedNamePointer], a
+;	ld [wUnusedNamePointer], a
 	ld a, HIGH(wEnemyMonOT)
-	ld [wUnusedNamePointer + 1], a
+;	ld [wUnusedNamePointer + 1], a
 	xor a
 	ld [wTradeCenterPointerTableIndex], a
 	ld a, SFX_STOP_ALL_MUSIC
@@ -839,7 +839,7 @@ TradeCenter_Trade:
 	call ClearScreen
 	call LoadHpBarAndStatusTilePatterns
 	xor a
-	ld [wUnusedFlag], a
+;	ld [wUnusedFlag], a
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .usingExternalClock

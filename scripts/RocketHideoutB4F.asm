@@ -50,7 +50,7 @@ ENDC
 	jp nc, CheckFightingMapTrainers
 	xor a
 	ldh [hJoyHeld], a
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	ld a, [wXCoord]
 	cp 25; is the player standing on the right side of the door
@@ -118,7 +118,7 @@ RocketHideoutB4FDefeatArcherScript:
 	cp $ff
 	jp z, RocketHideoutB4FSetDefaultScript
 	call UpdateSprites
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	SetEvent EVENT_BEAT_ROCKET_HIDEOUT_4_ARCHER
 	ld a, TEXT_ROCKETHIDEOUTB4F_ARCHER

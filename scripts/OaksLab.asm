@@ -102,7 +102,7 @@ OaksLabPlayerEntersLabScript:
 	ret
 
 PlayerEntryMovementRLE:
-	db D_UP, 8
+	db PAD_UP, 8
 	db -1 ; end
 
 OaksLabFollowedOakScript:
@@ -126,7 +126,7 @@ OaksLabFollowedOakScript:
 	ret
 
 OaksLabOakChooseMonSpeechScript:
-	ld a, SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_SELECT | PAD_START | PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	ld a, TEXT_OAKSLAB_RIVAL_FED_UP_WITH_WAITING
 	ldh [hTextID], a
@@ -171,7 +171,7 @@ OaksLabPlayerDontGoAwayScript:
 	call DisplayTextID
 	ld a, $1
 	ld [wSimulatedJoypadStatesIndex], a
-	ld a, D_UP
+	ld a, PAD_UP
 	ld [wSimulatedJoypadStatesEnd], a
 	call StartSimulatingJoypadStates
 	ld a, PLAYER_DIR_UP
@@ -293,7 +293,7 @@ OaksLabRivalChoosesStarterScript:
 	ld a, [wStatusFlags5]
 	bit BIT_SCRIPTED_NPC_MOVEMENT, a
 	ret nz
-	ld a, SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_SELECT | PAD_START | PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	ld a, OAKSLAB_RIVAL
 	ldh [hSpriteIndex], a
@@ -420,7 +420,7 @@ OaksLabRivalStartBattleScript:
 OaksLabRivalEndBattleScript:
     xor a
     ld [wIsTrainerBattle], a
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	ld a, PLAYER_DIR_UP
 	ld [wPlayerMovingDirection], a
@@ -516,7 +516,7 @@ OaksLabRivalArrivesAtOaksRequestScript:
 	ldh [hJoyHeld], a
 	call EnableAutoTextBoxDrawing
 	ld a, SFX_STOP_ALL_MUSIC
-	ld [wNewSoundID], a
+	call PlaySound
 	call PlaySound
 	farcall Music_RivalAlternateStart
 	ld a, TEXT_OAKSLAB_RIVAL_GRAMPS
@@ -561,7 +561,7 @@ OaksLabOakGivesPokedexScript:
 	ret nz
 	call EnableAutoTextBoxDrawing
 	call PlayDefaultMusic
-	ld a, SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_SELECT | PAD_START | PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	call OaksLabRivalFaceUpOakFaceDownScript
 	ld a, TEXT_OAKSLAB_RIVAL_WHAT_DID_YOU_CALL_ME_FOR
@@ -626,7 +626,7 @@ OaksLabOakGivesPokedexScript:
 	call FillMemory
 	ld [hl], $ff
 	ld a, SFX_STOP_ALL_MUSIC
-	ld [wNewSoundID], a
+	call PlaySound
 	call PlaySound
 	farcall Music_RivalAlternateStart
 	ld a, OAKSLAB_RIVAL
@@ -955,7 +955,7 @@ OaksLabMonChoiceMenu:
 	call AddPartyMon
 	ld hl, wStatusFlags4
 	set BIT_GOT_STARTER, [hl]
-	ld a, SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_SELECT | PAD_START | PAD_RIGHT | PAD_LEFT | PAD_UP | PAD_DOWN
 	ld [wJoyIgnore], a
 	ld a, SCRIPT_OAKSLAB_CHOSE_STARTER_SCRIPT
 	ld [wOaksLabCurScript], a
