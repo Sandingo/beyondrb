@@ -344,14 +344,14 @@
 	charmap "め", $d2
 	charmap "も", $d3
 	charmap "や", $d4
-	charmap "ゆ", $d5
-	charmap "よ", $d6
-	charmap "ら", $d7
-	charmap "り", $d8
-	charmap "る", $d9
-	charmap "れ", $da
-	charmap "ろ", $db
-	charmap "わ", $dc
+	charmap "<CUR1>",    $d5
+	charmap "<CUR2>",    $d6
+	charmap "<BASE1>",   $d7
+	charmap "<BASE2>",   $d8
+	charmap "<DV1>",     $d9
+	charmap "<DV2>",     $da
+	charmap "<EV1>",     $db
+	charmap "<EV2>",     $dc
 	charmap "を", $dd
 	charmap "ん", $de
 	charmap "っ", $df

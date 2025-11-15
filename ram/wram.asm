@@ -2249,7 +2249,10 @@ ENDU
 
 wTrainerHeaderPtr:: dw
 
-	ds 6
+wMultiUseBuffer:: db
+wDumbByteToToggleStatusScreen:: db
+
+	ds 4
 
 ; the trainer the player must face after getting a wrong answer in the Cinnabar
 ; gym quiz

@@ -83,11 +83,12 @@ INCLUDE "gfx/font.asm"
 SECTION "Battle Engine 1", ROMX
 
 INCLUDE "engine/overworld/is_player_just_outside_map.asm"
-INCLUDE "engine/pokemon/status_screen.asm"
 INCLUDE "engine/menus/party_menu.asm"
 INCLUDE "gfx/player.asm"
 INCLUDE "engine/overworld/turn_sprite.asm"
 INCLUDE "engine/menus/start_sub_menus.asm"
+INCLUDE "engine/battle/wild_encounters.asm"
+INCLUDE "engine/items/tms.asm"
 
 
 SECTION "Battle Engine 2", ROMX
@@ -254,8 +255,7 @@ SECTION "Battle Engine 9", ROMX
 INCLUDE "engine/battle/experience.asm"
 INCLUDE "engine/gfx/exp_bar.asm"
 INCLUDE "engine/battle/move_effects/recoil.asm"
-INCLUDE "engine/battle/wild_encounters.asm"
-INCLUDE "engine/items/tms.asm"
+INCLUDE "engine/pokemon/status_screen.asm"
 
 
 SECTION "Diploma", ROMX

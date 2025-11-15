@@ -210,7 +210,7 @@ StatusScreenManager_WaitForInput:
 	call Joypad
 	ldh a, [hJoyPressed]
 	ld b, a
-	and A_BUTTON | B_BUTTON | D_UP | D_DOWN | D_LEFT | D_RIGHT 
+	and A_BUTTON | B_BUTTON | D_UP | D_DOWN | D_LEFT | D_RIGHT | SELECT
 	ret z
 	bit BIT_B_BUTTON, b
 	jr nz, .quit
@@ -219,9 +219,14 @@ StatusScreenManager_WaitForInput:
 	bit BIT_D_DOWN, b
 	jr nz, .nextMon
 	bit BIT_D_RIGHT, b
-	jr nz, .nextPage
+	jp nz, .nextPage
 	bit BIT_D_LEFT, b
-	jr nz, .prevPage
+	jp nz, .prevPage
+	bit BIT_SELECT, b
+; Is the player on the second screen? If no, change stat display
+	call StatusScreenManager_GetPage
+	and a
+	jr z, .statDisplayChange
 	ret
 .quit
 	ld a, [wJumptableIndex]
@@ -258,6 +263,41 @@ StatusScreenManager_WaitForInput:
 .noSaveMenuItem
 	ld h, SSM_LOAD_MON
 	jp StatusScreenManager_UpdateJumptableIndex
+.statDisplayChange
+	SetEvent EVENT_PRESSED_FOR_INFO_IN_STATUS_SCREEN
+	ld a, [wDumbByteToToggleStatusScreen]
+	and a
+	jr z, .advanceTo1
+	cp 1
+	jr z, .advanceTo2
+	cp 2
+	jr z, .advanceTo3
+; return to 0
+	call ClearStatsValues
+	hlcoord 11, 3
+	predef DrawHP
+	xor a
+	ld [wDumbByteToToggleStatusScreen], a
+	ld d, a
+	call PrintStatsBox
+	jr .continue
+.advanceTo1
+	inc a
+	ld [wDumbByteToToggleStatusScreen], a
+	call PrintStatsBox_Base
+	jr .continue
+.advanceTo2
+	inc a
+	ld [wDumbByteToToggleStatusScreen], a
+	call PrintStatsBox_DVs
+	jr .continue
+.advanceTo3
+	inc a
+	ld [wDumbByteToToggleStatusScreen], a
+	call PrintStatsBox_StatExp
+	jr .continue
+.continue
+	ret
 .nextPage
 	call StatusScreenManager_GetPage
 	inc a
@@ -362,6 +402,12 @@ StatusScreenManager_StatsPage:
 
 ; Predef 0x37
 StatusScreen:
+; new
+	xor a
+	ldh [hDownArrowBlinkCount1], a ; blinking down arrow timing value 1
+	ld a, 6
+	ldh [hDownArrowBlinkCount2], a ; blinking down arrow timing value 2
+; vanilla
 	call LoadMonData
 	ld a, [wMonDataLocation]
 	cp BOX_DATA
@@ -403,6 +449,7 @@ StatusScreen:
 	push af
 	xor a
 	ldh [hTileAnimations], a
+	ld [wDumbByteToToggleStatusScreen], a ; new, to cycle through the different stat printers
 	hlcoord 19, 1
 	lb bc, 6, 10
 	call DrawLineBox ; Draws the box around name, HP and status
@@ -444,7 +491,6 @@ StatusScreen:
 	ld de, wPokedexNum
 	lb bc, LEADING_ZEROES | 1, 3
 	call PrintNumber ; Pokémon no.
-; back to vanilla
 	hlcoord 11, 10
 	predef PrintMonType
 	ld hl, NamePointers2
@@ -475,6 +521,7 @@ StatusScreen:
 	pop af
 	ldh [hTileAnimations], a
 	ret
+
 
 .GetStringPointer
 	ld a, [wMonDataLocation]
@@ -553,6 +600,18 @@ PrintStatsBox:
 	ld b, 8
 	ld c, 8
 	call TextBoxBorder ; Draws the box
+; Sets stored menu
+	xor a
+	ld [wDumbByteToToggleStatusScreen], a
+	ld d, a
+; new
+	hlcoord 1, 17
+	ld a, "<CUR1>"
+	ld [hli], a
+	ld a, "<CUR2>"
+	ld [hl], a
+; vanilla
+	ld [hl], a
 	hlcoord 1, 9 ; Start printing stats from here
 	ld bc, $19 ; Number offset
 	jr .PrintStats
@@ -588,11 +647,280 @@ PrintStat:
 	add hl, de
 	ret
 
+PrintStatsBox_Base: ; new
+	call ClearStatsValues
+; print label that these are the BASE stats
+	hlcoord 1, 17
+	ld a, "<BASE1>"
+	ld [hli], a
+	ld a, "<BASE2>"
+	ld [hl], a
+; vanilla-like stuff
+	hlcoord 1, 9 ; Start printing stats from here
+	ld bc, $19 ; Number offset
+.PrintStats
+;	push bc
+;	push hl
+;	ld de, StatsText
+;	call PlaceString
+;	pop hl
+;	pop bc
+	add hl, bc
+	lb bc, 1, 3
+	ld de, wMonHBaseAttack
+	call PrintStat
+	ld de, wMonHBaseDefense
+	call PrintStat
+	ld de, wMonHBaseSpeed
+	call PrintStat
+	ld de, wMonHBaseSpecial
+	call PrintNumber
+; clear CurHP/MaxHP
+	call ClearCurHpMaxHP
+; print Base HP
+	hlcoord 16, 4
+	ld de, wMonHBaseHP
+	lb bc, 1, 3
+	jp PrintNumber
+
+PrintStatsBox_DVs: ; new
+	call ClearStatsValues
+; print label that these are the IV stats
+	hlcoord 1, 17
+	ld a, "<DV1>"
+	ld [hli], a
+	ld a, "<DV2>"
+	ld [hl], a
+; vanilla-like stuff
+	hlcoord 1, 9 ; Start printing stats from here
+	ld bc, $19 ; Number offset
+.PrintStats
+;	push bc
+;	push hl
+;	ld de, StatsText
+;	call PlaceString
+;	pop hl
+;	pop bc
+	add hl, bc
+	lb bc, 1, 3
+; ATK DV
+	ld de, wLoadedMonDVs
+	ld a, [de]
+	swap a
+	and $f
+	ld [wMultiUseBuffer], a
+	ld de, wMultiUseBuffer
+	call PrintStat
+; DEF DV
+	ld de, wLoadedMonDVs
+	ld a, [de]
+	and $f
+	ld [wMultiUseBuffer], a
+	ld de, wMultiUseBuffer
+	call PrintStat
+; SPEED DV
+	ld de, wLoadedMonDVs
+	inc de
+	ld a, [de]
+	swap a
+	and $f
+	ld [wMultiUseBuffer], a
+	ld de, wMultiUseBuffer
+	call PrintStat
+; SPECIAL DV
+	ld de, wLoadedMonDVs
+	inc de
+	ld a, [de]
+	and $f
+	ld [wMultiUseBuffer], a
+	ld de, wMultiUseBuffer
+	call PrintNumber
+; clear CurHP/MaxHP
+	call ClearCurHpMaxHP
+; HP DV
+	ld de, wLoadedMonDVs
+	ld a, [de]  ; Atk IV
+	swap a
+	and $1
+	sla a
+	sla a
+	sla a
+	ld b, a
+	ld a, [de] ; Def IV
+	inc de
+	and $1
+	sla a
+	sla a
+	add b
+	ld b, a
+	ld a, [de] ; Spd IV
+	swap a
+	and $1
+	sla a
+	add b
+	ld b, a
+	ld a, [de] ; Spc IV
+	and $1
+	add b      ; HP IV: LSB of the other 4 IVs
+	ld [wMultiUseBuffer], a
+	ld de, wMultiUseBuffer
+	hlcoord 16, 4
+	lb bc, 1, 3
+	jp PrintNumber
+
+PrintStatsBox_StatExp: ; new
+	call ClearStatsValues
+; print label that these are the EV stats
+	hlcoord 1, 17
+	ld a, "<EV1>"
+	ld [hli], a
+	ld a, "<EV2>"
+	ld [hl], a
+; vanilla-like stuff
+	hlcoord 1, 9 ; Start printing stats from here
+	ld bc, $19 ; Number offset
+.PrintStats
+;	push bc
+;	push hl
+;	ld de, StatsText
+;	call PlaceString
+;	pop hl
+;	pop bc
+	add hl, bc
+; print ATK stat exp
+	push hl
+	ld hl, wLoadedMonAttackExp
+	ld a, [hli]
+	ld a, [hld]
+	call CalculateHumanReadableStatExp
+	ld a, [de]
+	pop hl
+	lb bc, 1, 3
+	call PrintStat
+; print DEF stat exp
+	push hl
+	ld hl, wLoadedMonDefenseExp
+	ld a, [hli]
+	ld a, [hld]
+	call CalculateHumanReadableStatExp
+	ld a, [de]
+	pop hl
+	lb bc, 1, 3
+	call PrintStat
+; print SPEED stat exp
+	push hl
+	ld hl, wLoadedMonSpeedExp
+	ld a, [hli]
+	ld a, [hld]
+	call CalculateHumanReadableStatExp
+	ld a, [de]
+	pop hl
+	lb bc, 1, 3
+	call PrintStat
+; print SPECIAL stat exp
+	push hl
+	ld hl, wLoadedMonSpecialExp
+	ld a, [hli]
+	ld a, [hld]
+	call CalculateHumanReadableStatExp
+	ld a, [de]
+	pop hl
+	lb bc, 1, 3
+	call PrintNumber
+; clear CurHP/MaxHP
+	call ClearCurHpMaxHP
+; print HP stat exp
+	ld hl, wLoadedMonHPExp
+	ld a, [hli]
+	ld a, [hld]
+	call CalculateHumanReadableStatExp
+	ld a, [de]
+	hlcoord 17, 4
+	lb bc, 1, 2
+	jp PrintNumber
+
 StatsText:
 	db   "ATTACK"
 	next "DEFENSE"
 	next "SPEED"
 	next "SPECIAL@"
+	
+ClearCurHpMaxHP: ; new
+	ld a, " "
+	hlcoord 12, 4
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ret
+
+ClearStatsValues: ; new
+	ld a, " "
+	hlcoord 6, 10
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	hlcoord 6, 12
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	hlcoord 6, 14
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	hlcoord 6, 16
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ret
+
+; input: wLoadedMonSTATExp in hl
+; output: human-readable value of stat exp loaded in de via wMultiUseBuffer
+CalculateHumanReadableStatExp: ; new
+; calculates ceil(Sqrt(stat exp)) in b
+	ld b, 0
+;	ld a, [hli] ; for debugging
+;	ld a, [hld] ; for debugging
+.startLoop
+	xor a
+	ldh [hMultiplicand], a
+	ldh [hMultiplicand+1], a
+	inc b               ; increment current stat exp bonus
+	ld a, b
+	cp $ff
+	jr z, .statExpDone
+	ldh [hMultiplicand+2], a
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, [hl] ; MSB of stat exp
+	ld d, a
+	ldh a, [hProduct + 2] ; MSB
+	cp d ; a-d = MSB of b^2 - MSB of StatExp
+	jr c, .startLoop
+	jr nz, .MSBBigger ; no need to check the LSB and no need to preserve hl, will be overwritten soon
+; MSBs are equals 
+	inc hl
+	ld a, [hld] ; LSB of stat exp, and returns hl to the previous value
+	ld d, a
+	ldh a, [hProduct + 3] ; LSB
+	cp d ; a-d = MSB of b^2 - MSB of StatExp
+	jr c, .startLoop
+	jr z, .statExpDone ; exact match, no need to reduce b by 1
+
+.MSBBigger
+	dec b
+
+.statExpDone
+	ld a, b
+;	srl a
+;	srl a ; divide by 4 with the operation above
+	ld [wMultiUseBuffer], a
+	ld de, wMultiUseBuffer
+	ret
 	
 StatusScreenManager_MovesPage:
 	xor a
@@ -918,6 +1246,8 @@ StatusScreen_PrintPP:
 	jr nz, StatusScreen_PrintPP
 	ret
 
+ ; ---------------- new ------------------
+
 StatusScreen_ShowShinySymbol:
 ; new, for the shiny symbol
 	ld a, [wLoadedMonCatchRate]
@@ -927,4 +1257,47 @@ StatusScreen_ShowShinySymbol:
 	hlcoord 8, 1
 	ld [hl], "<SHINY>"
 .notShiny
+	ret
+
+HandleStatusInfoBlinkTiming::
+	CheckEvent EVENT_PRESSED_FOR_INFO_IN_STATUS_SCREEN
+	jr nz, .staticPrinting
+; blinking
+	hlcoord 16, 17
+	ld a, [hl]
+	ld b, a
+	ld a, $76 ; border tile
+	cp b
+	jr z, .labelForInfoOff
+.labelForInfoOn
+	ldh a, [hDownArrowBlinkCount1]
+	dec a
+	ldh [hDownArrowBlinkCount1], a
+	ret nz
+	ldh a, [hDownArrowBlinkCount2]
+	dec a
+	ldh [hDownArrowBlinkCount2], a
+	ret nz
+	ld a, $ff
+	ldh [hDownArrowBlinkCount1], a
+	ld a, $06
+	ldh [hDownArrowBlinkCount2], a
+	ret
+.labelForInfoOff
+	ldh a, [hDownArrowBlinkCount1]
+	and a
+	ret z
+	dec a
+	ldh [hDownArrowBlinkCount1], a
+	ret nz
+	dec a
+	ldh [hDownArrowBlinkCount1], a
+	ldh a, [hDownArrowBlinkCount2]
+	dec a
+	ldh [hDownArrowBlinkCount2], a
+	ret nz
+	ld a, $06
+	ldh [hDownArrowBlinkCount2], a
+	ret
+.staticPrinting
 	ret
