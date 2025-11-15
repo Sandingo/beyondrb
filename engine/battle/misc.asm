@@ -289,12 +289,22 @@ FullyEvolvedMons: ; 0-103
 	db -1
 
 RollForShiny::
+; roll some numbers and do some checks
+; "debug"/testing function, simply scalable
+;    call Random
+;    and %00000100
+;    jr nz, .shinyEncounter
+; hRandomAdd/Sub needs to be substituted with calls to Random if I change to Jojo's code
+; in that case I also move the call to this routine from end of battle to the wild encounter code
     ldh a, [hRandomAdd]
     cp 42 ; can be any number, I just want a 1/256 chance here
-    jr nz, .notShinyEncounter ; nz for real, z for testing purposes
+    jr nz, .badShinyRoll ; nz for real, z for testing purposes
+; second random number, the badge-dependent one
+; we skip this check if we have the SHINY CHARM, ergo the probability is 1/256
     ld b, SHINY_CHARM
     call IsItemInBag
     jr nz, .shinyEncounter
+; if we don't have the SHINY CHARM, we need to roll another number and check against the badge-dependent U.L.
     call CountHowManyBadges ; d contains the number of badges
     ld a, d ; a contains the number of badges
     call ConvertNumberOfBadgesIntoUpperLimit ; a contains the upper limit for the second random number
@@ -302,11 +312,25 @@ RollForShiny::
     ldh a, [hRandomSub] ; a holds the random number
     cp b ; a-b, random-limit, c flag set if a is strictly lower than b, aka in b/256 cases, as 0 is included
     jr c, .shinyEncounter
+.badShinyRoll
+; not shiny, let's count non-shiny encounters for the "safety net"
+    ld hl, wNonShinyEncounters
+	inc [hl]
+	ld a, [hli] ; let's now compare [wNonShinyEncounters] with 1500=$05DC
+	cp $DC ; $05 for testing purposes, $DC for the 1500
+	jr nz, .notShinyEncounter
+	ld a, [hl]
+	cp $05 ; $00 for testing purposes, $05 for the 1500
+	jr nz, .notShinyEncounter
+; let's make the encounter shiny because we had 1500 non-shiny ones
 .shinyEncounter
     ld a, 1 ; this is the "yes it is shiny" value
     ld [wOpponentMonShiny], a
 ; reset the non-shiny counter
     xor a
+    ld hl, wNonShinyEncounters ; not elegant but clearer to read, I could do some hld and preload it but whatever
+    ld [hli], a
+    ld [hl], a
     ret
 .notShinyEncounter
 	xor a ; not shiny
