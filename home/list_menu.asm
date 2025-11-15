@@ -80,6 +80,12 @@ DisplayListMenuIDLoop::
 	jr .buttonAPressed
 .notOldManBattle
 	call LoadGBPal
+	ld a, [wFakePadAButtonPress]
+	and a
+	jr z, .noFake
+	call PlaceMenuCursor
+	jr .buttonAPressed
+.noFake
 	call HandleMenuInput
 	push af
 	call PlaceMenuCursor

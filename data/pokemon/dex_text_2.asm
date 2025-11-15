@@ -274,7 +274,7 @@
 	next "on its shells"
 	
 	page "It is theorized"
-	next "it is related"
+	next "to be related"
 	next "to SQUIRTLE"
 	dex
 

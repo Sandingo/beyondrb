@@ -112,3 +112,4 @@ PredefPointers::
 	add_predef FindTileBlock
 	add_predef HideExtraObject
 	add_predef ShowExtraObject
+	add_predef StatusScreenManager

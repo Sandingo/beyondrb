@@ -625,8 +625,11 @@ TradeCenter_PlaceSelectedEnemyMonMenuCursor:
 TradeCenter_DisplayStats:
 	ld a, [wCurrentMenuItem]
 	ld [wWhichPokemon], a
-	predef StatusScreen
-	predef StatusScreen2
+	predef StatusScreenManager
+	; predef StatusScreen
+	; predef StatusScreen2
+	ld a, [wWhichPokemon]
+	ld [wCurrentMenuItem], a
 	call GBPalNormal
 	call LoadTrainerInfoTextBoxTiles
 	call TradeCenter_DrawPartyLists

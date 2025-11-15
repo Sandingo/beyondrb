@@ -31,7 +31,6 @@ INCLUDE "engine/menus/display_text_id_init.asm"
 INCLUDE "engine/menus/draw_start_menu.asm"
 INCLUDE "engine/link/cable_club_npc.asm"
 INCLUDE "engine/menus/text_box.asm"
-INCLUDE "engine/battle/move_effects/drain_hp.asm"
 INCLUDE "engine/menus/players_pc.asm"
 INCLUDE "engine/pokemon/remove_mon.asm"
 INCLUDE "engine/events/display_pokedex.asm"
@@ -89,18 +88,13 @@ INCLUDE "engine/menus/party_menu.asm"
 INCLUDE "gfx/player.asm"
 INCLUDE "engine/overworld/turn_sprite.asm"
 INCLUDE "engine/menus/start_sub_menus.asm"
-INCLUDE "engine/items/tms.asm"
-INCLUDE "engine/battle/end_of_battle.asm"
-INCLUDE "engine/battle/wild_encounters.asm"
-INCLUDE "engine/battle/move_effects/recoil.asm"
-INCLUDE "engine/battle/move_effects/conversion.asm"
-INCLUDE "engine/battle/move_effects/haze.asm"
-INCLUDE "engine/battle/get_trainer_name.asm"
-INCLUDE "engine/math/random.asm"
 
 
 SECTION "Battle Engine 2", ROMX
 
+INCLUDE "engine/battle/end_of_battle.asm"
+INCLUDE "engine/battle/get_trainer_name.asm"
+INCLUDE "engine/math/random.asm"
 INCLUDE "engine/gfx/load_pokedex_tiles.asm"
 INCLUDE "engine/overworld/map_sprites.asm"
 INCLUDE "engine/overworld/emotion_bubbles.asm"
@@ -191,6 +185,9 @@ INCLUDE "data/pokemon/cries.asm"
 INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
+INCLUDE "engine/battle/move_effects/haze.asm"
+INCLUDE "engine/battle/move_effects/drain_hp.asm"
+INCLUDE "engine/battle/move_effects/conversion.asm"
 
 
 SECTION "Battle Core", ROMX
@@ -256,6 +253,9 @@ SECTION "Battle Engine 9", ROMX
 
 INCLUDE "engine/battle/experience.asm"
 INCLUDE "engine/gfx/exp_bar.asm"
+INCLUDE "engine/battle/move_effects/recoil.asm"
+INCLUDE "engine/battle/wild_encounters.asm"
+INCLUDE "engine/items/tms.asm"
 
 
 SECTION "Diploma", ROMX

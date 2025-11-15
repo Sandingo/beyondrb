@@ -330,7 +330,7 @@ wMenuWrappingEnabled:: db
 ; whether to check for 180-degree turn (0 = don't, 1 = do)
 wCheckFor180DegreeTurn:: db
 
-	ds 1
+wStatsMenuData:: db ; vanilla was ds 1
 
 wMissableObjectIndex:: db
 
@@ -610,6 +610,7 @@ wFilteredBagItemsCount:: db
 ; the next simulated joypad state is at wSimulatedJoypadStatesEnd plus this value minus 1
 ; 0 if the joypad state is not being simulated
 wSimulatedJoypadStatesIndex:: db
+wFakePadAButtonPress::
 ; written to but nothing ever reads it
 wUnusedSimulatedJoypadStatesMask:: db
 ; written to but nothing ever reads it
@@ -992,6 +993,11 @@ wLearningMovesFromDayCare::
 ; the item that the AI used
 wAIItem:: db
 wUsedItemOnWhichPokemon:: db
+NEXTU
+	ds 24
+wLoadedMonExpToNextLevel:: ds 3
+wStatusScreenMonsCount:: db
+	; ds 2 ; still available
 ENDU
 
 ; sound ID during battle animations
@@ -1372,7 +1378,9 @@ wTempTilesetNumTiles:: db
 ; so that it can be restored when the player is done with the pokemart NPC
 wSavedListScrollOffset:: db
 
-	ds 2
+	ds 1
+; save which function to call next
+wJumptableIndex:: db
 
 ; base coordinates of frame block
 wBaseCoordX:: db

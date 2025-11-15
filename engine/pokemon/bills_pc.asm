@@ -223,7 +223,7 @@ BillsPCDeposit:
 	call DisplayMonListMenu
 	jp c, BillsPCMenu
 	call DisplayDepositWithdrawMenu
-	jp nc, BillsPCMenu
+	jr nc, .redisplayMonListMenu
 	ld a, [wCurPartySpecies]
 	call GetCryData
 	call PlaySoundWaitForCurrent
@@ -252,6 +252,11 @@ BillsPCDeposit:
 	ld hl, MonWasStoredText
 	call PrintText
 	jp BillsPCMenu
+.redisplayMonListMenu
+	ld a, [wWhichPokemon]
+	ld [wListScrollOffset], a
+	jr .boxNotFull
+
 
 BillsPCWithdraw:
 	ld a, [wBoxCount]
@@ -272,7 +277,7 @@ BillsPCWithdraw:
 	call DisplayMonListMenu
 	jp c, BillsPCMenu
 	call DisplayDepositWithdrawMenu
-	jp nc, BillsPCMenu
+	jr nc, .redisplayMonListMenu
 	ld a, [wWhichPokemon]
 	ld hl, wBoxMonNicks
 	call GetPartyMonName
@@ -289,6 +294,11 @@ BillsPCWithdraw:
 	ld hl, MonIsTakenOutText
 	call PrintText
 	jp BillsPCMenu
+.redisplayMonListMenu
+	ld a, [wWhichPokemon]
+	ld [wListScrollOffset], a
+	jr .partyNotFull
+
 
 BillsPCRelease:
 	ld a, [wBoxCount]
@@ -380,6 +390,7 @@ BoxNoPCText:
 ;INCLUDE "data/moves/hm_moves.asm"
 
 DisplayDepositWithdrawMenu:
+	call SaveScreenTilesToBuffer1
 	hlcoord 9, 10
 	ld b, 6
 	ld c, 9
@@ -400,7 +411,13 @@ DisplayDepositWithdrawMenu:
 	ld [hli], a ; wTopMenuItemY
 	ld a, 10
 	ld [hli], a ; wTopMenuItemX
+	ld a, [wFakePadAButtonPress]
+	and a
+	jr z, .setCurMenuItem
 	xor a
+	ld [wFakePadAButtonPress], a
+	inc a
+.setCurMenuItem
 	ld [hli], a ; wCurrentMenuItem
 	inc hl
 	ld a, 2
@@ -424,13 +441,16 @@ DisplayDepositWithdrawMenu:
 	dec a
 	jr z, .viewStats
 .exit
+	call LoadScreenTilesFromBuffer1DisableBGTransfer
+	call ReloadTilesetTilePatterns
+	call RunDefaultPaletteCommand
+	call LoadGBPal
 	and a
 	ret
 .choseDepositWithdraw
 	scf
 	ret
 .viewStats
-	call SaveScreenTilesToBuffer1
 	ld a, [wParentMenuItem]
 	and a
 	ld a, PLAYER_PARTY_DATA
@@ -438,13 +458,15 @@ DisplayDepositWithdrawMenu:
 	ld a, BOX_DATA
 .next2
 	ld [wMonDataLocation], a
-	predef StatusScreen
-	predef StatusScreen2
-	call LoadScreenTilesFromBuffer1
-	call ReloadTilesetTilePatterns
-	call RunDefaultPaletteCommand
-	call LoadGBPal
-	jr .loop
+	ld a, [wStatsMenuData]
+	or STAT_SCREEN_NO_SAVE_MENU_ITEM_MASK
+	ld [wStatsMenuData], a
+	predef StatusScreenManager
+	; predef StatusScreen
+	; predef StatusScreen2
+	ld a, A_BUTTON
+	ld [wFakePadAButtonPress], a
+	jr .exit
 
 DepositPCText:  db "DEPOSIT@"
 WithdrawPCText: db "WITHDRAW@"
