@@ -134,7 +134,9 @@ DEF FIRST_SE_ID EQU const_value
 	const SUBANIM_0_COIN_BOUNCE
 	const SUBANIM_0_SAFARI_ROCK
 	const SUBANIM_0_SAFARI_BAIT
+; New
 	const SUBANIM_0_STAR_HIGH
+	const SUBANIM_BURN
 DEF NUM_SUBANIMS EQU const_value
 
 ; types of subanimations

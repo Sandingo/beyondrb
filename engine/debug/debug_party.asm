@@ -18,17 +18,11 @@ DebugNewGameParty: ; unreferenced except in _DEBUG
 	; always using this character while I was debugging the program."
 	; From https://web.archive.org/web/20000607152840/http://pocket.ign.com/news/14973.html
 	db MEWTWO, 98
-IF DEF(_DEBUG)
 	db MEW, 80
-ELSE
-	db MEW, 20
-ENDC
 	db JOLTEON, 56
 	db DUGTRIO, 56
 	db ARTICUNO, 57
-IF DEF(_DEBUG)
 	db PIKACHU, 5
-ENDC
 	db -1 ; end
 
 PrepareNewGameDebug: ; dummy except in _DEBUG
@@ -69,10 +63,10 @@ IF DEF(_DEBUG)
 
 	;Mew gets Mimic
 	ld hl, wPartyMon2Moves + 3
-	ld a, MIMIC
+	ld a, EMBER
 	ld [hl], a
 	ld hl, wPartyMon3PP + 3
-	ld a, 15
+	ld a, 30
 	ld [hl], a
 	
 	; Jolteon gets Thunderbolt.
@@ -81,7 +75,7 @@ IF DEF(_DEBUG)
     ld a, 1
     ld [hl], a
 	ld hl, wPartyMon3Moves + 3
-	ld a, THUNDERBOLT
+	ld a, TOXIC
 	ld [hl], a
 	ld hl, wPartyMon3PP + 3
 	ld a, 15

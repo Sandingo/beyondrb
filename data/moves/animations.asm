@@ -215,8 +215,8 @@ AttackAnimationPointers:
 	dw XStatItemBlackAnim
 	dw ShrinkingSquareBlackAnim
 	dw ShrinkingSquareBlackAnim
-	dw UnusedAnim
-	dw UnusedAnim
+	dw BurnAnim
+	dw BurnAnim
 	dw ParalyzeAnim
 	dw ParalyzeAnim
 	dw PoisonAnim
@@ -554,6 +554,12 @@ EmberAnim:
 	battle_anim EMBER, SUBANIM_1_FLAMES, 1, 6
 	db -1 ; end
 
+BurnAnim:
+	battle_anim EMBER, SUBANIM_BURN, 1, 4
+	battle_anim EMBER, SUBANIM_BURN, 1, 4
+	battle_anim EMBER, SUBANIM_BURN, 1, 4
+	db -1 ; end
+	
 DragonbreathAnim:
 FlamethrowerAnim:
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_BEAM, 1, 6

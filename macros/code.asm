@@ -25,3 +25,8 @@ MACRO srl_a_3x ; optimized version of doing srl a three times (shift a right 3 t
 	rrca
 	and %00011111
 ENDM
+
+MACRO n_sub_a ; arg = which constant value a will be subtracted from. result a = arg - a
+	cpl
+	add \1 + 1
+ENDM

@@ -31,13 +31,13 @@ DisplayListMenuID::
 	call DisplayTextBoxID ; draw the menu text box
 	call UpdateSprites ; disable sprites behind the text box
 ; the code up to .skipMovingSprites appears to be useless
-	hlcoord 4, 2 ; coordinates of upper left corner of menu text box
-	lb de, 9, 14 ; height and width of menu text box
-	ld a, [wListMenuID]
-	and a ; PCPOKEMONLISTMENU?
-	jr nz, .skipMovingSprites
-	call UpdateSprites
-.skipMovingSprites
+;	hlcoord 4, 2 ; coordinates of upper left corner of menu text box
+;	lb de, 9, 14 ; height and width of menu text box
+;	ld a, [wListMenuID]
+;	and a ; PCPOKEMONLISTMENU?
+;	jr nz, .skipMovingSprites
+;	call UpdateSprites
+;.skipMovingSprites
 	ld a, 1 ; max menu item ID is 1 if the list has less than 2 entries
 	ld [wMenuWatchMovingOutOfBounds], a
 	ld a, [wListCount]
@@ -214,8 +214,7 @@ DisplayListMenuIDLoop::
 DisplayChooseQuantityMenu::
 ; text box dimensions/coordinates for just quantity
 	hlcoord 15, 9
-	ld b, 1 ; height
-	ld c, 3 ; width
+	lb bc, 1, 3 ; height, width
 	ld a, [wListMenuID]
 	cp PRICEDITEMLISTMENU
 	jr nz, .drawTextBox
@@ -247,6 +246,12 @@ DisplayChooseQuantityMenu::
 	jr nz, .incrementQuantity
 	bit BIT_D_DOWN, a
 	jr nz, .decrementQuantity
+;;;;;;;;;; PureRGBnote: ADDED: functionality to decrement or increment amounts by 10 when pressing right or left
+	bit BIT_D_RIGHT, a
+	jr nz, .incrementQuantity10
+	bit BIT_D_LEFT, a
+	jr nz, .decrementQuantity10
+;;;;;;;;;;
 	jr .waitForKeyPressLoop
 .incrementQuantity
 	ld a, [wMaxItemQuantity]
@@ -258,13 +263,41 @@ DisplayChooseQuantityMenu::
 	cp b
 	jr nz, .handleNewQuantity
 ; wrap to 1 if the player goes above the max quantity
-	ld a, 1
-	ld [hl], a
+;	ld a, 1 - Potentially don't need
+	ld [hl], 1
 	jr .handleNewQuantity
 .decrementQuantity
 	ld hl, wItemQuantity ; current quantity
 	dec [hl]
 	jr nz, .handleNewQuantity
+;;;;;;;;;; PureRGBnote: ADDED: functionality to decrement or increment amounts by 10 when pressing right or left
+; wrap to the max quantity if the player goes below 1
+	ld a, [wMaxItemQuantity]
+	ld [hl], a
+	jr .handleNewQuantity
+.incrementQuantity10
+	ld a, [wMaxItemQuantity]
+	inc a
+	ld b, a
+	ld hl, wItemQuantity ; current quantity
+	ld a, [hl]
+	add 10
+	ld [hl], a
+	cp b
+	jr c, .handleNewQuantity
+; wrap to 1 if the player goes above the max quantity
+	ld [hl], 1
+	jr .handleNewQuantity
+.decrementQuantity10
+	ld hl, wItemQuantity ; current quantity
+	ld a, [hl]
+	cp 11
+	jr c, .wrapMax
+	sub 10
+	ld [hl], a
+	jr .handleNewQuantity
+.wrapMax
+;;;;;;;;;;
 ; wrap to the max quantity if the player goes below 1
 	ld a, [wMaxItemQuantity]
 	ld [hl], a
@@ -342,8 +375,8 @@ ExitListMenu::
 	ld a, CANCELLED_MENU
 	ld [wMenuExitMethod], a
 	ld [wMenuWatchMovingOutOfBounds], a
-	xor a
-	ldh [hJoy7], a
+;	xor a 
+;	ldh [hJoy7], a
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
 	call BankswitchBack
@@ -354,8 +387,7 @@ ExitListMenu::
 
 PrintListMenuEntries::
 	hlcoord 5, 3
-	ld b, 9
-	ld c, 14
+	lb bc, 9, 14
 	call ClearScreenArea
 	ld a, [wListPointer]
 	ld e, a
@@ -370,7 +402,7 @@ PrintListMenuEntries::
 	jr nz, .skipMultiplying
 ; if it's an item menu
 ; item entries are 2 bytes long, so multiply by 2
-	sla a
+	add a
 	sla c
 .skipMultiplying
 	add e
@@ -410,9 +442,7 @@ PrintListMenuEntries::
 	ld hl, wBoxMonNicks ; box pokemon names
 .getPokemonName
 	ld a, [wWhichPokemon]
-	ld b, a
-	ld a, 4
-	sub b
+	n_sub_a 4
 	ld b, a
 	ld a, [wListScrollOffset]
 	add b
@@ -457,9 +487,7 @@ PrintListMenuEntries::
 	ld [wMonDataLocation], a
 	ld hl, wWhichPokemon
 	ld a, [hl]
-	ld b, a
-	ld a, $04
-	sub b
+	n_sub_a 4
 	ld b, a
 	ld a, [wListScrollOffset]
 	add b
@@ -534,8 +562,7 @@ PrintListMenuEntries::
 	jp nz, .loop
 	ld bc, -8
 	add hl, bc
-	ld a, "▼"
-	ld [hl], a
+	ld [hl], "▼"
 	ret
 .printCancelMenuItem
 	ld de, ListMenuCancelText
