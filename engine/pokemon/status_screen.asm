@@ -210,7 +210,7 @@ StatusScreenManager_WaitForInput:
 	call Joypad
 	ldh a, [hJoyPressed]
 	ld b, a
-	and A_BUTTON | B_BUTTON | D_UP | D_DOWN | D_LEFT | D_RIGHT | SELECT
+	and B_BUTTON | D_UP | D_DOWN | D_LEFT | D_RIGHT | SELECT
 	ret z
 	bit BIT_B_BUTTON, b
 	jr nz, .quit

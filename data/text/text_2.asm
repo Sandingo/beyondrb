@@ -901,6 +901,16 @@ _PlayerBlackedOutText2::
 	line "out!"
 	prompt
 
+_PlayerBlackedOutText3::
+	text "<PLAYER> gave up"
+	line "against @"
+	text_ram wTrainerName
+	text "!"
+
+	para "<PLAYER> blacked"
+	line "out!"
+	prompt
+
 _LinkBattleLostText::
 	text "<PLAYER> lost to"
 	line "@"
@@ -941,6 +951,16 @@ _NoRunningText::
 	text "No! There's no"
 	line "running from a"
 	cont "trainer battle!"
+	prompt
+
+_NoRunningRival1Text::
+	text "<RIVAL>: C'mon! you"
+	line "can't give up now!"
+	prompt
+
+_ForfeitText::
+	text "Forfeit the"
+	line "battle?"
 	prompt
 
 _GotAwayText::

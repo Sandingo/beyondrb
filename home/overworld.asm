@@ -377,6 +377,11 @@ OverworldLoopLessDelay::
 	ld a, d
 	and a
 	jr z, .allPokemonFainted
+; new
+	ld a, [wForfeitTrainerBattle]
+	and a
+	jr nz, .allPokemonFainted
+; vanilla
 .noFaintCheck
 	ld c, 10
 	call DelayFrames
@@ -384,6 +389,8 @@ OverworldLoopLessDelay::
 .allPokemonFainted
 	ld a, $ff
 	ld [wIsInBattle], a
+	xor a
+	ld [wForfeitTrainerBattle], a
 	call RunMapScript
 	jp HandleBlackOut
 

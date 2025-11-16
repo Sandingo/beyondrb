@@ -1936,7 +1936,7 @@ wBoxItems:: ds PC_ITEM_CAPACITY * 2 + 1
 ; bit 7: whether the player has changed boxes before
 wCurrentBoxNum:: db
 
-	ds 1
+wForfeitTrainerBattle:: db
 
 ; number of HOF teams
 wNumHoFTeams:: db
