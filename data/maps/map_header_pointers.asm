@@ -236,7 +236,7 @@ MapHeaderPointers::
 	dw SilphCo2F_h ; UNUSED_MAP_EE
 	dw TradeCenter_h
 	dw Colosseum_h
-	dw SilphCo2F_h ; UNUSED_MAP_F1
+;	dw SilphCo2F_h ; UNUSED_MAP_F1
 	dw LoreleisRoom_h
 	dw BrunosRoom_h
 	dw AgathasRoom_h
@@ -249,4 +249,12 @@ MapHeaderPointers::
 	dw MtSilverPokecenter_h
 	dw Route28House_h
 	dw SilphFacility_h
+	dw LeagueHQB1F_h
+	dw LeagueHQB2F_h
+	dw LeagueHQB3F_h
+	dw SilphCo2F_h ; Unimplimented
+	dw LeagueHQB5F_h
+	dw LeagueHQB6F_h
+	dw LeagueHQB7F_h
+	dw LeagueHQB8F_h
 	assert_table_length NUM_MAPS

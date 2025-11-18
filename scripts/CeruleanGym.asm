@@ -66,7 +66,7 @@ CeruleanGymReceiveTM11:
 .gymVictory
 	ld hl, wObtainedBadges
 	set BIT_CASCADEBADGE, [hl]
-	ld hl, wBeatGymFlags
+	ld hl, wObtainedBadges
 	set BIT_CASCADEBADGE, [hl]
 
 	; deactivate gym trainers

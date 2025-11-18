@@ -10,6 +10,7 @@ DungeonMaps1:
 	db ROCK_TUNNEL_1F
 	db SEAFOAM_ISLANDS_1F
 	db ROCK_TUNNEL_B1F
+	db LEAGUE_HQ_B1F
 	db -1 ; end
 
 ; GetBattleTransitionID_IsDungeonMap checks if wCurMap
@@ -25,4 +26,5 @@ DungeonMaps2:
 	; CERULEAN_CAVE maps, except for SILPH_CO_1F
 	db SILPH_CO_2F, CERULEAN_CAVE_1F
 	db MT_SILVER_F1, MT_SILVER_SUMMIT
+	db LEAGUE_HQ_B2F, LEAGUE_HQ_B8F
 	db -1 ; end

@@ -1291,3 +1291,40 @@ INCLUDE "data/maps/headers/CitrineIsland.asm"
 INCLUDE "scripts/CitrineIsland.asm"
 INCLUDE "data/maps/objects/CitrineIsland.asm"
 CitrineIsland_Blocks: INCBIN "maps/CitrineIsland.blk"
+
+SECTION "Maps 22", ROMX
+
+INCLUDE "data/maps/headers/LeagueHQB1F.asm"
+INCLUDE "scripts/LeagueHQB1F.asm"
+INCLUDE "data/maps/objects/LeagueHQB1F.asm"
+LeagueHQB1F_Blocks: INCBIN "maps/LeagueHQB1F.blk"
+
+INCLUDE "data/maps/headers/LeagueHQB2F.asm"
+INCLUDE "scripts/LeagueHQB2F.asm"
+INCLUDE "data/maps/objects/LeagueHQB2F.asm"
+LeagueHQB2F_Blocks: INCBIN "maps/LeagueHQB2F.blk"
+
+INCLUDE "data/maps/headers/LeagueHQB3F.asm"
+INCLUDE "scripts/LeagueHQB3F.asm"
+INCLUDE "data/maps/objects/LeagueHQB3F.asm"
+LeagueHQB3F_Blocks: INCBIN "maps/LeagueHQB3F.blk"
+
+INCLUDE "data/maps/headers/LeagueHQB5F.asm"
+INCLUDE "scripts/LeagueHQB5F.asm"
+INCLUDE "data/maps/objects/LeagueHQB5F.asm"
+LeagueHQB5F_Blocks: INCBIN "maps/LeagueHQB5F.blk"
+
+INCLUDE "data/maps/headers/LeagueHQB6F.asm"
+INCLUDE "scripts/LeagueHQB6F.asm"
+INCLUDE "data/maps/objects/LeagueHQB6F.asm"
+LeagueHQB6F_Blocks: INCBIN "maps/LeagueHQB6F.blk"
+
+INCLUDE "data/maps/headers/LeagueHQB7F.asm"
+INCLUDE "scripts/LeagueHQB7F.asm"
+INCLUDE "data/maps/objects/LeagueHQB7F.asm"
+LeagueHQB7F_Blocks: INCBIN "maps/LeagueHQB7F.blk"
+
+INCLUDE "data/maps/headers/LeagueHQB8F.asm"
+INCLUDE "scripts/LeagueHQB8F.asm"
+INCLUDE "data/maps/objects/LeagueHQB8F.asm"
+LeagueHQB8F_Blocks: INCBIN "maps/LeagueHQB8F.blk"

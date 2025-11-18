@@ -85,7 +85,7 @@ VermilionGymLTSurgeReceiveTM24Script:
 .gym_victory
 	ld hl, wObtainedBadges
 	set BIT_THUNDERBADGE, [hl]
-	ld hl, wBeatGymFlags
+	ld hl, wObtainedBadges
 	set BIT_THUNDERBADGE, [hl]
 
 	; deactivate gym trainers
@@ -294,7 +294,7 @@ VermilionGymSailorAfterBattleText:
 
 VermilionGymGymGuideText:
 	text_asm
-	ld a, [wBeatGymFlags]
+	ld a, [wObtainedBadges]
 	bit BIT_THUNDERBADGE, a
 	jr nz, .got_thunderbadge
 	ld hl, .ChampInMakingText

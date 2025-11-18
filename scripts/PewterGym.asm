@@ -66,7 +66,7 @@ PewterGymScriptReceiveTM34:
 .gymVictory
 	ld hl, wObtainedBadges
 	set BIT_BOULDERBADGE, [hl]
-	ld hl, wBeatGymFlags
+	ld hl, wObtainedBadges
 	set BIT_BOULDERBADGE, [hl]
 
 	ld a, HS_GYM_GUY
@@ -275,7 +275,7 @@ PewterGymCooltrainerMAfterBattleText:
 
 PewterGymGuideText:
 	text_asm
-	ld a, [wBeatGymFlags]
+	ld a, [wObtainedBadges]
 	bit BIT_BOULDERBADGE, a
 	jr nz, .afterBeat
 	ld hl, PewterGymGuidePreAdviceText

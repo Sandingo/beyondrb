@@ -236,7 +236,7 @@ MapHeaderBanks::
 	db $11 ; UNUSED_MAP_EE
 	db BANK(TradeCenter_h)
 	db BANK(Colosseum_h)
-	db $11 ; UNUSED_MAP_F1
+;	db $11 ; UNUSED_MAP_F1
 	db BANK(LoreleisRoom_h)
 	db BANK(BrunosRoom_h)
 	db BANK(AgathasRoom_h)
@@ -249,4 +249,12 @@ MapHeaderBanks::
 	db BANK(MtSilverPokecenter_h)
 	db BANK(Route28House_h)
 	db BANK(SilphFacility_h)
+	db BANK(LeagueHQB1F_h)
+	db BANK(LeagueHQB2F_h)
+	db BANK(LeagueHQB3F_h)
+	db $11 ; Unimplimented
+	db BANK(LeagueHQB5F_h)
+	db BANK(LeagueHQB6F_h)
+	db BANK(LeagueHQB7F_h)
+	db BANK(LeagueHQB8F_h)
 	assert_table_length NUM_MAPS

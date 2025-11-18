@@ -240,7 +240,7 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	dw NothingWildMons
+;	dw NothingWildMons
 	dw MtSilverF1WildMons ; MtSilverF1
 	dw MtSilverF2WildMons ; MtSilverF2
 	dw MtSilverMeltanRoomWildMons ; Meltan Room
@@ -248,6 +248,14 @@ WildDataPointers:
 	dw NothingWildMons ; MtSilverPokecenter
 	dw NothingWildMons
 	dw NothingWildMons
+	dw LeagueHQB1FWildMons
+	dw LeagueHQB2FWildMons
+	dw LeagueHQB3FWildMons
+	dw NothingWildMons
+	dw LeagueHQB5FWildMons
+	dw LeagueHQB6FWildMons
+	dw LeagueHQB7FWildMons
+	dw LeagueHQB8FWildMons
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -334,3 +342,10 @@ INCLUDE "data/wild/maps/ViridianCity.asm"
 INCLUDE "data/wild/maps/VermilionCity.asm"
 INCLUDE "data/wild/maps/VermilionDock.asm"
 INCLUDE "data/wild/maps/SafariZoneExpansion.asm"
+INCLUDE "data/wild/maps/LeagueHQB1F.asm"
+INCLUDE "data/wild/maps/LeagueHQB2F.asm"
+INCLUDE "data/wild/maps/LeagueHQB3F.asm"
+INCLUDE "data/wild/maps/LeagueHQB5F.asm"
+INCLUDE "data/wild/maps/LeagueHQB6F.asm"
+INCLUDE "data/wild/maps/LeagueHQB7F.asm"
+INCLUDE "data/wild/maps/LeagueHQB8F.asm"

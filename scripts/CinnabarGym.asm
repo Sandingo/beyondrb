@@ -166,7 +166,7 @@ CinnabarGymReceiveTM38:
 .gymVictory
 	ld hl, wObtainedBadges
 	set BIT_VOLCANOBADGE, [hl]
-	ld hl, wBeatGymFlags
+	ld hl, wObtainedBadges
 	set BIT_VOLCANOBADGE, [hl]
 
 	; deactivate gym trainers

@@ -2080,7 +2080,8 @@ wRoute18Gate1FCurScript:: db
 wMtSilverSummitCurScript:: db
 wViridianSchoolHouseCurScript:: db
 wSilphFacilityCurScript:: db
-	ds 75
+wLeagueHQB5FCurScript:: db
+	ds 74
 wGameProgressFlagsEnd::
 
 	wPlayerGender::
@@ -2161,9 +2162,7 @@ wUnusedCardKeyGateID:: db
 	ds 8
 
 wStatusFlags1:: db
-	ds 1
-wBeatGymFlags:: db ; redundant because it matches wObtainedBadges
-	ds 1
+	ds 3
 wStatusFlags2:: db
 wCableClubDestinationMap::
 wStatusFlags3:: db

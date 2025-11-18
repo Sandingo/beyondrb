@@ -241,7 +241,7 @@ MapHSPointers:
 	dw NoHS
 ;	dw NoHS
 ;	dw NoHS
-	dw NoHS
+;	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw NoHS
@@ -253,6 +253,14 @@ MapHSPointers:
 	dw NoHS ; Mt Silver Pokecenter
 	dw NoHS ; Route 28 House
 	dw NoHS
+	dw LeagueHQB1FHS
+	dw LeagueHQB2FHS
+	dw LeagueHQB3FHS
+	dw NoHS
+	dw LeagueHQB5FHS
+	dw LeagueHQB6FHS
+	dw LeagueHQB7FHS
+	dw LeagueHQB8FHS
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -635,5 +643,12 @@ MtSilverMeltanRoomHS:
 	db MT_SILVER_MELTAN_ROOM, MTSILVERMELTANROOM_CANDYJAR, SHOW
 MtSilverSummitHS:
 	db MT_SILVER_SUMMIT, MTSILVERSUMMIT_OAK, SHOW
+LeagueHQB1FHS:
+LeagueHQB2FHS:
+LeagueHQB3FHS:
+LeagueHQB5FHS:
+LeagueHQB6FHS:
+LeagueHQB7FHS:
+LeagueHQB8FHS:
 	db $FF, $01, SHOW ; end
 	assert_table_length NUM_EXTRA_HS_OBJECTS  + 1

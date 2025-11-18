@@ -50,7 +50,7 @@ DEF BIT_NO_PREVIOUS_MAP EQU 7
 ; wCurrentBoxNum
 DEF BIT_HAS_CHANGED_BOXES EQU 7
 
-; wObtainedBadges, wBeatGymFlags
+; wObtainedBadges, wObtainedBadges
 	const_def
 	const BIT_BOULDERBADGE ; 0
 	const BIT_CASCADEBADGE ; 1

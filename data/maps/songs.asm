@@ -235,7 +235,7 @@ MapSongBanks::
 	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; UNUSED_MAP_EE
 	db MUSIC_CELADON, BANK(Music_Celadon) ; TRADE_CENTER
 	db MUSIC_CELADON, BANK(Music_Celadon) ; COLOSSEUM
-	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; UNUSED_MAP_F1
+;	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; UNUSED_MAP_F1
 	db MUSIC_GYM, BANK(Music_Gym) ; LORELEIS_ROOM
 	db MUSIC_DUNGEON1, BANK(Music_Dungeon1) ; BRUNOS_ROOM
 	db MUSIC_POKEMON_TOWER, BANK(Music_PokemonTower) ; AGATHAS_ROOM
@@ -248,4 +248,12 @@ MapSongBanks::
 	db MUSIC_POKECENTER, BANK(Music_Pokecenter) ; MT SILVER Pokecenter
 	db MUSIC_ROUTES2, BANK(Music_Routes2) ; ROUTE_28_HOUSE
 	db MUSIC_INDIGO_PLATEAU, BANK(Music_IndigoPlateau) ; Silph Facility
+	db MUSIC_DUNGEON2, BANK(Music_Dungeon2) ; League HQ B1F
+	db MUSIC_DUNGEON3, BANK(Music_Dungeon3) ; League HQ B2F
+	db MUSIC_SS_ANNE, BANK(Music_SSAnne) ; League HQ B3F
+	db MUSIC_CITIES1, BANK(Music_Cities1) ;  League HQ B4F - Unimplimented (for now)
+	db MUSIC_POKEMON_TOWER, BANK(Music_PokemonTower) ;  League HQ B5F
+	db MUSIC_DUNGEON1, BANK(Music_Dungeon1) ; League HQ B6F
+	db MUSIC_SAFARI_ZONE, BANK(Music_SafariZone) ; League HQ B7F
+	db MUSIC_CINNABAR_MANSION, BANK(Music_CinnabarMansion) ; League HQ B8F
 	assert_table_length NUM_MAPS

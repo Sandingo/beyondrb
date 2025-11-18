@@ -5,8 +5,10 @@ LoreleisRoom_Object:
 	db $3 ; border block
 
 	def_warp_events
-	warp_event  4, 11, INDIGO_PLATEAU_LOBBY, 3
-	warp_event  5, 11, INDIGO_PLATEAU_LOBBY, 3
+;	warp_event  4, 11, INDIGO_PLATEAU_LOBBY, 3 - OG
+;	warp_event  5, 11, INDIGO_PLATEAU_LOBBY, 3 - OG
+	warp_event  4, 11, LEAGUE_HQ_B8F, 2
+	warp_event  5, 11, LEAGUE_HQ_B8F, 2
 	warp_event  4,  0, BRUNOS_ROOM, 1
 	warp_event  5,  0, BRUNOS_ROOM, 2
 

@@ -67,7 +67,7 @@ ViridianSchoolHouseKyleText:
 	ld hl, .KyleBoasting
 	call PrintText
 	call WaitForTextScrollButtonPress
-	ld a, [wBeatGymFlags]
+	ld a, [wObtainedBadges]
 	bit BIT_BOULDERBADGE, a
 	jp z, .needBoulderBadge
 	ld hl, .KyleBeatenBrock

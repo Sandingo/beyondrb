@@ -156,7 +156,7 @@ ViridianGymReceiveTM27:
 .gym_victory
 	ld hl, wObtainedBadges
 	set BIT_EARTHBADGE, [hl]
-	ld hl, wBeatGymFlags
+	ld hl, wObtainedBadges
 	set BIT_EARTHBADGE, [hl]
 
 	; deactivate gym trainers
