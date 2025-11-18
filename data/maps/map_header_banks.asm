@@ -233,7 +233,7 @@ MapHeaderBanks::
 	db BANK(SilphCo11F_h)
 	db BANK(SilphCoElevator_h)
 	db $11 ; UNUSED_MAP_ED
-	db $11 ; UNUSED_MAP_EE
+;	db $11 ; UNUSED_MAP_EE
 	db BANK(TradeCenter_h)
 	db BANK(Colosseum_h)
 ;	db $11 ; UNUSED_MAP_F1
@@ -252,6 +252,7 @@ MapHeaderBanks::
 	db BANK(LeagueHQB1F_h)
 	db BANK(LeagueHQB2F_h)
 	db BANK(LeagueHQB3F_h)
+	db BANK(LeagueHQB3FRooms_h)
 	db $11 ; Unimplimented
 	db BANK(LeagueHQB5F_h)
 	db BANK(LeagueHQB6F_h)

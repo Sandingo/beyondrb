@@ -24,18 +24,18 @@ ENDM
 
 TextBoxTextAndCoordTable:
 	; text box ID, upper-left X, upper-left Y, lower-right X, lower-right Y, text pointer, text X, text Y
-	text_box_text JP_MOCHIMONO_MENU_TEMPLATE,         0,  0, 14, 17, JapaneseMochimonoText,    3,  0
+;	text_box_text JP_MOCHIMONO_MENU_TEMPLATE,         0,  0, 14, 17, JapaneseMochimonoText,    3,  0
 ;	text_box_text USE_TOSS_MENU_TEMPLATE,            13, 10, 19, 14, UseTossText,             15, 11
 	text_box_text USE_INFO_TOSS_MENU_TEMPLATE,       13, 10, 19, 16, UseInfoTossText,         15, 11
-	text_box_text JP_SAVE_MESSAGE_MENU_TEMPLATE,      0,  0,  7,  5, JapaneseSaveMessageText,  2,  2
-	text_box_text JP_SPEED_OPTIONS_MENU_TEMPLATE,     0,  6,  5, 10, JapaneseSpeedOptionsText, 2,  7
+;	text_box_text JP_SAVE_MESSAGE_MENU_TEMPLATE,      0,  0,  7,  5, JapaneseSaveMessageText,  2,  2
+;	text_box_text JP_SPEED_OPTIONS_MENU_TEMPLATE,     0,  6,  5, 10, JapaneseSpeedOptionsText, 2,  7
 	text_box_text BATTLE_MENU_TEMPLATE,               8, 12, 19, 17, BattleMenuText,          10, 14
 	text_box_text SAFARI_BATTLE_MENU_TEMPLATE,        0, 12, 19, 17, SafariZoneBattleMenuText, 2, 14
 	text_box_text SWITCH_STATS_CANCEL_MENU_TEMPLATE, 11, 11, 19, 17, SwitchStatsCancelText,   13, 12
 	text_box_text BUY_SELL_QUIT_MENU_TEMPLATE,        0,  0, 10,  6, BuySellQuitText,          2,  1
 	text_box_text MONEY_BOX_TEMPLATE,                11,  0, 19,  2, MoneyText,               13,  0
-	text_box_text JP_AH_MENU_TEMPLATE,                7,  6, 11, 10, JapaneseAhText,           8,  8
-	text_box_text JP_POKEDEX_MENU_TEMPLATE,          11,  8, 19, 17, JapanesePokedexMenu,     12, 10
+;	text_box_text JP_AH_MENU_TEMPLATE,                7,  6, 11, 10, JapaneseAhText,           8,  8
+;	text_box_text JP_POKEDEX_MENU_TEMPLATE,          11,  8, 19, 17, JapanesePokedexMenu,     12, 10
 	text_box_text TYROGUE_EVOLUTIONS,				  9,  6, 19, 12, TyrogueEvolutions,		  11,  7 ; new
 
 BuySellQuitText:
@@ -50,23 +50,23 @@ UseInfoTossText:
 	next "INFO"
 	next "TOSS@"
 
-JapaneseSaveMessageText:
-	db   "きろく"
-	next "メッセージ@"
+;JapaneseSaveMessageText:
+;	db   "きろく"
+;	next "メッセージ@"
 
-JapaneseSpeedOptionsText:
-	db   "はやい"
-	next "おそい@"
+;JapaneseSpeedOptionsText:
+;	db   "はやい"
+;	next "おそい@"
 
 MoneyText:
 	db "MONEY@"
 
-JapaneseMochimonoText:
-	db "もちもの@"
+;JapaneseMochimonoText:
+;	db "もちもの@"
 
-JapaneseMainMenuText:
-	db   "つづきから"
-	next "さいしょから@"
+;JapaneseMainMenuText:
+;	db   "つづきから"
+;	next "さいしょから@"
 
 BattleMenuText:
 	db   "FIGHT <PK><MN>"
@@ -81,14 +81,14 @@ SwitchStatsCancelText:
 	next "STATS"
 	next "CANCEL@"
 
-JapaneseAhText:
-	db "アッ！@"
+;JapaneseAhText:
+;	db "アッ！@"
 
-JapanesePokedexMenu:
-	db   "データをみる"
-	next "なきごえ"
-	next "ぶんぷをみる"
-	next "キャンセル@"
+;JapanesePokedexMenu:
+;	db   "データをみる"
+;	next "なきごえ"
+;	next "ぶんぷをみる"
+;	next "キャンセル@"
 
 TyrogueEvolutions: ; new
 	db   "PUNCHING"

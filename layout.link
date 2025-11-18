@@ -138,7 +138,6 @@ ROMX $1D
 	"Maps 20"
 	"Vending Machine"
 	"Maps 21"
-	"Maps 22"
 	"Itemfinder 2"
 ROMX $1E
 	"bank1E"
@@ -182,6 +181,7 @@ ROMX $2D
 	"Battle Engine 3"
 	"Battle Engine 5"
 	"Slot Machines"
+	"Maps 22"
 ROMX $30
 	org $4000
 	"Party Mon Sprites Gfx 1"

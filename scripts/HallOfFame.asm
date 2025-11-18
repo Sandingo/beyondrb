@@ -45,6 +45,7 @@ HallOfFameResetEventsAndSaveScript:
 	ld [wHallOfFameCurScript], a
 	; Elite 4 events
 	ResetEventRange REMATCHES_START, REMATCHES_END, 1
+	ResetEventRange LEAGUEHQTRAINERS_START, LEAGUEHQTRAINERS_END, 1
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
 	xor a
 	ld [wHallOfFameCurScript], a

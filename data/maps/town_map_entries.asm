@@ -129,6 +129,7 @@ InternalMapEntries:
 	internal_map LEAGUE_HQ_B1F,           		0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B2F,           		0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B3F,           		0,  2, IndigoPlateauName
+	internal_map LEAGUE_HQ_B3F_ROOMS,           	0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B5F,           		0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B6F,           		0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B7F,           		0,  2, IndigoPlateauName

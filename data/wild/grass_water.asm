@@ -239,7 +239,7 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	dw NothingWildMons
+;	dw NothingWildMons
 ;	dw NothingWildMons
 	dw MtSilverF1WildMons ; MtSilverF1
 	dw MtSilverF2WildMons ; MtSilverF2
@@ -251,6 +251,7 @@ WildDataPointers:
 	dw LeagueHQB1FWildMons
 	dw LeagueHQB2FWildMons
 	dw LeagueHQB3FWildMons
+	dw NothingWildMons
 	dw NothingWildMons
 	dw LeagueHQB5FWildMons
 	dw LeagueHQB6FWildMons

@@ -2080,8 +2080,9 @@ wRoute18Gate1FCurScript:: db
 wMtSilverSummitCurScript:: db
 wViridianSchoolHouseCurScript:: db
 wSilphFacilityCurScript:: db
+wLeagueHQB1FCurScript:: db
 wLeagueHQB5FCurScript:: db
-	ds 74
+	ds 73
 wGameProgressFlagsEnd::
 
 	wPlayerGender::

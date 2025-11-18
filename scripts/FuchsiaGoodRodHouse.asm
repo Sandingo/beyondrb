@@ -44,16 +44,6 @@ FuchsiaGoodRodHouseFishingGuruText:
 	sound_get_item_1
 	text_end
 
-.UnusedText:
-	para "つり　こそ"
-	line "おとこの　ロマン　だ！"
-
-	para "へぼいつりざおは"
-	line "コイキングしか　つれ　なんだが"
-	line "この　いいつりざおなら"
-	line "もっと　いいもんが　つれるんじゃ！"
-	done
-
 .ThatsSoDisappointingText:
 	text_far _FuchsiaGoodRodHouseFishingGuruThatsSoDisappointingText
 	text_end

@@ -1309,6 +1309,11 @@ INCLUDE "scripts/LeagueHQB3F.asm"
 INCLUDE "data/maps/objects/LeagueHQB3F.asm"
 LeagueHQB3F_Blocks: INCBIN "maps/LeagueHQB3F.blk"
 
+INCLUDE "data/maps/headers/LeagueHQB3FRooms.asm"
+INCLUDE "scripts/LeagueHQB3FRooms.asm"
+INCLUDE "data/maps/objects/LeagueHQB3FRooms.asm"
+LeagueHQB3FRooms_Blocks: INCBIN "maps/LeagueHQB3FRooms.blk"
+
 INCLUDE "data/maps/headers/LeagueHQB5F.asm"
 INCLUDE "scripts/LeagueHQB5F.asm"
 INCLUDE "data/maps/objects/LeagueHQB5F.asm"

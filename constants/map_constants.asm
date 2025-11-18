@@ -251,7 +251,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const SILPH_CO_11F,                   9,  9 ; $EB
 	map_const SILPH_CO_ELEVATOR,              2,  2 ; $EC
 	map_const UNUSED_MAP_ED,                  0,  0 ; $ED
-	map_const UNUSED_MAP_EE,                  0,  0 ; $EE
+;	map_const UNUSED_MAP_EE,                  0,  0 ; $EE
 	map_const TRADE_CENTER,                   5,  4 ; $EF
 	map_const COLOSSEUM,                      5,  4 ; $F0
 ;	map_const UNUSED_MAP_F1,                  0,  0 ; $F1
@@ -269,8 +269,9 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const SILPH_FACILITY,				  4,  4
 	map_const LEAGUE_HQ_B1F,				 10, 10
 	map_const LEAGUE_HQ_B2F,				 15, 11
-	map_const LEAGUE_HQ_B3F,				 10, 10
-	map_const LEAGUE_HQ_B4F,                 0,  0 ; Unimplimented
+	map_const LEAGUE_HQ_B3F,				 12, 11
+	map_const LEAGUE_HQ_B3F_ROOMS,		       7, 8
+	map_const LEAGUE_HQ_B4F,                  0,  0 ; Unimplimented
 	map_const LEAGUE_HQ_B5F,				 10,  8
 	map_const LEAGUE_HQ_B6F,				 11,  9
 	map_const LEAGUE_HQ_B7F,				 10,  8

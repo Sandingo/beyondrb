@@ -233,7 +233,7 @@ MapHeaderPointers::
 	dw SilphCo11F_h
 	dw SilphCoElevator_h
 	dw SilphCo2F_h ; UNUSED_MAP_ED
-	dw SilphCo2F_h ; UNUSED_MAP_EE
+;	dw SilphCo2F_h ; UNUSED_MAP_EE
 	dw TradeCenter_h
 	dw Colosseum_h
 ;	dw SilphCo2F_h ; UNUSED_MAP_F1
@@ -252,6 +252,7 @@ MapHeaderPointers::
 	dw LeagueHQB1F_h
 	dw LeagueHQB2F_h
 	dw LeagueHQB3F_h
+	dw LeagueHQB3FRooms_h
 	dw SilphCo2F_h ; Unimplimented
 	dw LeagueHQB5F_h
 	dw LeagueHQB6F_h
