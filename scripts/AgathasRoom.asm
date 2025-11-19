@@ -153,5 +153,5 @@ AgathaAfterBattleText:
 	text_end
 
 AgathasRoomAgathaDontRunAwayText:
-	text_far _AgathasRoomAgathaDontRunAwayText
+	text_far _SomeonesVoiceDontRunText
 	text_end

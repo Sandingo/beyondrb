@@ -2082,7 +2082,8 @@ wViridianSchoolHouseCurScript:: db
 wSilphFacilityCurScript:: db
 wLeagueHQB1FCurScript:: db
 wLeagueHQB5FCurScript:: db
-	ds 73
+wLeagueHQB6FCurScript:: db
+	ds 72
 wGameProgressFlagsEnd::
 
 	wPlayerGender::

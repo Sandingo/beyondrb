@@ -19,7 +19,7 @@ _PokemonTower2FRivalDefeatedText::
 	prompt
 
 _PokemonTower2FRivalVictoryText::
-	text "<RIVAL>: Well,"
+	text "Well,"
 	line "look at all your"
 	cont "wimpy #MON!"
 

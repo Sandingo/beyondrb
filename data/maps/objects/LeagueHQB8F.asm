@@ -1,6 +1,10 @@
 LeagueHQB8F_Object:
 	db $1 ; border block
 
+	object_const_def
+	const_export LEAGUEHQB8F_MAX_REVIVE
+	const_export LEAGUEHQB8F_HP_UP
+
 	def_warp_events
 	warp_event  7, 18, LEAGUE_HQ_B7F, 2
 	warp_event  2,  3, LORELEIS_ROOM, 1
@@ -8,5 +12,7 @@ LeagueHQB8F_Object:
 	def_bg_events
 
 	def_object_events
+	object_event  5, 16, SPRITE_POKE_BALL, STAY, NONE, 1, MAX_REVIVE
+	object_event 22, 11, SPRITE_POKE_BALL, STAY, NONE, 2, HP_UP
 
 	def_warps_to LEAGUE_HQ_B8F

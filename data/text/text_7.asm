@@ -247,3 +247,8 @@ _WantToStrengthText::
 	text "Want to use"
 	line "STRENGTH?"
 	done
+
+_SomeonesVoiceDontRunText::
+	text "Someone's voice:"
+	line "Don't run away!"
+	done

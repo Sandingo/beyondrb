@@ -9,6 +9,12 @@ LeagueHQB5F_ScriptPointers:
 	def_script_pointers
 	dw_const LeagueHQB5FDefaultScript,           SCRIPT_LEAGUEHQB5F_DEFAULT
 
+LeagueHQB5F_TextPointers:
+	def_text_pointers
+	dw_const PickUpItemText,		TEXT_LEAGUEHQB5F_ITEM_0
+	dw_const PickUpItemText,		TEXT_LEAGUEHQB5F_ITEM_1
+	dw_const LeagueHQB5FPurifiedZoneText, TEXT_LEAGUEHQB5F_PURIFIEDZONE
+
 LeagueHQB5FDefaultScript:
 	ld hl, LeagueHQB5FPurifiedZoneCoords
 	call ArePlayerCoordsInArray
@@ -44,10 +50,6 @@ LeagueHQB5FPurifiedZoneCoords:
 	dbmapcoord 9,   7
 	dbmapcoord 10,  7
 	db -1 ; end
-
-LeagueHQB5F_TextPointers:
-	def_text_pointers
-	dw_const LeagueHQB5FPurifiedZoneText, TEXT_LEAGUEHQB5F_PURIFIEDZONE
 
 LeagueHQB5FPurifiedZoneText:
 	text_far _LeagueHQB5FPurifiedZoneText

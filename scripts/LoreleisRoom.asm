@@ -152,5 +152,5 @@ LoreleisRoomLoreleiAfterBattleText:
 	text_end
 
 LoreleisRoomLoreleiDontRunAwayText:
-	text_far _LoreleisRoomLoreleiDontRunAwayText
+	text_far _SomeonesVoiceDontRunText
 	text_end

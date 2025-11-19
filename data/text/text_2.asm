@@ -902,8 +902,8 @@ _PlayerBlackedOutText2::
 	prompt
 
 _PlayerBlackedOutText3::
-	text "<PLAYER> gave up"
-	line "against @"
+	text "<PLAYER> lost to"
+	line "@"
 	text_ram wTrainerName
 	text "!"
 
@@ -959,8 +959,8 @@ _NoRunningRival1Text::
 	prompt
 
 _ForfeitText::
-	text "Forfeit the"
-	line "battle?"
+	text "Will you forfeit"
+	line "the battle?"
 	prompt
 
 _GotAwayText::

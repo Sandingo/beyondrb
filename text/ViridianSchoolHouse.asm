@@ -62,7 +62,7 @@ _ViridianSchoolHouseKyleDefeatedText::
 	
 _ViridianSchoolHouseKyleVictoryText::
 	text "Yeah!"
-	line "Aren't I great?"
+	line "Let's go!"
 	prompt
 
 _ViridianSchoolKylePostBattle::

@@ -150,5 +150,5 @@ BrunoAfterBattleText:
 	text_end
 
 BrunosRoomBrunoDontRunAwayText:
-	text_far _BrunosRoomBrunoDontRunAwayText
+	text_far _SomeonesVoiceDontRunText
 	text_end

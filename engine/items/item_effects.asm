@@ -1547,8 +1547,16 @@ ItemUseEscapeRope:
 	and a
 	jr nz, .notUsable
 	ld a, [wCurMap]
-	cp AGATHAS_ROOM
+; Original - Using similar code to the PureRGB Bicycle fix
+	ld b, a 
+	ld hl, NotAllowedEscapeMaps
+.loop2
+	ld a, [hli]
+	cp b
 	jr z, .notUsable
+	inc a
+	jr nz, .loop2
+; Vanilla
 	ld a, [wCurMapTileset]
 	ld b, a
 	ld hl, EscapeRopeTilesets
