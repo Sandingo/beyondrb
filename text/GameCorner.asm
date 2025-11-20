@@ -14,14 +14,14 @@ _GameCornerClerk1DoYouNeedSomeGameCoinsText::
 	para "Do you need some"
 	line "game coins?"
 
-	para "It's ¥100 for 50"
+	para "It's ¥1000 for 500"
 	line "coins. Would you"
 	cont "like some?"
 	done
 
 _GameCornerClerk1ThanksHereAre50CoinsText::
 	text "Thanks! Here are"
-	line "your 50 coins!"
+	line "your 500 coins!"
 	done
 
 _GameCornerClerk1PleaseComePlaySometimeText::

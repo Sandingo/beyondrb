@@ -174,7 +174,7 @@ GameCornerClerk1Text:
 	xor a
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $1
+	ld a, $10
 	ldh [hMoney + 1], a
 	call HasEnoughMoney
 	jr nc, .buy_coins
@@ -185,17 +185,19 @@ GameCornerClerk1Text:
 	xor a
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $1
+	ld a, $10
 	ldh [hMoney + 1], a
 	ld hl, hMoney + 2
 	ld de, wPlayerMoney + 2
 	ld c, $3
 	predef SubBCDPredef
-	; Receive 50 coins
+	; Receive 500 coins
 	xor a
 	ldh [hUnusedCoinsByte], a
 	ldh [hCoins], a
-	ld a, $50
+	ld a, $05
+	ldh [hCoins], a
+	ld a, $00
 	ldh [hCoins + 1], a
 	ld de, wPlayerCoins + 1
 	ld hl, hCoins + 1
