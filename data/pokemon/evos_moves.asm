@@ -2282,7 +2282,8 @@ VenusaurEvosMoves:
 	db 30, RAZOR_LEAF
 	db 32, PETAL_DANCE
 	db 43, GROWTH
-	db 55, SLEEP_POWDER
+	db 52, SLEEP_POWDER
+	db 55, PETAL_DANCE
 	db 65, SOLARBEAM
 	db 0
 
@@ -2355,10 +2356,15 @@ RamooseEvosMoves:
 ; Learnset
 	db 14, SAND_ATTACK
 	db 16, JUMP_KICK
-	db 25, METAL_CLAW
-	db 39, AGILITY
-	db 45, THRASH
-	db 49, IRON_TAIL
+	db 18, CONFUSION
+	db 20, THUNDER_WAVE
+	db 23, ROAR
+	db 26, SUPERSONIC
+	db 29, TAKE_DOWN
+	db 33, QUICK_ATTACK
+	db 37, LEER
+	db 41, AGILITY
+	DB 45, DOUBLE_EDGE
 	db 0
 
 GorochuEvosMoves:

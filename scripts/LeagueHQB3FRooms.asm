@@ -1,10 +1,86 @@
 LeagueHQB3FRooms_Script:
-	jp EnableAutoTextBoxDrawing
+	call EnableAutoTextBoxDrawing
+	ld hl, LeagueHQB3FRoomsTrainerHeaders
+	ld de, LeagueHQB3FRooms_ScriptPointers
+	ld a, [wLeagueHQB3FRoomsCurScript]
+	call ExecuteCurMapScriptInTable
+	ld [wLeagueHQB3FRoomsCurScript], a
+	ret
+
+LeagueHQB3FRooms_ScriptPointers:
+	dw CheckFightingMapTrainers
+	dw DisplayEnemyTrainerTextAndStartBattle
+	dw EndTrainerBattle
 
 LeagueHQB3FRooms_TextPointers:
+	dw LeagueHQB3FRoomsText1
+	dw LeagueHQB3FRoomsText2
+	dw LeagueHQB3FRoomsText3
 	dw PickUpItemText
 	dw PickUpItemText
 	dw PickUpItemText
 	dw PickUpItemText
 
-	text_end ; unused
+LeagueHQB3FRoomsTrainerHeaders:
+	def_trainers
+LeagueHQB3FRoomsTrainerHeader0:
+	trainer EVENT_BEAT_LEAGUE_HQ_B3F_ROOMS_TRAINER_0, 3, LeagueHQB3FRoomsCoolTrainerMBattleText, LeagueHQB3FRoomsCoolTrainerMEndBattleText, LeagueHQB3FRoomsCoolTrainerMAfterBattleText
+LeagueHQB3FRoomsTrainerHeader1:
+	trainer EVENT_BEAT_LEAGUE_HQ_B3F_ROOMS_TRAINER_1, 2, LeagueHQB3FRoomsGentlemanBattleText, LeagueHQB3FRoomsGentlemanEndBattleText, LeagueHQB3FRoomsGentlemanAfterBattleText
+LeagueHQB3FRoomsTrainerHeader2:
+	trainer EVENT_BEAT_LEAGUE_HQ_B3F_ROOMS_TRAINER_2, 3, LeagueHQB3FRoomsCoolTrainerFBattleText, LeagueHQB3FRoomsCoolTrainerFEndBattleText, LeagueHQB3FRoomsCoolTrainerFAfterBattleText
+	db -1 ; end
+
+LeagueHQB3FRoomsText1:
+	text_asm
+	ld hl, LeagueHQB3FRoomsTrainerHeader0
+	call TalkToTrainer
+	jp TextScriptEnd
+
+LeagueHQB3FRoomsCoolTrainerMBattleText:
+	text_far _LeagueHQB3FRoomsCoolTrainerMBattleText
+	text_end
+
+LeagueHQB3FRoomsCoolTrainerMEndBattleText:
+	text_far _LeagueHQB3FRoomsCoolTrainerMEndBattleText
+	text_end
+
+LeagueHQB3FRoomsCoolTrainerMAfterBattleText:
+	text_far _LeagueHQB3FRoomsCoolTrainerMAfterBattleText
+	text_end
+
+LeagueHQB3FRoomsText2:
+	text_asm
+	ld hl, LeagueHQB3FRoomsTrainerHeader1
+	call TalkToTrainer
+	jp TextScriptEnd
+
+LeagueHQB3FRoomsGentlemanBattleText:
+	text_far _LeagueHQB3FRoomsGentlemanBattleText
+	text_end
+
+LeagueHQB3FRoomsGentlemanEndBattleText:
+	text_far _LeagueHQB3FRoomsGentlemanEndBattleText
+	text_end
+
+LeagueHQB3FRoomsGentlemanAfterBattleText:
+	text_far _LeagueHQB3FRoomsGentlemanAfterBattleText
+	text_end
+	
+LeagueHQB3FRoomsText3:
+	text_asm
+	ld hl, LeagueHQB3FRoomsTrainerHeader2
+	call TalkToTrainer
+	jp TextScriptEnd
+
+LeagueHQB3FRoomsCoolTrainerFBattleText:
+	text_far _LeagueHQB3FRoomsCoolTrainerFBattleText
+	text_end
+
+LeagueHQB3FRoomsCoolTrainerFEndBattleText:
+	text_far _LeagueHQB3FRoomsCoolTrainerFEndBattleText
+	text_end
+
+LeagueHQB3FRoomsCoolTrainerFAfterBattleText:
+	text_far _LeagueHQB3FRoomsCoolTrainerFAfterBattleText
+	text_end

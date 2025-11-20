@@ -17,9 +17,9 @@ IF DEF(_BLUE)
 	db 15, BELLSPROUT
 ENDC
 	db 16, MAGNEMITE
-	db 16, PIDGEY
-	db 14, MEOWTH
-	db 16, MEOWTH
+	db 16, MACHOP
+	db 14, MAGNEMITE
+	db 16, GRIMER
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

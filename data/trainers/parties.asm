@@ -618,14 +618,16 @@ CooltrainerMData:
 ; Victory Road 3F
 	db 43, EXEGGUTOR, DISTURBAN, ARCANINE, 0
 	db 43, KINGLER, TENTACRUEL, BLASTOISE, 0
-; Unused
+; League HQ B1F
 	db 45, KINGLER, STARMIE, 0
 ; Victory Road 1F
 	db 42, IVYSAUR, WARTORTLE, CHARMELEON, CHARIZARD, 0
-; Unused
+; League HQ B7F
 	db 44, IVYSAUR, WARTORTLE, CHARMELEON, 0
+; League HQ B8F
 	db 49, NIDOKING, 0
-	db 44, KINGLER, CLOYSTER, 0
+; League HQ B3F Rooms
+	db 44, KINGDRA, DISTURBAN, 0
 ; Viridian Gym
 	db 39, SANDSLASH, DUGTRIO, 0
 	db 43, RHYHORN, 0
@@ -636,13 +638,15 @@ CooltrainerFData:
 ; Victory Road 3F
 	db 43, BELLIGNAN, VICTREEBEL, 0
 	db 43, PARASECT, DEWGONG, BLISSEY, 0
-; Unused
+; League HQ B1F
 	db 46, VILEPLUME, BUTTERFREE, 0
 ; Victory Road 1F
 	db 44, PERSIAN, NINETALES, 0
 ; Unused
 	db 45, IVYSAUR, VENUSAUR, 0
+; League HQ B8F
 	db 45, NIDORINA, NIDOQUEEN, 0
+; League H1 B3F Rooms
 	db 43, PERSIAN, NINETALES, RAICHU, 0
 
 BrunoData:
@@ -683,8 +687,8 @@ GentlemanData:
 	db 19, NIDORAN_M, NIDORAN_F, 0
 ; SS Anne 2F Rooms/Vermilion Gym
 	db 23, PIKACHU, 0
-; Unused
-	db 48, PRIMEAPE, 0
+; League HQ B3F Rooms
+	db 48, ANNIHILAPE, 0
 ; SS Anne 2F Rooms
 	db 17, GROWLITHE, PONYTA, 0
 

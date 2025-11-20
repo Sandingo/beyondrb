@@ -979,9 +979,9 @@ TrainerBattleVictory:
 	ld c, 40
 	call DelayFrames
 	call PrintEndBattleText
-	ld a, [wCurMap]
-	cp SILPH_FACILITY
-	ret z
+;	ld a, [wCurMap]
+;	cp SILPH_FACILITY
+;	ret z
 ; win money
 	ld hl, MoneyForWinningText
 	call PrintText

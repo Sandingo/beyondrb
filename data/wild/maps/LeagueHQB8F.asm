@@ -7,8 +7,8 @@ LeagueHQB8FWildMons:
 	db  55, MACHOP
 	db  54, MACHOP
 	db  51, MACHOKE
-	db  54, ABRA
-	db  53, ABRA
+	db  54, KOFFING
+	db  53, WEEZING
 	db  56, MAGNETON
 	end_grass_wildmons
 

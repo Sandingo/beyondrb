@@ -279,7 +279,10 @@ INCLUDE "text/Route28House.asm"
 INCLUDE "text/SilphFacility.asm"
 INCLUDE "text/SafariZoneExpansion.asm"
 INCLUDE "text/LeagueHQB1F.asm"
+INCLUDE "text/LeagueHQB3FRooms.asm"
 INCLUDE "text/LeagueHQB5F.asm"
+INCLUDE "text/LeagueHQB7F.asm"
+INCLUDE "text/LeagueHQB8F.asm"
 
 INCLUDE "data/text/text_7.asm"
 

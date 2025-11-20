@@ -89,13 +89,13 @@
 	dex
 
  _RamooseDexEntry::
-	text "Its body is made"
-	next "up of a metal"
-	next "harder than"
+	text "Its horns are"
+	next "stronger than"
+	next "tempered steel."
 	
-	page "diamond. When"
-	next "threatened, it"
-	next "bucks wildly"
+	page "When threatened,"
+	next "it can release"
+	next "psychic energy"
 	dex
 
  _GorochuDexEntry::

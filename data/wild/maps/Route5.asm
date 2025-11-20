@@ -8,9 +8,6 @@ IF DEF(_RED)
 	db 12, COINPUR
 	db 15, ODDISH
 	db 16, ODDISH
-	db 16, PIDGEY
-	db 14, MEOWTH
-	db 16, MEOWTH
 ENDC
 IF DEF(_BLUE)
 	db 13, BELLSPROUT
@@ -20,10 +17,10 @@ IF DEF(_BLUE)
 	db 12, COINPUR
 	db 15, BELLSPROUT
 	db 16, BELLSPROUT
-	db 16, PIDGEY
-	db 14, MEOWTH
-	db 16, MEOWTH
 ENDC
+	db 16, MACHOP
+	db 14, DODUO
+	db 16, DODUO
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

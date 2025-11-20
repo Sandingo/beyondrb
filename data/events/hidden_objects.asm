@@ -83,6 +83,7 @@ HiddenObjectMaps:
 	db ROUTE_28
 	db MT_SILVER_POKECENTER
 	db MT_SILVER_F1
+	db LEAGUE_HQ_B7F
 	db -1 ; end
 
 HiddenObjectPointers:
@@ -171,6 +172,7 @@ HiddenObjectPointers:
 	dw Route28HiddenObjects
 	dw MtSilverPokecenterHiddenObjects
 	dw MtSilverF1HiddenObjects
+	dw LeagueHQB7FHiddenObjects
 
 MACRO hidden_object
 	db \2 ; y coord
@@ -658,4 +660,8 @@ MtSilverPokecenterHiddenObjects:
 MtSilverF1HiddenObjects:
 	hidden_object 16,  22, DIRE_HIT, HiddenItems
 	hidden_object 17,  13, ULTRA_BALL, HiddenItems
+	db -1 ; end
+
+LeagueHQB7FHiddenObjects:
+	hidden_object 14,  11, MAX_ELIXER, HiddenItems
 	db -1 ; end

@@ -226,6 +226,20 @@ SetPal_Overworld:
 	jr z, .Lorelei
 	cp BRUNOS_ROOM
 	jr z, .caveOrBruno
+; gross and ugly code for the league areas
+	cp LEAGUE_HQ_B1F
+	jr z, .viridianLeagueRoom
+	cp LEAGUE_HQ_B3F
+	jr z, .vermilionLeagueRoom
+	cp LEAGUE_HQ_B3F_ROOMS
+	jr z, .vermilionLeagueRoom
+	cp LEAGUE_HQ_B6F
+	jr z, .celadonLeagueRoom
+	cp LEAGUE_HQ_B7F
+	jr z, .fuchsiaLeagueRoom
+	cp LEAGUE_HQ_B8F
+	jr z, .cinnabarLeagueRoom
+; vanilla
 .normalDungeonOrBuilding
 	ld a, [wLastMap] ; town or route that current dungeon or building is located
 .townOrRoute
@@ -245,6 +259,21 @@ SetPal_Overworld:
 	jr .town
 .caveOrBruno
 	ld a, PAL_CAVE - 1
+	jr .town
+.viridianLeagueRoom
+	ld a, PAL_ROUTE - 1
+	jr .town
+.vermilionLeagueRoom
+	ld a, PAL_VERMILION - 1
+	jr .town
+.celadonLeagueRoom
+	ld a, PAL_CELADON - 1
+	jr .town
+.fuchsiaLeagueRoom
+	ld a, PAL_FUCHSIA - 1
+	jr .town
+.cinnabarLeagueRoom
+	ld a, PAL_CINNABAR - 1
 	jr .town
 .Lorelei
 	xor a

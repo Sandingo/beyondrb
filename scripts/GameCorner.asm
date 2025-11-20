@@ -174,7 +174,7 @@ GameCornerClerk1Text:
 	xor a
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $10
+	ld a, $1
 	ldh [hMoney + 1], a
 	call HasEnoughMoney
 	jr nc, .buy_coins
@@ -185,7 +185,7 @@ GameCornerClerk1Text:
 	xor a
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $10
+	ld a, $1
 	ldh [hMoney + 1], a
 	ld hl, hMoney + 2
 	ld de, wPlayerMoney + 2

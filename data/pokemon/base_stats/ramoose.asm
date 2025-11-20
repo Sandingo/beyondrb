@@ -3,14 +3,14 @@
 	db  85, 110,  95, 60,  80
 	;   hp  atk  def  spd  spc
 
-	db STEEL, STEEL ; type
+	db NORMAL, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
 	db 211 ; base exp
 
 	INCBIN "gfx/pokemon/front/ramoose.pic", 0, 1 ; sprite dimensions
 	dw RamoosePicFront, RamoosePicBack
 
-	db TACKLE, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db STOMP, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset

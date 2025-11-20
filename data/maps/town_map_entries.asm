@@ -10,9 +10,9 @@ ExternalMapEntries:
 	external_map  2, 11, PalletTownName
 	external_map  2,  8, ViridianCityName
 	external_map  2,  3, PewterCityName
-	external_map  8,  2, Route4Name
+	external_map  5,  2, Route4Name
 	external_map 10,  2, CeruleanCityName
-	external_map 14,  4, Route10Name
+	external_map 14,  2, Route10Name
 	external_map 14,  5, LavenderTownName
 	external_map 10,  9, VermilionCityName
 	external_map  7,  5, CeladonCityName

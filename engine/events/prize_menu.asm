@@ -85,8 +85,10 @@ GetPrizeMenuId:
 	ld bc, 6
 	call CopyData
 	ld a, [wWhichPrizeWindow]
-	cp 2 ; is TM_menu?
-	jr nz, .putMonName
+	cp 0 ; is menu 1?
+	jr z, .putMonName
+	cp 1 ; is menu 2?
+	jr z, .putMonName
 	ld a, [wPrize1]
 	ld [wNamedObjectIndex], a
 	call GetItemName
@@ -191,8 +193,10 @@ HandlePrizeChoice:
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	ld a, [wWhichPrizeWindow]
-	cp 2 ; is prize a TM?
-	jr nz, .getMonName
+	cp 0 ; is prize a Pokemon from Menu 1?
+	jr z, .getMonName
+	cp 1 ; is prize a Pokemon from Menu 2?
+	jr z, .getMonName
 	call GetItemName
 	jr .givePrize
 .getMonName
@@ -208,8 +212,10 @@ HandlePrizeChoice:
 	call HasEnoughCoins
 	jr c, .notEnoughCoins
 	ld a, [wWhichPrizeWindow]
-	cp 2 ; is prize a TM?
-	jr nz, .giveMon
+	cp 0 ; is prize a Pokemon from Menu 1?
+	jr z, .giveMon
+	cp 1 ; is prize a Pokemon from Menu 2?
+	jr z, .giveMon
 	ld a, [wNamedObjectIndex]
 	ld b, a
 	ld a, 1
