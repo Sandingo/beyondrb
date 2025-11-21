@@ -91,6 +91,7 @@
 	const SPRITE_IMAKUNI
 	const SPRITE_MACHOKE
 	const SPRITE_WIGGLYTUFF
+	const SPRITE_DODUO
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e

@@ -16,8 +16,8 @@ _Route12Gate2FBrunetteGirlReceivedTM39Text::
 	text_end
 
 _Route12Gate2FBrunetteGirlTM39ExplanationText::
-	text "TM39 is a move"
-	line "called SWIFT."
+	text "This is the TM"
+	line "for SWIFT."
 
 	para "It's very accurate,"
 	line "so use it during"

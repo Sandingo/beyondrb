@@ -71,7 +71,7 @@ _CeladonGymReceivedTM21Text::
 _TM21ExplanationText::
 	text_start
 
-	para "TM21 contains"
+	para "This TM contains"
 	line "MEGA DRAIN."
 
 	para "Half the damage"

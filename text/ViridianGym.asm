@@ -71,9 +71,11 @@ _ViridianGymGiovanniReceivedTM27Text::
 _ViridianGymGiovanniTM27ExplanationText::
 	text_start
 
-	para "TM27 is FISSURE!"
-	line "It will take out"
-	cont "#MON with just"
+	para "This TM is"
+	line "FISSURE!"
+	
+	para "It will take out"
+	line "#MON with just"
 	cont "one hit!"
 
 	para "I made it when I"

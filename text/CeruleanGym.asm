@@ -18,7 +18,7 @@ _CeruleanGymMistyPreBattleText::
 	done
 
 _CeruleanGymMistyTM11ExplanationText::
-	text "TM11 teaches"
+	text "This TM teaches"
 	line "BUBBLEBEAM!"
 
 	para "Use it on an"

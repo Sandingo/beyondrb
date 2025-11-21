@@ -84,11 +84,11 @@ ViridianCityFisherYouCanHaveThisText::
 
 _ViridianCityFisherReceivedTM42Text::
 	text "<PLAYER> received"
-	line "TM42!@"
+	line "<TM2>DREAM EATER!@"
 	text_end
 
 _ViridianCityFisherTM42ExplanationText::
-	text "TM42 contains"
+	text "This TM contains"
 	line "DREAM EATER..."
 	cont "...Snore..."
 	done

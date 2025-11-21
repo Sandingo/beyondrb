@@ -15,7 +15,7 @@ _CeladonMart3FClerkReceivedTM18Text::
 	text_end
 
 _CeladonMart3FClerkTM18ExplanationText::
-	text "TM18 is COUNTER!"
+	text "That's TM COUNTER!"
 	line "Not like the one"
 	cont "I'm leaning on,"
 	cont "mind you!"

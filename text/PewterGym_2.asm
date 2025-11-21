@@ -39,7 +39,7 @@ _TM34ExplanationText::
 	cont "pick the #MON"
 	cont "carefully!"
 
-	para "TM34 contains"
+	para "This TM contains"
 	line "BIDE!"
 
 	para "Your #MON will"

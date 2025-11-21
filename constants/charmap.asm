@@ -342,8 +342,8 @@
 	charmap "み", $d0
 	charmap "む", $d1
 	charmap "め", $d2
-	charmap "も", $d3
-	charmap "や", $d4
+	charmap "<TM2>", $d3
+	charmap "<HM>", $d4
 	charmap "<CUR1>",    $d5
 	charmap "<CUR2>",    $d6
 	charmap "<BASE1>",   $d7
