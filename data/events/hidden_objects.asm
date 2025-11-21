@@ -444,7 +444,7 @@ SSAnne6HiddenObjects:
 
 SSAnne10HiddenObjects:
 	hidden_object  3,  1, HYPER_POTION, HiddenItems
-	hidden_object 33,  0, SPRITE_FACING_UP, OpenPokemonCenterPC
+;	hidden_object 33,  0, SPRITE_FACING_UP, OpenPokemonCenterPC - Cannot get working for whatever reason
 	db -1 ; end
 
 Route10HiddenObjects:

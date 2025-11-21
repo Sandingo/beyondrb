@@ -1,41 +1,41 @@
-_LeagueHQB8FCoolTrainerMBattleText:: ; Placeholder, replace with original text
-	text "Think you're the"
-	line "only trainer"
-	cont "challenging the"
-	cont "#MON LEAGUE?"
+_LeagueHQB8FCoolTrainerMBattleText::
+	text "The ELITE FOUR"
+	line "are waiting just"
+	cont "past this room."
+	
+	para "Think you can"
+	line "get through me?"
 	done
 
-_LeagueHQB8FCoolTrainerMEndBattleText:: ; Placeholder, replace with original text
-	text "Man!"
-	line "You're strong!"
+_LeagueHQB8FCoolTrainerMEndBattleText::
+	text "You"
+	line "pass!"
 	prompt
 
-_LeagueHQB8FCoolTrainerMAfterBattleText:: ; Placeholder, replace with original text
-	text "All trainers have"
-	line "to run the"
-	cont "gauntlet before"
-    cont "getting a chance"
-	cont "at the ELITE FOUR."
+_LeagueHQB8FCoolTrainerMAfterBattleText:: 
+	text "Have you read the"
+	line "books in here?"
+	
+	para "I'm not sure what"
+    line "to make of them."
 	done
 
-_LeagueHQB8FCoolTrainerFBattleText:: ; Placeholder, replace with original text
-	text "You'll be my"
-	line "warm up before I"
-	cont "take the title"
-	cont "of CHAMPION!"
+_LeagueHQB8FCoolTrainerFBattleText:: 
+	text "It'd be awful to"
+	line "have to walk back"
+	cont "to a #CENTER"
+	cont "now, wouldn't it?"
 	done
 
-_LeagueHQB8FCoolTrainerFEndBattleText:: ; Placeholder, replace with original text
-	text "I'm"
-	line "out of practice.."
+_LeagueHQB8FCoolTrainerFEndBattleText:: 
+	text "Ah!"
+	line "My #MON!"
 	prompt
 
-_LeagueHQB8FCoolTrainerFAfterBattleText:: ; Placeholder, replace with original text
-	text "The rooms inside"
-	line "the LEAGUE HQ are"
-	cont "modelled after"
-    cont "locations across"
-	cont "KANTO."
+_LeagueHQB8FCoolTrainerFAfterBattleText::
+	text "Guess my team's"
+	line "not even ready to"
+	cont "face LORELEI..."
 	done
 
 _LeagueHQB8FDiary1::
