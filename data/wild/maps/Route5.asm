@@ -19,8 +19,8 @@ IF DEF(_BLUE)
 	db 16, BELLSPROUT
 ENDC
 	db 16, MACHOP
-	db 14, DODUO
-	db 16, DODUO
+	db 14, DODAERIE
+	db 16, DODAERIE
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

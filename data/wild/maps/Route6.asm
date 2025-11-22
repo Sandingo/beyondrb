@@ -6,7 +6,6 @@ IF DEF(_RED)
 	db 15, PIDGEY
 	db 10, ODDISH
 	db 12, PUPPERON
-	db 15, ODDISH
 ENDC
 IF DEF(_BLUE)
 	db 13, BELLSPROUT
@@ -14,13 +13,23 @@ IF DEF(_BLUE)
 	db 15, PIDGEY
 	db 10, BELLSPROUT
 	db 12, VULPIII
-	db 15, BELLSPROUT
 ENDC
+	db 15, MAGNEMITE
 	db 16, MAGNEMITE
 	db 16, MACHOP
-	db 14, MAGNEMITE
-	db 16, GRIMER
+	db 14, SMUJJ
+	db 16, SMUJJ
 	end_grass_wildmons
 
-	def_water_wildmons 0 ; encounter rate
+	def_water_wildmons 5 ; encounter rate
+	db  5, SMUJJ
+	db 10, SMUJJ
+	db 15, SMUJJ
+	db 20, GRIMER
+	db 10, GRIMER
+	db 15, SLOWPOKE
+	db 20, SLOWPOKE
+	db 30, GRIMER
+	db 35, GRIMER
+	db 40, MUK
 	end_water_wildmons

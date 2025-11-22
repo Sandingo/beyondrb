@@ -428,6 +428,7 @@ SmujjEvosMoves:
 	db 0
 ; Learnset
 	db 9, SMOKESCREEN
+	db 15, ACID
 	db 18, POISON_GAS
 	db 23, MINIMIZE
 	db 27, SLUDGE
@@ -441,6 +442,7 @@ GrimerEvosMoves:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0
 ; Learnset
+	db 26, ACID
 	db 30, POISON_GAS
 	db 33, MINIMIZE
 	db 37, SLUDGE
@@ -2072,6 +2074,7 @@ MukEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 26, ACID
 	db 30, POISON_GAS
 	db 33, MINIMIZE
 	db 37, SLUDGE

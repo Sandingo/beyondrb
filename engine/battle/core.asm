@@ -3017,13 +3017,16 @@ PrintMenuItem:
 	and $3f
 	ld [wBattleMenuCurrentPP], a
 ; print TYPE/<type> and <curPP>/<maxPP>
-	hlcoord 1, 9
-	ld de, TypeText
+;	hlcoord 1, 9
+;	ld de, TypeText
+;	call PlaceString
+	hlcoord 1, 11
+	ld de, PPText
 	call PlaceString
 	hlcoord 7, 11
 	ld [hl], "/"
-	hlcoord 5, 9
-	ld [hl], "/"
+;	hlcoord 5, 9
+;	ld [hl], "/"
 	hlcoord 5, 11
 	ld de, wBattleMenuCurrentPP
 	lb bc, 1, 2
@@ -3033,11 +3036,17 @@ PrintMenuItem:
 	lb bc, 1, 2
 	call PrintNumber
 	call GetCurrentMove
-	hlcoord 2, 10
+	hlcoord 1, 9
 	predef PrintMoveType
 ; Move Damage Display from Extreme Yellow
 ;==========================================
-	hlcoord 1, 11 ; new
+	hlcoord 1, 10
+	ld de, ATKText
+	call PlaceString
+	hlcoord 4, 10
+	ld [hl], "/"
+; Actual Print
+	hlcoord 1, 10 ; new
 	ld a, [wPlayerMoveEffect]
 	cp OHKO_EFFECT
 	jr z, .OHKOMove
@@ -3045,18 +3054,26 @@ PrintMenuItem:
 	ld a, [wPlayerMovePower]
 	cp 1 ; this should cover all the SPECIAL_DAMAGE_EFFECT, AND COUNTER / MIRROR_COAT / GYRO_BALL
 	jr z, .specialDamage
-	hlcoord 1, 11
+	cp 0 ; No damage
+	jr z, .noDamage
+	hlcoord 7, 10
 	ld de, wPlayerMovePower ; testing
 	lb bc, 1, 3
 	call PrintNumber ; prints the c-digit, b-byte value at de
 	jr .afterDamagePrinting
 .OHKOMove
+	hlcoord 6, 10
 	ld de, InfDamageText
 	call PlaceString
 	jr .afterDamagePrinting
 .specialDamage
-	hlcoord 3, 11
+	hlcoord 9, 10
 	ld [hl], "?"
+	jr .afterDamagePrinting
+.noDamage
+	hlcoord 8, 10
+	ld de, NoDamageText
+	call PlaceString
 .afterDamagePrinting
 ; ==========================================================
 .moveDisabled
@@ -3064,8 +3081,17 @@ PrintMenuItem:
 	ldh [hAutoBGTransferEnabled], a
 	jp Delay3
 
+PPText:
+	db "<BOLD_P2><BOLD_P2>@"
+
+ATKText:
+	db "ATK@"
+
 InfDamageText:
 	db "OHKO@"
+
+NoDamageText:
+	db "--@"
 	
 DisabledText:
 	db "disabled!@"

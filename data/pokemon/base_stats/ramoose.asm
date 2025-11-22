@@ -10,14 +10,15 @@
 	INCBIN "gfx/pokemon/front/ramoose.pic", 0, 1 ; sprite dimensions
 	dw RamoosePicFront, RamoosePicBack
 
-	db STOMP, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db TACKLE, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
 	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     PSYCHIC_M,     STRENGTH,     HYPER_BEAM,   RAGE,         THUNDERBOLT,  \
 	     THUNDER_WAVE,      EARTHQUAKE,   FISSURE,      MIMIC,        DOUBLE_TEAM,  \
-	     BIDE,         PSYWAVE,   SKULL_BASH,   REST,         SUBSTITUTE
+	     BIDE,         PSYWAVE,   SKULL_BASH,   REST,         SUBSTITUTE,	\
+		 ICE_BEAM,     BLIZZARD,	FLAMETHROWER,	FIRE_BLAST,	THUNDER		
 	; end
 
 	db BANK(RamoosePicFront)
