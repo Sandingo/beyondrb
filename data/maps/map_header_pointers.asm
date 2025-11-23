@@ -157,6 +157,7 @@ MapHeaderPointers::
 	dw SeafoamIslandsB2F_h
 	dw SeafoamIslandsB3F_h
 	dw SeafoamIslandsB4F_h
+	dw SeafoamIslandsB5F_h
 	dw VermilionOldRodHouse_h
 	dw FuchsiaGoodRodHouse_h
 	dw PokemonMansion1F_h
@@ -198,7 +199,7 @@ MapHeaderPointers::
 	dw RocketHideoutB3F_h
 	dw RocketHideoutB4F_h
 	dw RocketHideoutElevator_h
-	dw RocketHideoutElevator_h ; UNUSED_MAP_CC
+;	dw RocketHideoutElevator_h ; UNUSED_MAP_CC
 	dw RocketHideoutElevator_h ; UNUSED_MAP_CD
 	dw RocketHideoutElevator_h ; UNUSED_MAP_CE
 	dw SilphCo2F_h

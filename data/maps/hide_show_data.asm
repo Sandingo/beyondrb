@@ -159,6 +159,7 @@ MapHSPointers:
 	dw SeafoamIslandsB2FHS
 	dw SeafoamIslandsB3FHS
 	dw SeafoamIslandsB4FHS
+	dw SeafoamIslandsB5FHS
 	dw NoHS
 	dw NoHS
 	dw PokemonMansion1FHS
@@ -199,8 +200,8 @@ MapHSPointers:
 	dw RocketHideoutB2FHS
 	dw RocketHideoutB3FHS
 	dw RocketHideoutB4FHS
-	dw NoHS
-	dw NoHS
+	dw NoHS ; Elevator
+;	dw NoHS
 	dw NoHS
 	dw NoHS
 	dw SilphCo2FHS
@@ -597,7 +598,10 @@ CeruleanCaveB1FHS:
 SeafoamIslandsB4FHS:
 	db SEAFOAM_ISLANDS_B4F, SEAFOAMISLANDSB4F_BOULDER1, HIDE
 	db SEAFOAM_ISLANDS_B4F, SEAFOAMISLANDSB4F_BOULDER2, HIDE
-	db SEAFOAM_ISLANDS_B4F, SEAFOAMISLANDSB4F_ARTICUNO, SHOW ; Overworld pokemon have to be in the original objects list.
+SeafoamIslandsB5FHS:
+	db SEAFOAM_ISLANDS_B5F, SEAFOAMISLANDSB5F_ICE_STONE, SHOW
+	db SEAFOAM_ISLANDS_B5F, SEAFOAMISLANDSB5F_MAX_ETHER, SHOW
+	db SEAFOAM_ISLANDS_B5F, SEAFOAMISLANDSB5F_ARTICUNO, SHOW ; Overworld pokemon have to be in the original objects list.
 	db $FF, $01, SHOW ; end
 	assert_table_length NUM_HS_OBJECTS + 1
 	

@@ -2076,6 +2076,7 @@ wSSAnne2FCurScript:: db
 wSeafoamIslandsB3FCurScript:: db
 wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
+wSeafoamIslandsB5FCurScript:: db
 wRoute18Gate1FCurScript:: db
 wMtSilverSummitCurScript:: db
 wViridianSchoolHouseCurScript:: db
@@ -2086,7 +2087,7 @@ wLeagueHQB5FCurScript:: db
 wLeagueHQB6FCurScript:: db
 wLeagueHQB7FCurScript:: db
 wLeagueHQB8FCurScript:: db
-	ds 69 ; nice
+	ds 68 ; no longer nice
 wGameProgressFlagsEnd::
 
 	wPlayerGender::

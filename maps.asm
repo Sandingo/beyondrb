@@ -1333,3 +1333,8 @@ INCLUDE "data/maps/headers/LeagueHQB8F.asm"
 INCLUDE "scripts/LeagueHQB8F.asm"
 INCLUDE "data/maps/objects/LeagueHQB8F.asm"
 LeagueHQB8F_Blocks: INCBIN "maps/LeagueHQB8F.blk"
+
+INCLUDE "data/maps/headers/SeafoamIslandsB5F.asm"
+INCLUDE "scripts/SeafoamIslandsB5F.asm"
+INCLUDE "data/maps/objects/SeafoamIslandsB5F.asm"
+SeafoamIslandsB5F_Blocks: INCBIN "maps/SeafoamIslandsB5F.blk"

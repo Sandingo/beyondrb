@@ -1365,10 +1365,10 @@ CheckForTilePairCollisions::
 	jr .retry
 .currentTileMatchesFirstInPair
 	inc hl
-	ld a, [hli]
+	ld a, [hl]
 	cp c
 	jr z, .foundMatch
-	inc hl
+	inc hl ; new, needed to fix a bug
 	jr .tilePairCollisionLoop
 .currentTileMatchesSecondInPair
 	dec hl

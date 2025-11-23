@@ -63,6 +63,7 @@ SECTION "Text 3", ROMX
 
 INCLUDE "text/RockTunnelB1F_2.asm"
 INCLUDE "text/SeafoamIslandsB4F.asm"
+INCLUDE "text/SeafoamIslandsB5F.asm"
 
 INCLUDE "data/text/text_2.asm"
 

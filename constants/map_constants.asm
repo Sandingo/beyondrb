@@ -175,6 +175,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const SEAFOAM_ISLANDS_B2F,           15,  9 ; $A0
 	map_const SEAFOAM_ISLANDS_B3F,           15,  9 ; $A1
 	map_const SEAFOAM_ISLANDS_B4F,           15,  9 ; $A2
+	map_const SEAFOAM_ISLANDS_B5F,           15,  9 ; $A2
 	map_const VERMILION_OLD_ROD_HOUSE,        4,  4 ; $A3
 	map_const FUCHSIA_GOOD_ROD_HOUSE,         4,  4 ; $A4
 	map_const POKEMON_MANSION_1F,            15, 14 ; $A5
@@ -216,7 +217,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const ROCKET_HIDEOUT_B3F,            15, 14 ; $C9
 	map_const ROCKET_HIDEOUT_B4F,            15, 12 ; $CA
 	map_const ROCKET_HIDEOUT_ELEVATOR,        3,  4 ; $CB
-	map_const UNUSED_MAP_CC,                  0,  0 ; $CC
+;	map_const UNUSED_MAP_CC,                  0,  0 ; $CC
 	map_const UNUSED_MAP_CD,                  0,  0 ; $CD
 	map_const UNUSED_MAP_CE,                  0,  0 ; $CE
 	map_const SILPH_CO_2F,                   15,  9 ; $CF

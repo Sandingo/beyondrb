@@ -156,6 +156,7 @@ WildDataPointers:
 	dw SeafoamIslandsB2FWildMons
 	dw SeafoamIslandsB3FWildMons
 	dw SeafoamIslandsB4FWildMons
+	dw SeafoamIslandsB5FWildMons
 	dw NothingWildMons
 	dw NothingWildMons
 	dw PokemonMansion1FWildMons
@@ -192,12 +193,12 @@ WildDataPointers:
 	dw NothingWildMons
 	dw DiglettsCaveWildMons
 	dw VictoryRoad3FWildMons
-	dw NothingWildMons
-	dw NothingWildMons
-	dw NothingWildMons
-	dw NothingWildMons
-	dw NothingWildMons
-	dw NothingWildMons
+	dw NothingWildMons ; Rocket 1
+	dw NothingWildMons ; Rocket 2
+	dw NothingWildMons ; Rocket 3
+	dw NothingWildMons ; Rocket 4
+	dw NothingWildMons ; Rocket Elevator
+;	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -316,6 +317,7 @@ INCLUDE "data/wild/maps/SeafoamIslandsB1F.asm"
 INCLUDE "data/wild/maps/SeafoamIslandsB2F.asm"
 INCLUDE "data/wild/maps/SeafoamIslandsB3F.asm"
 INCLUDE "data/wild/maps/SeafoamIslandsB4F.asm"
+INCLUDE "data/wild/maps/SeafoamIslandsB5F.asm"
 INCLUDE "data/wild/maps/PokemonMansion1F.asm"
 INCLUDE "data/wild/maps/PokemonMansion2F.asm"
 INCLUDE "data/wild/maps/PokemonMansion3F.asm"

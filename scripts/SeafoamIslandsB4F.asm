@@ -136,34 +136,8 @@ SeafoamIslandsB4F_TextPointers:
 	def_text_pointers
 	dw_const BoulderText,                       TEXT_SEAFOAMISLANDSB4F_BOULDER1
 	dw_const BoulderText,                       TEXT_SEAFOAMISLANDSB4F_BOULDER2
-	dw_const SeafoamIslandsB4FArticunoText,     TEXT_SEAFOAMISLANDSB4F_ARTICUNO
 	dw_const SeafoamIslandsB4FBouldersSignText, TEXT_SEAFOAMISLANDSB4F_BOULDERS_SIGN
 	dw_const SeafoamIslandsB4FDangerSignText,   TEXT_SEAFOAMISLANDSB4F_DANGER_SIGN
-
-; Articuno is object 3, but its event flag is bit 2.
-; This is not a problem because its sight range is 0, and
-; trainer headers were not stored by ExecuteCurMapScriptInTable.
-	def_trainers 2
-ArticunoTrainerHeader:
-	trainer EVENT_BEAT_ARTICUNO, 0, SeafoamIslandsB4FArticunoBattleText, SeafoamIslandsB4FArticunoBattleText, SeafoamIslandsB4FArticunoBattleText
-	db -1 ; end
-
-SeafoamIslandsB4FArticunoText:
-	text_asm
-	ld hl, ArticunoTrainerHeader
-	call TalkToTrainer
-	ld a, SCRIPT_SEAFOAMISLANDSB4F_OBJECT_MOVING3
-	ld [wSeafoamIslandsB4FCurScript], a
-	jp TextScriptEnd
-
-SeafoamIslandsB4FArticunoBattleText:
-	text_far _SeafoamIslandsB4FArticunoBattleText
-	text_asm
-	ld a, ARTICUNO
-	call PlayCry
-	call WaitForSoundToFinish
-	callfar RollForShiny
-	jp TextScriptEnd
 
 SeafoamIslandsB4FBouldersSignText:
 	text_far _SeafoamIslandsB4FBouldersSignText

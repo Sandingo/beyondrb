@@ -210,36 +210,36 @@ SetPal_Overworld:
 	ld de, wPalPacket
 	ld bc, $10
 	call CopyData
+	call GetOverworldPalette
+	ld hl, wPalPacket + 1
+	ld [hld], a
+	ld de, BlkPacket_WholeScreen
+	ld a, SET_PAL_OVERWORLD
+	ld [wDefaultPaletteCommand], a
+	ret
+
+; PureRGBnote: CHANGED: abstracted into its own function, removed some redundant code
+; stores the palette used for the current map in a
+GetOverworldPalette:
+	; first check if the current map has a custom palette
+	ld a, [wCurMap]
+	ld hl, MapPalettesJumpTable
+	ld de, 2
+	call IsInArray
+	jr c, .foundPalette
+	; next check if the map has its own palette function
+	ld a, [wCurMap]
+	; lastly check if the tileset has its own map palette
 	ld a, [wCurMapTileset]
-	cp CEMETERY
-	jr z, .PokemonTowerOrAgatha
-	cp CAVERN
-	jr z, .caveOrBruno
+	ld hl, MapTilesetPalettesTable
+	ld de, 2
+	call IsInArray
+	jr c, .foundPalette
+	; next, if it's a town or route, use the town palette or route palette
 	ld a, [wCurMap]
 	cp FIRST_INDOOR_MAP
 	jr c, .townOrRoute
-	cp CERULEAN_CAVE_2F
-	jr c, .normalDungeonOrBuilding
-	cp CERULEAN_CAVE_1F + 1
-	jr c, .caveOrBruno
-	cp LORELEIS_ROOM
-	jr z, .Lorelei
-	cp BRUNOS_ROOM
-	jr z, .caveOrBruno
-; gross and ugly code for the league areas
-	cp LEAGUE_HQ_B1F
-	jr z, .viridianLeagueRoom
-	cp LEAGUE_HQ_B3F
-	jr z, .vermilionLeagueRoom
-	cp LEAGUE_HQ_B3F_ROOMS
-	jr z, .vermilionLeagueRoom
-	cp LEAGUE_HQ_B6F
-	jr z, .celadonLeagueRoom
-	cp LEAGUE_HQ_B7F
-	jr z, .fuchsiaLeagueRoom
-	cp LEAGUE_HQ_B8F
-	jr z, .cinnabarLeagueRoom
-; vanilla
+	; otherwise, use the last overworld map's palette for this indoor map
 .normalDungeonOrBuilding
 	ld a, [wLastMap] ; town or route that current dungeon or building is located
 .townOrRoute
@@ -248,36 +248,31 @@ SetPal_Overworld:
 	ld a, PAL_ROUTE - 1
 .town
 	inc a ; a town's palette ID is its map ID + 1
-	ld hl, wPalPacket + 1
-	ld [hld], a
-	ld de, BlkPacket_WholeScreen
-	ld a, SET_PAL_OVERWORLD
-	ld [wDefaultPaletteCommand], a
 	ret
-.PokemonTowerOrAgatha
-	ld a, PAL_GRAYMON - 1
-	jr .town
-.caveOrBruno
-	ld a, PAL_CAVE - 1
-	jr .town
-.viridianLeagueRoom
-	ld a, PAL_ROUTE - 1
-	jr .town
-.vermilionLeagueRoom
-	ld a, PAL_VERMILION - 1
-	jr .town
-.celadonLeagueRoom
-	ld a, PAL_CELADON - 1
-	jr .town
-.fuchsiaLeagueRoom
-	ld a, PAL_FUCHSIA - 1
-	jr .town
-.cinnabarLeagueRoom
-	ld a, PAL_CINNABAR - 1
-	jr .town
-.Lorelei
-	xor a
-	jr .town
+.foundPalette
+	inc hl
+	ld a, [hl]
+	ret
+
+MapTilesetPalettesTable:
+	db CEMETERY, PAL_GRAYMON
+	db UNDERGROUND, PAL_ROUTE
+	db CAVERN, PAL_CAVE
+	db -1
+
+MapPalettesJumpTable:
+	db SEAFOAM_ISLANDS_B4F, PAL_LAVENDER
+	db SEAFOAM_ISLANDS_B5F, PAL_LAVENDER
+	db LEAGUE_HQ_B1F, PAL_ROUTE
+	db LEAGUE_HQ_B3F, PAL_VERMILION
+	db LEAGUE_HQ_B3F_ROOMS, PAL_VERMILION
+	db LEAGUE_HQ_B6F, PAL_CELADON
+	db LEAGUE_HQ_B7F, PAL_FUCHSIA
+	db LEAGUE_HQ_B8F, PAL_CINNABAR
+	db POWER_PLANT, PAL_MEWMON
+	db LORELEIS_ROOM, PAL_PALLET
+	db BRUNOS_ROOM, PAL_CAVE
+	db -1
 
 ; used when a Pokemon is the only thing on the screen
 ; such as evolution, trading and the Hall of Fame
