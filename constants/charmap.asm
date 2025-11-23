@@ -28,7 +28,7 @@
 
 ; Actual characters (from gfx/font/font_extra.png)
 
-	charmap "<BOLD_A>",  $60 ; unused
+	charmap "<X_BALL>",  $60 ; Crossed out Pokeball, replaces BOLD_A,used in save.asm
 	charmap "<BOLD_B>",  $61 ; unused
 	charmap "<BOLD_C>",  $62 ; unused
 	charmap "<BOLD_D>",  $63 ; unused

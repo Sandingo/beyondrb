@@ -47,6 +47,7 @@ _ItemUseBallText08::
 	line "transferred to"
 	cont "someone's PC!"
 	prompt
+	
 
 _ItemUseBallText06::
 	text "New #DEX data"
@@ -240,4 +241,12 @@ _BoxFullCannotThrowBallText::
 	text "The #MON BOX"
 	line "is full! Can't"
 	cont "use that item!"
+	prompt
+
+_BoxIsFullText2::
+	text "The #MON BOX"
+	line "is now full!"
+
+	para "Change the BOX at"
+	line "a #MON CENTER!"
 	prompt

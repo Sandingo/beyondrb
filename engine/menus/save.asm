@@ -480,6 +480,11 @@ DisplayChangeBoxMenu:
 	ld a, [de]
 	and a ; is the box empty?
 	jr z, .skipPlacingPokeball
+	cp MONS_PER_BOX ; is box full?
+	jr nz, .vanilla
+	ld [hl], $60 ; place x_ball
+	jr .skipPlacingPokeball
+.vanilla
 	ld [hl], $78 ; place pokeball tile next to box name if box not empty
 .skipPlacingPokeball
 	add hl, bc

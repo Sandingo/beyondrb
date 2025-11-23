@@ -597,6 +597,13 @@ ItemUseBall:
 	ld hl, ItemUseBallText08
 .printTransferredToPCText
 	call PrintText
+; New, print warning if box is full.
+	ld a, [wBoxCount]
+	cp MONS_PER_BOX
+	jr nz, .vanilla
+	ld hl, BoxIsFullText2
+	call PrintText
+.vanilla
 	jr .done
 
 .oldManCaughtMon
@@ -660,6 +667,10 @@ ItemUseBallText06:
 	text_far _ItemUseBallText06
 	sound_dex_page_added
 	text_promptbutton
+	text_end
+
+BoxIsFullText2:
+	text_far _BoxIsFullText2
 	text_end
 
 ItemUseTownMap:
