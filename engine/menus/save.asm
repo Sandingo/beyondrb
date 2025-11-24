@@ -352,6 +352,7 @@ ChangeBox::
 	bit BIT_HAS_CHANGED_BOXES, [hl] ; is it the first time player is changing the box?
 	call z, EmptyAllSRAMBoxes ; if so, empty all boxes in SRAM
 	call DisplayChangeBoxMenu
+	call LoadCrossBallTile
 	call UpdateSprites
 	ld hl, hUILayoutFlags
 	set BIT_DOUBLE_SPACED_MENU, [hl]
@@ -420,6 +421,12 @@ CopyBoxToOrFromSRAM:
 	ld [MBC1SRamEnable], a
 	ret
 
+LoadCrossBallTile::
+	ld hl, vChars2 tile $77
+	ld de, PokeballTileGraphics tile 2 ; pokeball with x tile
+	lb bc, BANK(PokeballTileGraphics), 1
+	call CopyVideoData
+
 DisplayChangeBoxMenu:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
@@ -482,7 +489,7 @@ DisplayChangeBoxMenu:
 	jr z, .skipPlacingPokeball
 	cp MONS_PER_BOX ; is box full?
 	jr nz, .vanilla
-	ld [hl], $60 ; place x_ball
+	ld [hl], $77 ; place x_ball
 	jr .skipPlacingPokeball
 .vanilla
 	ld [hl], $78 ; place pokeball tile next to box name if box not empty

@@ -870,7 +870,7 @@ FaintEnemyPokemon:
 	inc hl
 	dec b
 	jr nz, .halveExpDataLoop
-
+	jr .hasEXPAllCont
 ; give exp (divided evenly) to the mons that actually fought in battle against the enemy mon that has fainted
 ; if exp all is in the bag, this will be only be half of the stat exp and normal exp, due to the above loop
 .giveExpToMonsThatFought
@@ -878,8 +878,11 @@ FaintEnemyPokemon:
 	ld [wBoostExpByExpAll], a
 	callfar GainExperience
 	pop af
-	ret z ; return if no exp all
-
+	ret ; return if no exp all
+.hasEXPAllCont
+	xor a
+	ld [wBoostExpByExpAll], a
+	pop af
 ; the player has exp all
 ; now, set the gain exp flag for every party member
 ; half of the total stat exp and normal exp will divided evenly amongst every party member
