@@ -133,7 +133,7 @@ StartMenu_Pokemon::
 .fly
 	bit BIT_THUNDERBADGE, a
 	jp z, .newBadgeRequired
-	call CheckIfInOutsideMap
+	call CheckIfInFlyMap ; PureRGBnote: CHANGED: you can FLY from more places than vanilla game.
 	jr z, .canFly
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
@@ -467,10 +467,6 @@ StartMenu_TownMap::
 	call GBPalWhiteOut
 	call ClearScreen
 	call UpdateSprites
-	ldh a, [hTileAnimations]
-	push af
-	xor a
-	ldh [hTileAnimations], a
 	farcall ItemUseTownMap
 	call GBPalWhiteOut
 	call LoadFontTilePatterns
@@ -478,8 +474,7 @@ StartMenu_TownMap::
 	call RunDefaultPaletteCommand
 	call ReloadMapData
 	call LoadGBPal
-	pop af
-	ldh [hTileAnimations], a
+	call UpdateSprites
 	jp RedisplayStartMenu
 
 StartMenu_TrainerInfo::

@@ -739,6 +739,18 @@ PlayMapChangeSound::
 	ret nz
 	jp GBFadeOutToBlack
 
+
+CheckIfInFlyMap::
+	ld a, [wCurMap]
+	cp CELADON_MART_ROOF ; PureRGBnote: FIXED: can fly on roofs
+	ret z
+	cp CELADON_MANSION_ROOF
+	ret z
+	cp MT_SILVER_SUMMIT
+	ret z
+	cp VIRIDIAN_FOREST
+	ret z
+	; fall through
 CheckIfInOutsideMap::
 ; If the player is in an outside map (a town or route), set the z flag
 	ld a, [wCurMapTileset]

@@ -272,6 +272,7 @@ MapPalettesJumpTable:
 	db POWER_PLANT, PAL_MEWMON
 	db LORELEIS_ROOM, PAL_PALLET
 	db BRUNOS_ROOM, PAL_CAVE
+	db MT_SILVER_SUMMIT, PAL_GRAYMON
 	db -1
 
 ; used when a Pokemon is the only thing on the screen
