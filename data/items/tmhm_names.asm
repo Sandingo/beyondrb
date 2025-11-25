@@ -52,7 +52,7 @@ TmhmNames::
 	li "<TM2>SKY ATTACK"
 	li "<TM2>REST"
 	li "<TM2>THUNDER WAVE"
-	li "<TM2>PSYWAVE"
+	li "<TM2>LIGHT SCREEN"
 	li "<TM2>EXPLOSION"
 	li "<TM2>ROCK SLIDE"
 	li "<TM2>TRI ATTACK"

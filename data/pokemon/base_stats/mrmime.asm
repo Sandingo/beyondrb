@@ -18,8 +18,8 @@
 	     DOUBLE_EDGE,  HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 	     RAGE,         SOLARBEAM,    THUNDERBOLT,  THUNDER,      PSYCHIC_M,    \
 	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     METRONOME,    SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      \
-	     SUBSTITUTE,   FLASH,        DAZZLINGLEAM
+	     METRONOME,    SKULL_BASH,   REST,         THUNDER_WAVE,       \
+	     SUBSTITUTE,   FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN
 	; end
 
 	db BANK(MrMimePicFront)

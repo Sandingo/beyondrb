@@ -18,7 +18,7 @@
 	     HYPER_BEAM,   RAGE,         THUNDERBOLT,  THUNDER,      MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        SKY_ATTACK,   \
 	     REST,         THUNDER_WAVE, SUBSTITUTE,   FLY,          FLASH,        \
-		 STEEL_WING
+		 STEEL_WING,	LIGHT_SCREEN
 	; end
 
 	db BANK(ZapdosPicFront)

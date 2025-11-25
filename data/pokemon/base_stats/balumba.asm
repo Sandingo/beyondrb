@@ -15,11 +15,11 @@
 
 	; tm/hm learnset
 	tmhm TRI_ATTACK,   SUBSTITUTE,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
-	     DOUBLE_EDGE,  BUBBLEBEAM,   PSYWAVE,    FLY,     SELFDESTRUCT,     \
+	     DOUBLE_EDGE,  BUBBLEBEAM,	FLAMETHROWER,	FLY,     SELFDESTRUCT,     \
 	     RAZOR_WIND,   WHIRLWIND,    METRONOME,    RAGE,         SWIFT,    \
 	     THUNDERBOLT,  EXPLOSION,    FLASH,    TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   SKULL_BASH,   \
-	     REST,         THUNDER_WAVE, DAZZLINGLEAM, FLAMETHROWER
+	     REST,         THUNDER_WAVE, DAZZLINGLEAM
 	; end
 
 	db BANK(BalumbaPicFront)

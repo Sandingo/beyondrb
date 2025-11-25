@@ -18,8 +18,8 @@
 	     STRENGTH,  FLASH,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 	     RAGE,         THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
-	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      \
-	     SUBSTITUTE
+	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE,       \
+	     SUBSTITUTE,	LIGHT_SCREEN
 	; end
 
 	db BANK(ElebabyPicFront)

@@ -18,8 +18,8 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     HYPER_BEAM,   PAY_DAY,      COUNTER,      STRENGTH,     RAGE,         \
 	     EARTHQUAKE,   FISSURE,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  \
-	     BIDE,         METRONOME,    SKULL_BASH,   REST,         PSYWAVE,      \
-	     SUBSTITUTE,   SURF,		 FLASH,        DAZZLINGLEAM
+	     BIDE,         METRONOME,    SKULL_BASH,   REST,               \
+	     SUBSTITUTE,   SURF,		 FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN
 	; end
 
 	db BANK(PoliwealthPicFront)

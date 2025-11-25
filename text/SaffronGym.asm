@@ -74,11 +74,12 @@ _TM46ExplanationText::
 	text_start
 
 	para "This is the TM"
-	line "for PSYWAVE!"
+	line "for LIGHT SCREEN!"
 	
-	para "It uses powerful"
-	line "psychic waves to"
-	cont "inflict damage!"
+	para "It doubles the"
+	line "user's SPECIAL"
+	cont "when hit by a"
+	cont "SPECIAL-type move!"
 	done
 
 _SaffronGymSabrinaTM46NoRoomText::

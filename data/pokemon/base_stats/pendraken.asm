@@ -15,7 +15,7 @@
 
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
-	     WATER_GUN,    PSYWAVE,      PSYCHIC_M,    HYPER_BEAM,   RAGE,         \
+	     WATER_GUN,   LIGHT_SCREEN,  PSYCHIC_M,    HYPER_BEAM,   RAGE,         \
 	     MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   CUT,          SURF,         \
 		 DAZZLINGLEAM

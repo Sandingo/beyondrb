@@ -18,8 +18,8 @@
 	     DOUBLE_EDGE,  HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 	     RAGE,         PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         METRONOME,    SKULL_BASH,   DREAM_EATER,  \
-	     REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   \
-	     FLASH,		   DAZZLINGLEAM
+	     REST,         THUNDER_WAVE,       TRI_ATTACK,   SUBSTITUTE,   \
+	     FLASH,		   DAZZLINGLEAM,	LIGHT_SCREEN
 	; end
 
 	db BANK(HypnoPicFront)
