@@ -27,3 +27,16 @@ _IndigoPlateauLobbyCooltrainerFText::
 _IndigoPlateauLobbyChanseyText::
 	text "CHANSEY: Chance!"
 	done
+
+_IndigoPlateauLobbyAbraCryText::
+	text "ABRA: Abra?"
+	done
+
+_IndigoPlateauLobbyAbraAskText::
+	text "TELEPORT to the"
+	line "ELITE FOUR?"
+	done
+
+_IndigoPlateauLobbyAbraNoThanksText::
+	text "Maybe next time!"
+	done

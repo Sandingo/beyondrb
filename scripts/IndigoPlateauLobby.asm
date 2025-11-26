@@ -24,6 +24,7 @@ IndigoPlateauLobby_TextPointers:
 	dw_const IndigoPlateauLobbyLinkReceptionistText, TEXT_INDIGOPLATEAULOBBY_LINK_RECEPTIONIST
 	dw_const MoveRelearnerText1,                     TEXT_INDIGOPLATEAULOBBY_RELEARNER
 	dw_const IndigoPlateauLobbyChanseyText,          TEXT_INDIGOPLATEAULOBBY_CHANSEY
+	dw_const IndigoPlateauLobbyAbraText,          	 TEXT_INDIGOPLATEAULOBBY_ABRA
 
 IndigoPlateauLobbyNurseText:
 	script_pokecenter_nurse
@@ -50,7 +51,50 @@ IndigoPlateauLobbyChanseyText:
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
-
 .Text:
 	text_far _IndigoPlateauLobbyChanseyText
+	text_end
+
+IndigoPlateauLobbyAbraText:
+	text_asm
+	ld hl, IndigoPlateauLobbyAbraCryText
+	call PrintText
+	ld a, ABRA
+	call PlayCry
+	call WaitForSoundToFinish
+	call WaitForTextScrollButtonPress ; Force Close box, needs to be xor-ed out if said no
+	ld hl, IndigoPlateauLobbyAbraAskText
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, .noThanks
+; Teleport - No animation (yet)
+	ld a, LORELEIS_ROOM
+	ldh [hWarpDestinationMap], a
+	ld a, 0 ; -1
+	ld [wDestinationWarpID], a
+	ld hl, wStatusFlags3
+	set 3, [hl] ; do scripted warp
+; Done
+	jr .end
+.noThanks
+	xor a
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a ; make DisplayTextID wait for button press
+	ld hl, IndigoPlateauLobbyAbraNoThanksText
+	call PrintText
+.end
+	jp TextScriptEnd
+
+IndigoPlateauLobbyAbraCryText:
+	text_far _IndigoPlateauLobbyAbraCryText
+	text_end
+
+IndigoPlateauLobbyAbraAskText:
+	text_far _IndigoPlateauLobbyAbraAskText
+	text_end
+
+IndigoPlateauLobbyAbraNoThanksText:
+	text_far _IndigoPlateauLobbyAbraNoThanksText
 	text_end

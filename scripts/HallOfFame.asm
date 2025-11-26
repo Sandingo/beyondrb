@@ -136,7 +136,10 @@ HallOfFameOakCongratulationsScript:
 	predef ShowObject	
 	ld a, HS_PALLET_TOWN_SCIENTIST ; Block Oak's Lab to start the Mt. Silver quest
 	ld [wMissableObjectIndex], a
-	predef ShowObject	
+	predef ShowObject
+	ld a, HS_INDIGO_LEAGUE_LOBBY_ABRA ; Let players rematch the Elite Four directly
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 .skipPostGameNPCPlacements
 ; End of Post Game Location checks
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
