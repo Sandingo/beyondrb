@@ -189,6 +189,7 @@ INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/move_effects/haze.asm"
 INCLUDE "engine/battle/move_effects/drain_hp.asm"
 INCLUDE "engine/battle/move_effects/conversion.asm"
+INCLUDE "engine/battle/move_effects/teleport.asm"
 
 
 SECTION "Battle Core", ROMX

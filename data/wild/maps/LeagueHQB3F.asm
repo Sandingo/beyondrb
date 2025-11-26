@@ -4,22 +4,12 @@ LeagueHQB3FWildMons:
 	db  48, KINGLER
 	db  48, CLOYSTER
 	db  48, DEWGONG
-IF DEF(_RED)
-	db  48, EKANS
+	db  48, CHEEP
 	db  47, DEWGONG
-	db  49, EKANS
+	db  49, CHEEP
 	db  49, CLOYSTER
-	db  47, EKANS
-	db  50, EKANS
-ENDC
-IF DEF(_BLUE)
-	db  48, SANDSHREW
-	db  47, DEWGONG
-	db  49, SANDSHREW
-	db  49, CLOYSTER
-	db  47, SANDSHREW
-	db  50, SANDSHREW
-ENDC
+	db  47, JABETTA
+	db  50, JABETTA
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

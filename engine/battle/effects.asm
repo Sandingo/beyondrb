@@ -845,13 +845,14 @@ SwitchAndTeleportEffect:
 	ld a, [wPlayerMoveNum]
 	jr .playAnimAndPrintText
 .notWildBattle1
+	ld a, [wPlayerMoveNum]
+	cp TELEPORT
+	jp z, .ItsTeleport
 	ld c, 50
 	call DelayFrames
 	ld hl, IsUnaffectedText
 	ld a, [wPlayerMoveNum]
-	cp TELEPORT
-	jp nz, PrintText
-	jp PrintButItFailedText_
+	jp PrintText
 .handleEnemy
 	ld a, [wIsInBattle]
 	dec a
@@ -875,9 +876,7 @@ SwitchAndTeleportEffect:
 	ld c, 50
 	call DelayFrames
 	ld a, [wEnemyMoveNum]
-	cp TELEPORT
-	jp nz, PrintDidntAffectText
-	jp PrintButItFailedText_
+	jp PrintDidntAffectText
 .enemyMoveWasSuccessful
 	call ReadPlayerMonCurHPAndStatus
 	xor a
@@ -887,13 +886,15 @@ SwitchAndTeleportEffect:
 	ld a, [wEnemyMoveNum]
 	jr .playAnimAndPrintText
 .notWildBattle2
+	ld a, [wEnemyMoveNum]
+	cp TELEPORT
+	jp z, .ItsTeleport
 	ld c, 50
 	call DelayFrames
 	ld hl, IsUnaffectedText
 	ld a, [wEnemyMoveNum]
 	cp TELEPORT
-	jp nz, PrintText
-	jp ConditionalPrintButItFailed
+	jp PrintText
 .playAnimAndPrintText
 	push af
 	call PlayBattleAnimation
@@ -903,12 +904,14 @@ SwitchAndTeleportEffect:
 	ld hl, RanFromBattleText
 	cp TELEPORT
 	jr z, .printText
-	ld hl, RanAwayScaredText
+	ld hl, TeleportedAwayText
 	cp ROAR
 	jr z, .printText
 	ld hl, WasBlownAwayText
 .printText
 	jp PrintText
+.ItsTeleport
+	jpfar _TeleportEffect
 
 RanFromBattleText:
 	text_far _RanFromBattleText
@@ -921,6 +924,16 @@ RanAwayScaredText:
 WasBlownAwayText:
 	text_far _WasBlownAwayText
 	text_end
+
+TeleportWildPokemon::
+.rejectionSampleLoop
+	call BattleRandom
+	cp e
+	jr nc, .rejectionSampleLoop
+	srl d
+	srl d
+	cp d
+	ret
 
 TwoToFiveAttacksEffect:
 	ld hl, wPlayerBattleStatus1

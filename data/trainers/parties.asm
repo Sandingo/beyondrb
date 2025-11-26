@@ -625,9 +625,9 @@ CooltrainerMData:
 ; League HQ B7F
 	db 44, IVYSAUR, WARTORTLE, CHARMELEON, 0
 ; League HQ B8F
-	db 49, NIDOKING, 0
+	db 49, MIMMEO, 0
 ; League HQ B3F Rooms
-	db 44, KINGDRA, DISTURBAN, 0
+	db 44, KINGDRA, POLIWEALTH, 0
 ; Viridian Gym
 	db 39, SANDSLASH, DUGTRIO, 0
 	db 43, RHYHORN, 0

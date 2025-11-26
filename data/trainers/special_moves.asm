@@ -133,7 +133,7 @@ SpecialTrainerMoves:
 	db SABRINA, 1
 	db 1, 1, FLASH
 	db 2, 4, PSYWAVE
-	db 3, 1, PSYWAVE
+	db 3, 1, LIGHT_SCREEN
 	db 0
 	
 	db SABRINA, 2 ; Post-Game Rematch
@@ -276,18 +276,6 @@ SpecialTrainerMoves:
 	db 5, 1, BLIZZARD
 	db 5, 2, FIRE_BLAST
 	db 5, 3, THUNDER
-	db 0
-
-	db RIVAL1, 7
-	db 2, 2, PSYWAVE ; Give Abra SOMETHING to do.
-	db 0
-	
-	db RIVAL1, 8
-	db 2, 2, PSYWAVE
-	db 0
-
-	db RIVAL1, 9
-	db 2, 2, PSYWAVE
 	db 0
 
 	db RIVAL3, 1

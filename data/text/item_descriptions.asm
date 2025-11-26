@@ -541,8 +541,8 @@ _TM29Description::
 	prompt
 
 _TM30Description::
-	text "A move for fleeing"
-	next "from battle."
+	text "Switches user in"
+	next "trainer battles."
 	prompt
 
 _TM31Description::
@@ -621,8 +621,8 @@ _TM45Description::
 	prompt
 
 _TM46Description::
-	text "An attack with"
-	next "variable power."
+	text "Raises SPECIAL"
+	next "with a barrier."
 	prompt
 
 _TM47Description::
