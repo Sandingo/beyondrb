@@ -1,10 +1,6 @@
 Still a WIP and not indicative of all the changes.
-
-\# Full Feature and Change List
-
-
-
-\## Quality of Life Changes
+# Full Feature and Change List
+## Quality of Life Changes
 
 * Bag size increased from 20 to 30.
 * Save speed has been increased.
@@ -39,9 +35,7 @@ Still a WIP and not indicative of all the changes.
 * Purchasable PP Ups and Max Revives!
 * The floor tiles in the Pokémon Mansion have been made less painful to reduce eye strain.
 
-
-
-\## Bugfixes
+## Bugfixes
 
 * Focus Energy actually works as intended, increasing your Critical Rate instead of lowering it.
 * Nidorino's cry plays in the Oak Intro instead of Nidorina's.
