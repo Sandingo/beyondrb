@@ -15,6 +15,7 @@ Features:
 - Daycare now has a PC, and there's a chance your Pokémon will have an Egg! (Living Dex possible in one save file?) 
 - Improved Vitamins and purchasable PP Ups!
 - Hyper Training!
+
 For the full list of changes, see [**FEATURES.md**](https://github.com/Sandingo/beyondrb/blob/master/FEATURES.md)
 
 The goal is to include as many beta features as possible, and some new Kanto-related ones, without changing the feel of Generation 1.

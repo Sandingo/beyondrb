@@ -1833,7 +1833,6 @@ DodrioEvosMoves:
 	db 30, DRILL_PECK
 	db 31, TRI_ATTACK
 	db 39, RAGE
-	db 45, TRI_ATTACK
 	db 51, AGILITY
 	db 0
 
@@ -1845,8 +1844,8 @@ PrimeapeEvosMoves:
 	db 9, LOW_KICK
 	db 15, KARATE_CHOP
 	db 21, FURY_SWIPES
-	db 35, RAGE_FIST
 	db 27, FOCUS_ENERGY
+	db 35, RAGE_FIST
 	db 37, SEISMIC_TOSS
 	db 46, THRASH
 	db 0
@@ -1965,7 +1964,6 @@ TriculesEvosMoves:
 	db 49, SLASH
 	db 52, CROSS_CUTTER
 	db 54, SWORDS_DANCE
-	db 77, GUILLOTINE
 	db 0
 
 GolduckEvosMoves:
@@ -2367,7 +2365,7 @@ RamooseEvosMoves:
 	db 33, QUICK_ATTACK
 	db 37, LEER
 	db 41, AGILITY
-	DB 45, DOUBLE_EDGE
+	db 45, DOUBLE_EDGE
 	db 0
 
 GorochuEvosMoves:
@@ -2758,6 +2756,7 @@ MurkrowEvosMoves:
 	db 26, NIGHT_SHADE
 	db 31, FEINT_ATTACK
 	db 34, DRILL_PECK
+	db 0
 
 HonchkrowEvosMoves:
 ; Evolutions
@@ -2770,6 +2769,7 @@ HonchkrowEvosMoves:
 	db 35, FEINT_ATTACK
 	db 41, AMNESIA
 	db 45, DRILL_PECK
+	db 0
 
 SkimperEvosMoves:
 ; Evolutions
@@ -2781,6 +2781,7 @@ SkimperEvosMoves:
 	db 20, BITE
 	db 30, DRAGON_RAGE
 	db 45, HYDRO_PUMP
+	db 0
 
 BawliguaEvosMoves:
 ; Evolutions
@@ -2793,6 +2794,7 @@ BawliguaEvosMoves:
 	db 30, DRAGON_RAGE
 	db 45, SLASH
 	db 60, HYDRO_PUMP
+	db 0
 
 CryithanEvosMoves:
 ; Evolutions
@@ -2805,6 +2807,7 @@ CryithanEvosMoves:
 	db 45, SLASH
 	db 60, IRON_TAIL
 	db 65, HYDRO_PUMP
+	db 0
 
 KleavorEvosMoves:
 ; Evolutions
