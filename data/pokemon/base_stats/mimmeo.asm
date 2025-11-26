@@ -14,7 +14,7 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm
+	tmhm REFLECT,   LIGHT_SCREEN    \
 	; end
 
 	db BANK(MimmeoPicFront)
