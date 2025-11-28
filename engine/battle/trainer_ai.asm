@@ -617,6 +617,100 @@ AIBattleWithdrawText:
 	text_far _AIBattleWithdrawText
 	text_end
 
+CheckForceSwitchEnemyMon:
+; enemy trainer switches if there are 2 or more unfainted mons in party
+	ld a, [wEnemyPartyCount]
+	ld c, a
+	ld hl, wEnemyMon1HP
+
+	ld d, 0 ; keep count of unfainted monsters
+
+	; count how many monsters haven't fainted yet
+.loop
+	ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	or b
+	jr z, .Fainted ; has monster fainted?
+	inc d
+.Fainted
+	push bc
+	ld bc, wEnemyMon2 - wEnemyMon1
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .loop
+	
+	ld a, d ; how many available monsters are there?
+	cp 2    ; don't bother if only 1
+	jp nc, ForceSwitchEnemyMon
+	and a
+	ld c, 50
+	call DelayFrames
+	ld hl, UnaffectText
+	call PrintText
+	ret
+
+ForceSwitchEnemyMon:
+
+; prepare to withdraw the active monster: copy hp, number, and status to roster
+	ld a, [wPlayerMoveNum]
+	ld [wAnimationID], a
+	ld hl, RoarWorkedText
+	cp ROAR
+	jp z, .continue
+	ld hl, WhirlwindWorkedText
+.continue
+	push hl
+	ld a, [wPlayerMovePower]
+	and a ; Skip animation if damage dealing move
+	jr nz, .skipAnimation
+	farcall PlayBattleAnimationGotID
+.skipAnimation
+	ld c, 20
+	call DelayFrames
+	pop hl
+	call PrintText
+
+	ld a, [wEnemyMonPartyPos]
+	ld hl, wEnemyMon1HP
+	ld bc, wEnemyMon2 - wEnemyMon1
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonHP
+	ld bc, 4
+	call CopyData
+
+	; This wFirstMonsNotOutYet variable is abused to prevent the player from
+	; switching in a new mon in response to this switch.
+	ld a, 1
+	ld [wFirstMonsNotOutYet], a
+	callfar EnemySendOut
+	xor a
+	ld [wFirstMonsNotOutYet], a
+
+	ld a, CANNOT_MOVE						; makes it so that enemy wont use a move after being switched out
+	ld [wEnemySelectedMove], a
+
+	ld a, [wLinkState]
+	cp LINK_STATE_BATTLING
+	ret z
+	scf
+	ret
+
+UnaffectText:
+	text_far _IsUnaffectedText
+	text_end
+
+RoarWorkedText:
+	text_far _RanAwayScaredText
+	text_end
+
+WhirlwindWorkedText:
+	text_far _WasBlownAwayText
+	text_end
+
 AIUsePewterCrunch:
 	call AIPlayRestoringSFX
 	call AICureStatus

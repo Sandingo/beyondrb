@@ -412,7 +412,7 @@ _TM03Description::
 
 _TM04Description::
 	text "Blows away the foe"
-	next "and ends battle."
+	next "Ends wild battles."
 	prompt
 
 _TM05Description::

@@ -8,7 +8,7 @@ PriorityMovesList:
 	db VITAL_THROW,	   6
 	db MACH_PUNCH,	   8
         db BIDE,   	   8
-	db ROAR,	   6
-	db WHIRLWIND,	   6
+	db ROAR,	   1
+	db WHIRLWIND,	   1
 	db TELEPORT,	   6
         db -1 ; end

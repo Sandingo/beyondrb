@@ -318,7 +318,7 @@ MainInBattleLoop:
 	bit USING_TRAPPING_MOVE, a ; check if enemy is using a multi-turn attack like wrap
 	jr z, .selectPlayerMove ; if not, jump
 ; enemy is using a multi-turn attack like wrap, so player is trapped and cannot execute a move
-	ld a, $ff
+	ld a, CANNOT_MOVE
 	ld [wPlayerSelectedMove], a
 	jr .selectEnemyMove
 .selectPlayerMove
@@ -1146,6 +1146,16 @@ ChooseNextMon:
 .monChosen
 	call HasMonFainted
 	jr z, .goBackToPartyMenu ; if mon fainted, you have to choose another
+	ld a, [wPlayerMonNumber]
+	ld d, a
+	ld a, [wWhichPokemon]
+	cp d ; check if the mon to switch to is already out
+	jr nz, .notAlreadyOut
+; mon is already out
+	ld hl, AlreadyOutText
+	call PrintText
+	jr .goBackToPartyMenu
+.notAlreadyOut
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr nz, .notLinkBattle
@@ -1170,7 +1180,7 @@ ChooseNextMon:
 	call GBPalWhiteOut
 	call LoadHudTilePatterns
 	call LoadScreenTilesFromBuffer1
-	call RunDefaultPaletteCommand
+	call RunDefaultPaletteCommand  ;after sendoutmon?
 	call GBPalNormal
 	call SendOutMon
 	ld hl, wEnemyMonHP
@@ -3210,6 +3220,7 @@ LinkBattleExchangeData:
 	ld b, LINKBATTLE_STRUGGLE
 	jr z, .next
 	dec b ; LINKBATTLE_NO_ACTION
+	ASSERT CANNOT_MOVE == $ff
 	inc a ; does move equal -1 (i.e. no action)?
 	jr z, .next
 	ld a, [wPlayerMoveListIndex]
@@ -3263,6 +3274,7 @@ ExecutePlayerMove:
 	xor a
 	ldh [hWhoseTurn], a ; set player's turn
 	ld a, [wPlayerSelectedMove]
+	ASSERT CANNOT_MOVE == $ff
 	inc a
 	jp z, ExecutePlayerMoveDone ; for selected move = FF, skip most of player's turn
 	xor a
@@ -3312,8 +3324,13 @@ PlayerCanExecuteMove:
 	ld hl, ResidualEffects1
 	ld de, 1
 	call IsInArray
-	jp c, JumpMoveEffect ; ResidualEffects1 moves skip damage calculation and accuracy tests
+	;jp c, JumpMoveEffect ; ResidualEffects1 moves skip damage calculation and accuracy tests
 	                    ; unless executed as part of their exclusive effect functions
+	jr nc, .notResidual1Effect
+	ld a, [wPlayerMovePower]
+	and a ; check if zero base power
+	jp z, JumpMoveEffect
+.notResidual1Effect
 	ld a, [wPlayerMoveEffect]
 	ld hl, SpecialEffectsCont
 	ld de, 1
@@ -5827,6 +5844,7 @@ RandomizeDamage:
 ; for more detailed commentary, see equivalent function for player side (ExecutePlayerMove)
 ExecuteEnemyMove:
 	ld a, [wEnemySelectedMove]
+	ASSERT CANNOT_MOVE == $ff
 	inc a
 	jp z, ExecuteEnemyMoveDone
 	call PrintGhostText
@@ -5890,7 +5908,12 @@ EnemyCanExecuteMove:
 	ld hl, SpecialEffectsCont
 	ld de, $1
 	call IsInArray
-	call c, JumpMoveEffect
+	;call c, JumpMoveEffect
+	jr nc, .notResidual1EffectEnemy
+	ld a, [wEnemyMovePower]
+	and a ; Check if zero base power
+	jp z, JumpMoveEffect
+.notResidual1EffectEnemy
 EnemyCalcMoveDamage:
 	call SwapPlayerAndEnemyLevels
 	ld a, [wEnemyMoveEffect]

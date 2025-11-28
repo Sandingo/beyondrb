@@ -519,6 +519,7 @@ RoarAnim:
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
+	battle_anim NO_MOVE, SE_SLIDE_ENEMY_MON_OFF
 	db -1 ; end
 
 SingAnim:

@@ -843,16 +843,13 @@ SwitchAndTeleportEffect:
 	inc a
 	ld [wEscapedFromBattle], a
 	ld a, [wPlayerMoveNum]
-	jr .playAnimAndPrintText
+	jp .playAnimAndPrintText
 .notWildBattle1
 	ld a, [wPlayerMoveNum]
 	cp TELEPORT
 	jp z, .ItsTeleport
-	ld c, 50
-	call DelayFrames
-	ld hl, IsUnaffectedText
-	ld a, [wPlayerMoveNum]
-	jp PrintText
+	callfar CheckForceSwitchEnemyMon
+	ret
 .handleEnemy
 	ld a, [wIsInBattle]
 	dec a
@@ -889,15 +886,20 @@ SwitchAndTeleportEffect:
 	ld a, [wEnemyMoveNum]
 	cp TELEPORT
 	jp z, .ItsTeleport
-	ld c, 50
-	call DelayFrames
-	ld hl, IsUnaffectedText
-	ld a, [wEnemyMoveNum]
-	cp TELEPORT
-	jp PrintText
+	jp CheckForceSwitchPlayerMon
 .playAnimAndPrintText
 	push af
-	call PlayBattleAnimation
+	ld [wAnimationID], a
+	ldh a, [hWhoseTurn]
+	and a
+	ld a, [wPlayerMovePower]
+	jr z, .gotUsersPower
+	ld a, [wEnemyMovePower]
+.gotUsersPower
+	and a ; Skip animation if damage dealing move
+	jr nz, .skipAnimation
+	call PlayBattleAnimationGotID
+.skipAnimation
 	ld c, 20
 	call DelayFrames
 	pop af
@@ -933,6 +935,66 @@ TeleportWildPokemon::
 	srl d
 	srl d
 	cp d
+	ret
+
+CheckForceSwitchPlayerMon:
+; enemy trainer switches if there are 2 or more unfainted mons in party
+	ld a, [wPartyCount]
+	ld c, a
+	ld hl, wPartyMon1HP
+
+	ld d, 0 ; keep count of unfainted monsters
+
+	; count how many monsters haven't fainted yet
+.loop
+	ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	or b
+	jr z, .Fainted ; has monster fainted?
+	inc d
+.Fainted
+	push bc
+	ld bc, wPartyMon2 - wPartyMon1
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .loop
+	
+	ld a, d ; how many available monsters are there?
+	cp 2    ; don't bother if only 1
+	jp nc, ForceSwitchPlayerMon
+	and a
+	ld c, 50
+	call DelayFrames
+	ld hl, IsUnaffectedText
+	call PrintText
+	ret
+
+ForceSwitchPlayerMon:
+	ld a, [wEnemyMoveNum]
+	ld [wAnimationID], a
+	ld hl, RanAwayScaredText
+	cp ROAR
+	jp z, .continue
+	ld hl, WasBlownAwayText
+.continue
+	push hl
+	ld a, [wEnemyMovePower]
+	and a ; Skip animation if damage dealing move
+	jr nz, .skipAnimation
+	call PlayBattleAnimationGotID
+.skipAnimation
+	ld c, 20
+	call DelayFrames
+	pop hl
+	call PrintText
+	call PrintEmptyString
+	call SaveScreenTilesToBuffer1
+	call ReadPlayerMonCurHPAndStatus
+	call ChooseNextMon
+	ld a, CANNOT_MOVE
+	ld [wPlayerSelectedMove], a
 	ret
 
 TwoToFiveAttacksEffect:

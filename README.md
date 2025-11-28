@@ -45,6 +45,7 @@ The patches can be found in the [**Latest Release**](https://github.com/Sandingo
 - [**Melthelesbian**](https://github.com/melthelesbian/poke-amaranth)'s **Pokémon Amaranth**
 - [**PokefanMarcel**](https://github.com/PokefanMarcel/yumepokered)'s **Pokémon Yume**
 - [**Kagnusdev**](https://github.com/kagnusdev/pokered/tree/feature/refactor_status_screens)'s **Status Screen Refactor**
+- [**4tlog**](https://github.com/4tlog/pokerefracted)'s **Pokerefracted**
 #### And anyone involved in the making of any of these resources, thank you so much!
 <sub>If I missed anyone, please message me and I'll be sure to properly include your name!</sub>
   
