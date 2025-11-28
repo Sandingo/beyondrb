@@ -243,16 +243,14 @@ FreezeBurnParalyzeEffect:
 	call HalveAttackDueToBurn ; halve attack of affected mon
 	ld a, ENEMY_HUD_SHAKE_ANIM
 	call PlayBattleAnimation
-	ld hl, BurnedText
-	jp PrintText
+	jp PrintBurnedText
 .freeze1
 	call ClearHyperBeam ; resets hyper beam (recharge) condition from target
 	ld a, 1 << FRZ
 	ld [wEnemyMonStatus], a
 	ld a, ENEMY_HUD_SHAKE_ANIM
 	call PlayBattleAnimation
-	ld hl, FrozenText
-	jp PrintText
+	jp PrintFrozenText
 .opponentAttacker
 	ld a, [wBattleMonStatus] ; mostly same as above with addresses swapped for opponent
 	and a
@@ -292,18 +290,24 @@ FreezeBurnParalyzeEffect:
 	ld a, 1 << BRN
 	ld [wBattleMonStatus], a
 	call HalveAttackDueToBurn
-	ld hl, BurnedText
-	jp PrintText
+	jp PrintBurnedText
 .freeze2
 ; hyper beam bits aren't reseted for opponent's side
 	ld a, 1 << FRZ
 	ld [wBattleMonStatus], a
-	ld hl, FrozenText
+	jp PrintFrozenText
+
+PrintBurnedText:
+	ld hl, BurnedText
 	jp PrintText
 
 BurnedText:
 	text_far _BurnedText
 	text_end
+
+PrintFrozenText:
+	ld hl, FrozenText
+	jp PrintText
 
 FrozenText:
 	text_far _FrozenText
@@ -482,6 +486,9 @@ UpdateStatDone:
 	call nz, Bankswitch
 	pop de
 .notMinimize
+    ld a, [de]
+    cp SKULL_BASH
+    jr z, .applyBadgeBoostsAndStatusPenalties
 	call PlayCurrentMoveAnimation
 	ld a, [de]
 	cp MINIMIZE
@@ -1106,7 +1113,22 @@ ChargeEffect:
 	ld a, [de]
 	ld [wChargeMoveNum], a
 	ld hl, ChargeMoveEffectText
-	jp PrintText
+	call PrintText
+	ld a, [wChargeMoveNum] ; New, checking for Skull Bash
+    cp SKULL_BASH
+    ld c, DEFENSE_UP1_EFFECT
+    jr z, .skullBash
+	ret
+.skullBash
+	ldh a, [hWhoseTurn]
+	and a
+	ld a, c
+    jr z, .notEnemyTurn
+    ld [wEnemyMoveEffect], a
+    jp StatModifierUpEffect
+.notEnemyTurn
+    ld [wPlayerMoveEffect], a
+    jp StatModifierUpEffect
 
 ChargeMoveEffectText:
 	text_far _ChargeMoveEffectText
@@ -1454,6 +1476,11 @@ PayDayEffect:
 
 ConversionEffect:
 	jpfar ConversionEffect_
+
+TriAttackEffect:
+	call BattleRandom
+	ld d, a
+	jpfar TriAttackEffect_
 
 HazeEffect:
 	jpfar HazeEffect_

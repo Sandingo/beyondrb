@@ -130,6 +130,7 @@ StartMenu_Pokemon::
 	dw .dig
 	dw .teleport
 	dw .softboiled
+	dw .softboiled
 .fly
 	bit BIT_THUNDERBADGE, a
 	jp z, .newBadgeRequired

@@ -197,5 +197,6 @@ MoveNames::
 	li "DRAGONBREATH"
 	li "CHARM"
 	li "SWEET KISS"
+	li "GASTRO ACID"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

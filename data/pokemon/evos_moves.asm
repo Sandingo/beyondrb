@@ -428,7 +428,7 @@ SmujjEvosMoves:
 	db 0
 ; Learnset
 	db 9, SMOKESCREEN
-	db 15, ACID
+	db 15, GASTRO_ACID
 	db 18, POISON_GAS
 	db 23, MINIMIZE
 	db 27, SLUDGE
@@ -442,7 +442,7 @@ GrimerEvosMoves:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0
 ; Learnset
-	db 26, ACID
+	db 26, GASTRO_ACID
 	db 30, POISON_GAS
 	db 33, MINIMIZE
 	db 37, SLUDGE
@@ -1046,6 +1046,7 @@ KoffingEvosMoves:
 	db EVOLVE_LEVEL, 35, WEEZING
 	db 0
 ; Learnset
+	db 30, GASTRO_ACID
 	db 32, SLUDGE
 	db 37, SMOKESCREEN
 	db 40, SELFDESTRUCT
@@ -1262,6 +1263,7 @@ PoliwagEvosMoves:
 	db 19, WATER_GUN
 	db 25, DOUBLESLAP
 	db 31, BODY_SLAM
+	db 35, MIRROR_MOVE
 	db 38, AMNESIA
 	db 45, HYDRO_PUMP
 	db 0
@@ -1773,6 +1775,7 @@ PoliwhirlEvosMoves:
 	db 19, WATER_GUN
 	db 26, DOUBLESLAP
 	db 33, BODY_SLAM
+	db 40, MIRROR_MOVE
 	db 41, AMNESIA
 	db 49, HYDRO_PUMP
 	db 0
@@ -2072,7 +2075,7 @@ MukEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 26, ACID
+	db 26, GASTRO_ACID
 	db 30, POISON_GAS
 	db 33, MINIMIZE
 	db 37, SLUDGE
@@ -2149,6 +2152,7 @@ WeezingEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 30, GASTRO_ACID
 	db 32, SLUDGE
 	db 39, SMOKESCREEN
 	db 43, SELFDESTRUCT

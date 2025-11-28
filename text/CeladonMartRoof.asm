@@ -81,7 +81,12 @@ _CeladonMartRoofLittleGirlTM49ExplanationText::
 	text_start
 
 	para "That TM contains"
-	line "TRI ATTACK!@"
+	line "TRI ATTACK!"
+
+	para "It has a chance to"
+	line "burn, paralyze,"
+	cont "or even freeze"
+	cont "a #MON!@"
 	text_end
 
 _CeladonMartRoofLittleGirlNoRoomText::

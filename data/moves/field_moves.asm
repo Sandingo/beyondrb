@@ -11,4 +11,5 @@ FieldMoveDisplayData:
 	db DIG,        7, $0C
 	db TELEPORT,   8, $0A
 	db SOFTBOILED, 9, $08
+	db RECOVER,	  10, $0A
 	db -1 ; end

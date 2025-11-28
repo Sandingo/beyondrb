@@ -92,4 +92,5 @@
 	const SPLASH_EFFECT              ; $55
 	const DISABLE_EFFECT             ; $56
 	const ATTACK_THRICE_EFFECT
+	const TRI_ATTACK_EFFECT
 DEF NUM_MOVE_EFFECTS EQU const_value - 1

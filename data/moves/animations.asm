@@ -197,6 +197,7 @@ AttackAnimationPointers:
 	dw DragonbreathAnim
 	dw CharmAnim
 	dw SweetKissAnim
+	dw GastroAcidAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -886,6 +887,7 @@ MinimizeAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
+GastroAcidAnim:
 InkSprayAnim:
 SmokeScreenAnim:
 	battle_anim SMOKESCREEN, SUBANIM_1_SAND, 1, 6
