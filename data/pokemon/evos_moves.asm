@@ -651,6 +651,7 @@ BurgelaEvosMoves:
 	db 22, POISONPOWDER
 	db 26, STUN_SPORE
 	db 29, SLEEP_POWDER
+	db 32, GIGA_DRAIN
 	db 35, SLAM
 	db 39, GROWTH
 	db 0
@@ -664,6 +665,7 @@ TangelaEvosMoves:
 	db 32, POISONPOWDER
 	db 36, STUN_SPORE
 	db 39, SLEEP_POWDER
+	db 44, GIGA_DRAIN
 	db 45, SLAM
 	db 49, GROWTH
 	db 0
@@ -687,9 +689,10 @@ JungelaEvosMoves:
 	db 27, CONSTRICT
 	db 29, ABSORB
 	db 32, POISONPOWDER
+	db 34, MEGA_DRAIN
 	db 36, STUN_SPORE
 	db 39, SLEEP_POWDER
-	db 44, MEGA_DRAIN
+	db 42, GIGA_DRAIN
 	db 45, SLAM
 	db 49, GROWTH
 	db 0
@@ -1496,6 +1499,7 @@ KabutoEvosMoves:
 	db 34, ABSORB
 	db 39, SLASH
 	db 44, NUMB_PINCER
+	db 46, GIGA_DRAIN
 	db 49, HYDRO_PUMP
 	db 0
 
@@ -1506,6 +1510,7 @@ KabutopsEvosMoves:
 	db 34, ABSORB
 	db 39, SLASH
 	db 46, NUMB_PINCER
+	db 51, GIGA_DRAIN
 	db 53, HYDRO_PUMP
 	db 0
 

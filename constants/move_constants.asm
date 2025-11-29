@@ -204,6 +204,7 @@
 	const CHARM
 	const SWEET_KISS
 	const GASTRO_ACID
+	const GIGA_DRAIN
 	const STRUGGLE     ; a6
 DEF NUM_ATTACKS EQU const_value - 1
 

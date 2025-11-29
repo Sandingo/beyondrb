@@ -51,7 +51,7 @@ CeladonGymReceiveTM21:
 	jr nz, ErikaRematchPostBattle
 	call DisplayTextID
 	SetEvent EVENT_BEAT_ERIKA
-	lb bc, TM_MEGA_DRAIN, 1
+	lb bc, TM_GIGA_DRAIN, 1
 	call GiveItem
 	jr nc, .BagFull
 	ld a, TEXT_CELADONGYM_RECEIVED_TM21
@@ -79,7 +79,7 @@ ErikaRematchPostBattle:
 	ld a, TEXT_CELADONGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
-	lb bc, TM_MEGA_DRAIN, 1
+	lb bc, TM_GIGA_DRAIN, 1
 	call GiveItem
 	jr nc, .BagFull
 	ld a, TEXT_CELADONGYM_RECIEVED_TM21_SHORT

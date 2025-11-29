@@ -72,7 +72,7 @@ _TM21ExplanationText::
 	text_start
 
 	para "This TM contains"
-	line "MEGA DRAIN."
+	line "GIGA DRAIN."
 
 	para "Half the damage"
 	line "it inflicts is"

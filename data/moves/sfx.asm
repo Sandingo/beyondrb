@@ -199,6 +199,7 @@ MoveSoundTable:
 	db SFX_BATTLE_09,          $88, $10 ; CHARM
 	db SFX_BATTLE_27,          $40, $60 ; SWEET_KISS
 	db SFX_BATTLE_2A,          $80, $c0 ; GASTRO ACID
+	db SFX_BATTLE_24,          $40, $c0 ; GIGA_DRAIN
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

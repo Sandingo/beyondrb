@@ -67,7 +67,7 @@ SpecialTrainerMoves:
 	db 0
 
 	db ERIKA, 1
-	db 1, 3, MEGA_DRAIN
+	db 1, 3, GIGA_DRAIN
 	db 2, 1, RAZOR_LEAF
 	db 3, 1, PETAL_DANCE
 	db 0
@@ -75,12 +75,12 @@ SpecialTrainerMoves:
 	db ERIKA, 2  ; Post-Game Rematch
 	db 1, 4, SOLARBEAM
 	db 2, 1, PSYCHIC_M
-	db 2, 4, MEGA_DRAIN
-	db 3, 1, MEGA_DRAIN
-	db 4, 1, MEGA_DRAIN
+	db 2, 4, GIGA_DRAIN
+	db 3, 1, GIGA_DRAIN
+	db 4, 1, GIGA_DRAIN
 	db 4, 2, REFLECT
 	db 4, 3, REST
-	db 5, 2, MEGA_DRAIN
+	db 5, 2, GIGA_DRAIN
 	db 5, 3, SLEEP_POWDER
 	db 0
 
@@ -106,7 +106,7 @@ SpecialTrainerMoves:
 	db 4, 2, FLY
 	db 5, 1, DOUBLE_TEAM
 	db 5, 2, TOXIC
-	db 5, 3, MEGA_DRAIN
+	db 5, 3, GIGA_DRAIN
 	db 0
 
 	db BLAINE, 1
@@ -226,7 +226,7 @@ SpecialTrainerMoves:
 	db AGATHA, 1
 	db 1, 2, SUBSTITUTE
 	db 1, 3, LICK
-	db 1, 4, MEGA_DRAIN
+	db 1, 4, GIGA_DRAIN
 	db 2, 2, TOXIC
 	db 2, 4, LEECH_LIFE
 	db 3, 1, THUNDERBOLT
@@ -241,7 +241,7 @@ SpecialTrainerMoves:
 	db 2, 3, STEEL_WING
 	db 3, 1, THUNDERBOLT
 	db 4, 2, EARTHQUAKE
-	db 4, 3, MEGA_DRAIN
+	db 4, 3, GIGA_DRAIN
 	db 5, 1, PSYCHIC_M
 	db 5, 3, DAZZLINGLEAM
 	db 5, 4, THUNDERBOLT
@@ -318,7 +318,7 @@ SpecialTrainerMoves:
 	db 4, 3, DOUBLE_TEAM
 	db 5, 1, EGG_BOMB
 	db 5, 2, PSYCHIC_M
-	db 5, 4, MEGA_DRAIN
+	db 5, 4, GIGA_DRAIN
 	db 6, 1, EARTHQUAKE
 	db 0
 	
@@ -331,7 +331,7 @@ SpecialTrainerMoves:
 	db 5, 1, FLAMETHROWER
 	db 5, 2, DIG
 	db 5, 3, DOUBLE_TEAM
-	db 6, 2, MEGA_DRAIN
+	db 6, 2, GIGA_DRAIN
 	db 6, 3, POISONPOWDER
 	db 0
 
@@ -342,7 +342,7 @@ SpecialTrainerMoves:
 	db 3, 3, THUNDERBOLT
 	db 4, 1, EGG_BOMB
 	db 4, 2, PSYCHIC_M
-	db 4, 4, MEGA_DRAIN
+	db 4, 4, GIGA_DRAIN
 	db 5, 1, ICE_BEAM
 	db 6, 1, FLY
 	db 0
@@ -357,7 +357,7 @@ SpecialTrainerMoves:
 	db 3, 1, FIRE_BLAST
 	db 3, 2, REST
 	db 3, 3, HYPER_BEAM
-	db 4, 2, MEGA_DRAIN
+	db 4, 2, GIGA_DRAIN
 	db 4, 3, POISONPOWDER
 	db 5, 1, DAZZLINGLEAM
 	db 5, 2, REFLECT
@@ -371,7 +371,7 @@ SpecialTrainerMoves:
 	db 1, 4, EARTHQUAKE
 	db 2, 1, EGG_BOMB
 	db 2, 2, PSYCHIC_M
-	db 2, 4, MEGA_DRAIN
+	db 2, 4, GIGA_DRAIN
 	db 3, 1, BLIZZARD
     db 3, 2, THUNDERBOLT
 	db 4, 1, FLY
@@ -388,10 +388,10 @@ SpecialTrainerMoves:
 	db 2, 1, FIRE_BLAST
 	db 2, 2, REST
 	db 2, 3, HYPER_BEAM
-	db 2, 4, MEGA_DRAIN
+	db 2, 4, GIGA_DRAIN
 	db 3, 1, EGG_BOMB
 	db 3, 2, PSYCHIC_M
-	db 3, 4, MEGA_DRAIN
+	db 3, 4, GIGA_DRAIN
 	db 4, 1, EARTHQUAKE
 	db 5, 1, DAZZLINGLEAM
 	db 5, 2, REFLECT

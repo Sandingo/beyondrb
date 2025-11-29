@@ -27,7 +27,7 @@ TmhmNames::
 	li "<TM2>COUNTER"
 	li "<TM2>SEISMIC TOSS"
 	li "<TM2>RAGE"
-	li "<TM2>MEGA DRAIN" 
+	li "<TM2>GIGA DRAIN" 
 	li "<TM2>SOLARBEAM"
 	li "<TM2>DRAGON RAGE"
 	li "<TM2>THUNDERBOLT"

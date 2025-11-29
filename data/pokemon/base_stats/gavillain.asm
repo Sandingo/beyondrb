@@ -17,7 +17,7 @@
 	tmhm MEGA_PUNCH,   MEGA_KICK,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    STRENGTH,     SOLARBEAM,     \
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
-	     SUBSTITUTE,   SURF,      MEGA_DRAIN,    MIMIC,        DOUBLE_TEAM,  \
+	     SUBSTITUTE,   SURF,      GIGA_DRAIN,    MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         METRONOME,    SKULL_BASH,   REST
 	; end
 

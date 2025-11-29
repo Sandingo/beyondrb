@@ -14,7 +14,7 @@
 	db GROWTH_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        RAGE,         MEGA_DRAIN,   THUNDERBOLT,  THUNDER,      \
+	tmhm TOXIC,        RAGE,         GIGA_DRAIN,   THUNDERBOLT,  THUNDER,      \
 	     PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     DREAM_EATER,  REST,	TAKE_DOWN, EXPLOSION,    SUBSTITUTE,   \
 		 DAZZLINGLEAM, PAY_DAY,		 TAKE_DOWN
