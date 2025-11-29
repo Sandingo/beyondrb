@@ -1239,14 +1239,15 @@ NEXTU
 wLearnMoveMonName:: ds NAME_LENGTH
 ENDU
 
-	ds 2
+	ds 1
 
 ; money received after battle = base money × level of last enemy mon
 wTrainerBaseMoney:: dw ; BCD
 
 wMissableObjectCounter:: db
 
-	ds 1
+wItemFinderItemDirection:: db
+wNewInGameFlags:: db
 
 ; 13 bytes for the letters of the opposing trainer
 ; the name is terminated with $50 with possible

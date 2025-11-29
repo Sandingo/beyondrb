@@ -19,7 +19,7 @@ DisplayListMenuID::
 	set BIT_NO_TEXT_DELAY, [hl]
 	xor a
 	ld [wMenuItemToSwap], a ; 0 means no item is currently being swapped
-	ld [wListCount], a
+;	ld [wListCount], a - Useless
 	ld a, [wListPointer]
 	ld l, a
 	ld a, [wListPointer + 1]
@@ -375,8 +375,8 @@ ExitListMenu::
 	ld a, CANCELLED_MENU
 	ld [wMenuExitMethod], a
 	ld [wMenuWatchMovingOutOfBounds], a
-;	xor a 
-;	ldh [hJoy7], a
+	xor a 
+	ldh [hJoy7], a
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
 	call BankswitchBack

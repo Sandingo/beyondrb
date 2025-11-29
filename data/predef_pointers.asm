@@ -113,3 +113,4 @@ PredefPointers::
 	add_predef HideExtraObject
 	add_predef ShowExtraObject
 	add_predef StatusScreenManager
+	add_predef EmotionBubbleQuick

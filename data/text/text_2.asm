@@ -1268,11 +1268,10 @@ _WildShinyMonText::
 	prompt
 
 _HookedMonAttackedText::
-	text "The hooked"
-	line "@"
+	text "Hooked a"
+	line "wild @"
 	text_ram wEnemyMonNick
-	text_start
-	cont "attacked!"
+	text "!"
 	prompt
 
 _EnemyAppearedText::
