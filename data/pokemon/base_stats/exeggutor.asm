@@ -18,7 +18,7 @@
 	     GIGA_DRAIN,   SOLARBEAM,    PSYCHIC_M,    TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         SELFDESTRUCT, EGG_BOMB,     \
 	     REST,               EXPLOSION,    SUBSTITUTE,   STRENGTH,         \
-		 TRI_ATTACK,	LIGHT_SCREEN
+		 TRI_ATTACK,	LIGHT_SCREEN,	FLASH
 	; end
 
 	db BANK(ExeggutorPicFront)

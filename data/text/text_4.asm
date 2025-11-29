@@ -156,8 +156,8 @@ _ForgotAndText::
 	prompt
 
 _HMCantDeleteText::
-	text "HM techniques"
-	line "can't be deleted!"
+	text "This HM cannot"
+	line "be deleted now!"
 	prompt
 
 _PokemonCenterWelcomeText::

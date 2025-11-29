@@ -6,5 +6,5 @@
 	db FLY
 	db SURF
 	db STRENGTH
-	db FLASH
+;	db FLASH
 	db -1 ; end

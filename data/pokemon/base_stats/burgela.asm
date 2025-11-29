@@ -16,7 +16,7 @@
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    SUBSTITUTE,  \
 	     CUT,   RAGE,         GIGA_DRAIN,   SOLARBEAM,    MIMIC,        \
-	     DOUBLE_TEAM,  BIDE,         SKULL_BASH,   REST   \
+	     DOUBLE_TEAM,  BIDE,         SKULL_BASH,   REST,	FLASH   \
 	; end
 
 	db BANK(BurgelaPicFront)

@@ -19,7 +19,7 @@
 	     PAY_DAY,      SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         STRENGTH,     \
-		 PSYCHIC_M
+		 PSYCHIC_M,	   FLASH
 	; end
 
 	db BANK(PsyduckPicFront)

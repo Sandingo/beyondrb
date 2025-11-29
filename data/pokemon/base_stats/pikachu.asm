@@ -18,7 +18,7 @@
 	     DOUBLE_EDGE,  PAY_DAY,      SUBMISSION,   SEISMIC_TOSS, RAGE,         \
 	     THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE, \
-	     SUBSTITUTE,   FLASH,		 SURF,	LIGHT_SCREEN
+	     SUBSTITUTE,   FLASH,		 SURF,	LIGHT_SCREEN,	STRENGTH
 	; end
 
 	db BANK(PikachuPicFront)

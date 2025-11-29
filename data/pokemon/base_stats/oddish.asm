@@ -16,7 +16,8 @@
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     GIGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         REST,         SUBSTITUTE,   CUT,          DAZZLINGLEAM
+	     BIDE,         REST,         SUBSTITUTE,   CUT,          DAZZLINGLEAM, \
+		 FLASH
 	; end
 
 	db BANK(OddishPicFront)
