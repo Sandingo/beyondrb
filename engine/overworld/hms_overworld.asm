@@ -54,11 +54,12 @@ CheckForCut::
     jr z, .overworld
     cp GYM
     jr z, .gym
-    cp CAVERN
-    ld a, [wTileInFrontOfPlayer]
-    cp $54 ; cavern cut tree
-    jr nz, .fail
-    jr .cuttableTile
+;   cp CAVERN
+;   ld a, [wTileInFrontOfPlayer]
+;   cp $54 ; cavern cut tree
+;   jr nz, .fail
+;   jr .cuttableTile
+	jr .fail
 .gym
     ld a, [wTileInFrontOfPlayer]
     cp $50 ; gym cut tree

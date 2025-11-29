@@ -37,32 +37,33 @@ BikeShopClerkText:
 .dontHaveVoucher
 	ld hl, BikeShopClerkWelcomeText
 	call PrintText
+	ld a, MONEY_BOX
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
 	ld a, A_BUTTON | B_BUTTON
 	ld [wMenuWatchedKeys], a
-	ld a, $1
+	ld a, 1
 	ld [wMaxMenuItem], a
-	ld a, $2
+	ld a, 9
 	ld [wTopMenuItemY], a
-	ld a, $1
+	ld a, 1
 	ld [wTopMenuItemX], a
 	ld hl, wStatusFlags5
 	set BIT_NO_TEXT_DELAY, [hl]
-	hlcoord 0, 0
+	hlcoord 0, 7
 	ld b, 4
 	ld c, 15
 	call TextBoxBorder
 	call UpdateSprites
-	hlcoord 2, 2
+	hlcoord 2, 9
 	ld de, BikeShopMenuText
 	call PlaceString
-	hlcoord 8, 3
+	hlcoord 8, 10
 	ld de, BikeShopMenuPrice
 	call PlaceString
-	ld hl, BikeShopClerkDoYouLikeItText
-	call PrintText
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	jr nz, .cancel
@@ -88,10 +89,6 @@ BikeShopMenuPrice:
 
 BikeShopClerkWelcomeText:
 	text_far _BikeShopClerkWelcomeText
-	text_end
-
-BikeShopClerkDoYouLikeItText:
-	text_far _BikeShopClerkDoYouLikeItText
 	text_end
 
 BikeShopCantAffordText:

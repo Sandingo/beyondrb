@@ -4217,7 +4217,7 @@ CheckForDisobedience:
 	bit 1, [hl]
 	ld a, 20
 	jr nz, .next
-	ld a, 10
+	ld a, 15
 .next
 	ld b, a
 	ld c, a

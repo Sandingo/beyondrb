@@ -636,8 +636,8 @@ _TM48Description::
 	prompt
 
 _TM49Description::
-	text "Fires three kinds"
-	next "of beams at once."
+	text "Fires three beams."
+	next "May BRN/FRZ/PAR."
 	prompt
 
 _TM50Description::

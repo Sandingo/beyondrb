@@ -102,10 +102,7 @@ MoveRelearnerText1:
 	predef SubBCDPredef
 	ld a, MONEY_BOX
 	ld [wTextBoxID], a
-	jp DisplayTextBoxID
-	ld hl, MoveRelearnerByeText
-	call PrintText
-	jp TextScriptEnd
+	call DisplayTextBoxID
 .exit
 	ld hl, MoveRelearnerByeText
 	call PrintText

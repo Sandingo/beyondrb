@@ -4,10 +4,8 @@ _BikeShopClerkWelcomeText::
 
 	para "Have we got just"
 	line "the BIKE for you!"
-	prompt
-
-_BikeShopClerkDoYouLikeItText::
-	text "It's a cool BIKE!"
+	
+	para "It's a cool BIKE!"
 	line "Do you want it?"
 	done
 
