@@ -146,9 +146,9 @@ BillsPCMenu:
 	ld [wPlayerMonNumber], a
 	ld hl, WhatText
 	call PrintText
-	hlcoord 9, 14
+	hlcoord 10, 14
 	ld b, 2
-	ld c, 9
+	ld c, 8
 	call TextBoxBorder
 	ld a, [wCurrentBoxNum]
 	and $7f
@@ -156,17 +156,47 @@ BillsPCMenu:
 	jr c, .singleDigitBoxNum
 ; two digit box num
 	sub 9
-	hlcoord 17, 16
+	hlcoord 17, 15
 	ld [hl], "1"
 	add "0"
 	jr .next
 .singleDigitBoxNum
 	add "1"
 .next
-	ldcoord_a 18, 16
-	hlcoord 10, 16
+	
+	ldcoord_a 18, 15
+	hlcoord 11, 15
 	ld de, BoxNoPCText
 	call PlaceString
+
+	ld a, [wBoxCount]
+	and $7f
+	cp 10
+	jr c, .singleDigitBoxCount
+; two digit box num
+	cp 20
+	jr c, .sub10DigitBoxCount
+	sub 20
+	hlcoord 14, 16
+	ld [hl], "2"
+	add "0"
+	jr .next2
+.sub10DigitBoxCount
+	sub 10
+	hlcoord 14, 16
+	ld [hl], "1"
+	add "0"
+	jr .next2
+.singleDigitBoxCount
+	dec a
+	add "1"
+.next2
+
+	ldcoord_a 15, 16
+	hlcoord 16, 16
+	ld de, BoxOutOf20
+	call PlaceString
+	
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
@@ -256,7 +286,6 @@ BillsPCDeposit:
 	ld a, [wWhichPokemon]
 	ld [wListScrollOffset], a
 	jr .boxNotFull
-
 
 BillsPCWithdraw:
 	ld a, [wBoxCount]
@@ -357,7 +386,10 @@ BillsPCMenuText:
 	db "@"
 
 BoxNoPCText:
-	db "BOX No.@"
+	db "BOX №.@"
+
+BoxOutOf20:
+	db "/20@"
 
 ;KnowsHMMove:: ; Now ignored HM moves when depositing into the daycare
 ; returns whether mon with party index [wWhichPokemon] knows an HM move
