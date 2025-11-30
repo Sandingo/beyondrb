@@ -49,7 +49,12 @@ ChoosePlayerName:
 	call IntroDisplayPicCenteredOrUpperRight
 .done
 	ld hl, YourNameIsText
-	jp PrintText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, ChoosePlayerName
+	ret
 
 YourNameIsText:
 	text_far _YourNameIsText
@@ -81,8 +86,18 @@ ChooseRivalName:
 	ld b, BANK(Rival1Pic)
 	call IntroDisplayPicCenteredOrUpperRight
 .done
+	ld hl, HisNameConfirmText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, ChooseRivalName
 	ld hl, HisNameIsText
 	jp PrintText
+
+HisNameConfirmText:
+	text_far _HisNameConfirmText
+	text_end
 
 HisNameIsText:
 	text_far _HisNameIsText
@@ -204,6 +219,7 @@ DisplayIntroNameTextBox:
 	ld [wMenuWatchedKeys], a ; A_BUTTON
 	inc a
 	ld [wTopMenuItemY], a
+	inc a
 	inc a
 	ld [wMaxMenuItem], a
 	jp HandleMenuInput

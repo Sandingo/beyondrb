@@ -1791,6 +1791,11 @@ _YourNameIsText::
 	line "name is <PLAYER>!"
 	prompt
 
+_HisNameConfirmText::
+	text "...Er, was it"
+	line "<RIVAL>?"
+	prompt
+
 _HisNameIsText::
 	text "That's right! I"
 	line "remember now! His"

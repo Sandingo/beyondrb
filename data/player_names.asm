@@ -4,6 +4,7 @@ DefaultNamesPlayer:
 	next "RED"
 	next "ASH"
 	next "ADAM"
+	next "NINTEN"
 	db   "@"
 	
 DefaultNamesGirl:
@@ -11,6 +12,7 @@ DefaultNamesGirl:
 	next "GREEN"
 	next "LEAF"
 	next "MARA"
+	next "SEGA"
 	db   "@"
 
 DefaultNamesRival:
@@ -18,6 +20,7 @@ DefaultNamesRival:
 	next "BLUE"
 	next "GARY"
 	next "DAVID"
+	next "SONY"
 	db   "@"
 ENDC
 
@@ -27,6 +30,7 @@ DefaultNamesPlayer:
 	next "BLUE"
 	next "GARY"
 	next "DAVID"
+	next "SONY"
 	db   "@"
 
 DefaultNamesGirl:
@@ -34,6 +38,7 @@ DefaultNamesGirl:
 	next "GREEN"
 	next "LEAF"
 	next "MARA"
+	next "SEGA"
 	db   "@"
 
 DefaultNamesRival:
@@ -41,5 +46,6 @@ DefaultNamesRival:
 	next "RED"
 	next "ASH"
 	next "ADAM"
+	next "NINTEN"
 	db   "@"
 ENDC
