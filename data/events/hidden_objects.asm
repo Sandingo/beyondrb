@@ -565,16 +565,20 @@ LavenderHouse1HiddenObjects:
 	db -1 ; end
 
 CeladonMansion5HiddenObjects:
-	hidden_text_predef  3,  0, LinkCableHelp, PrintBlackboardLinkCableText
-	hidden_text_predef  4,  0, LinkCableHelp, PrintBlackboardLinkCableText
-	hidden_text_predef  3,  4, TMNotebook, PrintNotebookText
+	hidden_text_predef  1,  2, LinkCableHelp, PrintBlackboardLinkCableText
+	hidden_text_predef  4,  2, LinkCableHelp, PrintBlackboardLinkCableText
+	hidden_object  5,  1, SPRITE_FACING_UP, PrintBookcaseText
+	hidden_object  6,  1, SPRITE_FACING_UP, PrintBookcaseText
+	hidden_object  7,  1, SPRITE_FACING_UP, PrintBookcaseText
+;	hidden_text_predef  3,  4, TMNotebook, PrintNotebookText
 	db -1 ; end
 
 FightingDojoHiddenObjects:
-	hidden_object  3,  9, SPRITE_FACING_UP, PrintFightingDojoText
-	hidden_object  6,  9, SPRITE_FACING_UP, PrintFightingDojoText
-	hidden_object  4,  0, SPRITE_FACING_UP, PrintFightingDojoText2
-	hidden_object  5,  0, SPRITE_FACING_UP, PrintFightingDojoText3
+	hidden_object  2,  9, SPRITE_FACING_UP, PrintFightingDojoText
+	hidden_object  7,  9, SPRITE_FACING_UP, PrintFightingDojoText
+	hidden_object  2,  0, SPRITE_FACING_UP, PrintFightingDojoText2
+	hidden_object  3,  0, SPRITE_FACING_UP, PrintFightingDojoText2
+	hidden_object  7,  0, SPRITE_FACING_UP, PrintFightingDojoText3
 	db -1 ; end
 
 IndigoPlateauLobbyHiddenObjects:

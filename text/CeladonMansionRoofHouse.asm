@@ -8,3 +8,7 @@ _CeladonMansionRoofHouseHikerText::
 	line "your friends and"
 	cont "trade #MON!"
 	done
+
+_CeladonMansionRoofHouseSnesText::
+	text "It's an SNES!"
+	done

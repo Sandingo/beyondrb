@@ -5,6 +5,9 @@ CeladonMansionRoofHouse_TextPointers:
 	def_text_pointers
 	dw_const CeladonMansionRoofHouseHikerText,         TEXT_CELADONMANSION_ROOF_HOUSE_HIKER
 	dw_const CeladonMansionRoofHouseEeveePokeballText, TEXT_CELADONMANSION_ROOF_HOUSE_EEVEE_POKEBALL
+	dw_const CeladonMansionRoofHousePamphletText,	   TEXT_CELADONMANSION_ROOF_HOUSE_PAMPHLET
+	dw_const CeladonMansionRoofHouseSNESText,          TEXT_CELADONMANSION_ROOF_SNES1
+	dw_const CeladonMansionRoofHouseSNESText,          TEXT_CELADONMANSION_ROOF_SNES2
 
 CeladonMansionRoofHouseHikerText:
 	text_far _CeladonMansionRoofHouseHikerText
@@ -20,3 +23,11 @@ CeladonMansionRoofHouseEeveePokeballText:
 	predef HideObject
 .party_full
 	jp TextScriptEnd
+
+CeladonMansionRoofHousePamphletText:
+	text_far TMNotebookText
+	text_end
+
+CeladonMansionRoofHouseSNESText:
+	text_far _CeladonMansionRoofHouseSnesText
+	text_end

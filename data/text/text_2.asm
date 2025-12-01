@@ -475,8 +475,8 @@ TMNotebookText::
 
 	para "..."
 
-	para "There are 50 TMs"
-	line "in all."
+	para "There are over"
+	line "50 TMs in all."
 
 	para "There are also 5"
 	line "HMs that can be"
@@ -603,10 +603,9 @@ _KabutopsFossilText::
 	done
 
 _LinkCableHelpText1::
-	text "TRAINER TIPS"
-
-	para "Using a Game Link"
-	line "Cable"
+	text "It's a tutorial"
+	line "about using the"
+	cont "Game Link Cable!"
 	prompt
 
 _LinkCableHelpText2::

@@ -68,11 +68,11 @@ YoungsterData:
 	db 11, RATTATA, EKANS, 0
 	db 14, SPEAROW, 0
 ; Mt. Moon 1F
-	db 10, RATTATA, RATTATA, ZUBAT, 0
+	db 10, COINPUR, RATTATA, BITTYBAT, 0
 ; Route 24
 	db 14, RATTATA, EKANS, ZUBAT, 0
 ; Route 25
-	db 15, RATTATA, SPEAROW, 0
+	db 15, COINPUR, SPEAROW, 0
 	db 17, SLOWPOKE, 0
 	db 14, EKANS, SANDSHREW, 0
 ; SS Anne 1F Rooms
@@ -111,7 +111,7 @@ BugCatcherData:
 LassData:
 ; Route 3
 	db 9, PIDGEY, PIDGEY, 0
-	db 10, RATTATA, NIDORAN_M, 0
+	db 10, COINPUR, NIDORAN_M, 0
 	db 14, JIGGLYPUFF, 0
 ; Route 4
 	db 31, PARASPOR, PARAS, PARASECT, 0
@@ -223,7 +223,7 @@ SuperNerdData:
 ; Mt. Moon 1F
 	db 11, MAGNEMITE, VOLTORB, 0
 ; Mt. Moon B2F
-	db 12, GRIMER, VOLTORB, KOFFING, 0
+	db 12, SMUJJ, VOLTORB, KOFFING, 0
 ; Route 8
 	db 20, VOLTORB, KOFFING, VOLTORB, MAGNEMITE, 0
 	db 22, SMUJJ, GRIMER, MUK, 0
@@ -272,7 +272,7 @@ BikerData:
 ; Route 16
 	db 29, GRIMER, KOFFING, 0
 	db 33, WEEZING, 0
-	db 26, GRIMER, GRIMER, GRIMER, GRIMER, 0
+	db 26, SMUJJ, SMUJJ, GRIMER, GRIMER, 0
 ; Route 17
 	; From https://www.smogon.com/smog/issue27/glitch:
 	; 0E:5FC2 is offset of the ending 0 for this first Biker on Route 17.
@@ -334,7 +334,7 @@ FisherData:
 	db 27, MAGIKARP, MAGIKARP, MAGIKARP, MAGIKARP, MAGIKARP, MAGIKARP, 0
 	db 33, ORFRY, GOLDEEN, SEAKING, 0
 ; Route 12
-	db 24, MAGIKARP, MAGIKARP, 0
+	db 24, CHEEP, CHEEP, 0
 
 SwimmerData:
 ; Cerulean Gym
@@ -352,10 +352,10 @@ SwimmerData:
 	db 35, STARYU, 0
 	db 28, HORSEA, HORSEA, SEADRA, HORSEA, 0
 ; Route 21
-	db 33, SEADRA, TENTACRUEL, 0
+	db 33, SEADRA, SHARPOON, 0
 	db 37, STARMIE, 0
 	db 33, STARYU, BLASTYKE, 0
-	db 32, POLIWHIRL, TENTACOOL, SEADRA, 0
+	db 34, POLIWHIRL, POLITOED, 0
 
 CueBallData:
 ; Route 16
@@ -577,7 +577,7 @@ RocketData:
 	db 23, EKANS, SANDSHREW, ARBOK, 0
 	db 21, KOFFING, ZUBAT, 0
 ; Pokémon Tower 7F
-	db 25, ZUBAT, ZUBAT, GOLBAT, 0
+	db 25, BITTYBAT, ZUBAT, GOLBAT, 0
 	db 26, KOFFING, DROWZEE, 0
 	db 23, ZUBAT, RATTATA, RATICATE, GOLBAT, 0
 ; Unused
@@ -595,7 +595,7 @@ RocketData:
 	db 33, HYPNO, 0
 ; Silph Co. 6F
 	db 29, MACHOP, MACHOKE, 0
-	db 28, ZUBAT, ZUBAT, GOLBAT, 0
+	db 28, BITTYBAT, ZUBAT, GOLBAT, 0
 ; Silph Co. 7F
 	db 26, RATICATE, ARBOK, KOFFING, GOLBAT, 0
 	db 29, CUBONE, CUBONE, 0
@@ -790,4 +790,5 @@ KyleData:
 	
 ImakuniData:
 	db $FF, 25, SLOWPOKE, 26, WEIRDUCK, 27, FARFETCHD, 28, HYPNO, 0
-	db $FF, 60, SLOWBRO, 61, GOLDUCK, 62, LUXWAN, 63, POLITOED, 64, HYPNO, 0
+	db $FF, 60, SLOWBRO, 61, GOLDUCK, 62, LUXWAN, 63, POLITOED, 64, HYPNO, 0	; Post-Game
+	

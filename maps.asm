@@ -99,7 +99,8 @@ PewterNidoranHouse_Blocks:
 PewterSpeechHouse_Blocks:
 ViridianNicknameHouse_Blocks: INCBIN "maps/ViridianNicknameHouse.blk"
 
-CeladonMansionRoofHouse_Blocks:
+CeladonMansionRoofHouse_Blocks: INCBIN "maps/CeladonMansionRoofHouse.blk"
+
 ViridianSchoolHouse_Blocks: INCBIN "maps/ViridianSchoolHouse.blk"
 
 CeruleanTrashedHouse_Blocks: INCBIN "maps/CeruleanTrashedHouse.blk"
