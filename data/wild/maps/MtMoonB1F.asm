@@ -5,7 +5,7 @@ MtMoonB1FWildMons:
 	db  7, GEODUDE
 	db  8, GEODUDE
 	db  9, BITTYBAT
-	db 10, PARAS
+	db 10, PARASPOR
 	db 10, BITTYBAT
 	db 11, ZUBAT
 	db  9, CLEFAIRY
