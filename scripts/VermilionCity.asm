@@ -52,6 +52,7 @@ ld a, [wIsInBattle]
 	ld a, TEXT_VERMILIONCITY_RECEIVED_BOTTLECAP
 	ldh [hTextID], a
 	call DisplayTextID
+	SetEvent EVENT_MINA_BOTTLE_CAP_GIFT
 	jr .done
 .BagFull
 	ld a, TEXT_VERMILIONCITY_NOROOM
@@ -437,7 +438,7 @@ VermilionCityMinaText:
 	ld a, SCRIPT_VERMILIONCITY_MINA_POST_BATTLE
 	ld [wVermilionCityCurScript], a
 	ld [wCurMapScript], a
-	jr .done
+	jp .done
 .postgame_check
 	CheckEvent EVENT_BEAT_MINA_REMATCH
 	jr nz, .already_fought ; If so, the player already beat her
@@ -475,6 +476,23 @@ VermilionCityMinaText:
 	call PrintText
 	jr .done
 .already_fought
+	CheckEvent EVENT_MINA_BOTTLE_CAP_GIFT
+	jp nz, .beatenText ; If not, the player hasn't gotten the bottle cap yet.
+	ld hl, VermilionCityMinaPostBattleText
+	call PrintText
+	call WaitForTextScrollButtonPress
+	lb bc, BOTTLE_CAP, 1
+	call GiveItem
+	jr nc, .BagFull
+	ld hl, VermilionCityRecieveBottlecap
+	call PrintText
+	SetEvent EVENT_MINA_BOTTLE_CAP_GIFT
+	jr .done
+.BagFull
+	ld hl, VermilionCityNoRoomText
+	call PrintText
+	jr .done
+.beatenText
 	ld hl, .MinaAlreadyBeaten
 	call PrintText
 .done

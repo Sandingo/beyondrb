@@ -28,6 +28,7 @@ SnorlaxSprite::          INCBIN "gfx/sprites/snorlax.2bpp"
 OldAmberSprite::         INCBIN "gfx/sprites/old_amber.2bpp"
 GamblerAsleepSprite::    INCBIN "gfx/sprites/gambler_asleep.2bpp"
 LoreleiSprite::          INCBIN "gfx/sprites/lorelei.2bpp"
+OfficerJennySprite::	INCBIN "gfx/sprites/officer_jenny.2bpp"
 
 
 SECTION "NPC Sprites 2", ROMX
@@ -107,4 +108,5 @@ MachokeSprite::		INCBIN "gfx/sprites/machoke.2bpp"
 WigglytuffSprite::			INCBIN "gfx/sprites/wigglytuff.2bpp"
 DoduoSprite::			INCBIN "gfx/sprites/doduo.2bpp"
 AbraSprite::          INCBIN "gfx/sprites/abra.2bpp"
+MinaSprite::          INCBIN "gfx/sprites/mina.2bpp"
 SlowbroSprite::          INCBIN "gfx/sprites/slowbro.2bpp"

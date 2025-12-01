@@ -61,6 +61,7 @@
 	const SPRITE_AGATHA                  ; $39
 	const SPRITE_BRUNO                   ; $3a
 	const SPRITE_LORELEI                 ; $3b
+	const SPRITE_OFFICER_JENNY
 	const SPRITE_SEEL                    ; $3c
 	const SPRITE_POLIWRATH
 	const SPRITE_ARTICUNO
@@ -93,6 +94,7 @@
 	const SPRITE_WIGGLYTUFF
 	const SPRITE_DODUO
 	const SPRITE_ABRA
+	const SPRITE_MINA
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e

@@ -66,6 +66,7 @@ SpriteSheetPointerTable:
 	overworld_sprite AgathaSprite, 12           ; SPRITE_AGATHA
 	overworld_sprite BrunoSprite, 12            ; SPRITE_BRUNO
 	overworld_sprite LoreleiSprite, 12          ; SPRITE_LORELEI
+	overworld_sprite OfficerJennySprite, 12
 	overworld_sprite SeelSprite, 12             ; SPRITE_SEEL
 	overworld_sprite PoliwrathSprite, 12	    ; SPRITE_POLIWRATH
 	overworld_sprite ArticunoSprite, 12			; SPRITE_ARTICUNO
@@ -97,7 +98,8 @@ SpriteSheetPointerTable:
 	overworld_sprite MachokeSprite, 12
 	overworld_sprite WigglytuffSprite, 12
 	overworld_sprite DoduoSprite, 12
-	overworld_sprite AbraSprite, 12			
+	overworld_sprite AbraSprite, 12
+	overworld_sprite MinaSprite, 12
 	overworld_sprite PokeBallSprite, 4          ; SPRITE_POKE_BALL
 	overworld_sprite FossilSprite, 4            ; SPRITE_FOSSIL
 	overworld_sprite BoulderSprite, 4           ; SPRITE_BOULDER
