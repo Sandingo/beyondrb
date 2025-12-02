@@ -107,6 +107,8 @@ BugCatcherData:
 ; Route 9
 	db 19, BEEDRILL, CARAPTHOR, 0
 	db 20, CATERPIE, WEEDLE, VENONAT, 0
+; Viridian Forest, again
+	db 8, KOKANA, PUPAL, 0
 
 LassData:
 ; Route 3
@@ -136,6 +138,8 @@ LassData:
 ; Celadon Gym
 	db 23, BELLSPROUT, WEEPINBELL, 0
 	db 23, ODDISH, GLOOM, 0
+; Viridian Forest
+	db 8, PIKACHU, 0
 
 SailorData:
 ; SS Anne Stern
