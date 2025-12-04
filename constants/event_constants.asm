@@ -120,6 +120,7 @@
 	const_skip
 	const EVENT_GOT_TM24
 	const EVENT_BEAT_LT_SURGE
+	const EVENT_SS_TICKET_USED
 
 ; Celadon City events
 	const_next $180
@@ -199,6 +200,7 @@
 	const EVENT_GAVE_FOSSIL_TO_LAB
 	const EVENT_LAB_STILL_REVIVING_FOSSIL
 	const EVENT_LAB_HANDING_OVER_FOSSIL_MON
+	const EVENT_SECRET_KEY_USED
 
 ; Saffron City events
 	const_next $340
@@ -628,6 +630,7 @@
 	const EVENT_ROCKET_HIDEOUT_4_DOOR_UNLOCKED
 	const EVENT_ROCKET_DROPPED_LIFT_KEY
 	const EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
+	const EVENT_LIFT_KEY_USED
 
 ; Silph Co. events
 	const_next $6F0

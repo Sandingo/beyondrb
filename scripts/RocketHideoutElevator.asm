@@ -66,9 +66,16 @@ RocketHideoutElevator_TextPointers:
 
 RocketHideoutElevatorText:
 	text_asm
+	CheckEvent EVENT_LIFT_KEY_USED
+	jr nz, .canUseLift
 	ld b, LIFT_KEY
 	call IsItemInBag
 	jr z, .no_key
+	SetEvent EVENT_LIFT_KEY_USED
+	call RocketHideoutElevator_RemoveKey
+	ld hl, .InsertKeyText
+	call PrintText
+.canUseLift
 	call RocketHideoutElevatorScript
 	ld hl, RocketHideoutElevatorWarpMaps
 	predef DisplayElevatorFloorMenu
@@ -83,3 +90,28 @@ RocketHideoutElevatorText:
 	text_far _RocketHideoutElevatorAppearsToNeedKeyText
 	text_waitbutton
 	text_end
+
+.InsertKeyText:
+	text_far _RocketHideoutElevatorInsertKeyText
+	sound_get_item_1
+	text_end
+
+RocketHideoutElevator_RemoveKey:
+	ld hl, wBagItems
+	ld bc, 0
+.loop
+	ld a, [hli]
+	cp $ff
+	ret z
+	cp LIFT_KEY
+	jr z, .foundKey
+	inc hl
+	inc c
+	jr .loop
+.foundKey
+	ld hl, wNumBagItems
+	ld a, c
+	ld [wWhichPokemon], a
+	ld a, 1
+	ld [wItemQuantity], a
+	jp RemoveItemFromInventory

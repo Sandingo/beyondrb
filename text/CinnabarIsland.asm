@@ -35,3 +35,8 @@ _CinnabarIslandGymSignText::
 	para "The Hot-Headed"
 	line "Quiz Master!"
 	done
+
+_CinnabarIslandDoorIsUnlockedText::
+	text "The SECRET KEY"
+	line "opened the door."
+	done

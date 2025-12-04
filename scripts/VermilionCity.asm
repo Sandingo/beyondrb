@@ -86,6 +86,8 @@ VermilionCityDefaultScript:
 	ret nc
 	CheckEvent EVENT_SS_ANNE_LEFT
 	jr nz, .ship_departed
+	CheckEvent EVENT_SS_TICKET_USED
+	jr nz, .ship_departed
 	xor a
 	ldh [hJoyHeld], a
 	ld [wSavedCoordIndex], a ; unnecessary
@@ -219,6 +221,8 @@ VermilionCitySailor1Text:
 	text_asm
 	CheckEvent EVENT_SS_ANNE_LEFT
 	jr nz, .ship_departed
+	CheckEvent EVENT_SS_TICKET_USED
+	jr nz, .greet_player
 	ld a, [wSpritePlayerStateData1FacingDirection]
 	cp SPRITE_FACING_RIGHT
 	jr z, .greet_player
@@ -241,6 +245,8 @@ VermilionCitySailor1Text:
 	call PrintText
 	jr .end
 .player_has_ticket
+	call VermilionCity_RemoveTicket
+	SetEvent EVENT_SS_TICKET_USED
 	ld hl, .FlashedTicketText
 	call PrintText
 	ld a, SCRIPT_VERMILIONCITY_PLAYER_ALLOWED_TO_PASS
@@ -271,6 +277,7 @@ VermilionCitySailor1Text:
 .decline_orange
 	ld hl, .OrangeTicketDecline
 	call PrintText
+	jp .end
 .end
 	jp TextScriptEnd
 
@@ -539,3 +546,23 @@ VermilionCityRecieveBottlecap:
 VermilionCityNoRoomText:
 	text_far _VermilionCityNoRoomText
 	text_end
+
+VermilionCity_RemoveTicket:
+	ld hl, wBagItems
+	ld bc, 0
+.loop
+	ld a, [hli]
+	cp $ff
+	ret z
+	cp S_S_TICKET
+	jr z, .foundTicket
+	inc hl
+	inc c
+	jr .loop
+.foundTicket
+	ld hl, wNumBagItems
+	ld a, c
+	ld [wWhichPokemon], a
+	ld a, 1
+	ld [wItemQuantity], a
+	jp RemoveItemFromInventory

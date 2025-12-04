@@ -14,11 +14,10 @@ CinnabarIsland_ScriptPointers:
 	dw_const CinnabarIslandPlayerMovingScript, SCRIPT_CINNABARISLAND_PLAYER_MOVING
 
 CinnabarIslandDefaultScript:
-	ld b, SECRET_KEY
-	call IsItemInBag
-	ret nz
 	ld a, [wGameStage] ; Door is also unlocked after becoming the champion
 	and a
+	ret nz
+	CheckEvent EVENT_SECRET_KEY_USED
 	ret nz
 	ld a, [wYCoord]
 	cp 4
@@ -26,6 +25,16 @@ CinnabarIslandDefaultScript:
 	ld a, [wXCoord]
 	cp 18
 	ret nz
+	ld b, SECRET_KEY
+	call IsItemInBag
+	jp z, .noKeyInBag
+	call CinnabarIsland_RemoveKey
+	SetEvent EVENT_SECRET_KEY_USED
+	ld a, TEXT_CINNABARISLAND_DOOR_IS_UNLOCKED
+	ldh [hTextID], a
+	call DisplayTextID
+	ret
+.noKeyInBag
 	ld a, PLAYER_DIR_UP
 	ld [wPlayerMovingDirection], a
 	ld a, TEXT_CINNABARISLAND_DOOR_IS_LOCKED
@@ -64,9 +73,15 @@ CinnabarIsland_TextPointers:
 	dw_const CinnabarIslandPokemonLabSignText, TEXT_CINNABARISLAND_POKEMONLAB_SIGN
 	dw_const CinnabarIslandGymSignText,        TEXT_CINNABARISLAND_GYM_SIGN
 	dw_const CinnabarIslandDoorIsLockedText,   TEXT_CINNABARISLAND_DOOR_IS_LOCKED
+	dw_const CinnabarIslandDoorIsUnlockedText,   TEXT_CINNABARISLAND_DOOR_IS_UNLOCKED
 
 CinnabarIslandDoorIsLockedText:
 	text_far _CinnabarIslandDoorIsLockedText
+	text_end
+
+CinnabarIslandDoorIsUnlockedText:
+	text_far _CinnabarIslandDoorIsUnlockedText
+	sound_get_item_1
 	text_end
 
 CinnabarIslandGirlText:
@@ -88,3 +103,23 @@ CinnabarIslandPokemonLabSignText:
 CinnabarIslandGymSignText:
 	text_far _CinnabarIslandGymSignText
 	text_end
+
+CinnabarIsland_RemoveKey:
+	ld hl, wBagItems
+	ld bc, 0
+.loop
+	ld a, [hli]
+	cp $ff
+	ret z
+	cp SECRET_KEY
+	jr z, .foundKey
+	inc hl
+	inc c
+	jr .loop
+.foundKey
+	ld hl, wNumBagItems
+	ld a, c
+	ld [wWhichPokemon], a
+	ld a, 1
+	ld [wItemQuantity], a
+	jp RemoveItemFromInventory
