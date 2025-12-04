@@ -94,8 +94,11 @@ PlayerPCDeposit:
 	call PrintText
 	jp PlayerPCMenu
 .loop
+	ld hl, wStatusFlags5
+	set BIT_NO_TEXT_DELAY, [hl]
 	ld hl, WhatToDepositText
 	call PrintText
+	callfar DrawItemCountBox
 	ld hl, wNumBagItems
 	ld a, l
 	ld [wListPointer], a
@@ -156,8 +159,11 @@ PlayerPCWithdraw:
 	call PrintText
 	jp PlayerPCMenu
 .loop
+	ld hl, wStatusFlags5
+	set BIT_NO_TEXT_DELAY, [hl]
 	ld hl, WhatToWithdrawText
 	call PrintText
+	call DrawStoredItemCountBox
 	ld hl, wNumBoxItems
 	ld a, l
 	ld [wListPointer], a
@@ -199,6 +205,66 @@ PlayerPCWithdraw:
 	call PrintText
 	jp .loop
 
+DrawStoredItemCountBox:: ; Literally just copying what I did for the PC count
+	hlcoord 13, 0
+	ld b, 2
+	ld c, 5
+	call TextBoxBorder
+	ld a, [wNumBoxItems]
+	and $7f
+	cp 10
+	jr c, .singleDigitCount
+; two digit number
+	cp 50
+	jr c, .sub40DigitCount
+	sub 50
+	hlcoord 14, 1
+	ld [hl], "5"
+	add "0"
+	jr .next2
+.sub40DigitCount
+	cp 40
+	jr c, .sub30DigitCount
+	sub 40
+	hlcoord 14, 1
+	ld [hl], "4"
+	add "0"
+	jr .next2
+.sub30DigitCount
+	cp 30
+	jr c, .sub20DigitCount
+	sub 30
+	hlcoord 14, 1
+	ld [hl], "3"
+	add "0"
+	jr .next2
+.sub20DigitCount
+	cp 20
+	jr c, .sub10DigitCount
+	sub 20
+	hlcoord 14, 1
+	ld [hl], "2"
+	add "0"
+	jr .next2
+.sub10DigitCount
+	sub 10
+	hlcoord 14, 1
+	ld [hl], "1"
+	add "0"
+	jr .next2
+.singleDigitCount
+	dec a
+	add "1"
+.next2
+	ldcoord_a 15, 1
+	hlcoord 16, 1
+	ld de, NumStoredItemsText
+	call PlaceString
+	ret
+
+NumStoredItemsText:
+	db "/50@"
+
 PlayerPCToss:
 	xor a
 	ld [wCurrentMenuItem], a
@@ -210,8 +276,11 @@ PlayerPCToss:
 	call PrintText
 	jp PlayerPCMenu
 .loop
+	ld hl, wStatusFlags5
+	set BIT_NO_TEXT_DELAY, [hl]
 	ld hl, WhatToTossText
 	call PrintText
+	call DrawStoredItemCountBox
 	ld hl, wNumBoxItems
 	ld a, l
 	ld [wListPointer], a
