@@ -15,6 +15,6 @@ RedsHouse1F_Object:
 
 	def_object_events
 	object_event  5,  4, SPRITE_MOM, STAY, LEFT, TEXT_REDSHOUSE1F_MOM
-	object_event  1,  3, SPRITE_MR_MIME, STAY, ANY_DIR, TEXT_REDSHOUSE1F_MR_MIME
+	object_event  1,  3, SPRITE_MR_MIME, STAY, DOWN, TEXT_REDSHOUSE1F_MR_MIME
 
 	def_warps_to REDS_HOUSE_1F
