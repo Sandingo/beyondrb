@@ -9,7 +9,8 @@ MtSilverF2_Object:
 
 	def_warp_events
 	warp_event 18, 32, MT_SILVER_F1, 3
-	warp_event 23,  3, MT_SILVER_SUMMIT, 1
+;	warp_event 23,  3, MT_SILVER_SUMMIT, 1
+	warp_event 23,  3, MT_SILVER_PEAK, 1
 	warp_event 11,  5, MT_SILVER_MELTAN_ROOM, 1
 
 	def_bg_events

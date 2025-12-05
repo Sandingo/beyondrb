@@ -4,7 +4,9 @@ HandleLedges::
 	ret nz
 	ld a, [wCurMapTileset]
 	and a ; OVERWORLD
-	ret nz
+	jp z, .overworldTiles
+	cp CAVERN ; new
+	ret nz 
 	predef GetTileAndCoordsInFrontOfPlayer
 	ld a, [wSpritePlayerStateData1FacingDirection]
 	ld b, a
@@ -12,7 +14,17 @@ HandleLedges::
 	ld c, a
 	ld a, [wTileInFrontOfPlayer]
 	ld d, a
-	ld hl, LedgeTiles
+	ld hl, LedgeTilesCavern
+	jp .loop
+.overworldTiles
+	predef GetTileAndCoordsInFrontOfPlayer
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	ld b, a
+	lda_coord 8, 9
+	ld c, a
+	ld a, [wTileInFrontOfPlayer]
+	ld d, a
+	ld hl, LedgeTilesOverworld
 .loop
 	ld a, [hli]
 	cp $ff

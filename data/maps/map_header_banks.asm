@@ -200,7 +200,7 @@ MapHeaderBanks::
 	db BANK(RocketHideoutB4F_h)
 	db BANK(RocketHideoutElevator_h)
 ;	db $01 ; UNUSED_MAP_CC
-	db $01 ; UNUSED_MAP_CD
+;	db $01 ; UNUSED_MAP_CD
 	db $01 ; UNUSED_MAP_CE
 	db BANK(SilphCo2F_h)
 	db BANK(SilphCo3F_h)
@@ -245,6 +245,7 @@ MapHeaderBanks::
 	db BANK(MtMoonHouse_h)
 	db BANK(MtSilverF1_h)
 	db BANK(MtSilverF2_h)
+	db BANK(MtSilverPeak_h)
 	db BANK(MtSilverMeltanRoom_h)
 	db BANK(MtSilverSummit_h)
 	db BANK(MtSilverPokecenter_h)

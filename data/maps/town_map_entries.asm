@@ -126,9 +126,11 @@ InternalMapEntries:
 	internal_map AGATHAS_ROOM,                   0,  2, PokemonLeagueName
 	internal_map MT_MOON_SQUARE,                 6,  2, MountMoonName
 	internal_map MT_MOON_HOUSE,                 6,  2, MountMoonName
-	internal_map MT_SILVER_F1,					0,  9, Route28Name
-	internal_map MT_SILVER_F2,					0,  9, Route28Name
-	internal_map MT_SILVER_SUMMIT,				0,  9, Route28Name
+	internal_map MT_SILVER_F1,					0,  9, MtSilverName
+	internal_map MT_SILVER_F1,					0,  9, MtSilverName
+	internal_map MT_SILVER_F2,					0,  9, MtSilverName
+	internal_map MT_SILVER_PEAK,					0,  9, MtSilverName
+	internal_map MT_SILVER_SUMMIT,				0,  9, MtSilverName
 	internal_map MT_SILVER_POKECENTER,		    0,  9, Route28Name
 	internal_map LEAGUE_HQ_B1F,           		0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B2F,           		0,  2, IndigoPlateauName

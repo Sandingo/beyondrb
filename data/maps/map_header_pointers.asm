@@ -200,7 +200,7 @@ MapHeaderPointers::
 	dw RocketHideoutB4F_h
 	dw RocketHideoutElevator_h
 ;	dw RocketHideoutElevator_h ; UNUSED_MAP_CC
-	dw RocketHideoutElevator_h ; UNUSED_MAP_CD
+;	dw RocketHideoutElevator_h ; UNUSED_MAP_CD
 	dw RocketHideoutElevator_h ; UNUSED_MAP_CE
 	dw SilphCo2F_h
 	dw SilphCo3F_h
@@ -245,6 +245,7 @@ MapHeaderPointers::
 	dw MtMoonHouse_h
 	dw MtSilverF1_h
 	dw MtSilverF2_h
+	dw MtSilverPeak_h
 	dw MtSilverMeltanRoom_h
 	dw MtSilverSummit_h
 	dw MtSilverPokecenter_h

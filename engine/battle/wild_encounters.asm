@@ -47,6 +47,8 @@ TryDoWildEncounter:
 	ld a, [wCurMapTileset]
 	cp FOREST ; Viridian Forest/Safari Zone
 	jr z, .CantEncounter2
+	cp PLATEAU ; Indigo Plateau and Mt. Silver Peak
+	jr z, .CantEncounter2
 	ld a, [wGrassRate]
 .CanEncounter
 ; compare encounter chance with a random number to determine if there will be an encounter

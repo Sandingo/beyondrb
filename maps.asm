@@ -1339,3 +1339,8 @@ INCLUDE "data/maps/headers/SeafoamIslandsB5F.asm"
 INCLUDE "scripts/SeafoamIslandsB5F.asm"
 INCLUDE "data/maps/objects/SeafoamIslandsB5F.asm"
 SeafoamIslandsB5F_Blocks: INCBIN "maps/SeafoamIslandsB5F.blk"
+
+INCLUDE "data/maps/headers/MtSilverPeak.asm"
+INCLUDE "scripts/MtSilverPeak.asm"
+INCLUDE "data/maps/objects/MtSilverPeak.asm"
+MtSilverPeak_Blocks: INCBIN "maps/MtSilverPeak.blk"

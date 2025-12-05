@@ -202,7 +202,7 @@ MapHSPointers:
 	dw RocketHideoutB4FHS
 	dw NoHS ; Elevator
 ;	dw NoHS
-	dw NoHS
+;	dw NoHS
 	dw NoHS
 	dw SilphCo2FHS
 	dw SilphCo3FHS
@@ -249,6 +249,7 @@ MapHSPointers:
 	dw NoHS
 	dw MtSilverF1HS
 	dw MtSilverF2HS
+	dw NoHS		;dw MtSilverPeakHS
 	dw MtSilverMeltanRoomHS ; MtSilverMeltanRoom
 	dw MtSilverSummitHS ; Mt Silver Summit
 	dw NoHS ; Mt Silver Pokecenter
@@ -646,6 +647,8 @@ MtSilverF2HS:
 	db MT_SILVER_F2, MTSILVERF2_MAXREVIVE, SHOW
 	db MT_SILVER_F2, MTSILVERF2_ULTRABALL, SHOW
 	db MT_SILVER_F2, MTSILVERF2_CALCIUM, SHOW
+;MtSilverPeakHS:
+
 MtSilverMeltanRoomHS:
 	db MT_SILVER_MELTAN_ROOM, MTSILVERMELTANROOM_CANDYJAR, SHOW
 MtSilverSummitHS:

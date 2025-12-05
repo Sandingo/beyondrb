@@ -199,7 +199,7 @@ WildDataPointers:
 	dw NothingWildMons ; Rocket 4
 	dw NothingWildMons ; Rocket Elevator
 ;	dw NothingWildMons
-	dw NothingWildMons
+;	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -244,6 +244,7 @@ WildDataPointers:
 ;	dw NothingWildMons
 	dw MtSilverF1WildMons ; MtSilverF1
 	dw MtSilverF2WildMons ; MtSilverF2
+	dw MtSilverPeakWildMons
 	dw MtSilverMeltanRoomWildMons ; Meltan Room
 	dw MtSilverSummitWildMons ; MtSilverSummit
 	dw NothingWildMons ; MtSilverPokecenter
@@ -336,6 +337,7 @@ INCLUDE "data/wild/maps/Route28.asm"
 INCLUDE "data/wild/maps/MtSilverFront.asm"
 INCLUDE "data/wild/maps/MtSilverF1.asm"
 INCLUDE "data/wild/maps/MtSilverF2.asm"
+INCLUDE "data/wild/maps/MtSilverPeak.asm"
 INCLUDE "data/wild/maps/MtSilverMeltanRoom.asm"
 INCLUDE "data/wild/maps/MtSilverSummit.asm"
 INCLUDE "data/wild/maps/BillsGarden.asm"

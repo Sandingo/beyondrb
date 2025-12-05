@@ -16,7 +16,6 @@ TilePairCollisionsLand::
 	db FOREST, $5E, $2E
 	db FOREST, $5F, $2E
 	db CAVERN, $20, $38
-	db CAVERN, $38, $32 ; Doesn't work?
 	db -1 ; end
 
 TilePairCollisionsWater::

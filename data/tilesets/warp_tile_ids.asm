@@ -87,7 +87,7 @@ ENDM
 	warp_tiles $13
 
 .PlateauWarpTileIDs:
-	db $1B, $3B
+	db $1B, $3B, $04
 	; fallthrough
 .ShipPortWarpTileIDs:
 .ClubWarpTileIDs:

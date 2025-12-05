@@ -83,5 +83,6 @@ DEF SET_PAL_DEFAULT EQU $ff
 	const PAL_REDBAR    ; $21
 	const PAL_BADGE     ; $22
 	const PAL_CAVE      ; $23
+	const PAL_SILVER_PEAK
 	const PAL_GAMEFREAK ; $24
 DEF NUM_SGB_PALS EQU const_value

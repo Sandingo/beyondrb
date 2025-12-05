@@ -662,7 +662,7 @@ MtSilverPokecenterHiddenObjects:
 	db -1 ; end
 
 MtSilverF1HiddenObjects:
-	hidden_object 16,  22, DIRE_HIT, HiddenItems
+	hidden_object 16,  23, DIRE_HIT, HiddenItems
 	hidden_object 17,  13, ULTRA_BALL, HiddenItems
 	db -1 ; end
 
