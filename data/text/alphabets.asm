@@ -3,7 +3,7 @@ LowerCaseAlphabet:
 	db "jklmnopqr"
 	db "stuvwxyz "
 	db "×():;[]<PK><MN>"
-	db "-?!♂♀/<DOT>,<ED>"
+	db "-?!♂♀/.,<ED>"
 	db "UPPER CASE@"
 
 UpperCaseAlphabet:
@@ -11,5 +11,5 @@ UpperCaseAlphabet:
 	db "JKLMNOPQR"
 	db "STUVWXYZ "
 	db "×():;[]<PK><MN>"
-	db "-?!♂♀/<DOT>,<ED>"
+	db "-?!♂♀/.,<ED>"
 	db "lower case@"

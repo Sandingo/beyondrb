@@ -386,7 +386,7 @@ PrintNicknameAndUnderscores:
 .pokemon1
 	ld b, 10 ; pokemon max name length
 .playerOrRival1
-	ld a, $76 ; underscore tile id
+	ld a, $75 ; underscore tile id
 .placeUnderscoreLoop
 	ld [hli], a
 	dec b
@@ -418,7 +418,7 @@ PrintNicknameAndUnderscores:
 	ld b, $0
 	hlcoord 10, 3
 	add hl, bc
-	ld [hl], $77 ; raised underscore tile id
+	ld [hl], $76 ; raised underscore tile id
 	ret
 
 DakutensAndHandakutens:
@@ -467,9 +467,9 @@ PrintNamingText:
 	call GetMonName
 	hlcoord 4, 1
 	call PlaceString
-	ld hl, $1
+	ld hl, $0
 	add hl, bc
-	ld [hl], "の" ; leftover from Japanese version; blank tile $c9 in English
+	ld [hl], "'s"
 	hlcoord 1, 3
 	ld de, NicknameTextString
 	jr .placeString

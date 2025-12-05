@@ -3095,7 +3095,7 @@ PrintMenuItem:
 	jp Delay3
 
 PPText:
-	db "<BOLD_P2><BOLD_P2>@"
+	db "<BOLD_P><BOLD_P>@"
 
 ATKText:
 	db "ATK@"

@@ -15,7 +15,7 @@
 	charmap "<RIVAL>",   $53 ; wRivalName
 	charmap "#",         $54 ; "POKé"
 	charmap "<CONT>",    $55
-	charmap "<……>",      $56 ; "……"
+;	charmap "<……>",      $56 ; "……"
 	charmap "<DONE>",    $57
 	charmap "<PROMPT>",  $58
 	charmap "<TARGET>",  $59
@@ -42,17 +42,17 @@
 	charmap "<BOLD_L>",  $6b ; unused
 	charmap "<BOLD_M>",  $6c ; unused
 	charmap "<COLON>",   $6d ; colon with tinier dots than ":"
-	charmap "ぃ",         $6e ; hiragana small i, unused
-	charmap "ぅ",         $6f ; hiragana small u, unused
-	charmap "‘",         $70 ; opening single quote
-	charmap "’",         $71 ; closing single quote
-	charmap "“",         $72 ; opening quote
-	charmap "”",         $73 ; closing quote
-	charmap "·",         $74 ; middle dot, unused
-	charmap "…",         $75 ; ellipsis
-	charmap "ぁ",         $76 ; hiragana small a, unused
-	charmap "ぇ",         $77 ; hiragana small e, unused
-	charmap "ぉ",         $78 ; hiragana small o, unused
+;	charmap "ぃ",         $6e ; hiragana small i, unused
+;	charmap "ぅ",         $6f ; hiragana small u, unused
+;	charmap "‘",         $70 ; opening single quote
+;	charmap "’",         $71 ; closing single quote
+;	charmap "“",         $72 ; opening quote
+;	charmap "”",         $73 ; closing quote
+;	charmap "·",         $74 ; middle dot, unused
+;	charmap "…",         $75 ; ellipsis
+;	charmap "ぁ",         $76 ; hiragana small a, unused
+;	charmap "ぇ",         $77 ; hiragana small e, unused
+;	charmap "ぉ",         $78 ; hiragana small o, unused
 
 	charmap "┌",         $79
 	charmap "─",         $7a
@@ -79,7 +79,7 @@
 	charmap "″",         $61 ; gfx/pokedex/pokedex.png
 
 	; needed for StatusScreen (see engine/pokemon/status_screen.asm)
-	charmap "<BOLD_P>",  $72 ; gfx/font/P.1bpp
+	; charmap "<BOLD_P>",  $72 ; gfx/font/P.1bpp
 
 	; needed for LoadTownMap_Fly (see engine/items/town_map.asm)
 	charmap "▲",         $ed ; gfx/town_map/up_arrow.1bpp
@@ -169,9 +169,9 @@
 	charmap "!",         $e7
 	charmap ".",         $e8
 
-	charmap "<SHINY>",  $e9
-	charmap "ゥ",         $ea ; katakana small u, unused
-	charmap "ェ",         $eb ; katakana small e, unused
+	charmap "<SHINY>",    $e9
+	charmap "<TM2>",      $ea
+	charmap "<HM>",       $eb
 
 	charmap "▷",         $ec
 	charmap "▶",         $ed
@@ -179,7 +179,7 @@
 	charmap "♂",         $ef
 	charmap "¥",         $f0
 	charmap "×",         $f1
-	charmap "<DOT>",     $f2 ; decimal point; same as "." in English
+	charmap "<BOLD_P>",  $f2
 	charmap "/",         $f3
 	charmap ",",         $f4
 	charmap "♀",         $f5
@@ -341,9 +341,6 @@
 	charmap "ま", $cf
 	charmap "み", $d0
 	charmap "む", $d1
-	charmap "<BOLD_P2>", $d2
-	charmap "<TM2>", $d3
-	charmap "<HM>", $d4
 	charmap "<CUR1>",    $d5
 	charmap "<CUR2>",    $d6
 	charmap "<BASE1>",   $d7
@@ -352,12 +349,6 @@
 	charmap "<DV2>",     $da
 	charmap "<EV1>",     $db
 	charmap "<EV2>",     $dc
-	charmap "を", $dd
-	charmap "ん", $de
-	charmap "っ", $df
-	charmap "ゃ", $e0
-	charmap "ゅ", $e1
-	charmap "ょ", $e2
 
 	charmap "ー", $e3
 	charmap "ﾟ", $e4
