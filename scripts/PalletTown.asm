@@ -217,5 +217,41 @@ PalletTownRivalsHouseSignText:
 	text_end
 
 PalletTownScientistText:
+	text_asm
+	CheckEvent EVENT_GOT_HM06
+	jp	nz, .postHM
+	ld hl, .ScientistText
+	call PrintText
+	lb bc, HM_WATERFALL, 1
+	call GiveItem
+	jr nc, .BagFull
+	ld hl, .ItemRecievedText
+	call PrintText
+	SetEvent EVENT_GOT_HM06
+	jr .finish
+.postHM
+	ld hl, .ScientistTextPostHM
+	call PrintText
+	jr .finish
+.BagFull
+	ld hl, .NoRoomText
+	call PrintText
+.finish
+	jp TextScriptEnd
+
+.ScientistText:
 	text_far _PalletTownScientistText
+	text_end
+
+.ScientistTextPostHM:
+	text_far _PalletTownScientistTextAfterWaterfall
+	text_end
+
+.ItemRecievedText:
+	text_far _PalletTownItemRecievedText
+	sound_get_item_1
+	text_end
+
+.NoRoomText:
+	text_far _PalletTownItemNoRoomText
 	text_end

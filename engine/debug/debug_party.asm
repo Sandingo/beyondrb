@@ -63,7 +63,7 @@ IF DEF(_DEBUG)
 
 	;Mew gets Mimic
 	ld hl, wPartyMon2Moves + 3
-	ld a, EMBER
+	ld a, WATERFALL
 	ld [hl], a
 	ld hl, wPartyMon3PP + 3
 	ld a, 30

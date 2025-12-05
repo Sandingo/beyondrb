@@ -252,3 +252,19 @@ _SomeonesVoiceDontRunText::
 	text "Someone's voice:"
 	line "Don't run away!"
 	done
+
+_APokemonCouldRideThisText::
+	text "A #MON could"
+	line "scale waterfalls."
+	done
+
+_PokemonRidesTheWaterfall::
+	text_ram wNameBuffer
+	text " scales"
+	line "the WATERFALL!"
+	done
+
+_CannotBeUsedHereText::
+	text "This cannot be"
+	line "used here."
+	prompt

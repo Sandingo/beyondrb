@@ -13,7 +13,7 @@
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING
-	const_skip 4
+	const_skip 3
 	const EVENT_FOLLOWED_OAK_INTO_LAB_2
 	const EVENT_OAK_ASKED_TO_CHOOSE_MON
 	const EVENT_GOT_STARTER
@@ -23,6 +23,7 @@
 	const EVENT_PALLET_AFTER_GETTING_POKEBALLS_2
 	const EVENT_OAK_APPEARED_IN_PALLET
 	const EVENT_GOT_SHINY_CHARM
+	const EVENT_GOT_HM06
 
 ; Viridian City events
 	const_next $28
@@ -53,6 +54,7 @@
 	const_skip 3
 	const EVENT_GOT_TM34
 	const EVENT_BEAT_BROCK
+	const EVENT_DOING_WATERFALL
 
 ; Cerulean City events
 	const_next $98

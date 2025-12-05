@@ -18,7 +18,7 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         SUBSTITUTE,   \
 	     SURF,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  BIDE,         \
-	     METRONOME,    SKULL_BASH,   REST                 \
+	     METRONOME,    SKULL_BASH,   REST,	WATERFALL              
 	; end
 
 	db BANK(CheepPicFront)

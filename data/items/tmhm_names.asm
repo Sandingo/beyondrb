@@ -7,6 +7,7 @@ TmhmNames::
 	li "<HM>SURF"
 	li "<HM>STRENGTH"
 	li "<HM>FLASH"
+	li "<HM>WATERFALL"
 	li "<TM2>MEGA PUNCH" 
 	li "<TM2>RAZOR WIND" 
 	li "<TM2>SWORDS DANCE"

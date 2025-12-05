@@ -81,3 +81,5 @@ TextPredefs::
 	add_tx_pre ThisRequiresStrengthText             ; 51 ; marcelnote - HM overworld use	
 	add_tx_pre WantToStrengthText                   ; 51 ; marcelnote - HM overworld use
 	add_tx_pre CanMoveBouldersText                  ; 52 ; marcelnote - HM overworld use
+	add_tx_pre APokemonCouldRideThisText
+	add_tx_pre PokemonRidesTheWaterfall

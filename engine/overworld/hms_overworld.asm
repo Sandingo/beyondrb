@@ -5,7 +5,7 @@ CheckForSurf:: ; marcelnote - could be improved if there is a wram bit which che
 ; we have the right badge
     ld a, [wWalkBikeSurfState]
     cp 2 ; is the player already surfing?
-    jr z, .fail
+	jr z, .fail
 ; we are not already surfing
     callfar IsNextTileShoreOrWater
     jr c, .fail
@@ -303,4 +303,82 @@ IsMoveInParty::
 	pop bc
 	pop hl
 	pop de
+	ret
+
+CheckForWaterfall::
+	CheckEvent EVENT_DOING_WATERFALL
+	ret nz
+    ld a, [wWalkBikeSurfState]
+    cp 2 ; is the player already surfing?
+	ret nz
+    ld a, [wCurMapTileset]
+    cp CAVERN
+	ret nz 
+    ld a, [wTileInFrontOfPlayer]
+    cp $42
+    ret nz
+; there's a waterfall tile in front of us
+	ld d, WATERFALL
+    call IsMoveInParty ; output: d = how many matches, z flag = whether a match was found (nz = match found)
+    jr z, .noWaterfallInTeam
+; we have the move, check if we have the badge
+    ld a, [wObtainedBadges]
+    bit BIT_VOLCANOBADGE, a
+	jp nz, RideWaterfall
+; no badge
+.noWaterfallInTeam
+    call EnableAutoTextBoxDrawing
+    tx_pre_jump APokemonCouldRideThisText
+
+RideWaterfall:
+    SetEvent EVENT_DOING_WATERFALL
+    call EnableAutoTextBoxDrawing
+    tx_pre PokemonRidesTheWaterfall
+; decide where to go, and how much
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	cp SPRITE_FACING_UP
+	jr z, .goingUp
+; going down
+	ld a, D_DOWN
+	jr .doTheSteps
+.goingUp
+	ld a, D_UP
+.doTheSteps
+	ld [wSimulatedJoypadStatesEnd], a
+	ld a, $1
+	ld [wSimulatedJoypadStatesIndex], a
+    ld a, SFX_INTRO_HOP
+    call PlaySound
+	jp StartSimulatingJoypadStates
+
+APokemonCouldRideThisText::
+	text_far _APokemonCouldRideThisText
+	text_end
+
+PokemonRidesTheWaterfall::
+	text_far _PokemonRidesTheWaterfall
+	text_end
+
+ForceContinueWaterfall::
+	ld a, [wSimulatedJoypadStatesIndex]
+	and a
+	ret nz
+	lda_coord 8, 9 ; tile the player is on
+	ld [wTilePlayerStandingOn], a
+	cp $42
+	jr z, .weAreOnWaterfall
+	ResetEvent EVENT_DOING_WATERFALL
+	ret
+.weAreOnWaterfall
+; check which direction we're facing, and force the movement accordingly
+	ld a, [wPlayerDirection]
+	cp PLAYER_DIR_DOWN
+	jr z, .down
+; up
+	ld a, D_UP
+	jr .end
+.down
+	ld a, D_DOWN
+.end
+	ldh [hJoyHeld], a
 	ret

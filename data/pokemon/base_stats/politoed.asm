@@ -18,7 +18,7 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     HYPER_BEAM,      COUNTER,      SUBSTITUTE, RAGE,         \
 	     SURF,   STRENGTH,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  \
-	     BIDE,         METRONOME,    SKULL_BASH,   REST
+	     BIDE,         METRONOME,    SKULL_BASH,   REST,	WATERFALL
 	; end
 
 	db BANK(PolitoedPicFront)

@@ -19,7 +19,7 @@
 	     THUNDER,      PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
 	     THUNDER_WAVE,       TRI_ATTACK,   SUBSTITUTE,   SURF,         \
-	     FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN
+	     FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN,	WATERFALL
 	; end
 
 	db BANK(StarmiePicFront)

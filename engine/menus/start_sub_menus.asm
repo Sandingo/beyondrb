@@ -131,6 +131,7 @@ StartMenu_Pokemon::
 	dw .teleport
 	dw .softboiled
 	dw .softboiled
+	dw .cannotBeUsedHere
 .fly
 	bit BIT_THUNDERBADGE, a
 	jp z, .newBadgeRequired
@@ -234,6 +235,13 @@ StartMenu_Pokemon::
 	text_end
 .cannotFlyHereText
 	text_far _CannotFlyHereText
+	text_end
+.cannotBeUsedHere
+	ld hl, .cannotUseBeUsedHereText
+	call PrintText
+	jp .loop
+.cannotUseBeUsedHereText
+	text_far _CannotBeUsedHereText
 	text_end
 .softboiled
 	ld hl, wPartyMon1MaxHP

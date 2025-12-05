@@ -19,7 +19,7 @@
 	     HYPER_BEAM,   PAY_DAY,      SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 	     RAGE,         DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         \
-	     STRENGTH,	   PSYCHIC_M,	 FLASH
+	     STRENGTH,	   PSYCHIC_M,	 FLASH,	       WATERFALL
 	; end
 
 	db BANK(GolduckPicFront)

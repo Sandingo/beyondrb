@@ -396,6 +396,11 @@ _HM05Description::
 	next "reduce accuracy."
 	prompt
 
+_HM06Description::
+	text "An aquatic attack"
+	next "that may flinch."
+	prompt
+
 _TM01Description::
 	text "A powerful punch"
 	next "thrown very hard."

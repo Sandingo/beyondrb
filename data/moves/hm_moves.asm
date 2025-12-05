@@ -7,4 +7,5 @@
 	db SURF
 	db STRENGTH
 ;	db FLASH
+	db WATERFALL
 	db -1 ; end

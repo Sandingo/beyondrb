@@ -16,6 +16,8 @@ TryDoWildEncounter:
 .notStandingOnDoorOrWarpTile
 	callfar IsPlayerJustOutsideMap
 	jr z, .CantEncounter
+	CheckEvent EVENT_DOING_WATERFALL
+	jr nz, .CantEncounter
 	ld a, [wRepelRemainingSteps]
 	and a
 	jr z, .next

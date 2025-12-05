@@ -10,3 +10,4 @@ FieldMoveNames:
 	db "TELEPORT@"
 	db "SOFTBOILED@"
 	db "RECOVER@"
+	db "WATERFALL@"

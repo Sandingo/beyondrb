@@ -73,6 +73,7 @@ INCLUDE "engine/events/hidden_objects/pokemon_stuff.asm"
 SECTION "Draw Badges", ROMX
 
 INCLUDE "engine/menus/draw_badges.asm"
+INCLUDE "engine/gfx/animated_tiles.asm"
 
 
 SECTION "Font Graphics", ROMX

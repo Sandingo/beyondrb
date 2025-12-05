@@ -12,4 +12,5 @@ FieldMoveDisplayData:
 	db TELEPORT,   8, $0A
 	db SOFTBOILED, 9, $08
 	db RECOVER,	  10, $0A
+	db WATERFALL, 11, $08
 	db -1 ; end

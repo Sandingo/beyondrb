@@ -98,6 +98,7 @@ OverworldLoopLessDelay::
 	and a
 	jr nz, .displayDialogue ; checks for Strength via BoulderText
 	callfar CheckForSurf ; jp OverworldLoop if succeeds
+	callfar CheckForWaterfall ; jp OverworldLoop if succeeds
 	jp OverworldLoop
 .displayDialogue
 	predef GetTileAndCoordsInFrontOfPlayer
@@ -1872,6 +1873,7 @@ JoypadOverworld::
 	ld [wSpritePlayerStateData1XStepVector], a
 	call RunMapScript
 	call Joypad
+	callfar ForceContinueWaterfall ; new 
 	ld a, [wStatusFlags7]
 	bit BIT_TRAINER_BATTLE, a
 	jr nz, .notForcedDownwards
@@ -1938,6 +1940,8 @@ JoypadOverworld::
 ; and 2429 always sets c to 0xF0. There is no 0xF0 background tile, so it
 ; is considered impassable and it is detected as a collision.
 CollisionCheckOnWater::
+	CheckEvent EVENT_DOING_WATERFALL
+	jr nz, .noCollision
 	ld a, [wStatusFlags5]
 	bit BIT_SCRIPTED_MOVEMENT_STATE, a
 	jp nz, .noCollision ; return and clear carry if button presses are being simulated

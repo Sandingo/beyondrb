@@ -379,71 +379,28 @@ UpdateMovingBgTiles::
 	and a
 	ret z
 
+	ldh a, [rLY]
+	cp $90 ; check if not in vblank period??? (maybe if vblank is too long)
+	ret c
+
 	ldh a, [hMovingBGTilesCounter1]
 	inc a
 	ldh [hMovingBGTilesCounter1], a
+; vanilla: 0-19: nothing; 20: water; 21: flowers, which then 0-ifyes the counter
+; edited: 19: waterfall; 20: water; 21: flowers
+	cp 19
+	ret c ; do nothing if 0-17
+	jr z, .waterfall ; new
 	cp 20
-	ret c
+	jr z, .water ; new
 	cp 21
 	jr z, .flower
 
-; water
+.water ; new
+	jpfar AnimateWaterTile ; new, to save space in home, see engine/gfx/animated_tiles_code.asm
 
-	ld hl, vTileset tile $14
-	ld c, $10
-
-	ld a, [wMovingBGTilesCounter2]
-	inc a
-	and 7
-	ld [wMovingBGTilesCounter2], a
-
-	and 4
-	jr nz, .left
-.right
-	ld a, [hl]
-	rrca
-	ld [hli], a
-	dec c
-	jr nz, .right
-	jr .done
-.left
-	ld a, [hl]
-	rlca
-	ld [hli], a
-	dec c
-	jr nz, .left
-.done
-	ldh a, [hTileAnimations]
-	rrca
-	ret nc
-
-	xor a
-	ldh [hMovingBGTilesCounter1], a
-	ret
+.waterfall ; new
+	jpfar AnimateWaterfallTile ; new
 
 .flower
-	xor a
-	ldh [hMovingBGTilesCounter1], a
-
-	ld a, [wMovingBGTilesCounter2]
-	and 3
-	cp 2
-	ld hl, FlowerTile1
-	jr c, .copy
-	ld hl, FlowerTile2
-	jr z, .copy
-	ld hl, FlowerTile3
-.copy
-	ld de, vTileset tile $03
-	ld c, $10
-.loop
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .loop
-	ret
-
-FlowerTile1: INCBIN "gfx/tilesets/flower/flower1.2bpp"
-FlowerTile2: INCBIN "gfx/tilesets/flower/flower2.2bpp"
-FlowerTile3: INCBIN "gfx/tilesets/flower/flower3.2bpp"
+	jpfar AnimateFlowerTile ; new, to save space in home, see engine/gfx/animated_tiles_code.asm

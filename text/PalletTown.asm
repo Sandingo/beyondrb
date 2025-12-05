@@ -73,4 +73,36 @@ _PalletTownScientistText::
 	line "find him, might"
 	cont "be best to start"
 	cont "looking there."
+	
+	para "..."
+	
+	para "Oh, and I almost"
+	line "forgot! He asked"
+	cont "me to give you"
+	cont "this!"
+	prompt
+
+_PalletTownScientistTextAfterWaterfall::
+	text "PROF. OAK said"
+	line "something about a"
+	cont "mountain range"
+	cont "west of the KANTO"
+	cont "region."
+
+	para "If you want to"
+	line "find him, might"
+	cont "be best to start"
+	cont "looking there."
+	done
+
+_PalletTownItemRecievedText::
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
+
+_PalletTownItemNoRoomText::
+	text "You don't have"
+	line "room for this!"
 	done
