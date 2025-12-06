@@ -95,9 +95,9 @@ SaffronPidgeyHouse_Blocks:
 VermilionPidgeyHouse_Blocks:
 LavenderCuboneHouse_Blocks:
 CeruleanTradeHouse_Blocks:
-PewterNidoranHouse_Blocks:
-PewterSpeechHouse_Blocks:
 ViridianNicknameHouse_Blocks: INCBIN "maps/ViridianNicknameHouse.blk"
+
+PewterHouses_Blocks: INCBIN "maps/PewterHouses.blk"
 
 CeladonMansionRoofHouse_Blocks: INCBIN "maps/CeladonMansionRoofHouse.blk"
 
@@ -133,13 +133,9 @@ INCLUDE "data/maps/headers/ViridianNicknameHouse.asm"
 INCLUDE "scripts/ViridianNicknameHouse.asm"
 INCLUDE "data/maps/objects/ViridianNicknameHouse.asm"
 
-INCLUDE "data/maps/headers/PewterNidoranHouse.asm"
-INCLUDE "scripts/PewterNidoranHouse.asm"
-INCLUDE "data/maps/objects/PewterNidoranHouse.asm"
-
-INCLUDE "data/maps/headers/PewterSpeechHouse.asm"
-INCLUDE "scripts/PewterSpeechHouse.asm"
-INCLUDE "data/maps/objects/PewterSpeechHouse.asm"
+INCLUDE "data/maps/headers/PewterHouses.asm"
+INCLUDE "scripts/PewterHouses.asm"
+INCLUDE "data/maps/objects/PewterHouses.asm"
 
 INCLUDE "data/maps/headers/CeruleanTrashedHouse.asm"
 INCLUDE "scripts/CeruleanTrashedHouse.asm"

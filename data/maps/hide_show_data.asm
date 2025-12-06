@@ -65,7 +65,6 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw NoHS
 	dw MtMoon1FHS
 	dw MtMoonB1FHS
 	dw MtMoonB2FHS

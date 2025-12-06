@@ -62,7 +62,6 @@ WildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	dw NothingWildMons
 	dw MtMoon1FWildMons
 	dw MtMoonB1FWildMons
 	dw MtMoonB2FWildMons

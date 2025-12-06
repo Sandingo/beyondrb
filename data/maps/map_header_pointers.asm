@@ -60,9 +60,8 @@ MapHeaderPointers::
 	dw Museum1F_h
 	dw Museum2F_h
 	dw PewterGym_h
-	dw PewterNidoranHouse_h
+	dw PewterHouses_h
 	dw PewterMart_h
-	dw PewterSpeechHouse_h
 	dw PewterPokecenter_h
 	dw MtMoon1F_h
 	dw MtMoonB1F_h

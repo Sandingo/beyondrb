@@ -155,7 +155,7 @@ DebugItemsList:
 	db S_S_TICKET, 1
 	db LIFT_KEY, 1
 	db BOTTLE_CAP, 5
-	db ORANGE_TICKET, 1
+	db MYSTERY_BOX, 1
 	db -1 ; end
 
 DebugUnusedList:

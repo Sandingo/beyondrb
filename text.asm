@@ -158,9 +158,8 @@ INCLUDE "text/PewterGym.asm"
 SECTION "Text 7", ROMX
 
 INCLUDE "text/PewterGym_2.asm"
-INCLUDE "text/PewterNidoranHouse.asm"
+INCLUDE "text/PewterHouses.asm"
 INCLUDE "text/PewterMart.asm"
-INCLUDE "text/PewterSpeechHouse.asm"
 INCLUDE "text/PewterPokecenter.asm"
 INCLUDE "text/CeruleanTrashedHouse.asm"
 INCLUDE "text/CeruleanTradeHouse.asm"
