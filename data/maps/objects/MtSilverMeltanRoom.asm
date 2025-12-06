@@ -10,6 +10,6 @@ MtSilverMeltanRoom_Object:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  2,  SPRITE_POKE_BALL, STAY, NONE, TEXT_MTSILVERMELTANROOM_CANDYJAR, CANDY_JAR
+	object_event  2,  2,  SPRITE_POKE_BALL, STAY, NONE, TEXT_MTSILVERMELTANROOM_CANDYJAR, MYSTERY_BOX
 
 	def_warps_to MT_SILVER_MELTAN_ROOM

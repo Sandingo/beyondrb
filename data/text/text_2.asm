@@ -1823,3 +1823,29 @@ _BoyGirlText::
     text "Play as a boy, or"
     line "as a girl?"
     done
+
+_MysteryBoxIsClosedText::
+	text "The MYSTERY BOX"
+	line "is closed."
+	
+	para "Would you like"
+	line "to open it?"
+	done
+
+_MysteryBoxIsOpenedText::
+	text "The MYSTERY BOX"
+	line "is open."
+	
+	para "Would you like"
+	line "to close it?"
+	done
+
+_MysteryBoxText::
+	text "A mysterious mist"
+	line "billowed out!"
+	prompt
+
+_MysteryBoxCloseText::
+	text "<PLAYER> closed"
+	line "the BOX!"
+	prompt

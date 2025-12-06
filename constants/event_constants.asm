@@ -9,7 +9,7 @@
 	const_skip 2
 	const EVENT_PALLET_AFTER_GETTING_POKEBALLS
 	const EVENT_IN_EXTRA_MISSABLE_OBJECTS_MAP
-	const_skip 16
+	const_skip 15
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING
@@ -24,6 +24,7 @@
 	const EVENT_OAK_APPEARED_IN_PALLET
 	const EVENT_GOT_SHINY_CHARM
 	const EVENT_GOT_HM06
+	const EVENT_MYSTERY_BOX_ACTIVATED
 
 ; Viridian City events
 	const_next $28

@@ -224,6 +224,7 @@ LeaveMapThroughHoleAnim:
 	jp RestoreFacingDirectionAndYScreenPos
 
 DoFlyAnimation:
+	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED
 	ld a, [wFlyAnimBirdSpriteImageIndex]
 	xor $1 ; make the bird flap its wings
 	ld [wFlyAnimBirdSpriteImageIndex], a

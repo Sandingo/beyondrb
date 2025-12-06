@@ -22,7 +22,7 @@ TryDoWildEncounter:
 	and a
 	jr z, .next
 	dec a
-	jr z, .lastRepelStep
+	jp z, .lastRepelStep
 	ld [wRepelRemainingSteps], a
 .next
 ; determine if wild pokemon can appear in the half-block we're standing in
@@ -43,19 +43,19 @@ TryDoWildEncounter:
 ; ...as long as it's not Viridian Forest or Safari Zone.
 	ld a, [wCurMap]
 	cp FIRST_INDOOR_MAP ; is this an indoor map?
-	jr c, .CantEncounter2
+	jp c, .CantEncounter2
 	ld a, [wCurMapTileset]
 	cp FOREST ; Viridian Forest/Safari Zone
-	jr z, .CantEncounter2
+	jp z, .CantEncounter2
 	cp PLATEAU ; Indigo Plateau and Mt. Silver Peak
-	jr z, .CantEncounter2
+	jp z, .CantEncounter2
 	ld a, [wGrassRate]
 .CanEncounter
 ; compare encounter chance with a random number to determine if there will be an encounter
 	ld b, a
 	ldh a, [hRandomAdd]
 	cp b
-	jr nc, .CantEncounter2
+	jp nc, .CantEncounter2
 	ldh a, [hRandomSub]
 	ld b, a
 	ld hl, WildMonEncounterSlotChances
@@ -76,6 +76,8 @@ TryDoWildEncounter:
 ; since the bottom right tile of a "left shore" half-block is $14 but the bottom left tile is not,
 ; "left shore" half-blocks (such as the one in the east coast of Cinnabar) load grass encounters.
 .gotWildEncounterType
+	CheckEvent EVENT_MYSTERY_BOX_ACTIVATED ; Meltan Functionality
+	jr nz, .meltanEncounter ; If so, skip this.
 	ld b, 0
 	add hl, bc
 	ld a, [hli]
@@ -85,12 +87,38 @@ TryDoWildEncounter:
 	ld [wEnemyMonSpecies2], a
 	ld a, [wRepelRemainingSteps]
 	and a
-	jr z, .willEncounter
+	jp z, .willEncounter
 	ld a, [wPartyMon1Level]
 	ld b, a
 	ld a, [wCurEnemyLevel]
 	cp b
 	jr c, .CantEncounter2 ; repel prevents encounters if the leading party mon's level is higher than the wild mon
+	jp .willEncounter
+.meltanEncounter ; needed this function as otherwise we really mess up regular processing for no reason
+	ld a, $01 
+	ld [wDontSwitchOffMysteryBoxYet], a ; Using this variable here accounts for running from Meltan.
+	ld b, 0
+	add hl, bc
+	ld a, [hli]
+	ld [wCurEnemyLevel], a
+    call Random ; Using ExtremeYellow's early shiny function to decide how often Meltan shows up.
+    and %00000100
+	jr nz, .meltanEncounter2
+	ld a, [hl]
+	jr .continueEncounter
+.meltanEncounter2
+	ld a, MELTAN
+.continueEncounter
+	ld [wCurPartySpecies], a
+	ld [wEnemyMonSpecies2], a
+	ld a, [wRepelRemainingSteps]
+	and a
+	jr z, .willEncounter
+	ld a, [wPartyMon1Level]
+	ld b, a
+	ld a, [wCurEnemyLevel]
+	cp b
+	jr c, .CantEncounter2
 	jr .willEncounter
 .lastRepelStep
 	ld [wRepelRemainingSteps], a

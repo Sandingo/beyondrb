@@ -101,6 +101,7 @@ ItemPrices::
 	bcd3 0		; SHINY_CHARM
 	bcd3 2100 ; OVAL_STONE
 	bcd3 0 	  ; WING_FOSSIL
+	bcd3 0    ; MYSTERY_BOX
 	assert_table_length NUM_ITEMS
 	bcd3 0     ; FLOOR_B2F
 	bcd3 0     ; FLOOR_B1F

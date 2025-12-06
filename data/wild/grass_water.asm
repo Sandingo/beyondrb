@@ -245,7 +245,7 @@ WildDataPointers:
 	dw MtSilverF1WildMons ; MtSilverF1
 	dw MtSilverF2WildMons ; MtSilverF2
 	dw MtSilverPeakWildMons
-	dw MtSilverMeltanRoomWildMons ; Meltan Room
+	dw MtSilverF2WildMons ; Meltan Room
 	dw MtSilverSummitWildMons ; MtSilverSummit
 	dw NothingWildMons ; MtSilverPokecenter
 	dw NothingWildMons
@@ -338,7 +338,7 @@ INCLUDE "data/wild/maps/MtSilverFront.asm"
 INCLUDE "data/wild/maps/MtSilverF1.asm"
 INCLUDE "data/wild/maps/MtSilverF2.asm"
 INCLUDE "data/wild/maps/MtSilverPeak.asm"
-INCLUDE "data/wild/maps/MtSilverMeltanRoom.asm"
+; INCLUDE "data/wild/maps/MtSilverMeltanRoom.asm"
 INCLUDE "data/wild/maps/MtSilverSummit.asm"
 INCLUDE "data/wild/maps/BillsGarden.asm"
 INCLUDE "data/wild/maps/CeruleanCity.asm"

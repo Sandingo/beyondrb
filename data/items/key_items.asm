@@ -101,4 +101,5 @@ KeyItemFlags:
 	dbit TRUE ; SHINY_CHARM
 	dbit FALSE ; OVAL_STONE
 	dbit TRUE ; WING_FOSSIL
+	dbit TRUE ; MYSTERY_BOX
 	end_bit_array NUM_ITEMS

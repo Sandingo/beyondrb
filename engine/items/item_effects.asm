@@ -64,7 +64,7 @@ ItemUsePtrTable:
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
-	dw ItemUseCardKey    ; CARD_KEY
+	dw UnusableItem    ; CARD_KEY
 	dw UnusableItem       ; NUGGET
 	dw ItemUseEvoStone   ; ICE_STONE
 	dw ItemUsePokeDoll   ; POKE_DOLL
@@ -118,7 +118,66 @@ ItemUsePtrTable:
 	dw UnusableItem		; SHINY_CHARM
 	dw ItemUseEvoStone ; OVAL_STONE
 	dw UnusableItem    ; WING_FOSSIL
-	
+	dw ItemUseMysteryBox ; MYSTERY_BOX
+
+ItemUseMysteryBox:
+	; Mystery Box can't be used in battle.
+	ld a, [wIsInBattle]
+	and a
+	jp nz, ItemUseNotTime
+	; Sets a variable in WRAM that'll trigger a Meltan wild encounter.
+	; Handled in engine\core.asm
+	CheckEvent EVENT_MYSTERY_BOX_ACTIVATED
+	jr z, .OpenBox
+	ld hl, MysteryBoxOpenedText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .finish
+	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED
+	ld a, SFX_GO_OUTSIDE
+	call PlaySound
+	ld hl, MysteryBoxCloseText
+	call PrintText
+	jr .exitMenu
+.OpenBox
+	ld hl, MysteryBoxClosedText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .finish
+	SetEvent EVENT_MYSTERY_BOX_ACTIVATED
+	ld a, SFX_HEAL_AILMENT
+	call PlaySound
+	ld hl, MysteryBoxText ; Simple text is shown. Ambiguous to the user, identical to GO.
+	call PrintText
+.exitMenu
+	call TextScriptEnd
+	call LoadScreenTilesFromBuffer2 ; restore saved screen
+	call LoadTextBoxTilePatterns
+	call UpdateSprites
+	jp CloseTextDisplay
+.finish
+	jp TextScriptEnd
+
+MysteryBoxText:
+	text_far _MysteryBoxText
+	text_end
+
+MysteryBoxCloseText:
+	text_far _MysteryBoxCloseText
+	text_end
+
+MysteryBoxOpenedText:
+	text_far _MysteryBoxIsOpenedText
+	text_end
+
+MysteryBoxClosedText:
+	text_far _MysteryBoxIsClosedText
+	text_end
+
 ItemUseBall:
 
 ; Balls can't be used out of battle.
@@ -1554,6 +1613,7 @@ ThrewRockText:
 
 ; indirectly used by DIG in StartMenu_Pokemon.dig
 ItemUseEscapeRope:
+	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED
 	ld a, [wIsInBattle]
 	and a
 	jr nz, .notUsable
@@ -1620,60 +1680,6 @@ ItemUseXAccuracy:
 	ld hl, wPlayerBattleStatus2
 	set USING_X_ACCURACY, [hl] ; X Accuracy bit
 	jp PrintItemUseTextAndRemoveItem
-
-; This function is bugged and never works. It always jumps to ItemUseNotTime.
-; The Card Key is handled in a different way.
-ItemUseCardKey:
-	xor a
-	ld [wUnusedCardKeyGateID], a
-	call GetTileAndCoordsInFrontOfPlayer
-	ld a, [GetTileAndCoordsInFrontOfPlayer]
-	cp $18
-	jr nz, .next0
-	ld hl, CardKeyTable1
-	jr .next1
-.next0
-	cp $24
-	jr nz, .next2
-	ld hl, CardKeyTable2
-	jr .next1
-.next2
-	cp $5e
-	jp nz, ItemUseNotTime
-	ld hl, CardKeyTable3
-.next1
-	ld a, [wCurMap]
-	ld b, a
-.loop
-	ld a, [hli]
-	cp -1
-	jp z, ItemUseNotTime
-	cp b
-	jr nz, .nextEntry1
-	ld a, [hli]
-	cp d
-	jr nz, .nextEntry2
-	ld a, [hli]
-	cp e
-	jr nz, .nextEntry3
-	ld a, [hl]
-	ld [wUnusedCardKeyGateID], a
-	jr .done
-.nextEntry1
-	inc hl
-.nextEntry2
-	inc hl
-.nextEntry3
-	inc hl
-	jr .loop
-.done
-	ld hl, ItemUseText00
-	call PrintText
-	ld hl, wStatusFlags1
-	set BIT_UNUSED_CARD_KEY, [hl] ; never checked
-	ret
-
-INCLUDE "data/events/card_key_coords.asm"
 
 ItemUsePokeDoll:
 	ld a, [wIsInBattle]

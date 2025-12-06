@@ -156,6 +156,11 @@ _HelixFossilDescription::
 	next "#MON shell."
 	prompt
 
+_MysteryBoxDescription::
+	text "A mysterious old"
+	next "box."
+	prompt
+
 _SecretKeyDescription::
 	text "Opens the door to"
 	next "the CINNABAR GYM."

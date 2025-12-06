@@ -1942,7 +1942,7 @@ wForfeitTrainerBattle:: db
 ; number of HOF teams
 wNumHoFTeams:: db
 
-wUnusedMapVariable:: db
+wDontSwitchOffMysteryBoxYet:: db
 
 wPlayerCoins:: dw ; BCD
 

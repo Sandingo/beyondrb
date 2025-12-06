@@ -110,6 +110,7 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const SHINY_CHARM
 	const OVAL_STONE
 	const WING_FOSSIL
+	const MYSTERY_BOX
 DEF NUM_ITEMS EQU const_value - 1
 
 ; elevator floors use item IDs
