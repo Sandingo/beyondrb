@@ -90,8 +90,8 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const PP_UP         ; $4F
 	const ETHER         ; $50
 	const MAX_ETHER     ; $51
-	const ELIXER        ; $52
-	const MAX_ELIXER    ; $53
+	const ELIXIR        ; $52
+	const MAX_ELIXIR    ; $53
 	const METAL_COAT	; $54
 	const PROTECTOR    
 	const ELECTIRIZER

@@ -45,10 +45,10 @@ INCLUDE "scripts/BluesHouse.asm"
 INCLUDE "data/maps/objects/BluesHouse.asm"
 BluesHouse_Blocks: INCBIN "maps/BluesHouse.blk"
 
-INCLUDE "data/maps/headers/VermilionTradeHouse.asm"
-INCLUDE "scripts/VermilionTradeHouse.asm"
-INCLUDE "data/maps/objects/VermilionTradeHouse.asm"
-VermilionTradeHouse_Blocks: INCBIN "maps/VermilionTradeHouse.blk"
+INCLUDE "data/maps/headers/VermilionHouses.asm"
+INCLUDE "scripts/VermilionHouses.asm"
+INCLUDE "data/maps/objects/VermilionHouses.asm"
+VermilionHouses_Blocks: INCBIN "maps/VermilionHouses.blk"
 
 INCLUDE "data/maps/headers/IndigoPlateauLobby.asm"
 INCLUDE "scripts/IndigoPlateauLobby.asm"
@@ -92,7 +92,6 @@ MrFujisHouse_Blocks:
 Route16FlyHouse_Blocks:
 Route2TradeHouse_Blocks:
 SaffronPidgeyHouse_Blocks:
-VermilionPidgeyHouse_Blocks:
 LavenderCuboneHouse_Blocks:
 CeruleanTradeHouse_Blocks:
 ViridianNicknameHouse_Blocks: INCBIN "maps/ViridianNicknameHouse.blk"
@@ -161,10 +160,6 @@ INCLUDE "data/maps/objects/LavenderCuboneHouse.asm"
 INCLUDE "data/maps/headers/NameRatersHouse.asm"
 INCLUDE "scripts/NameRatersHouse.asm"
 INCLUDE "data/maps/objects/NameRatersHouse.asm"
-
-INCLUDE "data/maps/headers/VermilionPidgeyHouse.asm"
-INCLUDE "scripts/VermilionPidgeyHouse.asm"
-INCLUDE "data/maps/objects/VermilionPidgeyHouse.asm"
 
 INCLUDE "data/maps/headers/VermilionDock.asm"
 INCLUDE "scripts/VermilionDock.asm"
@@ -692,7 +687,6 @@ INCLUDE "data/maps/headers/Route21.asm"
 INCLUDE "data/maps/objects/Route21.asm"
 Route21_Blocks: INCBIN "maps/Route21.blk"
 
-VermilionOldRodHouse_Blocks:
 Route12SuperRodHouse_Blocks:
 Daycare_Blocks: INCBIN "maps/Daycare.blk"
 
@@ -711,10 +705,6 @@ INCLUDE "scripts/Route14.asm"
 INCLUDE "scripts/Route17.asm"
 INCLUDE "scripts/Route19.asm"
 INCLUDE "scripts/Route21.asm"
-
-INCLUDE "data/maps/headers/VermilionOldRodHouse.asm"
-INCLUDE "scripts/VermilionOldRodHouse.asm"
-INCLUDE "data/maps/objects/VermilionOldRodHouse.asm"
 
 INCLUDE "data/maps/headers/CeladonMart2F.asm"
 INCLUDE "scripts/CeladonMart2F.asm"
@@ -1249,10 +1239,15 @@ INCLUDE "scripts/MtSilverF2.asm"
 INCLUDE "data/maps/objects/MtSilverF2.asm"
 MtSilverF2_Blocks: INCBIN "maps/MtSilverF2.blk"
 
-INCLUDE "data/maps/headers/MtSilverMeltanRoom.asm"
-INCLUDE "scripts/MtSilverMeltanRoom.asm"
-INCLUDE "data/maps/objects/MtSilverMeltanRoom.asm"
-MtSilverMeltanRoom_Blocks: INCBIN "maps/MtSilverMeltanRoom.blk"
+INCLUDE "data/maps/headers/MtSilverF3.asm"
+INCLUDE "scripts/MtSilverF3.asm"
+INCLUDE "data/maps/objects/MtSilverF3.asm"
+MtSilverF3_Blocks: INCBIN "maps/MtSilverF3.blk"
+
+INCLUDE "data/maps/headers/MtSilverExtraRooms.asm"
+INCLUDE "scripts/MtSilverExtraRooms.asm"
+INCLUDE "data/maps/objects/MtSilverExtraRooms.asm"
+MtSilverExtraRooms_Blocks: INCBIN "maps/MtSilverExtraRooms.blk"
 
 INCLUDE "data/maps/headers/MtSilverSummit.asm"
 INCLUDE "scripts/MtSilverSummit.asm"
@@ -1340,3 +1335,8 @@ INCLUDE "data/maps/headers/MtSilverPeak.asm"
 INCLUDE "scripts/MtSilverPeak.asm"
 INCLUDE "data/maps/objects/MtSilverPeak.asm"
 MtSilverPeak_Blocks: INCBIN "maps/MtSilverPeak.blk"
+
+INCLUDE "data/maps/headers/MtSilverExterior.asm"
+INCLUDE "scripts/MtSilverExterior.asm"
+INCLUDE "data/maps/objects/MtSilverExterior.asm"
+MtSilverExterior_Blocks: INCBIN "maps/MtSilverExterior.blk"

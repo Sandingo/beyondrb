@@ -6,6 +6,6 @@ MtSilverF1_TextPointers:
 	dw_const PickUpItemText,	   TEXT_MTSILVERF1_XACCURACY
 	dw_const PickUpItemText,	   TEXT_MTSILVERF1_ESCAPEROPE
 	dw_const PickUpItemText,	   TEXT_MTSILVERF1_ULTRABALL
-	dw_const PickUpItemText,	   TEXT_MTSILVERF1_MAXELIXER
+	dw_const PickUpItemText,	   TEXT_MTSILVERF1_MAXELIXIR
 
 	text_end ; unused

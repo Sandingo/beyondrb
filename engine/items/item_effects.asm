@@ -98,8 +98,8 @@ ItemUsePtrTable:
 	dw ItemUsePPUp       ; PP_UP
 	dw ItemUsePPRestore  ; ETHER
 	dw ItemUsePPRestore  ; MAX_ETHER
-	dw ItemUsePPRestore  ; ELIXER
-	dw ItemUsePPRestore  ; MAX_ELIXER
+	dw ItemUsePPRestore  ; ELIXIR
+	dw ItemUsePPRestore  ; MAX_ELIXIR
 	dw ItemUseEvoStone   ; METAL_COAT
 	dw ItemUseEvoStone   ; PROTECTOR
 	dw ItemUseEvoStone   ; ELECTRIZER
@@ -2110,7 +2110,7 @@ ItemUsePPRestore:
 	jp .itemNotUsed
 .chooseMove
 	ld a, [wPPRestoreItem]
-	cp ELIXER
+	cp ELIXIR
 	jp nc, .useElixir ; if Elixir or Max Elixir
 	ld a, $02
 	ld [wMoveMenuType], a
@@ -2229,7 +2229,7 @@ ItemUsePPRestore:
 	ret z
 	jr .storeNewAmount
 .useElixir
-; decrement the item ID so that ELIXER becomes ETHER and MAX_ELIXER becomes MAX_ETHER
+; decrement the item ID so that ELIXIR becomes ETHER and MAX_ELIXIR becomes MAX_ETHER
 	ld hl, wPPRestoreItem
 	dec [hl]
 	dec [hl]

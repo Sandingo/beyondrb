@@ -5,7 +5,7 @@ MtSilverSummit_Object:
 	db $3 ; border block
 
 	def_warp_events
-	warp_event 10, 32, MT_SILVER_F2, 2
+	warp_event 13, 33, MT_SILVER_PEAK, 11
 
 	def_bg_events
 

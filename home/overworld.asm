@@ -747,8 +747,8 @@ CheckIfInFlyMap::
 	ret z
 	cp CELADON_MANSION_ROOF
 	ret z
-	cp MT_SILVER_SUMMIT
-	ret z
+;	cp MT_SILVER_SUMMIT
+;	ret z
 	cp VIRIDIAN_FOREST
 	ret z
 	; fall through

@@ -81,8 +81,8 @@ ItemPrices::
 	bcd3 9800     ; PP_UP
 	bcd3 0     ; ETHER
 	bcd3 0     ; MAX_ETHER
-	bcd3 0     ; ELIXER
-	bcd3 0     ; MAX_ELIXER
+	bcd3 0     ; ELIXIR
+	bcd3 0     ; MAX_ELIXIR
 	bcd3 2100  ; METAL_COAT
 	bcd3 2100  ; PROTECTOR
 	bcd3 2100  ; ELECTIRIZER

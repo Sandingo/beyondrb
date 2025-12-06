@@ -157,7 +157,6 @@ WildDataPointers:
 	dw SeafoamIslandsB4FWildMons
 	dw SeafoamIslandsB5FWildMons
 	dw NothingWildMons
-	dw NothingWildMons
 	dw PokemonMansion1FWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -188,7 +187,6 @@ WildDataPointers:
 	dw SeafoamIslands1FWildMons
 	dw NothingWildMons
 	dw VictoryRoad2FWildMons
-	dw NothingWildMons
 	dw NothingWildMons
 	dw DiglettsCaveWildMons
 	dw VictoryRoad3FWildMons
@@ -243,6 +241,8 @@ WildDataPointers:
 ;	dw NothingWildMons
 	dw MtSilverF1WildMons ; MtSilverF1
 	dw MtSilverF2WildMons ; MtSilverF2
+	dw MtSilverF2WildMons ; MtSilverF3
+	dw MtSilverPeakWildMons ; MtSilverExterior
 	dw MtSilverPeakWildMons
 	dw MtSilverF2WildMons ; Meltan Room
 	dw MtSilverSummitWildMons ; MtSilverSummit
@@ -337,7 +337,7 @@ INCLUDE "data/wild/maps/MtSilverFront.asm"
 INCLUDE "data/wild/maps/MtSilverF1.asm"
 INCLUDE "data/wild/maps/MtSilverF2.asm"
 INCLUDE "data/wild/maps/MtSilverPeak.asm"
-; INCLUDE "data/wild/maps/MtSilverMeltanRoom.asm"
+; INCLUDE "data/wild/maps/MtSilverExtraRooms.asm"
 INCLUDE "data/wild/maps/MtSilverSummit.asm"
 INCLUDE "data/wild/maps/BillsGarden.asm"
 INCLUDE "data/wild/maps/CeruleanCity.asm"

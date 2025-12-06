@@ -94,7 +94,7 @@ InternalMapEntries:
 	internal_map FUCHSIA_MEETING_ROOM,           8, 13, FuchsiaCityName
 	internal_map SEAFOAM_ISLANDS_B4F,            5, 15, SeafoamIslandsName
 	internal_map SEAFOAM_ISLANDS_B5F,            5, 15, SeafoamIslandsName
-	internal_map VERMILION_OLD_ROD_HOUSE,       10,  9, VermilionCityName
+	internal_map VERMILION_HOUSES,       10,  9, VermilionCityName
 	internal_map FUCHSIA_GOOD_ROD_HOUSE,         8, 13, FuchsiaCityName
 	internal_map POKEMON_MANSION_1F,             2, 15, PokemonMansionName
 	internal_map CINNABAR_MART_COPY,             2, 15, CinnabarIslandName
@@ -108,7 +108,6 @@ InternalMapEntries:
 	internal_map ROUTE_22_GATE,                  0,  7, Route22Name
 	internal_map VICTORY_ROAD_2F,                0,  4, VictoryRoadName
 	internal_map ROUTE_12_GATE_2F,              14,  7, Route12Name
-	internal_map VERMILION_TRADE_HOUSE,         10,  9, VermilionCityName
 	internal_map DIGLETTS_CAVE,                  3,  4, DiglettsCaveName
 	internal_map VICTORY_ROAD_3F,                0,  4, VictoryRoadName
 	internal_map ROCKET_HIDEOUT_B1F,             7,  5, RocketHQName
@@ -129,7 +128,10 @@ InternalMapEntries:
 	internal_map MT_SILVER_F1,					0,  9, MtSilverName
 	internal_map MT_SILVER_F1,					0,  9, MtSilverName
 	internal_map MT_SILVER_F2,					0,  9, MtSilverName
-	internal_map MT_SILVER_PEAK,					0,  9, MtSilverName
+	internal_map MT_SILVER_F3,					0,  9, MtSilverName
+	internal_map MT_SILVER_EXTERIOR,			0,  9, MtSilverName
+	internal_map MT_SILVER_PEAK,				0,  9, MtSilverName
+	internal_map MT_SILVER_EXTRA_ROOMS,			    0,  9, MtSilverName
 	internal_map MT_SILVER_SUMMIT,				0,  9, MtSilverName
 	internal_map MT_SILVER_POKECENTER,		    0,  9, Route28Name
 	internal_map LEAGUE_HQ_B1F,           		0,  2, IndigoPlateauName

@@ -11,5 +11,5 @@ LedgeTilesOverworld:
 	db -1 ; end
 
 LedgeTilesCavern:
-	db SPRITE_FACING_DOWN,  $20, $10, D_DOWN
+	db SPRITE_FACING_DOWN,  $20, $43, D_DOWN
 	db -1 ; end

@@ -395,6 +395,7 @@ ExeggutorEvosMoves:
 	db 0
 ; Learnset
 	db 28, STOMP
+	db 31, EGG_BOMB
 	db 0
 
 LickitungEvosMoves:
@@ -1476,8 +1477,8 @@ BlisseyEvosMoves:
 	db 6, FAIRY_WIND
 	db 12, SOFTBOILED
 	db 24, SING
+	db 28, EGG_BOMB
 	db 30, GROWL
-	db 35, EGG_BOMB
 	db 38, MINIMIZE
 	db 44, DEFENSE_CURL
 	db 50, LIGHT_SCREEN

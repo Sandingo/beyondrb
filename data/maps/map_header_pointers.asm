@@ -97,7 +97,7 @@ MapHeaderPointers::
 	dw PokemonFanClub_h
 	dw VermilionMart_h
 	dw VermilionGym_h
-	dw VermilionPidgeyHouse_h
+	dw VermilionHouses_h
 	dw VermilionDock_h
 	dw SSAnne1F_h
 	dw SSAnne2F_h
@@ -157,7 +157,6 @@ MapHeaderPointers::
 	dw SeafoamIslandsB3F_h
 	dw SeafoamIslandsB4F_h
 	dw SeafoamIslandsB5F_h
-	dw VermilionOldRodHouse_h
 	dw FuchsiaGoodRodHouse_h
 	dw PokemonMansion1F_h
 	dw CinnabarGym_h
@@ -190,7 +189,6 @@ MapHeaderPointers::
 	dw Route22Gate_h
 	dw VictoryRoad2F_h
 	dw Route12Gate2F_h
-	dw VermilionTradeHouse_h
 	dw DiglettsCave_h
 	dw VictoryRoad3F_h
 	dw RocketHideoutB1F_h
@@ -244,8 +242,10 @@ MapHeaderPointers::
 	dw MtMoonHouse_h
 	dw MtSilverF1_h
 	dw MtSilverF2_h
+	dw MtSilverF3_h
+	dw MtSilverExterior_h
 	dw MtSilverPeak_h
-	dw MtSilverMeltanRoom_h
+	dw MtSilverExtraRooms_h
 	dw MtSilverSummit_h
 	dw MtSilverPokecenter_h
 	dw Route28House_h

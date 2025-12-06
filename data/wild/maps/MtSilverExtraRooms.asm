@@ -1,4 +1,4 @@
-MtSilverMeltanRoomWildMons:
+MtSilverExtraRoomsWildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db  5, MELTAN
 	db  5, MELTAN
