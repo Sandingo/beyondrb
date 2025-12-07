@@ -404,6 +404,13 @@ DisplayWildLocations:
 	ld a, l
 	and a ; were any OAM entries written?
 	jr nz, .drawPlayerSprite
+	ld a, [wStatusFlags1]
+	bit BIT_GOT_OLD_ROD, a ; will only display Old Rod encounters if the player has gotten one
+	jr z, .noOldRod
+	ld a, [wPokedexNum] ; Display Old Rod text for Orfry
+	cp ORFRY
+	jr z, .oldRodLocation
+.noOldRod
 ; if no OAM entries were written, print area unknown text
 	hlcoord 2, 7
 	ld b, 2
@@ -411,6 +418,15 @@ DisplayWildLocations:
 	call TextBoxBorder
 	hlcoord 3, 9
 	ld de, AreaUnknownText
+	call PlaceString
+	jr .done
+.oldRodLocation ; new
+	hlcoord 4, 7
+	ld b, 2
+	ld c, 9
+	call TextBoxBorder
+	hlcoord 5, 9
+	ld de, OldRodText
 	call PlaceString
 	jr .done
 .drawPlayerSprite
@@ -425,6 +441,9 @@ DisplayWildLocations:
 
 AreaUnknownText:
 	db " AREA UNKNOWN@"
+	
+OldRodText:
+	db " OLD ROD@"
 
 TownMapCoordsToOAMCoords:
 ; in: lower nybble of a = x, upper nybble of a = y

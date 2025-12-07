@@ -581,6 +581,14 @@ _RedBedroomSNESText::
 	cont "It's time to go!"
 	done
 
+_RedsMomSinkText::
+	text "It's MOM's kitchen"
+	line "set!"
+	
+	para "She likes to keep"
+	line "it squeaky clean."
+	done
+
 _Route15UpstairsBinocularsText::
 	text "Looked into the"
 	line "binoculars..."

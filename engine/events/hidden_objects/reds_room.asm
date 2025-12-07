@@ -12,3 +12,11 @@ OpenRedsPC:
 
 RedBedroomPCText::
 	script_players_pc
+
+PrintSinkText:
+	call EnableAutoTextBoxDrawing
+	tx_pre_jump RedsMomSinkText
+
+RedsMomSinkText::
+	text_far _RedsMomSinkText
+	text_end

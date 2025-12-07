@@ -20,7 +20,7 @@ ExternalMapEntries:
 	external_map  2, 15, CinnabarIslandName
 	external_map 10,  5, SaffronCityName
 	external_map  0,  2, IndigoPlateauName
-	external_map  0,  9, Route28Name ; Mt Silver Front
+	external_map  0,  8, Route28Name ; Mt Silver Front
 	external_map 14, 15, CitrineIslandName ; unused
 	external_map  0,  0, PalletTownName ; unused
 	external_map  2, 10, Route1Name
@@ -42,12 +42,12 @@ ExternalMapEntries:
 	external_map  6, 15, Route19Name
 	external_map  4, 15, Route20Name
 	external_map  2, 13, Route21Name
-	external_map  0,  8, Route22Name
+	external_map  1,  8, Route22Name
 	external_map  0,  6, Route23Name
 	external_map 10,  1, Route24Name
 	external_map 11,  0, Route25Name
-	external_map  0,  9, Route28Name
-	external_map 11,  0, Route25Name ; Bill's Garden
+	external_map  0,  8, Route28Name
+	external_map 12,  0, BillsGardenName ; Bill's Garden
 	assert_table_length FIRST_INDOOR_MAP
 
 
@@ -74,7 +74,7 @@ InternalMapEntries:
 	internal_map UNDERGROUND_PATH_ROUTE_7_COPY,  9,  5, Route7Name
 	internal_map UNDERGROUND_PATH_ROUTE_8,      11,  5, Route8Name
 	internal_map ROCK_TUNNEL_1F,                14,  3, RockTunnelName
-	internal_map POWER_PLANT,                   15,  4, PowerPlantName
+	internal_map POWER_PLANT,                   15,  3, PowerPlantName
 	internal_map ROUTE_11_GATE_2F,              13,  9, Route11Name
 	internal_map ROUTE_12_GATE_1F,              14,  7, Route12Name
 	internal_map BILLS_HOUSE,                   12,  0, SeaCottageName
@@ -125,15 +125,15 @@ InternalMapEntries:
 	internal_map AGATHAS_ROOM,                   0,  2, PokemonLeagueName
 	internal_map MT_MOON_SQUARE,                 6,  2, MountMoonName
 	internal_map MT_MOON_HOUSE,                 6,  2, MountMoonName
-	internal_map MT_SILVER_F1,					0,  9, MtSilverName
-	internal_map MT_SILVER_F1,					0,  9, MtSilverName
-	internal_map MT_SILVER_F2,					0,  9, MtSilverName
-	internal_map MT_SILVER_F3,					0,  9, MtSilverName
-	internal_map MT_SILVER_EXTERIOR,			0,  9, MtSilverName
-	internal_map MT_SILVER_PEAK,				0,  9, MtSilverName
-	internal_map MT_SILVER_EXTRA_ROOMS,			    0,  9, MtSilverName
-	internal_map MT_SILVER_SUMMIT,				0,  9, MtSilverName
-	internal_map MT_SILVER_POKECENTER,		    0,  9, Route28Name
+	internal_map MT_SILVER_F1,					0,  8, MtSilverName
+	internal_map MT_SILVER_F1,					0,  8, MtSilverName
+	internal_map MT_SILVER_F2,					0,  8, MtSilverName
+	internal_map MT_SILVER_F3,					0,  8, MtSilverName
+	internal_map MT_SILVER_EXTERIOR,			0,  8, MtSilverName
+	internal_map MT_SILVER_PEAK,				0,  8, MtSilverName
+	internal_map MT_SILVER_EXTRA_ROOMS,			0,  8, MtSilverName
+	internal_map MT_SILVER_SUMMIT,				0,  8, MtSilverName
+	internal_map MT_SILVER_POKECENTER,		    0,  8, Route28Name
 	internal_map LEAGUE_HQ_B1F,           		0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B2F,           		0,  2, IndigoPlateauName
 	internal_map LEAGUE_HQ_B3F,           		0,  2, IndigoPlateauName

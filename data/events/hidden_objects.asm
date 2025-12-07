@@ -1,5 +1,6 @@
 HiddenObjectMaps:
 	db REDS_HOUSE_2F
+	db REDS_HOUSE_1F
 	db BLUES_HOUSE
 	db OAKS_LAB
 	db VIRIDIAN_POKECENTER
@@ -83,12 +84,16 @@ HiddenObjectMaps:
 	db ROUTE_28
 	db MT_SILVER_POKECENTER
 	db MT_SILVER_F1
+	db MT_SILVER_F2
+	db MT_SILVER_F3
+	db MT_SILVER_PEAK
 	db LEAGUE_HQ_B7F
 	db -1 ; end
 
 HiddenObjectPointers:
 ; each of these pointers is for the corresponding map in HiddenObjectMaps
 	dw RedsHouse2FHiddenObjects
+	dw RedsHouse1FHiddenObjects
 	dw BluesHouseHiddenObjects
 	dw OaksLabHiddenObjects
 	dw ViridianPokecenterHiddenObjects
@@ -172,6 +177,9 @@ HiddenObjectPointers:
 	dw Route28HiddenObjects
 	dw MtSilverPokecenterHiddenObjects
 	dw MtSilverF1HiddenObjects
+	dw MtSilverF2HiddenObjects
+	dw MtSilverF3HiddenObjects
+	dw MtSilverPeakHiddenObjects
 	dw LeagueHQB7FHiddenObjects
 
 MACRO hidden_object
@@ -207,6 +215,11 @@ RedsHouse2FHiddenObjects:
 	hidden_object  0,  1, SPRITE_FACING_UP, OpenRedsPC
 	hidden_object  3,  5, ANY_FACING, PrintRedSNESText
 	db -1 ; end
+
+RedsHouse1FHiddenObjects:
+	hidden_object  7, 6, ANY_FACING, PrintSinkText
+	hidden_object  7, 7, ANY_FACING, PrintSinkText
+	db -1 ; end  
 
 BluesHouseHiddenObjects:
 	hidden_object  0,  1, SPRITE_FACING_UP, PrintBookcaseText
@@ -662,8 +675,23 @@ MtSilverPokecenterHiddenObjects:
 	db -1 ; end
 
 MtSilverF1HiddenObjects:
-	hidden_object 16,  23, DIRE_HIT, HiddenItems
+	hidden_object 16,  23, DIRE_HIT,   HiddenItems
 	hidden_object 17,  13, ULTRA_BALL, HiddenItems
+	db -1 ; end
+
+MtSilverF2HiddenObjects:
+	hidden_object 14, 33, MAX_POTION, HiddenItems
+	hidden_object 23, 3,  DIRE_HIT,   HiddenItems
+	db -1 ; end
+
+MtSilverF3HiddenObjects:
+	hidden_object 17, 2, IRON, 		 HiddenItems
+	hidden_object 0, 19, MAX_POTION, HiddenItems
+	db -1 ; end
+
+MtSilverPeakHiddenObjects:
+	hidden_object 14, 5, MAX_ETHER,   HiddenItems
+	hidden_object 13, 25, RARE_CANDY, HiddenItems
 	db -1 ; end
 
 LeagueHQB7FHiddenObjects:

@@ -8,6 +8,7 @@ TextPredefs::
 	add_tx_pre CardKeyFailText                      ; 02
 	add_tx_pre RedBedroomPCText                     ; 03
 	add_tx_pre RedBedroomSNESText                   ; 04
+	add_tx_pre RedsMomSinkText
 	add_tx_pre PushStartText                        ; 05
 	add_tx_pre SaveOptionText                       ; 06
 	add_tx_pre StrengthsAndWeaknessesText           ; 07

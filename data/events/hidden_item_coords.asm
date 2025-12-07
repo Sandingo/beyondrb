@@ -62,5 +62,12 @@ HiddenItemCoords:
 	hidden_item ROUTE_28,					   26,   3
 	hidden_item MT_SILVER_F1,                  16,  22
 	hidden_item MT_SILVER_F1,                  17,  13
+	hidden_item MT_SILVER_F2,				    14, 33
+	hidden_item MT_SILVER_F2,                    23, 3
+	hidden_item MT_SILVER_F3, 			    	 17, 2
+	hidden_item MT_SILVER_F3,				     0, 19
+	hidden_item MT_SILVER_PEAK,                  14, 5
+	hidden_item MT_SILVER_PEAK,				    13, 25
+	hidden_item LEAGUE_HQ_B7F,                  14, 11
 	assert_max_table_length MAX_HIDDEN_ITEMS
 	db -1 ; end

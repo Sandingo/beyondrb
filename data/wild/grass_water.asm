@@ -1,20 +1,20 @@
 WildDataPointers:
 	table_width 2, WildDataPointers
 	dw NothingWildMons         ; PALLET_TOWN
-	dw ViridianCityWildMons         ; VIRIDIAN_CITY
+	dw ViridianCityWildMons    ; VIRIDIAN_CITY
 	dw NothingWildMons         ; PEWTER_CITY
 	dw Route4WildMons          ; ROUTE_4
 	dw CeruleanCityWildMons    ; CERULEAN_CITY
 	dw Route10WildMons         ; ROUTE_10
 	dw NothingWildMons         ; LAVENDER_TOWN
-	dw VermilionCityWildMons         ; VERMILION_CITY
+	dw VermilionCityWildMons   ; VERMILION_CITY
 	dw CeladonCityWildMons     ; CELADON_CITY
-	dw ViridianCityWildMons         ; FUCHSIA_CITY
-	dw SeaRoutesWildMons         ; CINNABAR_ISLAND
+	dw ViridianCityWildMons    ; FUCHSIA_CITY
+	dw SeaRoutesWildMons       ; CINNABAR_ISLAND
 	dw NothingWildMons         ; SAFFRON_CITY
 	dw NothingWildMons         ; INDIGO_PLATEAU
 	dw MtSilverFrontWildMons
-	dw VermilionCityWildMons   ; CITRINE_ISLAND
+	dw NothingWildMons         ; CITRINE_ISLAND
 	dw NothingWildMons         ; unused
 	dw Route1WildMons          ; ROUTE_1
 	dw Route2WildMons          ; ROUTE_2
