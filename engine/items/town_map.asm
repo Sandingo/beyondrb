@@ -33,7 +33,7 @@ DisplayTownMap:
 
 .townMapLoop
 	hlcoord 0, 0
-	lb bc, 1, 20
+	lb bc, 2, 11
 	call ClearScreenArea
 	ld hl, TownMapOrder
 	ld a, [wWhichTownMapLocation]
@@ -122,11 +122,14 @@ LoadTownMap_Nest:
 	push hl
 	call DisplayWildLocations
 	call GetMonName
-	hlcoord 1, 0
+	hlcoord 0, 0 ; Display name with no blank space
 	call PlaceString
 	ld h, b
 	ld l, c
-	ld de, MonsNestText
+	ld de, MonsNestText1
+	call PlaceString
+	hlcoord 0, 1 ; Go Down a line
+	ld de, MonsNestText2
 	call PlaceString
 	call WaitForTextScrollButtonPress
 	call ExitTownMap
@@ -135,8 +138,10 @@ LoadTownMap_Nest:
 	ld [hl], a
 	ret
 
-MonsNestText:
-	db "'s NEST@"
+MonsNestText1:
+	db "'s@"
+MonsNestText2:
+	db "NEST@"
 
 LoadTownMap_Fly::
 	call ClearSprites
@@ -164,27 +169,27 @@ LoadTownMap_Fly::
 	ld b, $0
 	call DrawPlayerOrBirdSprite
 	ld hl, wFlyLocationsList
-	decoord 18, 0
+	decoord 0, 1 ; flicker up arrow
 .townMapFlyLoop
 	ld a, " "
 	ld [de], a
 	push hl
 	push hl
-	hlcoord 3, 0
-	lb bc, 1, 15
+	hlcoord 2, 0
+	lb bc, 2, 9
 	call ClearScreenArea
 	pop hl
 	ld a, [hl]
 	ld b, BIRD_BASE_TILE
 	call DrawPlayerOrBirdSprite
-	hlcoord 3, 0
+	hlcoord 2, 0
 	ld de, wNameBuffer
 	call PlaceString
 	ld c, 15
 	call DelayFrames
-	hlcoord 18, 0
+	hlcoord 0, 1
 	ld [hl], "▲"
-	hlcoord 19, 0
+	hlcoord 1, 1
 	ld [hl], "▼"
 	pop hl
 .inputLoop
@@ -224,7 +229,7 @@ LoadTownMap_Fly::
 	ld [hl], a
 	ret
 .pressedUp
-	decoord 18, 0
+	decoord 0, 1 ; flicker up arrow
 	inc hl
 	ld a, [hl]
 	cp $ff
@@ -236,7 +241,7 @@ LoadTownMap_Fly::
 	ld hl, wFlyLocationsList
 	jp .townMapFlyLoop
 .pressedDown
-	decoord 19, 0
+	decoord 1, 1 ; flicker down arrow
 	dec hl
 	ld a, [hl]
 	cp $ff
@@ -249,7 +254,7 @@ LoadTownMap_Fly::
 	jr .pressedDown
 
 ToText:
-	db "To@"
+	db "<to>@"
 
 BuildFlyLocationsList:
 	ld hl, wFlyAnimUsingCoordList
@@ -400,11 +405,11 @@ DisplayWildLocations:
 	and a ; were any OAM entries written?
 	jr nz, .drawPlayerSprite
 ; if no OAM entries were written, print area unknown text
-	hlcoord 1, 7
+	hlcoord 2, 7
 	ld b, 2
-	ld c, 15
+	ld c, 14
 	call TextBoxBorder
-	hlcoord 2, 9
+	hlcoord 3, 9
 	ld de, AreaUnknownText
 	call PlaceString
 	jr .done

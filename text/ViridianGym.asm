@@ -274,7 +274,7 @@ _ViridianGymKyleText::
 	line "I have been"
 	cont "keeping up with"
 	cont "your exploits,"
-	cont "champion!"
+	cont "CHAMPION!"
 	
 	para "In case it jogs"
 	line "your memory, the"
@@ -303,7 +303,7 @@ _ViridianGymKyleAcceptText::
 _ViridianGymRematchDefeatedText::
 	text "So"
 	line "that's the power"
-	cont "of a champion!"
+	cont "of a CHAMPION!"
 	prompt
 
 _ViridianGymRematchVictoryText::

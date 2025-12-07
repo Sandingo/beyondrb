@@ -132,7 +132,7 @@ Route22Rival1StartBattleScript:
 	set BIT_TALKED_TO_TRAINER, [hl]
 	set BIT_PRINT_END_BATTLE_TEXT, [hl]
 	ld hl, Route22Rival1DefeatedText
-	ld de, Route22Rival1VictoryText
+;	ld de, Route22Rival1VictoryText
 	call SaveEndBattleTextPointers
 	ld a, OPP_RIVAL1
 	ld [wCurOpponent], a

@@ -22,7 +22,7 @@ _ChampionsRoomRivalIntroText::
 	para "And now!"
 
 	para "I'm the #MON"
-	line "LEAGUE champion!"
+	line "LEAGUE CHAMPION!"
 
 	para "<PLAYER>! Do you"
 	line "know what that"
@@ -49,22 +49,6 @@ _RivalDefeatedText::
 	cont "It's not fair!"
 	prompt
 
-_RivalVictoryText::
-	text "Hahaha!"
-	line "I won, I won!"
-
-	para "I'm too good for"
-	line "you, <PLAYER>!"
-
-	para "You did well to"
-	line "even reach me,"
-	cont "<RIVAL>, the"
-	cont "#MON genius!"
-
-	para "Nice try, loser!"
-	line "Hahaha!"
-	prompt
-
 _ChampionsRoomRivalAfterBattleText::
 	text "Why?"
 	line "Why did I lose?"
@@ -75,7 +59,7 @@ _ChampionsRoomRivalAfterBattleText::
 
 	para "Darn it! You're"
 	line "the new #MON"
-	cont "LEAGUE champion!"
+	cont "LEAGUE CHAMPION!"
 
 	para "Although I don't"
 	line "like to admit it."
@@ -90,7 +74,7 @@ _ChampionsRoomOakCongratulatesPlayerText::
 	line "Congratulations!"
 	cont "You're the new"
 	cont "#MON LEAGUE"
-	cont "champion!"
+	cont "CHAMPION!"
 
 	para "You've grown up so"
 	line "much since you"

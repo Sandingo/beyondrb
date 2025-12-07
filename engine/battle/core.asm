@@ -1195,22 +1195,15 @@ HandlePlayerBlackOut:
 	ld [wIsTrainerBattle], a
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
-	jr z, .notRival1Battle
+	jr z, blackOutText
 	ld a, [wCurOpponent]
-	cp OPP_RIVAL1
-	jr nz, .notRival1Battle
-	hlcoord 0, 0  ; rival 1 battle
-	lb bc, 8, 21
-	call ClearScreenArea
-	call ScrollTrainerPicAfterBattle
-	ld c, 40
-	call DelayFrames
-	ld hl, Rival1WinText
-	call PrintText
-	ld a, [wCurMap]
-	cp OAKS_LAB
-	ret z            ; starter battle in oak's lab: don't black out
-.notRival1Battle
+	cp OPP_RIVAL1	; new, ugly way to include the rival win quotes
+	jr z, Rival1BattleQuotes
+	cp OPP_RIVAL2
+	jp z, Rival2BattleQuotes
+	cp OPP_RIVAL3
+	jp z, Rival3BattleQuote
+blackOutText:
 	ld b, SET_PAL_BATTLE_BLACK
 	call RunPaletteCommand
 	ld hl, PlayerBlackedOutText2
@@ -1231,10 +1224,6 @@ HandlePlayerBlackOut:
 	scf
 	ret
 
-Rival1WinText:
-	text_far _Rival1WinText
-	text_end
-
 PlayerBlackedOutText2:
 	text_far _PlayerBlackedOutText2
 	text_end
@@ -1245,6 +1234,107 @@ PlayerBlackedOutText3:
 
 LinkBattleLostText:
 	text_far _LinkBattleLostText
+	text_end
+
+
+Rival1BattleQuotes:
+	hlcoord 0, 0  ; rival 1 battle
+	lb bc, 8, 21
+	call ClearScreenArea
+	call ScrollTrainerPicAfterBattle
+	ld c, 40
+	call DelayFrames
+	ld a, [wCurMap]
+	cp OAKS_LAB ; Play lab victory text
+	jr nz, .rival1textCheck2
+	ld hl, Rival1WinText
+	jr .printRivalText
+.rival1textCheck2
+	cp ROUTE_22 ; Play Route 22 victory text
+	jr nz, .rival1textCheck3
+	ld hl, Route22Rival1VictoryText
+	jr .printRivalText
+.rival1textCheck3
+	ld hl, CeruleanCityRivalVictoryText ; Must be in Cerulean
+	jr .printRivalText
+.printRivalText
+	call PrintText
+	ld a, [wCurMap]
+	cp OAKS_LAB
+	ret z            ; starter battle in oak's lab: don't black out
+	jp blackOutText ; Black out if not in oak's lab
+	
+	
+Rival1WinText:
+	text_far _Rival1WinText
+	text_end
+
+Route22Rival1VictoryText:
+	text_far _Route22Rival1VictoryText
+	text_end
+
+CeruleanCityRivalVictoryText:
+	text_far _CeruleanCityRivalVictoryText
+	text_end
+
+Rival2BattleQuotes:
+	hlcoord 0, 0  ; rival 2 battle
+	lb bc, 8, 21
+	call ClearScreenArea
+	call ScrollTrainerPicAfterBattle
+	ld c, 40
+	call DelayFrames
+	ld a, [wCurMap]
+	cp SS_ANNE_2F ; Play ss anne victory text
+	jr nz, .rival2textCheck2
+	ld hl, SSAnne2FRivalVictoryText
+	jr .printRivalText
+.rival2textCheck2
+	cp POKEMON_TOWER_2F ; Play Pokemon Tower victory text
+	jr nz, .rival2textCheck3
+	ld hl, PokemonTower2FRivalVictoryText
+	jr .printRivalText
+.rival2textCheck3
+	cp SILPH_CO_7F ; Play Silph Co. victory text
+	jr nz, .rival2textCheck4
+	ld hl, SilphCo7FRivalVictoryText
+	jr .printRivalText
+.rival2textCheck4
+	ld hl, Route22Rival2VictoryText ; Must be in Route 22
+	jr .printRivalText
+.printRivalText
+	call PrintText
+	jp blackOutText
+
+SSAnne2FRivalVictoryText:
+	text_far _SSAnne2FRivalVictoryText
+	text_end
+	
+PokemonTower2FRivalVictoryText:
+	text_far _PokemonTower2FRivalVictoryText
+	text_end
+
+SilphCo7FRivalVictoryText:
+	text_far _SilphCo7FRivalVictoryText
+	text_end
+
+Route22Rival2VictoryText:
+	text_far _Route22Rival2VictoryText
+	text_end
+
+Rival3BattleQuote: ; There's only one Rival 3 battle, the champion fight
+	hlcoord 0, 0
+	lb bc, 8, 21
+	call ClearScreenArea
+	call ScrollTrainerPicAfterBattle
+	ld c, 40
+	call DelayFrames
+	ld hl, RivalChampionVictoryText
+	call PrintText
+	jp blackOutText ; Black out if not in oak's lab
+
+RivalChampionVictoryText:
+	text_far _RivalChampionVictoryText
 	text_end
 
 ; slides pic of fainted mon downwards until it disappears
@@ -1614,7 +1704,7 @@ TryRunningFromBattle:
 	srl b
 	rr a
 	and a
-	jr z, .canEscape ; jump if enemy speed divided by 4, mod 256 is 0
+	jp z, .canEscape ; jump if enemy speed divided by 4, mod 256 is 0
 	ldh [hDivisor], a ; ((enemy speed / 4) % 256)
 	ld b, $2
 	call Divide ; divide (player speed * 32) by ((enemy speed / 4) % 256)
@@ -1668,6 +1758,11 @@ TryRunningFromBattle:
 	ld c, 50
 	call DelayFrames
 	call AnimateRetreatingPlayerMon
+	ld c, 40
+	call DelayFrames
+	hlcoord 9, 7 ; Clears the HUD on the player's side.
+	lb bc, 5, 10
+	call ClearScreenArea
 ; blackout
 	jp HandlePlayerBlackOut
 	ret

@@ -37,15 +37,6 @@ _Route22Rival1DefeatedText::
 	cont "out!"
 	prompt
 
-_Route22Rival1VictoryText::
-	text "<RIVAL>: What?"
-	line "Why do I have 2"
-	cont "#MON?"
-
-	para "You should catch"
-	cont "some more too!"
-	prompt
-
 _Route22RivalBeforeBattleText2::
 	text "<RIVAL>: What?"
 	line "<PLAYER>! What a"
@@ -85,17 +76,6 @@ _Route22Rival2DefeatedText::
 
 	para "I was just"
 	line "careless!"
-	prompt
-
-_Route22Rival2VictoryText::
-	text "<RIVAL>: Hahaha!"
-	line "<PLAYER>! That's"
-	cont "your best? You're"
-	cont "nowhere near as"
-	cont "good as me, pal!"
-
-	para "Go train some"
-	line "more! You loser!"
 	prompt
 
 _Route22PokemonLeagueSignText::

@@ -40,7 +40,7 @@ _OakAfterBattleText::
 _OakPostBattleText::
 	text "A truly wonderful"
 	line "display from our"
-	cont "new champion!"
+	cont "new CHAMPION!"
 	
 	para "I haven't felt this"
 	line "invigorated since"

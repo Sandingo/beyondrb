@@ -22,7 +22,7 @@ _Route22GateGuardGoRightAheadText::
 	text_end
 
 _Route22GateSilverGuardText::
-	text "Only the champion"
+	text "Only the CHAMPION"
 	line "is allowed beyond"
 	cont "this point.@"
 	text_end

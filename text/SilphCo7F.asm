@@ -172,15 +172,6 @@ _SilphCo7FRivalDefeatedText::
 	cont "for BOSS ROCKET!"
 	prompt
 
-_SilphCo7FRivalVictoryText::
-	text "<RIVAL>: How can"
-	line "I put this?"
-
-	para "You're not good"
-	line "enough to play"
-	cont "with us big boys!"
-	prompt
-
 _SilphCo7FRivalGoodLuckToYouText::
 	text "Well, <PLAYER>!"
 

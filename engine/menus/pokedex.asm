@@ -81,7 +81,7 @@ HandlePokedexSideMenu:
 	ld hl, wTopMenuItemY
 	ld a, 10
 	ld [hli], a ; top menu item Y
-	ld a, 15
+	ld a, 14 ; Japanese Layout
 	ld [hli], a ; top menu item X
 	xor a
 	ld [hli], a ; current menu item ID
@@ -158,18 +158,11 @@ HandlePokedexListMenu:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 ; draw the horizontal line separating the seen and owned amounts from the menu
-	hlcoord 15, 8
-	ld a, "─"
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	hlcoord 14, 0
+	hlcoord 12, 0 ; jp-like layout
 	ld [hl], $71 ; vertical line tile
-	hlcoord 14, 1
+	hlcoord 12, 1
 	call DrawPokedexVerticalLine
-	hlcoord 14, 9
+	hlcoord 12, 9
 	call DrawPokedexVerticalLine
 	ld hl, wPokedexSeen
 	ld b, wPokedexSeenEnd - wPokedexSeen
@@ -182,19 +175,27 @@ HandlePokedexListMenu:
 	ld b, wPokedexOwnedEnd - wPokedexOwned
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 16, 6
+	hlcoord 16, 6 ; jp layout
 	lb bc, 1, 3
 	call PrintNumber ; print number of owned pokemon
-	hlcoord 16, 2
+	hlcoord 14, 2 ; jp layout
 	ld de, PokedexSeenText
 	call PlaceString
-	hlcoord 16, 5
+	hlcoord 14, 5 ; jp layout
 	ld de, PokedexOwnText
 	call PlaceString
 	hlcoord 1, 1
 	ld de, PokedexContentsText
 	call PlaceString
+; draw text box border around DATA CRY etc in pokedex, which in the english version is missing except for the top line
 	hlcoord 16, 10
+	hlcoord 13, 8 ; japanese-like layout
+	lb bc, 8, 6 ; japanese-like layout
+	call TextBoxBorder
+	hlcoord 0, 0 ; new, this is to get rid of the overflowing text box while still looking 'A E S T H E T I C'
+	lb bc, 32, 1
+	call ClearScreenArea	
+	hlcoord 15, 10 ; x-y coordinates of TEXT "data cry" etc
 	ld de, PokedexMenuItemsText
 	call PlaceString
 ; find the highest pokedex number among the pokemon the player has seen
@@ -219,9 +220,9 @@ HandlePokedexListMenu:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
 	hlcoord 4, 2
-	lb bc, 14, 10
+	lb bc, 16, 8 ; Make sure text doesn't overflow
 	call ClearScreenArea
-	hlcoord 1, 3
+	hlcoord 1, 4 ; Move text a tile down away from the CONTENTS tag
 	ld a, [wListScrollOffset]
 	ld [wPokedexNum], a
 	ld d, 7
@@ -253,6 +254,8 @@ HandlePokedexListMenu:
 	call IsPokemonBitSet
 	pop hl
 	ld a, " "
+	dec hl
+	dec hl ; Move text to the left by 2
 	jr z, .writeTile
 	ld a, $72 ; pokeball tile
 .writeTile
@@ -264,7 +267,7 @@ HandlePokedexListMenu:
 	ld de, .dashedLine ; print a dashed line in place of the name if the player hasn't seen the pokemon
 	jr .skipGettingName
 .dashedLine ; for unseen pokemon in the list
-	db "----------@"
+	db "---------@"
 .getPokemonName
 	call PokedexToIndex
 	call GetMonName

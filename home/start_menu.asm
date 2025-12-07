@@ -10,10 +10,9 @@ DisplayStartMenu::
 RedisplayStartMenu::
 	farcall DrawStartMenu
 	farcall PrintSafariZoneSteps ; print Safari Zone info, if in Safari Zone
-	farcall DrawMenuAccount
 	call UpdateSprites
 .loop
-	farcall DrawMenuAccount
+;	farcall DrawMenuAccount Comment back in for Gen 2 style menus
 	call HandleMenuInput
 	ld b, a
 .checkIfUpPressed

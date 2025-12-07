@@ -289,7 +289,7 @@ RivalDefeatedText:
 	text_end
 
 RivalVictoryText:
-	text_far _RivalVictoryText
+	text_far _RivalChampionVictoryText
 	text_end
 
 ChampionsRoomRivalAfterBattleText:

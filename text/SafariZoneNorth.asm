@@ -47,7 +47,7 @@ _SafariZoneNorthExpansionGuardText::
 	cont "finished."
 	
 	para "Why not aim to"
-	line "be the champion?"
+	line "be the CHAMPION?"
 	
 	para "That should take"
 	line "you a while!"

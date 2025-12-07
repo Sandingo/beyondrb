@@ -18,15 +18,6 @@ _PokemonTower2FRivalDefeatedText::
 	line "you too!"
 	prompt
 
-_PokemonTower2FRivalVictoryText::
-	text "Well,"
-	line "look at all your"
-	cont "wimpy #MON!"
-
-	para "Toughen them up a"
-	line "bit more!"
-	prompt
-
 _PokemonTower2FRivalHowsYourDexText::
 	text "How's your #DEX"
 	line "coming, pal?"

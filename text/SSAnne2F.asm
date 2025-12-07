@@ -39,14 +39,6 @@ _SSAnne2FRivalDefeatedText::
 	cont "#MON!"
 	prompt
 
-_SSAnne2FRivalVictoryText::
-	text "<PLAYER>! What are"
-	line "you, seasick?"
-
-	para "You should shape"
-	line "up, pal!"
-	prompt
-
 _SSAnne2FRivalCutMasterText::
 	text "<RIVAL>: I heard"
 	line "there was a CUT"

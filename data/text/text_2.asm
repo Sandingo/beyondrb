@@ -892,6 +892,74 @@ _Rival1WinText::
 	line "I great or what?"
 	prompt
 
+_Route22Rival1VictoryText::
+	text "<RIVAL>: What?"
+	line "Why do I have 2"
+	cont "#MON?"
+
+	para "You should catch"
+	line "some more too!"
+	prompt
+
+_Route22Rival2VictoryText::
+	text "<RIVAL>: Hahaha!"
+	line "<PLAYER>! That's"
+	cont "your best? You're"
+	cont "nowhere near as"
+	cont "good as me, pal!"
+
+	para "Go train some"
+	line "more! You loser!"
+	prompt
+
+_CeruleanCityRivalVictoryText::
+	text "<RIVAL>: Heh!"
+	line "You're no match"
+	cont "for my genius!"
+	prompt
+
+_SSAnne2FRivalVictoryText::
+	text "<PLAYER>! What are"
+	line "you, seasick?"
+
+	para "You should shape"
+	line "up, pal!"
+	prompt
+
+_PokemonTower2FRivalVictoryText::
+	text "<RIVAL>: Well,"
+	line "look at all your"
+	cont "wimpy #MON!"
+
+	para "Toughen them up a"
+	line "bit more!"
+	prompt
+
+_SilphCo7FRivalVictoryText::
+	text "<RIVAL>: How can"
+	line "I put this?"
+
+	para "You're not good"
+	line "enough to play"
+	cont "with us big boys!"
+	prompt
+
+_RivalChampionVictoryText::
+	text "<RIVAL>: Hahaha!"
+	line "I won, I won!"
+
+	para "I'm too good for"
+	line "you, <PLAYER>!"
+
+	para "You did well to"
+	line "even reach me,"
+	cont "<RIVAL>, the"
+	cont "#MON genius!"
+
+	para "Nice try, loser!"
+	line "Hahaha!"
+	prompt
+
 _PlayerBlackedOutText2::
 	text "<PLAYER> is out of"
 	line "useable #MON!"

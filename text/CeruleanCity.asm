@@ -22,12 +22,6 @@ _CeruleanCityRivalDefeatedText::
 	cont "You won already!"
 	prompt
 
-_CeruleanCityRivalVictoryText::
-	text "Heh!"
-	line "You're no match"
-	cont "for my genius!"
-	prompt
-
 _CeruleanCityRivalIWentToBillsText::
 	text "<RIVAL>: Hey,"
 	line "guess what?"
@@ -200,7 +194,7 @@ _CeruleanCitySuperNerd3Text::
 	cont "live in there!"
 
 	para "The #MON LEAGUE"
-	line "champion is the"
+	line "CHAMPION is the"
 	cont "only person who"
 	cont "is allowed in!"
 	done

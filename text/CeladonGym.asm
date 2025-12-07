@@ -222,7 +222,7 @@ _CeladonGymAfterBattleText8::
 ; Rematch Dialoge, Placeholder
 _CeladonGymRematchPreBattle1Text::
 	text "Oh, if it isn't"
-	line "the champion."
+	line "the CHAMPION."
 	
 	para "I do hope things"
 	line "have been going"

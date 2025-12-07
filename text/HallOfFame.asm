@@ -8,7 +8,7 @@ _HallOfFameOakText::
 	cont "FAME!"
 
 	para "#MON LEAGUE"
-	line "champions are"
+	line "CHAMPIONS are"
 	cont "honored for their"
 	cont "exploits here!"
 
@@ -19,7 +19,7 @@ _HallOfFameOakText::
 	para "<PLAYER>! You have"
 	line "endeavored hard"
 	cont "to become the new"
-	cont "LEAGUE champion!"
+	cont "LEAGUE CHAMPION!"
 
 	para "Congratulations,"
 	line "<PLAYER>, you and"

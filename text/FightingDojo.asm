@@ -169,7 +169,7 @@ _FightingDojoKarateMasterRematchAfterBattleText::
 	cont "day."
 	
 	para "I await your"
-	line "return, champion!"
+	line "return, CHAMPION!"
 	done
 
 _FightingDojoKarateMasterOfferRemaining::
@@ -177,7 +177,7 @@ _FightingDojoKarateMasterOfferRemaining::
 	line "again..."
 	
 	para "No matter! A"
-	line "champion deserves"
+	line "CHAMPION deserves"
 	cont "fitting reward!"
 	
 	para "The other two"

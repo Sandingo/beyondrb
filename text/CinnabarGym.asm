@@ -257,7 +257,7 @@ _CinnabarGymRematchPostBattleText::
 	line "been coming to my"
 	cont "gym in waves"
 	cont "since you became"
-	cont "the champion!"
+	cont "the CHAMPION!"
 
 	para "More fun for me,"
 	line "I gotta make sure"
