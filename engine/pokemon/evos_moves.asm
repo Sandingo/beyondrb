@@ -251,6 +251,7 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld [wPokedexNum], a
 	xor a
 	ld [wMonDataLocation], a
+	call SpeciesForceLearnMove ; new 
 	call LearnMoveFromLevelUp
 	pop hl
 	predef SetPartyMonTypes
@@ -428,6 +429,85 @@ LearnMoveFromLevelUp:
 	ld a, [wCurPartySpecies]
 	ld [wPokedexNum], a
 	ret
+
+SpeciesForceLearnMove: ; from PureRGB
+	push bc
+	ld a, [wPokedexNum] ; species
+	ld hl, SpeciesLearnMoveList
+	ld de, 2
+	call IsInArray
+	jr c, .forceLearnMove
+	jr .done
+.forceLearnMove
+	push af ; put species number on the stack
+	ld a, b
+	push hl	
+	push de
+	inc hl
+	ld a, [hl]
+	ld [wMoveNum], a
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	call CopyToStringBuffer
+	predef LearnMove
+	pop de
+	pop hl
+	pop af ; retrieve species number from the stack
+	ld [wPokedexNum], a
+.done
+	pop bc
+	ret
+
+SpeciesLearnMoveList:
+	db FLAREON, EMBER
+	db JOLTEON, THUNDERSHOCK
+	db VAPOREON, WATER_GUN
+	db ESPEON, CONFUSION
+	db UMBREON, BITE
+	db LEAFEON, ABSORB
+	db GLACEON, POWDER_SNOW
+	db METAPOD, HARDEN
+	db KAKUNA, HARDEN 
+	db PUPAL, HARDEN
+	db BUTTERFREE, GUST
+	db BEEDRILL, FURY_ATTACK
+	db CARAPTHOR, UPPERCUT
+	db VENUSAUR, PETAL_DANCE
+	db CHARIZARD, WING_ATTACK
+	db TOTARTLE, AURORA_BEAM
+	db BLASTOISE, FLASH_CANNON
+	db RAICHU, THUNDERPUNCH
+	db GOROCHU, HORN_ATTACK
+	db PRIMEAPE, RAGE
+	db MACHAMP, STRENGTH
+	db SLOWBRO, WITHDRAW
+	db POLIWRATH, SUBMISSION
+	db DEWGONG, ICE_BEAM
+	db KADABRA, KINESIS
+	db GENGAR, SHADOW_PUNCH
+	db RAPIDASH, FURY_ATTACK
+	db EXEGGUTOR, STOMP
+	db CLOYSTER, SPIKE_CANNON
+	db DISTURBAN, POISON_GAS
+	db HITMONLEE, DOUBLE_KICK
+	db HITMONCHAN, COMET_PUNCH
+	db HITMONTOP, ROLLING_KICK
+	db GYARADOS, BITE
+	db DRAGONITE, WING_ATTACK
+	db KABUTOPS, SLASH
+	db OMASTAR, SPIKE_CANNON
+	db VENOMOTH, WING_ATTACK
+	db GAWARHED, ROAR
+	db ANNIHILAPE, SHADOW_PUNCH
+	db KLEAVOR, STONE_AXE
+	db STEELIX, IRON_TAIL
+	db TRICULES, NUMB_PINCER
+	db CLEFABLE, METRONOME
+	db MAGNETON, TRI_ATTACK
+	db DUGTRIO, TRI_ATTACK
+	db DODRIO, TRI_ATTACK
+	db MELMETAL, THUNDERPUNCH
+	db -1
 
 ; writes the moves a mon has at level [wCurEnemyLevel] to [de]
 ; move slots are being filled up sequentially and shifted if all slots are full

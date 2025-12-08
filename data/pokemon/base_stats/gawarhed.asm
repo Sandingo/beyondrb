@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/gawarhed.pic", 0, 1 ; sprite dimensions
 	dw GawarhedPicFront, GawarhedPicBack
 
-	db SUBSTITUTE, GROWL, TACKLE, NO_MOVE ; level 1 learnset
+	db SUBSTITUTE, GROWL, TACKLE, ROAR ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset

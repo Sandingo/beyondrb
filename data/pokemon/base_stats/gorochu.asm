@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/gorochu.pic", 0, 1 ; sprite dimensions
 	dw GorochuPicFront, GorochuPicBack
 
-	db THUNDERSHOCK, GROWL, THUNDER_WAVE, HORN_ATTACK ; level 1 learnset
+	db THUNDERSHOCK, GROWL, THUNDER_WAVE, THUNDERPUNCH ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset

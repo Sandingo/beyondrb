@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/totartle.pic", 0, 1 ; sprite dimensions
 	dw TotartlePicFront, TotartlePicBack
 
-	db TACKLE, TAIL_WHIP, BUBBLE, WATER_GUN ; level 1 learnset
+	db TACKLE, TAIL_WHIP, BUBBLE, AURORA_BEAM ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset

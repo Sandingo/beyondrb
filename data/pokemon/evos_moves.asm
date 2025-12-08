@@ -367,11 +367,11 @@ SlowbroEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 9, WITHDRAW
 	db 18, DISABLE
 	db 22, HEADBUTT
 	db 27, GROWL
 	db 33, WATER_GUN
-	db 37, WITHDRAW
 	db 44, AMNESIA
 	db 55, PSYCHIC_M
 	db 0
@@ -390,7 +390,7 @@ IvysaurEvosMoves:
 	db 54, SOLARBEAM
 	db 0
 
-ExeggutorEvosMoves:
+ExeggutorEvosMoves: ; Learns STOMP via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -453,7 +453,7 @@ GrimerEvosMoves:
 	db 55, ACID_ARMOR
 	db 0
 
-GengarEvosMoves:
+GengarEvosMoves: ; Learns SHADOW_PUNCH via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -547,7 +547,7 @@ GyaradosEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 20, BITE
+	db 15, BITE
 	db 25, DRAGON_RAGE
 	db 32, LEER
 	db 41, HYDRO_PUMP
@@ -622,7 +622,7 @@ StaryuEvosMoves:
 	db 47, HYDRO_PUMP
 	db 0
 
-BlastoiseEvosMoves:
+BlastoiseEvosMoves: ; Learns FLASH_CANNON on evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -630,7 +630,6 @@ BlastoiseEvosMoves:
 	db 15, WATER_GUN
 	db 24, BITE
 	db 31, WITHDRAW
-	db 36, FLASH_CANNON
 	db 42, SKULL_BASH
 	db 52, HYDRO_PUMP
 	db 0
@@ -783,13 +782,12 @@ SlowpokeEvosMoves:
 	db 48, PSYCHIC_M
 	db 0
 
-KadabraEvosMoves:
+KadabraEvosMoves: ; Learns KINESIS on evolution.
 ; Evolutions
 	db EVOLVE_TRADE, 1, ALAKAZAM
 	db 0
 ; Learnset
 	db 16, CONFUSION
-	db 18, KINESIS
 	db 20, DISABLE
 	db 27, PSYBEAM
 	db 31, RECOVER
@@ -880,7 +878,7 @@ TyrogueEvosMoves:
 ; Learnset
 	db 0
 
-HitmonleeEvosMoves:
+HitmonleeEvosMoves: ; Learns DOUBLE_KICK via evolution
 ; Evolutions
 	db 0
 ; Learnset
@@ -891,7 +889,7 @@ HitmonleeEvosMoves:
 	db 53, MEGA_KICK
 	db 0
 
-HitmonchanEvosMoves:
+HitmonchanEvosMoves: ; Learns COMET_PUNCH via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -966,15 +964,15 @@ GolemEvosMoves:
 	db 43, EXPLOSION
 	db 0
 
-AnnihilapeEvosMoves:
+AnnihilapeEvosMoves: ; Learns SHADOW_PUNCH on evolution.
 ; Evolutions
 	db 0
 ; Learnset
 	db 15, KARATE_CHOP
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
-	db 35, RAGE_FIST
-	db 35, SHADOW_PUNCH
+	db 34, SHADOW_PUNCH
+	db 34, RAGE_FIST
 	db 37, SEISMIC_TOSS
 	db 45, SCREECH
 	db 46, THRASH
@@ -1041,7 +1039,7 @@ ElectabuzzEvosMoves:
 	db 54, THUNDER
 	db 0
 
-MagnetonEvosMoves:
+MagnetonEvosMoves: ; Learns TRI_ATTACK via evolution
 ; Evolutions
 	db EVOLVE_ITEM, THUNDER_STONE, 1, MAGNEZONE
 	db 0
@@ -1049,7 +1047,7 @@ MagnetonEvosMoves:
 	db 14, THUNDERSHOCK
 	db 19, SUPERSONIC
 	db 21, SONICBOOM
-	db 30, TRI_ATTACK
+	db 29, TRI_ATTACK
 	db 38, THUNDER_WAVE
 	db 44, FLASH_CANNON
 	db 46, SWIFT
@@ -1131,7 +1129,7 @@ TaurosEvosMoves:
 	db 51, TAKE_DOWN
 	db 0
 
-SteelixEvosMoves:
+SteelixEvosMoves: ; Learns IRON_TAIL via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -1196,7 +1194,7 @@ VenonatEvosMoves:
 	db 43, PSYCHIC_M
 	db 0
 
-DragoniteEvosMoves:
+DragoniteEvosMoves: ; Learns WING_ATTACK on evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -1204,49 +1202,48 @@ DragoniteEvosMoves:
 	db 20, AGILITY
 	db 35, SLAM
 	db 45, DRAGON_RAGE
-	db 55, WING_ATTACK
+	db 50, WING_ATTACK
 	db 60, HYPER_BEAM
 	db 0
 
-EspeonEvosMoves:
+EspeonEvosMoves: ; Learns CONFUSION on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, CONFUSION
-	db 37, TAIL_WHIP
-	db 40, SWIFT
-	db 42, LEER
-	db 44, PSYBEAM
-	db 48, PSYCHIC_M
-	db 54, RECOVER
+	db 8, SAND_ATTACK
+	db 16, CONFUSION
+	db 23, QUICK_ATTACK
+	db 30, SWIFT
+	db 36, PSYBEAM
+	db 47, PSYCHIC_M
+	db 52, RECOVER
 	db 0
 
-UmbreonEvosMoves:
+UmbreonEvosMoves:	; Learns BITE on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, CONFUSE_RAY
+	db 8, SAND_ATTACK
+	db 16, BITE
+	db 23, QUICK_ATTACK
+	db 30, CONFUSE_RAY
 	db 36, FEINT_ATTACK
-	db 37, TAIL_WHIP
-	db 42, LEER
-	db 48, SCREECH
-	db 54, RECOVER
+	db 47, SCREECH
+	db 52, RECOVER
 	db 0
 
-LeafeonEvosMoves:
+LeafeonEvosMoves:	; Learns ABSORB on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, ABSORB
-	db 37, TAIL_WHIP
-	db 40, BITE
-	db 42, LEER
-	db 44, RAZOR_LEAF
-	db 48, SWORDS_DANCE
-	db 54, SOLARBEAM
+	db 8, SAND_ATTACK
+	db 16, BITE
+	db 23, QUICK_ATTACK
+	db 30, ABSORB
+	db 36, RAZOR_LEAF
+	db 42, MEGA_DRAIN
+	db 47, SWORDS_DANCE
+	db 52, SOLARBEAM
 	db 0
 
 DodaerieEvosMoves:
@@ -1376,18 +1373,18 @@ KrabbyEvosMoves:
 	db 40, HARDEN
 	db 0
 
-GlaceonEvosMoves:
+GlaceonEvosMoves:	; Learns POWDER_SNOW on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, MIST
-	db 37, TAIL_WHIP
-	db 40, BITE
-	db 42, AURORA_BEAM
-	db 44, ICE_BEAM
-	db 48, BARRIER
-	db 54, BLIZZARD
+	db 8, SAND_ATTACK
+	db 16, POWDER_SNOW
+	db 23, QUICK_ATTACK
+	db 30, BITE
+	db 36, AURORA_BEAM
+	db 42, ICE_BEAM
+	db 47, BARRIER
+	db 52, BLIZZARD
 	db 0
 
 LuxwanEvosMoves:
@@ -1516,13 +1513,13 @@ KabutoEvosMoves:
 	db 0
 ; Learnset
 	db 34, ABSORB
-	db 39, SLASH
+	db 41, SLASH
 	db 44, NUMB_PINCER
 	db 46, MEGA_DRAIN
 	db 49, HYDRO_PUMP
 	db 0
 
-KabutopsEvosMoves:
+KabutopsEvosMoves: ; Learns SLASH on evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -1627,7 +1624,7 @@ OmastarEvosMoves:
 ; Learnset
 	db 34, HORN_ATTACK
 	db 39, LEER
-	db 44, SPIKE_CANNON
+	db 39, SPIKE_CANNON
 	db 49, HYDRO_PUMP
 	db 0
 
@@ -1676,52 +1673,55 @@ EeveeEvosMoves:
 	db EVOLVE_ITEM, MOON_STONE, 1, SYLVEON
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, TAIL_WHIP
-	db 37, BITE
-	db 45, TAKE_DOWN
+	db 8, SAND_ATTACK
+	db 16, GROWL
+	db 23, QUICK_ATTACK
+	db 30, BITE
+	db 36, FOCUS_ENERGY
+	db 42, TAKE_DOWN
 	db 0
 
-FlareonEvosMoves:
+FlareonEvosMoves:	; Learns EMBER on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, EMBER
-	db 37, TAIL_WHIP
-	db 40, BITE
-	db 42, LEER
-	db 44, FIRE_SPIN
-	db 48, RAGE
-	db 54, FLAMETHROWER
+	db 8, SAND_ATTACK
+	db 16, EMBER
+	db 23, QUICK_ATTACK
+	db 30, BITE
+	db 36, FIRE_SPIN
+	db 42, SMOG
+	db 47, LEER
+	db 52, FLAMETHROWER
 	db 0
 
-JolteonEvosMoves:
+JolteonEvosMoves:	; Learns THUNDERSHOCK on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, THUNDERSHOCK
-	db 37, TAIL_WHIP
-	db 40, THUNDER_WAVE
-	db 42, DOUBLE_KICK
-	db 44, AGILITY
-	db 48, PIN_MISSILE
-	db 54, THUNDER
+	db 8, SAND_ATTACK
+	db 16, THUNDERSHOCK
+	db 23, QUICK_ATTACK
+	db 30, DOUBLE_KICK
+	db 36, PIN_MISSILE
+	db 42, THUNDER_WAVE
+	db 47, AGILITY
+	db 52, THUNDER
 	db 0
 
-VaporeonEvosMoves:
+VaporeonEvosMoves:	; Learns WATER_GUN on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, WATER_GUN
-	db 37, TAIL_WHIP
-	db 40, BITE
-	db 42, ACID_ARMOR
-	db 44, HAZE
-	db 48, MIST
-	db 54, HYDRO_PUMP
+	db 8, SAND_ATTACK
+	db 16, WATER_GUN
+	db 23, QUICK_ATTACK
+	db 30, BITE
+	db 36, AURORA_BEAM
+	db 42, HAZE
+	db 42, MIST
+	db 47, ACID_ARMOR
+	db 52, HYDRO_PUMP
 	db 0
 
 MachopEvosMoves:
@@ -1806,10 +1806,11 @@ PoliwhirlEvosMoves:
 	db 49, HYDRO_PUMP
 	db 0
 
-PoliwrathEvosMoves:
+PoliwrathEvosMoves: ; Learns SUBMISSION on evolution.
 ; Evolutions
 	db 0
 ; Learnset
+	db 8, SUBMISSION
 	db 16, HYPNOSIS
 	db 19, WATER_GUN
 	db 0
@@ -1821,21 +1822,17 @@ WeedleEvosMoves:
 ; Learnset
 	db 0
 
-KakunaEvosMoves:
+KakunaEvosMoves:	; Learns HARDEN on evolution
 ; Evolutions
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db 0
 ; Learnset
-	db 7, HARDEN
-	db 8, HARDEN
-	db 9, HARDEN
 	db 0
 
-BeedrillEvosMoves:
+BeedrillEvosMoves: ; Learns FURY_ATTACK on evolution.
 ; Evolutions
 	db 0
 ; Learnset
-	db 10, FURY_ATTACK
 	db 14, FOCUS_ENERGY
 	db 20, TWINEEDLE
 	db 25, RAGE
@@ -1856,19 +1853,19 @@ HoundourEvosMoves:
 	db 43, CRUNCH
 	db 0
 
-DodrioEvosMoves:
+DodrioEvosMoves:	; Learns TRI_ATTACK via evolution
 ; Evolutions
 	db 0
 ; Learnset
 	db 20, GROWL
 	db 24, FURY_ATTACK
 	db 30, DRILL_PECK
-	db 31, TRI_ATTACK
+	db 30, TRI_ATTACK
 	db 39, RAGE
 	db 51, AGILITY
 	db 0
 
-PrimeapeEvosMoves:
+PrimeapeEvosMoves: ; Learns RAGE on evolution.
 ; Evolutions
 	db EVOLVE_LEVEL, 35, ANNIHILAPE
 	db 0
@@ -1883,19 +1880,20 @@ PrimeapeEvosMoves:
 	db 46, THRASH
 	db 0
 
-DugtrioEvosMoves:
+DugtrioEvosMoves:	; Learns TRI_ATTACK via evolution
 ; Evolutions
 	db 0
 ; Learnset
 	db 15, GROWL
 	db 19, DIG
 	db 24, SAND_ATTACK
+	db 25, TRI_ATTACK
 	db 35, SLASH
 	db 47, EARTHQUAKE
 	db 61, FISSURE
 	db 0
 
-VenomothEvosMoves:
+VenomothEvosMoves: ; Learns WING_ATTACK on evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -1904,12 +1902,13 @@ VenomothEvosMoves:
 	db 22, POISONPOWDER
 	db 27, LEECH_LIFE
 	db 30, STUN_SPORE
+	db 30, WING_ATTACK
 	db 38, PSYBEAM
 	db 43, SLEEP_POWDER
 	db 50, PSYCHIC_M
 	db 0
 
-DewgongEvosMoves:
+DewgongEvosMoves: ; Learns ICE_BEAM via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -1953,21 +1952,17 @@ CaterpieEvosMoves:
 ; Learnset
 	db 0
 
-MetapodEvosMoves:
+MetapodEvosMoves:	; Learns HARDEN on evolution
 ; Evolutions
 	db EVOLVE_LEVEL, 10, BUTTERFREE
 	db 0
 ; Learnset
-	db 7, HARDEN
-	db 8, HARDEN
-	db 9, HARDEN
 	db 0
 
-ButterfreeEvosMoves:
+ButterfreeEvosMoves:; Learns GUST via evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 10, GUST
 	db 12, CONFUSION
 	db 15, POISONPOWDER
 	db 16, STUN_SPORE
@@ -1977,7 +1972,7 @@ ButterfreeEvosMoves:
 	db 32, PSYBEAM
 	db 0
 
-MachampEvosMoves:
+MachampEvosMoves: ; Learns STRENGTH on evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -1990,7 +1985,7 @@ MachampEvosMoves:
 	db 52, SUBMISSION
 	db 0
 
-TriculesEvosMoves:
+TriculesEvosMoves: ; Learns NUMB_PINCER via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -2104,7 +2099,6 @@ DecillaEvosMoves:
 	db 25, DRAGON_RAGE
 	db 30, SCREECH
 	db 38, TAKE_DOWN
-	db 40, ROAR
 	db 45, THRASH
 	db 48, DRAGONBREATH
 	db 0
@@ -2122,7 +2116,7 @@ MukEvosMoves:
 	db 60, ACID_ARMOR
 	db 0
 
-GawarhedEvosMoves:
+GawarhedEvosMoves: ; Learns ROAR on evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -2130,7 +2124,6 @@ GawarhedEvosMoves:
 	db 25, DRAGON_RAGE
 	db 30, SCREECH
 	db 38, TAKE_DOWN
-	db 40, ROAR
 	db 48, THRASH
 	db 52, DRAGONBREATH
 	db 0
@@ -2148,11 +2141,11 @@ KinglerEvosMoves:
 	db 49, HARDEN
 	db 0
 
-CloysterEvosMoves:
+CloysterEvosMoves: ; Learns SPIKE_CANNON on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 50, SPIKE_CANNON
+	db 1, SPIKE_CANNON
 	db 0
 
 SlowkingEvosMoves:
@@ -2179,7 +2172,7 @@ ElectrodeEvosMoves:
 	db 50, EXPLOSION
 	db 0
 
-ClefableEvosMoves:
+ClefableEvosMoves: ; Learns METRONOME via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -2263,7 +2256,6 @@ AlakazamEvosMoves:
 	db 0
 ; Learnset
 	db 16, CONFUSION
-	db 18, KINESIS
 	db 20, DISABLE
 	db 27, PSYBEAM
 	db 31, RECOVER
@@ -2318,7 +2310,7 @@ BulbasaurEvosMoves:
 	db 48, SOLARBEAM
 	db 0
 
-VenusaurEvosMoves:
+VenusaurEvosMoves:	; Learns PETAL_DANCE on evolution
 ; Evolutions
 	db 0
 ; Learnset
@@ -2326,10 +2318,8 @@ VenusaurEvosMoves:
 	db 13, VINE_WHIP
 	db 22, POISONPOWDER
 	db 30, RAZOR_LEAF
-	db 32, PETAL_DANCE
 	db 43, GROWTH
 	db 52, SLEEP_POWDER
-	db 55, PETAL_DANCE
 	db 65, SOLARBEAM
 	db 0
 
@@ -2413,10 +2403,11 @@ RamooseEvosMoves:
 	db 45, DOUBLE_EDGE
 	db 0
 
-GorochuEvosMoves:
+GorochuEvosMoves: ; Learns HORN_ATTACK on evolution.
 ; Evolutions
 	db 0
 ; Learnset
+	db 13, HORN_ATTACK
 	db 52, IRON_TAIL
 	db 60, HORN_DRILL
 	db 0
@@ -2457,10 +2448,10 @@ RapidashEvosMoves:
 	db 4, GROWL
 	db 8, TAIL_WHIP
 	db 13, EMBER
+	db 16, FURY_ATTACK
 	db 19, STOMP
 	db 26, TAKE_DOWN
 	db 39, FIRE_SPIN
-	db 40, FURY_ATTACK
 	db 55, AGILITY
 	db 60, FIRE_BLAST
 	db 0
@@ -2569,21 +2560,17 @@ MagnemiteEvosMoves:
 	db 47, SCREECH
 	db 0
 
-PupalEvosMoves:
+PupalEvosMoves:	; Learns HARDEN on evolution
 ; Evolutions
 	db EVOLVE_LEVEL,10, CARAPTHOR
 	db 0
 ; Learnset
-	db 7, HARDEN
-	db 8, HARDEN
-	db 9, HARDEN
 	db 0
 
-CarapthorEvosMoves:
+CarapthorEvosMoves:; Learns UPPERCUT on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 10, UPPERCUT
 	db 12, COMET_PUNCH
 	db 16, PIN_MISSILE
 	db 20, DEFENSE_CURL
@@ -2645,14 +2632,13 @@ WartortleEvosMoves:
 	db 47, HYDRO_PUMP
 	db 0
 
-CharizardEvosMoves:
+CharizardEvosMoves: ; Learns WING_ATTACK on evolution.
 ; Evolutions
 	db 0
 ; Learnset
 	db 9, EMBER
 	db 13, METAL_CLAW
 	db 24, RAGE
-	db 36, WING_ATTACK
 	db 42, SLASH
 	db 46, FLAMETHROWER
 	db 55, FIRE_SPIN
@@ -2774,11 +2760,11 @@ Porygon2EvosMoves:
 	db 42, TRI_ATTACK
 	db 0
 
-DisturbanEvosMoves:
+DisturbanEvosMoves: ; Learns POISON_GAS on evolution.
 ; Evolutions
 	db 0
 ; Learnset
-	db 50, POISON_GAS
+	db 1, POISON_GAS
 	db 0
 
 MagnezoneEvosMoves:
@@ -2858,7 +2844,7 @@ CryithanEvosMoves:
 	db 65, HYDRO_PUMP
 	db 0
 
-KleavorEvosMoves:
+KleavorEvosMoves: ; Learns STONE_AXE via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -2866,7 +2852,6 @@ KleavorEvosMoves:
 	db 20, FOCUS_ENERGY
 	db 24, DOUBLE_TEAM
 	db 29, SLASH
-	db 30, STONE_AXE
 	db 35, SWORDS_DANCE
 	db 42, AGILITY
 	db 50, WING_ATTACK
@@ -2884,7 +2869,7 @@ MeltanEvosMoves:
 	db 45, FLASH_CANNON
 	db 0
 
-MelmetalEvosMoves:
+MelmetalEvosMoves: ; Learns THUNDERPUNCH via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -2911,7 +2896,7 @@ BlastykeEvosMoves:
 	db 42, HYDRO_PUMP
 	db 0
 
-TotartleEvosMoves:
+TotartleEvosMoves: ; Learns AURORA_BEAM via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -2919,7 +2904,6 @@ TotartleEvosMoves:
 	db 13, WATER_GUN
 	db 24, BITE
 	db 31, WITHDRAW
-	db 36, AURORA_BEAM
 	db 42, SKULL_BASH
 	db 53, HYDRO_PUMP
 	db 60, BLIZZARD
@@ -2933,7 +2917,7 @@ PoliwealthEvosMoves:
 	db 19, WATER_GUN
 	db 0
 
-HitmontopEvosMoves:
+HitmontopEvosMoves: ; Learns ROLLING_KICK via evolution.
 ; Evolutions
 	db 0
 ; Learnset
@@ -3147,18 +3131,18 @@ MagcargoEvosMoves:
 	db 60, BODY_SLAM
 	db 0
 
-SylveonEvosMoves:
+SylveonEvosMoves:	; Learns FAIRY_WIND on evolution
 ; Evolutions
 	db 0
 ; Learnset
-	db 27, QUICK_ATTACK
-	db 31, FAIRY_WIND
-	db 37, TAIL_WHIP
-	db 40, SWIFT
-	db 42, LIGHT_SCREEN
-	db 44, REFLECT
-	db 48, PSYBEAM
-	db 54, MOONBLAST
+	db 8, SAND_ATTACK
+	db 16, FAIRY_WIND
+	db 23, QUICK_ATTACK
+	db 30, SWIFT
+	db 36, LIGHT_SCREEN
+	db 42, REFLECT
+	db 47, PSYBEAM
+	db 52, MOONBLAST
 	db 0
 
 QuadragonEvosMoves:
