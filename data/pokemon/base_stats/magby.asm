@@ -18,7 +18,7 @@
 	     STRENGTH,  FLAMETHROWER,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 	     RAGE,         PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         METRONOME,    FIRE_BLAST,   SKULL_BASH,   REST,         \
-	           SUBSTITUTE
+	           SUBSTITUTE,        HEADBUTT
 	; end
 
 	db BANK(MagbyPicFront)

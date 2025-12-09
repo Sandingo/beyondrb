@@ -17,7 +17,7 @@
 	tmhm TOXIC,        TAKE_DOWN,    RAGE,         THUNDERBOLT,  THUNDER,      \
 	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     SELFDESTRUCT, SWIFT,        REST,         THUNDER_WAVE, EXPLOSION,    \
-	     SUBSTITUTE,   FLASH,	LIGHT_SCREEN
+	     SUBSTITUTE,   FLASH,	LIGHT_SCREEN,        HEADBUTT
 	; end
 
 	db BANK(VoltorbPicFront)

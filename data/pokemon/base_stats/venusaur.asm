@@ -17,7 +17,7 @@
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     HYPER_BEAM,   RAGE,         GIGA_DRAIN,   SOLARBEAM,    MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         SUBSTITUTE,   \
-	     CUT,		   FLASH
+	     CUT,		   FLASH,        HEADBUTT
 	; end
 
 	db BANK(VenusaurPicFront)

@@ -17,7 +17,7 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
 	     RAGE,         SUBSTITUTE,  DIG,          TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        \
-	     SKULL_BASH,   REST,	FLAMETHROWER
+	     SKULL_BASH,   REST,	FLAMETHROWER,        HEADBUTT
 	; end
 
 	db BANK(HoundoomPicFront)

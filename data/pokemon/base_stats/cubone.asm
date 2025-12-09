@@ -19,7 +19,7 @@
 	     SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         EARTHQUAKE,   \
 	     FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     FIRE_BLAST,   SKULL_BASH,   REST,         SUBSTITUTE,   STRENGTH,     \
-		 SWORDS_DANCE,	FLAMETHROWER
+		 SWORDS_DANCE,	FLAMETHROWER,        HEADBUTT
 	; end
 
 	db BANK(CubonePicFront)

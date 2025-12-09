@@ -19,7 +19,7 @@
 	     THUNDER_WAVE,      EARTHQUAKE,   FISSURE,      MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,            SKULL_BASH,   REST,      LIGHT_SCREEN,  SUBSTITUTE,	\
 		 ICE_BEAM,     BLIZZARD,	FLAMETHROWER,	FIRE_BLAST,	THUNDER,	\
-		 REFLECT,	 FLASH
+		 REFLECT,	 FLASH,        HEADBUTT
 	; end
 
 	db BANK(RamoosePicFront)

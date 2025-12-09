@@ -18,7 +18,7 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     SURF,      SUBMISSION,      REST,         SUBSTITUTE,   RAGE,         \
 	     SWIFT,          MIMIC,        DOUBLE_TEAM,  BIDE,	SEISMIC_TOSS,	   \
-		 WATERFALL
+		 WATERFALL,        HEADBUTT
 	; end
 
 	db BANK(MarillPicFront)

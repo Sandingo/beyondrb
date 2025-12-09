@@ -18,7 +18,7 @@
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        SKULL_BASH,   \
 	     REST,         SUBSTITUTE,   SURF,		   EARTHQUAKE,   FISSURE,	   \
-		 WATERFALL
+		 WATERFALL,        HEADBUTT
 	; end
 
 	db BANK(SharpoonPicFront)

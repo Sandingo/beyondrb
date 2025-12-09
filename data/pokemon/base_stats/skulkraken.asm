@@ -18,7 +18,7 @@
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         \
 	     DRAGON_RAGE,    ROCK_SLIDE,      MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         GIGA_DRAIN,   SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   SURF,         STRENGTH,	WATERFALL
+	     SUBSTITUTE,   SURF,         STRENGTH,	WATERFALL,        HEADBUTT
 	; end
 
 	db BANK(SkulkrakenPicFront)

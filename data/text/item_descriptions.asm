@@ -586,11 +586,6 @@ _TM36Description::
 	next "the user faint."
 	prompt
 
-_TM37Description::
-	text "Eggs are hurled at"
-	next "the foe."
-	prompt
-
 _TM38Description::
 	text "An attack that"
 	next "may cause a burn."
@@ -641,6 +636,7 @@ _TM47Description::
 	next "makes user faint."
 	prompt
 
+_TM37Description::
 _TM48Description::
 	text "An attack that may"
 	next "cause flinching."

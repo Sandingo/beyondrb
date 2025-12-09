@@ -17,7 +17,7 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
 	     RAGE,         GIGA_DRAIN,   EARTHQUAKE,   FISSURE,      DIG,          \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         SKULL_BASH,   REST,         \
-	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
+	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH,        HEADBUTT
 	; end
 
 	db BANK(ArbokPicFront)

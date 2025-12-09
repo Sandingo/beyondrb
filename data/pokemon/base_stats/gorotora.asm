@@ -19,7 +19,7 @@
 	     RAGE,         THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
 	     THUNDER_WAVE, SUBSTITUTE,   FLASH,		   SURF,         SWORDS_DANCE, \
-		 FISSURE,	   DIG,			 EARTHQUAKE
+		 FISSURE,	   DIG,			 EARTHQUAKE,        HEADBUTT
 	; end
 
 	db BANK(GorotoraPicFront)

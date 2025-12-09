@@ -19,7 +19,8 @@
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     THUNDERBOLT,  THUNDER,      EARTHQUAKE,   FISSURE,      MIMIC,        \
 	     DOUBLE_TEAM,  BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         \
-	     ROCK_SLIDE,   SUBSTITUTE,   SURF,         STRENGTH,	FLAMETHROWER
+	     ROCK_SLIDE,   SUBSTITUTE,   SURF,         STRENGTH,	FLAMETHROWER,  \
+		 HEADBUTT
 	; end
 
 	db BANK(KangaskhanPicFront)

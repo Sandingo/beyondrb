@@ -19,7 +19,7 @@
 	     PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         METRONOME,    SKULL_BASH,   DREAM_EATER,  REST,         \
 	     THUNDER_WAVE,       TRI_ATTACK,   SUBSTITUTE,   FLASH,        \
-		 DAZZLINGLEAM,	LIGHT_SCREEN
+		 DAZZLINGLEAM,	LIGHT_SCREEN,        HEADBUTT
 	; end
 
 	db BANK(DrowzeePicFront)

@@ -18,7 +18,7 @@
 	     THUNDER,      TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         SWIFT,        REST,         THUNDER_WAVE, SUBSTITUTE,   \
 	     FLASH,	 	   HYPER_BEAM,	 SKULL_BASH,   EARTHQUAKE,   ROCK_SLIDE,   \
-		 SOLARBEAM,    ICE_BEAM,     SELFDESTRUCT  
+		 SOLARBEAM,    ICE_BEAM,     SELFDESTRUCT,        HEADBUTT
 	; end
 
 	db BANK(MelmetalPicFront)

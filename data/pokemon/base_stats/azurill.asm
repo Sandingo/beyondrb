@@ -17,7 +17,7 @@
 	tmhm MEGA_PUNCH,   MEGA_KICK,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
 	     SEISMIC_TOSS,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     SURF,      SUBMISSION,      REST,         SUBSTITUTE,   RAGE,         \
-	     SWIFT,          MIMIC,        DOUBLE_TEAM,  BIDE
+	     SWIFT,          MIMIC,        DOUBLE_TEAM,  BIDE,        HEADBUTT
 	; end
 
 	db BANK(AzurillPicFront)

@@ -19,7 +19,7 @@
 	     RAGE,         SOLARBEAM,    THUNDERBOLT,  THUNDER,      PSYCHIC_M,    \
 	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     METRONOME,    SKULL_BASH,   REST,         THUNDER_WAVE,       \
-	     SUBSTITUTE,   FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN
+	     SUBSTITUTE,   FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN,        HEADBUTT
 	; end
 
 	db BANK(MrMimePicFront)

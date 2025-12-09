@@ -17,7 +17,7 @@
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
 	     RAGE,         MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   CUT,          STEEL_WING,   \
-		 LUNGE
+		 LUNGE,        HEADBUTT
 	; end
 
 	db BANK(ScytherPicFront)

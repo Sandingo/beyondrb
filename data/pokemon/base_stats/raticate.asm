@@ -18,7 +18,7 @@
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         \
 	     THUNDERBOLT,  THUNDER,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   \
-		 CUT,		   STRENGTH
+		 CUT,		   STRENGTH,        HEADBUTT
 	; end
 
 	db BANK(RaticatePicFront)

@@ -17,7 +17,7 @@
 	tmhm MEGA_PUNCH,   MEGA_KICK,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
 	     STRENGTH,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         METRONOME,    SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	     SKULL_BASH,   REST,         SUBSTITUTE,        HEADBUTT
 	; end
 
 	db BANK(TyroguePicFront)

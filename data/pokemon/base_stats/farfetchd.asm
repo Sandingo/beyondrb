@@ -17,7 +17,7 @@
 	tmhm RAZOR_WIND,   SWORDS_DANCE, WHIRLWIND,    TOXIC,        BODY_SLAM,    \
 	     TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   CUT,          FLY,  	       STEEL_WING
+	     SUBSTITUTE,   CUT,          FLY,  	       STEEL_WING,        HEADBUTT
 	; end
 
 	db BANK(FarfetchdPicFront)

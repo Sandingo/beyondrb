@@ -19,9 +19,9 @@
 	     FLAMETHROWER,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     SOLARBEAM,    THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
-	     EGG_BOMB,     FIRE_BLAST,   SKULL_BASH,   SOFTBOILED,   REST,         \
+	          FIRE_BLAST,   SKULL_BASH,   SOFTBOILED,   REST,         \
 	     THUNDER_WAVE,       TRI_ATTACK,   SUBSTITUTE,   STRENGTH,     \
-	     FLASH,	LIGHT_SCREEN
+	     FLASH,	LIGHT_SCREEN,        HEADBUTT
 	; end
 
 	db BANK(HappinyPicFront)

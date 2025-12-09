@@ -19,7 +19,7 @@
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         SKULL_BASH,   REST,         SUBSTITUTE,   \
-	     SURF,         STRENGTH,	 WATERFALL
+	     SURF,         STRENGTH,	 WATERFALL,        HEADBUTT
 	; end
 
 	db BANK(TotartlePicFront)

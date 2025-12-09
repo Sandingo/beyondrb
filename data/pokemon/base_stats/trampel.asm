@@ -19,7 +19,7 @@
 	     THUNDER,      EARTHQUAKE,   FISSURE,      MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         SUBSTITUTE,   \
 	     STRENGTH,	   SUBMISSION,   SEISMIC_TOSS, COUNTER,      SWIFT,        \
-		 ROCK_SLIDE
+		 ROCK_SLIDE,        HEADBUTT
 	; end
 
 	db BANK(TrampelPicFront)

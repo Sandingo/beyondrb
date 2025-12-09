@@ -16,9 +16,9 @@
 	; tm/hm learnset
 	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   RAGE,         \
 	     GIGA_DRAIN,   SOLARBEAM,    PSYCHIC_M,    TELEPORT,     MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         SELFDESTRUCT, EGG_BOMB,     \
+	     DOUBLE_TEAM,  REFLECT,      BIDE,         SELFDESTRUCT,      \
 	     REST,               EXPLOSION,    SUBSTITUTE,   STRENGTH,         \
-		 TRI_ATTACK,	LIGHT_SCREEN,	FLASH
+		 TRI_ATTACK,	LIGHT_SCREEN,	FLASH,        HEADBUTT
 	; end
 
 	db BANK(ExeggutorPicFront)

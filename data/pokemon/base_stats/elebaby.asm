@@ -19,7 +19,7 @@
 	     RAGE,         THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
 	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE,       \
-	     SUBSTITUTE,	LIGHT_SCREEN
+	     SUBSTITUTE,	LIGHT_SCREEN,        HEADBUTT
 	; end
 
 	db BANK(ElebabyPicFront)

@@ -19,7 +19,7 @@
 	     DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         \
 	     SUBSTITUTE,   SURF,         STRENGTH,	 FLY,	FLAMETHROWER,		   \
-		 WATERFALL
+		 WATERFALL,        HEADBUTT
 	; end
 
 	db BANK(GyaradosPicFront)

@@ -19,7 +19,8 @@
 	     HYPER_BEAM,   PAY_DAY,      COUNTER,      STRENGTH,     RAGE,         \
 	     EARTHQUAKE,   FISSURE,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         METRONOME,    SKULL_BASH,   REST,         WATERFALL,      \
-	     SUBSTITUTE,   SURF,		 FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN
+	     SUBSTITUTE,   SURF,		 FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN, \
+		 HEADBUTT
 	; end
 
 	db BANK(PoliwealthPicFront)

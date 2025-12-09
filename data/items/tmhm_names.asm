@@ -44,7 +44,7 @@ TmhmNames::
 	li "<TM2>BIDE"
 	li "<TM2>METRONOME"
 	li "<TM2>SELFDESTRUCT"
-	li "<TM2>EGG BOMB"
+	li "<TM2>HEADBUTT"
 	li "<TM2>FIRE BLAST"
 	li "<TM2>SWIFT"
 	li "<TM2>SKULL BASH"

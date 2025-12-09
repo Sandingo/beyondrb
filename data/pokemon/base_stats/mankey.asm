@@ -18,7 +18,7 @@
 	     DOUBLE_EDGE,  PAY_DAY,      SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 	     RAGE,         THUNDERBOLT,  THUNDER,      DIG,          MIMIC,        \
 	     DOUBLE_TEAM,  BIDE,         METRONOME,    SWIFT,        SKULL_BASH,   \
-	     REST,         ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
+	     REST,         ROCK_SLIDE,   SUBSTITUTE,   STRENGTH,        HEADBUTT
 	; end
 
 	db BANK(MankeyPicFront)

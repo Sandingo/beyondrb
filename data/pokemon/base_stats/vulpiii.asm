@@ -17,7 +17,7 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,	\
-		 FLAMETHROWER
+		 FLAMETHROWER,        HEADBUTT
 	; end
 
 	db BANK(VulpiiiPicFront)

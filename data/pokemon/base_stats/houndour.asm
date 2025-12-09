@@ -17,7 +17,7 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     SUBSTITUTE,  DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST, \
-		 FLAMETHROWER
+		 FLAMETHROWER,        HEADBUTT
 	; end
 
 	db BANK(HoundourPicFront)

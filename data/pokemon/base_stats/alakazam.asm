@@ -19,7 +19,7 @@
 	     RAGE,         DIG,          PSYCHIC_M,    TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    SKULL_BASH,   \
 	     REST,         THUNDER_WAVE,	LIGHT_SCREEN,       TRI_ATTACK,   SUBSTITUTE,   \
-	     FLASH,	       DAZZLINGLEAM
+	     FLASH,	       DAZZLINGLEAM,        HEADBUTT
 	; end
 
 	db BANK(AlakazamPicFront)

@@ -17,7 +17,7 @@
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     RAGE,         GIGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         REST,         SUBSTITUTE,   CUT,	       \
-		 FLASH
+		 FLASH,		   HEADBUTT
 	; end
 
 	db BANK(BulbasaurPicFront)

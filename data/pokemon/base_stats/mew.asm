@@ -21,12 +21,12 @@
 	     GIGA_DRAIN,   SOLARBEAM,    DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
 	     EARTHQUAKE,   FISSURE,      DIG,          PSYCHIC_M,    TELEPORT,     \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
-	     SELFDESTRUCT, EGG_BOMB,     FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
+	     SELFDESTRUCT,      FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
 	     SOFTBOILED,   DREAM_EATER,  SKY_ATTACK,   REST,         THUNDER_WAVE, \
 	           EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE,   \
 	     CUT,          FLY,          SURF,         STRENGTH,     FLASH,        \
 	     FLAMETHROWER, STEEL_WING,	 DAZZLINGLEAM, LUNGE,	LIGHT_SCREEN,      \
-		 WATERFALL
+		 WATERFALL,        HEADBUTT
 	; end
 
 	db BANK(MewPicFront)

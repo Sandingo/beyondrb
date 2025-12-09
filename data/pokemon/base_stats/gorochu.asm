@@ -20,7 +20,7 @@
 	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
 	     THUNDER_WAVE, SUBSTITUTE,   FLASH,		   SURF,	     HORN_DRILL,   \
 		 FISSURE,	   DIG,			 EARTHQUAKE,   SWORDS_DANCE,	LIGHT_SCREEN, \
-		 STRENGTH
+		 STRENGTH,        HEADBUTT
 	; end
 
 	db BANK(GorochuPicFront)

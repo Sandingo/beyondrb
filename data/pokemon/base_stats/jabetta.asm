@@ -19,7 +19,7 @@
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     SURF,   STRENGTH,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         METRONOME,    SKULL_BASH,   REST,      WATERFALL,         \
-	     SUBSTITUTE
+	     SUBSTITUTE,        HEADBUTT
 	; end
 
 	db BANK(JabettaPicFront)

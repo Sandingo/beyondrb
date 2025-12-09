@@ -20,7 +20,7 @@
 	     RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   FISSURE,      \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         FIRE_BLAST,   SKULL_BASH,   \
 	     REST,         SUBSTITUTE,   CUT,          SURF,         STRENGTH, \
-		 FLAMETHROWER
+		 FLAMETHROWER,        HEADBUTT
 	; end
 
 	db BANK(LickitungPicFront)

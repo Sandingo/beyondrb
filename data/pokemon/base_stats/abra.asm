@@ -18,7 +18,8 @@
 	     DOUBLE_EDGE,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         METRONOME,    SKULL_BASH,   REST,         THUNDER_WAVE, \
-	           TRI_ATTACK,   SUBSTITUTE,   FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN
+	           TRI_ATTACK,   SUBSTITUTE,   FLASH,        DAZZLINGLEAM,	LIGHT_SCREEN, \
+			   HEADBUTT
 	; end
 
 	db BANK(AbraPicFront)

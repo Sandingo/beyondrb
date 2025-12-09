@@ -19,7 +19,7 @@
 	     RAGE,         GIGA_DRAIN,   THUNDERBOLT,  THUNDER,      PSYCHIC_M,    \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         METRONOME,    SELFDESTRUCT, \
 	     SKULL_BASH,   DREAM_EATER,  REST,	DAZZLINGLEAM,	EXPLOSION,    \
-	     SUBSTITUTE,   STRENGTH
+	     SUBSTITUTE,   STRENGTH,        HEADBUTT
 	; end
 
 	db BANK(GengarPicFront)

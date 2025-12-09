@@ -20,7 +20,7 @@
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   \
 	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE,       \
 	     TRI_ATTACK,   SUBSTITUTE,   SURF,         STRENGTH,     FLASH, \
-		 FLAMETHROWER
+		 FLAMETHROWER,        HEADBUTT
 	; end
 
 	db BANK(SlowpokePicFront)

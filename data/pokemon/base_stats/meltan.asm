@@ -17,7 +17,7 @@
 	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         THUNDERBOLT,  \
 	     THUNDER,      TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         SWIFT,        REST,         THUNDER_WAVE, SUBSTITUTE,   \
-	     FLASH
+	     FLASH,        HEADBUTT
 	; end
 
 	db BANK(MeltanPicFront)

@@ -20,7 +20,7 @@
 	     RAGE,         SOLARBEAM,    THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
 	     FISSURE,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         METRONOME,    SELFDESTRUCT, FIRE_BLAST,   SKULL_BASH,   \
-	     REST,               ROCK_SLIDE,   SUBSTITUTE,   SURF         \
+	     REST,               ROCK_SLIDE,   SUBSTITUTE,   SURF,        HEADBUTT         
 	; end
 
 	db BANK(MunchlaxPicFront)

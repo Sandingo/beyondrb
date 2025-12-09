@@ -19,7 +19,7 @@
 	     RAGE,         THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
 	     THUNDER_WAVE, SUBSTITUTE,   FLASH,		   SURF,	LIGHT_SCREEN,      \
-		 STRENGTH
+		 STRENGTH,        HEADBUTT
 	; end
 
 	db BANK(RaichuPicFront)
