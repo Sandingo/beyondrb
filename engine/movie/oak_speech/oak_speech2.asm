@@ -31,7 +31,17 @@ ChoosePlayerName:
 	call DisplayNamingScreen
 	ld a, [wStringBuffer]
 	cp "@"
-	jr z, .customName
+	jr nz, .nonBlankName
+	ld hl, RedDefaultName
+	ld a, [wPlayerGender]
+	and a
+	jr z, .okGo
+	ld hl, GreenDefaultName
+.okGo
+	ld de, wPlayerName
+	ld bc, NAME_LENGTH
+	call CopyData
+.nonBlankName
 	call ClearScreen
 	call Delay3
 	ld de, RedPicFront
@@ -56,6 +66,23 @@ ChoosePlayerName:
 	jp nz, ChoosePlayerName
 	ret
 
+RedDefaultName:
+IF DEF(_DEBUG)
+	db "RHETTO@" ; For fun :)
+ENDC
+IF DEF(_RED)
+	db "RED@"
+ENDC
+IF DEF(_BLUE)
+	db "BLUE@"
+ENDC
+
+GreenDefaultName:
+IF DEF(_DEBUG)
+	db "GEEN@" ; For fun :)
+ENDC
+	db "GREEN@"
+
 YourNameIsText:
 	text_far _YourNameIsText
 	text_end
@@ -79,7 +106,12 @@ ChooseRivalName:
 	call DisplayNamingScreen
 	ld a, [wStringBuffer]
 	cp "@"
-	jr z, .customName
+	jr nz, .nonBlankName
+	ld hl, BlueDefaultName
+	ld de, wRivalName
+	ld bc, NAME_LENGTH
+	call CopyData
+.nonBlankName
 	call ClearScreen
 	call Delay3
 	ld de, Rival1Pic
@@ -94,6 +126,17 @@ ChooseRivalName:
 	jp nz, ChooseRivalName
 	ld hl, HisNameIsText
 	jp PrintText
+
+BlueDefaultName:
+IF DEF(_DEBUG)
+	db "BLEUH@" ; For fun :)
+ENDC
+IF DEF(_RED)
+	db "BLUE@"
+ENDC
+IF DEF(_BLUE)
+	db "RED@"
+ENDC
 
 HisNameConfirmText:
 	text_far _HisNameConfirmText

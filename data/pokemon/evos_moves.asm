@@ -2434,8 +2434,9 @@ PonytaEvosMoves:
 	db 4, GROWL
 	db 8, TAIL_WHIP
 	db 13, EMBER
-	db 19, STOMP
+	db 19, DOUBLE_KICK
 	db 26, TAKE_DOWN
+	db 32, STOMP
 	db 39, FIRE_SPIN
 	db 48, AGILITY
 	db 55, FIRE_BLAST
@@ -2449,8 +2450,9 @@ RapidashEvosMoves:
 	db 8, TAIL_WHIP
 	db 13, EMBER
 	db 16, FURY_ATTACK
-	db 19, STOMP
+	db 19, DOUBLE_KICK
 	db 26, TAKE_DOWN
+	db 32, STOMP
 	db 39, FIRE_SPIN
 	db 55, AGILITY
 	db 60, FIRE_BLAST
@@ -3333,8 +3335,9 @@ KoltaEvosMoves:
 	db 4, GROWL
 	db 8, TAIL_WHIP
 	db 13, EMBER
-	db 19, STOMP
+	db 19, DOUBLE_KICK
 	db 24, TAKE_DOWN
+	db 29, STOMP
 	db 35, FIRE_SPIN
 	db 44, AGILITY
 	db 0

@@ -318,7 +318,7 @@ MainInBattleLoop:
 	bit USING_TRAPPING_MOVE, a ; check if enemy is using a multi-turn attack like wrap
 	jr z, .selectPlayerMove ; if not, jump
 ; enemy is using a multi-turn attack like wrap, so player is trapped and cannot execute a move
-	ld a, CANNOT_MOVE
+	ld a, $FF
 	ld [wPlayerSelectedMove], a
 	jr .selectEnemyMove
 .selectPlayerMove
@@ -2569,6 +2569,7 @@ PartyMenuOrRockOrRun:
 	call LoadHudTilePatterns
 	call LoadScreenTilesFromBuffer2
 	call RunDefaultPaletteCommand
+	call PrintEmptyString        ;gbcnote - added to prevent a 1-frame menu flicker
 	call GBPalNormal
 	jp DisplayBattleMenu
 .partyMonDeselected
@@ -3426,13 +3427,13 @@ PlayerCanExecuteMove:
 	ld hl, ResidualEffects1
 	ld de, 1
 	call IsInArray
-	;jp c, JumpMoveEffect ; ResidualEffects1 moves skip damage calculation and accuracy tests
+	jp c, JumpMoveEffect ; ResidualEffects1 moves skip damage calculation and accuracy tests
 	                    ; unless executed as part of their exclusive effect functions
-	jr nc, .notResidual1Effect
-	ld a, [wPlayerMovePower]
-	and a ; check if zero base power
-	jp z, JumpMoveEffect
-.notResidual1Effect
+;	jr nc, .notResidual1Effect
+;	ld a, [wPlayerMovePower]
+;	and a ; check if zero base power
+;	jp z, JumpMoveEffect
+;.notResidual1Effect
 	ld a, [wPlayerMoveEffect]
 	ld hl, SpecialEffectsCont
 	ld de, 1
@@ -4294,33 +4295,35 @@ CheckForDisobedience:
 ; it was traded
 .monIsTraded
 ; what level might disobey?
-	ld hl, wObtainedBadges ; Based on overall badge count rather than specific badges
-	bit BIT_EARTHBADGE, [hl]
-	ld a, 101
-	jr nz, .next
-	bit 7, [hl]
-	ld a, 80
-	jr nz, .next
-	bit 6, [hl]
-	ld a, 70
-	jr nz, .next
-	bit 5, [hl]
-	ld a, 60
-	jr nz, .next
-	bit 4, [hl]
-	ld a, 50
-	jr nz, .next
-	bit 3, [hl]
-	ld a, 40
-	jr nz, .next
-	bit 2, [hl]
-	ld a, 30
-	jr nz, .next
-	bit 1, [hl]
-	ld a, 20
-	jr nz, .next
-	ld a, 15
+	callfar CountHowManyBadges ; Based on overall badge count rather than specific badges
+	ld a, d
+	cp 8
+	ld d, 101
+	jr z, .next
+	cp 7
+	ld d, 80
+	jr z, .next
+	cp 6
+	ld d, 70
+	jr z, .next
+	cp 5
+	ld d, 60
+	jr z, .next
+	cp 4
+	ld d, 50
+	jr z, .next
+	cp 3
+	ld d, 40
+	jr z, .next
+	cp 2
+	ld d, 30
+	jr z, .next
+	cp 1
+	ld d, 20
+	jr z, .next
+	ld d, 15
 .next
+	ld a, d ; new, load d back into a
 	ld b, a
 	ld c, a
 	ld a, [wBattleMonLevel]
@@ -6010,12 +6013,12 @@ EnemyCanExecuteMove:
 	ld hl, SpecialEffectsCont
 	ld de, $1
 	call IsInArray
-	;call c, JumpMoveEffect
-	jr nc, .notResidual1EffectEnemy
-	ld a, [wEnemyMovePower]
-	and a ; Check if zero base power
-	jp z, JumpMoveEffect
-.notResidual1EffectEnemy
+	call c, JumpMoveEffect
+	;jr nc, .notResidual1EffectEnemy
+	;ld a, [wEnemyMovePower]
+	;and a ; Check if zero base power
+	;jp z, JumpMoveEffect
+;.notResidual1EffectEnemy
 EnemyCalcMoveDamage:
 	call SwapPlayerAndEnemyLevels
 	ld a, [wEnemyMoveEffect]
