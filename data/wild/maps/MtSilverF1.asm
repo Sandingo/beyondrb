@@ -8,7 +8,7 @@ MtSilverF1WildMons:
 	db  42, ONIX
 	db  43, GRAVELER
 	db  44, DECILLA
-	db  48, GAWARHED
+	db  45, MAGMAR
 	db  46, DECILLA
 	end_grass_wildmons
 

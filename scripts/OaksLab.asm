@@ -1287,10 +1287,38 @@ OaksLabRivalLeaveItAllToMeText:
 
 OaksLabScientistText:
 	text_asm
+	CheckEvent EVENT_BEAT_OAK
+	jp z, .postHM
+	CheckEvent EVENT_GOT_HM06
+	jp	nz, .postHM
+	ld hl, .GiveHMText
+	call PrintText
+	lb bc, HM_WATERFALL, 1
+	call GiveItem
+	jr nc, .BagFull
+	SetEvent EVENT_GOT_HM06
+	ld hl, .RecieveItemText
+	jr .finish
+.BagFull
+	ld hl, .NoRoomText
+.postHM
 	ld hl, .Text
+.finish
 	call PrintText
 	jp TextScriptEnd
 
 .Text:
 	text_far _OaksLabScientistText
+	text_end
+
+.GiveHMText:
+	text_far _OaksLabScientistHMText
+	text_end
+
+.RecieveItemText:
+	text_far _OaksLabScientistItemRecievedText
+	text_end
+
+.NoRoomText:
+	text_far _OaksLabNoMoreRoomText2
 	text_end

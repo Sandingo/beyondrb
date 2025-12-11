@@ -1,6 +1,6 @@
 	db DEX_DOOMSDAY ; pokedex id
 
-	db  135,  90, 134, 43, 143
+	db  115,  90, 124, 43, 124
 	;   hp  atk  def  spd  spc
 
 	db GHOST, DARK ; type

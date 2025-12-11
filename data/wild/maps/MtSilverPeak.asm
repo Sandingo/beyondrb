@@ -8,7 +8,7 @@ MtSilverPeakWildMons:
 	db  46, TRAMPEL
 	db  48, TRAMPEL
 	db  44, DECILLA
-	db  48, GAWARHED
+	db  48, FREEZETI
 	db  46, DECILLA
 	end_grass_wildmons
 

@@ -410,3 +410,25 @@ _OaksLabNoMoreRoomText::
 	line "you make some room"
 	cont "for this!"
 	done
+
+_OaksLabScientistHMText::
+	text "Ah, <PLAYER>,"
+	line "it's you!"
+	
+	para "Here, I meant to"
+	line "give this to you,"
+	cont "but I never got"
+	cont "the chance."
+	prompt
+	
+_OaksLabScientistItemRecievedText::
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
+
+_OaksLabNoMoreRoomText2::
+	text "You don't have"
+	line "room for this!"
+	done

@@ -7,7 +7,7 @@
 * The Daycare can now sometimes have Baby Pokémon show up! There are some Pokémon that are only obtained this way.
 * Hoaxes like Bill's Garden and Mew under the Truck are featured.
 * Gender equality: Play as a girl!
-* The Amulet Coin and Everstone rewards from FRLG are obtainable, gotten the same way as in that game.
+* The Amulet Coin and Everstone rewards from FRLG are obtainable, gotten the same way [as in that game](https://bulbapedia.bulbagarden.net/wiki/Professor%27s_assistant#Kanto-based_games).
 * Bottle Caps and Hyper Training! The later accessable in the post-game.
 * PC and Bag now have visible item counts to make it easier to keep track of.
 * A modified version of the Mystery Box from KEP appears, obtainable in the Fuchsia Meeting Room.
@@ -56,7 +56,9 @@
 * Some palettes and tiles have been altered to reduce eye strain, like the repeating tiles in the Pokémon Mansion being less opaque.
 * Some moves have been altered to be more usable, all changed are listed in the [**Google Sheets**](https://docs.google.com/spreadsheets/d/1M3bosRwThGeiIzk041AlRherJHYMNcCBpjoqek_yNrA/edit?usp=sharing).
 * Teleport, Roar and Whirlwind all have their modern mechanics. Phasing is now a thing in RB!
-* Unique SGB Borders based on the early designs for it are in.
+* Unique SGB Borders based on the early designs for it are in. Cropped versions for the 3DS virtual console are included [**here**](https://github.com/Sandingo/beyondrb/tree/master/vc_borders).
+
+	![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00098.png) ![alt text](https://github.com/Sandingo/beyondrb/blob/master/screenshots/bgb00099.png)
 * The Rocket Hideout trainers have been buffed to not make them completely worthless.
 * The Ghost Marowak cannot be skipped with the Pokédoll glitch. There's some unique text to reference this in the battle.
 * Obedience has been reworked to be relative to the number of badges the player has rather than relying on specific badges obtained.
