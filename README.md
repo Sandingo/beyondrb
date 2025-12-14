@@ -1,4 +1,5 @@
 # Pokémon Beyond Red and Blue [![Build Status][ci-badge]][ci]
+<p align="center"><img src="https://github.com/Sandingo/beyondrb/blob/master/promo_assets/Cutout-BR.png" alt="Sample Image" width="250"><img src="https://github.com/Sandingo/beyondrb/blob/master/promo_assets/Cutout-BB.png" alt="Sample Image" width="250"></p>
 
 A romhack of Pokémon Red and Blue that includes various features from each iteration of Kanto, along with unused beta content found in the Gigaleaks.
 Features:
