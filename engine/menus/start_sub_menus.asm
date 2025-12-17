@@ -475,7 +475,7 @@ INCLUDE "data/items/use_overworld.asm"
 
 DrawItemCountBox:: ; Literally just copying what I did for the PC count
 	hlcoord 13, 0
-	ld b, 2
+	ld b, 1
 	ld c, 5
 	call TextBoxBorder
 ;	hlcoord 14, 0

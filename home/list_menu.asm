@@ -139,6 +139,7 @@ DisplayListMenuIDLoop::
 	push hl
 	call GetItemPrice
 	pop hl
+	ld a,[wListMenuID]
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;needed to make Mateo's move deleter/relearner work
 	cp a, MOVESLISTMENU
