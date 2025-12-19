@@ -102,4 +102,5 @@ KeyItemFlags:
 	dbit FALSE ; OVAL_STONE
 	dbit TRUE ; WING_FOSSIL
 	dbit TRUE ; MYSTERY_BOX
+	dbit FALSE ; TINYMUSHROOM
 	end_bit_array NUM_ITEMS

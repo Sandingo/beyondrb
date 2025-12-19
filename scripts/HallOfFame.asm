@@ -47,6 +47,7 @@ HallOfFameResetEventsAndSaveScript:
 	ResetEventRange REMATCHES_START, REMATCHES_END, 1
 	ResetEventRange LEAGUEHQTRAINERS_START, LEAGUEHQTRAINERS_END, 1
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, INDIGO_PLATEAU_EVENTS_END, 1
+	call RespawnItems
 	xor a
 	ld [wHallOfFameCurScript], a
 	ld a, PALLET_TOWN
@@ -60,6 +61,21 @@ HallOfFameResetEventsAndSaveScript:
 	jr nz, .delayLoop
 	call WaitForTextScrollButtonPress
 	jp Init
+
+RespawnItems: ; This is for items that can be obtained multiple times.
+	ld a, HS_MT_MOON_B1F_ITEM_1 ; Tiny Mushrooms in Mt. Moon respawn
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ld a, HS_MT_MOON_B1F_ITEM_2
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ld a, HS_MT_MOON_B1F_ITEM_3
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ld a, HS_MT_MOON_B1F_ITEM_4
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ret
 
 HallOfFameDefaultScript:
 	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN

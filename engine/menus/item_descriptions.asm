@@ -215,6 +215,8 @@ ItemDescriptionPointers:
 	text_end
 	text_far _MysteryBoxDescription
 	text_end
+	text_far _TinyMushroomDescription
+	text_end
 	text_far _HM01Description
 	text_end
 	text_far _HM02Description

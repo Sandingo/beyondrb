@@ -3,5 +3,8 @@ DiglettsCave_Script:
 
 DiglettsCave_TextPointers:
 	def_text_pointers
+	dw_const DiglettsCaveDiglettText, TEXT_DIGLETTSCAVE_DIGLETT
 
-	text_end ; unused
+DiglettsCaveDiglettText:
+	text_far _DiglettsCaveDiglettText
+	text_end

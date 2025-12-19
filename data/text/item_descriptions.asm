@@ -672,6 +672,11 @@ _TM54Description::
 	next "target."
 	prompt
 
+_TinyMushroomDescription::
+	text "An ordinary"
+	next "mushroom."
+	prompt
+
 _UnusedItemDescription::
 	text "?"
 	prompt

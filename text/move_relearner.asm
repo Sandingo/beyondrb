@@ -1,14 +1,14 @@
 _MoveRelearnerGreetingText::
-	text "I tutor children,"
-	line "but I also tutor"
-	cont "#MON."
+	text "I am the MOVE"
+	line "REMINDER."
 	
-	para "I teach them to"
-	line "remember moves"
-	cont "they forgot."
+	para "I teach #MON"
+	line "moves they forgot."
 
-	para "¥1000 per lesson."
-	line "How about it?"
+	para "I can do so for"
+	line "you, if you have"
+	cont "any TINYMUSHROOMs"
+	cont "to trade for it."
 	done
 
 _MoveRelearnerSaidYesText::
@@ -19,8 +19,8 @@ _MoveRelearnerSaidYesText::
 _MoveRelearnerNotEnoughMoneyText::
 	text "Hmmm..."
 
-	para "You don't have"
-	line "enough money!"
+	para "You don't have any"
+	line "TINYMUSHROOMs!"
 	done
 
 _MoveRelearnerWhichMoveText::

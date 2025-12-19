@@ -156,6 +156,7 @@ DebugItemsList:
 	db LIFT_KEY, 1
 	db BOTTLE_CAP, 5
 	db MYSTERY_BOX, 1
+	db POKE_FLUTE, 1
 	db -1 ; end
 
 DebugUnusedList:

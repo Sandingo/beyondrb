@@ -81,6 +81,7 @@ EmotionBubblesPointerTable:
 	dw ShockEmote
 	dw QuestionEmote
 	dw HappyEmote
+	dw SleepEmote
 
 EmotionBubblesOAMBlock:
 ; tile ID, attributes
@@ -93,3 +94,4 @@ EmotionBubbles:
 ShockEmote:    INCBIN "gfx/emotes/shock.2bpp"
 QuestionEmote: INCBIN "gfx/emotes/question.2bpp"
 HappyEmote:    INCBIN "gfx/emotes/happy.2bpp"
+SleepEmote:    INCBIN "gfx/emotes/zzz.2bpp"

@@ -102,6 +102,7 @@ ItemNames::
 	li "OVAL STONE"
 	li "WING FOSSIL"
 	li "MYSTERY BOX"
+	li "TINYMUSHROOM"
 	assert_list_length NUM_ITEMS
 	li "B2F"
 	li "B1F"

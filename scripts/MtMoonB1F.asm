@@ -4,4 +4,7 @@ MtMoonB1F_Script:
 MtMoonB1F_TextPointers:
 	def_text_pointers
 	dw_const PickUpItemText, TEXT_MTMOONB1F_WING_FOSSIL
-
+	dw_const PickUpItemText, TEXT_MTMOONB1F_TINYMUSHROOM1
+	dw_const PickUpItemText, TEXT_MTMOONB1F_TINYMUSHROOM2
+	dw_const PickUpItemText, TEXT_MTMOONB1F_TINYMUSHROOM3
+	dw_const PickUpItemText, TEXT_MTMOONB1F_TINYMUSHROOM4

@@ -119,6 +119,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone ; OVAL_STONE
 	dw UnusableItem    ; WING_FOSSIL
 	dw ItemUseMysteryBox ; MYSTERY_BOX
+	dw UnusableItem ; TINUMUSHROOM
 
 ItemUseMysteryBox:
 	; Mystery Box can't be used in battle.

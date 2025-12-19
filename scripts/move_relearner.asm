@@ -3,22 +3,27 @@ MoveRelearnerText1:
 ; Display the list of moves to the player.
 	ld hl, MoveRelearnerGreetingText
 	call PrintText
-	ld a, MONEY_BOX
-	ld [wTextBoxID], a
-	call DisplayTextBoxID
+;	ld a, MONEY_BOX
+;	ld [wTextBoxID], a
+;	call DisplayTextBoxID
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, .exit
 	xor a
-	;charge 1000 money
-	ld [hMoney], a	
-	ld [hMoney + 2], a	
-	ld a, $0A
-	ld [hMoney + 1], a  
-	call HasEnoughMoney
-	jr nc, .enoughMoney
-	; not enough money
+	;charge 1000 money - original, replaced with mushrooms like in FRLG
+;	ld [hMoney], a	
+;	ld [hMoney + 2], a	
+;	ld a, $0A
+;	ld [hMoney + 1], a  
+;	call HasEnoughMoney
+
+	ld b, TINYMUSHROOM ; Check bag for Tiny Mushrooms. We only need one for this.
+	predef GetQuantityOfItemInBag
+	ld a, b
+	and a
+	jp nz, .enoughMoney ; If not zero, can relearn
+	; not enough mushrooms
 	ld hl, MoveRelearnerNotEnoughMoneyText
 	call PrintText
 	jp TextScriptEnd
@@ -90,24 +95,40 @@ MoveRelearnerText1:
 	ld a, b
 	and a
 	jr z, .exit
-	; Charge 1000 money
+	; Charge 1000 money - Replaced with removing a mushroom from the inventory.
 	xor a
-	ld [wPriceTemp], a
-	ld [wPriceTemp + 2], a	
-	ld a, $0A
-	ld [wPriceTemp + 1], a	
-	ld hl, wPriceTemp + 2
-	ld de, wPlayerMoney + 2
-	ld c, $3
-	predef SubBCDPredef
-	ld a, MONEY_BOX
-	ld [wTextBoxID], a
-	call DisplayTextBoxID
+;	ld [wPriceTemp], a
+;	ld [wPriceTemp + 2], a	
+;	ld a, $0A
+;	ld [wPriceTemp + 1], a	
+;	ld hl, wPriceTemp + 2
+;	ld de, wPlayerMoney + 2
+;	ld c, $3
+;	predef SubBCDPredef
+;	ld a, MONEY_BOX
+;	ld [wTextBoxID], a
+;	call DisplayTextBoxID
+	ld hl, MushroomList ; Load a list of Bottle Cap items. This is the same code as the Saffron Guard.
+.loop
+	ld a, [hli]
+	ldh [hItemToRemoveID], a
+	and a
+	ret z
+	push hl
+	ld b, a
+	call IsItemInBag
+	pop hl
+	jr z, .loop
+	farcall RemoveItemByID
 .exit
 	ld hl, MoveRelearnerByeText
 	call PrintText
 	jp TextScriptEnd
 
+MushroomList:
+	db TINYMUSHROOM
+	;db BIG_MUSHROOM if you ever want to add BIG MUSHROOMS,, you can chuck that in here.
+	db 0 ; end
 
 MoveRelearnerGreetingText:
 	text_far _MoveRelearnerGreetingText

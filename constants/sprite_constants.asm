@@ -95,6 +95,8 @@
 	const SPRITE_DODUO
 	const SPRITE_ABRA
 	const SPRITE_MINA
+	const SPRITE_DIGLETT
+	const SPRITE_DUGTRIO
 DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_POKE_BALL               ; $3d
 	const SPRITE_FOSSIL                  ; $3e
@@ -108,5 +110,7 @@ DEF FIRST_STILL_SPRITE EQU const_value
 	const SPRITE_UNUSED_GAMBLER_ASLEEP_1 ; $46
 	const SPRITE_UNUSED_GAMBLER_ASLEEP_2 ; $47
 	const SPRITE_GAMBLER_ASLEEP          ; $48
+	const SPRITE_SLOWPOKE
 	const SPRITE_SLOWBRO
+	const SPRITE_MUSHROOM
 DEF NUM_SPRITES EQU const_value - 1

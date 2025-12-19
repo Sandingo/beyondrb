@@ -27,6 +27,9 @@ Route16DefaultScript:
 	CheckEventReuseHL EVENT_FIGHT_ROUTE16_SNORLAX
 	ResetEventReuseHL EVENT_FIGHT_ROUTE16_SNORLAX
 	jp z, CheckFightingMapTrainers
+	ld c, BANK(Music_MeetEvilTrainer) ; new
+	ld a, MUSIC_MEET_EVIL_TRAINER
+	call PlayMusic
 	ld a, TEXT_ROUTE16_SNORLAX_WOKE_UP
 	ldh [hTextID], a
 	call DisplayTextID
@@ -204,6 +207,23 @@ Route16Biker6AfterBattleText:
 	text_end
 
 Route16SnorlaxText:
+	text_asm
+	ld hl, .text
+	call PrintText
+
+	ld a, SNORLAX
+	call PlayCry
+	call WaitForSoundToFinish
+	
+	ld hl, wEmotionBubbleSpriteIndex ; New, for a cute little anim
+	xor a
+	ld a, [wSpriteIndex]
+	ld [hli], a ; snorlax's sprite
+	ld [hl], SLEEP_BUBBLE ; SLEEP_BUBBLE
+	predef EmotionBubble
+	
+	jp TextScriptEnd
+.text
 	text_far _Route16Text7
 	text_end
 

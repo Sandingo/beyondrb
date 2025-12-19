@@ -1,0 +1,3 @@
+_DiglettsCaveDiglettText::
+	text "?"
+	done
