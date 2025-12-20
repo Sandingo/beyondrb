@@ -87,7 +87,7 @@ InternalMapEntries:
 	internal_map UNDERGROUND_PATH_WEST_EAST,    10,  5, UndergroundPathName
 	internal_map CELADON_HOTEL,                  7,  5, CeladonCityName
 	internal_map LAVENDER_POKECENTER,           14,  5, LavenderTownName
-	internal_map POKEMON_TOWER_7F,              15,  5, PokemonTowerName
+	internal_map POKEMON_TOWER_7F,              14,  5, PokemonTowerName
 	internal_map LAVENDER_CUBONE_HOUSE,         14,  5, LavenderTownName
 	internal_map WARDENS_HOUSE,                  8, 13, FuchsiaCityName
 	internal_map SAFARI_ZONE_GATE,               8, 12, SafariZoneName
@@ -96,7 +96,7 @@ InternalMapEntries:
 	internal_map SEAFOAM_ISLANDS_B5F,            5, 15, SeafoamIslandsName
 	internal_map VERMILION_HOUSES,       10,  9, VermilionCityName
 	internal_map FUCHSIA_GOOD_ROD_HOUSE,         8, 13, FuchsiaCityName
-	internal_map POKEMON_MANSION_1F,             2, 15, PokemonMansionName
+	internal_map POKEMON_MANSION_1F,             1, 15, PokemonMansionName
 	internal_map CINNABAR_MART_COPY,             2, 15, CinnabarIslandName
 	internal_map INDIGO_PLATEAU_LOBBY,           0,  2, IndigoPlateauName
 	internal_map MR_PSYCHICS_HOUSE,             10,  5, SaffronCityName

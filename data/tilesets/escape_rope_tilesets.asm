@@ -4,6 +4,7 @@ EscapeRopeTilesets:
 	db CAVERN
 	db FACILITY
 	db INTERIOR
+	db POWERPLANT
 	db -1 ; end
 
 NotAllowedEscapeMaps:: ; New, gets checked to make sure the player cannot use the Escape Rope/Dig move in certain maps

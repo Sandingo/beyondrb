@@ -66,3 +66,6 @@ Facility_Coll::
 
 Plateau_Coll::
 	coll_tiles $04, $1b, $23, $2c, $2d, $38, $3b, $45, $46, $47
+
+PowerPlant_Coll::
+	coll_tiles $12, $33, $02, $03, $13, $5E, $5F, $0A, $0B, $1A, $1B

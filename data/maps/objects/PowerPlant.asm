@@ -16,7 +16,7 @@
 	const_export POWERPLANT_METAL_COAT
 
 PowerPlant_Object:
-	db $2e ; border block
+	db $01 ; border block
 
 	def_warp_events
 	warp_event  4, 35, LAST_MAP, 4

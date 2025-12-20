@@ -64,3 +64,7 @@ Underground_GFX::   INCBIN "gfx/tilesets/underground.2bpp"
 Underground_Block:: INCBIN "gfx/blocksets/underground.bst"
 Plateau_GFX::       INCBIN "gfx/tilesets/plateau.2bpp"
 Plateau_Block::     INCBIN "gfx/blocksets/plateau.bst"
+
+SECTION "Tilesets 5", ROMX
+PowerPlant_GFX::		INCBIN "gfx/tilesets/power_plant.2bpp"
+PowerPlant_Block::		INCBIN "gfx/blocksets/power_plant.bst"

@@ -25,4 +25,5 @@
 	const CLUB         ; 21
 	const FACILITY     ; 22
 	const PLATEAU      ; 23
+	const POWERPLANT
 DEF NUM_TILESETS EQU const_value
