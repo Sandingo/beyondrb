@@ -295,6 +295,11 @@ BillsPCWithdraw:
 	call PrintText
 	jp BillsPCMenu
 .boxNotEmpty
+	ld hl, wBoxCount
+	call DisplayMonListMenu
+	jp c, BillsPCMenu
+	call DisplayDepositWithdrawMenu
+	jr nc, .redisplayMonListMenu
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
 	jr nz, .partyNotFull
@@ -302,11 +307,6 @@ BillsPCWithdraw:
 	call PrintText
 	jp BillsPCMenu
 .partyNotFull
-	ld hl, wBoxCount
-	call DisplayMonListMenu
-	jp c, BillsPCMenu
-	call DisplayDepositWithdrawMenu
-	jr nc, .redisplayMonListMenu
 	ld a, [wWhichPokemon]
 	ld hl, wBoxMonNicks
 	call GetPartyMonName
@@ -326,7 +326,7 @@ BillsPCWithdraw:
 .redisplayMonListMenu
 	ld a, [wWhichPokemon]
 	ld [wListScrollOffset], a
-	jr .partyNotFull
+	jr .boxNotEmpty
 
 
 BillsPCRelease:
