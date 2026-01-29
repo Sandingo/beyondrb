@@ -29,7 +29,7 @@ ENDM
 	trainer_const ENGINEER       ; $0C
 	trainer_const IMAKUNI		 ; $0D
 	trainer_const FISHER         ; $0E
-	trainer_const SWIMMER        ; $0F
+	trainer_const SWIMMER_M        ; $0F
 	trainer_const CUE_BALL       ; $10
 	trainer_const GAMBLER        ; $11
 	trainer_const BEAUTY         ; $12
@@ -67,4 +67,5 @@ ENDM
 	trainer_const ARCHER
 	trainer_const KYLE
 	trainer_const KOICHI
+	trainer_const SWIMMER_F
 DEF NUM_TRAINERS EQU const_value - 1

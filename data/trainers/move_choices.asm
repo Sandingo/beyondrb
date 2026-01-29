@@ -23,7 +23,7 @@ TrainerClassMoveChoiceModifications:
 	move_choices 1       ; ENGINEER
 	move_choices 1, 2, 3   ; IMAKUNI
 	move_choices 1, 3    ; FISHER
-	move_choices 1, 3    ; SWIMMER
+	move_choices 1, 3    ; SWIMMER_M
 	move_choices         ; CUE_BALL
 	move_choices 1       ; GAMBLER
 	move_choices 1, 3    ; BEAUTY
@@ -61,4 +61,5 @@ TrainerClassMoveChoiceModifications:
 	move_choices 1       ; ARCHER
 	move_choices 1, 3    ; KYLE
 	move_choices 1, 3    ; KOICHI
+	move_choices 1, 3    ; SWIMMER_F
 	assert_list_length NUM_TRAINERS

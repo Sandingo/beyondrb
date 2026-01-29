@@ -17,14 +17,14 @@ Route19_TextPointers:
 	def_text_pointers
 	dw_const Route19CooltrainerM1Text, TEXT_ROUTE19_COOLTRAINER_M1
 	dw_const Route19CooltrainerM2Text, TEXT_ROUTE19_COOLTRAINER_M2
-	dw_const Route19Swimmer1Text,      TEXT_ROUTE19_SWIMMER1
-	dw_const Route19Swimmer2Text,      TEXT_ROUTE19_SWIMMER2
-	dw_const Route19Swimmer3Text,      TEXT_ROUTE19_SWIMMER3
-	dw_const Route19Swimmer4Text,      TEXT_ROUTE19_SWIMMER4
-	dw_const Route19Swimmer5Text,      TEXT_ROUTE19_SWIMMER5
-	dw_const Route19Swimmer6Text,      TEXT_ROUTE19_SWIMMER6
-	dw_const Route19Swimmer7Text,      TEXT_ROUTE19_SWIMMER7
-	dw_const Route19Swimmer8Text,      TEXT_ROUTE19_SWIMMER8
+	dw_const Route19Swimmer1Text,      TEXT_ROUTE19_SWIMMER_M1
+	dw_const Route19Swimmer2Text,      TEXT_ROUTE19_SWIMMER_M2
+	dw_const Route19Swimmer3Text,      TEXT_ROUTE19_SWIMMER_M3
+	dw_const Route19Swimmer4Text,      TEXT_ROUTE19_SWIMMER_M4
+	dw_const Route19Swimmer5Text,      TEXT_ROUTE19_SWIMMER_M5
+	dw_const Route19Swimmer6Text,      TEXT_ROUTE19_SWIMMER_M6
+	dw_const Route19Swimmer7Text,      TEXT_ROUTE19_SWIMMER_M7
+	dw_const Route19Swimmer8Text,      TEXT_ROUTE19_SWIMMER_M8
 	dw_const Route19SignText,          TEXT_ROUTE19_SIGN
 
 Route19TrainerHeaders:

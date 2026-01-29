@@ -40,7 +40,7 @@ SpriteSheetPointerTable:
 	overworld_sprite ScientistSprite, 12        ; SPRITE_UNUSED_SCIENTIST
 	overworld_sprite ScientistSprite, 12        ; SPRITE_SCIENTIST
 	overworld_sprite RockerSprite, 12           ; SPRITE_ROCKER
-	overworld_sprite SwimmerSprite, 12          ; SPRITE_SWIMMER
+	overworld_sprite SwimmerSprite, 12          ; SPRITE_SWIMMER_M
 	overworld_sprite SafariZoneWorkerSprite, 12 ; SPRITE_SAFARI_ZONE_WORKER
 	overworld_sprite GymGuideSprite, 12         ; SPRITE_GYM_GUIDE
 	overworld_sprite GrampsSprite, 12           ; SPRITE_GRAMPS

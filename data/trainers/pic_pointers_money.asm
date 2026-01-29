@@ -21,7 +21,7 @@ TrainerPicAndMoneyPointers::
 	pic_money EngineerPic,     5000
 	pic_money ImakuniPic,       500
 	pic_money FisherPic,       3500
-	pic_money SwimmerPic,       500
+	pic_money SwimmerMPic,       500
 	pic_money CueBallPic,      2500
 	pic_money GamblerPic,      7000
 	pic_money BeautyPic,       7000
@@ -59,4 +59,5 @@ TrainerPicAndMoneyPointers::
 	pic_money ArcherPic, 	   3500
 	pic_money KylePic,         9900
 	pic_money KoichiPic,		 9900
+	pic_money SwimmerFPic, 7000
 	assert_table_length NUM_TRAINERS

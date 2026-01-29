@@ -143,8 +143,8 @@ Route23_TextPointers:
 	def_text_pointers
 	dw_const Route23Guard1Text,              TEXT_ROUTE23_GUARD1
 	dw_const Route23Guard2Text,              TEXT_ROUTE23_GUARD2
-	dw_const Route23Swimmer1Text,            TEXT_ROUTE23_SWIMMER1
-	dw_const Route23Swimmer2Text,            TEXT_ROUTE23_SWIMMER2
+	dw_const Route23Swimmer1Text,            TEXT_ROUTE23_SWIMMER_M1
+	dw_const Route23Swimmer2Text,            TEXT_ROUTE23_SWIMMER_M2
 	dw_const Route23Guard3Text,              TEXT_ROUTE23_GUARD3
 	dw_const Route23Guard4Text,              TEXT_ROUTE23_GUARD4
 	dw_const Route23Guard5Text,              TEXT_ROUTE23_GUARD5

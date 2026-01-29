@@ -14,7 +14,7 @@ TrainerDataPointers:
 	dw EngineerData
 	dw ImakuniData
 	dw FisherData
-	dw SwimmerData
+	dw SwimmerMData
 	dw CueBallData
 	dw GamblerData
 	dw BeautyData
@@ -52,6 +52,7 @@ TrainerDataPointers:
 	dw ArcherData
 	dw KyleData
 	dw KoichiData
+	dw SwimmerFData
 	assert_table_length NUM_TRAINERS
 
 ; if first byte != $FF, then
@@ -340,7 +341,7 @@ FisherData:
 ; Route 12
 	db 24, CHEEP, CHEEP, 0
 
-SwimmerData:
+SwimmerMData:
 ; Cerulean Gym
 	db 16, HORSEA, SHELLDER, 0
 ; Route 19
@@ -396,20 +397,21 @@ BeautyData:
 ; Route 13
 	db 27, RATTATA, PIKACHU, RATTATA, 0
 	db 29, CLEFAIRY, MEOWTH, 0
-; Route 20
-	db 35, PENDRAKEN, 0
-	db 30, CHEEP, CHEEP, JABETTA, 0
-	db 31, POLIWAG, SEAKING, 0
 ; Route 15
 	db 29, PIDGEOTTO, WIGGLYTUFF, 0
 	db 29, BULBASAUR, IVYSAUR, 0
 ; Unused
 	db 33, WEEPINBELL, BELLSPROUT, WEEPINBELL, 0
+	
+SwimmerFData:
 ; Route 19
 	db 27, POLIWAG, GOLDEEN, SEAKING, GOLDEEN, POLIWAG, 0
 	db 30, ORFRY, GOLDEEN, SEAKING, 0
 	db 29, STARYU, STARYU, STARYU, 0
 ; Route 20
+	db 35, PENDRAKEN, 0
+	db 30, CHEEP, CHEEP, JABETTA, 0
+	db 31, POLIWAG, SEAKING, 0
 	db 30, SEADRA, HORSEA, SEADRA, 0
 
 PsychicData:

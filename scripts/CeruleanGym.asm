@@ -97,7 +97,7 @@ CeruleanGym_TextPointers:
 	def_text_pointers
 	dw_const CeruleanGymMistyText,                 TEXT_CERULEANGYM_MISTY
 	dw_const CeruleanGymCooltrainerFText,          TEXT_CERULEANGYM_COOLTRAINER_F
-	dw_const CeruleanGymSwimmerText,               TEXT_CERULEANGYM_SWIMMER
+	dw_const CeruleanGymSwimmerText,               TEXT_CERULEANGYM_SWIMMER_M
 	dw_const CeruleanGymGymGuideText,              TEXT_CERULEANGYM_GYM_GUIDE
 	dw_const CeruleanGymMistyCascadeBadgeInfoText, TEXT_CERULEANGYM_MISTY_CASCADE_BADGE_INFO
 	dw_const CeruleanGymMistyReceivedTM11Text,     TEXT_CERULEANGYM_MISTY_RECEIVED_TM11

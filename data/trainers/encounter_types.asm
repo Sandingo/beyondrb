@@ -4,6 +4,7 @@ FemaleTrainerList::
 	db OPP_BEAUTY
 	db OPP_COOLTRAINER_F
 	db OPP_MINA
+	db OPP_SWIMMER_F
 	db -1 ; end
 
 EvilTrainerList::

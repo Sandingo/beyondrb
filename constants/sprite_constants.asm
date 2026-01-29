@@ -35,7 +35,7 @@
 	const SPRITE_UNUSED_SCIENTIST        ; $1f
 	const SPRITE_SCIENTIST               ; $20
 	const SPRITE_ROCKER                  ; $21
-	const SPRITE_SWIMMER                 ; $22
+	const SPRITE_SWIMMER_M                 ; $22
 	const SPRITE_SAFARI_ZONE_WORKER      ; $23
 	const SPRITE_GYM_GUIDE               ; $24
 	const SPRITE_GRAMPS                  ; $25

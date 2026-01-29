@@ -14,7 +14,7 @@ TrainerNames::
 	li "ENGINEER"
 	li "IMAKUNI?"
 	li "FISHERMAN"
-	li "SWIMMER"
+	li "SWIMMER♂"
 	li "CUE BALL"
 	li "GAMBLER"
 	li "BEAUTY"
@@ -52,4 +52,5 @@ TrainerNames::
 	li "ARCHER"
 	li "KYLE"
 	li "KOICHI"
+	li "SWIMMER♀"
 	assert_list_length NUM_TRAINERS

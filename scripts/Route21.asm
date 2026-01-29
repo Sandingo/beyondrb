@@ -17,11 +17,11 @@ Route21_TextPointers:
 	def_text_pointers
 	dw_const Route21Fisher1Text,  TEXT_ROUTE21_FISHER1
 	dw_const Route21Fisher2Text,  TEXT_ROUTE21_FISHER2
-	dw_const Route21Swimmer1Text, TEXT_ROUTE21_SWIMMER1
-	dw_const Route21Swimmer2Text, TEXT_ROUTE21_SWIMMER2
-	dw_const Route21Swimmer3Text, TEXT_ROUTE21_SWIMMER3
-	dw_const Route21Swimmer4Text, TEXT_ROUTE21_SWIMMER4
-	dw_const Route21Swimmer5Text, TEXT_ROUTE21_SWIMMER5
+	dw_const Route21Swimmer1Text, TEXT_ROUTE21_SWIMMER_M1
+	dw_const Route21Swimmer2Text, TEXT_ROUTE21_SWIMMER_M2
+	dw_const Route21Swimmer3Text, TEXT_ROUTE21_SWIMMER_M3
+	dw_const Route21Swimmer4Text, TEXT_ROUTE21_SWIMMER_M4
+	dw_const Route21Swimmer5Text, TEXT_ROUTE21_SWIMMER_M5
 	dw_const Route21Fisher3Text,  TEXT_ROUTE21_FISHER3
 	dw_const Route21Fisher4Text,  TEXT_ROUTE21_FISHER4
 

@@ -64,16 +64,16 @@ Route20_ScriptPointers:
 
 Route20_TextPointers:
 	def_text_pointers
-	dw_const Route20Swimmer1Text,           TEXT_ROUTE20_SWIMMER1
-	dw_const Route20Swimmer2Text,           TEXT_ROUTE20_SWIMMER2
-	dw_const Route20Swimmer3Text,           TEXT_ROUTE20_SWIMMER3
-	dw_const Route20Swimmer4Text,           TEXT_ROUTE20_SWIMMER4
-	dw_const Route20Swimmer5Text,           TEXT_ROUTE20_SWIMMER5
-	dw_const Route20Swimmer6Text,           TEXT_ROUTE20_SWIMMER6
+	dw_const Route20Swimmer1Text,           TEXT_ROUTE20_SWIMMER_M1
+	dw_const Route20Swimmer2Text,           TEXT_ROUTE20_SWIMMER_M2
+	dw_const Route20Swimmer3Text,           TEXT_ROUTE20_SWIMMER_M3
+	dw_const Route20Swimmer4Text,           TEXT_ROUTE20_SWIMMER_M4
+	dw_const Route20Swimmer5Text,           TEXT_ROUTE20_SWIMMER_M5
+	dw_const Route20Swimmer6Text,           TEXT_ROUTE20_SWIMMER_M6
 	dw_const Route20CooltrainerMText,       TEXT_ROUTE20_COOLTRAINER_M
-	dw_const Route20Swimmer7Text,           TEXT_ROUTE20_SWIMMER7
-	dw_const Route20Swimmer8Text,           TEXT_ROUTE20_SWIMMER8
-	dw_const Route20Swimmer9Text,           TEXT_ROUTE20_SWIMMER9
+	dw_const Route20Swimmer7Text,           TEXT_ROUTE20_SWIMMER_M7
+	dw_const Route20Swimmer8Text,           TEXT_ROUTE20_SWIMMER_M8
+	dw_const Route20Swimmer9Text,           TEXT_ROUTE20_SWIMMER_M9
 	dw_const PickUpItemText,                TEXT_ROUTE20_KINGS_ROCK
 	dw_const Route20SeafoamIslandsSignText, TEXT_ROUTE20_SEAFOAM_ISLANDS_WEST_SIGN
 	dw_const Route20SeafoamIslandsSignText, TEXT_ROUTE20_SEAFOAM_ISLANDS_EAST_SIGN

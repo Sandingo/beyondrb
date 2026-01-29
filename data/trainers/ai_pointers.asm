@@ -56,4 +56,5 @@ TrainerAIPointers:
 	dbw 3, GenericAI ; Archer
 	dbw 3, GenericAI ; Kyle
 	dbw 3, BlackbeltAI ; Koichi
+	dbw 3, GenericAI ; Swimmer F
 	assert_table_length NUM_TRAINERS
