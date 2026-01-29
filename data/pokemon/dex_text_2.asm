@@ -540,7 +540,7 @@ _MagnetiteDexEntry::
 	
 _PeritopDexEntry::
 	text "An evolution of"
-	next "CLEFAIRY who's"
+	next "CLEFAIRY whose"
 	next "biology is similar"
 	
 	page "to HITMONTOP. It"

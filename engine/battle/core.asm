@@ -2744,7 +2744,7 @@ MoveSelectionMenu:
 	call TextBoxBorder
 	hlcoord 4, 12
 	ld [hl], "─"
-	hlcoord 10, 12
+	hlcoord 9, 12 ; Changed Size
 	ld [hl], "┘"
 	ei
 	hlcoord 6, 13
@@ -3090,7 +3090,7 @@ PrintMenuItem:
 	ldh [hAutoBGTransferEnabled], a
 	hlcoord 0, 8
 	ld b, 3
-	ld c, 9
+	ld c, 8
 	call TextBoxBorder
 	ld a, [wPlayerDisabledMove]
 	and a
@@ -3139,15 +3139,15 @@ PrintMenuItem:
 	hlcoord 1, 11
 	ld de, PPText
 	call PlaceString
-	hlcoord 7, 11
+	hlcoord 6, 11
 	ld [hl], "/"
 ;	hlcoord 5, 9
 ;	ld [hl], "/"
-	hlcoord 5, 11
+	hlcoord 4, 11
 	ld de, wBattleMenuCurrentPP
 	lb bc, 1, 2
 	call PrintNumber
-	hlcoord 8, 11
+	hlcoord 7, 11
 	ld de, wMaxPP
 	lb bc, 1, 2
 	call PrintNumber
@@ -3172,22 +3172,22 @@ PrintMenuItem:
 	jr z, .specialDamage
 	cp 0 ; No damage
 	jr z, .noDamage
-	hlcoord 7, 10
+	hlcoord 6, 10
 	ld de, wPlayerMovePower ; testing
 	lb bc, 1, 3
 	call PrintNumber ; prints the c-digit, b-byte value at de
 	jr .afterDamagePrinting
 .OHKOMove
-	hlcoord 6, 10
+	hlcoord 5, 10
 	ld de, InfDamageText
 	call PlaceString
 	jr .afterDamagePrinting
 .specialDamage
-	hlcoord 9, 10
+	hlcoord 8, 10
 	ld [hl], "?"
 	jr .afterDamagePrinting
 .noDamage
-	hlcoord 8, 10
+	hlcoord 7, 10
 	ld de, NoDamageText
 	call PlaceString
 .afterDamagePrinting
@@ -3210,7 +3210,7 @@ NoDamageText:
 	db "--@"
 	
 DisabledText:
-	db "disabled!@"
+	db "disabled@"
 
 TypeText:
 	db "TYPE@"
