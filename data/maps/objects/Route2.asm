@@ -12,6 +12,7 @@ Route2_Object:
 	warp_event 16, 35, ROUTE_2_GATE, 2
 	warp_event 15, 39, ROUTE_2_GATE, 3
 	warp_event  3, 43, VIRIDIAN_FOREST_SOUTH_GATE, 3
+	warp_event 17, 35, ROUTE_2_GATE, 2
 
 	def_bg_events
 	bg_event  5, 65, TEXT_ROUTE2_SIGN
