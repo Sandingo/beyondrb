@@ -137,6 +137,7 @@ OverworldLoopLessDelay::
 .noDirectionButtonsPressed
 	ld hl, wMiscFlags
 	res BIT_TURNING, [hl]
+	call SwitchRunningToWalkingSprites
 	call UpdateSprites
 	ld a, 1
 	ld [wCheckFor180DegreeTurn], a
@@ -295,12 +296,32 @@ OverworldLoopLessDelay::
 	; surf at 2x walking speed
 	ld a, [wWalkBikeSurfState]
 	cp $02
-	jr z, .surfFaster
+	jr z, .speedUp
 	; Holding B makes you run at 2x walking speed
 	ld a, [hJoyHeld]
 	and B_BUTTON
-	jr z, .notRunning
-.surfFaster
+	jr nz, .checkIfWalking
+	; marcelnote - running sprites
+	; if reached here then player is not running, so check if we need to update sprites
+	ld a, [wWalkBikeSurfState]
+	and a ; WALKING?
+	jr nz, .notRunning ; if not walking, no need to update sprites
+	ld hl, wMovementFlags
+	bit BIT_RUNNING, [hl]
+	jr z, .notRunning ; if wasn't running, no need to update sprites
+	res BIT_RUNNING, [hl]
+	call LoadWalkingPlayerSpriteGraphics
+	jr .notRunning
+.checkIfWalking
+	ld a, [wWalkBikeSurfState]
+	and a ; WALKING?
+	jr nz, .speedUp ; if not walking, no need to update sprites
+	ld hl, wMovementFlags
+	bit BIT_RUNNING, [hl]
+	jr nz, .speedUp ; if already running, no need to update sprites
+	set BIT_RUNNING, [hl]
+	call LoadRunningPlayerSpriteGraphics
+.speedUp
 	call DoBikeSpeedup
 .notRunning
 	;original .normalPlayerSpriteAdvancement continues here
@@ -887,6 +908,16 @@ LoadPlayerSpriteGraphics::
 	jp z, LoadBikePlayerSpriteGraphics
 	dec a
 	jp z, LoadSurfingPlayerSpriteGraphics
+	jp LoadWalkingPlayerSpriteGraphics
+
+SwitchRunningToWalkingSprites: ; marcelnote - running sprites
+	ld a, [wWalkBikeSurfState]
+	and a ; WALKING?
+	ret nz ; if not walking, do nothing
+	ld hl, wMovementFlags
+	bit BIT_RUNNING, [hl]
+	ret z ; if wasn't running, do nothing
+	res BIT_RUNNING, [hl]
 	jp LoadWalkingPlayerSpriteGraphics
 
 IsBikeRidingAllowed::
@@ -2051,6 +2082,16 @@ LoadBikePlayerSpriteGraphics::
 	ld de, GreenBikeSprite
 .AreGuy2
 	ld hl, vNPCSprites
+
+LoadRunningPlayerSpriteGraphics:: ; marcelnote - running sprites
+	ld de, RedRunSprite
+	ld a, [wPlayerGender]
+	and a
+	jr z, .gotSprite
+	ld de, GreenRunSprite
+.gotSprite
+	ld hl, vNPCSprites
+	jr LoadPlayerSpriteGraphicsCommon
 
 LoadPlayerSpriteGraphicsCommon::
 	push de

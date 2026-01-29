@@ -35,8 +35,10 @@ SECTION "NPC Sprites 2", ROMX
 
 RedBikeSprite::          INCBIN "gfx/sprites/red_bike.2bpp"
 RedSprite::              INCBIN "gfx/sprites/red.2bpp"
+RedRunSprite::		   INCBIN "gfx/sprites/red_run.2bpp"
 GreenBikeSprite::          INCBIN "gfx/sprites/green_bike.2bpp"
 GreenSprite::              INCBIN "gfx/sprites/green.2bpp"
+GreenRunSprite::		   INCBIN "gfx/sprites/green_run.2bpp"
 BlueSprite::             INCBIN "gfx/sprites/blue.2bpp"
 OakSprite::              INCBIN "gfx/sprites/oak.2bpp"
 YoungsterSprite::        INCBIN "gfx/sprites/youngster.2bpp"
