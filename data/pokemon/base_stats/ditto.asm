@@ -1,4 +1,5 @@
-	db DEX_DITTO ; pokedex id
+DittoBaseStats::
+	dw DEX_DITTO ; pokedex id
 
 	db  48,  48,  48,  48,  48
 	;   hp  atk  def  spd  spc

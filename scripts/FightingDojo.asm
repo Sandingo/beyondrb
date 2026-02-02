@@ -174,7 +174,7 @@ FightingDojoKarateMasterText:
 	call SaveEndBattleTextPointers
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld a, OPP_KOICHI
+	ld a, KOICHI
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a
@@ -314,7 +314,7 @@ FightingDojoHitmontopPokeBallText:
 	call PrintText
 	jr .done
 .GetMon
-	ld a, HITMONTOP
+	ld bc, HITMONTOP
 	call DisplayPokedex
 	ld hl, .Text
 	call PrintText
@@ -323,7 +323,9 @@ FightingDojoHitmontopPokeBallText:
 	and a
 	jr nz, .done
 	ld a, [wCurPartySpecies]
-	ld b, a
+	ld e, a
+	ld a, [wCurPartySpecies + 1]
+	ld d, a
 	ld c, 30
 	call GivePokemon
 	jr nc, .done
@@ -353,7 +355,7 @@ FightingDojoHitmonleePokeBallText:
 	call PrintText
 	jr .done
 .GetMon
-	ld a, HITMONLEE
+	ld bc, HITMONLEE
 	call DisplayPokedex
 	ld hl, .Text
 	call PrintText
@@ -362,7 +364,9 @@ FightingDojoHitmonleePokeBallText:
 	and a
 	jr nz, .done
 	ld a, [wCurPartySpecies]
-	ld b, a
+	ld e, a
+	ld a, [wCurPartySpecies + 1]
+	ld d, a
 	ld c, 30
 	call GivePokemon
 	jr nc, .done
@@ -392,7 +396,7 @@ FightingDojoHitmonchanPokeBallText:
 	call PrintText
 	jr .done
 .GetMon
-	ld a, HITMONCHAN
+	ld bc, HITMONCHAN
 	call DisplayPokedex
 	ld hl, .Text
 	call PrintText
@@ -401,7 +405,9 @@ FightingDojoHitmonchanPokeBallText:
 	and a
 	jr nz, .done
 	ld a, [wCurPartySpecies]
-	ld b, a
+	ld e, a
+	ld a, [wCurPartySpecies + 1]
+	ld d, a
 	ld c, 30
 	call GivePokemon
 	jr nc, .done

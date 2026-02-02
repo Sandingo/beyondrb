@@ -1,4 +1,5 @@
-	db DEX_MARILL ; pokedex id
+MarillBaseStats::
+	dw DEX_MARILL ; pokedex id
 
 	db  70,  20,  50,  40,  50
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_FREEZETI ; pokedex id
+FreezetiBaseStats::
+	dw DEX_FREEZETI ; pokedex id
 
 	db  65,  93,  57,  95,  85
 	;   hp  atk  def  spd  spc

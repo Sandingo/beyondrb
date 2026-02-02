@@ -1,4 +1,5 @@
-	db DEX_GAVILLAIN ; pokedex id
+GavillainBaseStats::
+	dw DEX_GAVILLAIN ; pokedex id
 
 	db  75, 105,  85, 40,  100
 	;   hp  atk  def  spd  spc

@@ -52,7 +52,7 @@ SeafoamIslandsB5FArticunoText:
 SeafoamIslandsB5FArticunoBattleText:
 	text_far _SeafoamIslandsB5FArticunoBattleText
 	text_asm
-	ld a, ARTICUNO
+	ld bc, ARTICUNO
 	call PlayCry
 	call WaitForSoundToFinish
 	callfar RollForShiny

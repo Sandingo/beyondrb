@@ -1,15 +1,15 @@
 MtSilverExtraRoomsWildMons:
 	def_grass_wildmons 10 ; encounter rate
-	db  5, MELTAN
-	db  5, MELTAN
-	db  10, MELTAN
-	db  15, MELTAN
-	db  20, MELTAN
-	db  20, MELTAN
-	db  30, MELTAN
-	db  35, MELTAN
-	db  40, MELTAN
-	db  50, MELTAN
+	dbw  5, MELTAN
+	dbw  5, MELTAN
+	dbw  10, MELTAN
+	dbw  15, MELTAN
+	dbw  20, MELTAN
+	dbw  20, MELTAN
+	dbw  30, MELTAN
+	dbw  35, MELTAN
+	dbw  40, MELTAN
+	dbw  50, MELTAN
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

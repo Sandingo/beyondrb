@@ -48,69 +48,69 @@ SuperRodData:
 
 .Group1:
 	db 2
-	db 30, TENTACOOL
-	db 30, POLIWAG
+	dbw 30, TENTACOOL
+	dbw 30, POLIWAG
 
 .Group2:
 	db 2
-	db 30, GOLDEEN
-	db 30, POLIWAG
+	dbw 30, GOLDEEN
+	dbw 30, POLIWAG
 
 .Group3:
 	db 3
-	db 30, PSYDUCK
-	db 30, GOLDEEN
-	db 30, KRABBY
+	dbw 30, PSYDUCK
+	dbw 30, GOLDEEN
+	dbw 30, KRABBY
 
 .Group4:
 	db 2
-	db 30, KRABBY
-	db 30, SHELLDER
-	db 30, BLOTTLE
+	dbw 30, KRABBY
+	dbw 30, SHELLDER
+	dbw 30, BLOTTLE
 
 .Group5:
 	db 2
-	db 32, POLIWHIRL
-	db 30, SLOWPOKE
+	dbw 32, POLIWHIRL
+	dbw 30, SLOWPOKE
 
 .Group6:
 	db 4
-	db 30, DRATINI
-	db 30, KRABBY
-	db 30, WEIRDUCK
-	db 30, SLOWPOKE
+	dbw 30, DRATINI
+	dbw 30, KRABBY
+	dbw 30, WEIRDUCK
+	dbw 30, SLOWPOKE
 
 .Group7:
 	db 4
-	db 25, TENTACOOL
-	db 30, KRABBY
-	db 30, GOLDEEN
-	db 30, MAGIKARP
+	dbw 25, TENTACOOL
+	dbw 30, KRABBY
+	dbw 30, GOLDEEN
+	dbw 30, MAGIKARP
 
 .Group8:
 	db 4
-	db 30, STARYU
-	db 30, HORSEA
-	db 30, SHELLDER
-	db 30, CHEEP
+	dbw 30, STARYU
+	dbw 30, HORSEA
+	dbw 30, SHELLDER
+	dbw 30, CHEEP
 
 .Group9:
 	db 4
-	db 32, SLOWBRO
-	db 32, SEAKING
-	db 32, KINGLER
-	db 32, SEADRA
+	dbw 32, SLOWBRO
+	dbw 32, SEAKING
+	dbw 32, KINGLER
+	dbw 32, SEADRA
 
 .Group10:
 	db 4
-	db 32, SEAKING
-	db 30, BLOTTLE
-	db 30, GOLDEEN
-	db 30, MAGIKARP
+	dbw 32, SEAKING
+	dbw 30, BLOTTLE
+	dbw 30, GOLDEEN
+	dbw 30, MAGIKARP
 
 .Group11:
 	db 4
-	db 30, SKIMPER
-	db 30, KRABBY
-	db 30, WEIRDUCK
-	db 30, SLOWPOKE
+	dbw 30, SKIMPER
+	dbw 30, KRABBY
+	dbw 30, WEIRDUCK
+	dbw 30, SLOWPOKE

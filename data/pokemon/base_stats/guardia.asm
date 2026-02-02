@@ -1,4 +1,5 @@
-	db DEX_GUARDIA ; pokedex id
+GuardiaBaseStats::
+	dw DEX_GUARDIA ; pokedex id
 
 	db  70,  90, 120,  65,  100
 	;   hp  atk  def  spd  spc

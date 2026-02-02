@@ -415,7 +415,7 @@ SilphCo10FPorygonText: ; unreferenced
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, PORYGON
+	ld bc, PORYGON
 	call DisplayPokedex
 	jp TextScriptEnd
 

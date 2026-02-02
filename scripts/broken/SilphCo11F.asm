@@ -255,7 +255,7 @@ xor a
 	ld hl, SilphCo11FArcherDefeatedText
 	ld de, SilphCo11FArcherVictoryText
 	call SaveEndBattleTextPointers
-	ld a, OPP_ARCHER
+	ld a, ARCHER
 	ld [wCurOpponent], a
 	ld a, $2
 	ld [wTrainerNo], a

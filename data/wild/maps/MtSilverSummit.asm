@@ -1,15 +1,15 @@
 MtSilverSummitWildMons:
 	def_grass_wildmons 10 ; encounter rate
-	db  48, GOLBAT
-	db  50, GOLBAT
-	db  51, GOLBAT
-	db  51, GOLDUCK
-	db  48, GRAVELER
-	db  48, ONIX
-	db  48, GRAVELER
-	db  46, DECILLA
-	db  50, GAWARHED
-	db  48, DECILLA
+	dbw  48, GOLBAT
+	dbw  50, GOLBAT
+	dbw  51, GOLBAT
+	dbw  51, GOLDUCK
+	dbw  48, GRAVELER
+	dbw  48, ONIX
+	dbw  48, GRAVELER
+	dbw  46, DECILLA
+	dbw  50, GAWARHED
+	dbw  48, DECILLA
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

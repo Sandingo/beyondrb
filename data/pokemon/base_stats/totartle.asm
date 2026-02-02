@@ -1,4 +1,5 @@
-	db DEX_TOTARTLE ; pokedex id
+TotartleBaseStats::
+	dw DEX_TOTARTLE ; pokedex id
 
 	db  79,  83, 85,  78,  100
 	;   hp  atk  def  spd  spc

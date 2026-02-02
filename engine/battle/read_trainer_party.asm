@@ -16,7 +16,6 @@ ReadTrainer:
 
 ; get the pointer to trainer data for this class
 	ld a, [wTrainerClass] ; get trainer class
-	dec a
 	add a
 	ld hl, TrainerDataPointers
 	ld c, a
@@ -31,14 +30,27 @@ ReadTrainer:
 ; and hl points to the trainer class.
 ; Our next task is to iterate through the trainers,
 ; decrementing b each time, until we get to the right one.
-.outer
+.CheckNextTrainer
 	dec b
 	jr z, .IterateTrainer
-.inner
+.SkipTrainer
+	ld a, [hli]
+	cp $ff
+	jr z, .SkipSpecialTrainer
+.SkipNormalTrainerMon
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	or c
+	jr z, .CheckNextTrainer
+	jr .SkipNormalTrainerMon
+.SkipSpecialTrainer
 	ld a, [hli]
 	and a
-	jr nz, .inner
-	jr .outer
+	jr z, .CheckNextTrainer
+	inc hl
+	inc hl
+	jr .SkipSpecialTrainer
 
 ; if the first byte of trainer data is FF,
 ; - each pokemon has a specific level
@@ -54,7 +66,17 @@ ReadTrainer:
 	ld a, [hli]
 	and a ; have we reached the end of the trainer data?
 	jp z, .AddAdditionalMoveData
+	jr nz, .MonNotZero
+	ld a, [hli]
+	and a
+	jp z, .FinishUp
+	dec hl
+.MonNotZero
+	dec hl
+	ld a, [hli]
 	ld [wCurPartySpecies], a
+	ld a, [hli]
+	ld [wCurPartySpecies + 1], a
 	ld a, ENEMY_PARTY_DATA
 	ld [wMonDataLocation], a
 	push hl
@@ -72,6 +94,8 @@ ReadTrainer:
 	ld [wCurEnemyLevel], a
 	ld a, [hli]
 	ld [wCurPartySpecies], a
+	ld a, [hli]
+	ld [wCurPartySpecies + 1], a
 	ld a, ENEMY_PARTY_DATA
 	ld [wMonDataLocation], a
 	push hl

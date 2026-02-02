@@ -88,7 +88,7 @@ CeladonCityFisherText:
 CeladonCityPoliwrathText:
 	text_far _CeladonCityPoliwrathText
 	text_asm
-	ld a, POLIWRATH
+	ld bc, POLIWRATH
 	call PlayCry
 	jp TextScriptEnd
 

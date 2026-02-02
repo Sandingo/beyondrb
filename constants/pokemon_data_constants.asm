@@ -1,6 +1,6 @@
 ; base data struct members (see data/pokemon/base_stats/*.asm)
 rsreset
-DEF BASE_DEX_NO      rb
+DEF BASE_DEX_NO      rw
 DEF BASE_STATS       rb NUM_STATS
 rsset BASE_STATS
 DEF BASE_HP          rb
@@ -20,12 +20,12 @@ DEF BASE_BACKPIC     rw
 DEF BASE_MOVES       rb NUM_MOVES
 DEF BASE_GROWTH_RATE rb
 DEF BASE_TMHM        rb (NUM_TM_HM + 7) / 8
-                     rb_skip
+DEF BASE_PIC_BANK    rb
 DEF BASE_DATA_SIZE EQU _RS
 
 ; party_struct members (see macros/ram.asm)
 rsreset
-DEF MON_SPECIES    rb
+DEF MON_SPECIES    rw
 DEF MON_HP         rw
 DEF MON_BOX_LEVEL  rb
 DEF MON_STATUS     rb
@@ -96,4 +96,4 @@ DEF NUM_GROWTH_RATES EQU const_value
 
 ; wild data (see data/wild/maps/*.asm)
 DEF NUM_WILDMONS EQU 10
-DEF WILDDATA_LENGTH EQU 1 + NUM_WILDMONS * 2
+DEF WILDDATA_LENGTH EQU 1 + NUM_WILDMONS * 3

@@ -1,4 +1,5 @@
-	db DEX_SLOWBRO ; pokedex id
+SlowbroBaseStats::
+	dw DEX_SLOWBRO ; pokedex id
 
 	db  95,  75, 110,  30,  80
 	;   hp  atk  def  spd  spc

@@ -1,35 +1,35 @@
 Route6WildMons:
 	def_grass_wildmons 15 ; encounter rate
 IF DEF(_RED)
-	db 13, ODDISH
-	db 13, PIDGEY
-	db 15, PIDGEY
-	db 10, ODDISH
-	db 12, PUPPERON
+	dbw 13, ODDISH
+	dbw 13, PIDGEY
+	dbw 15, PIDGEY
+	dbw 10, ODDISH
+	dbw 12, PUPPERON
 ENDC
 IF DEF(_BLUE)
-	db 13, BELLSPROUT
-	db 13, PIDGEY
-	db 15, PIDGEY
-	db 10, BELLSPROUT
-	db 12, VULPIII
+	dbw 13, BELLSPROUT
+	dbw 13, PIDGEY
+	dbw 15, PIDGEY
+	dbw 10, BELLSPROUT
+	dbw 12, VULPIII
 ENDC
-	db 15, MAGNEMITE
-	db 16, MAGNEMITE
-	db 16, MACHOP
-	db 14, SMUJJ
-	db 16, SMUJJ
+	dbw 15, MAGNEMITE
+	dbw 16, MAGNEMITE
+	dbw 16, MACHOP
+	dbw 14, SMUJJ
+	dbw 16, SMUJJ
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db  5, SMUJJ
-	db 10, SMUJJ
-	db 15, SMUJJ
-	db 20, GRIMER
-	db 10, GRIMER
-	db 15, SLOWPOKE
-	db 20, SLOWPOKE
-	db 30, GRIMER
-	db 35, GRIMER
-	db 40, MUK
+	dbw  5, SMUJJ
+	dbw 10, SMUJJ
+	dbw 15, SMUJJ
+	dbw 20, GRIMER
+	dbw 10, GRIMER
+	dbw 15, SLOWPOKE
+	dbw 20, SLOWPOKE
+	dbw 30, GRIMER
+	dbw 35, GRIMER
+	dbw 40, MUK
 	end_water_wildmons

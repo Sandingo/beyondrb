@@ -1,20 +1,20 @@
 CeruleanCaveB1FWildMons:
 	def_grass_wildmons 25 ; encounter rate
-	db 55, RHYDON
-	db 55, MAROWAK
-	db 55, ELECTRODE
-	db 64, CHANSEY
-	db 64, PARASECT
-	db 64, RAICHU
+	dbw 55, RHYDON
+	dbw 55, MAROWAK
+	dbw 55, ELECTRODE
+	dbw 64, CHANSEY
+	dbw 64, PARASECT
+	dbw 64, RAICHU
 IF DEF(_RED)
-	db 57, ARBOK
+	dbw 57, ARBOK
 ENDC
 IF DEF(_BLUE)
-	db 57, SANDSLASH
+	dbw 57, SANDSLASH
 ENDC
-	db 65, DITTO
-	db 63, DITTO
-	db 67, DITTO
+	dbw 65, DITTO
+	dbw 63, DITTO
+	dbw 67, DITTO
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

@@ -1,4 +1,5 @@
-	db DEX_CACTORMUS ; pokedex id
+CactormusBaseStats::
+	dw DEX_CACTORMUS ; pokedex id
 
 	db  60,  90,  100,  90,  75
 	;   hp  atk  def  spd  spc

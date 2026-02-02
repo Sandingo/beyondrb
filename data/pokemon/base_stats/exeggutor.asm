@@ -1,4 +1,5 @@
-	db DEX_EXEGGUTOR ; pokedex id
+ExeggutorBaseStats::
+	dw DEX_EXEGGUTOR ; pokedex id
 
 	db  95,  95,  85,  55, 125
 	;   hp  atk  def  spd  spc

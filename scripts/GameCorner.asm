@@ -587,7 +587,7 @@ GameCornerImakuniText:
 	ld de, .ImakuniVictoryText
 	call SaveEndBattleTextPointers
 	ld [wIsTrainerBattle], a; Battle Start!
-	ld a, OPP_IMAKUNI
+	ld a, IMAKUNI
 	ld [wCurOpponent], a
 	ld a, 1
 	ld [wTrainerNo], a

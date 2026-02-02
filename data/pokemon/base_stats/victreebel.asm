@@ -1,4 +1,5 @@
-	db DEX_VICTREEBEL ; pokedex id
+VictreebelBaseStats::
+	dw DEX_VICTREEBEL ; pokedex id
 
 	db  80, 105,  65,  70, 100
 	;   hp  atk  def  spd  spc

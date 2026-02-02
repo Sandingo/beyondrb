@@ -1,4 +1,5 @@
-	db DEX_GRIMER ; pokedex id
+GrimerBaseStats::
+	dw DEX_GRIMER ; pokedex id
 
 	db  80,  80,  50,  25,  40
 	;   hp  atk  def  spd  spc

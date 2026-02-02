@@ -1,4 +1,5 @@
-	db DEX_JUNGELA ; pokedex id
+JungelaBaseStats::
+	dw DEX_JUNGELA ; pokedex id
 
 	db  90,  85, 125,  75, 100
 	;   hp  atk  def  spd  spc

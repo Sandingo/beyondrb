@@ -14,58 +14,58 @@ ENDM
 ; - TrainerAIPointers (see data/trainers/ai_pointers.asm)
 ; - TrainerClassMoveChoiceModifications (see data/trainers/move_choices.asm)
 	const_def
-	trainer_const NOBODY         ; $00
-	trainer_const YOUNGSTER      ; $01
-	trainer_const BUG_CATCHER    ; $02
-	trainer_const LASS           ; $03
-	trainer_const SAILOR         ; $04
-	trainer_const JR_TRAINER_M   ; $05
-	trainer_const JR_TRAINER_F   ; $06
-	trainer_const POKEMANIAC     ; $07
-	trainer_const SUPER_NERD     ; $08
-	trainer_const HIKER          ; $09
-	trainer_const BIKER          ; $0A
-	trainer_const BURGLAR        ; $0B
-	trainer_const ENGINEER       ; $0C
-	trainer_const IMAKUNI		 ; $0D
-	trainer_const FISHER         ; $0E
-	trainer_const SWIMMER_M        ; $0F
-	trainer_const CUE_BALL       ; $10
-	trainer_const GAMBLER        ; $11
-	trainer_const BEAUTY         ; $12
-	trainer_const PSYCHIC_TR     ; $13
-	trainer_const ROCKER         ; $14
-	trainer_const JUGGLER        ; $15
-	trainer_const TAMER          ; $16
-	trainer_const BIRD_KEEPER    ; $17
-	trainer_const BLACKBELT      ; $18
-	trainer_const RIVAL1         ; $19
-	trainer_const PROF_OAK       ; $1A
-	trainer_const CHIEF          ; $1B
-	trainer_const SCIENTIST      ; $1C
-	trainer_const GIOVANNI       ; $1D
-	trainer_const ROCKET         ; $1E
-	trainer_const COOLTRAINER_M  ; $1F
-	trainer_const COOLTRAINER_F  ; $20
-	trainer_const BRUNO          ; $21
-	trainer_const BROCK          ; $22
-	trainer_const MISTY          ; $23
-	trainer_const LT_SURGE       ; $24
-	trainer_const ERIKA          ; $25
-	trainer_const KOGA           ; $26
-	trainer_const BLAINE         ; $27
-	trainer_const SABRINA        ; $28
-	trainer_const GENTLEMAN      ; $29
-	trainer_const RIVAL2         ; $2A
-	trainer_const RIVAL3         ; $2B
-	trainer_const LORELEI        ; $2C
-	trainer_const CHANNELER      ; $2D
-	trainer_const AGATHA         ; $2E
-	trainer_const LANCE          ; $2F
-	trainer_const MINA
-	trainer_const HITECH_JACK
-	trainer_const ARCHER
-	trainer_const KYLE
-	trainer_const KOICHI
-	trainer_const SWIMMER_F
+	const NOBODY         ; $00
+	const YOUNGSTER      ; $01
+	const BUG_CATCHER    ; $02
+	const LASS           ; $03
+	const SAILOR         ; $04
+	const JR_TRAINER_M   ; $05
+	const JR_TRAINER_F   ; $06
+	const POKEMANIAC     ; $07
+	const SUPER_NERD     ; $08
+	const HIKER          ; $09
+	const BIKER          ; $0A
+	const BURGLAR        ; $0B
+	const ENGINEER       ; $0C
+	const IMAKUNI		 ; $0D
+	const FISHER         ; $0E
+	const SWIMMER_M        ; $0F
+	const CUE_BALL       ; $10
+	const GAMBLER        ; $11
+	const BEAUTY         ; $12
+	const PSYCHIC_TR     ; $13
+	const ROCKER         ; $14
+	const JUGGLER        ; $15
+	const TAMER          ; $16
+	const BIRD_KEEPER    ; $17
+	const BLACKBELT      ; $18
+	const RIVAL1         ; $19
+	const PROF_OAK       ; $1A
+	const CHIEF          ; $1B
+	const SCIENTIST      ; $1C
+	const GIOVANNI       ; $1D
+	const ROCKET         ; $1E
+	const COOLTRAINER_M  ; $1F
+	const COOLTRAINER_F  ; $20
+	const BRUNO          ; $21
+	const BROCK          ; $22
+	const MISTY          ; $23
+	const LT_SURGE       ; $24
+	const ERIKA          ; $25
+	const KOGA           ; $26
+	const BLAINE         ; $27
+	const SABRINA        ; $28
+	const GENTLEMAN      ; $29
+	const RIVAL2         ; $2A
+	const RIVAL3         ; $2B
+	const LORELEI        ; $2C
+	const CHANNELER      ; $2D
+	const AGATHA         ; $2E
+	const LANCE          ; $2F
+	const MINA
+	const HITECH_JACK
+	const ARCHER
+	const KYLE
+	const KOICHI
+	const SWIMMER_F
 DEF NUM_TRAINERS EQU const_value - 1

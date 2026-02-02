@@ -1,4 +1,5 @@
-	db DEX_QUADRAGON ; pokedex id
+QuadragonBaseStats::
+	dw DEX_QUADRAGON ; pokedex id
 
 	db  81, 102,  84,  94, 94
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_CHARMELEON ; pokedex id
+CharmeleonBaseStats::
+	dw DEX_CHARMELEON ; pokedex id
 
 	db  58,  64,  58,  80,  65
 	;   hp  atk  def  spd  spc

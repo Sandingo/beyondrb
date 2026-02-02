@@ -108,16 +108,22 @@ GetPrizeMenuId:
 .putMonName
 	ld a, [wPrize1]
 	ld [wNamedObjectIndex], a
+	ld a, [wPrize1 + 1]
+	ld [wNamedObjectIndex + 1], a
 	call GetMonName
 	hlcoord 2, 4
 	call PlaceString
 	ld a, [wPrize2]
 	ld [wNamedObjectIndex], a
+	ld a, [wPrize2 + 1]
+	ld [wNamedObjectIndex + 1], a
 	call GetMonName
 	hlcoord 2, 6
 	call PlaceString
 	ld a, [wPrize3]
 	ld [wNamedObjectIndex], a
+	ld a, [wPrize3 + 1]
+	ld [wNamedObjectIndex + 1], a
 	call GetMonName
 	hlcoord 2, 8
 	call PlaceString
@@ -190,8 +196,11 @@ HandlePrizeChoice:
 	ld e, a
 	ld hl, wPrize1
 	add hl, de
-	ld a, [hl]
+	add hl, de
+	ld a, [hli]
 	ld [wNamedObjectIndex], a
+	ld a, [hl]
+	ld [wNamedObjectIndex + 1], a
 	ld a, [wWhichPrizeWindow]
 	cp 0 ; is prize a Pokemon from Menu 1?
 	jr z, .getMonName
@@ -226,11 +235,14 @@ HandlePrizeChoice:
 .giveMon
 	ld a, [wNamedObjectIndex]
 	ld [wCurPartySpecies], a
-	push af
+	ld e, a
+	ld a, [wNamedObjectIndex + 1]
+	ld [wCurPartySpecies + 1], a
+	ld d, a
+	push de
 	call GetPrizeMonLevel
 	ld c, a
-	pop af
-	ld b, a
+	pop de
 	call GivePokemon
 
 ; If either the party or box was full, wait after displaying message.
@@ -291,12 +303,18 @@ OhFineThenTextPtr:
 
 GetPrizeMonLevel:
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wCurPartySpecies + 1]
 	ld b, a
 	ld hl, PrizeMonLevelDictionary
 .loop
 	ld a, [hli]
+	cp c
+	ld a, [hli]
+	jr nz, .next
 	cp b
 	jr z, .matchFound
+.next
 	inc hl
 	jr .loop
 .matchFound

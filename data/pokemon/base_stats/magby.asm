@@ -1,4 +1,5 @@
-	db DEX_MAGBY ; pokedex id
+MagbyBaseStats::
+	dw DEX_MAGBY ; pokedex id
 
 	db  45,  75,  37,  83,  70
 	;   hp  atk  def  spd  spc

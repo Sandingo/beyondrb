@@ -1,4 +1,5 @@
-	db DEX_GODZILANTE ; pokedex id
+GodzilanteBaseStats::
+	dw DEX_GODZILANTE ; pokedex id
 
 	db 100, 130,  70,  20,  90
 	;   hp  atk  def  spd  spc

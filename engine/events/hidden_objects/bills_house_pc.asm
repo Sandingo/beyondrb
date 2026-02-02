@@ -98,17 +98,17 @@ BillsHousePokemonList::
 	bit BIT_B_BUTTON, a
 	jr nz, .cancel
 	ld a, [wCurrentMenuItem]
-	add EEVEE
-	cp EEVEE
-	jr z, .displayPokedex
-	cp FLAREON
-	jr z, .displayPokedex
-	cp JOLTEON
-	jr z, .displayPokedex
-	cp VAPOREON
-	jr z, .displayPokedex
-	jr .cancel
-.displayPokedex
+	cp 4
+	jr nc, .cancel
+	ld c, a
+	ld b, 0
+	ASSERT EEVEE + 1 == FLAREON
+	ASSERT EEVEE + 2 == JOLTEON
+	ASSERT EEVEE + 3 == VAPOREON
+	ld hl, EEVEE
+	add hl, bc
+	ld c, l
+	ld b, h
 	call DisplayPokedex
 	call LoadScreenTilesFromBuffer2
 	jr .billsPokemonLoop

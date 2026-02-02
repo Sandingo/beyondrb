@@ -20,6 +20,6 @@ SSAnne2F_Object:
 
 	def_object_events
 	object_event  3,  7, SPRITE_WAITER, WALK, UP_DOWN, TEXT_SSANNE2F_WAITER
-	object_event 36,  4, SPRITE_BLUE, STAY, DOWN, TEXT_SSANNE2F_RIVAL, OPP_RIVAL1, 1
+	object_event 36,  4, SPRITE_BLUE, STAY, DOWN, TEXT_SSANNE2F_RIVAL, RIVAL1, 1
 
 	def_warps_to SS_ANNE_2F

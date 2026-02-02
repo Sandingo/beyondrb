@@ -1,4 +1,5 @@
-	db DEX_GAWARHED ; pokedex id
+GawarhedBaseStats::
+	dw DEX_GAWARHED ; pokedex id
 
 	db 101, 124, 100,  30, 95
 	;   hp  atk  def  spd  spc

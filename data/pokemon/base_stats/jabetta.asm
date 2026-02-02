@@ -1,4 +1,5 @@
-	db DEX_JABETTA ; pokedex id
+JabettaBaseStats::
+	dw DEX_JABETTA ; pokedex id
 
 	db  80,  110,  70,  90,  85
 	;   hp  atk  def  spd  spc

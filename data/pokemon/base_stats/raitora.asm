@@ -1,4 +1,5 @@
-	db DEX_RAITORA ; pokedex id
+RaitoraBaseStats::
+	dw DEX_RAITORA ; pokedex id
 
 	db  65,  80,  65, 60,  75
 	;   hp  atk  def  spd  spc

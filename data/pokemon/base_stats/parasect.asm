@@ -1,4 +1,5 @@
-	db DEX_PARASECT ; pokedex id
+ParasectBaseStats::
+	dw DEX_PARASECT ; pokedex id
 
 	db  60,  95,  80,  30,  80
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_NAGAASP ; pokedex id
+NagaaspBaseStats::
+	dw DEX_NAGAASP ; pokedex id
 
 	db  71,  112,  57,  95,  65
 	;   hp  atk  def  spd  spc

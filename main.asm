@@ -59,10 +59,7 @@ INCLUDE "engine/pokemon/add_mon.asm"
 INCLUDE "engine/flag_action.asm"
 INCLUDE "engine/events/heal_party.asm"
 INCLUDE "engine/math/bcd.asm"
-INCLUDE "engine/movie/oak_speech/init_player_data.asm"
 INCLUDE "engine/items/get_bag_item_quantity.asm"
-INCLUDE "engine/overworld/pathfinding.asm"
-INCLUDE "engine/gfx/hp_bar.asm"
 INCLUDE "engine/events/hidden_objects/bookshelves.asm"
 INCLUDE "engine/events/hidden_objects/indigo_plateau_statues.asm"
 INCLUDE "engine/events/hidden_objects/book_or_sculpture.asm"
@@ -74,6 +71,12 @@ SECTION "Draw Badges", ROMX
 
 INCLUDE "engine/menus/draw_badges.asm"
 INCLUDE "engine/gfx/animated_tiles.asm"
+INCLUDE "engine/gfx/hp_bar.asm"
+INCLUDE "engine/movie/oak_speech/init_player_data.asm"
+
+SECTION "Pathfinding", ROMX 
+
+INCLUDE "engine/overworld/pathfinding.asm"
 
 
 SECTION "Font Graphics", ROMX
@@ -183,7 +186,7 @@ INCLUDE "engine/slots/game_corner_slots.asm"
 SECTION "Battle Engine 7", ROMX
 
 INCLUDE "data/moves/moves.asm"
-INCLUDE "data/pokemon/base_stats.asm"
+INCLUDE "data/pokemon/base_stats_pointers.asm"
 INCLUDE "data/pokemon/cries.asm"
 INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
@@ -375,3 +378,8 @@ INCLUDE "data/items/tmhm_names.asm"
 INCLUDE "data/pokemon/breeding_list.asm"
 INCLUDE "engine/items/tm_prices.asm"
 INCLUDE "engine/movie/splash.asm"
+INCLUDE "data/pokemon/base_stats.asm"
+
+SECTION "Play Trainer Music", ROMX
+
+INCLUDE "engine/battle/play_trainer_music.asm"

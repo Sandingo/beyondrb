@@ -1,4 +1,5 @@
-	db DEX_VULPIII ; pokedex id
+VulpiiiBaseStats::
+	dw DEX_VULPIII ; pokedex id
 
 	db  28,  31,  30,  60,  60
 	;   hp  atk  def  spd  spc

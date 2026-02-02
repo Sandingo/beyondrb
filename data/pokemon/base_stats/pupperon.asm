@@ -1,4 +1,5 @@
-	db DEX_PUPPERON ; pokedex id
+PupperonBaseStats::
+	dw DEX_PUPPERON ; pokedex id
 
 	db  50,  65,  40,  50,  45
 	;   hp  atk  def  spd  spc

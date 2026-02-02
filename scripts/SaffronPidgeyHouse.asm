@@ -15,7 +15,7 @@ SaffronPidgeyHouseBrunetteGirlText:
 SaffronPidgeyHousePidgeyText:
 	text_far _SaffronPidgeyHousePidgeyText
 	text_asm
-	ld a, PIDGEY
+	ld bc, PIDGEY
 	call PlayCry
 	jp TextScriptEnd
 

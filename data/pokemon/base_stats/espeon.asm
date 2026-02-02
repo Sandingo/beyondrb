@@ -1,4 +1,5 @@
-	db DEX_ESPEON ; pokedex id
+EspeonBaseStats::
+	dw DEX_ESPEON ; pokedex id
 
 	db 65,  65,  60,  110, 130
 	;   hp  atk  def  spd  spc

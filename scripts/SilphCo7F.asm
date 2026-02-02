@@ -184,15 +184,22 @@ SilphCo7FRivalStartBattleScript:
 	ld hl, SilphCo7FRivalDefeatedText
 	ld de, SilphCo7FRivalVictoryText
 	call SaveEndBattleTextPointers
-	ld a, OPP_RIVAL2
+	ld a, RIVAL2
 	ld [wCurOpponent], a
+	ld a, $ff
+	ld [wCurOpponent + 1], a
+	ld a, [wRivalStarter + 1]
+	ld b, a
 	ld a, [wRivalStarter]
-	cp STARTER2
+	ld c, a
+	ld de, STARTER2
+	call CompareTwoBytes
 	jr nz, .not_starter_2
 	ld a, $7
 	jr .set_trainer_no
 .not_starter_2
-	cp STARTER3
+	ld de, STARTER3
+	call CompareTwoBytes
 	jr nz, .no_starter_3
 	ld a, $8
 	jr .set_trainer_no
@@ -311,7 +318,8 @@ SilphCo7FSilphWorkerM1Text:
 .give_lapras
 	ld hl, .HaveThisPokemonText
 	call PrintText
-	lb bc, LAPRAS, 30
+	ld de, LAPRAS
+	ld c, 30
 	call GivePokemon
 	jr nc, .done
 	ld a, [wSimulatedJoypadStatesEnd]

@@ -6,11 +6,23 @@ GetMonName::
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
 	ld a, [wNamedObjectIndex]
-	dec a
+	ld c, a
+	ld a, [wNamedObjectIndex + 1]
+	ld b, a
+	dec bc
 	ld hl, MonsterNames
-	ld c, NAME_LENGTH - 1
-	ld b, 0
-	call AddNTimes
+	ld de, NAME_LENGTH - 1
+.loop
+	xor a
+	or b
+	jr nz, .notZero
+	or c
+	jr z, .done
+.notZero
+	add hl, de
+	dec bc
+	jr .loop
+.done
 	ld de, wNameBuffer
 	push de
 	ld bc, NAME_LENGTH - 1

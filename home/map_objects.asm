@@ -71,7 +71,10 @@ IsItemInBag::
 	ret
 
 DisplayPokedex::
+	ld a, c
 	ld [wPokedexNum], a
+	ld a, b
+	ld [wPokedexNum + 1], a
 	farjp _DisplayPokedex
 
 SetSpriteFacingDirectionAndDelay::

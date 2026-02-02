@@ -1,4 +1,5 @@
-	db DEX_HAPPINY ; pokedex id
+HappinyBaseStats::
+	dw DEX_HAPPINY ; pokedex id
 
 	db 100,   5,   5,  30, 65
 	;   hp  atk  def  spd  spc

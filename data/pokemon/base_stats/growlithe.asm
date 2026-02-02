@@ -1,4 +1,5 @@
-	db DEX_GROWLITHE ; pokedex id
+GrowlitheBaseStats::
+	dw DEX_GROWLITHE ; pokedex id
 
 	db  55,  70,  45,  60,  50
 	;   hp  atk  def  spd  spc

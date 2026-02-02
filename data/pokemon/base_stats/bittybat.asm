@@ -1,4 +1,5 @@
-	db DEX_BITTYBAT ; pokedex id
+BittybatBaseStats::
+	dw DEX_BITTYBAT ; pokedex id
 
 	db  35,  40,  30,  50,  35
 	;   hp  atk  def  spd  spc

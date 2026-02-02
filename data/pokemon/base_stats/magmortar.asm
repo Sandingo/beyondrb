@@ -1,4 +1,5 @@
-	db DEX_MAGMORTAR ; pokedex id
+MagmortarBaseStats::
+	dw DEX_MAGMORTAR ; pokedex id
 
 	db  75,  95,  67,  83,  95
 	;   hp  atk  def  spd  spc

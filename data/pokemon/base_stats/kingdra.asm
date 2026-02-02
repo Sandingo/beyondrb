@@ -1,4 +1,5 @@
-	db DEX_KINGDRA ; pokedex id
+KingdraBaseStats::
+	dw DEX_KINGDRA ; pokedex id
 
 	db  75,  95,  95,  85,  95
 	;   hp  atk  def  spd  spc

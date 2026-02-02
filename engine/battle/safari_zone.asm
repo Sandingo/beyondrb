@@ -17,6 +17,8 @@ PrintSafariZoneBattleText:
 	push hl
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
+	ld a, [wEnemyMonSpecies + 1]
+	ld [wCurSpecies + 1], a
 	call GetMonHeader
 	ld a, [wMonHCatchRate]
 	ld [wEnemyMonActualCatchRate], a

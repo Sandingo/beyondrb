@@ -3,14 +3,14 @@ CeruleanCityWildMons:
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db  5, MAGIKARP
-	db 10, MAGIKARP
-	db 15, MAGIKARP
-	db 20, MAGIKARP
-	db 10, MAGIKARP
-	db 15, SLOWPOKE
-	db 20, SLOWPOKE
-	db 30, GOLDEEN
-	db 35, GOLDEEN
-	db 40, SEAKING
+	dbw  5, MAGIKARP
+	dbw 10, MAGIKARP
+	dbw 15, MAGIKARP
+	dbw 20, MAGIKARP
+	dbw 10, MAGIKARP
+	dbw 15, SLOWPOKE
+	dbw 20, SLOWPOKE
+	dbw 30, GOLDEEN
+	dbw 35, GOLDEEN
+	dbw 40, SEAKING
 	end_water_wildmons

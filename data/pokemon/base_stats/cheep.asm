@@ -1,4 +1,5 @@
-	db DEX_CHEEP ; pokedex id
+CheepBaseStats::
+	dw DEX_CHEEP ; pokedex id
 
 	db  45,  65,  40,  60,  40
 	;   hp  atk  def  spd  spc

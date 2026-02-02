@@ -1,15 +1,15 @@
 LeagueHQB7FWildMons:
 	def_grass_wildmons 8 ; encounter rate
-	db  52, LICKITUNG
-	db  51, MAROWAK
-	db  51, TANGELA
-	db  50, MAROWAK
-	db  51, TANGELA
-	db  51, LICKITUNG
-	db  52, RHYHORN
-	db  50, KANGASKHAN
-	db  53, GORILLAIMO
-	db  55, CHANSEY
+	dbw  52, LICKITUNG
+	dbw  51, MAROWAK
+	dbw  51, TANGELA
+	dbw  50, MAROWAK
+	dbw  51, TANGELA
+	dbw  51, LICKITUNG
+	dbw  52, RHYHORN
+	dbw  50, KANGASKHAN
+	dbw  53, GORILLAIMO
+	dbw  55, CHANSEY
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

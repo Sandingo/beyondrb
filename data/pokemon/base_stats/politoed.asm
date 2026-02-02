@@ -1,4 +1,5 @@
-	db DEX_POLITOED ; pokedex id
+PolitoedBaseStats::
+	dw DEX_POLITOED ; pokedex id
 
 	db  90,  75,  75,  70,  100
 	;   hp  atk  def  spd  spc

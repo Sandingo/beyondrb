@@ -1,4 +1,5 @@
-	db DEX_CARAPTHOR ; pokedex id
+CarapthorBaseStats::
+	dw DEX_CARAPTHOR ; pokedex id
 
 	db  65,  85,  50,  60,  60
 	;   hp  atk  def  spd  spc

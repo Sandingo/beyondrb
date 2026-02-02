@@ -1,4 +1,5 @@
-	db DEX_KAKUNA ; pokedex id
+KakunaBaseStats::
+	dw DEX_KAKUNA ; pokedex id
 
 	db  45,  25,  50,  35,  25
 	;   hp  atk  def  spd  spc

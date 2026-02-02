@@ -1,4 +1,5 @@
-	db DEX_HOUNDOUR ; pokedex id
+HoundourBaseStats::
+	dw DEX_HOUNDOUR ; pokedex id
 
 	db  45,  60,  30,  65,  80
 	;   hp  atk  def  spd  spc

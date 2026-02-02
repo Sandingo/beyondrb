@@ -1,4 +1,5 @@
-	db DEX_PERITOP ; pokedex id
+PeritopBaseStats::
+	dw DEX_PERITOP ; pokedex id
 
 	db  85,  95,  60,  84,  72
 	;   hp  atk  def  spd  spc

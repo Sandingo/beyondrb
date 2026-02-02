@@ -29,9 +29,14 @@ CeladonMansion3FGameDesignerText:
 	ld hl, wPokedexOwned
 	ld b, wPokedexOwnedEnd - wPokedexOwned
 	call CountSetBits
+	ld a, [wNumSetBits + 1]
+	cp HIGH(NUM_POKEMON - 1) ; discount Mew
+	jr c, .not_complete
+	jr nz, .completed_dex
 	ld a, [wNumSetBits]
-	cp NUM_POKEMON - 1 ; discount Mew
+	cp LOW(NUM_POKEMON - 1) ; discount Mew
 	jr nc, .completed_dex
+.not_complete
 	ld hl, .Text
 	jr .done
 .completed_dex

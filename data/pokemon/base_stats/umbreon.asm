@@ -1,4 +1,5 @@
-	db DEX_UMBREON ; pokedex id
+UmbreonBaseStats::
+	dw DEX_UMBREON ; pokedex id
 
 	db 95,  65,  110,  65, 130
 	;   hp  atk  def  spd  spc

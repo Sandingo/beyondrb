@@ -1,4 +1,5 @@
-	db DEX_WISPURR ; pokedex id
+WispurrBaseStats::
+	dw DEX_WISPURR ; pokedex id
 
 	db  58,  97,  40,  112,  53
 	;   hp  atk  def  spd  spc

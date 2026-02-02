@@ -1,4 +1,5 @@
-	db DEX_TAUROS ; pokedex id
+TaurosBaseStats::
+	dw DEX_TAUROS ; pokedex id
 
 	db  75, 100,  95, 110,  70
 	;   hp  atk  def  spd  spc

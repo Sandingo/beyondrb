@@ -9,7 +9,6 @@ AnimationIdSpecialEffects:
 	anim_special_effect GUILLOTINE,            AnimationFlashScreen
 	anim_special_effect MEGA_KICK,             AnimationFlashScreen
 	anim_special_effect HEADBUTT,              AnimationFlashScreen
-	anim_special_effect TAIL_WHIP,             TailWhipAnimationUnused
 	anim_special_effect GROWL,                 DoGrowlSpecialEffects
 	anim_special_effect DISABLE,               AnimationFlashScreen
 	anim_special_effect BLIZZARD,              DoBlizzardSpecialEffects

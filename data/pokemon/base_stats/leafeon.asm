@@ -1,4 +1,5 @@
-	db DEX_LEAFEON ; pokedex id
+LeafeonBaseStats::
+	dw DEX_LEAFEON ; pokedex id
 
 	db 65,  110,  130,  95, 65
 	;   hp  atk  def  spd  spc

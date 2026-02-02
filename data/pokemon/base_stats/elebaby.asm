@@ -1,4 +1,5 @@
-	db DEX_ELEBABY ; pokedex id
+ElebabyBaseStats::
+	dw DEX_ELEBABY ; pokedex id
 
 	db  45,  63,  37, 95,  65
 	;   hp  atk  def  spd  spc

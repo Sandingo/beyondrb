@@ -1,4 +1,5 @@
-	db DEX_VILEPLUME ; pokedex id
+VileplumeBaseStats::
+	dw DEX_VILEPLUME ; pokedex id
 
 	db  75,  80,  85,  50, 100
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_RAMOOSE ; pokedex id
+RamooseBaseStats::
+	dw DEX_RAMOOSE ; pokedex id
 
 	db  85, 110,  95, 60,  80
 	;   hp  atk  def  spd  spc

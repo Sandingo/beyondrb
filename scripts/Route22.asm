@@ -24,11 +24,17 @@ Route22NoopScript:
 
 Route22GetRivalTrainerNoByStarterScript:
 	ld a, [wRivalStarter]
+	ld c, a
+	ld a, [wRivalStarter + 1]
 	ld b, a
 .next_trainer_no
 	ld a, [hli]
+	cp c
+	ld a, [hli]
+	jr nz, .wrong_trainer_no
 	cp b
 	jr z, .got_trainer_no
+.wrong_trainer_no
 	inc hl
 	jr .next_trainer_no
 .got_trainer_no
@@ -134,8 +140,10 @@ Route22Rival1StartBattleScript:
 	ld hl, Route22Rival1DefeatedText
 ;	ld de, Route22Rival1VictoryText
 	call SaveEndBattleTextPointers
-	ld a, OPP_RIVAL1
+	ld a, RIVAL1
 	ld [wCurOpponent], a
+	ld a, $ff
+	ld [wCurOpponent + 1], a
 	ld hl, .StarterTable
 	call Route22GetRivalTrainerNoByStarterScript
 	ld a, SCRIPT_ROUTE22_RIVAL1_AFTER_BATTLE
@@ -144,9 +152,9 @@ Route22Rival1StartBattleScript:
 
 .StarterTable:
 ; starter the rival picked, rival trainer number
-	db STARTER2, 4
-	db STARTER3, 5
-	db STARTER1, 6
+	dwb STARTER2, 4
+	dwb STARTER3, 5
+	dwb STARTER1, 6
 
 Route22Rival1AfterBattleScript:
 	ld a, [wIsInBattle]
@@ -292,8 +300,10 @@ Route22Rival2StartBattleScript:
 	ld hl, Route22Rival2DefeatedText
 	ld de, Route22Rival2VictoryText
 	call SaveEndBattleTextPointers
-	ld a, OPP_RIVAL2
+	ld a, RIVAL2
 	ld [wCurOpponent], a
+	ld a, $ff
+	ld [wCurOpponent + 1], a
 	ld hl, .StarterTable
 	call Route22GetRivalTrainerNoByStarterScript
 	ld a, SCRIPT_ROUTE22_RIVAL2_AFTER_BATTLE
@@ -301,9 +311,9 @@ Route22Rival2StartBattleScript:
 	ret
 
 .StarterTable:
-	db STARTER2, 10
-	db STARTER3, 11
-	db STARTER1, 12
+	dwb STARTER2, 10
+	dwb STARTER3, 11
+	dwb STARTER1, 12
 
 Route22Rival2AfterBattleScript:
 	ld a, [wIsInBattle]

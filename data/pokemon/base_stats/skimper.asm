@@ -1,4 +1,5 @@
-	db DEX_SKIMPER ; pokedex id
+SkimperBaseStats::
+	dw DEX_SKIMPER ; pokedex id
 
 	db  62,  43,  36,  88,  71
 	;   hp  atk  def  spd  spc

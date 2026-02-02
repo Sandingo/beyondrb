@@ -1,4 +1,5 @@
-	db DEX_OMEGADGE ; pokedex id
+OmegadgeBaseStats::
+	dw DEX_OMEGADGE ; pokedex id
 
 	db 101, 106,  120,  25,  95
 	;   hp  atk  def  spd  spc

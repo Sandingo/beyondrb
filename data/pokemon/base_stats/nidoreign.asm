@@ -1,4 +1,5 @@
-	db DEX_NIDOREIGN ; pokedex id
+NidoreignBaseStats::
+	dw DEX_NIDOREIGN ; pokedex id
 
 	db  86,  87,  82,  80,  75
 	;   hp  atk  def  spd  spc

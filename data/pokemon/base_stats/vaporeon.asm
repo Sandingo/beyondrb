@@ -1,4 +1,5 @@
-	db DEX_VAPOREON ; pokedex id
+VaporeonBaseStats::
+	dw DEX_VAPOREON ; pokedex id
 
 	db 130,  65,  60,  65, 110
 	;   hp  atk  def  spd  spc

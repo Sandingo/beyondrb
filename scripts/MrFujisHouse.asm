@@ -56,14 +56,14 @@ MrFujisHouseLittleGirlText:
 MrFujisHousePsyduckText:
 	text_far _MrFujisHousePsyduckText
 	text_asm
-	ld a, PSYDUCK
+	ld bc, PSYDUCK
 	call PlayCry
 	jp TextScriptEnd
 
 MrFujisHouseNidorinoText:
 	text_far _MrFujisHouseNidorinoText
 	text_asm
-	ld a, NIDORAN_M
+	ld bc, NIDORAN_M
 	call PlayCry
 	jp TextScriptEnd
 

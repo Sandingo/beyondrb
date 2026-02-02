@@ -1,4 +1,5 @@
-	db DEX_MELMETAL ; pokedex id
+MelmetalBaseStats::
+	dw DEX_MELMETAL ; pokedex id
 
 	db  135,  143,  143,  34,  80
 	;   hp  atk  def  spd  spc

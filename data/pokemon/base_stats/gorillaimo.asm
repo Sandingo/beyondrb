@@ -1,4 +1,5 @@
-	db DEX_GORILLAIMO ; pokedex id
+GorillaimoBaseStats::
+	dw DEX_GORILLAIMO ; pokedex id
 
 	db 130, 100,  75,  65,  40
 	;   hp  atk  def  spd  spc

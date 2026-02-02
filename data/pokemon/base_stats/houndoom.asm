@@ -1,4 +1,5 @@
-	db DEX_HOUNDOOM ; pokedex id
+HoundoomBaseStats::
+	dw DEX_HOUNDOOM ; pokedex id
 
 	db  75, 90,  50,  95,  110
 	;   hp  atk  def  spd  spc

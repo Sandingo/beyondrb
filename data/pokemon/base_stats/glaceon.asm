@@ -1,4 +1,5 @@
-	db DEX_GLACEON ; pokedex id
+GlaceonBaseStats::
+	dw DEX_GLACEON ; pokedex id
 
 	db 65,  60,  110,  65, 130
 	;   hp  atk  def  spd  spc

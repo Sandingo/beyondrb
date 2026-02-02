@@ -1,4 +1,5 @@
-	db DEX_BELLOSSOM ; pokedex id
+BellossomBaseStats::
+	dw DEX_BELLOSSOM ; pokedex id
 
 	db  75,  80,  85,  50, 100
 	;   hp  atk  def  spd  spc

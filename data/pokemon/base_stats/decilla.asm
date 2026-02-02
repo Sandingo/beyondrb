@@ -1,4 +1,5 @@
-	db DEX_DECILLA ;pokedex id
+DecillaBaseStats::
+	dw DEX_DECILLA ;pokedex id
 
 	db  61,  90,  70,  15,  40
 	;   hp  atk  def  spd  spc

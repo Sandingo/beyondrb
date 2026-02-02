@@ -1,3 +1,10 @@
+MACRO npctrade
+; give mon, get mon, dialog id, nickname
+	dw \1, \2
+	db \3
+	dname \4, NAME_LENGTH
+ENDM
+
 TradeMons:
 ; entries correspond to TRADE_FOR_* constants
 	table_width 3 + NAME_LENGTH, TradeMons

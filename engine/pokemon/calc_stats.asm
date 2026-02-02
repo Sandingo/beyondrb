@@ -21,7 +21,7 @@ _CalcStat::
 	ld a, b
 	ld d, a
 	push hl
-	ld hl, wMonHeader
+	ld hl, wMonHeader + BASE_STATS - 1
 	ld b, $0
 	add hl, bc
 	ld a, [hl]          ; read base value of stat

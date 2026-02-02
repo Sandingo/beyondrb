@@ -11,15 +11,19 @@ MACRO table_width
 ENDM
 
 MACRO assert_table_length
-	DEF x = \1
-	ASSERT x * CURRENT_TABLE_WIDTH == @ - {CURRENT_TABLE_START}, \
-		"{CURRENT_TABLE_START}: expected {d:x} entries, each {d:CURRENT_TABLE_WIDTH} bytes"
+	DEF w = \1
+	DEF x = w * CURRENT_TABLE_WIDTH
+	DEF y = @ - {CURRENT_TABLE_START}
+	ASSERT x == y, "{CURRENT_TABLE_START}: expected {d:w} entries, each {d:CURRENT_TABLE_WIDTH} " ++ \
+		"bytes, for {d:x} total; but got {d:y} bytes"
 ENDM
 
 MACRO assert_max_table_length
-	DEF x = \1
-	ASSERT x * CURRENT_TABLE_WIDTH >= @ - {CURRENT_TABLE_START}, \
-		"{CURRENT_TABLE_START}: expected a maximum of {d:x} entries, each {d:CURRENT_TABLE_WIDTH} bytes"
+	DEF w = \1
+	DEF x = w * CURRENT_TABLE_WIDTH
+	DEF y = @ - {CURRENT_TABLE_START}
+	ASSERT x >= y, "{CURRENT_TABLE_START}: expected a maximum of {d:w} entries, each " ++ \
+		"{d:CURRENT_TABLE_WIDTH} bytes, for maximum {d:x} total; but got {d:y} bytes"
 ENDM
 
 MACRO list_start

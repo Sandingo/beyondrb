@@ -1,39 +1,39 @@
 SeafoamIslandsB5FWildMons:
 	def_grass_wildmons 10 ; encounter rate
 IF DEF(_RED)
-	db 31, HORSEA
-	db 31, SHELLDER
-	db 33, BLASTYKE
-	db 33, SHELLDER
-	db 29, SLOWPOKE
-	db 31, SEEL
-	db 31, SLOWPOKE
-	db 29, FREEZETI
-	db 39, SLOWBRO
+	dbw 31, HORSEA
+	dbw 31, SHELLDER
+	dbw 33, BLASTYKE
+	dbw 33, SHELLDER
+	dbw 29, SLOWPOKE
+	dbw 31, SEEL
+	dbw 31, SLOWPOKE
+	dbw 29, FREEZETI
+	dbw 39, SLOWBRO
 ENDC
 IF DEF(_BLUE)
-	db 31, KRABBY
-	db 31, STARYU
-	db 33, BLASTYKE
-	db 33, STARYU
-	db 29, WEIRDUCK
-	db 31, SEEL
-	db 31, WEIRDUCK
-	db 29, FREEZETI
-	db 39, GOLDUCK
+	dbw 31, KRABBY
+	dbw 31, STARYU
+	dbw 33, BLASTYKE
+	dbw 33, STARYU
+	dbw 29, WEIRDUCK
+	dbw 31, SEEL
+	dbw 31, WEIRDUCK
+	dbw 29, FREEZETI
+	dbw 39, GOLDUCK
 ENDC
-	db 38, QUADRAGON
+	dbw 38, QUADRAGON
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db 15, MAGIKARP
-	db 20, MAGIKARP
-	db 25, MAGIKARP
-	db 15, HORSEA
-	db 25, HORSEA
-	db 15, KRABBY
-	db 20, KRABBY
-	db 30, PSYDUCK
-	db 30, SLOWPOKE
-	db 35, GYARADOS
+	dbw 15, MAGIKARP
+	dbw 20, MAGIKARP
+	dbw 25, MAGIKARP
+	dbw 15, HORSEA
+	dbw 25, HORSEA
+	dbw 15, KRABBY
+	dbw 20, KRABBY
+	dbw 30, PSYDUCK
+	dbw 30, SLOWPOKE
+	dbw 35, GYARADOS
 	end_water_wildmons

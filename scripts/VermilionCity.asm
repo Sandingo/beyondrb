@@ -325,7 +325,7 @@ VermilionCityGambler2Text:
 VermilionCityMachopText:
 	text_far _VermilionCityMachopText
 	text_asm
-	ld a, MACHOP
+	ld bc, MACHOP
 	call PlayCry
 	call WaitForSoundToFinish
 	ld hl, .StompingTheLandFlatText
@@ -436,7 +436,7 @@ VermilionCityMinaText:
 	ld de, .MinaVictoryText
 	call SaveEndBattleTextPointers
 	ld [wIsTrainerBattle], a; Battle Start!
-	ld a, OPP_MINA
+	ld a, MINA
 	ld [wCurOpponent], a
 	ld a, 1
 	ld [wTrainerNo], a
@@ -468,7 +468,7 @@ VermilionCityMinaText:
 	ld de, .MinaVictoryText
 	call SaveEndBattleTextPointers
 	ld [wIsTrainerBattle], a; Battle Start!
-	ld a, OPP_MINA
+	ld a, MINA
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a

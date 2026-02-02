@@ -1,4 +1,5 @@
-	db DEX_RAICHU ; pokedex id
+RaichuBaseStats::
+	dw DEX_RAICHU ; pokedex id
 
 	db  60,  90,  55, 100,  90
 	;   hp  atk  def  spd  spc

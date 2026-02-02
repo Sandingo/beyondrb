@@ -1,4 +1,5 @@
-	db DEX_SHELLDER ; pokedex id
+ShellderBaseStats::
+	dw DEX_SHELLDER ; pokedex id
 
 	db  30,  65, 100,  40,  45
 	;   hp  atk  def  spd  spc

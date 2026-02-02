@@ -86,7 +86,7 @@ ViridianSchoolHouseKyleText:
 	ld de, .KyleVictoryText
 	call SaveEndBattleTextPointers
 	ld [wIsTrainerBattle], a; Battle Start!
-	ld a, OPP_KYLE
+	ld a, KYLE
 	ld [wCurOpponent], a
 	ld a, 1
 	ld [wTrainerNo], a

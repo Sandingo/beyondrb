@@ -1,4 +1,5 @@
-	db DEX_KINGLER ; pokedex id
+KinglerBaseStats::
+	dw DEX_KINGLER ; pokedex id
 
 	db  55, 130, 115,  75,  50
 	;   hp  atk  def  spd  spc

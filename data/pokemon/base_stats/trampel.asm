@@ -1,4 +1,5 @@
-	db DEX_TRAMPEL ; pokedex id
+TrampelBaseStats::
+	dw DEX_TRAMPEL ; pokedex id
 
 	db  110, 100,  95, 56,  64
 	;   hp  atk  def  spd  spc

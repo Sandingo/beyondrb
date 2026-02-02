@@ -1,4 +1,5 @@
-	db DEX_EEVEE ; pokedex id
+EeveeBaseStats::
+	dw DEX_EEVEE ; pokedex id
 
 	db  55,  55,  50,  55,  65
 	;   hp  atk  def  spd  spc

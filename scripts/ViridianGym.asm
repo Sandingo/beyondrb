@@ -503,7 +503,7 @@ ViridianGymKyleText:
 	call SaveEndBattleTextPointers
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld a, OPP_KYLE
+	ld a, KYLE
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a

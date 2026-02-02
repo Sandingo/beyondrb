@@ -82,7 +82,7 @@ OakBattleText:
 	call SaveEndBattleTextPointers
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld a, OPP_PROF_OAK
+	ld a, PROF_OAK
 	ld [wCurOpponent], a
 	; select which team to use during the encounter
 	ld a, [wRivalStarter]

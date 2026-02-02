@@ -1,40 +1,40 @@
 Route12WildMons:
 	def_grass_wildmons 15 ; encounter rate
 IF DEF(_RED)
-	db 24, ODDISH
-	db 25, PIDGEY
-	db 23, PIDGEY
-	db 24, VENONAT
-	db 22, ODDISH
-	db 26, VENONAT
-	db 26, ODDISH
-	db 30, GLOOM
-	db 28, GLOOM
-	db 28, FARFETCHD
+	dbw 24, ODDISH
+	dbw 25, PIDGEY
+	dbw 23, PIDGEY
+	dbw 24, VENONAT
+	dbw 22, ODDISH
+	dbw 26, VENONAT
+	dbw 26, ODDISH
+	dbw 30, GLOOM
+	dbw 28, GLOOM
+	dbw 28, FARFETCHD
 ENDC
 IF DEF(_BLUE)
-	db 24, BELLSPROUT
-	db 25, PIDGEY
-	db 23, PIDGEY
-	db 24, VENONAT
-	db 22, BELLSPROUT
-	db 26, VENONAT
-	db 26, BELLSPROUT
-	db 30, WEEPINBELL
-	db 28, WEEPINBELL
-	db 28, FARFETCHD
+	dbw 24, BELLSPROUT
+	dbw 25, PIDGEY
+	dbw 23, PIDGEY
+	dbw 24, VENONAT
+	dbw 22, BELLSPROUT
+	dbw 26, VENONAT
+	dbw 26, BELLSPROUT
+	dbw 30, WEEPINBELL
+	dbw 28, WEEPINBELL
+	dbw 28, FARFETCHD
 ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db 15, TENTACOOL
-	db 20, TENTACOOL
-	db 25, TENTACOOL
-	db 15, BLOTTLE
-	db 25, BLOTTLE
-	db 15, CHEEP
-	db 20, CHEEP
-	db 30, TENTACOOL
-	db 35, PENDRAKEN
-	db 40, TENTACRUEL
+	dbw 15, TENTACOOL
+	dbw 20, TENTACOOL
+	dbw 25, TENTACOOL
+	dbw 15, BLOTTLE
+	dbw 25, BLOTTLE
+	dbw 15, CHEEP
+	dbw 20, CHEEP
+	dbw 30, TENTACOOL
+	dbw 35, PENDRAKEN
+	dbw 40, TENTACRUEL
 	end_water_wildmons

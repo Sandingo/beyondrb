@@ -1,23 +1,23 @@
 Route3WildMons:
 	def_grass_wildmons 20 ; encounter rate
-	db  7, PIDGEY
-	db  7, SPEAROW
-	db  8, PIDGEY
-	db  8, KOLTA
-	db  9, SPEAROW
+	dbw  7, PIDGEY
+	dbw  7, SPEAROW
+	dbw  8, PIDGEY
+	dbw  8, KOLTA
+	dbw  9, SPEAROW
 IF DEF(_RED)
-	db  8, NIDORAN_M
-	db  9, NIDORAN_F
-	db  7, JIGGLYPUFF
-	db  8, JIGGLYPUFF
-	db  10, JIGGLYPUFF
+	dbw  8, NIDORAN_M
+	dbw  9, NIDORAN_F
+	dbw  7, JIGGLYPUFF
+	dbw  8, JIGGLYPUFF
+	dbw  10, JIGGLYPUFF
 ENDC
 IF DEF(_BLUE)
-	db  8, NIDORAN_F
-	db  9, NIDORAN_M
-	db  7, JIGGLYPUFF
-	db  8, JIGGLYPUFF
-	db  10, JIGGLYPUFF
+	dbw  8, NIDORAN_F
+	dbw  9, NIDORAN_M
+	dbw  7, JIGGLYPUFF
+	dbw  8, JIGGLYPUFF
+	dbw  10, JIGGLYPUFF
 ENDC
 	end_grass_wildmons
 

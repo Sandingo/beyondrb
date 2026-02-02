@@ -175,7 +175,11 @@ WriteMonPartySpriteOAMByPartyIndex:
 	ld e, a
 	ld d, 0
 	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld c, a
 	ld a, [hl]
+	ld b, a
 	call GetPartyMonSpriteID
 	ld [wOAMBaseTile], a
 	call WriteMonPartySpriteOAM
@@ -190,6 +194,9 @@ WriteMonPartySpriteOAMBySpecies:
 	xor a
 	ldh [hPartyMonIndex], a
 	ld a, [wMonPartySpriteSpecies]
+	ld c, a
+	ld a, [wMonPartySpriteSpecies + 1]
+	ld b, a
 	call GetPartyMonSpriteID
 	ld [wOAMBaseTile], a
 	jr WriteMonPartySpriteOAM
@@ -200,6 +207,9 @@ UnusedPartyMonSpriteFunction:
 ; the mon party sprite associated with the species in [wCurPartySpecies].
 ; However, its calculations are off and it loads garbage data.
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wCurPartySpecies + 1]
+	ld b, a
 	call GetPartyMonSpriteID
 	push af
 	ld hl, vSprites tile $00
@@ -259,18 +269,26 @@ WriteMonPartySpriteOAM:
 	jp CopyData
 
 GetPartyMonSpriteID:
+	ld a, c
 	ld [wPokedexNum], a
+	ld a, b
+	ld [wPokedexNum + 1], a
 	predef IndexToPokedex
 	ld a, [wPokedexNum]
 	ld c, a
-	dec a
-	srl a
+	ld d, a
+	ld a, [wPokedexNum + 1]
+	ld b, a
+	dec bc
+	srl c
+	srl b
+	jr nc, .noCarry
+	set 7, c
+.noCarry
 	ld hl, MonPartyData
-	ld e, a
-	ld d, 0
-	add hl, de
+	add hl, bc
 	ld a, [hl]
-	bit 0, c ; even or odd?
+	bit 0, d ; even or odd?
 	jr nz, .skipSwap
 	swap a ; use lower nybble if pokedex num is even
 .skipSwap

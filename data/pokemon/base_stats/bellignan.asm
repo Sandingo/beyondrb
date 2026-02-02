@@ -1,4 +1,5 @@
-	db DEX_BELLIGNAN ; pokedex id
+BellignanBaseStats::
+	dw DEX_BELLIGNAN ; pokedex id
 
 	db  80, 120,  65,  70, 85
 	;   hp  atk  def  spd  spc

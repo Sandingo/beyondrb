@@ -9,6 +9,9 @@ PrintBeginningBattleText:
 	jr c, .pokemonTower
 .notPokemonTower
 	ld a, [wEnemyMonSpecies2]
+	ld c, a
+	ld a, [wEnemyMonSpecies2 + 1]
+	ld b, a
 	call PlayCry
     ld hl, wEnemyMonSpecies2
     ld a, [wOpponentMonShiny]
@@ -35,23 +38,37 @@ PrintBeginningBattleText:
 	callfar DrawAllPokeballs
 	pop hl
 	call PrintText
-	jr .done
+	jp .done
 .pokemonTower
 	ld a, [wEnemyMonSpecies2]
 	ld [wCurPartySpecies], a
-	cp DOOMSDAY
+	ld a, [wEnemyMonSpecies2 + 1]
+	ld [wCurPartySpecies + 1], a
+	ld a, [wEnemyMonSpecies2]
+	cp LOW(DOOMSDAY)
+	jr nz, .notDoomsday
+	ld a, [wEnemyMonSpecies2 + 1]
+	cp HIGH(DOOMSDAY)
 	jr z, .notPokemonTower ; To check for Doomsday
+.notDoomsday
 	ld b, SILPH_SCOPE
 	call IsItemInBag
 	ld a, [wEnemyMonSpecies2]
 	ld [wCurPartySpecies], a
-	cp RESTLESS_SOUL
+	ld a, [wEnemyMonSpecies2 + 1]
+	ld [wCurPartySpecies + 1], a
+	ld a, [wEnemyMonSpecies2]
+	cp LOW(RESTLESS_SOUL)
+	jr nz, .notMarowak
+	ld a, [wEnemyMonSpecies2 + 1]
+	cp HIGH(RESTLESS_SOUL)
 	jr z, .isMarowak
+.notMarowak
 	ld a, b
 	and a
 	jr z, .noSilphScope
 	callfar LoadEnemyMonData
-	jr .notPokemonTower
+	jp .notPokemonTower
 .noSilphScope
 	ld hl, EnemyAppearedText
 	call PrintText

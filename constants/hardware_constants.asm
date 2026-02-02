@@ -122,3 +122,21 @@ DEF rIE_LCD    EQU 1
 DEF rIE_TIMER  EQU 2
 DEF rIE_SERIAL EQU 3
 DEF rIE_JOYPAD EQU 4
+
+
+; SGB command packet transfer uses for JOYP bits
+def B_JOYP_SGB_ONE  equ 5 ; 0 = sending 1 bit
+def B_JOYP_SGB_ZERO equ 4 ; 0 = sending 0 bit
+    def JOYP_SGB_START  equ %00_00_0000 ; start SGB packet transfer
+    def JOYP_SGB_ONE    equ %00_01_0000 ; send 1 bit
+    def JOYP_SGB_ZERO   equ %00_10_0000 ; send 0 bit
+    def JOYP_SGB_FINISH equ %00_11_0000 ; finish SGB packet transfer
+	
+def TILEMAP_WIDTH_PX  equ 256 ; width of tilemap in pixels
+def TILEMAP_HEIGHT_PX equ 256 ; height of tilemap in pixels
+def TILEMAP_WIDTH     equ  32 ; width of tilemap in bytes
+def TILEMAP_HEIGHT    equ  32 ; height of tilemap in bytes
+def TILEMAP_AREA      equ TILEMAP_WIDTH * TILEMAP_HEIGHT ; size of tilemap in bytes
+
+def TILE_HEIGHT equ  8 ; height of tile in pixels
+def TILE_SIZE   equ 16 ; size of tile in bytes (2 bits/pixel)

@@ -1,4 +1,5 @@
-	db DEX_WEIRDUCK ; pokedex id
+WeirduckBaseStats::
+	dw DEX_WEIRDUCK ; pokedex id
 
 	db  65,  67,  63,  70,  65
 	;   hp  atk  def  spd  spc

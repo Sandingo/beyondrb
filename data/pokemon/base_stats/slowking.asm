@@ -1,4 +1,5 @@
-	db DEX_SLOWKING ; pokedex id
+SlowkingBaseStats::
+	dw DEX_SLOWKING ; pokedex id
 
 	db  95,  75, 80,  30,  110
 	;   hp  atk  def  spd  spc

@@ -1,20 +1,20 @@
 LeagueHQB2FWildMons:
 	def_grass_wildmons 10 ; encounter rate
-	db  51, ZUBAT
-	db  52, ZUBAT
-	db  51, MANKEY
-	db  50, MANKEY
+	dbw  51, ZUBAT
+	dbw  52, ZUBAT
+	dbw  51, MANKEY
+	dbw  50, MANKEY
 IF DEF(_RED)
-	db  51, EKANS
+	dbw  51, EKANS
 ENDC
 IF DEF(_BLUE)
-	db  51, SANDSHREW
+	dbw  51, SANDSHREW
 ENDC
-	db  52, PARAS
-	db  53, ZUBAT
-	db  54, ZUBAT
-	db  51, CLEFAIRY
-	db  53, CLEFAIRY
+	dbw  52, PARAS
+	dbw  53, ZUBAT
+	dbw  54, ZUBAT
+	dbw  51, CLEFAIRY
+	dbw  53, CLEFAIRY
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

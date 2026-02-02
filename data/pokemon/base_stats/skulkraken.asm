@@ -1,4 +1,5 @@
-	db DEX_SKULKRAKEN ; pokedex id
+SkulkrakenBaseStats::
+	dw DEX_SKULKRAKEN ; pokedex id
 
 	db  95, 100,  81,  79, 125
 	;   hp  atk  def  spd  spc

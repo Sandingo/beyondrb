@@ -1,4 +1,5 @@
-	db DEX_BURGELA ; pokedex id
+BurgelaBaseStats::
+	dw DEX_BURGELA ; pokedex id
 
 	db  40,  40, 70,  40, 70
 	;   hp  atk  def  spd  spc

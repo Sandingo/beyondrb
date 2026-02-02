@@ -1,4 +1,5 @@
-	db DEX_HONCHKROW ; pokedex id
+HonchkrowBaseStats::
+	dw DEX_HONCHKROW ; pokedex id
 
 	db  100, 125, 52, 71,  105
 	;   hp  atk  def  spd  spc

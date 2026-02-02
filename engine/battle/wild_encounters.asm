@@ -82,9 +82,12 @@ TryDoWildEncounter:
 	add hl, bc
 	ld a, [hli]
 	ld [wCurEnemyLevel], a
-	ld a, [hl]
+	ld a, [hli]
 	ld [wCurPartySpecies], a
 	ld [wEnemyMonSpecies2], a
+	ld a, [hl]
+	ld [wCurPartySpecies + 1], a
+	ld [wEnemyMonSpecies2 + 1], a
 	ld a, [wRepelRemainingSteps]
 	and a
 	jp z, .willEncounter
@@ -107,10 +110,13 @@ TryDoWildEncounter:
 	ld a, [hl]
 	jr .continueEncounter
 .meltanEncounter2
-	ld a, MELTAN
+	ld a, HIGH(MELTAN)
 .continueEncounter
 	ld [wCurPartySpecies], a
 	ld [wEnemyMonSpecies2], a
+	ld a, [hl]
+	ld [wCurPartySpecies + 1], a
+	ld [wEnemyMonSpecies2 + 1], a
 	ld a, [wRepelRemainingSteps]
 	and a
 	jr z, .willEncounter

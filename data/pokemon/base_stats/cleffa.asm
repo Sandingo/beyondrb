@@ -1,4 +1,5 @@
-	db DEX_CLEFFA ; pokedex id
+CleffaBaseStats::
+	dw DEX_CLEFFA ; pokedex id
 
 	db  50,  25,  28,  15,  55
 	;   hp  atk  def  spd  spc

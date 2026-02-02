@@ -1,4 +1,5 @@
-	db DEX_POLIWEALTH ; pokedex id
+PoliwealthBaseStats::
+	dw DEX_POLIWEALTH ; pokedex id
 
 	db  130,  45,  105,  50,  90
 	;   hp  atk  def  spd  spc

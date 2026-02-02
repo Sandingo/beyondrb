@@ -1,4 +1,5 @@
-	db DEX_KOLTA ; pokedex id
+KoltaBaseStats::
+	dw DEX_KOLTA ; pokedex id
 
 	db  30,  55,  35,  70,  45
 	;   hp  atk  def  spd  spc

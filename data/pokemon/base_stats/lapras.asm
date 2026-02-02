@@ -1,4 +1,5 @@
-	db DEX_LAPRAS ; pokedex id
+LaprasBaseStats::
+	dw DEX_LAPRAS ; pokedex id
 
 	db 130,  85,  80,  60,  95
 	;   hp  atk  def  spd  spc

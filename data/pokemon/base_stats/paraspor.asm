@@ -1,4 +1,5 @@
-	db DEX_PARASPOR ; pokedex id
+ParasporBaseStats::
+	dw DEX_PARASPOR ; pokedex id
 
 	db  30,  60,  45,  20,  45
 	;   hp  atk  def  spd  spc

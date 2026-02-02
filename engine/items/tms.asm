@@ -2,6 +2,8 @@
 CanLearnTM:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
+	ld a, [wCurPartySpecies + 1]
+	ld [wCurSpecies + 1], a
 	call GetMonHeader
 	ld hl, wMonHLearnset
 	push hl
@@ -16,6 +18,8 @@ CanLearnTM:
 	inc c
 	jr .findTMloop
 .TMfoundLoop
+	ld e, c
+	ld d, 0
 	pop hl
 	ld b, FLAG_TEST
 	predef_jump FlagActionPredef

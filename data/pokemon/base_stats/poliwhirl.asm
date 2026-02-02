@@ -1,4 +1,5 @@
-	db DEX_POLIWHIRL ; pokedex id
+PoliwhirlBaseStats::
+	dw DEX_POLIWHIRL ; pokedex id
 
 	db  65,  65,  65,  90,  50
 	;   hp  atk  def  spd  spc

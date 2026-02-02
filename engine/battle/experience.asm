@@ -17,13 +17,15 @@ GainExperience:
 	ld [wWhichPokemon], a
 .partyMonLoop ; loop over each mon and add gained exp
 	inc hl
+	inc hl
 	ld a, [hli]
 	or [hl] ; is mon's HP 0?
 	jp z, .nextMon ; if so, go to next mon
 	push hl
 	ld hl, wPartyGainExpFlags
 	ld a, [wWhichPokemon]
-	ld c, a
+	ld e, a
+	ld d, 0
 	ld b, FLAG_TEST
 	predef FlagActionPredef
 	ld a, c
@@ -122,8 +124,11 @@ GainExperience:
 	ld b, 0
 	ld hl, wPartySpecies
 	add hl, bc
-	ld a, [hl]
+	add hl, bc
+	ld a, [hli]
 	ld [wCurSpecies], a
+	ld a, [hl]
+	ld [wCurSpecies + 1], a
 	call GetMonHeader
 	ld d, MAX_LEVEL
 	callfar CalcExperience ; get max exp
@@ -184,11 +189,14 @@ GainExperience:
 	ld [hl], a
 	ld bc, wPartyMon1Species - wPartyMon1Level
 	add hl, bc
-	ld a, [hl]
+	ld a, [hli]
 	ld [wCurSpecies], a
 	ld [wPokedexNum], a
+	ld a, [hl]
+	ld [wCurSpecies + 1], a
+	ld [wPokedexNum + 1], a
 	call GetMonHeader
-	ld bc, (wPartyMon1MaxHP + 1) - wPartyMon1Species
+	ld bc, (wPartyMon1MaxHP + 1) - (wPartyMon1Species + 1)
 	add hl, bc
 	push hl
 	ld a, [hld]
@@ -270,10 +278,13 @@ GainExperience:
 	ld [wMonDataLocation], a
 	ld a, [wCurSpecies]
 	ld [wPokedexNum], a
+	ld a, [wCurSpecies + 1]
+	ld [wPokedexNum + 1], a
 	predef LearnMoveFromLevelUp
 	ld hl, wCanEvolveFlags
 	ld a, [wWhichPokemon]
-	ld c, a
+	ld e, a
+	ld d, 0
 	ld b, FLAG_SET
 	predef FlagActionPredef
 	pop hl
@@ -297,13 +308,16 @@ GainExperience:
 	xor a
 	ld [hl], a ; clear gain exp flags
 	ld a, [wPlayerMonNumber]
-	ld c, a
+	ld e, a
+	ld d, 0
 	ld b, FLAG_SET
 	push bc
+	push de
 	predef FlagActionPredef ; set the gain exp flag for the mon that is currently out
 	ld hl, wPartyFoughtCurrentEnemyFlags
 	xor a
 	ld [hl], a
+	pop de
 	pop bc
 	predef_jump FlagActionPredef ; set the fought current enemy flag for the mon that is currently out
 

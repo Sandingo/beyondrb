@@ -1,4 +1,5 @@
-	db DEX_SMOOCHUM ; pokedex id
+SmoochumBaseStats::
+	dw DEX_SMOOCHUM ; pokedex id
 
 	db  45,  30,  15,  65,  85
 	;   hp  atk  def  spd  spc

@@ -1,23 +1,23 @@
 Route16WildMons:
 	def_grass_wildmons 25 ; encounter rate
-	db 20, SPEAROW
-	db 22, RATTATA
-	db 18, DODUO
-	db 20, DODUO
-	db 20, RATTATA
+	dbw 20, SPEAROW
+	dbw 22, RATTATA
+	dbw 18, DODUO
+	dbw 20, DODUO
+	dbw 20, RATTATA
 IF DEF(_RED)
-	db 25, RATICATE
-	db 24, MURKROW
-	db 24, MURKROW
-	db 23, SLUGMA
-	db 18, SLUGMA
+	dbw 25, RATICATE
+	dbw 24, MURKROW
+	dbw 24, MURKROW
+	dbw 23, SLUGMA
+	dbw 18, SLUGMA
 ENDC
 IF DEF(_BLUE)
-	db 25, RATICATE
-	db 24, MURKROW
-	db 24, MURKROW
-	db 23, SLUGMA
-	db 18, SLUGMA
+	dbw 25, RATICATE
+	dbw 24, MURKROW
+	dbw 24, MURKROW
+	dbw 23, SLUGMA
+	dbw 18, SLUGMA
 ENDC
 	end_grass_wildmons
 

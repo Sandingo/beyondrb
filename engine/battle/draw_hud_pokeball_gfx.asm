@@ -68,6 +68,7 @@ SetupPokeballs:
 
 PickPokeball:
 	inc hl
+	inc hl
 	ld a, [hli]
 	and a
 	jr nz, .alive

@@ -1,4 +1,5 @@
-	db DEX_KOKANA ; pokedex id
+KokanaBaseStats::
+	dw DEX_KOKANA ; pokedex id
 
 	db  40,  35,  30,  45,  25
 	;   hp  atk  def  spd  spc

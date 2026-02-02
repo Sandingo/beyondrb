@@ -1,4 +1,5 @@
-	db DEX_BLISSEY ; pokedex id
+BlisseyBaseStats::
+	dw DEX_BLISSEY ; pokedex id
 
 	db 255,   10,   10,  55, 135
 	;   hp  atk  def  spd  spc

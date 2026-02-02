@@ -17,11 +17,11 @@ PlayBattleMusic::
 	and a
 	jr z, .wildBattle
 	ld a, [wCurOpponent]
-	cp OPP_RIVAL3
+	cp RIVAL3
 	jr z, .finalBattle
-	cp OPP_PROF_OAK
+	cp PROF_OAK
 	jr z, .finalBattle
-	cp OPP_LANCE
+	cp LANCE
 	jr nz, .normalTrainerBattle
 	ld a, MUSIC_GYM_LEADER_BATTLE ; lance also plays gym leader theme
 	jr .playSong

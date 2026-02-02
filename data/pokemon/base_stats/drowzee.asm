@@ -1,4 +1,5 @@
-	db DEX_DROWZEE ; pokedex id
+DrowzeeBaseStats::
+	dw DEX_DROWZEE ; pokedex id
 
 	db  60,  48,  45,  42,  90
 	;   hp  atk  def  spd  spc

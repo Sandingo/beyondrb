@@ -1,4 +1,5 @@
-	db DEX_MELTAN ; pokedex id
+MeltanBaseStats::
+	dw DEX_MELTAN ; pokedex id
 
 	db  46,  65,  65,  34,  55
 	;   hp  atk  def  spd  spc

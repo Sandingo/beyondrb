@@ -1,5 +1,5 @@
-BaseStats::
-	table_width BASE_DATA_SIZE, BaseStats
+SECTION "Base Stats 1", ROMX
+
 INCLUDE "data/pokemon/base_stats/bulbasaur.asm"
 INCLUDE "data/pokemon/base_stats/ivysaur.asm"
 INCLUDE "data/pokemon/base_stats/venusaur.asm"
@@ -251,4 +251,3 @@ INCLUDE "data/pokemon/base_stats/mew.asm"
 INCLUDE "data/pokemon/base_stats/meltan.asm"
 INCLUDE "data/pokemon/base_stats/melmetal.asm"
 INCLUDE "data/pokemon/base_stats/doomsday.asm"
-	assert_table_length NUM_POKEMON

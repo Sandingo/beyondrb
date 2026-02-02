@@ -1,4 +1,5 @@
-	db DEX_MEWTWO ; pokedex id
+MewtwoBaseStats::
+	dw DEX_MEWTWO ; pokedex id
 
 	db 106, 110,  90, 130, 154
 	;   hp  atk  def  spd  spc

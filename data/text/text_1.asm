@@ -96,7 +96,7 @@ _OaksAideUhOhText::
 	text "Let's see..."
 	line "Uh-oh! You have"
 	cont "caught only @"
-	text_decimal hOaksAideNumMonsOwned, 1, 3
+	text_decimal hOaksAideNumMonsOwned, 2, 3
 	text_start
 	cont "kinds of #MON!"
 
@@ -124,7 +124,7 @@ _OaksAideComeBackText::
 _OaksAideHereYouGoText::
 	text "Great! You have"
 	line "caught @"
-	text_decimal hOaksAideNumMonsOwned, 1, 3
+	text_decimal hOaksAideNumMonsOwned, 2, 3
 	text " kinds "
 	cont "of #MON!"
 	cont "Congratulations!"

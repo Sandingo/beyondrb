@@ -64,7 +64,10 @@ MACRO dc ; "crumbs"
 ENDM
 
 MACRO bigdw ; big-endian word
-	db HIGH(\1), LOW(\1)
+	REPT _NARG
+		db HIGH(\1), LOW(\1)
+		SHIFT
+	ENDR
 ENDM
 
 MACRO dba ; dbw bank, address
@@ -79,4 +82,16 @@ MACRO dab ; dwb address, bank
 		dwb \1, BANK(\1)
 		SHIFT
 	ENDR
+ENDM
+
+MACRO dname
+	IF _NARG == 2
+		DEF n = \2
+	ELSE
+		DEF n = NAME_LENGTH - 1
+	ENDC
+	ASSERT STRFIND(\1, "@") == -1, "String terminator \"@\" in name: \1"
+	ASSERT CHARLEN(\1) <= n, "Name longer than {d:n} characters: \1"
+	db \1
+	ds n - CHARLEN(\1), "@"
 ENDM

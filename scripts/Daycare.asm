@@ -55,6 +55,9 @@ DaycareGentlemanText:
 	ld [wRemoveMonFromBox], a
 	call RemovePokemon
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wCurPartySpecies + 1]
+	ld b, a
 	call PlayCry
 	call SetEggSteps
 	ld hl, .ComeSeeMeInAWhileText
@@ -197,6 +200,8 @@ DaycareGentlemanText:
 	call MoveMon
 	ld a, [wDayCareMonSpecies]
 	ld [wCurPartySpecies], a
+	ld a, [wDayCareMonSpecies + 1]
+	ld [wCurPartySpecies + 1], a
 	ld a, [wPartyCount]
 	dec a
 	push af
@@ -226,6 +231,9 @@ DaycareGentlemanText:
 	ld [de], a
 
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wCurPartySpecies + 1]
+	ld b, a
 	call PlayCry
 	ld hl, .GotMonBackText
 	jp .done

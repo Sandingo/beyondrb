@@ -97,7 +97,6 @@ ROMX $12
 ROMX $13
 	"Trainer Pics 1"
 	"Maps 9"
-	"Predefs"
 ROMX $14
 	"Maps 10"
 	"Battle Engine 8"
@@ -182,6 +181,7 @@ ROMX $2D
 	"Battle Engine 5"
 	"Slot Machines"
 	"Maps 22"
+	"Predefs"
 ROMX $30
 	org $4000
 	"Party Mon Sprites Gfx 1"

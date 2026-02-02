@@ -1,4 +1,5 @@
-	db DEX_PORYGON ; pokedex id
+PorygonBaseStats::
+	dw DEX_PORYGON ; pokedex id
 
 	db  65,  60,  70,  40,  75
 	;   hp  atk  def  spd  spc

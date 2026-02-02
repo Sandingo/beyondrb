@@ -1,4 +1,5 @@
-	db DEX_MIMMEO ; pokedex id
+MimmeoBaseStats::
+	dw DEX_MIMMEO ; pokedex id
 
 	db  100,  55,  50,  150,  50
 	;   hp  atk  def  spd  spc

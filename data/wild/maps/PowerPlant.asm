@@ -1,20 +1,20 @@
 PowerPlantWildMons:
 	def_grass_wildmons 10 ; encounter rate
-	db 21, VOLTORB
-	db 21, MAGNEMITE
-	db 20, PIKACHU
-	db 24, PIKACHU
-	db 23, VOLTORB
-	db 23, MAGNETITE
-	db 32, MAGNETITE
-	db 35, MAGNETON
+	dbw 21, VOLTORB
+	dbw 21, MAGNEMITE
+	dbw 20, PIKACHU
+	dbw 24, PIKACHU
+	dbw 23, VOLTORB
+	dbw 23, MAGNETITE
+	dbw 32, MAGNETITE
+	dbw 35, MAGNETON
 IF DEF(_RED)
-	db 33, ELECTABUZZ
-	db 36, ELECTABUZZ
+	dbw 33, ELECTABUZZ
+	dbw 36, ELECTABUZZ
 ENDC
 IF DEF(_BLUE)
-	db 33, RAICHU
-	db 36, RAICHU
+	dbw 33, RAICHU
+	dbw 36, RAICHU
 ENDC
 	end_grass_wildmons
 

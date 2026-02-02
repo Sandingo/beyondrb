@@ -1,4 +1,5 @@
-	db DEX_ELECTIVIRE ; pokedex id
+ElectivireBaseStats::
+	dw DEX_ELECTIVIRE ; pokedex id
 
 	db  75,  123,  67, 95,  95
 	;   hp  atk  def  spd  spc

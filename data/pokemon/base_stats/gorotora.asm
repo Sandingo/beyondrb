@@ -1,4 +1,5 @@
-	db DEX_GOROTORA ; pokedex id
+GorotoraBaseStats::
+	dw DEX_GOROTORA ; pokedex id
 
 	db  90,  105,  85, 90,  95
 	;   hp  atk  def  spd  spc

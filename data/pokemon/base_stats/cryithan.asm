@@ -1,4 +1,5 @@
-	db DEX_CRYITHAN ; pokedex id
+CryithanBaseStats::
+	dw DEX_CRYITHAN ; pokedex id
 
 	db  102, 93,  86,  98, 121
 	;   hp  atk  def  spd  spc

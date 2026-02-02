@@ -1,4 +1,5 @@
-	db DEX_HYPNO ; pokedex id
+HypnoBaseStats::
+	dw DEX_HYPNO ; pokedex id
 
 	db  85,  73,  70,  67, 115
 	;   hp  atk  def  spd  spc

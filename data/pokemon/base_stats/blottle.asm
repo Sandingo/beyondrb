@@ -1,4 +1,5 @@
-	db DEX_BLOTTLE ; pokedex id
+BlottleBaseStats::
+	dw DEX_BLOTTLE ; pokedex id
 
 	db  60,  35,  60,  50, 65
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_ORFRY ; pokedex id
+OrfryBaseStats::
+	dw DEX_ORFRY ; pokedex id
 
 	db  35,  57,  50,  53,  40
 	;   hp  atk  def  spd  spc

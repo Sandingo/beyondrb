@@ -1,4 +1,5 @@
-	db DEX_HITMONTOP ; pokedex id
+HitmontopBaseStats::
+	dw DEX_HITMONTOP ; pokedex id
 
 	db  50, 95,  95,  70,  110
 	;   hp  atk  def  spd  spc

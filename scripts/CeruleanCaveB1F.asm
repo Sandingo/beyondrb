@@ -34,7 +34,7 @@ CeruleanCaveB1FMewtwoText:
 MewtwoBattleText:
 	text_far _MewtwoBattleText
 	text_asm
-	ld a, MEWTWO
+	ld bc, MEWTWO
 	call PlayCry
 	call WaitForSoundToFinish
 	callfar RollForShiny

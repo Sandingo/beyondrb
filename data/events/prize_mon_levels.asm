@@ -1,19 +1,19 @@
 PrizeMonLevelDictionary:
 IF DEF(_RED)
-	db ABRA,      5
-	db CLEFAIRY, 12
-	db SANDSHREW,17
+	dwb ABRA,      5
+	dwb CLEFAIRY, 12
+	dwb SANDSHREW,17
 
-	db SCYTHER,  18
-	db DRATINI,  20
-	db PORYGON,  24
+	dwb SCYTHER,  18
+	dwb DRATINI,  20
+	dwb PORYGON,  24
 ENDC
 IF DEF(_BLUE)
-	db ABRA,      5
-	db CLEFAIRY, 12
-	db EKANS,    17
+	dwb ABRA,      5
+	dwb CLEFAIRY, 12
+	dwb EKANS,    17
 
-	db PINSIR,   18
-	db SKIMPER,  20
-	db PORYGON,  24
+	dwb PINSIR,   18
+	dwb SKIMPER,  20
+	dwb PORYGON,  24
 ENDC

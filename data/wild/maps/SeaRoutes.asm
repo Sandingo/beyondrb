@@ -3,14 +3,14 @@ SeaRoutesWildMons:
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db 15, TENTACOOL
-	db 20, TENTACOOL
-	db 25, TENTACOOL
-	db 15, BLOTTLE
-	db 25, BLOTTLE
-	db 15, CHEEP
-	db 20, CHEEP
-	db 30, SHARPOON
-	db 35, PENDRAKEN
-	db 40, TENTACRUEL
+	dbw 15, TENTACOOL
+	dbw 20, TENTACOOL
+	dbw 25, TENTACOOL
+	dbw 15, BLOTTLE
+	dbw 25, BLOTTLE
+	dbw 15, CHEEP
+	dbw 20, CHEEP
+	dbw 30, SHARPOON
+	dbw 35, PENDRAKEN
+	dbw 40, TENTACRUEL
 	end_water_wildmons

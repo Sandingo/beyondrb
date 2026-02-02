@@ -68,8 +68,7 @@ hSpriteMovementByte2::
 	db
 
 NEXTU
-	ds 2
-hLoadSpriteTemp1:: db
+hLoadSpriteTemp1:: dw
 hLoadSpriteTemp2:: db
 
 NEXTU
@@ -301,7 +300,7 @@ NEXTU
 ; $FF = player cancelled
 hOaksAideResult::
 hOaksAideRequirement:: ; required number of owned mons
-	db
+	dw
 hOaksAideRewardItem:: db
 hOaksAideNumMonsOwned:: db
 
@@ -314,8 +313,8 @@ hGymGateIndex:: db
 hGymGateAnswer:: db
 
 NEXTU
-hDexRatingNumMonsSeen:: db
-hDexRatingNumMonsOwned:: db
+hDexRatingNumMonsSeen:: dw
+hDexRatingNumMonsOwned:: dw
 
 NEXTU
 hItemToRemoveID:: db

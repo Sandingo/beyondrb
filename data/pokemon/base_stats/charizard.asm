@@ -1,4 +1,5 @@
-	db DEX_CHARIZARD ; pokedex id
+CharizardBaseStats::
+	dw DEX_CHARIZARD ; pokedex id
 
 	db  78,  84,  78, 100,  85
 	;   hp  atk  def  spd  spc

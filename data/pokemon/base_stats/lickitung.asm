@@ -1,4 +1,5 @@
-	db DEX_LICKITUNG ; pokedex id
+LickitungBaseStats::
+	dw DEX_LICKITUNG ; pokedex id
 
 	db  90,  55,  75,  30,  60
 	;   hp  atk  def  spd  spc

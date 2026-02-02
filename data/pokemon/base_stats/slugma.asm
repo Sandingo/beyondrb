@@ -1,4 +1,5 @@
-	db DEX_SLUGMA ; pokedex id
+SlugmaBaseStats::
+	dw DEX_SLUGMA ; pokedex id
 
 	db  40,  40,  40,  20,  70
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_DODUO ; pokedex id
+DoduoBaseStats::
+	dw DEX_DODUO ; pokedex id
 
 	db  35,  85,  45,  75,  35
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_KABUTOPS ; pokedex id
+KabutopsBaseStats::
+	dw DEX_KABUTOPS ; pokedex id
 
 	db  60, 115, 105,  80,  70
 	;   hp  atk  def  spd  spc

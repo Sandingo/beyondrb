@@ -1,4 +1,5 @@
-	db DEX_SMOGRUB ; pokedex id
+SmogrubBaseStats::
+	dw DEX_SMOGRUB ; pokedex id
 
 	db  68,  97,  50,  102,  43
 	;   hp  atk  def  spd  spc

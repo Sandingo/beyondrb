@@ -46,7 +46,7 @@ Route16FlyHouseFearowText:
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, FEAROW
+	ld bc, FEAROW
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd

@@ -182,7 +182,7 @@ FuchsiaGymKogaText:
 	call SaveEndBattleTextPointers
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld a, OPP_KOGA
+	ld a, KOGA
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a

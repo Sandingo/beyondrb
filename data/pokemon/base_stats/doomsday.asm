@@ -1,4 +1,5 @@
-	db DEX_DOOMSDAY ; pokedex id
+DoomsdayBaseStats::
+	dw DEX_DOOMSDAY ; pokedex id
 
 	db  115,  90, 124, 43, 124
 	;   hp  atk  def  spd  spc

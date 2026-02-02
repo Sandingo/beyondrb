@@ -1,4 +1,5 @@
-	db DEX_KOTORA ; pokedex id
+KotoraBaseStats::
+	dw DEX_KOTORA ; pokedex id
 
 	db  50,  65,  45,  40,  55
 	;   hp  atk  def  spd  spc

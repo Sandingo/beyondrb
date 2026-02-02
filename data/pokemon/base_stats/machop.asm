@@ -1,4 +1,5 @@
-	db DEX_MACHOP ; pokedex id
+MachopBaseStats::
+	dw DEX_MACHOP ; pokedex id
 
 	db  70,  80,  50,  35,  35
 	;   hp  atk  def  spd  spc

@@ -92,6 +92,12 @@ LeaguePCShowMon:
 	ld [wBattleMonSpecies2], a
 	ld [wWholeScreenPaletteMonSpecies], a
 	ld a, [hli]
+	ld [wHoFMonSpecies + 1], a
+	ld [wCurPartySpecies + 1], a
+	ld [wCurSpecies + 1], a
+	ld [wBattleMonSpecies2 + 1], a
+	ld [wWholeScreenPaletteMonSpecies + 1], a
+	ld a, [hli]
 	ld [wHoFMonLevel], a
 	ld de, wNameBuffer
 	ld bc, NAME_LENGTH

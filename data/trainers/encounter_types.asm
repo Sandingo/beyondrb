@@ -1,20 +1,20 @@
 FemaleTrainerList::
-	db OPP_LASS
-	db OPP_JR_TRAINER_F
-	db OPP_BEAUTY
-	db OPP_COOLTRAINER_F
-	db OPP_MINA
-	db OPP_SWIMMER_F
+	db LASS
+	db JR_TRAINER_F
+	db BEAUTY
+	db COOLTRAINER_F
+	db MINA
+	db SWIMMER_F
 	db -1 ; end
 
 EvilTrainerList::
-	db OPP_GAMBLER
-	db OPP_ROCKER
-	db OPP_JUGGLER
-	db OPP_CHIEF
-	db OPP_SCIENTIST
-	db OPP_GIOVANNI
-	db OPP_ROCKET
-	db OPP_HITECH_JACK
-	db OPP_ARCHER
+	db GAMBLER
+	db ROCKER
+	db JUGGLER
+	db CHIEF
+	db SCIENTIST
+	db GIOVANNI
+	db ROCKET
+	db HITECH_JACK
+	db ARCHER
 	db -1 ; end

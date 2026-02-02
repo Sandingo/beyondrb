@@ -10,7 +10,7 @@ LavenderCuboneHouse_TextPointers:
 LavenderCuboneHouseCuboneText:
 	text_far _LavenderCuboneHouseCuboneText
 	text_asm
-	ld a, CUBONE
+	ld bc, CUBONE
 	call PlayCry
 	jp TextScriptEnd
 

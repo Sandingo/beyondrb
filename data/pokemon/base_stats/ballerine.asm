@@ -1,4 +1,5 @@
-	db DEX_BALLERINE ; pokedex id
+BallerineBaseStats::
+	dw DEX_BALLERINE ; pokedex id
 
 	db  20,  25,  45,  60,  90
 	;   hp  atk  def  spd  spc

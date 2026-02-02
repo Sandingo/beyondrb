@@ -1,15 +1,15 @@
 MtSilverPeakWildMons:
 	def_grass_wildmons 25 ; encounter rate
-	db  46, GOLBAT
-	db  48, GOLBAT
-	db  48, GOLBAT
-	db  48, GOLDUCK
-	db  48, GOLDUCK
-	db  46, TRAMPEL
-	db  48, TRAMPEL
-	db  44, DECILLA
-	db  48, FREEZETI
-	db  46, DECILLA
+	dbw  46, GOLBAT
+	dbw  48, GOLBAT
+	dbw  48, GOLBAT
+	dbw  48, GOLDUCK
+	dbw  48, GOLDUCK
+	dbw  46, TRAMPEL
+	dbw  48, TRAMPEL
+	dbw  44, DECILLA
+	dbw  48, FREEZETI
+	dbw  46, DECILLA
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

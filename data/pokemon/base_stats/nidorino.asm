@@ -1,4 +1,5 @@
-	db DEX_NIDORINO ; pokedex id
+NidorinoBaseStats::
+	dw DEX_NIDORINO ; pokedex id
 
 	db  61,  72,  57,  65,  55
 	;   hp  atk  def  spd  spc

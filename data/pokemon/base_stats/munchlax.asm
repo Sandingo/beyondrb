@@ -1,4 +1,5 @@
-	db DEX_MUNCHLAX ; pokedex id
+MunchlaxBaseStats::
+	dw DEX_MUNCHLAX ; pokedex id
 
 	db 135, 85,  40,  5,  40
 	;   hp  atk  def  spd  spc

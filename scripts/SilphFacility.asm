@@ -37,7 +37,7 @@ ld a, [wIsInBattle]
 	ld de, JackVictoryText
 	call SaveEndBattleTextPointers
 	ld [wIsTrainerBattle], a; Battle Start!
-	ld a, OPP_HITECH_JACK
+	ld a, HITECH_JACK
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a
@@ -90,7 +90,7 @@ SilphFacilityScientistText:
 	ld de, JackVictoryText
 	call SaveEndBattleTextPointers
 	ld [wIsTrainerBattle], a; Battle Start!
-	ld a, OPP_HITECH_JACK
+	ld a, HITECH_JACK
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a

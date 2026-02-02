@@ -3,14 +3,14 @@ CeladonCityWildMons:
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db  5, PSYDUCK
-	db 10, PSYDUCK
-	db 15, PSYDUCK
-	db 20, GRIMER
-	db 10, GRIMER
-	db 15, SLOWPOKE
-	db 20, SLOWPOKE
-	db 30, GRIMER
-	db 35, GRIMER
-	db 40, MUK
+	dbw  5, PSYDUCK
+	dbw 10, PSYDUCK
+	dbw 15, PSYDUCK
+	dbw 20, GRIMER
+	dbw 10, GRIMER
+	dbw 15, SLOWPOKE
+	dbw 20, SLOWPOKE
+	dbw 30, GRIMER
+	dbw 35, GRIMER
+	dbw 40, MUK
 	end_water_wildmons

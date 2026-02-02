@@ -1,4 +1,5 @@
-	db DEX_CUBONE ; pokedex id
+CuboneBaseStats::
+	dw DEX_CUBONE ; pokedex id
 
 	db  50,  50,  95,  35,  40
 	;   hp  atk  def  spd  spc

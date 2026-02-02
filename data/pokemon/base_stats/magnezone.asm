@@ -1,4 +1,5 @@
-	db DEX_MAGNEZONE ; pokedex id
+MagnezoneBaseStats::
+	dw DEX_MAGNEZONE ; pokedex id
 
 	db  70,  70,  115,  60, 130
 	;   hp  atk  def  spd  spc

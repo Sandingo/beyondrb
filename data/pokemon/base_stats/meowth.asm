@@ -1,4 +1,5 @@
-	db DEX_MEOWTH ; pokedex id
+MeowthBaseStats::
+	dw DEX_MEOWTH ; pokedex id
 
 	db  40,  45,  35,  90,  40
 	;   hp  atk  def  spd  spc

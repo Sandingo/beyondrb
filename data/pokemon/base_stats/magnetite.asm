@@ -1,4 +1,5 @@
-	db DEX_MAGNETITE ; pokedex id
+MagnetiteBaseStats::
+	dw DEX_MAGNETITE ; pokedex id
 
 	db  30,  45,  80,  55,  105
 	;   hp  atk  def  spd  spc

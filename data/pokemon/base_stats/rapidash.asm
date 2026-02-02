@@ -1,4 +1,5 @@
-	db DEX_RAPIDASH ; pokedex id
+RapidashBaseStats::
+	dw DEX_RAPIDASH ; pokedex id
 
 	db  65, 100,  70, 105,  80
 	;   hp  atk  def  spd  spc

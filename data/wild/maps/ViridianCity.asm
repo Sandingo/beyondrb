@@ -3,14 +3,14 @@ ViridianCityWildMons:
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db  5, POLIWAG
-	db 10, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWAG
-	db 10, POLIWAG
-	db 15, POLIWAG
-	db 20, POLIWAG
-	db 30, POLIWAG
-	db 35, POLIWHIRL
-	db 40, POLIWHIRL
+	dbw  5, POLIWAG
+	dbw 10, POLIWAG
+	dbw 15, POLIWAG
+	dbw 20, POLIWAG
+	dbw 10, POLIWAG
+	dbw 15, POLIWAG
+	dbw 20, POLIWAG
+	dbw 30, POLIWAG
+	dbw 35, POLIWHIRL
+	dbw 40, POLIWHIRL
 	end_water_wildmons

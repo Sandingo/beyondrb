@@ -3,8 +3,18 @@ SetDebugNewGameParty: ; unreferenced except in _DEBUG
 .loop
 	ld a, [de]
 	cp -1
+	jr nz, .addMon
+	inc de
+	ld a, [de]
+	cp -1
 	ret z
+	dec de
+.addMon
+	ld a, [de]
 	ld [wCurPartySpecies], a
+	inc de
+	ld a, [de]
+	ld [wCurPartySpecies + 1], a
 	inc de
 	ld a, [de]
 	ld [wCurEnemyLevel], a
@@ -17,13 +27,13 @@ DebugNewGameParty: ; unreferenced except in _DEBUG
 	; "Tsunekazu Ishihara: Exeggutor is my favorite. That's because I was
 	; always using this character while I was debugging the program."
 	; From https://web.archive.org/web/20000607152840/http://pocket.ign.com/news/14973.html
-	db MEWTWO, 98
-	db MEW, 80
-	db JOLTEON, 56
-	db DUGTRIO, 56
-	db ARTICUNO, 57
-	db PIKACHU, 5
-	db -1 ; end
+	dwb MEWTWO, 98
+	dwb MEW, 80
+	dwb JOLTEON, 56
+	dwb DUGTRIO, 56
+	dwb ARTICUNO, 57
+	dwb PIKACHU, 5
+	dw -1 ; end
 
 PrepareNewGameDebug: ; dummy except in _DEBUG
 IF DEF(_DEBUG)

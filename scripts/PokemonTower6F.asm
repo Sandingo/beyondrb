@@ -33,8 +33,10 @@ PokemonTower6FDefaultScript:
 	ld a, TEXT_POKEMONTOWER6F_BEGONE
 	ldh [hTextID], a
 	call DisplayTextID
-	ld a, RESTLESS_SOUL
+	ld a, LOW(RESTLESS_SOUL)
 	ld [wCurOpponent], a
+	ld a, HIGH(RESTLESS_SOUL)
+	ld [wCurOpponent + 1], a
 	ld a, 30
 	ld [wCurEnemyLevel], a
 	ld a, SCRIPT_POKEMONTOWER6F_MAROWAK_BATTLE
@@ -138,7 +140,7 @@ PokemonTower6FMarowakDepartedText:
 	text_asm
 	ld hl, PokemonTower6FGhostWasCubonesMotherText
 	call PrintText
-	ld a, RESTLESS_SOUL
+	ld bc, RESTLESS_SOUL
 	call PlayCry
 	call WaitForSoundToFinish
 	ld c, 30

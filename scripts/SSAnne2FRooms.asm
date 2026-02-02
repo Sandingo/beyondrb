@@ -74,7 +74,7 @@ SSAnne2FRoomsGentleman3Text:
 	ld hl, .Text
 	call PrintText
 	call LoadScreenTilesFromBuffer1
-	ld a, SNORLAX
+	ld bc, SNORLAX
 	call DisplayPokedex
 	jp TextScriptEnd
 

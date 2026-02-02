@@ -139,7 +139,7 @@ VictoryRoad2FMoltresText:
 VictoryRoad2FMoltresBattleText:
 	text_far _VictoryRoad2FMoltresBattleText
 	text_asm
-	ld a, MOLTRES
+	ld bc, MOLTRES
 	call PlayCry
 	call WaitForSoundToFinish
 	callfar RollForShiny

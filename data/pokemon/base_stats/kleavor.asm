@@ -1,4 +1,5 @@
-	db DEX_KLEAVOR ; pokedex id
+KleavorBaseStats::
+	dw DEX_KLEAVOR ; pokedex id
 
 	db  70, 135,  95, 85,  70
 	;   hp  atk  def  spd  spc

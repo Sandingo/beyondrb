@@ -1,4 +1,5 @@
-	db DEX_LICKILORD ; pokedex id
+LickilordBaseStats::
+	dw DEX_LICKILORD ; pokedex id
 
 	db  110,  85,  95,  50,  95
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_JIGGLYPUFF ; pokedex id
+JigglypuffBaseStats::
+	dw DEX_JIGGLYPUFF ; pokedex id
 
 	db 115,  45,  20,  20,  25
 	;   hp  atk  def  spd  spc

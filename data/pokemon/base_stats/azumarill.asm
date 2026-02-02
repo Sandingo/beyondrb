@@ -1,4 +1,5 @@
-	db DEX_AZUMARILL ; pokedex id
+AzumarillBaseStats::
+	dw DEX_AZUMARILL ; pokedex id
 
 	db  100,  50,  80,  50,  80
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_ONIX ; pokedex id
+OnixBaseStats::
+	dw DEX_ONIX ; pokedex id
 
 	db  35,  45, 160,  70,  30
 	;   hp  atk  def  spd  spc

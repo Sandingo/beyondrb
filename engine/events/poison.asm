@@ -45,6 +45,10 @@ ApplyOutOfBattlePoisonDamage:
 	ld [hl], a
 	ld a, [de]
 	ld [wPokedexNum], a
+	inc de
+	ld a, [de]
+	ld [wPokedexNum + 1], a
+	dec de
 	push de
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
@@ -62,9 +66,16 @@ ApplyOutOfBattlePoisonDamage:
 	inc hl
 .nextMon2
 	inc de
+	inc de
 	ld a, [de]
 	inc a
+	jr nz, .notDone
+	inc de
+	ld a, [de]
+	dec de
+	inc a
 	jr z, .applyDamageLoopDone
+.notDone
 	ld bc, wPartyMon2 - wPartyMon1
 	add hl, bc
 	push hl

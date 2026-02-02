@@ -1,4 +1,5 @@
-	db DEX_TYROGUE ; pokedex id
+TyrogueBaseStats::
+	dw DEX_TYROGUE ; pokedex id
 
 	db  35, 35,  35,  35,  35
 	;   hp  atk  def  spd  spc

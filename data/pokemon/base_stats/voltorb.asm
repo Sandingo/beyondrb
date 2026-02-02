@@ -1,4 +1,5 @@
-	db DEX_VOLTORB ; pokedex id
+VoltorbBaseStats::
+	dw DEX_VOLTORB ; pokedex id
 
 	db  40,  30,  50, 100,  55
 	;   hp  atk  def  spd  spc

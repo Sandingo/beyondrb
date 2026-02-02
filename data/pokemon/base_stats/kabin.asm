@@ -1,4 +1,5 @@
-	db DEX_KABIN ; pokedex id
+KabinBaseStats::
+	dw DEX_KABIN ; pokedex id
 
 	db 90, 90,  120,  35,  80
 	;   hp  atk  def  spd  spc

@@ -51,8 +51,9 @@ UpdateHPBar2:
 	ld hl, wHPBarOldHP
 	ld a, [hli]
 	ld c, a      ; old HP into bc
-	ld a, [hli]
+	ld a, [hl]
 	ld b, a
+	ld hl, wHPBarNewHP
 	ld a, [hli]
 	ld e, a      ; new HP into de
 	ld d, [hl]
@@ -246,12 +247,14 @@ UpdateHPBar_CalcOldNewHPBarPixels:
 	ld hl, wHPBarMaxHP
 	ld a, [hli]  ; max HP into de
 	ld e, a
-	ld a, [hli]
+	ld a, [hl]
 	ld d, a
+	ld hl, wHPBarOldHP
 	ld a, [hli]  ; old HP into bc
 	ld c, a
-	ld a, [hli]
+	ld a, [hl]
 	ld b, a
+	ld hl, wHPBarNewHP
 	ld a, [hli]  ; new HP into hl
 	ld h, [hl]
 	ld l, a

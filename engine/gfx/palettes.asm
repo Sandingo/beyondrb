@@ -32,41 +32,12 @@ SetPal_Battle:
 	call CopyData
 	ld a, [wPlayerBattleStatus3]
 	ld hl, wBattleMonSpecies
-	ld a, [hl]
-	and a
-	jr z, .playerPalette
-	ld hl, wPartyMon1
-	ld a, [wPlayerMonNumber]
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes ; add bc to hl a times
-; for the shiny
-	ld a, [wBattleMonCatchRate]
-	cp 1
-	jr z, .shinyPlayer
-.playerPalette
 	call DeterminePaletteID
-	jr .continuePlayer
-.shinyPlayer
-	call DetermineShinyPaletteID
-.continuePlayer
 	ld b, a
-
-	
 	ld a, [wEnemyBattleStatus3]
 	ld hl, wEnemyMonSpecies2
 	call DeterminePaletteID
 	ld c, a
-	ld hl, wEnemyMonSpecies2
-	ld a, [wOpponentMonShiny]
-	cp 1
-	jr z, .shinyOpponent
-	call DeterminePaletteID
-	jr .continueOpponent
-.shinyOpponent
-	call DetermineShinyPaletteID
-.continueOpponent
-	ld c, a
-; back to vanilla
 	ld hl, wPalPacket + 1
 	ld a, [wPlayerHPBarColor]
 	add PAL_GREENBAR
@@ -98,34 +69,15 @@ SetPal_StatusScreen:
 	ld de, wPalPacket
 	ld bc, $10
 	call CopyData
+	ld a, [wCurPartySpecies + 1]
+	cp $ff
+	ld de, $1 ; not pokemon
+	jr z, .pokemon
+	ld d, a
 	ld a, [wCurPartySpecies]
-	cp NUM_POKEMON_INDEXES + 1
-	jr c, .pokemon
-	ld a, $1 ; not pokemon
-
-	ld hl, PalPacket_Empty
-	ld de, wPalPacket
-	ld bc, $10
-	call CopyData
-	ld a, [wCurPartySpecies]
-	cp NUM_POKEMON_INDEXES + 1
-	jr c, .pokemon
-	ld a, $1 ; not pokemon
-	jr .notMon
+	ld e, a
 .pokemon
-; for the shiny
-	ld b, a ; save the index in b
-	ld a, [wLoadedMonCatchRate]
-	cp 1
-	ld a, b ; load the index from b
-	jr z, .shinyMon
-.notMon
 	call DeterminePaletteIDOutOfBattle
-	jr .continueMon
-.shinyMon
-	call DetermineShinyPaletteIDOutOfBattle
-.continueMon
-; back to vanilla
 	push af
 	ld hl, wPalPacket + 1
 	ld a, [wStatusScreenHPBarColor]
@@ -138,26 +90,6 @@ SetPal_StatusScreen:
 	ld de, BlkPacket_StatusScreen
 	ret
 
-DetermineShinyPaletteID: ; new
-	ld a, [hl]
-DetermineShinyPaletteIDOutOfBattle:
-	ld [wPokedexNum], a
-	and a ; is the mon index 0?
-	jr z, .skipDexNumConversion
-	push bc
-	predef IndexToPokedex
-	pop bc
-	ld a, [wPokedexNum]
-.skipDexNumConversion
-	ld e, a
-	ld d, 0
-	ld hl, MonsterPalettesShiny
-	add hl, de
-	ld a, [hl]
-	ret
-
-
-
 SetPal_PartyMenu:
 	ld hl, PalPacket_PartyMenu
 	ld de, wPartyMenuBlkPacket
@@ -169,6 +101,9 @@ SetPal_Pokedex:
 	ld bc, $10
 	call CopyData
 	ld a, [wCurPartySpecies]
+	ld e, a
+	ld a, [wCurPartySpecies + 1]
+	ld d, a
 	call DeterminePaletteIDOutOfBattle
 	ld hl, wPalPacket + 3
 	ld [hl], a
@@ -295,46 +230,11 @@ SetPal_PokemonWholeScreen:
 	and a
 	ld a, PAL_BLACK
 	jr nz, .next
-	ld a, [wWeAreTrading]
-	and a
-	jr z, .wWeAreNotTrading
-; we do are trading, specifically we are receiving the traded mon, we need to check if it is shiny or not
-	ld a, [wOpponentMonShiny]
-	cp 1
 	ld a, [wWholeScreenPaletteMonSpecies]
-	jr z, .shinyPalette
-	jr .notShinyPalette
-.wWeAreNotTrading
-	ld a, [wAreWeUsingTheHoFPC]
-	and a
-	jr z, .notHoFPC
-; we are using the HoF PC and the mon is shiny
-	ld a, [wPlayerMonShiny]
-	and a
-	ld a, [wWholeScreenPaletteMonSpecies]
-	jr z, .notShinyPalette
-	jr .shinyPalette
-.notHoFPC
-	ld a, [wCurMap]
-	cp HALL_OF_FAME
-	ld a, [wHoFPartyMonIndex] ; testing
-	jr z, .continueWithHoF
-; we are not in the HoF
-	ld a, [wWhichPokemon]
-.continueWithHoF
-	ld hl, wPartyMon1CatchRate
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes ; add bc to hl a times
-	ld a, [hl]
-	cp 1
-	ld a, [wWholeScreenPaletteMonSpecies]
-	jr z, .shinyPalette
-.notShinyPalette
+	ld e, a
+	ld a, [wWholeScreenPaletteMonSpecies + 1]
+	ld d, a
 	call DeterminePaletteIDOutOfBattle
-	jr .next
-.shinyPalette
-	call DetermineShinyPaletteIDOutOfBattle
-; back to vanilla
 .next
 	ld [wPalPacket + 1], a
 	ld hl, wPalPacket
@@ -354,7 +254,7 @@ SetPal_TrainerCard:
 	srl a
 	push af
 	jr c, .haveBadge
-; The player doens't have the badge, so zero the badge's blk data.
+; The player doesn't have the badge, so zero the badge's blk data.
 	push bc
 	ld a, [de]
 	ld c, a
@@ -414,18 +314,29 @@ DeterminePaletteID:
 	bit TRANSFORMED, a ; a is battle status 3
 	ld a, PAL_GRAYMON  ; if the mon has used Transform, use Ditto's palette
 	ret nz
+	ld a, [hli]
+	ld e, a
 	ld a, [hl]
+	ld d, a
 DeterminePaletteIDOutOfBattle:
+	ld a, e
 	ld [wPokedexNum], a
+	ld a, d
+	ld [wPokedexNum + 1], a
 	and a ; is the mon index 0?
+	jr nz, .dexNumConversion
+	ld a, e
+	and a
 	jr z, .skipDexNumConversion
+.dexNumConversion
 	push bc
 	predef IndexToPokedex
 	pop bc
 	ld a, [wPokedexNum]
-.skipDexNumConversion
 	ld e, a
-	ld d, 0
+	ld a, [wPokedexNum + 1]
+	ld d, a
+.skipDexNumConversion
 	ld hl, MonsterPalettes ; not just for Pokemon, Trainers use it too
 	add hl, de
 	ld a, [hl]
@@ -479,30 +390,30 @@ SendSGBPacket:
 	ld a, 1
 	ldh [hDisableJoypadPolling], a
 ; send RESET signal (P14=LOW, P15=LOW)
-	xor a
+	xor a ; JOYP_SGB_START
 	ldh [rJOYP], a
 ; set P14=HIGH, P15=HIGH
-	ld a, $30
+	ld a, JOYP_SGB_FINISH
 	ldh [rJOYP], a
 ;load length of packets (16 bytes)
-	ld b, $10
+	ld b, 16
 .nextByte
 ;set bit counter (8 bits per byte)
-	ld e, $08
+	ld e, 8
 ; get next byte in the packet
 	ld a, [hli]
 	ld d, a
 .nextBit0
 	bit 0, d
 ; if 0th bit is not zero set P14=HIGH, P15=LOW (send bit 1)
-	ld a, $10
+	ld a, JOYP_SGB_ONE
 	jr nz, .next0
 ; else (if 0th bit is zero) set P14=LOW, P15=HIGH (send bit 0)
-	ld a, $20
+	ld a, JOYP_SGB_ZERO
 .next0
 	ldh [rJOYP], a
 ; must set P14=HIGH,P15=HIGH between each "pulse"
-	ld a, $30
+	ld a, JOYP_SGB_FINISH
 	ldh [rJOYP], a
 ; rotation will put next bit in 0th position (so  we can always use command
 ; "bit 0, d" to fetch the bit that has to be sent)
@@ -512,11 +423,11 @@ SendSGBPacket:
 	jr nz, .nextBit0
 	dec b
 	jr nz, .nextByte
-; send bit 1 as a "stop bit" (end of parameter data)
-	ld a, $20
+; send bit 0 as a "stop bit" (end of parameter data)
+	ld a, JOYP_SGB_ZERO
 	ldh [rJOYP], a
 ; set P14=HIGH,P15=HIGH
-	ld a, $30
+	ld a, JOYP_SGB_FINISH
 	ldh [rJOYP], a
 	xor a
 	ldh [hDisableJoypadPolling], a
@@ -537,11 +448,11 @@ LoadSGB:
 	ret nc
 	ld a, 1
 	ld [wOnSGB], a
-	ld a, [wGBC]
+	ld a, 0
 	and a
-	jr z, .notGBC
+	jr z, .notCGB
 	ret
-.notGBC
+.notCGB
 	di
 	call PrepareSuperNintendoVRAMTransfer
 	ei
@@ -603,20 +514,20 @@ CheckSGB:
 	ei
 	call Wait7000
 	ldh a, [rJOYP]
-	and $3
-	cp $3
+	and JOYP_SGB_MLT_REQ
+	cp JOYP_SGB_MLT_REQ
 	jr nz, .isSGB
-	ld a, $20
+	ld a, JOYP_SGB_ZERO
 	ldh [rJOYP], a
 	ldh a, [rJOYP]
 	ldh a, [rJOYP]
 	call Wait7000
 	call Wait7000
-	ld a, $30
+	ld a, JOYP_SGB_FINISH
 	ldh [rJOYP], a
 	call Wait7000
 	call Wait7000
-	ld a, $10
+	ld a, JOYP_SGB_ONE
 	ldh [rJOYP], a
 	ldh a, [rJOYP]
 	ldh a, [rJOYP]
@@ -627,7 +538,7 @@ CheckSGB:
 	call Wait7000
 	vc_hook Unknown_network_reset
 	call Wait7000
-	ld a, $30
+	ld a, JOYP_SGB_FINISH
 	ldh [rJOYP], a
 	ldh a, [rJOYP]
 	ldh a, [rJOYP]
@@ -635,8 +546,8 @@ CheckSGB:
 	call Wait7000
 	call Wait7000
 	ldh a, [rJOYP]
-	and $3
-	cp $3
+	and JOYP_SGB_MLT_REQ
+	cp JOYP_SGB_MLT_REQ
 	jr nz, .isSGB
 	call SendMltReq1Packet
 	and a
@@ -664,15 +575,15 @@ CopyGfxToSuperNintendoVRAM:
 	call CopySGBBorderTiles
 	jr .next
 .notCopyingTileData
-	ld bc, $1000
+	ld bc, 256 tiles
 	call CopyData
 .next
 	ld hl, vBGMap0
-	ld de, $c
+	ld de, TILEMAP_WIDTH - SCREEN_WIDTH
 	ld a, $80
-	ld c, $d
+	ld c, (256 + SCREEN_WIDTH - 1) / SCREEN_WIDTH ; enough rows to fit 256 tiles
 .loop
-	ld b, $14
+	ld b, SCREEN_WIDTH
 .innerLoop
 	ld [hli], a
 	inc a
@@ -681,7 +592,7 @@ CopyGfxToSuperNintendoVRAM:
 	add hl, de
 	dec c
 	jr nz, .loop
-	ld a, $e3
+	ld a, 1
 	ldh [rLCDC], a
 	pop hl
 	call SendSGBPacket
@@ -704,21 +615,21 @@ Wait7000:
 	ret
 
 SendSGBPackets:
-	ld a, [wGBC]
+	ld a, 0
 	and a
-	jr z, .notGBC
+	jr z, .notCGB
 	push de
-	call InitGBCPalettes
+	call InitCGBPalettes
 	pop hl
 	call EmptyFunc3
 	ret
-.notGBC
+.notCGB
 	push de
 	call SendSGBPacket
 	pop hl
 	jp SendSGBPacket
 
-InitGBCPalettes:
+InitCGBPalettes:
 	ld a, $80 ; index 0 with auto-increment
 	ldh [rBGPI], a
 	inc hl
@@ -752,7 +663,7 @@ CopySGBBorderTiles:
 	ld b, 128
 .tileLoop
 ; Copy bit planes 1 and 2 of the tile data.
-	ld c, 16
+	ld c, TILE_SIZE
 .copyLoop
 	ld a, [hli]
 	ld [de], a

@@ -65,20 +65,26 @@ ChampionsRoomRivalReadyToBattleScript:
 	ld hl, RivalDefeatedText
 	ld de, RivalVictoryText
 	call SaveEndBattleTextPointers
-	ld a, OPP_RIVAL3
+	ld a, RIVAL3
 	ld [wCurOpponent], a
-
+	ld a, $ff
+	ld [wCurOpponent + 1], a
    ld a, [wGameStage] ; Check if player has beat the game
 	and a
 	jr z, .notRematch
 	; select which team to use during the encounter
+	ld a, [wRivalStarter + 1]
+	ld b, a
 	ld a, [wRivalStarter]
-	cp STARTER2
+	ld c, a
+	ld de, STARTER2
+	call CompareTwoBytes
 	jr nz, .NotStarter2Rematch
 	ld a, $4
 	jr .saveTrainerId
 .NotStarter2Rematch
-	cp STARTER3
+	ld de, STARTER3
+	call CompareTwoBytes
 	jr nz, .NotStarter3Rematch
 	ld a, $5
 	jr .saveTrainerId
@@ -88,12 +94,15 @@ ChampionsRoomRivalReadyToBattleScript:
 .notRematch
 	; select which team to use during the encounter
 	ld a, [wRivalStarter]
-	cp STARTER2
+	ld c, a
+	ld de, STARTER2
+	call CompareTwoBytes
 	jr nz, .NotStarter2
 	ld a, $1
 	jr .saveTrainerId
 .NotStarter2
-	cp STARTER3
+	ld de, STARTER3
+	call CompareTwoBytes
 	jr nz, .NotStarter3
 	ld a, $2
 	jr .saveTrainerId
@@ -304,6 +313,8 @@ ChampionsRoomOakCongratulatesPlayerText:
 	text_asm
 	ld a, [wPlayerStarter]
 	ld [wNamedObjectIndex], a
+	ld a, [wPlayerStarter + 1]
+	ld [wNamedObjectIndex + 1], a
 	call GetMonName
 	ld hl, .Text
 	call PrintText

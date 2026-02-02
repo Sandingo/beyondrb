@@ -20,7 +20,9 @@ PickUpItem:
 	ld hl, wMapSpriteExtraData
 	ldh a, [hSpriteIndex]
 	dec a
+	ld b, a
 	add a
+	add b
 	ld d, 0
 	ld e, a
 	add hl, de

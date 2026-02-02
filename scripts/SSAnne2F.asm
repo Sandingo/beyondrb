@@ -97,17 +97,23 @@ SSAnne2FRivalStartBattleScript:
 	ldh [hTextID], a
 	call DisplayTextID
 	call Delay3
-	ld a, OPP_RIVAL2
+	ld a, RIVAL2
 	ld [wCurOpponent], a
-
+	ld a, $ff
+	ld [wCurOpponent + 1], a
 	; select which team to use during the encounter
+	ld a, [wRivalStarter + 1]
+	ld b, a
 	ld a, [wRivalStarter]
-	cp STARTER2
+	ld c, a
+	ld de, STARTER2
+	call CompareTwoBytes
 	jr nz, .NotSquirtle
 	ld a, $1
 	jr .done
 .NotSquirtle
-	cp STARTER3
+	ld de, STARTER3
+	call CompareTwoBytes
 	jr nz, .Charmander
 	ld a, $2
 	jr .done

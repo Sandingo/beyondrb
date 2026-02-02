@@ -14,8 +14,8 @@ LeagueHQB8F_Object:
 	def_bg_events
 
 	def_object_events
-	object_event  8,  3, SPRITE_COOLTRAINER_M, STAY, DOWN, 1, OPP_COOLTRAINER_M, 7
-	object_event 16, 18, SPRITE_COOLTRAINER_F, STAY, ANY_DIR, 2, OPP_COOLTRAINER_F, 7
+	object_event  8,  3, SPRITE_COOLTRAINER_M, STAY, DOWN, 1, COOLTRAINER_M, 7
+	object_event 16, 18, SPRITE_COOLTRAINER_F, STAY, ANY_DIR, 2, COOLTRAINER_F, 7
 	object_event  5, 16, SPRITE_POKE_BALL, STAY, NONE, 3, MAX_REVIVE
 	object_event 22, 11, SPRITE_POKE_BALL, STAY, NONE, 4, HP_UP
 	object_event  5,  2, SPRITE_NURSE, STAY, DOWN, 5

@@ -1,37 +1,37 @@
 Route4WildMons:
 	def_grass_wildmons 20 ; encounter rate
-	db 10, RATTATA
-	db 10, SPEAROW
-	db  8, RATTATA
+	dbw 10, RATTATA
+	dbw 10, SPEAROW
+	dbw  8, RATTATA
 IF DEF(_RED)
-	db  6, EKANS
-	db  8, SPEAROW
-	db 10, EKANS
-	db 12, RATTATA
-	db 12, KOLTA
-	db  8, EKANS
-	db 12, EKANS
+	dbw  6, EKANS
+	dbw  8, SPEAROW
+	dbw 10, EKANS
+	dbw 12, RATTATA
+	dbw 12, KOLTA
+	dbw  8, EKANS
+	dbw 12, EKANS
 ENDC
 IF DEF(_BLUE)
-	db  6, SANDSHREW
-	db  8, SPEAROW
-	db 10, SANDSHREW
-	db 12, RATTATA
-	db 12, KOLTA
-	db  8, SANDSHREW
-	db 12, SANDSHREW
+	dbw  6, SANDSHREW
+	dbw  8, SPEAROW
+	dbw 10, SANDSHREW
+	dbw 12, RATTATA
+	dbw 12, KOLTA
+	dbw  8, SANDSHREW
+	dbw 12, SANDSHREW
 ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db  5, MAGIKARP
-	db 10, MAGIKARP
-	db 15, MAGIKARP
-	db 20, MAGIKARP
-	db 10, MAGIKARP
-	db 15, MAGIKARP
-	db 20, MAGIKARP
-	db 30, GOLDEEN
-	db 35, GOLDEEN
-	db 40, SEAKING
+	dbw  5, MAGIKARP
+	dbw 10, MAGIKARP
+	dbw 15, MAGIKARP
+	dbw 20, MAGIKARP
+	dbw 10, MAGIKARP
+	dbw 15, MAGIKARP
+	dbw 20, MAGIKARP
+	dbw 30, GOLDEEN
+	dbw 35, GOLDEEN
+	dbw 40, SEAKING
 	end_water_wildmons

@@ -1,4 +1,5 @@
-	db DEX_ABRA ; pokedex id
+AbraBaseStats::
+	dw DEX_ABRA ; pokedex id
 
 	db  25,  20,  15,  90, 105
 	;   hp  atk  def  spd  spc

@@ -372,8 +372,11 @@ INCLUDE "audio/poke_flute.asm"
 
 SECTION "Audio Engine 3", ROMX
 
-INCLUDE "audio/pokedex_rating_sfx.asm"
 INCLUDE "audio/engine_3.asm"
+
+SECTION "Pokedex Rating SFX", ROMX
+
+INCLUDE "audio/pokedex_rating_sfx.asm"
 
 
 SECTION "Music 1", ROMX

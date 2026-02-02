@@ -1,4 +1,5 @@
-	db DEX_COINPUR ; pokedex id
+CoinpurBaseStats::
+	dw DEX_COINPUR ; pokedex id
 
 	db  35,  40,  30,  85,  35
 	;   hp  atk  def  spd  spc

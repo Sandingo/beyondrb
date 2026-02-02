@@ -1,4 +1,5 @@
-	db DEX_RHYHORN ; pokedex id
+RhyhornBaseStats::
+	dw DEX_RHYHORN ; pokedex id
 
 	db  80,  85,  95,  25,  30
 	;   hp  atk  def  spd  spc

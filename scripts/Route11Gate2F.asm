@@ -20,8 +20,10 @@ Route11Gate2FOaksAideText:
 	text_asm
 	CheckEvent EVENT_GOT_ITEMFINDER, 1
 	jr c, .got_item
-	ld a, 30
+	ld a, LOW(30)
 	ldh [hOaksAideRequirement], a
+	ld a, HIGH(30)
+	ldh [hOaksAideRequirement + 1], a
 	ld a, ITEMFINDER
 	ldh [hOaksAideRewardItem], a
 	ld [wNamedObjectIndex], a

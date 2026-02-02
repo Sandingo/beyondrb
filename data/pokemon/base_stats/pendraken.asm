@@ -1,4 +1,5 @@
-	db DEX_PENDRAKEN ; pokedex id
+PendrakenBaseStats::
+	dw DEX_PENDRAKEN ; pokedex id
 
 	db  80,  60,  85, 90, 95
 	;   hp  atk  def  spd  spc

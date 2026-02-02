@@ -1,4 +1,5 @@
-	db DEX_SYLVEON ; pokedex id
+SylveonBaseStats::
+	dw DEX_SYLVEON ; pokedex id
 
 	db 95,  65,  65,  60, 130
 	;   hp  atk  def  spd  spc

@@ -72,7 +72,7 @@ PokemonFanClubPikachuText:
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, PIKACHU
+	ld bc, PIKACHU
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
@@ -85,7 +85,7 @@ PokemonFanClubSeelText:
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, SEEL
+	ld bc, SEEL
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd

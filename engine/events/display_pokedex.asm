@@ -9,8 +9,10 @@ _DisplayPokedex::
 	call DelayFrames
 	predef IndexToPokedex
 	ld a, [wPokedexNum]
-	dec a
-	ld c, a
+	ld e, a
+	ld a, [wPokedexNum + 1]
+	ld d, a
+	dec de
 	ld b, FLAG_SET
 	ld hl, wPokedexSeen
 	predef FlagActionPredef

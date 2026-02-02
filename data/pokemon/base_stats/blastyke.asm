@@ -1,4 +1,5 @@
-	db DEX_BLASTYKE ; pokedex id
+BlastykeBaseStats::
+	dw DEX_BLASTYKE ; pokedex id
 
 	db  49,  43,  60,  48,  45
 	;   hp  atk  def  spd  spc

@@ -3,19 +3,33 @@ DisplayDexRating:
 	ld b, wPokedexSeenEnd - wPokedexSeen
 	call CountSetBits
 	ld a, [wNumSetBits]
+	ldh [hDexRatingNumMonsSeen + 1], a
+	ld a, [wNumSetBits + 1]
 	ldh [hDexRatingNumMonsSeen], a
 	ld hl, wPokedexOwned
 	ld b, wPokedexOwnedEnd - wPokedexOwned
 	call CountSetBits
 	ld a, [wNumSetBits]
+	ldh [hDexRatingNumMonsOwned + 1], a
+	ld a, [wNumSetBits + 1]
 	ldh [hDexRatingNumMonsOwned], a
 	ld hl, DexRatingsTable
 .findRating
 	ld a, [hli]
+	ld c, a
+	ld a, [hli]
 	ld b, a
+	ldh a, [hDexRatingNumMonsOwned + 1]
+	ld d, a
 	ldh a, [hDexRatingNumMonsOwned]
+	ld e, a
 	cp b
 	jr c, .foundRating
+	jr nz, .next
+	ld a, d
+	cp c
+	jr c, .foundRating
+.next
 	inc hl
 	inc hl
 	jr .findRating
@@ -37,7 +51,13 @@ DisplayDexRating:
 	ldh a, [hDexRatingNumMonsSeen]
 	ld [de], a
 	inc de
+	ldh a, [hDexRatingNumMonsSeen + 1]
+	ld [de], a
+	inc de
 	ldh a, [hDexRatingNumMonsOwned]
+	ld [de], a
+	inc de
+	ldh a, [hDexRatingNumMonsOwned + 1]
 	ld [de], a
 	inc de
 .copyRatingTextLoop
@@ -56,22 +76,22 @@ DexCompletionText:
 	text_end
 
 DexRatingsTable:
-	dbw 10, DexRatingText_Own0To9
-	dbw 20, DexRatingText_Own10To19
-	dbw 30, DexRatingText_Own20To29
-	dbw 40, DexRatingText_Own30To39
-	dbw 50, DexRatingText_Own40To49
-	dbw 60, DexRatingText_Own50To59
-	dbw 70, DexRatingText_Own60To69
-	dbw 80, DexRatingText_Own70To79
-	dbw 90, DexRatingText_Own80To89
-	dbw 100, DexRatingText_Own90To99
-	dbw 120, DexRatingText_Own100To109
-	dbw 150, DexRatingText_Own110To119
-	dbw 180, DexRatingText_Own120To129
-	dbw 200, DexRatingText_Own130To139
-	dbw 230, DexRatingText_Own140To149
-	dbw NUM_POKEMON + 1, DexRatingText_Own150To151
+	dw 10, DexRatingText_Own0To9
+	dw 20, DexRatingText_Own10To19
+	dw 30, DexRatingText_Own20To29
+	dw 40, DexRatingText_Own30To39
+	dw 50, DexRatingText_Own40To49
+	dw 60, DexRatingText_Own50To59
+	dw 70, DexRatingText_Own60To69
+	dw 80, DexRatingText_Own70To79
+	dw 90, DexRatingText_Own80To89
+	dw 100, DexRatingText_Own90To99
+	dw 120, DexRatingText_Own100To109
+	dw 150, DexRatingText_Own110To119
+	dw 180, DexRatingText_Own120To129
+	dw 200, DexRatingText_Own130To139
+	dw 230, DexRatingText_Own140To149
+	dw NUM_POKEMON + 1, DexRatingText_Own150To151
 
 DexRatingText_Own0To9:
 	text_far _DexRatingText_Own0To9

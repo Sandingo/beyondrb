@@ -1,4 +1,5 @@
-	db DEX_MURKROW ; pokedex id
+MurkrowBaseStats::
+	dw DEX_MURKROW ; pokedex id
 
 	db  60,  85,  42,  91,  85
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_SCIZOR ; pokedex id
+ScizorBaseStats::
+	dw DEX_SCIZOR ; pokedex id
 
 	db  70, 130,  100, 65,  80
 	;   hp  atk  def  spd  spc

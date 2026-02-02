@@ -1,4 +1,5 @@
-	db DEX_IGGLYBUFF ; pokedex id
+IgglybuffBaseStats::
+	dw DEX_IGGLYBUFF ; pokedex id
 
 	db 90,  30,  15,  15,  20
 	;   hp  atk  def  spd  spc

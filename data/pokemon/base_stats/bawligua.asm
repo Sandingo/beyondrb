@@ -1,4 +1,5 @@
-	db DEX_BAWLIGUA ; pokedex id
+BawliguaBaseStats::
+	dw DEX_BAWLIGUA ; pokedex id
 
 	db  72,  53,  46,  98,  81
 	;   hp  atk  def  spd  spc

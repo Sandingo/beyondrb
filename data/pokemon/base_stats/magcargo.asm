@@ -1,4 +1,5 @@
-	db DEX_MAGCARGO ; pokedex id
+MagcargoBaseStats::
+	dw DEX_MAGCARGO ; pokedex id
 
 	db  50,  50,  120,  30,  80
 	;   hp  atk  def  spd  spc

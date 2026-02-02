@@ -90,7 +90,8 @@ CinnabarGymQuiz_AskQuestion:
 	call PrintText
 	ldh a, [hBackupGymGateIndex]
 	AdjustEventBit EVENT_CINNABAR_GYM_GATE0_UNLOCKED, 0
-	ld c, a
+	ld e, a
+	ld d, 0
 	ld b, FLAG_SET
 	call CinnabarGymGateFlagAction
 	jp UpdateCinnabarGymGateTileBlocks_
@@ -104,7 +105,8 @@ CinnabarGymQuiz_AskQuestion:
 	ldh a, [hGymGateIndex]
 	add $2
 	AdjustEventBit EVENT_BEAT_CINNABAR_GYM_TRAINER_0, 2
-	ld c, a
+	ld e, a
+	ld d, 0
 	ld b, FLAG_TEST
 	EventFlagAddress hl, EVENT_BEAT_CINNABAR_GYM_TRAINER_0
 	predef FlagActionPredef
@@ -124,7 +126,8 @@ CinnabarGymQuizCorrectText:
 
 	ldh a, [hBackupGymGateIndex]
 	AdjustEventBit EVENT_CINNABAR_GYM_GATE0_UNLOCKED, 0
-	ld c, a
+	ld e, a
+	ld d, 0
 	ld b, FLAG_TEST
 	call CinnabarGymGateFlagAction
 	ld a, c
@@ -164,7 +167,8 @@ UpdateCinnabarGymGateTileBlocks_::
 	ldh a, [hGymGateIndex]
 	ldh [hBackupGymGateIndex], a
 	AdjustEventBit EVENT_CINNABAR_GYM_GATE0_UNLOCKED, 0
-	ld c, a
+	ld e, a
+	ld d, 0
 	ld b, FLAG_TEST
 	call CinnabarGymGateFlagAction
 	ld a, c

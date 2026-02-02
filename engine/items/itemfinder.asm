@@ -19,7 +19,8 @@ HiddenItemNear:
 	jr nc, .gotFlagArray
 	ld hl, wObtainedHiddenCoinsFlags
 .gotFlagArray
-	ld c, b
+	ld e, b
+	ld d, 0
 	ld b, FLAG_TEST
 	predef FlagActionPredef
 	ld a, c

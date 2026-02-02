@@ -1,6 +1,8 @@
 AerodactylFossil:
-	ld a, FOSSIL_AERODACTYL
+	ld a, LOW(FOSSIL_AERODACTYL)
 	ld [wCurPartySpecies], a
+	ld a, HIGH(FOSSIL_AERODACTYL)
+	ld [wCurPartySpecies + 1], a
 	call DisplayMonFrontSpriteInBox
 	call EnableAutoTextBoxDrawing
 	tx_pre AerodactylFossilText
@@ -11,8 +13,10 @@ AerodactylFossilText::
 	text_end
 
 KabutopsFossil:
-	ld a, FOSSIL_KABUTOPS
+	ld a, LOW(FOSSIL_KABUTOPS)
 	ld [wCurPartySpecies], a
+	ld a, HIGH(FOSSIL_KABUTOPS)
+	ld [wCurPartySpecies + 1], a
 	call DisplayMonFrontSpriteInBox
 	call EnableAutoTextBoxDrawing
 	tx_pre KabutopsFossilText
@@ -36,6 +40,8 @@ DisplayMonFrontSpriteInBox:
 	call UpdateSprites
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
+	ld a, [wCurPartySpecies + 1]
+	ld [wCurSpecies + 1], a
 	call GetMonHeader
 	ld de, vChars1 tile $31
 	call LoadMonFrontSprite

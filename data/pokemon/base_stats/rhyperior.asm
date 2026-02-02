@@ -1,4 +1,5 @@
-	db DEX_RHYPERIOR ; pokedex id
+RhyperiorBaseStats::
+	dw DEX_RHYPERIOR ; pokedex id
 
 	db 115, 140, 130,  40,  55
 	;   hp  atk  def  spd  spc

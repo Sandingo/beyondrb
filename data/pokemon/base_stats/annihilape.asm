@@ -1,4 +1,5 @@
-	db DEX_ANNIHILAPE ; pokedex id
+AnnihilapeBaseStats::
+	dw DEX_ANNIHILAPE ; pokedex id
 
 	db  110, 115,  80,  90,  90
 	;   hp  atk  def  spd  spc

@@ -1,4 +1,5 @@
-	db DEX_SHARPOON ; pokedex id
+SharpoonBaseStats::
+	dw DEX_SHARPOON ; pokedex id
 
 	db  80,  115,  100,  60,  85
 	;   hp  atk  def  spd  spc

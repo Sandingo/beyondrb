@@ -19,9 +19,14 @@ MACRO object_event
 	db \1 + 4
 	db \4
 	db \5
-	IF _NARG > 7
+	IF _NARG > 8
+		ASSERT !STRCMP("\9", "pokemon")
 		db TRAINER | \6
-		db \7
+		dw \7
+		db \8
+	ELIF _NARG > 7
+		db TRAINER | \6
+		db \7, $ff
 		db \8
 	ELIF _NARG > 6
 		db ITEM | \6

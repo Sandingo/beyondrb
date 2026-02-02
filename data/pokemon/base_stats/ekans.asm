@@ -1,4 +1,5 @@
-	db DEX_EKANS ; pokedex id
+EkansBaseStats::
+	dw DEX_EKANS ; pokedex id
 
 	db  35,  60,  44,  55,  40
 	;   hp  atk  def  spd  spc

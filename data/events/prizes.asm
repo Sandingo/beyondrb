@@ -8,13 +8,13 @@ NoThanksText:
 	db "NO THANKS@"
 
 PrizeMenuMon1Entries:
-	db ABRA
-	db CLEFAIRY
+	dw ABRA
+	dw CLEFAIRY
 IF DEF(_RED)
-	db SANDSHREW
+	dw SANDSHREW
 ENDC
 IF DEF(_BLUE)
-	db EKANS
+	dw EKANS
 ENDC
 	db "@"
 
@@ -26,14 +26,14 @@ PrizeMenuMon1Cost:
 
 PrizeMenuMon2Entries:
 IF DEF(_RED)
-	db SCYTHER
-	db DRATINI
+	dw SCYTHER
+	dw DRATINI
 ENDC
 IF DEF(_BLUE)
-	db PINSIR
-	db SKIMPER
+	dw PINSIR
+	dw SKIMPER
 ENDC
-	db PORYGON
+	dw PORYGON
 	db "@"
 
 PrizeMenuMon2Cost:
@@ -43,9 +43,9 @@ PrizeMenuMon2Cost:
 	db "@"
 
 PrizeMenuTMs1Entries:
-	db TM_DRAGON_RAGE
-	db TM_HYPER_BEAM
-	db TM_SUBSTITUTE
+	dw TM_DRAGON_RAGE
+	dw TM_HYPER_BEAM
+	dw TM_SUBSTITUTE
 	db "@"
 
 PrizeMenuTMs1Cost:
@@ -55,9 +55,9 @@ PrizeMenuTMs1Cost:
 	db "@"
 
 PrizeMenuTMs2Entries:
-	db TM_ICE_BEAM
-	db TM_THUNDERBOLT
-	db TM_FLAMETHROWER
+	dw TM_ICE_BEAM
+	dw TM_THUNDERBOLT
+	dw TM_FLAMETHROWER
 	db "@"
 
 PrizeMenuTMs2Cost:

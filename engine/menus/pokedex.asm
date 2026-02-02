@@ -5,9 +5,9 @@ ShowPokedexMenu:
 	ld a, [wListScrollOffset]
 	push af
 	xor a
-	ld [wCurrentMenuItem], a
 	ld [wListScrollOffset], a
 	ld [wLastMenuItem], a
+	ld [wPokedexNum + 1], a
 	inc a
 	ld [wPokedexNum], a
 	ldh [hJoy7], a
@@ -41,7 +41,6 @@ ShowPokedexMenu:
 	ld [wPokedexPlace2], a
 	xor a
 	ld [wMenuWatchMovingOutOfBounds], a
-	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
 	ldh [hJoy7], a
 	ld [wUnusedOverrideSimulatedJoypadStatesIndex], a
@@ -74,11 +73,22 @@ HandlePokedexSideMenu:
 	push af
 	ld a, [wListScrollOffset]
 	push af
-	add b
-	inc a
+	ld a, [wListScrollOffsetDex]
+	ld c, a
+	ld a, [wListScrollOffsetDex + 1]
+	ld b, a
+	ld a, [wCurrentMenuItem]
+	ld l, a
+	ld h, 0
+	add hl, bc
+	inc hl
+	ld a, l
+	ld c, a
 	ld [wPokedexNum], a
-	ld a, [wPokedexNum]
-	push af
+	ld a, h
+	ld b, a
+	ld [wPokedexNum + 1], a
+	push bc
 	ld a, [wDexMaxSeenMon]
 	push af ; this doesn't need to be preserved
 	ld hl, wPokedexSeen
@@ -118,8 +128,11 @@ HandlePokedexSideMenu:
 .exitSideMenu
 	pop af
 	ld [wDexMaxSeenMon], a
-	pop af
+	pop de
+	ld a, e
 	ld [wPokedexNum], a
+	ld a, d
+	ld [wPokedexNum + 1], a
 	pop af
 	ld [wListScrollOffset], a
 	pop af
@@ -151,6 +164,9 @@ HandlePokedexSideMenu:
 ; play pokemon cry
 .choseCry
 	ld a, [wPokedexNum]
+	ld c, a
+	ld a, [wPokedexNum + 1]
+	ld b, a
 	call GetCryData
 	call PlaySound
 	jr .handleMenuInput
@@ -175,16 +191,28 @@ HandlePokedexListMenu:
 	ld hl, wPokedexSeen
 	ld b, wPokedexSeenEnd - wPokedexSeen
 	call CountSetBits
+	ld hl, wNumSetBits
+	ld a, [hli]
+	ld d, a
+	ld a, [hl]
+	ld [wNumSetBits], a
+	ld [hl], d
 	ld de, wNumSetBits
 	hlcoord 16, 3
-	lb bc, 1, 3
+	lb bc, 2, 3
 	call PrintNumber ; print number of seen pokemon
 	ld hl, wPokedexOwned
 	ld b, wPokedexOwnedEnd - wPokedexOwned
 	call CountSetBits
+	ld hl, wNumSetBits
+	ld a, [hli]
+	ld d, a
+	ld a, [hl]
+	ld [wNumSetBits], a
+	ld [hl], d
 	ld de, wNumSetBits
 	hlcoord 16, 6 ; jp layout
-	lb bc, 1, 3
+	lb bc, 2, 3
 	call PrintNumber ; print number of owned pokemon
 	hlcoord 14, 2 ; jp layout
 	ld de, PokedexSeenText
@@ -207,23 +235,25 @@ HandlePokedexListMenu:
 	ld de, PokedexMenuItemsText
 	call PlaceString
 ; find the highest pokedex number among the pokemon the player has seen
-	ld b, 252 ; Temp fix
-;	ld hl, wPokedexSeenEnd - 1
-;	ld b, (wPokedexSeenEnd - wPokedexSeen) * 8 + 1
+;	ld b, 252 ; Temp fix
+	ld hl, wPokedexSeenEnd - 1
+	ld bc, (wPokedexSeenEnd - wPokedexSeen) * 8 + 1
 .maxSeenPokemonLoop
 	ld a, [hld]
-	ld c, 8
+	ld d, 8
 .maxSeenPokemonInnerLoop
-	dec b
+	dec bc
 	sla a
 	jr c, .storeMaxSeenPokemon
-	dec c
+	dec d
 	jr nz, .maxSeenPokemonInnerLoop
 	jr .maxSeenPokemonLoop
 
 .storeMaxSeenPokemon
-	ld a, b
+	ld a, c
 	ld [wDexMaxSeenMon], a
+	ld a, b
+	ld [wDexMaxSeenMon + 1], a
 .loop
 	xor a
 	ldh [hAutoBGTransferEnabled], a
@@ -231,9 +261,14 @@ HandlePokedexListMenu:
 	lb bc, 16, 8 ; Make sure text doesn't overflow
 	call ClearScreenArea
 	hlcoord 1, 4 ; Move text a tile down away from the CONTENTS tag
-	ld a, [wListScrollOffset]
+	ld a, [wListScrollOffsetDex]
 	ld [wPokedexNum], a
+	ld a, [wListScrollOffsetDex + 1]
+	ld [wPokedexNum + 1], a
 	ld d, 7
+	ld a, [wDexMaxSeenMon + 1]
+	and a
+	jr nz, .printPokemonLoop
 	ld a, [wDexMaxSeenMon]
 	cp 7
 	jr nc, .printPokemonLoop
@@ -244,16 +279,28 @@ HandlePokedexListMenu:
 ; if the player has owned the pokemon, it puts a pokeball beside the name
 .printPokemonLoop
 	ld a, [wPokedexNum]
-	inc a
+	ld c, a
+	ld a, [wPokedexNum + 1]
+	ld b, a
+	inc bc
+	ld a, c
+	ld [wPokedexNum + 1], a
+	ld a, b
 	ld [wPokedexNum], a
-	push af
+	push bc
 	push de
 	push hl
 	ld de, -SCREEN_WIDTH
 	add hl, de
 	ld de, wPokedexNum
-	lb bc, LEADING_ZEROES | 1, 3
+	lb bc, LEADING_ZEROES | 2, 3
 	call PrintNumber
+	ld a, [wPokedexNum]
+	ld d, a
+	ld a, [wPokedexNum + 1]
+	ld [wPokedexNum], a
+	ld a, d
+	ld [wPokedexNum + 1], a
 	ld de, SCREEN_WIDTH
 	add hl, de
 	dec hl
@@ -287,8 +334,11 @@ HandlePokedexListMenu:
 	ld bc, 2 * SCREEN_WIDTH
 	add hl, bc
 	pop de
-	pop af
+	pop bc
+	ld a, c
 	ld [wPokedexNum], a
+	ld a, b
+	ld [wPokedexNum + 1], a
 	dec d
 	jr nz, .printPokemonLoop
 	ld a, 01
@@ -302,55 +352,124 @@ HandlePokedexListMenu:
 	bit BIT_D_UP, a
 	jr z, .checkIfDownPressed
 .upPressed ; scroll up one row
-	ld a, [wListScrollOffset]
+	ld a, [wListScrollOffsetDex + 1]
+	and a
+	jr nz, .upPressedNotZero
+	ld a, [wListScrollOffsetDex]
 	and a
 	jp z, .loop
-	dec a
-	ld [wListScrollOffset], a
+.upPressedNotZero
+	ld a, [wListScrollOffsetDex + 1]
+	ld b, a
+	ld a, [wListScrollOffsetDex]
+	ld c, a
+	dec bc
+	ld a, c
+	ld [wListScrollOffsetDex], a
+	ld a, b
+	ld [wListScrollOffsetDex + 1], a
 	jp .loop
 .checkIfDownPressed
 	bit BIT_D_DOWN, a
 	jr z, .checkIfRightPressed
 .downPressed ; scroll down one row
+	ld a, [wDexMaxSeenMon + 1]
+	and a
 	ld a, [wDexMaxSeenMon]
+	jr nz, .downPressedNotShort
 	cp 7
 	jp c, .loop ; can't if the list is shorter than 7
-	sub 7
+.downPressedNotShort
+	ld a, [wDexMaxSeenMon]
+	ld c, a
+	ld a, [wDexMaxSeenMon + 1]
 	ld b, a
-	ld a, [wListScrollOffset]
+REPT 7
+	dec bc
+ENDR
+	ld a, [wListScrollOffsetDex + 1]
 	cp b
+	jr nz, .checkIfRightPressedNotTheSame
+	ld a, [wListScrollOffsetDex]
+	cp c
 	jp z, .loop
-	inc a
-	ld [wListScrollOffset], a
+.checkIfRightPressedNotTheSame
+	ld a, [wListScrollOffsetDex]
+	ld c, a
+	ld a, [wListScrollOffsetDex + 1]
+	ld b, a
+	inc bc
+	ld a, c
+	ld [wListScrollOffsetDex], a
+	ld a, b
+	ld [wListScrollOffsetDex + 1], a
 	jp .loop
 .checkIfRightPressed
 	bit BIT_D_RIGHT, a
 	jr z, .checkIfLeftPressed
 .rightPressed ; scroll down 7 rows
+	ld a, [wDexMaxSeenMon + 1]
+	and a
+	jr nz, .rightPressedNotShort
 	ld a, [wDexMaxSeenMon]
 	cp 7
 	jp c, .loop ; can't if the list is shorter than 7
-	sub 6
+.rightPressedNotShort
+	ld a, [wDexMaxSeenMon]
+	ld c, a
+	ld a, [wDexMaxSeenMon + 1]
 	ld b, a
-	ld a, [wListScrollOffset]
-	add 7
-	ld [wListScrollOffset], a
+REPT 6
+	dec bc
+ENDR
+	ld a, [wListScrollOffsetDex]
+	ld e, a
+	ld a, [wListScrollOffsetDex + 1]
+	ld d, a
+REPT 7
+	inc de
+ENDR
+	ld a, e
+	ld [wListScrollOffsetDex], a
+	ld a, d
+	ld [wListScrollOffsetDex + 1], a
+	ld a, d
 	cp b
 	jp c, .loop
-	dec b
+	jr nz, .cutoff
+	ld a, e
+	cp c
+	jp c, .loop
+.cutoff
+	dec bc
+	ld a, c
+	ld [wListScrollOffsetDex], a
 	ld a, b
-	ld [wListScrollOffset], a
+	ld [wListScrollOffsetDex + 1], a
 	jp .loop
 .checkIfLeftPressed ; scroll up 7 rows
 	bit BIT_D_LEFT, a
 	jr z, .buttonAPressed
 .leftPressed
-	ld a, [wListScrollOffset]
-	sub 7
-	ld [wListScrollOffset], a
-	jp nc, .loop
+	ld a, [wListScrollOffsetDex]
+	ld c, a
+	ld a, [wListScrollOffsetDex + 1]
+	ld b, a
+REPT 7
+	dec bc
+ENDR
+	ld a, c
+	ld [wListScrollOffsetDex], a
+	ld a, b
+	ld [wListScrollOffsetDex + 1], a
+	ld a, b
+	cp $ff
+	jr z, .underflow
+	jp .loop
+.underflow
 	xor a
-	ld [wListScrollOffset], a
+	ld [wListScrollOffsetDex], a
+	ld [wListScrollOffsetDex + 1], a
 	jp .loop
 .buttonAPressed
 	scf
@@ -392,8 +511,10 @@ PokedexMenuItemsText:
 ; hl = address of bit field
 IsPokemonBitSet:
 	ld a, [wPokedexNum]
-	dec a
-	ld c, a
+	ld e, a
+	ld a, [wPokedexNum + 1]
+	ld d, a
+	dec de
 	ld b, FLAG_TEST
 	predef FlagActionPredef
 	ld a, c
@@ -417,11 +538,18 @@ ShowPokedexDataInternal:
 	call ClearScreen
 	ld a, [wPokedexNum]
 	ld [wCurPartySpecies], a
-	push af
+	ld c, a
+	ld a, [wPokedexNum + 1]
+	ld [wCurPartySpecies + 1], a
+	ld b, a
+	push bc
 	ld b, SET_PAL_POKEDEX
 	call RunPaletteCommand
-	pop af
+	pop bc
+	ld a, c
 	ld [wPokedexNum], a
+	ld a, b
+	ld [wPokedexNum + 1], a
 	ldh a, [hTileAnimations]
 	push af
 	xor a
@@ -468,9 +596,10 @@ ShowPokedexDataInternal:
 
 	ld hl, PokedexEntryPointers
 	ld a, [wPokedexNum]
-	dec a
 	ld e, a
-	ld d, 0
+	ld a, [wPokedexNum + 1]
+	ld d, a
+	dec de
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -484,7 +613,10 @@ ShowPokedexDataInternal:
 	ld l, c
 	push de
 	ld a, [wPokedexNum]
-	push af
+	ld c, a
+	ld a, [wPokedexNum + 1]
+	ld b, a
+	push bc
 	call IndexToPokedex
 
 	hlcoord 2, 8
@@ -492,16 +624,35 @@ ShowPokedexDataInternal:
 	ld [hli], a
 	ld a, "."
 	ld [hli], a
+	ld a, [wPokedexNum]
+	ld d, a
+	ld a, [wPokedexNum + 1]
+	ld [wPokedexNum], a
+	ld a, d
+	ld [wPokedexNum + 1], a
 	ld de, wPokedexNum
-	lb bc, LEADING_ZEROES | 1, 3
+	lb bc, LEADING_ZEROES | 2, 3
 	call PrintNumber ; print pokedex number
+	ld a, [wPokedexNum]
+	ld d, a
+	ld a, [wPokedexNum + 1]
+	ld [wPokedexNum], a
+	ld a, d
+	ld [wPokedexNum + 1], a
 
 	ld hl, wPokedexOwned
 	call IsPokemonBitSet
-	pop af
+	ld d, c
+	pop bc
+	ld a, c
 	ld [wPokedexNum], a
+	ld a, b
+	ld [wPokedexNum + 1], a
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
+	ld a, [wCurPartySpecies + 1]
+	ld [wCurSpecies + 1], a
+	ld c, d
 	pop de
 
 	push af
@@ -515,6 +666,9 @@ ShowPokedexDataInternal:
 	hlcoord 1, 1
 	call LoadFlippedFrontSpriteByMonIndex ; draw pokemon picture
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wCurPartySpecies + 1]
+	ld b, a
 	call PlayCry
 
 	pop hl
@@ -637,23 +791,32 @@ INCLUDE "data/pokemon/dex_entries.asm"
 
 PokedexToIndex:
 	; converts the Pokédex number at [wPokedexNum] to an index
+	push de
 	push bc
 	push hl
 	ld a, [wPokedexNum]
-	ld b, a
-	ld c, 0
+	ld e, a
+	ld a, [wPokedexNum + 1]
+	ld d, a
+	ld bc, 0
 	ld hl, PokedexOrder
 
 .loop ; go through the list until we find an entry with a matching dex number
-	inc c
+	inc bc
 	ld a, [hli]
-	cp b
+	cp e
+	ld a, [hli]
+	jr nz, .loop
+	cp d
 	jr nz, .loop
 
 	ld a, c
 	ld [wPokedexNum], a
+	ld a, b
+	ld [wPokedexNum + 1], a
 	pop hl
 	pop bc
+	pop de
 	ret
 
 IndexToPokedex:
@@ -661,13 +824,17 @@ IndexToPokedex:
 	push bc
 	push hl
 	ld a, [wPokedexNum]
-	dec a
-	ld hl, PokedexOrder
-	ld b, 0
 	ld c, a
+	ld a, [wPokedexNum + 1]
+	ld b, a
+	dec bc
+	ld hl, PokedexOrder
 	add hl, bc
-	ld a, [hl]
+	add hl, bc
+	ld a, [hli]
 	ld [wPokedexNum], a
+	ld a, [hl]
+	ld [wPokedexNum + 1], a
 	pop hl
 	pop bc
 	ret

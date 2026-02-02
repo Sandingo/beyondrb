@@ -1,4 +1,5 @@
-	db DEX_GOROCHU ; pokedex id
+GorochuBaseStats::
+	dw DEX_GOROCHU ; pokedex id
 
 	db  70,  100,  65, 65,  135
 	;   hp  atk  def  spd  spc

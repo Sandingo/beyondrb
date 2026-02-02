@@ -1,4 +1,5 @@
-	db DEX_SMUJJ ; pokedex id
+SmujjBaseStats::
+	dw DEX_SMUJJ ; pokedex id
 
 	db  60,  70,  40,  15,  40
 	;   hp  atk  def  spd  spc

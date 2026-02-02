@@ -180,7 +180,7 @@ CeladonGymErikaText:
 	call SaveEndBattleTextPointers
 	ld a, 1
 	ld [wIsTrainerBattle], a
-	ld a, OPP_ERIKA
+	ld a, ERIKA
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a

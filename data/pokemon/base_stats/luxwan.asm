@@ -1,4 +1,5 @@
-	db DEX_LUXWAN ; pokedex id
+LuxwanBaseStats::
+	dw DEX_LUXWAN ; pokedex id
 
 	db  72,  105,  75,  70,  63
 	;   hp  atk  def  spd  spc

@@ -12,7 +12,7 @@ LeagueHQB7F_Object:
 	def_bg_events
 
 	def_object_events
-	object_event 17, 10, SPRITE_COOLTRAINER_M, STAY, ANY_DIR, 1, OPP_COOLTRAINER_M, 6
+	object_event 17, 10, SPRITE_COOLTRAINER_M, STAY, ANY_DIR, 1, COOLTRAINER_M, 6
 	object_event 12,  8, SPRITE_POKE_BALL, STAY, NONE, 2, ULTRA_BALL
 
 	def_warps_to LEAGUE_HQ_B7F

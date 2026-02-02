@@ -1,4 +1,5 @@
-	db DEX_CLEFAIRY ; pokedex id
+ClefairyBaseStats::
+	dw DEX_CLEFAIRY ; pokedex id
 
 	db  70,  45,  48,  35,  60
 	;   hp  atk  def  spd  spc

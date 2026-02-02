@@ -112,7 +112,7 @@ PowerPlantVoltorbBattleText:
 PowerPlantZapdosBattleText:
 	text_far _PowerPlantZapdosBattleText
 	text_asm
-	ld a, ZAPDOS
+	ld bc, ZAPDOS
 	call PlayCry
 	call WaitForSoundToFinish
 	callfar RollForShiny

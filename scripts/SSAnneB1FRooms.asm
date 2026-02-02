@@ -82,7 +82,7 @@ SSAnneB1FRoomsFisherText:
 SSAnneB1FRoomsMachokeText:
 	text_far _SSAnneB1FRoomsMachokeText
 	text_asm
-	ld a, MACHOKE
+	ld bc, MACHOKE
 	call PlayCry
 	jp TextScriptEnd
 

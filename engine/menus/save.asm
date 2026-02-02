@@ -409,6 +409,7 @@ CopyBoxToOrFromSRAM:
 	xor a
 	ld [hli], a
 	dec a
+	ld [hli], a
 	ld [hl], a
 
 	ld hl, sBox1 ; sBox7
@@ -567,6 +568,7 @@ EmptySRAMBox:
 	xor a
 	ld [hli], a
 	dec a
+	ld [hli], a
 	ld [hl], a
 	ret
 

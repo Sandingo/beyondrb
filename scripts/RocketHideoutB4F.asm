@@ -97,7 +97,7 @@ RocketHideoutB4FFightArcherScript:
 	ld hl, RocketHideoutArcherDefeatedText
 	ld de, RocketHideoutArcherVictoryText
 	call SaveEndBattleTextPointers
-	ld a, OPP_ARCHER
+	ld a, ARCHER
 	ld [wCurOpponent], a
 	ld a, $1
 .done

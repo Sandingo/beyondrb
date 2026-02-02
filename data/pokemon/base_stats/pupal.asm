@@ -1,4 +1,5 @@
-	db DEX_PUPAL ; pokedex id
+PupalBaseStats::
+	dw DEX_PUPAL ; pokedex id
 
 	db  45,  20,  50,  40,  30
 	;   hp  atk  def  spd  spc

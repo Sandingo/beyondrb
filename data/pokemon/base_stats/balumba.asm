@@ -1,4 +1,5 @@
-	db DEX_BALUMBA ; pokedex id
+BalumbaBaseStats::
+	dw DEX_BALUMBA ; pokedex id
 
 	db 80,  50,  30,  125,  80
 	;   hp  atk  def  spd  spc

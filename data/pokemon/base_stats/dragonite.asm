@@ -1,4 +1,5 @@
-	db DEX_DRAGONITE ; pokedex id
+DragoniteBaseStats::
+	dw DEX_DRAGONITE ; pokedex id
 
 	db  91, 134,  95,  80, 100
 	;   hp  atk  def  spd  spc

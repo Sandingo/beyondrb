@@ -1,4 +1,5 @@
-	db DEX_DISTURBAN ; pokedex id
+DisturbanBaseStats::
+	dw DEX_DISTURBAN ; pokedex id
 
 	db  80,  90, 150,  30,  80
 	;   hp  atk  def  spd  spc

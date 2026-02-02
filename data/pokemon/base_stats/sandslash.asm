@@ -1,4 +1,5 @@
-	db DEX_SANDSLASH ; pokedex id
+SandslashBaseStats::
+	dw DEX_SANDSLASH ; pokedex id
 
 	db  75, 100, 110,  65,  55
 	;   hp  atk  def  spd  spc

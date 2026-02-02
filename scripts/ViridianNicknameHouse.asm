@@ -20,7 +20,7 @@ ViridianNicknameHouseSpearowText:
 	text_asm
 	ld hl, .Text
 	call PrintText
-	ld a, SPEAROW
+	ld bc, SPEAROW
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd

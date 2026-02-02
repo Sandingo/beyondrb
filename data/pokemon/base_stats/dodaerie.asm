@@ -1,4 +1,5 @@
-	db DEX_DODAERIE ; pokedex id
+DodaerieBaseStats::
+	dw DEX_DODAERIE ; pokedex id
 
 	db  30,  65,  40,  60,  30
 	;   hp  atk  def  spd  spc

@@ -21,7 +21,13 @@ RedrawPartyMenu_::
 .loop
 	ld a, [de]
 	cp $FF ; reached the terminator?
+	jr nz, .notAfter
+	inc de
+	ld a, [de]
+	cp $FF ; reached the terminator?
+	dec de
 	jp z, .afterDrawingMonEntries
+.notAfter
 	push bc
 	push de
 	push hl
@@ -103,6 +109,7 @@ RedrawPartyMenu_::
 	pop hl
 	pop de
 	inc de
+	inc de
 	ld bc, 2 * 20
 	add hl, bc
 	pop bc
@@ -115,23 +122,26 @@ RedrawPartyMenu_::
 .evolutionStoneMenu
 	push hl
 	ld hl, EvosMovesPointerTable
-	ld b, 0
 	ld a, [wLoadedMonSpecies]
-	dec a
-	add a
-	rl b
 	ld c, a
+	ld a, [wLoadedMonSpecies + 1]
+	ld b, a
+	dec bc
+	add hl, bc
+	add hl, bc
 	add hl, bc
 	ld de, wEvoDataBuffer
 	ld a, BANK(EvosMovesPointerTable)
-	ld bc, 2
+	ld bc, 3
 	call FarCopyData
 	ld hl, wEvoDataBuffer
+	ld a, [hli]
+	ld b, a
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
 	ld de, wEvoDataBuffer
-	ld a, BANK(EvosMovesPointerTable)
+	ld a, b
 	ld bc, 4 * 8 + 1 ; enough for Eevee's eight 4-byte evolutions and 0 terminator
 	call FarCopyData
 	ld hl, wEvoDataBuffer
@@ -143,13 +153,16 @@ RedrawPartyMenu_::
 	jr z, .placeEvolutionStoneString ; if so, place the "NOT ABLE" string
 	inc hl
 	inc hl
+	inc hl
 	cp EVOLVE_ITEM
 	jr nz, .checkEvolutionsLoop
 ; if it's a stone evolution entry
 	dec hl
 	dec hl
+	dec hl
 	ld b, [hl]
 	ld a, [wEvoStoneItemID] ; the stone the player used
+	inc hl
 	inc hl
 	inc hl
 	inc hl
