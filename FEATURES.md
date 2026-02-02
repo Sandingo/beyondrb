@@ -28,7 +28,7 @@
 * You can move between Pokémon Summary screens like in modern releases.
 * You can view a Pokémon's hidden stats by pressing Select on their summary screen.
 * Pressing Select on the party screen lets you swap your Pokémon around.
-* Move Deleter + Relearner in Fuchsia and Indigo Plateau respectively.
+* Move Deleter + Relearner in Fuchsia and Indigo Plateau respectively. The latter requires TinyMushrooms as currency, which respawn at Mt. Moon every E4 run.
 * Modern Exp. All sharing formula (Still requires 50 Pokémon caught to get)
 * Added NPCs and trades to help with version exclusive or once per save Pokémon.
 * Tradeback NPC in Celadon.
@@ -49,6 +49,7 @@
 * You can return to the Vermilion Dock even after the SS Anne departs.
 * One-use items, such as the Lift Key and Secret Key are removed from the inventory after using them. Less clutter!
 * The Itemfinder now points you to the direction of hidden items.
+* You can view a Pokémon's Summary in the PC even when the party is full.
 
 ## Changes
 * Several maps were altered to match earlier builds of RG, or utilize tiles that were otherwise unseen by the player.

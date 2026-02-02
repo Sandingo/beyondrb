@@ -4,7 +4,7 @@ WardensHouse_Script:
 WardensHouse_TextPointers:
 	def_text_pointers
 	dw_const WardensHouseWardenText,  TEXT_WARDENSHOUSE_WARDEN
-	dw_const PickUpItemText,          TEXT_WARDENSHOUSE_RARE_CANDY
+	dw_const WardenDiglettText,          TEXT_WARDENSHOUSE_DIGLETT
 	dw_const BoulderText,             TEXT_WARDENSHOUSE_BOULDER
 	dw_const WardensHouseDisplayText, TEXT_WARDENSHOUSE_DISPLAY_LEFT
 	dw_const WardensHouseDisplayText, TEXT_WARDENSHOUSE_DISPLAY_RIGHT
@@ -110,4 +110,58 @@ WardensHouseDisplayText:
 
 .MerchandiseText:
 	text_far _WardensHouseDisplayMerchandiseText
+	text_end
+
+WardenDiglettText:
+	text_asm
+	CheckEvent EVENT_WARDENS_HOUSE_RARE_CANDY
+	jr nz, .already_got
+	ld hl, .WardenDiglettCry
+	call PrintText
+	ld a, DIGLETT
+	call PlayCry
+	call WaitForSoundToFinish
+	call WaitForTextScrollButtonPress
+	ld hl, .WardensHouseRareCandyText
+	call PrintText
+	call WaitForTextScrollButtonPress
+	lb bc, RARE_CANDY, 1
+	call GiveItem
+	jr nc, .BagFull
+	SetEvent EVENT_WARDENS_HOUSE_RARE_CANDY
+	ld hl, .WardensHouseGotRareCandy
+	call PrintText
+	jr .done
+.already_got
+	ld hl, .WardenDiglettCry2
+	call PrintText
+	ld a, DIGLETT
+	call PlayCry
+	call WaitForSoundToFinish
+	jr .done
+.BagFull
+	ld hl, .BagFullText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+.WardenDiglettCry:
+	text_far _WardenDiglettCry
+	text_end
+	
+.WardenDiglettCry2:
+	text_far _WardenDiglettCry2
+	text_end
+
+.WardensHouseRareCandyText
+	text_far _WardensHouseRareCandyText
+	text_end
+
+.WardensHouseGotRareCandy:
+	text_far _WardensHouseGotRareCandy
+	sound_get_item_1
+	text_end
+
+.BagFullText:
+	text_far _WardensHouseWardenRareCandyNoRoom
 	text_end

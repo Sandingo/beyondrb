@@ -84,3 +84,30 @@ _WardensHouseDisplayMerchandiseText::
 	text "Old #MON"
 	line "merchandise."
 	done
+
+_WardenDiglettCry::
+	text "DIGLETT: Dig dig!"
+	done
+
+_WardensHouseRareCandyText::
+	text "What's that? It"
+	line "seems like it"
+	cont "wants to give you"
+	cont "something."
+	done
+
+_WardenDiglettCry2::
+	text "DIGLETT: Dig?"
+	done
+
+_WardensHouseGotRareCandy::
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
+	
+_WardensHouseWardenRareCandyNoRoom::
+	text "But your BAG is"
+	line "full!"
+	done

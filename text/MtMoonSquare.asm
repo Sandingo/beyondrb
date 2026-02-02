@@ -14,9 +14,11 @@ _MtMoonSquareClefairyCry2::
 	done
 
 _MtMoonSquareGotMoonStone::
-	text "The CLEFAIRY gave"
-	line "a MOON STONE!"
-	done
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
 
 _MtMoonSquareBagFull::
 	text "But your BAG is"
