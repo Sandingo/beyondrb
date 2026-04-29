@@ -119,6 +119,7 @@ DEF NUM_BADGES EQU const_value
 	const BIT_DUNGEON_WARP        ; 4
 	const BIT_ALWAYS_ON_BIKE      ; 5
 	const BIT_ESCAPE_WARP         ; 6
+	const BIT_RUNNING
 
 ; wStatusFlags7
 	const_def
@@ -140,8 +141,7 @@ DEF NUM_BADGES EQU const_value
 	const BIT_STANDING_ON_DOOR ; 0
 	const BIT_EXITING_DOOR     ; 1
 	const BIT_STANDING_ON_WARP ; 2
-	const BIT_RUNNING ; 3
-	const_skip 2; 4-5 ; unused
+	const_skip 3; 4-5 ; unused
 	const BIT_LEDGE_OR_FISHING ; 6
 	const BIT_SPINNING         ; 7
 
