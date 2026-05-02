@@ -378,7 +378,9 @@ hSavedMapTextPtr:: dw
 	ds 1
 ENDU
 
-	ds 4
+	ds 3
+
+hSkipOAMUpdates:: db
 
 hWhoseTurn:: db ; 0 on player's turn, 1 on enemy's turn
 
