@@ -116,7 +116,8 @@ DisplayTitleScreen:
 
 .tileScreenCopyrightTiles
 ;	db $41,$42,$43,$42,$44,$42,$45,$46,$47,$48,$49,$4A,$4B,$4C,$4D,$4E ; © 2025 SANDMEISTER. ; Original
-	db $45,$45,$41,$42,$43,$44,$45,$46,$47,$48,$49,$4A,$4B,$4C,$4D,$4E ; © 2025 SANDMEISTER
+;	db $45,$45,$41,$42,$43,$44,$45,$46,$47,$48,$49,$4A,$4B,$4C,$4D,$4E ; © 2025 SANDMEISTER
+	db $45,$41,$42,$43,$42,$44,$45,$46,$47,$48,$49,$4A,$4B,$4C,$4D,$4E ; © '25 '26 SANDMEISTER
 
 .next
 	call SaveScreenTilesToBuffer2
@@ -354,6 +355,7 @@ DrawPlayerCharacter:
 	dec b
 	jr nz, .loop
 	ret
+
 
 ClearBothBGMaps:
 	ld hl, vBGMap0

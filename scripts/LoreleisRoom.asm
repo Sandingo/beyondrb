@@ -131,8 +131,7 @@ LoreleisRoomLoreleiText:
 	text_asm
 	ld hl, LoreleisRoomTrainerHeader0
 	call TalkToTrainer
-    ld a, [wGameStage] ; Check if player has beat the game
-	and a
+    CheckEvent EVENT_BEAT_OAK ; Check if player has beat Prof. Oak
 	jr z, .notRematch
 	ld a, 2
 	ld [wTrainerNo], a

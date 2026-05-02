@@ -68,8 +68,7 @@ ChampionsRoomRivalReadyToBattleScript:
 	ld a, OPP_RIVAL3
 	ld [wCurOpponent], a
 
-   ld a, [wGameStage] ; Check if player has beat the game
-	and a
+    CheckEvent EVENT_BEAT_OAK ; Check if player has beat Prof. Oak
 	jr z, .notRematch
 	; select which team to use during the encounter
 	ld a, [wRivalStarter]

@@ -558,7 +558,7 @@ WarpFound2::
 	jr nz, .notRockTunnel
 	ld a, $06
 	ld [wMapPalOffset], a
-	call GBFadeOutToBlack
+;	call GBFadeOutToBlack
 .notRockTunnel
 	jr .done
 
