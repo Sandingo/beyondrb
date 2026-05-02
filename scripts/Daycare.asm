@@ -80,6 +80,26 @@ DaycareGentlemanText:
 	call GetBabyID ; Get BabymonID
 	ld c, $5	   ; Babies are at lv 5, like Gen 2
 	call GivePokemon
+	
+; Add a random egg move to the baby
+	ld a, [wPartyCount]
+    dec a
+    ld hl, wPartyMon1Moves
+    ld bc, wPartyMon2 - wPartyMon1
+    call AddNTimes ; HL Points to the party slot the baby is now in.
+	
+; Placeholder Splash
+	inc hl
+	ld [hl], SPLASH ; Second Move slot
+; Define PP
+   push hl
+    ld bc, wPartyMon1PP - (wPartyMon1Moves + 4)
+    add hl, bc
+	inc hl
+    ld [hl], 40            ; Splash PP
+	pop hl
+; Normal
+
 	jp .noEgg
 .declineEgg
 	ld hl, .DeclineEggText 
@@ -305,7 +325,7 @@ DaycareGentlemanText:
 	text_end
 
 INCLUDE "data/pokemon/breeding_list.asm"
-
+INCLUDE "data/pokemon/egg_moves.asm"
 
 CanBreed: ; Checks if the Pokemon cannot breed (Legendaries and Ditto)
 	ld hl, NoBreedList
@@ -341,3 +361,13 @@ SetEggSteps:
 	ld a, b
 	ld [wEggRemainingSteps], a
 	ret
+	
+GetEggMove:
+	push bc
+	ld a, [wDayCareMonSpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, EggMovePointers
+	add hl, bc
+	add hl, bc

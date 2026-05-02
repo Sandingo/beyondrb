@@ -108,7 +108,7 @@ MoveRelearnerText1:
 ;	ld a, MONEY_BOX
 ;	ld [wTextBoxID], a
 ;	call DisplayTextBoxID
-	ld hl, MushroomList ; Load a list of Bottle Cap items. This is the same code as the Saffron Guard.
+	ld hl, MushroomList ; Load a list of Mushroom items. This is basically copypasted and edited from the KEP Bottle Cap function.
 .loop
 	ld a, [hli]
 	ldh [hItemToRemoveID], a
@@ -127,7 +127,7 @@ MoveRelearnerText1:
 
 MushroomList:
 	db TINYMUSHROOM
-	;db BIG_MUSHROOM if you ever want to add BIG MUSHROOMS,, you can chuck that in here.
+	;db BIG_MUSHROOM if you ever want to add BIG MUSHROOMS, you can chuck that in here.
 	db 0 ; end
 
 MoveRelearnerGreetingText:
