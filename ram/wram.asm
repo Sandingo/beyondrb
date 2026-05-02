@@ -1868,9 +1868,10 @@ wDestinationWarpID:: db
 	; item, quantity
        wBagItems:: ds BAG_ITEM_CAPACITY * 2 + 1 ; now holds 30 items
        ;;;;
-       ; 67 bytes left to use
        ENDU
        ;;;;;;;;;;
+
+	ds 40
 
 ; number of signs in the current map (up to 16)
 wNumSigns:: db
