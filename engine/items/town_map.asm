@@ -302,7 +302,7 @@ LoadTownMap:
 	ld de, vSprites tile $04
 	ld bc, MonNestIconEnd - MonNestIcon
 	ld a, BANK(MonNestIcon)
-	call FarCopyDataDouble
+	call FarCopyData2 ; marcelnote - eye color for mon nest icon
 	hlcoord 0, 0
 	ld de, CompressedMap
 .nextTile
@@ -615,7 +615,7 @@ INCLUDE "data/maps/town_map_entries.asm"
 INCLUDE "data/maps/names.asm"
 
 MonNestIcon:
-	INCBIN "gfx/town_map/mon_nest_icon.1bpp"
+	INCBIN "gfx/town_map/mon_nest_icon.2bpp"
 MonNestIconEnd:
 
 TownMapSpriteBlinkingAnimation::

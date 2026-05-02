@@ -11,6 +11,7 @@
 InitMapSprites::
 	call InitOutsideMapSprites
 	ret c ; return if the map is an outside map (already handled by above call)
+	farcall SpriteSpecialProperties
 ; if the map is an inside map (i.e. mapID >= FIRST_INDOOR_MAP)
 	ld hl, wSpritePlayerStateData1PictureID
 	ld de, wSpritePlayerStateData2PictureID
@@ -341,6 +342,7 @@ InitOutsideMapSprites:
 	dec b
 	jr nz, .zeroVRAMSlotsLoop
 .skipLoadingSpriteSet
+	farcall SpriteSpecialProperties
 	ld hl, wSprite01StateData1
 ; This loop stores the correct VRAM tile pattern slots according the sprite
 ; data from the map's header. Since the VRAM tile pattern slots are filled in

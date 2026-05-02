@@ -187,3 +187,114 @@ GetSpriteScreenXY:
 	and $f0
 	ld [de], a  ; [x#SPRITESTATEDATA1_XADJUSTED]
 	ret
+
+
+SpriteSpecialProperties::	
+; This part of the function look for sprites in SpecialOAMlist and load special proporties in wSpriteStateData2
+; it make use of the previously unused bytes $1, $A and $B
+	ld e, $10
+
+.spriteLoop
+	ld d, HIGH(wSpriteStateData1) ; start by searching the PictureID of the current map object
+	ld a, [de] ; [x#SPRITESTATEDATA1_PICTUREID]
+	ld [wSavedSpritePictureID], a
+	inc e
+	inc d
+
+	ld hl, SpecialOAMlist ; loading list for identification and properties values
+	push de ; save d and e
+	ld de, 4 ; define the number of properties in list
+	call IsInArray ; check if Sprite is in list ; modify a/b/de
+	pop de
+	jr c, .foundMatch
+
+	xor a
+	ld [de], a
+	ld a, $9
+	add e
+	ld e, a
+	xor a
+	ld [de], a
+	inc e
+	ld [de], a
+	jr .nextCheck
+
+.foundMatch
+	inc hl
+	ld a, [hli]
+	ld [de], a
+	ld a, $9
+	add e
+	ld e, a
+	ld a, [hli]
+	ld [de], a
+	inc e
+	ld a, [hl]
+	ld [de], a
+
+.nextCheck
+; This part of the function look for sprites in AnimatedSpriteList and load an animation value in 
+; wSpriteStateData2 if found, it make use of the previously unused byte $C of wSpriteStateData2.
+	inc e
+
+	ld a, [wSavedSpritePictureID]
+	ld b, a
+
+	ld hl, AnimatedSpriteList
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .noMatch
+
+	cp b
+	ld a, [hli]
+	jr nz, .loop
+	jr .found
+	
+.noMatch
+	xor a
+.found	
+	ld [de], a
+
+.nextsprite
+	ld a, e
+	add $10
+	and $f0
+	ld e, a
+	jp nz, .spriteLoop
+	ret
+
+SpecialOAMlist:
+	; see constants/sprite_constants.asm
+	; db SPRITE_CONSTANT, $OAMtable, YPixelOffest, XPixelOffset
+; Regular sprites with -1 X offset on down/up flipped walking frame 
+	db SPRITE_DODUO,                    $2, 0, 0
+	db SPRITE_FEAROW,                   $2, 0, 0
+	db SPRITE_JIGGLYPUFF,               $2, 0, 0
+	db SPRITE_MACHOKE,                  $2, 0, 0
+	db SPRITE_MACHOP,                   $2, 0, 0
+	db SPRITE_PIDGEY,                   $2, 0, 0
+	db SPRITE_PIKACHU,                  $2, 0, 0
+	db SPRITE_ZAPDOS,                   $2, 0, 0
+; Still, Y offset
+	db SPRITE_BOULDER,                  $1, 3, 0
+	db SPRITE_SNORLAX,                  $1, 4, 0
+	db -1
+
+; Walking animation speed is 4, bigger value equal slower speed
+DEF IDDLE_FLY     EQU   6 ; slightly slower speed
+DEF IDDLE_SWIM    EQU  12 ; slower speed
+
+AnimatedSpriteList:
+; \1 Sprite to animate, 
+; \2 Ticks between animation frames, must be > 0.
+; A value of 4 is the normal walking animation speed.
+; Values > $80 are for special animation paterns.
+	db SPRITE_ARTICUNO,    	IDDLE_FLY
+	db SPRITE_FEAROW,      	IDDLE_FLY
+	db SPRITE_LAPRAS,      		IDDLE_SWIM
+	db SPRITE_SEEL,      			IDDLE_SWIM
+	db SPRITE_SWIMMER_M, 	IDDLE_SWIM
+	db SPRITE_MOLTRES,     	IDDLE_FLY
+	db SPRITE_ZAPDOS,      	IDDLE_FLY
+	db -1
