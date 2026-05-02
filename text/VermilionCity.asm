@@ -35,7 +35,7 @@ _VermilionCitySailor1DoYouHaveATicketText::
 	prompt
 
 _VermilionCitySailor1FlashedTicketText::
-	text "<PLAYER> flashed"
+	text "<PLAYER> handed over"
 	line "the S.S.TICKET!"
 
 	para "Great! Welcome to"
