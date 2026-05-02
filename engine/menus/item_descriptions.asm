@@ -1,4 +1,4 @@
-DisplayItemDescription::
+DisplayItemDescription:: ; Unused
 	ld a, [wCurItem]
 	dec a
 	cp a, HM01 - 1
@@ -10,330 +10,381 @@ DisplayItemDescription::
 	call AddNTimes
 	jp PrintText
 
+PrintItemDescriptionBlurb:: ; the problem child
+	; Get item id.
+	ld a, [wCurrentMenuItem]
+	ld c, a
+	ld a, [wListScrollOffset]
+	add c
+	ld c, a
+	ld hl, wListPointer
+	ld a, [hli]
+	ld e, a
+	ld a, [hl]
+	ld d, a
+	inc de  ; de = pointer to list
+	ld h, d
+	ld l, e
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	ld d, a ; d = item id
+	call PrintItemDescPart2
+	ret
+
+FlashItemDescriptionBlurb::
+	ld a, [wCurrentMenuItem]
+PrintItemDescPart2:
+	cp $ff
+	ld hl, EmptyDescription
+	jr z, .doneAdding
+	dec a
+	cp a, HM01 - 1
+	jr c, .ready
+	sub HM01 - FLOOR_B2F
+.ready
+	ld hl,ItemDescriptionPointers
+	ld bc, 5
+.add
+	and a
+	jr z, .doneAdding
+	dec a
+	add hl, bc
+	jr .add
+.doneAdding
+	push hl
+	pop hl
+	call PrintText
+	ret
+
+EmptyDescription:
+	db ""
+	db "@"
+
 ItemDescriptionPointers:
 	text_far _MasterBallDescription
-	text_end
+	db "@"
 	text_far _UltraBallDescription
-	text_end
+	db "@"
 	text_far _GreatBallDescription
-	text_end
+	db "@"
 	text_far _PokeBallDescription
-	text_end
+	db "@"
 	text_far _TownMapDescription
-	text_end
+	db "@"
 	text_far _BicycleDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _MoonStoneDescription
-	text_end
+	db "@"
 	text_far _AntidoteDescription
-	text_end
+	db "@"
 	text_far _BurnHealDescription
-	text_end
+	db "@"
 	text_far _IceHealDescription
-	text_end
+	db "@"
 	text_far _AwakeningDescription
-	text_end
+	db "@"
 	text_far _ParlyzHealDescription
-	text_end
+	db "@"
 	text_far _FullRestoreDescription
-	text_end
+	db "@"
 	text_far _MaxPotionDescription
-	text_end
+	db "@"
 	text_far _HyperPotionDescription
-	text_end
+	db "@"
 	text_far _SuperPotionDescription
-	text_end
+	db "@"
 	text_far _PotionDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _EscapeRopeDescription
-	text_end
+	db "@"
 	text_far _RepelDescription
-	text_end
+	db "@"
 	text_far _OldAmberDescription
-	text_end
+	db "@"
 	text_far _FireStoneDescription
-	text_end
+	db "@"
 	text_far _ThunderStoneDescription
-	text_end
+	db "@"
 	text_far _WaterStoneDescription
-	text_end
+	db "@"
 	text_far _HPUpDescription
-	text_end
+	db "@"
 	text_far _ProteinDescription
-	text_end
+	db "@"
 	text_far _IronDescription
-	text_end
+	db "@"
 	text_far _CarbosDescription
-	text_end
+	db "@"
 	text_far _CalciumDescription
-	text_end
+	db "@"
 	text_far _RareCandyDescription
-	text_end
+	db "@"
 	text_far _DomeFossilDescription
-	text_end
+	db "@"
 	text_far _HelixFossilDescription
-	text_end
+	db "@"
 	text_far _SecretKeyDescription
-	text_end
+	db "@"
 	text_far _SunStoneDescription
-	text_end
+	db "@"
 	text_far _BikeVoucherDescription
-	text_end
+	db "@"
 	text_far _XAccuracyDescription
-	text_end
+	db "@"
 	text_far _LeafStoneDescription
-	text_end
+	db "@"
 	text_far _CardKeyDescription
-	text_end
+	db "@"
 	text_far _NuggetDescription
-	text_end
+	db "@"
 	text_far _IceStoneDescription
-	text_end
+	db "@"
 	text_far _PokeDollDescription
-	text_end
+	db "@"
 	text_far _FullHealDescription
-	text_end
+	db "@"
 	text_far _ReviveDescription
-	text_end
+	db "@"
 	text_far _MaxReviveDescription
-	text_end
+	db "@"
 	text_far _GuardSpecDescription
-	text_end
+	db "@"
 	text_far _SuperRepelDescription
-	text_end
+	db "@"
 	text_far _MaxRepelDescription
-	text_end
+	db "@"
 	text_far _DireHitDescription
-	text_end
+	db "@"
 	text_far _UnusedItemDescription
-	text_end
+	db "@"
 	text_far _FreshWaterDescription
-	text_end
+	db "@"
 	text_far _SodaPopDescription
-	text_end
+	db "@"
 	text_far _LemonadeDescription
-	text_end
+	db "@"
 	text_far _SSTicketDescription
-	text_end
+	db "@"
 	text_far _GoldTeethDescription
-	text_end
+	db "@"
 	text_far _XAttackDescription
-	text_end
+	db "@"
 	text_far _XDefendDescription
-	text_end
+	db "@"
 	text_far _XSpeedDescription
-	text_end
+	db "@"
 	text_far _XSpecialDescription
-	text_end
+	db "@"
 	text_far _CoinCaseDescription
-	text_end
+	db "@"
 	text_far _OaksParcelDescription
-	text_end
+	db "@"
 	text_far _ItemfinderDescription
-	text_end
+	db "@"
 	text_far _SilphScopeDescription
-	text_end
+	db "@"
 	text_far _PokeFluteDescription
-	text_end
+	db "@"
 	text_far _LiftKeyDescription
-	text_end
+	db "@"
 	text_far _ExpAllDescription
-	text_end
+	db "@"
 	text_far _OldRodDescription
-	text_end
+	db "@"
 	text_far _GoodRodDescription
-	text_end
+	db "@"
 	text_far _SuperRodDescription
-	text_end
+	db "@"
 	text_far _PPUpDescription
-	text_end
+	db "@"
 	text_far _EtherDescription
-	text_end
+	db "@"
 	text_far _MaxEtherDescription
-	text_end
+	db "@"
 	text_far _ElixerDescription
-	text_end
+	db "@"
 	text_far _MaxElixerDescription
-	text_end
+	db "@"
 	text_far _MetalCoatDescription
-	text_end
+	db "@"
 	text_far _ProtectorDescription
-	text_end
+	db "@"
 	text_far _ElectirizerDescription
-	text_end
+	db "@"
 	text_far _MagmarizerDescription
-	text_end
+	db "@"
 	text_far _CandyJarDescription
-	text_end
+	db "@"
 	text_far _BottleCapDescription
-	text_end
+	db "@"
 	text_far _PewterCrunchDescription
-	text_end
+	db "@"
 	text_far _EverstoneDescription
-	text_end
+	db "@"
 	text_far _AmuletCoinDescription
-	text_end
+	db "@"
 	text_far _OrangeTicketDescription
-	text_end
+	db "@"
 	text_far _DragonScaleDescription
-	text_end
+	db "@"
 	text_far _KingsRockDescription
-	text_end
+	db "@"
 	text_far _DuskStoneDescription
-	text_end
+	db "@"
 	text_far _UpgradeDescription
-	text_end
+	db "@"
 	text_far _BlkAuguriteDescription
-	text_end
+	db "@"
 	text_far _ShinyCharmDescription
-	text_end
+	db "@"
 	text_far _OvalStoneDescription
-	text_end
+	db "@"
 	text_far _WingFossilDescription
-	text_end
+	db "@"
 	text_far _MysteryBoxDescription
-	text_end
+	db "@"
 	text_far _TinyMushroomDescription
-	text_end
+	db "@"
 	text_far _HM01Description
-	text_end
+	db "@"
 	text_far _HM02Description
-	text_end
+	db "@"
 	text_far _HM03Description
-	text_end
+	db "@"
 	text_far _HM04Description
-	text_end
+	db "@"
 	text_far _HM05Description
-	text_end
+	db "@"
 	text_far _HM06Description
-	text_end
+	db "@"
 	text_far _TM01Description
-	text_end
+	db "@"
 	text_far _TM02Description
-	text_end
+	db "@"
 	text_far _TM03Description
-	text_end
+	db "@"
 	text_far _TM04Description
-	text_end
+	db "@"
 	text_far _TM05Description
-	text_end
+	db "@"
 	text_far _TM06Description
-	text_end
+	db "@"
 	text_far _TM07Description
-	text_end
+	db "@"
 	text_far _TM08Description
-	text_end
+	db "@"
 	text_far _TM09Description
-	text_end
+	db "@"
 	text_far _TM10Description
-	text_end
+	db "@"
 	text_far _TM11Description
-	text_end
+	db "@"
 	text_far _TM12Description
-	text_end
+	db "@"
 	text_far _TM13Description
-	text_end
+	db "@"
 	text_far _TM14Description
-	text_end
+	db "@"
 	text_far _TM15Description
-	text_end
+	db "@"
 	text_far _TM16Description
-	text_end
+	db "@"
 	text_far _TM17Description
-	text_end
+	db "@"
 	text_far _TM18Description
-	text_end
+	db "@"
 	text_far _TM19Description
-	text_end
+	db "@"
 	text_far _TM20Description
-	text_end
+	db "@"
 	text_far _TM21Description
-	text_end
+	db "@"
 	text_far _TM22Description
-	text_end
+	db "@"
 	text_far _TM23Description
-	text_end
+	db "@"
 	text_far _TM24Description
-	text_end
+	db "@"
 	text_far _TM25Description
-	text_end
+	db "@"
 	text_far _TM26Description
-	text_end
+	db "@"
 	text_far _TM27Description
-	text_end
+	db "@"
 	text_far _TM28Description
-	text_end
+	db "@"
 	text_far _TM29Description
-	text_end
+	db "@"
 	text_far _TM30Description
-	text_end
+	db "@"
 	text_far _TM31Description
-	text_end
+	db "@"
 	text_far _TM32Description
-	text_end
+	db "@"
 	text_far _TM33Description
-	text_end
+	db "@"
 	text_far _TM34Description
-	text_end
+	db "@"
 	text_far _TM35Description
-	text_end
+	db "@"
 	text_far _TM36Description
-	text_end
+	db "@"
 	text_far _TM37Description
-	text_end
+	db "@"
 	text_far _TM38Description
-	text_end
+	db "@"
 	text_far _TM39Description
-	text_end
+	db "@"
 	text_far _TM40Description
-	text_end
+	db "@"
 	text_far _TM41Description
-	text_end
+	db "@"
 	text_far _TM42Description
-	text_end
+	db "@"
 	text_far _TM43Description
-	text_end
+	db "@"
 	text_far _TM44Description
-	text_end
+	db "@"
 	text_far _TM45Description
-	text_end
+	db "@"
 	text_far _TM46Description
-	text_end
+	db "@"
 	text_far _TM47Description
-	text_end
+	db "@"
 	text_far _TM48Description
-	text_end
+	db "@"
 	text_far _TM49Description
-	text_end
+	db "@"
 	text_far _TM50Description
-	text_end
+	db "@"
 	text_far _TM51Description
-	text_end
+	db "@"
 	text_far _TM52Description
-	text_end
+	db "@"
 	text_far _TM53Description
-	text_end
+	db "@"
 	text_far _TM54Description
-	text_end
+	db "@"

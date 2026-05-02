@@ -276,7 +276,7 @@ wMenuWatchMovingOutOfBounds:: db
 
 wTradeCenterPointerTableIndex:: db
 
-	ds 1
+wIsItemMenu:: db ; Used to track when to display the Item Description
 
 ; destination pointer for text output
 ; this variable is written to, but is never read from

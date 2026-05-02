@@ -54,6 +54,11 @@ DisplayListMenuID::
 	ld [wMenuWatchedKeys], a
 	ld c, 10
 	call DelayFrames
+	ld a, [wIsItemMenu]
+	cp $01 ; is this an item menu
+	jp nz, .finish ; If not, skip
+	callfar FlashItemDescriptionBlurb
+.finish
 
 DisplayListMenuIDLoop::
 	xor a
@@ -204,12 +209,18 @@ DisplayListMenuIDLoop::
 	cp b ; will going down scroll past the Cancel button?
 	jp c, DisplayListMenuIDLoop
 	inc [hl] ; if not, go down
-	jp DisplayListMenuIDLoop
+	jr .menuCheck
 .upPressed
 	ld a, [hl]
 	and a
 	jp z, DisplayListMenuIDLoop
 	dec [hl]
+.menuCheck
+	ld a, [wIsItemMenu]
+	cp $01 ; is this an item menu
+	jp nz, .finish ; If not, skip
+	callfar FlashItemDescriptionBlurb
+.finish
 	jp DisplayListMenuIDLoop
 
 DisplayChooseQuantityMenu::

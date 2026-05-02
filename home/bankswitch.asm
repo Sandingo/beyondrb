@@ -30,6 +30,7 @@ Bankswitch::
 .Return
 	pop bc
 	ld a, b
+SetCurBank:: ; PureRGBnote: CHANGED: a lot of functions in home bank ran the next 2 lines of code, we can save a lot of space in home by simply calling this subroutine instead.
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
 	ret

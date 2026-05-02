@@ -317,6 +317,8 @@ StartMenu_Item::
 	call PrintText
 	jr .exitMenu
 .notInCableClubRoom
+	ld a, $01
+	ld [wIsItemMenu], a ; Confirms its an item menu
 	call DrawItemCountBox
 	ld bc, wNumBagItems
 	ld hl, wListPointer
@@ -334,11 +336,15 @@ StartMenu_Item::
 	ld [wBagSavedMenuItem], a
 	jr nc, .choseItem
 .exitMenu
+	ld a, $0
+	ld [wIsItemMenu], a ; Turn Item Menu Off
 	call LoadScreenTilesFromBuffer2 ; restore saved screen
 	call LoadTextBoxTilePatterns
 	call UpdateSprites
 	jp RedisplayStartMenu
 .choseItem
+	ld a, $0
+	ld [wIsItemMenu], a ; Turn Item Menu Off
 ; erase menu cursor (blank each tile in front of an item name)
 	ld a, " "
 	ldcoord_a 5, 4

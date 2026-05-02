@@ -1,32 +1,32 @@
 _MasterBallDescription::
 	text "The best BALL. It"
 	next "never misses."
-	prompt
+	done
 
 _UltraBallDescription::
 	text "A BALL with a high"
 	next "rate of success."
-	prompt
+	done
 
 _GreatBallDescription::
 	text "A BALL with a de-"
 	next "cent success rate."
-	prompt
+	done
 
 _PokeBallDescription::
 	text "An item for catch-"
 	next "ing #MON."
-	prompt
+	done
 
 _TownMapDescription::
 	text "Shows your present"
 	next "location."
-	prompt
+	done
 
 _BicycleDescription::
 	text "A collapsible bike"
 	next "for fast movement."
-	prompt
+	done
 
 _MoonStoneDescription::
 _FireStoneDescription::
@@ -48,629 +48,629 @@ _BlkAuguriteDescription::
 _OvalStoneDescription::
 	text "Evolves certain"
 	next "kinds of #MON."
-	prompt
+	done
 
 _AntidoteDescription::
 	text "Cures poisoned"
 	next "#MON."
-	prompt
+	done
 
 _BurnHealDescription::
 	text "Heals burned"
 	next "#MON."
-	prompt
+	done
 
 _IceHealDescription::
 	text "Defrosts frozen"
 	next "#MON."
-	prompt
+	done
 
 _AwakeningDescription::
 	text "Awakens sleeping"
 	next "#MON."
-	prompt
+	done
 
 _ParlyzHealDescription::
 	text "Heals paralyzed"
 	next "#MON."
-	prompt
+	done
 
 _FullRestoreDescription::
 	text "Fully restores HP"
 	next "and status."
-	prompt
+	done
 
 _MaxPotionDescription::
 	text "Fully restores"
 	next "#MON HP."
-	prompt
+	done
 
 _HyperPotionDescription::
 	text "Restores #MON"
 	next "HP by 200."
-	prompt
+	done
 
 _SuperPotionDescription::
 	text "Restores #MON"
 	next "HP by 50."
-	prompt
+	done
 
 _PotionDescription::
 	text "Restores #MON"
 	next "HP by 20."
-	prompt
+	done
 
 _EscapeRopeDescription::
 	text "Use for escaping"
 	next "from caves, etc."
-	prompt
+	done
 
 _RepelDescription::
 	text "Repels weak #-"
 	next "MON for 100 steps."
-	prompt
+	done
 
 _OldAmberDescription::
 	text "Fossilized resin"
 	next "containing DNA."
-	prompt
+	done
 
 _HPUpDescription::
 	text "Raises the HP of"
 	next "one #MON."
-	prompt
+	done
 
 _ProteinDescription::
 	text "Raises ATTACK of"
 	next "one #MON."
-	prompt
+	done
 
 _IronDescription::
 	text "Raises DEFENSE of"
 	next "one #MON."
-	prompt
+	done
 
 _CarbosDescription::
 	text "Raises SPEED of"
 	next "one #MON."
-	prompt
+	done
 
 _CalciumDescription::
 	text "Raises SPECIAL"
 	next "of one #MON."
-	prompt
+	done
 
 _RareCandyDescription::
 	text "Raises level of a"
 	next "#MON by one."
-	prompt
+	done
 
 _WingFossilDescription::
 	text "A fossilized"
 	next "#MON wing."
-	prompt
+	done
 
 _DomeFossilDescription::
 _HelixFossilDescription::
 	text "A fossilized"
 	next "#MON shell."
-	prompt
+	done
 
 _MysteryBoxDescription::
 	text "A mysterious old"
 	next "box."
-	prompt
+	done
 
 _SecretKeyDescription::
 	text "Opens the door to"
 	next "the CINNABAR GYM."
-	prompt
+	done
 
 _BikeVoucherDescription::
 	text "Exchange for a new"
 	next "BICYCLE."
-	prompt
+	done
 
 _XAccuracyDescription::
 	text "Raises accuracy."
 	next "(1 BTL)"
-	prompt
+	done
 
 _CardKeyDescription::
 	text "Opens shutters in"
 	next "SILPH CO."
-	prompt
+	done
 
 _NuggetDescription::
 	text "Made of pure gold."
 	next "Sell high."
-	prompt
+	done
 
 _PokeDollDescription::
 	text "Use to escape from"
 	next "a wild #MON."
-	prompt
+	done
 
 _PewterCrunchDescription::
 	text "A local specialty."
 	next "Heals ailments."
-	prompt
+	done
 
 _FullHealDescription::
 	text "Eliminates all"
 	next "status problems."
-	prompt
+	done
 
 _ReviveDescription::
 	text "Restores a fainted"
 	next "#MON to 1/2 HP."
-	prompt
+	done
 
 _MaxReviveDescription::
 	text "Fully restores a"
 	next "fainted #MON."
-	prompt
+	done
 
 _GuardSpecDescription::
 	text "Prevents stats"
 	next "reduction. (1 BTL)"
-	prompt
+	done
 
 _SuperRepelDescription::
 	text "Repels weak #-"
 	next "MON for 200 steps."
-	prompt
+	done
 
 _MaxRepelDescription::
 	text "Repels weak #-"
 	next "MON for 250 steps."
-	prompt
+	done
 
 _DireHitDescription::
 	text "Ups critical hit"
 	next "ratio. (1 BTL)"
-	prompt
+	done
 
 _FreshWaterDescription::
 	text "Restores #MON"
 	next "HP by 50."
-	prompt
+	done
 
 _SodaPopDescription::
 	text "Restores #MON"
 	next "HP by 60."
-	prompt
+	done
 
 _LemonadeDescription::
 	text "Restores #MON"
 	next "HP by 80."
-	prompt
+	done
 
 _SSTicketDescription::
 	text "A ticket for the"
 	next "S.S.ANNE."
-	prompt
+	done
 
 _GoldTeethDescription::
 	text "Gold dentures lost"
 	next "by the WARDEN."
-	prompt
+	done
 
 _XAttackDescription::
 	text "Raises ATTACK."
 	next "(1 BTL)"
-	prompt
+	done
 
 _XDefendDescription::
 	text "Raises DEFENSE."
 	next "(1 BTL)"
-	prompt
+	done
 
 _XSpeedDescription::
 	text "Raises SPEED."
 	next "(1 BTL)"
-	prompt
+	done
 
 _XSpecialDescription::
 	text "Raises SPECIAL."
 	next "(1 BTL)"
-	prompt
+	done
 
 _CoinCaseDescription::
 	text "Holds up to 9,999"
 	next "game coins."
-	prompt
+	done
 
 _OaksParcelDescription::
 	text "A parcel belonging"
 	next "to PROF.OAK."
-	prompt
+	done
 
 _ItemfinderDescription::
 	text "Checks for unseen"
 	next "items in the area."
-	prompt
+	done
 
 _SilphScopeDescription::
 	text "A scope to see in-"
 	next "visible #MON."
-	prompt
+	done
 
 _PokeFluteDescription::
 	text "Instantly awakens"
 	next "any #MON."
-	prompt
+	done
 
 _LiftKeyDescription::
 	text "Key to the lift in"
 	next "the ROCKET base."
-	prompt
+	done
 
 _ExpAllDescription::
 	text "Shares battle EXP."
 	next "points."
-	prompt
+	done
 
 _OldRodDescription::
 	text "Use by water to"
 	next "fish for #MON."
-	prompt
+	done
 
 _GoodRodDescription::
 	text "A good ROD for"
 	next "catching #MON."
-	prompt
+	done
 
 _SuperRodDescription::
 	text "The best ROD for"
 	next "catching #MON."
-	prompt
+	done
 
 _PPUpDescription::
 	text "Raises max PP of"
 	next "a selected move."
-	prompt
+	done
 
 _EtherDescription::
 	text "Restores PP of one"
 	next "move by 10."
-	prompt
+	done
 
 _MaxEtherDescription::
 	text "Fully restores PP"
 	next "of one move."
-	prompt
+	done
 
 _ElixerDescription::
 	text "Restores PP of all"
 	next "moves by 10."
-	prompt
+	done
 
 _MaxElixerDescription::
 	text "Fully restores the"
 	next "PP of one #MON."
-	prompt
+	done
 	
 _BottleCapDescription::
 	text "Has a silver glow."
 	next "Considered rare."
-	prompt
+	done
 
 _EverstoneDescription::
 	text "Prevents level up"
 	next "evolutions."
-	prompt
+	done
 
 _AmuletCoinDescription::
 	text "Doubles money from"
 	next "trainer battles."
-	prompt
+	done
 
 _OrangeTicketDescription::
 	text "A ticket for the"
 	next "ORANGE ISLANDS."
-	prompt
+	done
 
 _ShinyCharmDescription::
 	text "Increases the odds"
 	next "of SHINY #MON."
-	prompt
+	done
 
 _HM01Description::
 	text "Cuts using claws,"
 	next "scythes, etc."
-	prompt
+	done
 
 _HM02Description::
 	text "1st turn: Fly"
 	next "2nd turn: Attack"
-	prompt
+	done
 
 _HM03Description::
 	text "A strong water-"
 	next "type attack."
-	prompt
+	done
 
 _HM04Description::
 	text "A powerful physi-"
 	next "cal attack."
-	prompt
+	done
 
 _HM05Description::
 	text "Blinds the foe to"
 	next "reduce accuracy."
-	prompt
+	done
 
 _HM06Description::
 	text "An aquatic attack"
 	next "that may flinch."
-	prompt
+	done
 
 _TM01Description::
 	text "A powerful punch"
 	next "thrown very hard."
-	prompt
+	done
 
 _TM02Description::
 	text "1st turn: Prepare"
 	next "2nd turn: Attack"
-	prompt
+	done
 
 _TM03Description::
 	text "A dance that in-"
 	next "creases ATTACK."
-	prompt
+	done
 
 _TM04Description::
 	text "Blows away the foe"
 	next "Ends wild battles."
-	prompt
+	done
 
 _TM05Description::
 	text "A powerful kicking"
 	next "attack."
-	prompt
+	done
 
 _TM06Description::
 	text "A poison move with"
 	next "increasing damage."
-	prompt
+	done
 
 _TM07Description::
 	text "A one-hit KO,"
 	next "drill attack."
-	prompt
+	done
 
 _TM08Description::
 	text "An attack that may"
 	next "cause paralysis."
-	prompt
+	done
 
 _TM09Description::
 	text "A tackle that also"
 	next "hurts the user."
-	prompt
+	done
 
 _TM10Description::
 	text "A tackle that also"
 	next "hurts the user."
-	prompt
+	done
 
 _TM11Description::
 	text "An attack that may"
 	next "lower SPEED."
-	prompt
+	done
 
 _TM12Description::
 	text "Squirts water to"
 	next "attack."
-	prompt
+	done
 
 _TM13Description::
 	text "An attack that may"
 	next "freeze the foe."
-	prompt
+	done
 
 _TM14Description::
 	text "An attack that may"
 	next "freeze the foe."
-	prompt
+	done
 
 _TM15Description::
 	text "1st turn: Attack"
 	next "2nd turn: Rest"
-	prompt
+	done
 
 _TM16Description::
 	text "Throws coins. Gets"
 	next "them back later."
-	prompt
+	done
 
 _TM17Description::
 	text "An attack that al-"
 	next "so hurts the user."
-	prompt
+	done
 
 _TM18Description::
 	text "Returns a physical"
 	next "blow double."
-	prompt
+	done
 
 _TM19Description::
 	text "The user's level"
 	next "equals damage HP."
-	prompt
+	done
 
 _TM20Description::
 	text "Works 2-3 turns"
 	next "and confuses user."
-	prompt
+	done
 
 _TM21Description::
 	text "Steals 1/2 of the"
 	next "damage inflicted."
-	prompt
+	done
 
 _TM22Description::
 	text "1st turn: Prepare"
 	next "2nd turn: Attack"
-	prompt
+	done
 
 _TM23Description::
 	text "Always inflicts"
 	next "40HP damage."
-	prompt
+	done
 
 _TM24Description::
 	text "An attack that may"
 	next "cause paralysis."
-	prompt
+	done
 
 _TM25Description::
 	text "An attack that may"
 	next "cause paralysis."
-	prompt
+	done
 
 _TM26Description::
 	text "Tough but useless"
 	next "vs. flying foes."
-	prompt
+	done
 
 _TM27Description::
 	text "A ground-type,"
 	next "one-hit KO attack."
-	prompt
+	done
 
 _TM28Description::
 	text "1st turn: Burrow"
 	next "2nd turn: Attack"
-	prompt
+	done
 
 _TM29Description::
 	text "An attack that may"
 	next "lower SPECIAL."
-	prompt
+	done
 
 _TM30Description::
 	text "Switches user in"
 	next "trainer battles."
-	prompt
+	done
 
 _TM31Description::
 	text "Copies a move used"
 	next "by the foe."
-	prompt
+	done
 
 _TM32Description::
 	text "Heightens evasive-"
 	next "ness."
-	prompt
+	done
 
 _TM33Description::
 	text "Raises DEFENSE"
 	next "with a barrier."
-	prompt
+	done
 
 _TM34Description::
 	text "Waits 2-3 turns to"
 	next "hit back double."
-	prompt
+	done
 
 _TM35Description::
 	text "Randomly uses any"
 	next "#MON move."
-	prompt
+	done
 
 _TM36Description::
 	text "Powerful but makes"
 	next "the user faint."
-	prompt
+	done
 
 _TM38Description::
 	text "An attack that"
 	next "may cause a burn."
-	prompt
+	done
 
 _TM39Description::
 	text "An attack that"
 	next "never misses."
-	prompt
+	done
 
 _TM40Description::
 	text "1st turn: Prepare"
 	next "2nd turn: Attack"
-	prompt
+	done
 
 _TM41Description::
 	text "Restores HP by 1/2"
 	next "the user's max HP."
-	prompt
+	done
 
 _TM42Description::
 	text "Steals HP from a"
 	next "sleeping victim."
-	prompt
+	done
 
 _TM43Description::
 	text "1st turn: Prepare"
 	next "2nd turn: Attack"
-	prompt
+	done
 
 _TM44Description::
 	text "Sleep for 2 turns"
 	next "to fully recover."
-	prompt
+	done
 
 _TM45Description::
 	text "A move that may"
 	next "cause paralysis."
-	prompt
+	done
 
 _TM46Description::
 	text "Raises SPECIAL"
 	next "with a barrier."
-	prompt
+	done
 
 _TM47Description::
 	text "Very powerful but"
 	next "makes user faint."
-	prompt
+	done
 
 _TM37Description::
 _TM48Description::
 	text "An attack that may"
 	next "cause flinching."
-	prompt
+	done
 
 _TM49Description::
 	text "Fires three beams."
 	next "May BRN/FRZ/PAR."
-	prompt
+	done
 
 _TM50Description::
 	text "Makes a decoy with"
 	next "1/4 user's max HP."
-	prompt
+	done
 
 _TM51Description::
 	text "A powerful FIRE"
 	next "attack. May burn."
-	prompt
+	done
 
 _TM52Description::
 	text "Strikes with steel"
 	next "wings."
-	prompt
+	done
 
 _TM53Description::
 	text "User attacks with"
 	next "a flash of light."
-	prompt
+	done
 
 _TM54Description::
 	text "User lunges at the"
 	next "target."
-	prompt
+	done
 
 _TinyMushroomDescription::
 	text "An ordinary"
@@ -679,4 +679,4 @@ _TinyMushroomDescription::
 
 _UnusedItemDescription::
 	text "?"
-	prompt
+	done

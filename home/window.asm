@@ -86,6 +86,17 @@ HandleMenuInput_::
 	ld a, c
 	ld [wCurrentMenuItem], a
 .checkOtherKeys
+	push bc
+	push de
+	push hl
+	ld a, [wIsItemMenu]
+	cp $01 ; is this an item menu
+	jp nz, .jumptoloop ; If not, skip
+	callfar PrintItemDescriptionBlurb
+.jumptoloop
+	pop hl
+	pop de
+	pop bc
 	ld a, [wMenuWatchedKeys]
 	and b ; does the menu care about any of the pressed keys?
 	jp z, .loop1
