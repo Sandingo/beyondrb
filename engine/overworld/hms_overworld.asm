@@ -363,6 +363,9 @@ ForceContinueWaterfall::
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
 	ret nz
+    ld a, [wCurMapTileset]
+    cp CAVERN
+	ret nz
 	lda_coord 8, 9 ; tile the player is on
 	ld [wTilePlayerStandingOn], a
 	cp $42
