@@ -13,7 +13,7 @@ PrizeMenuMon1Entries:
 IF DEF(_RED)
 	db SANDSHREW
 ENDC
-IF DEF(_BLUE)
+IF DEF(_BLUE) || DEF(_GREEN)
 	db EKANS
 ENDC
 	db "@"
@@ -29,7 +29,7 @@ IF DEF(_RED)
 	db SCYTHER
 	db DRATINI
 ENDC
-IF DEF(_BLUE)
+IF DEF(_BLUE) || DEF(_GREEN)
 	db PINSIR
 	db SKIMPER
 ENDC

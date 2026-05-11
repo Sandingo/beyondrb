@@ -5,7 +5,7 @@ LeagueHQB5FWildMons:
 IF DEF(_RED)
 	db  53, GROWLITHE
 ENDC
-IF DEF(_BLUE)
+IF DEF(_BLUE) || DEF(_GREEN)
 	db  53, VULPIX
 ENDC
 	db  49, CUBONE

@@ -7,7 +7,7 @@ LeagueHQB2FWildMons:
 IF DEF(_RED)
 	db  51, EKANS
 ENDC
-IF DEF(_BLUE)
+IF DEF(_BLUE) || DEF(_GREEN)
 	db  51, SANDSHREW
 ENDC
 	db  52, PARAS

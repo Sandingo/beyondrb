@@ -5,6 +5,9 @@ ENDC
 IF DEF(_BLUE)
 	INCBIN "gfx/sgb/blue_border.tilemap"
 ENDC
+IF DEF(_GREEN)
+	INCBIN "gfx/sgb/green_border.tilemap"
+ENDC
 
 	ds $100
 
@@ -21,6 +24,12 @@ IF DEF(_BLUE)	; PAL_SGB1 (the first color is not defined, but if used, turns up 
 	RGB 12,15,27 ; Dark Blue
 	RGB 6,8,8	 ; Black
 ENDC
+IF DEF(_GREEN)
+	RGB 31,31,31 ; White
+	RGB 25,31,18 ; Light Green
+	RGB 18,25,12 ; Dark Green
+	RGB 6,8,8	 ; Black
+ENDC
 
 	ds $18
 
@@ -30,7 +39,7 @@ IF DEF(_RED) ; Clefairy Colors - PAL_SGB2
 	RGB 17,26,17 ; Green
 	RGB 6,8,8	 ; Black
 ENDC
-IF DEF(_BLUE)
+IF DEF(_BLUE) || DEF(_GREEN)
 	RGB 31,31,31 ; White
 	RGB 26,18,19 ; Pink
 	RGB 17,26,17 ; Green
@@ -39,7 +48,7 @@ ENDC
 
 	ds $18
 
-IF DEF(_RED) ; Rhydon Colors - PAL_SGB3
+IF DEF(_RED)  || DEF(_GREEN) ; Rhydon Colors - PAL_SGB3
 	RGB 31,31,31 ; White
 	RGB 20,26,31 ; Light Blue
 	RGB 12,15,27 ; Dark Blue
@@ -55,8 +64,8 @@ ENDC
 	ds $18
 
 SGBBorderGraphics:
-IF DEF(_RED)
-	INCBIN "gfx/sgb/red_border.2bpp"
+IF DEF(_RED) || DEF(_GREEN)
+	INCBIN "gfx/sgb/rg_border.2bpp"
 ENDC
 IF DEF(_BLUE)
 	INCBIN "gfx/sgb/blue_border.2bpp"

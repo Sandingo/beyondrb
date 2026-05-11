@@ -74,6 +74,9 @@ ENDC
 IF DEF(_BLUE)
 	db -5, "BEYOND BLUE@"
 ENDC
+IF DEF(_GREEN)
+	db -5, "BEYOND GREEN@"
+ENDC
 CredTajiri:
 	db -6, "SATOSHI TAJIRI@"
 CredTaOota:

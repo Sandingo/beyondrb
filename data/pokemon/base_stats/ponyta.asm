@@ -17,7 +17,7 @@
 	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE, \
-		 FLAMETHROWER,        HEADBUTT
+		 FLAMETHROWER,        HEADBUTT,	PAY_DAY
 	; end
 
 	db BANK(PonytaPicFront)
