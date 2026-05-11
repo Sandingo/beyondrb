@@ -1,3 +1,4 @@
+IF DEF(_RED) || DEF(_BLUE)
 SECTION "Pics 1", ROMX
 
 RhydonPicFront::      INCBIN "gfx/pokemon/front/rhydon.pic"
@@ -601,3 +602,7 @@ BurgelaPicFront:: INCBIN "gfx/pokemon/front/burgela.pic"
 BurgelaPicBack:: INCBIN "gfx/pokemon/back/burgelab.pic"
 DodaeriePicFront:: INCBIN "gfx/pokemon/front/dodaerie.pic"
 DodaeriePicBack:: INCBIN "gfx/pokemon/back/dodaerieb.pic"
+ENDC
+IF DEF(_GREEN)
+INCLUDE "gfx/pics_green.asm"
+ENDC

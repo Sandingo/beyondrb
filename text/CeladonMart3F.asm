@@ -94,6 +94,7 @@ _CeladonMart3FCurrentFloorSignText::
 	done
 
 _CeladonMart3FPokemonPosterText::
-	text "Red and Blue!"
-	line "Both are #MON!"
+	text "Red, Blue and"
+	line "Green!"
+	cont "All are #MON!"
 	done

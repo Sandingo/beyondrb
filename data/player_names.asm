@@ -49,3 +49,29 @@ DefaultNamesRival:
 	next "NINTEN"
 	db   "@"
 ENDC
+
+IF DEF(_GREEN)
+DefaultNamesPlayer:
+	db   "NEW NAME"
+	next "GREEN"
+	next "ASH"
+	next "SCOTT"
+	next "NINTEN"
+	db   "@"
+
+DefaultNamesGirl:
+	db   "NEW NAME"
+	next "BLUE"
+	next "OCEAN"
+	next "MARA"
+	next "SEGA"
+	db   "@"
+
+DefaultNamesRival:
+	db   "NEW NAME"
+	next "RED"
+	next "GARY"
+	next "DAVID"
+	next "SONY"
+	db   "@"
+ENDC

@@ -88,6 +88,7 @@ TitleBallYTable:
 	db 0, $71, $6f, $6e, $6d, $6c, $6d, $6e, $6f, $71, $74, 0
 
 TitleScreenAnimateBallIfStarterOut:
+IF DEF(_RED) || DEF(_BLUE)
 ; Animate the TitleBall if a starter just got scrolled out.
 	ld a, [wTitleMonSpecies]
 	cp STARTER1
@@ -101,6 +102,10 @@ TitleScreenAnimateBallIfStarterOut:
 	ld bc, TitleScroll_WaitBall
 	ld d, 0
 	jp _TitleScroll
+ENDC
+IF DEF(_GREEN)
+	ret
+ENDC 
 
 GetTitleBallY:
 ; Get position e from TitleBallYTable

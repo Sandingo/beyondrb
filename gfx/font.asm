@@ -18,7 +18,12 @@ NintendoCopyrightLogoGraphics: INCBIN "gfx/splash/copyright.2bpp"
 GameFreakLogoGraphics: INCBIN "gfx/title/gamefreak_inc.2bpp"
 GameFreakLogoGraphicsEnd:
 
+IF DEF(_RED) || DEF(_BLUE)
 TextBoxGraphics:: INCBIN "gfx/font/font_extra.2bpp"
+ENDC
+IF DEF(_GREEN)
+TextBoxGraphics:: INCBIN "gfx/font/font_extra_rg.2bpp"
+ENDC
 TextBoxGraphicsEnd::
 
 PokedexTileGraphics: INCBIN "gfx/pokedex/pokedex.2bpp"
@@ -27,7 +32,12 @@ PokedexTileGraphicsEnd:
 WorldMapTileGraphics: INCBIN "gfx/town_map/town_map.2bpp"
 WorldMapTileGraphicsEnd:
 
+IF DEF(_RED) || DEF(_BLUE)
 PlayerCharacterTitleGraphics: INCBIN "gfx/title/player.2bpp"
+ENDC
+IF DEF(_GREEN)
+PlayerCharacterTitleGraphics: INCBIN "gfx/title/player_green.2bpp"
+ENDC
 PlayerCharacterTitleGraphicsEnd:
 
 EXPBarGraphics::  INCBIN "gfx/battle/exp_bar.2bpp"

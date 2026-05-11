@@ -96,10 +96,12 @@ DisplayTitleScreen:
 
 	call DrawPlayerCharacter
 
+IF DEF(_RED) || DEF(_BLUE)
 ; put a pokeball in the player's hand
 	ld hl, wShadowOAMSprite10
 	ld a, $74
 	ld [hl], a
+ENDC
 
 ; place tiles for title screen copyright
 	hlcoord 2, 17
@@ -129,6 +131,9 @@ IF DEF(_RED)
 ENDC
 IF DEF(_BLUE)
 	ld a, TOTARTLE ; which Pokemon to show first on the title screen
+ENDC
+IF DEF(_GREEN)
+	ld a, VENUSAUR ; which Pokemon to show first on the title screen
 ENDC
 	ld [wTitleMonSpecies], a
 	call LoadTitleMonSprite
@@ -319,6 +324,7 @@ ScrollTitleScreenGameVersion:
 	jr z, .wait2
 	ret
 
+IF DEF(_RED) || DEF(_BLUE)
 DrawPlayerCharacter:
 	ld hl, PlayerCharacterTitleGraphics
 	ld de, vSprites
@@ -355,7 +361,46 @@ DrawPlayerCharacter:
 	dec b
 	jr nz, .loop
 	ret
+ENDC
 
+IF DEF(_GREEN)
+DrawPlayerCharacter:
+	ld hl, PlayerCharacterTitleGraphics
+	ld de, vSprites
+	ld bc, PlayerCharacterTitleGraphicsEnd - PlayerCharacterTitleGraphics
+	ld a, BANK(PlayerCharacterTitleGraphics)
+	call FarCopyData2
+	call ClearSprites
+	xor a
+	ld [wPlayerCharacterOAMTile], a
+	ld hl, wShadowOAM
+	lb de, $60, $30
+	ld b, 7
+.loop
+	push de
+	ld c, 5
+.innerLoop
+	ld a, d
+	ld [hli], a ; Y
+	ld a, e
+	ld [hli], a ; X
+	add 8
+	ld e, a
+	ld a, [wPlayerCharacterOAMTile]
+	ld [hli], a ; tile
+	inc a
+	ld [wPlayerCharacterOAMTile], a
+	inc hl
+	dec c
+	jr nz, .innerLoop
+	pop de
+	ld a, 8
+	add d
+	ld d, a
+	dec b
+	jr nz, .loop
+	ret
+ENDC
 
 ClearBothBGMaps:
 	ld hl, vBGMap0
@@ -363,12 +408,23 @@ ClearBothBGMaps:
 	ld a, " "
 	jp FillMemory
 
+IF DEF(_RED) || DEF(_BLUE)
 LoadTitleMonSprite:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	hlcoord 5, 10
 	call GetMonHeader
 	jp LoadFrontSpriteByMonIndex
+ENDC
+
+IF DEF(_GREEN)
+LoadTitleMonSprite:
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	hlcoord 9, 10
+	call GetMonHeader
+	jp LoadFrontSpriteByMonIndex
+ENDC
 
 TitleScreenCopyTileMapToVRAM:
 	ldh [hAutoBGTransferDest + 1], a

@@ -34,7 +34,7 @@ AnimateWaterTile::
 	ret
 
 ; ==================================================================
-
+IF DEF(_RED) || DEF(_BLUE)
 AnimateFlowerTile::
 	xor a
 	ldh [hMovingBGTilesCounter1], a
@@ -57,10 +57,39 @@ AnimateFlowerTile::
 	dec c
 	jr nz, .loop
 	ret
+ENDC
 
+IF DEF(_GREEN)
+AnimateFlowerTile::
+	xor a
+	ldh [hMovingBGTilesCounter1], a
+
+	ld a, [wMovingBGTilesCounter2]
+	and 1
+	ld hl, FlowerTile1
+	jr z, .copy
+	ld hl, FlowerTile2
+.copy
+	ld de, vTileset tile $03
+	ld c, $10
+.loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop
+	ret
+ENDC
+
+IF DEF(_RED) || DEF(_BLUE)
 FlowerTile1: INCBIN "gfx/tilesets/flower/flower1.2bpp"
 FlowerTile2: INCBIN "gfx/tilesets/flower/flower2.2bpp"
 FlowerTile3: INCBIN "gfx/tilesets/flower/flower3.2bpp"
+ENDC
+IF DEF(_GREEN)
+FlowerTile1: INCBIN "gfx/tilesets/flower_rg/flower1.2bpp"
+FlowerTile2: INCBIN "gfx/tilesets/flower_rg/flower2.2bpp"
+ENDC
 
 ; ==================================================================
 
