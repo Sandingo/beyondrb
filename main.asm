@@ -69,6 +69,7 @@ INCLUDE "engine/events/hidden_objects/book_or_sculpture.asm"
 INCLUDE "engine/events/hidden_objects/elevator.asm"
 INCLUDE "engine/events/hidden_objects/town_map.asm"
 INCLUDE "engine/events/hidden_objects/pokemon_stuff.asm"
+INCLUDE "engine/battle/trainers2.asm"
 
 SECTION "Draw Badges", ROMX
 
@@ -347,7 +348,6 @@ SECTION "Vending Machine", ROMX
 INCLUDE "engine/events/vending_machine.asm"
 INCLUDE "engine/pokemon/calc_stats.asm"
 
-
 SECTION "Itemfinder 2", ROMX
 
 INCLUDE "engine/menus/league_pc.asm"
@@ -375,3 +375,4 @@ INCLUDE "data/items/tmhm_names.asm"
 INCLUDE "data/pokemon/breeding_list.asm"
 INCLUDE "engine/items/tm_prices.asm"
 INCLUDE "engine/movie/splash.asm"
+INCLUDE "audio/fade_audio.asm"
