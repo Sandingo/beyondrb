@@ -913,7 +913,7 @@ SwitchAndTeleportEffect:
 	ld hl, RanFromBattleText
 	cp TELEPORT
 	jr z, .printText
-	ld hl, TeleportedAwayText
+	ld hl, RanAwayScaredText
 	cp ROAR
 	jr z, .printText
 	ld hl, WasBlownAwayText
