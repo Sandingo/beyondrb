@@ -157,7 +157,6 @@ ROMX $23
 	"Text 4"
 ROMX $24
 	"Text 5"
-	"Evo Moves"
 ROMX $25
 	"Text 6"
 ROMX $26
@@ -176,6 +175,7 @@ ROMX $2B
 ROMX $2C
 	"Move Names"
 	"Draw Badges"
+	"Evo Moves"
 ROMX $2D
 	"Battle Engine 2"
 	"Battle Engine 3"

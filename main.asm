@@ -184,7 +184,6 @@ INCLUDE "engine/slots/game_corner_slots.asm"
 SECTION "Battle Engine 7", ROMX
 
 INCLUDE "data/moves/moves.asm"
-INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/cries.asm"
 INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
@@ -241,9 +240,8 @@ INCLUDE "engine/battle/init_battle_variables.asm"
 INCLUDE "engine/battle/move_effects/paralyze.asm"
 
 SECTION "Evo Moves", ROMX
-
+INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
-
 
 SECTION "Hidden Objects 2", ROMX
 
