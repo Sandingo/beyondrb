@@ -139,7 +139,6 @@ DisplayListMenuIDLoop::
 	push hl
 	call GetItemPrice
 	pop hl
-	ld a,[wListMenuID]
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;needed to make Mateo's move deleter/relearner work
 	cp a, MOVESLISTMENU
@@ -153,11 +152,11 @@ DisplayListMenuIDLoop::
 	ld [wMaxItemQuantity], a
 .skipGettingQuantity
 	ld a, [wCurItem]
-	ld [wNamedObjectIndex], a
+	ld [wNameListIndex], a
 	cp HM01
 	ld a, BANK(ItemNames)
 	ld [wPredefBank], a
-	jr c, .go_get_name
+	jr c, .go_get_name ; else, it's a TM
 	ld a, BANK(TmhmNames)
 	ld [wPredefBank], a
 .go_get_name
