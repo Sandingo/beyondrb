@@ -65,7 +65,9 @@ WaitForTextScrollButtonPress::
 	push hl
 	ld a, [wTownMapSpriteBlinkingEnabled]
 	and a
-	call nz, TownMapSpriteBlinkingAnimation
+	jr z, .skipAnimation
+	call TownMapSpriteBlinkingAnimation
+.skipAnimation
 	hlcoord 18, 16
 	call HandleDownArrowBlinkTiming
 	pop hl

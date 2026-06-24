@@ -3,8 +3,8 @@ GetTrainerInformation::
 	ld a, [wLinkState]
 	and a
 	jr nz, .linkBattle
-;	ld a, BANK(TrainerPicAndMoneyPointers)
-;	call BankswitchHome
+	ld a, BANK(TrainerPicAndMoneyPointers)
+	call BankswitchHome
 	ld a, [wTrainerClass]
 	dec a
 	ld hl, TrainerPicAndMoneyPointers
