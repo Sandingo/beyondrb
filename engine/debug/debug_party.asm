@@ -61,17 +61,15 @@ IF DEF(_DEBUG)
 	ld [hl], a
 
 
-	;Mew gets Waterfall and Teleport
+	;Mew gets Mimic
 	ld hl, wPartyMon2Moves + 3
 	ld a, WATERFALL
 	ld [hl], a
-	ld a, TELEPORT
-	ld [hli], a
 	ld hl, wPartyMon3PP + 3
 	ld a, 30
 	ld [hl], a
 	
-	; Jolteon gets Toxic.
+	; Jolteon gets Thunderbolt.
     ; Mon is shiny
     ld hl, wPartyMon3CatchRate
     ld a, 1
@@ -91,9 +89,9 @@ IF DEF(_DEBUG)
 	ld a, 15
 	ld [hl], a
 
-	; Pikachu gets Flash.
+	; Pikachu gets Surf.
 	ld hl, wPartyMon6Moves + 2
-	ld a, FLASH
+	ld a, SURF
 	ld [hl], a
 	ld hl, wPartyMon6PP + 2
 	ld a, 15
@@ -159,7 +157,6 @@ DebugItemsList:
 	db BOTTLE_CAP, 5
 	db MYSTERY_BOX, 1
 	db POKE_FLUTE, 1
-	db GOLD_TEETH,1
 	db -1 ; end
 
 DebugUnusedList:
