@@ -3,17 +3,18 @@
 * Unused Pokémon from beta builds and future generation evolutions, as well as the inclusion of Kanto-exclusive 'mons from GSC (Houndour/Murkrow/Slugma)
 * Shiny Pokémon and Shiny Charm for completing the Pokédex
 * Beta versions of the Steel/Dark/Fairy types have been included, along with type changes to match each Pokémon's recent versions.
-* Expanded post-game, with a new endgame dungeon in Mt. Silver and Gym Leader rematches.
+* Expanded post-game, with a new endgame dungeon in Mt. Silver, Gym Leader/Elite Four rematches and a Prof. Oak battle!
 * The Daycare can now sometimes have Baby Pokémon show up! There are some Pokémon that are only obtained this way.
-* Hoaxes like Bill's Garden and Mew under the Truck are featured.
+* Hoaxes like "Pikablu" in Bill's Garden and Mew under the Truck are featured.
 * Gender equality: Play as a girl!
 * The Amulet Coin and Everstone rewards from FRLG are obtainable, gotten the same way [as in that game](https://bulbapedia.bulbagarden.net/wiki/Professor%27s_assistant#Kanto-based_games).
-* Bottle Caps and Hyper Training! The later accessable in the post-game.
+* Bottle Caps and Hyper Training! Bottle Caps can be gotten from rebattling Mina, and the Hyper Training NPC is near Mt. Silver.
 * PC and Bag now have visible item counts to make it easier to keep track of.
 * A modified version of the Mystery Box from KEP appears, obtainable in the Fuchsia Meeting Room.
 * HMs can be used in the overworld by pressing A.
 * Hold B to put on your Running Shoes!
 * BW's Repel System is included.
+* <details><summary>A secret special Pokémon...</summary>Can be found on top of Pokemon Tower after defeating Prof. Oak.</details>
 
 ## Quality of Life
 * Bag size increased from 20 to 30.
@@ -50,6 +51,7 @@
 * One-use items, such as the Lift Key and Secret Key are removed from the inventory after using them. Less clutter!
 * The Itemfinder now points you to the direction of hidden items.
 * You can view a Pokémon's Summary in the PC even when the party is full.
+* The opposite Mt. Moon Fossil can be found in Cerulean Cave post-credits.
 
 ## Changes
 * Several maps were altered to match earlier builds of RG, or utilize tiles that were otherwise unseen by the player.
@@ -69,6 +71,7 @@
 * Sabrina gives out the TM for Light Screen rather than Psywave.
 * Pokémon have marginally improved learnsets, including Signature Moves from later generations, learning certain moves on evolution (like Eeveelutions getting a STAB attack), or can access TM/HMs they can learn in Gen 2+
 * The Pokédex and Town Map better resemble their JP counterparts.
+* Some overworld sprites like Swimmers and Bird Pokémon are animated.
 
 ## Bugfixes
 * Focus Energy actually works as intended, increasing your Critical Rate instead of lowering it.
@@ -80,3 +83,4 @@
 * Trainer sprites should have less screen tearing.
 * Animations that shake the screen, like Psychic, now cover the top couple pixels of the screen.
 * Player will turn to face NPCs that trigger a battle with them.
+* The Pewter City Guide no longer flickers during his event.
