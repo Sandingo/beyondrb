@@ -37,7 +37,8 @@ _CopycatsHouse2FCopycatTM31Explanation1Text::
 	text_start
 
 	para "This is my"
-	line "favorite TM, MIMIC!"
+	line "favorite TM,"
+	cont "MIMIC!"
 
 	para "Use it on a good"
 	line "#MON!@"

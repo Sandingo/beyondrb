@@ -44,6 +44,7 @@ SetPal_Battle:
 	cp 1
 	jr z, .shinyPlayer
 .playerPalette
+	ld a, [wPlayerBattleStatus3] ; DeterminePaletteID checks the TRANSFORMED bit in a
 	call DeterminePaletteID
 	jr .continuePlayer
 .shinyPlayer
@@ -52,14 +53,11 @@ SetPal_Battle:
 	ld b, a
 
 	
-	ld a, [wEnemyBattleStatus3]
-	ld hl, wEnemyMonSpecies2
-	call DeterminePaletteID
-	ld c, a
 	ld hl, wEnemyMonSpecies2
 	ld a, [wOpponentMonShiny]
 	cp 1
 	jr z, .shinyOpponent
+	ld a, [wEnemyBattleStatus3] ; DeterminePaletteID checks the TRANSFORMED bit in a
 	call DeterminePaletteID
 	jr .continueOpponent
 .shinyOpponent
