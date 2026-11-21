@@ -143,7 +143,7 @@ RandomizeTeamForBattleFacilityTrainer::
 	ld hl, FullyEvolvedMons
 ; generate a random number between 0 and len(FullyEvolvedMons)-1, i.e. 0 and 83 included
 	call Random
-	cp 103
+	cp 102 ; number of entries in FullyEvolvedMons (never pick the -1 terminator)
 	jr nc, .RNGLoop
 ; a contains a valid number, now we need to access the a-th element of the list we decided about earlier
 .uglyLoop
