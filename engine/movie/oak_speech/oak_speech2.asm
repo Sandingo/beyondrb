@@ -131,7 +131,7 @@ BlueDefaultName:
 IF DEF(_DEBUG)
 	db "BLEUH@" ; For fun :)
 ENDC
-IF DEF(_RED)
+IF DEF(_RED) || DEF(_GREEN)
 	db "BLUE@"
 ENDC
 IF DEF(_BLUE)

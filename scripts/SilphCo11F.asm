@@ -78,7 +78,7 @@ SilphCo11FSetUnlockedDoorEventScript:
 	callfar RollForShiny
 	xor a
 	ld [wIsTrainerBattle], a
-	ld [SilphCo11FResetCurScript], a
+	ld [wSilphCo11FCurScript], a
 	ld [wCurMapScript], a
 	ret
 

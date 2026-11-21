@@ -143,7 +143,7 @@ RandomizeTeamForBattleFacilityTrainer::
 	ld hl, FullyEvolvedMons
 ; generate a random number between 0 and len(FullyEvolvedMons)-1, i.e. 0 and 83 included
 	call Random
-	cp 103
+	cp 102 ; number of entries in FullyEvolvedMons (never pick the -1 terminator)
 	jr nc, .RNGLoop
 ; a contains a valid number, now we need to access the a-th element of the list we decided about earlier
 .uglyLoop
@@ -316,6 +316,11 @@ RollForShiny::
 ; not shiny, let's count non-shiny encounters for the "safety net"
     ld hl, wNonShinyEncounters
 	inc [hl]
+	jr nz, .noCarry
+	inc hl ; the low byte wrapped around: increment the high byte too
+	inc [hl]
+	dec hl
+.noCarry
 	ld a, [hli] ; let's now compare [wNonShinyEncounters] with 1500=$05DC - 1000 = $3E8
 	cp $E8 ; $05 for testing purposes, $DC for the 1500, $E8 for 1000
 	jr nz, .notShinyEncounter

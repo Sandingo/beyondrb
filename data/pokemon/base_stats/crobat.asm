@@ -1,4 +1,4 @@
-	db DEX_GOLBAT ; pokedex id
+	db DEX_CROBAT ; pokedex id
 
 	db  85,  90,  80,  130,  85
 	;   hp  atk  def  spd  spc
