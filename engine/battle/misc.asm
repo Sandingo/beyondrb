@@ -316,6 +316,11 @@ RollForShiny::
 ; not shiny, let's count non-shiny encounters for the "safety net"
     ld hl, wNonShinyEncounters
 	inc [hl]
+	jr nz, .noCarry
+	inc hl ; the low byte wrapped around: increment the high byte too
+	inc [hl]
+	dec hl
+.noCarry
 	ld a, [hli] ; let's now compare [wNonShinyEncounters] with 1500=$05DC - 1000 = $3E8
 	cp $E8 ; $05 for testing purposes, $DC for the 1500, $E8 for 1000
 	jr nz, .notShinyEncounter
