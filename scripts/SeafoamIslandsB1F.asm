@@ -29,7 +29,7 @@ SeafoamIslandsB1F_Script:
 	predef HideExtraObject
 	ld a, [wObjectToShow]
 	ld [wMissableObjectIndex], a
-	predef_jump ShowObject
+	predef_jump ShowExtraObject
 .noBoulderWasPushed
 	ld a, SEAFOAM_ISLANDS_B2F
 	ld [wDungeonWarpDestinationMap], a

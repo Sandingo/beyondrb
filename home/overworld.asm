@@ -87,8 +87,10 @@ OverworldLoopLessDelay::
 	jp nz, .noDirectionButtonsPressed
 	call IsPlayerCharacterBeingControlledByGame
 	jr nz, .checkForOpponent
-	callfar CheckForFlash ; jp OverworldLoop if succeeds
-	callfar CheckForCut ; jp OverworldLoop if succeeds
+	callfar CheckForFlash ; carry if succeeds
+	jp c, OverworldLoop
+	callfar CheckForCut ; carry if succeeds
+	jp c, OverworldLoop
 	call CheckForHiddenObjectOrBookshelfOrCardKeyDoor
 	ldh a, [hItemAlreadyFound] ; a = $ff if not found, = 0 if found
 	and a
@@ -97,7 +99,8 @@ OverworldLoopLessDelay::
 	ldh a, [hTextID]
 	and a
 	jr nz, .displayDialogue ; checks for Strength via BoulderText
-	callfar CheckForSurf ; jp OverworldLoop if succeeds
+	callfar CheckForSurf ; carry if succeeds
+	jp c, OverworldLoop
 	callfar CheckForWaterfall ; jp OverworldLoop if succeeds
 	jp OverworldLoop
 .displayDialogue

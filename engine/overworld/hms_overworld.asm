@@ -27,7 +27,7 @@ CheckForSurf:: ; marcelnote - could be improved if there is a wram bit which che
     tx_pre WantToSurfText
     ld a, [wCurrentMenuItem]
     and a ; if answered NO
-    jp nz, OverworldLoop
+    jr nz, .handled
     call LoadSurfingPlayerSpriteGraphics
     callfar ItemUseSurfboard.makePlayerMoveForward
     ld hl, wStatusFlags5
@@ -35,12 +35,17 @@ CheckForSurf:: ; marcelnote - could be improved if there is a wram bit which che
     ld a, 2
     ld [wWalkBikeSurfState], a ; change player state to surfing
     call PlayDefaultMusic ; play surfing music
-    jp OverworldLoop
+    ; fallthrough
+.handled
+    scf ; tell OverworldLoop that A was handled
+    ret
 .noSurfInParty
     call EnableAutoTextBoxDrawing
-    tx_pre_jump MonCouldSurfText
-    jp OverworldLoop
+    tx_pre MonCouldSurfText
+    scf
+    ret
 .fail
+	and a
 	ret
 
 CheckForCut::
@@ -81,7 +86,7 @@ CheckForCut::
     tx_pre WantToCutText
     ld a, [wCurrentMenuItem]
     and a ; if answered NO
-    jp nz, OverworldLoop
+    jr nz, .handled
     ld a, 1
     ld [wActionResultOrTookBattleTurn], a ; used cut successfully
 ; actual cutting stuff
@@ -100,12 +105,17 @@ CheckForCut::
     ldh [hWY], a
     call UpdateSprites
     callfar RedrawMapView ; should this be simply a jp RedrawMapView?
-    jp OverworldLoop
+    ; fallthrough
+.handled
+    scf
+    ret
 .noCutInParty
     call EnableAutoTextBoxDrawing
-    tx_pre_jump TreeCanBeCutText
-    jp OverworldLoop
+    tx_pre TreeCanBeCutText
+    scf
+    ret
 .fail
+    and a
     ret
 
 CheckForFlash::
@@ -133,8 +143,10 @@ CheckForFlash::
     call WaitForSoundToFinish
 	xor a
 	ld [wMapPalOffset], a
-	jp OverworldLoop
+	scf
+	ret
 .fail
+	and a
 	ret
 
 CheckForStrength:: ; marcelnote - this function is different from the others because it is called inside text_asm

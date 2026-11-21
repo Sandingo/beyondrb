@@ -139,6 +139,7 @@ DisplayListMenuIDLoop::
 	push hl
 	call GetItemPrice
 	pop hl
+	ld a, [wListMenuID] ; GetItemPrice returns with a = ROM bank, not the menu ID
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;needed to make Mateo's move deleter/relearner work
 	cp a, MOVESLISTMENU
