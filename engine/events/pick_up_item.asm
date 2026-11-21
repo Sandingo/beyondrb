@@ -52,7 +52,6 @@ PickUpItem:
 	call PrintText
 	ret
 .noObject
-	pop bc
 	ret
 
 FoundItemText:
