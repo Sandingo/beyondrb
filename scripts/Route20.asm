@@ -13,16 +13,16 @@ Route20BoulderScript:
 	CheckBothEventsSet EVENT_SEAFOAM3_BOULDER1_DOWN_HOLE, EVENT_SEAFOAM3_BOULDER2_DOWN_HOLE
 	jr z, .next_boulder_check
 	ld a, HS_SEAFOAM_ISLANDS_1F_BOULDER_1
-	call Route20ShowObjectScript
+	call Route20ShowExtraObjectScript
 	ld a, HS_SEAFOAM_ISLANDS_1F_BOULDER_2
-	call Route20ShowObjectScript
+	call Route20ShowExtraObjectScript
 	ld hl, .MissableObjectIDs
 .hide_missable_objects
 	ld a, [hli]
 	cp $ff
 	jr z, .next_boulder_check
 	push hl
-	call Route20HideObjectScript
+	call Route20HideExtraObjectScript
 	pop hl
 	jr .hide_missable_objects
 
@@ -39,9 +39,9 @@ Route20BoulderScript:
 	CheckBothEventsSet EVENT_SEAFOAM4_BOULDER1_DOWN_HOLE, EVENT_SEAFOAM4_BOULDER2_DOWN_HOLE
 	ret z
 	ld a, HS_SEAFOAM_ISLANDS_B3F_BOULDER_1
-	call Route20ShowObjectScript
+	call Route20ShowExtraObjectScript
 	ld a, HS_SEAFOAM_ISLANDS_B3F_BOULDER_2
-	call Route20ShowObjectScript
+	call Route20ShowExtraObjectScript
 	ld a, HS_SEAFOAM_ISLANDS_B4F_BOULDER_1
 	call Route20HideObjectScript
 	ld a, HS_SEAFOAM_ISLANDS_B4F_BOULDER_2
@@ -55,6 +55,14 @@ Route20ShowObjectScript:
 Route20HideObjectScript:
 	ld [wMissableObjectIndex], a
 	predef_jump HideObject
+
+Route20ShowExtraObjectScript:
+	ld [wMissableObjectIndex], a
+	predef_jump ShowExtraObject
+
+Route20HideExtraObjectScript:
+	ld [wMissableObjectIndex], a
+	predef_jump HideExtraObject
 
 Route20_ScriptPointers:
 	def_script_pointers
