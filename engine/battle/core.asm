@@ -1664,9 +1664,6 @@ NoWillText:
 TryRunningFromBattle:
 	call IsGhostBattle
 	jp z, .canEscape ; jump if it's a ghost battle
-	ld a, [wOpponentMonShiny]
-	and a
-	jp nz, .cantEscape
 	ld a, [wBattleType]
 	cp BATTLE_TYPE_SAFARI
 	jp z, .canEscape ; jump if it's a safari battle
@@ -1675,7 +1672,10 @@ TryRunningFromBattle:
 	jp z, .canEscape
 	ld a, [wIsInBattle]
 	dec a
-	jr nz, .trainerBattle ; jump if it's a trainer battle
+	jp nz, .trainerBattle ; jump if it's a trainer battle
+	ld a, [wOpponentMonShiny] ; wild shiny Pokémon can't be fled from
+	and a
+	jp nz, .cantEscape
 	ld a, [wNumRunAttempts]
 	inc a
 	ld [wNumRunAttempts], a
