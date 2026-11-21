@@ -695,8 +695,6 @@ JungelaEvosMoves:
 ; Learnset
 	db 27, ABSORB
 	db 29, VINE_WHIP
-	db 27, CONSTRICT
-	db 29, ABSORB
 	db 32, POISONPOWDER
 	db 36, STUN_SPORE
 	db 39, SLEEP_POWDER
