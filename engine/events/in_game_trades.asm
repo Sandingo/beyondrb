@@ -156,23 +156,23 @@ InGameTrade_DoTrade:
 	ld [wWhichPokemon], a
 	ld a, [wInGameTradeReceiveMonSpecies]
 	ld [wCurPartySpecies], a
-	xor a
-	push af
 	ld a, [wInGameTradeGiveMonSpecies]
 	cp NO_MON
 	jr z, .skip_swap_mons
-	pop af
+; new, for the shiny: read it before RemovePokemon shifts the party
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMon1CatchRate
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
+	ld a, [hl] ; shiny-ness of the mon we are trading away
+	push af
+	xor a
 	ld [wRemoveMonFromBox], a
 	call RemovePokemon
 	ld a, $80 ; prevent the player from naming the mon
 	ld [wMonDataLocation], a
-; new, for the shiny
-        ld a, [wWhichPokemon]
-        ld hl, wPartyMon1CatchRate
-        ld bc, wPartyMon2 - wPartyMon1
-        call AddNTimes ; add bc to hl a times
-        ld a, [hl] ; a now contains the shiny-ness of the mon we are trading away
-                   ; this is because if we trade a shiny, we get a guaranteed shiny back
+	pop af
+; if we trade a shiny, we get a guaranteed shiny back
         cp 1
         jr nz, .doTheRollForTheShiny
 ; we do be trading a shiny away
