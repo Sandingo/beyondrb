@@ -8,7 +8,7 @@ IF DEF(_RED)
 	db DRATINI,  20
 	db PORYGON,  24
 ENDC
-IF DEF(_BLUE)
+IF DEF(_BLUE) || DEF(_GREEN)
 	db ABRA,      5
 	db CLEFAIRY, 12
 	db EKANS,    17
