@@ -835,8 +835,8 @@ PrintStatsBox_StatExp: ; new
 	ld a, [hld]
 	call CalculateHumanReadableStatExp
 	ld a, [de]
-	hlcoord 17, 4
-	lb bc, 1, 2
+	hlcoord 16, 4
+	lb bc, 1, 3 ; the value goes up to 255: 3 digits, as the other stats
 	jp PrintNumber
 
 StatsText:
@@ -990,7 +990,7 @@ StatusScreenManager_MovesPage:
 	ld bc, wPartyMon1PP - wPartyMon1Moves - 1
 	add hl, bc
 	ld a, [hl]
-;	and PP_MASK
+	and $3f ; the upper 2 bits are the PP Ups applied, not current PP (as in the other moves page)
 	ld [wStatusScreenCurrentPP], a
 	ld h, d
 	ld l, e
