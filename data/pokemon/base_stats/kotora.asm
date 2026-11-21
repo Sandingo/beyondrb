@@ -7,7 +7,7 @@
 	db 120 ; catch rate
 	db 92 ; base exp
 
-	INCBIN "gfx/pokemon/front/Kotora.pic", 0, 1 ; sprite dimensions
+	INCBIN "gfx/pokemon/front/kotora.pic", 0, 1 ; sprite dimensions
 	dw KotoraPicFront, KotoraPicBack
 
 	db THUNDERSHOCK, TACKLE, NO_MOVE, NO_MOVE ; level 1 learnset
