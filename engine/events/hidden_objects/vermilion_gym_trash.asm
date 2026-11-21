@@ -61,11 +61,13 @@ GymTrashScript:
 .tryagain
 	call Random
 	swap a
+	and %11 ; random index in [0, 3]
 	ld b, a
-	ldh a, [hGymTrashCanRandNumMask]
-	and b
-	jr z, .tryagain
+	ldh a, [hGymTrashCanRandNumMask] ; number of valid neighbor cans (2-4)
 	dec a
+	cp b
+	jr c, .tryagain ; retry if index >= number of neighbors
+	ld a, b
 	pop hl
 
 	ld d, 0
