@@ -307,9 +307,8 @@ _ViridianGymRematchDefeatedText::
 	prompt
 
 _ViridianGymRematchVictoryText::
-	text "Looks"
-	line "like a new position"
-	cont "opened up!"
+	text "Looks like a new"
+	line "spot opened up!"
 	prompt
 
 _ViridianGymKyleDefeated::
