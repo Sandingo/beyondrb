@@ -429,13 +429,8 @@ wSimulatedJoypadStatesEnd::
 NEXTU
 wUnusedFlag::
 wBoostExpByExpAll:: db
-wEggRemainingSteps:: db
-wIsEggInDaycare::
-		; $00 = no
-		; $01 = yes
-		ds 0
 
-	ds 57
+	ds 58
 
 wNPCMovementDirections2:: ds 10
 ; used in Pallet Town scripted movement
@@ -2171,7 +2166,10 @@ wWhichDungeonWarp:: db
 
 wUnusedCardKeyGateID:: db
 
-	ds 8
+wEggRemainingSteps:: db
+wIsEggInDaycare:: db ; $00 = no, $01 = yes
+
+	ds 6
 
 wStatusFlags1:: db
 	ds 3
