@@ -283,7 +283,11 @@ CableClub_DoBattleOrTradeAgain:
 	call Delay3
 	ld hl, wOptions
 	res BIT_BATTLE_ANIMATION, [hl]
+	ld a, 1
+	ld [wIsTrainerBattle], a
 	predef InitOpponent
+	xor a
+	ld [wIsTrainerBattle], a
 	predef HealParty
 	jp ReturnToCableClubRoom
 .trading

@@ -447,6 +447,20 @@ SpeciesForceLearnMove: ; from PureRGB
 	ld a, [hl]
 	ld [wMoveNum], a
 	ld [wNamedObjectIndex], a
+	ld d, a
+	push hl
+	ld hl, wPartyMon1Moves
+	ld a, [wWhichPokemon]
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
+	ld b, NUM_MOVES
+.checkKnown
+	ld a, [hli]
+	cp d
+	jr z, .alreadyKnown
+	dec b
+	jr nz, .checkKnown
+	pop hl
 	call GetMoveName
 	call CopyToStringBuffer
 	predef LearnMove
@@ -455,6 +469,14 @@ SpeciesForceLearnMove: ; from PureRGB
 	pop af ; retrieve species number from the stack
 	ld [wPokedexNum], a
 .done
+	pop bc
+	ret
+.alreadyKnown
+	pop hl
+	pop de
+	pop hl
+	pop af
+	ld [wPokedexNum], a
 	pop bc
 	ret
 

@@ -38,6 +38,7 @@ MrHyperText:
 	call RestoreScreenTilesAndReloadTilePatterns
 	call LoadGBPal
 	pop af
+	jp c, .refused ; B pressed in the party menu: no training, no Bottle Cap used
 
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks

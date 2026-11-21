@@ -17,6 +17,8 @@ ClearVariablesOnEnterMap::
 	jr nz, .skip ; Yes? Off you go then.
 	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED
 .skip
+	xor a
+	ld [wDontSwitchOffMysteryBoxYet], a ; only skip the reset once, right after the battle
 	ld hl, wCardKeyDoorY
 	ld [hli], a
 	ld [hl], a

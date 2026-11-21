@@ -18,6 +18,7 @@ _TeleportEffect::
 	ld a, [wPlayerMoveNum]
 	push af
 	call SaveScreenTilesToBuffer1
+	callfar ReadPlayerMonCurHPAndStatus
 	callfar ChooseNextMon
 	pop af
 	ld [wPlayerMoveNum], a
