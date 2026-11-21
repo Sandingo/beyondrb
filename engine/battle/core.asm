@@ -1209,8 +1209,9 @@ blackOutText:
 	ld hl, PlayerBlackedOutText2
 	ld a, [wForfeitTrainerBattle] ; new
 	and a
-	jr z, .printText
+	jr z, .checkLink
 	ld hl, PlayerBlackedOutText3 ; new
+.checkLink
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr nz, .printText
