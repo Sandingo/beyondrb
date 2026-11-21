@@ -1614,7 +1614,6 @@ ThrewRockText:
 
 ; indirectly used by DIG in StartMenu_Pokemon.dig
 ItemUseEscapeRope:
-	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED
 	ld a, [wIsInBattle]
 	and a
 	jr nz, .notUsable
@@ -1638,6 +1637,7 @@ ItemUseEscapeRope:
 	jr z, .notUsable
 	cp b
 	jr nz, .loop
+	ResetEvent EVENT_MYSTERY_BOX_ACTIVATED ; only when the Escape Rope/Dig is actually used
 	ld hl, wStatusFlags6
 	set BIT_FLY_WARP, [hl]
 	set BIT_ESCAPE_WARP, [hl]
